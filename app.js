@@ -148,9 +148,21 @@ function attachDockClickHandlers(itemEls, projects, trackEl) {
         trackEl.style.transition = "";
       }
 
-      // Animate track to center the clicked item
+      // Measure positions using pre-animation widths (before class changes affect layout)
       const targetIndex = adjustedItemEls.indexOf(btn);
-      trackEl.style.transform = `translateX(${computeTranslateToItem(adjustedItemEls, targetIndex)}px)`;
+      const targetTranslate = computeTranslateToItem(adjustedItemEls, targetIndex);
+
+      // Update distance classes → CSS transitions fire concurrently with the track slide
+      adjustedItemEls.forEach((el) => {
+        const elOffset = parseInt(el.dataset.offset, 10);
+        const newDist = Math.abs(elOffset - offset);
+        const newCls = getDockDistanceClass(newDist);
+        el.classList.remove("dock-item--d1", "dock-item--d2", "dock-item--d3");
+        if (newCls) el.classList.add(newCls);
+        el.setAttribute("aria-current", newDist === 0 ? "page" : "false");
+      });
+
+      trackEl.style.transform = `translateX(${targetTranslate}px)`;
 
       trackEl.addEventListener("transitionend", () => {
         dockActiveIndex = ((dockActiveIndex + offset) % n + n) % n;
