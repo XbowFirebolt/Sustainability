@@ -100,18 +100,59 @@ function computeTranslateToItem(itemEls, itemIndex) {
 }
 
 function attachDockClickHandlers(itemEls, projects, trackEl) {
-  itemEls.forEach((btn, i) => {
+  itemEls.forEach((btn) => {
     const offset = parseInt(btn.dataset.offset, 10);
     if (offset === 0) return;
     btn.addEventListener("click", () => {
       if (dockAnimating) return;
       dockAnimating = true;
 
+      const direction = Math.sign(offset);
+      const absOffset = Math.abs(offset);
+      const n = projects.length;
+
+      // Pre-add the item(s) about to slide in from the leading edge so they
+      // move with the track instead of appearing abruptly after re-render.
+      const extraBtns = [];
+      for (let k = 1; k <= absOffset; k++) {
+        const leadingOffset = direction * (DOCK_WINDOW_HALF + k);
+        const projectIdx = ((dockActiveIndex + leadingOffset) % n + n) % n;
+        const extra = document.createElement("button");
+        extra.className = "dock-item";
+        const dist = k + DOCK_WINDOW_HALF - absOffset; // distance from new center after slide
+        const cls = getDockDistanceClass(dist);
+        if (cls) extra.classList.add(cls);
+        extra.textContent = shortenProjectName(projects[projectIdx]);
+        extra.setAttribute("aria-label", projects[projectIdx]);
+        extra.setAttribute("aria-current", "false");
+        extra.dataset.offset = String(leadingOffset);
+        extraBtns.push(extra);
+      }
+
+      let adjustedItemEls;
+      if (direction > 0) {
+        extraBtns.forEach(e => trackEl.appendChild(e));
+        adjustedItemEls = [...itemEls, ...extraBtns];
+      } else {
+        // Prepend in reverse order so the closest-to-center item is last (rightmost of the prepended group)
+        const toPrepend = [...extraBtns].reverse();
+        toPrepend.forEach(e => trackEl.insertBefore(e, trackEl.firstChild));
+        adjustedItemEls = [...toPrepend, ...itemEls];
+
+        // Prepending shifts all existing items right — compensate immediately so nothing jumps
+        trackEl.style.transition = "none";
+        const extraWidth = toPrepend.reduce((sum, e) => sum + e.getBoundingClientRect().width, 0);
+        const cur = parseFloat(trackEl.style.transform.match(/translateX\((-?[\d.]+)px\)/)?.[1] ?? "0");
+        trackEl.style.transform = `translateX(${cur - extraWidth}px)`;
+        trackEl.getBoundingClientRect(); // force reflow before re-enabling transition
+        trackEl.style.transition = "";
+      }
+
       // Animate track to center the clicked item
-      trackEl.style.transform = `translateX(${computeTranslateToItem(itemEls, i)}px)`;
+      const targetIndex = adjustedItemEls.indexOf(btn);
+      trackEl.style.transform = `translateX(${computeTranslateToItem(adjustedItemEls, targetIndex)}px)`;
 
       trackEl.addEventListener("transitionend", () => {
-        const n = projects.length;
         dockActiveIndex = ((dockActiveIndex + offset) % n + n) % n;
 
         // Silent re-render with new active at center
