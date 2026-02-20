@@ -148,27 +148,63 @@ function attachDockClickHandlers(itemEls, projects, trackEl) {
         trackEl.style.transition = "";
       }
 
-      // Measure positions using pre-animation widths (before class changes affect layout)
+      // Compute what class each item will have in its final state.
+      // Trailing items (newDist > DOCK_WINDOW_HALF) slide off-screen; skip them.
+      const distClassNames = ["dock-item--d1", "dock-item--d2", "dock-item--d3"];
+      const finalClassData = adjustedItemEls.map((el) => {
+        const elOffset = parseInt(el.dataset.offset, 10);
+        const newDist = Math.abs(elOffset - offset);
+        if (newDist > DOCK_WINDOW_HALF) return null;
+        return { newDist, newCls: getDockDistanceClass(newDist) };
+      });
+
+      // Save each item's current distance classes so we can restore them after measuring.
+      const savedClasses = adjustedItemEls.map(el =>
+        distClassNames.filter(c => el.classList.contains(c))
+      );
+
+      // Apply final classes without transition to measure the target widths accurately.
+      // Items change font-size between distance classes, so using pre-animation widths
+      // would cause the track to land in the wrong spot and snap on re-render.
+      adjustedItemEls.forEach(el => { el.style.transition = "none"; });
+      adjustedItemEls.forEach((el, i) => {
+        if (finalClassData[i] === null) return;
+        el.classList.remove(...distClassNames);
+        if (finalClassData[i].newCls) el.classList.add(finalClassData[i].newCls);
+      });
+      trackEl.getBoundingClientRect(); // force reflow so widths reflect final classes
+
       const targetIndex = adjustedItemEls.indexOf(btn);
       const targetTranslate = computeTranslateToItem(adjustedItemEls, targetIndex);
 
-      // Update distance classes → CSS transitions fire concurrently with the track slide.
-      // Skip trailing items (newDist > DOCK_WINDOW_HALF): they slide off-screen and don't
-      // need a class update. Updating them would cause a visible snap when the re-render
-      // replaces them with items at a less-extreme distance class.
-      adjustedItemEls.forEach((el) => {
-        const elOffset = parseInt(el.dataset.offset, 10);
-        const newDist = Math.abs(elOffset - offset);
-        if (newDist > DOCK_WINDOW_HALF) return;
-        const newCls = getDockDistanceClass(newDist);
-        el.classList.remove("dock-item--d1", "dock-item--d2", "dock-item--d3");
-        if (newCls) el.classList.add(newCls);
-        el.setAttribute("aria-current", newDist === 0 ? "page" : "false");
+      // Restore original classes before starting the visible animation.
+      adjustedItemEls.forEach((el, i) => {
+        el.classList.remove(...distClassNames);
+        savedClasses[i].forEach(c => el.classList.add(c));
       });
 
+      // Re-enable transitions; force reflow so the browser registers the from-state.
+      adjustedItemEls.forEach(el => { el.style.transition = ""; });
+      trackEl.getBoundingClientRect();
+
+      // Apply final classes — items animate smoothly from old to new.
+      adjustedItemEls.forEach((el, i) => {
+        if (finalClassData[i] === null) return;
+        el.classList.remove(...distClassNames);
+        if (finalClassData[i].newCls) el.classList.add(finalClassData[i].newCls);
+        el.setAttribute("aria-current", finalClassData[i].newDist === 0 ? "page" : "false");
+      });
+
+      // Slide the track to the final position (computed with final widths, so no snap on re-render).
       trackEl.style.transform = `translateX(${targetTranslate}px)`;
 
-      trackEl.addEventListener("transitionend", () => {
+      // Wait for the track's own transform transition only.
+      // transitionend bubbles from child elements too, so filter by target and property
+      // to avoid a premature re-render triggered by an item's font-size/opacity transition.
+      function onTrackTransitionEnd(e) {
+        if (e.target !== trackEl || e.propertyName !== "transform") return;
+        trackEl.removeEventListener("transitionend", onTrackTransitionEnd);
+
         dockActiveIndex = ((dockActiveIndex + offset) % n + n) % n;
 
         // Silent re-render with new active at center
@@ -182,7 +218,8 @@ function attachDockClickHandlers(itemEls, projects, trackEl) {
             attachDockClickHandlers(newItemEls, projects, trackEl);
           });
         });
-      }, { once: true });
+      }
+      trackEl.addEventListener("transitionend", onTrackTransitionEnd);
     });
   });
 }
