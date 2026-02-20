@@ -152,10 +152,14 @@ function attachDockClickHandlers(itemEls, projects, trackEl) {
       const targetIndex = adjustedItemEls.indexOf(btn);
       const targetTranslate = computeTranslateToItem(adjustedItemEls, targetIndex);
 
-      // Update distance classes → CSS transitions fire concurrently with the track slide
+      // Update distance classes → CSS transitions fire concurrently with the track slide.
+      // Skip trailing items (newDist > DOCK_WINDOW_HALF): they slide off-screen and don't
+      // need a class update. Updating them would cause a visible snap when the re-render
+      // replaces them with items at a less-extreme distance class.
       adjustedItemEls.forEach((el) => {
         const elOffset = parseInt(el.dataset.offset, 10);
         const newDist = Math.abs(elOffset - offset);
+        if (newDist > DOCK_WINDOW_HALF) return;
         const newCls = getDockDistanceClass(newDist);
         el.classList.remove("dock-item--d1", "dock-item--d2", "dock-item--d3");
         if (newCls) el.classList.add(newCls);
