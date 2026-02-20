@@ -59,3 +59,107 @@ header button {
   cursor: pointer;
   font-size: 0.9rem;
 }
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.modal-overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  width: min(420px, 90vw);
+  overflow: hidden;
+  transform: scale(1);
+  transition: transform 0.2s ease;
+}
+
+.modal-overlay.hidden .modal {
+  transform: scale(0.95);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  background-color: #2d6a2d;
+  color: #f4f8f4;
+}
+
+.modal-header h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: #f4f8f4;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 0.25rem;
+  border-radius: 4px;
+}
+
+.close-btn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.modal-body {
+  padding: 0.5rem 0;
+}
+
+.account-field {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid #e8f0e8;
+}
+
+.account-field:last-child {
+  border-bottom: none;
+}
+
+.field-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #5a8a5a;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.account-field > span:not(.field-label) {
+  font-size: 0.95rem;
+  color: #1a2e1a;
+}
+
+#account-projects {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin-top: 0.25rem;
+}
+
+#account-projects li {
+  font-size: 0.95rem;
+  color: #1a2e1a;
+  padding: 0.15rem 0;
+}

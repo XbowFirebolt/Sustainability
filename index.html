@@ -15,12 +15,38 @@
         <span>Hang in there!</span>
       </section>
       <section class="header-right">
-        <button>Account</button>
+        <button id="account-btn">Account</button>
       </section>
     </header>
     <main>
       <h1>Sustainability Tracker</h1>
     </main>
+    <div id="account-modal" class="modal-overlay hidden">
+      <div class="modal">
+        <div class="modal-header">
+          <h2>My Account</h2>
+          <button id="close-modal" class="close-btn">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="account-field">
+            <span class="field-label">Username</span>
+            <span id="account-username"></span>
+          </div>
+          <div class="account-field">
+            <span class="field-label">Email</span>
+            <span id="account-email"></span>
+          </div>
+          <div class="account-field">
+            <span class="field-label">Password</span>
+            <span id="account-password">••••••••</span>
+          </div>
+          <div class="account-field">
+            <span class="field-label">Favorite Projects</span>
+            <ul id="account-projects"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>
