@@ -23,3 +23,39 @@ h1 {
   font-weight: 600;
   color: #2d6a2d;
 }
+
+header {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  background-color: #2d6a2d;
+  color: #f4f8f4;
+}
+
+.header-left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.header-center {
+  display: flex;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.header-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+header button {
+  background: transparent;
+  border: 1px solid #f4f8f4;
+  color: #f4f8f4;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
