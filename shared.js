@@ -1,13 +1,13 @@
 // Project catalog
 const PROJECT_CATALOG = [
-  { id: "reforestation", name: "Reforestation Initiative", description: "Restore native forests and wildlife corridors by planting millions of trees in deforested regions.", color: "#2d6a2d", emoji: "🌳" },
-  { id: "ocean-cleanup", name: "Ocean Cleanup Project", description: "Deploy floating barriers and river interceptors to remove plastic waste from the world's oceans.", color: "#1a6080", emoji: "🌊" },
-  { id: "urban-solar", name: "Urban Solar Grid", description: "Equip city rooftops and public infrastructure with solar panels to accelerate the clean energy transition.", color: "#b07a10", emoji: "☀️" },
-  { id: "coral-restore", name: "Coral Reef Restoration", description: "Grow and transplant heat-resistant coral fragments to rebuild damaged reef ecosystems.", color: "#c0440a", emoji: "🪸" },
-  { id: "food-waste", name: "Food Waste Reduction", description: "Partner with grocers and restaurants to redirect surplus food to communities in need.", color: "#7a5a1a", emoji: "♻️" },
-  { id: "clean-water", name: "Clean Water Access", description: "Install filtration systems and wells in regions lacking safe drinking water.", color: "#2060a0", emoji: "💧" },
-  { id: "rewilding", name: "Rewilding Project", description: "Reintroduce keystone species and remove invasive plants to restore natural ecosystem balance.", color: "#4a7a2a", emoji: "🐺" },
-  { id: "urban-green", name: "Urban Green Spaces", description: "Transform vacant lots and rooftops into community gardens and pocket parks.", color: "#3a7a3a", emoji: "🌿" },
+  { id: "reforestation", name: "Reforestation Initiative", description: "Restore native forests and wildlife corridors by planting millions of trees in deforested regions.", color: "#2d6a2d", emoji: "🌳", map: "map.png" },
+  { id: "ocean-cleanup", name: "Ocean Cleanup Project", description: "Deploy floating barriers and river interceptors to remove plastic waste from the world's oceans.", color: "#1a6080", emoji: "🌊", map: "map.png" },
+  { id: "urban-solar", name: "Urban Solar Grid", description: "Equip city rooftops and public infrastructure with solar panels to accelerate the clean energy transition.", color: "#b07a10", emoji: "☀️", map: "map.png" },
+  { id: "coral-restore", name: "Coral Reef Restoration", description: "Grow and transplant heat-resistant coral fragments to rebuild damaged reef ecosystems.", color: "#c0440a", emoji: "🪸", map: "map.png" },
+  { id: "food-waste", name: "Food Waste Reduction", description: "Partner with grocers and restaurants to redirect surplus food to communities in need.", color: "#7a5a1a", emoji: "♻️", map: "map.png" },
+  { id: "clean-water", name: "Clean Water Access", description: "Install filtration systems and wells in regions lacking safe drinking water.", color: "#2060a0", emoji: "💧", map: "map.png" },
+  { id: "rewilding", name: "Rewilding Project", description: "Reintroduce keystone species and remove invasive plants to restore natural ecosystem balance.", color: "#4a7a2a", emoji: "🐺", map: "map.png" },
+  { id: "urban-green", name: "Urban Green Spaces", description: "Transform vacant lots and rooftops into community gardens and pocket parks.", color: "#3a7a3a", emoji: "🌿", map: "map.png" },
 ];
 
 // Theme utilities
@@ -47,6 +47,7 @@ function applyProjectTheme(project) {
   root.style.setProperty("--color-text-dim",     `hsl(${h}, ${sat}%, 37%)`);
   root.style.setProperty("--color-border",       `hsl(${h}, ${sat}%, 88%)`);
   root.style.setProperty("--color-input-border", `hsl(${h}, ${Math.min(s, 35)}%, 76%)`);
+  document.body.style.backgroundImage = `url('./${project.map}')`;
 }
 
 // Account data

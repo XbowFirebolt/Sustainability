@@ -18,6 +18,9 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background-color: var(--color-bg);
+  background-image: url('./map.png');
+  background-size: cover;
+  background-position: center;
   color: var(--color-text);
   min-height: 100dvh;
   transition: background-color 0.5s ease, color 0.5s ease;
