@@ -47,7 +47,9 @@ function applyProjectTheme(project) {
   root.style.setProperty("--color-text-dim",     `hsl(${h}, ${sat}%, 37%)`);
   root.style.setProperty("--color-border",       `hsl(${h}, ${sat}%, 88%)`);
   root.style.setProperty("--color-input-border", `hsl(${h}, ${Math.min(s, 35)}%, 76%)`);
-  document.body.style.backgroundImage = `url('./${project.map}')`;
+  if (!document.body.classList.contains("no-map")) {
+    document.body.style.backgroundImage = `url('./${project.map}')`;
+  }
 }
 
 // Account data

@@ -334,6 +334,11 @@ header button {
   background-color: rgba(255, 255, 255, 0.15);
 }
 
+/* Suppress map background on pages that don't use it */
+body.no-map {
+  background-image: none;
+}
+
 /* Discover page layout */
 .discover-page {
   display: block;
