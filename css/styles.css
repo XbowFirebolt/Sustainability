@@ -5,6 +5,7 @@
 }
 
 :root {
+  --header-height: 3.25rem;
   --color-primary: #2d6a2d;
   --color-primary-rgb: 45, 106, 45;
   --color-bg: #f4f8f4;
@@ -41,6 +42,9 @@ h1 {
 }
 
 header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   align-items: center;
@@ -349,7 +353,7 @@ body.no-map {
   padding: 1rem;
   border-bottom: 1px solid var(--color-border);
   position: sticky;
-  top: 0;
+  top: var(--header-height);
   background-color: var(--color-bg);
   z-index: 10;
   transition: background-color 0.5s ease;
