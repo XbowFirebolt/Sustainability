@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sustainability Tracker</title>
+    <title>Discover Projects — Sustainability Tracker</title>
     <link rel="stylesheet" href="styles.css" />
     <script>
       (function () {
@@ -47,17 +47,20 @@
   <body>
     <header>
       <section class="header-left">
-        <button>Donate</button>
+        <a href="index.html" class="back-btn">← Back</a>
       </section>
       <section class="header-center">
-        <span>Hang in there!</span>
+        <span>Discover Projects</span>
       </section>
       <section class="header-right">
         <button id="account-btn">Account</button>
       </section>
     </header>
-    <main>
-      <h1>Sustainability Tracker</h1>
+    <main class="discover-page">
+      <div class="discover-search-wrap">
+        <input id="discover-search" class="discover-search" type="search" placeholder="Search projects…" />
+      </div>
+      <div id="discover-grid" class="discover-grid"></div>
     </main>
     <div id="account-modal" class="modal-overlay hidden">
       <div class="modal">
@@ -85,10 +88,7 @@
         </div>
       </div>
     </div>
-    <nav id="project-dock" class="dock" aria-label="Favorite projects">
-      <div class="dock-track" id="dock-track"></div>
-    </nav>
-    <a href="discover.html" class="discover-btn" aria-label="Discover projects">+</a>
     <script src="shared.js"></script>
+    <script src="discover.js"></script>
   </body>
 </html>

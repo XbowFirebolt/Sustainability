@@ -265,6 +265,7 @@ header button {
   font-size: 1.75rem;
   line-height: 1;
   cursor: pointer;
+  text-decoration: none;
   box-shadow: 0 4px 24px rgba(var(--color-primary-rgb), 0.4), 0 1px 4px rgba(0, 0, 0, 0.15);
   z-index: 50;
   display: flex;
@@ -278,62 +279,35 @@ header button {
   box-shadow: 0 6px 28px rgba(var(--color-primary-rgb), 0.5);
 }
 
-/* Discover overlay */
-.discover-overlay {
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  z-index: 100;
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 0.25s ease, visibility 0.25s ease;
-}
-
-.discover-overlay.hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.discover-panel {
-  background: #fff;
-  border-radius: 16px 16px 0 0;
-  width: min(640px, 100vw);
-  max-height: 80dvh;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  transform: translateY(0);
-  transition: transform 0.25s ease;
-}
-
-.discover-overlay.hidden .discover-panel {
-  transform: translateY(32px);
-}
-
-.discover-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 1.25rem;
-  background-color: var(--color-primary);
+/* Back link (discover page header) */
+.back-btn {
   color: #f4f8f4;
-  flex-shrink: 0;
-  transition: background-color 0.5s ease;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.4rem 1rem;
+  border: 1px solid #f4f8f4;
+  border-radius: 4px;
 }
 
-.discover-header h2 {
-  font-size: 1.1rem;
-  font-weight: 600;
+.back-btn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Discover page layout */
+.discover-page {
+  display: block;
+  padding: 0 0 2rem;
 }
 
 .discover-search-wrap {
-  padding: 0.75rem 1rem;
+  padding: 1rem;
   border-bottom: 1px solid var(--color-border);
-  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  background-color: var(--color-bg);
+  z-index: 10;
+  transition: background-color 0.5s ease;
 }
 
 .discover-search {
@@ -345,6 +319,7 @@ header button {
   background: var(--color-bg);
   color: var(--color-text);
   outline: none;
+  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
 }
 
 .discover-search:focus {
@@ -352,17 +327,17 @@ header button {
 }
 
 .discover-grid {
-  overflow-y: auto;
   padding: 1rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  align-content: start;
 }
 
 /* Project card */
 .project-card {
   border: 1px solid var(--color-border);
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -370,25 +345,25 @@ header button {
 }
 
 .project-card-image {
-  height: 80px;
+  height: 140px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 3.5rem;
   position: relative;
   flex-shrink: 0;
 }
 
 .project-card-star {
   position: absolute;
-  top: 6px;
-  right: 6px;
+  top: 10px;
+  right: 10px;
   background: rgba(255, 255, 255, 0.85);
   border: none;
   border-radius: 50%;
-  width: 28px;
-  height: 28px;
-  font-size: 1rem;
+  width: 34px;
+  height: 34px;
+  font-size: 1.1rem;
   line-height: 1;
   cursor: pointer;
   display: flex;
@@ -407,20 +382,20 @@ header button {
 }
 
 .project-card-body {
-  padding: 0.6rem 0.75rem 0.75rem;
+  padding: 0.9rem 1rem 1rem;
 }
 
 .project-card-name {
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--color-text);
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
 }
 
 .project-card-desc {
-  font-size: 0.775rem;
+  font-size: 0.875rem;
   color: var(--color-text-dim);
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .discover-empty {
