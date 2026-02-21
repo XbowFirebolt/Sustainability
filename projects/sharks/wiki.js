@@ -89,8 +89,11 @@ function saveFavorites(ids) {
 
 // Species detail modal
 const speciesModal = document.getElementById("species-modal");
+let activeCard = null;
 
-function openSpeciesModal(species) {
+function openSpeciesModal(species, cardEl) {
+  activeCard = cardEl;
+
   const imgArea = document.getElementById("species-modal-image");
   if (species.photo) {
     imgArea.style.backgroundImage = `url(${species.photo})`;
@@ -118,11 +121,57 @@ function openSpeciesModal(species) {
   document.getElementById("species-modal-threats").textContent = species.threats;
   document.getElementById("species-modal-funfact").textContent = species.funFact;
 
+  const modalContent = speciesModal.querySelector('.species-modal');
+  const cardRect = cardEl.getBoundingClientRect();
+
+  // Disable transition and show overlay (starts its opacity fade)
+  modalContent.style.transition = 'none';
   speciesModal.classList.remove("hidden");
+
+  // Force reflow to get modal's natural centered position
+  const modalRect = modalContent.getBoundingClientRect();
+
+  // Translate + scale to place the modal exactly over the card
+  const tx = (cardRect.left + cardRect.width / 2) - (modalRect.left + modalRect.width / 2);
+  const ty = (cardRect.top + cardRect.height / 2) - (modalRect.top + modalRect.height / 2);
+  const scale = cardRect.width / modalRect.width;
+
+  // Snap to card position (no transition yet)
+  modalContent.style.transform = `translate(${tx}px, ${ty}px) scale(${scale})`;
+  modalContent.getBoundingClientRect(); // commit starting state
+
+  // Re-enable transition and animate to natural centered position
+  modalContent.style.transition = '';
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      modalContent.style.transform = '';
+    });
+  });
 }
 
 function closeSpeciesModal() {
-  speciesModal.classList.add("hidden");
+  const modalContent = speciesModal.querySelector('.species-modal');
+
+  if (activeCard) {
+    const cardRect = activeCard.getBoundingClientRect();
+    const modalRect = modalContent.getBoundingClientRect();
+
+    const tx = (cardRect.left + cardRect.width / 2) - (modalRect.left + modalRect.width / 2);
+    const ty = (cardRect.top + cardRect.height / 2) - (modalRect.top + modalRect.height / 2);
+    const scale = cardRect.width / modalRect.width;
+
+    // Animate modal back to card; fade overlay simultaneously
+    modalContent.style.transform = `translate(${tx}px, ${ty}px) scale(${scale})`;
+    speciesModal.classList.add("hidden");
+
+    // After animation, reset for next open
+    setTimeout(() => {
+      modalContent.style.transform = '';
+      activeCard = null;
+    }, 400);
+  } else {
+    speciesModal.classList.add("hidden");
+  }
 }
 
 document.getElementById("species-modal-close").addEventListener("click", closeSpeciesModal);
@@ -163,7 +212,7 @@ function renderWikiGrid(query) {
 
     const card = document.createElement("div");
     card.className = "species-card";
-    card.addEventListener("click", () => openSpeciesModal(species));
+    card.addEventListener("click", () => openSpeciesModal(species, card));
 
     // Image area
     const imgArea = document.createElement("div");

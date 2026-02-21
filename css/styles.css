@@ -93,7 +93,7 @@ header button {
   z-index: 100;
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.2s ease, visibility 0.2s ease;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
 }
 
 .modal-overlay.hidden {
@@ -109,11 +109,11 @@ header button {
   width: min(420px, 90vw);
   overflow: hidden;
   transform: scale(1);
-  transition: transform 0.2s ease;
+  transition: transform 0.35s cubic-bezier(0.34, 1.2, 0.64, 1);
 }
 
 .modal-overlay.hidden .modal {
-  transform: scale(0.95);
+  transform: scale(1);
 }
 
 .modal-header {
@@ -590,15 +590,15 @@ body.no-map {
 
 /* Species detail modal */
 .species-modal {
-  width: min(640px, 92vw);
-  max-height: 88vh;
+  width: min(95vw, 1200px);
+  max-height: 92vh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
 
 .species-modal-image {
-  height: 200px;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
