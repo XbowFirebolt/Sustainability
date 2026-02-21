@@ -65,6 +65,7 @@ header {
 .header-right {
   display: flex;
   justify-content: flex-end;
+  gap: 0.75rem;
 }
 
 header button {
@@ -278,6 +279,42 @@ header button {
 }
 
 .discover-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 28px rgba(var(--color-primary-rgb), 0.5);
+}
+
+/* Map corner buttons (wiki + health) */
+.wiki-btn,
+.health-btn {
+  position: fixed;
+  top: 4.5rem;
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  background-color: var(--color-primary);
+  color: #f4f8f4;
+  border: none;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 4px 24px rgba(var(--color-primary-rgb), 0.4), 0 1px 4px rgba(0, 0, 0, 0.15);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.5s ease;
+}
+
+.wiki-btn {
+  right: 1.5rem;
+}
+
+.health-btn {
+  left: 1.5rem;
+}
+
+.wiki-btn:hover,
+.health-btn:hover {
   transform: scale(1.08);
   box-shadow: 0 6px 28px rgba(var(--color-primary-rgb), 0.5);
 }
