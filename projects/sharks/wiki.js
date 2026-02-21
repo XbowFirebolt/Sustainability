@@ -54,10 +54,39 @@ function getLifeBarColor(percent) {
   return "#2d6a2d";
 }
 
-function renderWikiGrid() {
-  const grid = document.getElementById("wiki-grid");
+function loadNotifications() {
+  return JSON.parse(localStorage.getItem("sharkNotifications") || "[]");
+}
 
-  SHARK_SPECIES.forEach((species) => {
+function saveNotifications(ids) {
+  localStorage.setItem("sharkNotifications", JSON.stringify(ids));
+}
+
+function renderWikiGrid(query) {
+  const grid = document.getElementById("wiki-grid");
+  const q = query ? query.trim().toLowerCase() : "";
+  const filtered = q
+    ? SHARK_SPECIES.filter(
+        (s) =>
+          s.commonName.toLowerCase().includes(q) ||
+          s.scientificName.toLowerCase().includes(q) ||
+          s.statusLabel.toLowerCase().includes(q)
+      )
+    : SHARK_SPECIES;
+
+  grid.innerHTML = "";
+
+  if (filtered.length === 0) {
+    const empty = document.createElement("p");
+    empty.className = "discover-empty";
+    empty.textContent = "No species match your search.";
+    grid.appendChild(empty);
+    return;
+  }
+
+  filtered.forEach((species) => {
+    const isNotified = loadNotifications().includes(species.id);
+
     const card = document.createElement("div");
     card.className = "species-card";
 
@@ -72,6 +101,27 @@ function renderWikiGrid() {
       imgArea.textContent = "🦈";
       imgArea.style.background = "linear-gradient(135deg, #0a1525, #1a3a6a)";
     }
+
+    // Notification bell button
+    const bellBtn = document.createElement("button");
+    bellBtn.className = "species-card-notify" + (isNotified ? " notified" : "");
+    bellBtn.textContent = "🔔";
+    bellBtn.setAttribute(
+      "aria-label",
+      isNotified ? `Unsubscribe from ${species.commonName}` : `Subscribe to ${species.commonName}`
+    );
+    bellBtn.addEventListener("click", () => {
+      const ids = loadNotifications();
+      const idx = ids.indexOf(species.id);
+      if (idx === -1) {
+        ids.push(species.id);
+      } else {
+        ids.splice(idx, 1);
+      }
+      saveNotifications(ids);
+      renderWikiGrid(wikiSearch.value);
+    });
+    imgArea.appendChild(bellBtn);
 
     // Card body
     const body = document.createElement("div");
@@ -134,4 +184,7 @@ function renderWikiGrid() {
 const sharkProject = PROJECT_CATALOG.find((p) => p.id === "shark-populations");
 applyProjectTheme(sharkProject);
 
-renderWikiGrid();
+const wikiSearch = document.getElementById("wiki-search");
+wikiSearch.addEventListener("input", () => renderWikiGrid(wikiSearch.value));
+
+renderWikiGrid("");
