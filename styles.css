@@ -4,11 +4,23 @@
   padding: 0;
 }
 
+:root {
+  --color-primary: #2d6a2d;
+  --color-primary-rgb: 45, 106, 45;
+  --color-bg: #f4f8f4;
+  --color-text: #1a2e1a;
+  --color-text-muted: #5a8a5a;
+  --color-text-dim: #4a6a4a;
+  --color-border: #e8f0e8;
+  --color-input-border: #c8dfc8;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background-color: #f4f8f4;
-  color: #1a2e1a;
+  background-color: var(--color-bg);
+  color: var(--color-text);
   min-height: 100dvh;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 main {
@@ -21,7 +33,8 @@ main {
 h1 {
   font-size: clamp(1.5rem, 5vw, 2.5rem);
   font-weight: 600;
-  color: #2d6a2d;
+  color: var(--color-primary);
+  transition: color 0.5s ease;
 }
 
 header {
@@ -29,8 +42,9 @@ header {
   grid-template-columns: 1fr 3fr 1fr;
   align-items: center;
   padding: 0.75rem 1.5rem;
-  background-color: #2d6a2d;
+  background-color: var(--color-primary);
   color: #f4f8f4;
+  transition: background-color 0.5s ease;
 }
 
 .header-left {
@@ -99,7 +113,7 @@ header button {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 1.25rem;
-  background-color: #2d6a2d;
+  background-color: var(--color-primary);
   color: #f4f8f4;
 }
 
@@ -131,7 +145,7 @@ header button {
   display: flex;
   flex-direction: column;
   padding: 0.75rem 1.25rem;
-  border-bottom: 1px solid #e8f0e8;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .account-field:last-child {
@@ -141,7 +155,7 @@ header button {
 .field-label {
   font-size: 0.75rem;
   font-weight: 600;
-  color: #5a8a5a;
+  color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 0.25rem;
@@ -149,7 +163,7 @@ header button {
 
 .account-field > span:not(.field-label) {
   font-size: 0.95rem;
-  color: #1a2e1a;
+  color: var(--color-text);
 }
 
 #account-projects {
@@ -160,7 +174,7 @@ header button {
 
 #account-projects li {
   font-size: 0.95rem;
-  color: #1a2e1a;
+  color: var(--color-text);
   padding: 0.15rem 0;
 }
 
@@ -172,13 +186,14 @@ header button {
   transform: translateX(-50%);
   width: min(480px, 88vw);
   height: 52px;
-  background-color: #2d6a2d;
+  background-color: var(--color-primary);
   border-radius: 999px;
-  box-shadow: 0 4px 24px rgba(45, 106, 45, 0.35), 0 1px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 24px rgba(var(--color-primary-rgb), 0.35), 0 1px 4px rgba(0, 0, 0, 0.15);
   overflow: hidden;
   display: flex;
   align-items: center;
   z-index: 50;
+  transition: background-color 0.5s ease;
 }
 
 .dock--hidden {
@@ -244,23 +259,23 @@ header button {
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background-color: #2d6a2d;
+  background-color: var(--color-primary);
   color: #f4f8f4;
   border: none;
   font-size: 1.75rem;
   line-height: 1;
   cursor: pointer;
-  box-shadow: 0 4px 24px rgba(45, 106, 45, 0.4), 0 1px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 24px rgba(var(--color-primary-rgb), 0.4), 0 1px 4px rgba(0, 0, 0, 0.15);
   z-index: 50;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.5s ease;
 }
 
 .discover-btn:hover {
   transform: scale(1.08);
-  box-shadow: 0 6px 28px rgba(45, 106, 45, 0.5);
+  box-shadow: 0 6px 28px rgba(var(--color-primary-rgb), 0.5);
 }
 
 /* Discover overlay */
@@ -304,9 +319,10 @@ header button {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 1.25rem;
-  background-color: #2d6a2d;
+  background-color: var(--color-primary);
   color: #f4f8f4;
   flex-shrink: 0;
+  transition: background-color 0.5s ease;
 }
 
 .discover-header h2 {
@@ -316,23 +332,23 @@ header button {
 
 .discover-search-wrap {
   padding: 0.75rem 1rem;
-  border-bottom: 1px solid #e8f0e8;
+  border-bottom: 1px solid var(--color-border);
   flex-shrink: 0;
 }
 
 .discover-search {
   width: 100%;
   padding: 0.5rem 0.75rem;
-  border: 1px solid #c8dfc8;
+  border: 1px solid var(--color-input-border);
   border-radius: 6px;
   font-size: 0.95rem;
-  background: #f4f8f4;
-  color: #1a2e1a;
+  background: var(--color-bg);
+  color: var(--color-text);
   outline: none;
 }
 
 .discover-search:focus {
-  border-color: #2d6a2d;
+  border-color: var(--color-primary);
 }
 
 .discover-grid {
@@ -345,7 +361,7 @@ header button {
 
 /* Project card */
 .project-card {
-  border: 1px solid #e8f0e8;
+  border: 1px solid var(--color-border);
   border-radius: 8px;
   overflow: hidden;
   display: flex;
@@ -397,20 +413,20 @@ header button {
 .project-card-name {
   font-size: 0.875rem;
   font-weight: 600;
-  color: #1a2e1a;
+  color: var(--color-text);
   margin-bottom: 0.3rem;
 }
 
 .project-card-desc {
   font-size: 0.775rem;
-  color: #4a6a4a;
+  color: var(--color-text-dim);
   line-height: 1.4;
 }
 
 .discover-empty {
   grid-column: 1 / -1;
   text-align: center;
-  color: #5a8a5a;
+  color: var(--color-text-muted);
   font-size: 0.9rem;
   padding: 2rem;
 }

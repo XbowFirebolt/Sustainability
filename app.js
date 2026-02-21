@@ -12,6 +12,44 @@ const PROJECT_CATALOG = [
   { id: "urban-green", name: "Urban Green Spaces", description: "Transform vacant lots and rooftops into community gardens and pocket parks.", color: "#3a7a3a", emoji: "🌿" },
 ];
 
+// Theme utilities
+function hexToHsl(hex) {
+  let r = parseInt(hex.slice(1, 3), 16) / 255;
+  let g = parseInt(hex.slice(3, 5), 16) / 255;
+  let b = parseInt(hex.slice(5, 7), 16) / 255;
+  const max = Math.max(r, g, b), min = Math.min(r, g, b);
+  let h = 0, s = 0;
+  const l = (max + min) / 2;
+  if (max !== min) {
+    const d = max - min;
+    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+    switch (max) {
+      case r: h = ((g - b) / d + (g < b ? 6 : 0)) / 6; break;
+      case g: h = ((b - r) / d + 2) / 6; break;
+      case b: h = ((r - g) / d + 4) / 6; break;
+    }
+  }
+  return [Math.round(h * 360), Math.round(s * 100), Math.round(l * 100)];
+}
+
+function applyProjectTheme(project) {
+  if (!project) return;
+  const [h, s] = hexToHsl(project.color);
+  const pr = parseInt(project.color.slice(1, 3), 16);
+  const pg = parseInt(project.color.slice(3, 5), 16);
+  const pb = parseInt(project.color.slice(5, 7), 16);
+  const sat = Math.min(s, 25);
+  const root = document.documentElement;
+  root.style.setProperty("--color-primary",      project.color);
+  root.style.setProperty("--color-primary-rgb",  `${pr}, ${pg}, ${pb}`);
+  root.style.setProperty("--color-bg",           `hsl(${h}, ${sat}%, 96%)`);
+  root.style.setProperty("--color-text",         `hsl(${h}, ${Math.min(s, 30)}%, 12%)`);
+  root.style.setProperty("--color-text-muted",   `hsl(${h}, ${sat}%, 42%)`);
+  root.style.setProperty("--color-text-dim",     `hsl(${h}, ${sat}%, 37%)`);
+  root.style.setProperty("--color-border",       `hsl(${h}, ${sat}%, 88%)`);
+  root.style.setProperty("--color-input-border", `hsl(${h}, ${Math.min(s, 35)}%, 76%)`);
+}
+
 // Account data
 const DEFAULT_ACCOUNT = {
   username: "eco_user",
@@ -126,6 +164,9 @@ function attachDockClickHandlers(itemEls, projects, trackEl) {
       const direction = Math.sign(offset);
       const absOffset = Math.abs(offset);
       const n = projects.length;
+
+      const newActiveIdx = ((dockActiveIndex + offset) % n + n) % n;
+      applyProjectTheme(PROJECT_CATALOG.find(p => p.name === projects[newActiveIdx]));
 
       // Pre-add the item(s) about to slide in from the leading edge so they
       // move with the track instead of appearing abruptly after re-render.
@@ -255,6 +296,7 @@ function buildDock(projects) {
   trackEl.style.paddingRight = `${halfDock}px`;
 
   dockActiveIndex = 0;
+  applyProjectTheme(PROJECT_CATALOG.find(p => p.name === projects[0]));
   const itemEls = renderDockWindow(projects, trackEl);
 
   // Initial position without animation
