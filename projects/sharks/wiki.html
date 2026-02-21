@@ -3,23 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sustainability Tracker</title>
-    <link rel="stylesheet" href="css/styles.css" />
-    <script src="js/theme-init.js"></script>
+    <title>Shark Species — Sustainability Tracker</title>
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <script src="../../js/theme-init.js"></script>
   </head>
-  <body>
+  <body class="no-map">
     <header>
       <section class="header-left">
-        <button>Donate</button>
+        <a href="../../index.html" class="back-btn">← Back</a>
       </section>
       <section class="header-center">
-        <span>Hang in there!</span>
+        <span>Shark Species</span>
       </section>
       <section class="header-right">
         <button id="about-btn">About</button>
         <button id="account-btn">Account</button>
       </section>
     </header>
+    <main class="discover-page">
+      <div id="wiki-grid" class="wiki-grid"></div>
+    </main>
     <div id="account-modal" class="modal-overlay hidden">
       <div class="modal">
         <div class="modal-header">
@@ -46,12 +49,7 @@
         </div>
       </div>
     </div>
-    <nav id="project-dock" class="dock" aria-label="Favorite projects">
-      <div class="dock-track" id="dock-track"></div>
-    </nav>
-    <a href="projects/sharks/wiki.html" class="wiki-btn" aria-label="Learn about this effort">&#128218;</a>
-    <button class="health-btn" aria-label="Effort health and status">&#10084;</button>
-    <a href="discover.html" class="discover-btn" aria-label="Discover projects">+</a>
-    <script src="js/shared.js"></script>
+    <script src="../../js/shared.js"></script>
+    <script src="./wiki.js"></script>
   </body>
 </html>
