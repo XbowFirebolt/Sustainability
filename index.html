@@ -50,6 +50,19 @@
     <nav id="project-dock" class="dock" aria-label="Favorite projects">
       <div class="dock-track" id="dock-track"></div>
     </nav>
+    <button id="discover-btn" class="discover-btn" aria-label="Discover projects">+</button>
+    <div id="discover-overlay" class="discover-overlay hidden">
+      <div class="discover-panel">
+        <div class="discover-header">
+          <h2>Discover Projects</h2>
+          <button id="discover-close" class="close-btn">&times;</button>
+        </div>
+        <div class="discover-search-wrap">
+          <input id="discover-search" class="discover-search" type="search" placeholder="Search projects…" />
+        </div>
+        <div id="discover-grid" class="discover-grid"></div>
+      </div>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>

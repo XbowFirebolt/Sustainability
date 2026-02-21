@@ -1,5 +1,17 @@
 console.log("Sustainability Tracker running");
 
+// Project catalog
+const PROJECT_CATALOG = [
+  { id: "reforestation", name: "Reforestation Initiative", description: "Restore native forests and wildlife corridors by planting millions of trees in deforested regions.", color: "#2d6a2d", emoji: "🌳" },
+  { id: "ocean-cleanup", name: "Ocean Cleanup Project", description: "Deploy floating barriers and river interceptors to remove plastic waste from the world's oceans.", color: "#1a6080", emoji: "🌊" },
+  { id: "urban-solar", name: "Urban Solar Grid", description: "Equip city rooftops and public infrastructure with solar panels to accelerate the clean energy transition.", color: "#b07a10", emoji: "☀️" },
+  { id: "coral-restore", name: "Coral Reef Restoration", description: "Grow and transplant heat-resistant coral fragments to rebuild damaged reef ecosystems.", color: "#c0440a", emoji: "🪸" },
+  { id: "food-waste", name: "Food Waste Reduction", description: "Partner with grocers and restaurants to redirect surplus food to communities in need.", color: "#7a5a1a", emoji: "♻️" },
+  { id: "clean-water", name: "Clean Water Access", description: "Install filtration systems and wells in regions lacking safe drinking water.", color: "#2060a0", emoji: "💧" },
+  { id: "rewilding", name: "Rewilding Project", description: "Reintroduce keystone species and remove invasive plants to restore natural ecosystem balance.", color: "#4a7a2a", emoji: "🐺" },
+  { id: "urban-green", name: "Urban Green Spaces", description: "Transform vacant lots and rooftops into community gardens and pocket parks.", color: "#3a7a3a", emoji: "🌿" },
+];
+
 // Account data
 const DEFAULT_ACCOUNT = {
   username: "eco_user",
@@ -17,6 +29,10 @@ function loadAccount() {
   if (stored) return JSON.parse(stored);
   localStorage.setItem("account", JSON.stringify(DEFAULT_ACCOUNT));
   return DEFAULT_ACCOUNT;
+}
+
+function saveAccount(account) {
+  localStorage.setItem("account", JSON.stringify(account));
 }
 
 function populateModal(account) {
@@ -256,3 +272,108 @@ function buildDock(projects) {
   const account = loadAccount();
   buildDock(account.favoriteProjects);
 })();
+
+// Discover panel
+const discoverOverlay = document.getElementById("discover-overlay");
+const discoverBtn = document.getElementById("discover-btn");
+const discoverClose = document.getElementById("discover-close");
+const discoverSearch = document.getElementById("discover-search");
+const discoverGrid = document.getElementById("discover-grid");
+
+function renderDiscoverGrid(query) {
+  const account = loadAccount();
+  const q = query.trim().toLowerCase();
+  const filtered = q
+    ? PROJECT_CATALOG.filter(
+        (p) =>
+          p.name.toLowerCase().includes(q) ||
+          p.description.toLowerCase().includes(q)
+      )
+    : PROJECT_CATALOG;
+
+  discoverGrid.innerHTML = "";
+
+  if (filtered.length === 0) {
+    const empty = document.createElement("p");
+    empty.className = "discover-empty";
+    empty.textContent = "No projects match your search.";
+    discoverGrid.appendChild(empty);
+    return;
+  }
+
+  filtered.forEach((project) => {
+    const isFav = account.favoriteProjects.includes(project.name);
+
+    const card = document.createElement("div");
+    card.className = "project-card";
+
+    const imgArea = document.createElement("div");
+    imgArea.className = "project-card-image";
+    imgArea.style.backgroundColor = project.color;
+    imgArea.textContent = project.emoji;
+
+    const starBtn = document.createElement("button");
+    starBtn.className = "project-card-star" + (isFav ? " favorited" : "");
+    starBtn.textContent = isFav ? "★" : "☆";
+    starBtn.setAttribute(
+      "aria-label",
+      isFav ? `Unfavorite ${project.name}` : `Favorite ${project.name}`
+    );
+    starBtn.addEventListener("click", () => {
+      const acc = loadAccount();
+      const idx = acc.favoriteProjects.indexOf(project.name);
+      if (idx === -1) {
+        acc.favoriteProjects.push(project.name);
+      } else {
+        acc.favoriteProjects.splice(idx, 1);
+      }
+      saveAccount(acc);
+      buildDock(acc.favoriteProjects);
+      const nowFav = acc.favoriteProjects.includes(project.name);
+      starBtn.textContent = nowFav ? "★" : "☆";
+      starBtn.className = "project-card-star" + (nowFav ? " favorited" : "");
+      starBtn.setAttribute(
+        "aria-label",
+        nowFav ? `Unfavorite ${project.name}` : `Favorite ${project.name}`
+      );
+    });
+
+    imgArea.appendChild(starBtn);
+
+    const body = document.createElement("div");
+    body.className = "project-card-body";
+
+    const name = document.createElement("div");
+    name.className = "project-card-name";
+    name.textContent = project.name;
+
+    const desc = document.createElement("div");
+    desc.className = "project-card-desc";
+    desc.textContent = project.description;
+
+    body.appendChild(name);
+    body.appendChild(desc);
+    card.appendChild(imgArea);
+    card.appendChild(body);
+    discoverGrid.appendChild(card);
+  });
+}
+
+discoverBtn.addEventListener("click", () => {
+  discoverSearch.value = "";
+  renderDiscoverGrid("");
+  discoverOverlay.classList.remove("hidden");
+  discoverSearch.focus();
+});
+
+discoverClose.addEventListener("click", () => {
+  discoverOverlay.classList.add("hidden");
+});
+
+discoverOverlay.addEventListener("click", (e) => {
+  if (e.target === discoverOverlay) discoverOverlay.classList.add("hidden");
+});
+
+discoverSearch.addEventListener("input", () => {
+  renderDiscoverGrid(discoverSearch.value);
+});
