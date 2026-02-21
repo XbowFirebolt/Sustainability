@@ -8,6 +8,7 @@ const PROJECT_CATALOG = [
   { id: "clean-water", name: "Clean Water Access", description: "Install filtration systems and wells in regions lacking safe drinking water.", color: "#2060a0", emoji: "💧", map: "map.png" },
   { id: "rewilding", name: "Rewilding Project", description: "Reintroduce keystone species and remove invasive plants to restore natural ecosystem balance.", color: "#4a7a2a", emoji: "🐺", map: "map.png" },
   { id: "urban-green", name: "Urban Green Spaces", description: "Transform vacant lots and rooftops into community gardens and pocket parks.", color: "#3a7a3a", emoji: "🌿", map: "map.png" },
+  { id: "shark-populations", name: "Shark Population Recovery", description: "Monitor and protect declining shark populations through tagging programs, fishing regulation advocacy, and marine sanctuary expansion.", color: "#1a3a6a", emoji: "🦈", map: "map.png" },
 ];
 
 // Theme utilities
