@@ -3,17 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shark Species — Sustainability Tracker</title>
-    <link rel="stylesheet" href="../../css/styles.css" />
-    <script src="../../js/theme-init.js"></script>
+    <title>Wiki — Sustainability Tracker</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/theme-init.js"></script>
   </head>
   <body class="no-map">
     <header>
       <section class="header-left">
-        <a href="../../index.html" class="back-btn">← Back</a>
+        <a href="index.html" class="back-btn">← Back</a>
       </section>
       <section class="header-center">
-        <span>Shark Species</span>
+        <span id="wiki-title">Wiki</span>
       </section>
       <section class="header-right">
         <button id="about-btn">About</button>
@@ -55,7 +55,7 @@
     <div id="species-modal" class="modal-overlay hidden">
       <div class="modal species-modal">
         <div id="species-modal-image" class="species-modal-image">
-          <span id="species-modal-emoji" class="species-modal-emoji">🦈</span>
+          <span id="species-modal-emoji" class="species-modal-emoji"></span>
         </div>
         <div class="modal-header">
           <div>
@@ -100,7 +100,41 @@
         </div>
       </div>
     </div>
-    <script src="../../js/shared.js"></script>
-    <script src="./wiki.js"></script>
+    <script src="js/shared.js"></script>
+    <script>
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var projectId = params.get("project");
+
+        if (!projectId) {
+          var activeName = localStorage.getItem("activeProject");
+          if (activeName && typeof PROJECT_CATALOG !== "undefined") {
+            var found = PROJECT_CATALOG.find(function (p) { return p.name === activeName; });
+            if (found) projectId = found.id;
+          }
+        }
+
+        if (!projectId) {
+          document.getElementById("wiki-title").textContent = "Wiki";
+          document.getElementById("wiki-grid").innerHTML =
+            '<p class="discover-empty">No project selected. Return to <a href="index.html">home</a>.</p>';
+          return;
+        }
+
+        var dataScript = document.createElement("script");
+        dataScript.src = "projects/" + projectId + "/data.js";
+        dataScript.onerror = function () {
+          document.getElementById("wiki-title").textContent = "Wiki";
+          document.getElementById("wiki-grid").innerHTML =
+            '<p class="discover-empty">No wiki found for this project.</p>';
+        };
+        dataScript.onload = function () {
+          var wikiScript = document.createElement("script");
+          wikiScript.src = "js/wiki.js";
+          document.body.appendChild(wikiScript);
+        };
+        document.body.appendChild(dataScript);
+      })();
+    </script>
   </body>
 </html>

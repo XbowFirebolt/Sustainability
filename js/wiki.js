@@ -1,75 +1,15 @@
-const SHARK_SPECIES = [
-  {
-    id: "great-white",
-    commonName: "Great White Shark",
-    scientificName: "Carcharodon carcharias",
-    statusLabel: "Vulnerable",
-    lifePercent: 55,
-    photo: null,
-    funFact: "Great white sharks can detect a single drop of blood diluted across 25 gallons of water, and sense the faint electrical fields produced by beating hearts.",
-    description: "The great white shark is the world's largest predatory fish, found in cool coastal and offshore waters across the globe. Despite their fearsome reputation, attacks on humans are rare and typically cases of mistaken identity — they strongly prefer fat-rich marine mammals over people.",
-    habitat: "Cool coastal and offshore waters globally; common off South Africa, Australia, and California",
-    diet: "Marine mammals (seals, sea lions), large fish, rays, and occasionally sea turtles",
-    size: "Up to 6 m (20 ft); females larger than males",
-    threats: "Bycatch in commercial fisheries, targeted poaching for jaws and fins, habitat degradation, and prey depletion",
-  },
-  {
-    id: "scalloped-hammerhead",
-    commonName: "Scalloped Hammerhead",
-    scientificName: "Sphyrna lewini",
-    statusLabel: "Critically Endangered",
-    lifePercent: 18,
-    photo: null,
-    funFact: "Their wide-set eyes grant 360° vertical vision — they can see directly above and below simultaneously, giving them an almost complete view of their surroundings.",
-    description: "Named for the scalloped front edge of its distinctive hammer-shaped head (cephalofoil), this species aggregates in huge schools during the day — a rare social behavior among sharks. Their populations have collapsed by over 80% in recent decades, driven almost entirely by the fin trade.",
-    habitat: "Tropical and warm temperate seas worldwide; coastal, estuarine, and semi-oceanic",
-    diet: "Fish, squid, octopus, and crustaceans",
-    size: "Up to 4.3 m (14 ft)",
-    threats: "Highly prized fins in the shark fin trade, bycatch in tuna and swordfish longline fisheries, coastal habitat loss",
-  },
-  {
-    id: "whale-shark",
-    commonName: "Whale Shark",
-    scientificName: "Rhincodon typus",
-    statusLabel: "Endangered",
-    lifePercent: 38,
-    photo: null,
-    funFact: "The world's largest fish — up to 40 feet long — the whale shark feeds entirely on plankton and small fish, filtering thousands of gallons of water each hour.",
-    description: "The whale shark is a slow-moving filter feeder and the largest known fish species on Earth. Each individual has a unique pattern of spots and stripes — like a fingerprint — which researchers use to identify and track them across ocean basins. They are known to peacefully interact with divers.",
-    habitat: "Tropical and warm temperate seas worldwide; open ocean and productive coastal areas, especially near upwelling zones",
-    diet: "Plankton, fish eggs, krill, small fish, and squid",
-    size: "Up to 12 m (40 ft); possibly larger",
-    threats: "Ship strikes, entanglement in fishing gear, tourism pressure, plastic ingestion, and climate-driven changes to plankton availability",
-  },
-  {
-    id: "bull-shark",
-    commonName: "Bull Shark",
-    scientificName: "Carcharhinus leucas",
-    statusLabel: "Near Threatened",
-    lifePercent: 72,
-    photo: null,
-    funFact: "Bull sharks can survive in both salt and fresh water, and have been found more than 2,500 miles up the Amazon River — far from any ocean.",
-    description: "Bull sharks are among the most adaptable sharks on Earth, capable of osmoregulating between salt and fresh water. This brings them into frequent contact with humans in rivers and shallow coastal bays. They are considered one of the most dangerous sharks, not because they target people, but because of this habitat overlap.",
-    habitat: "Tropical and subtropical coastal waters, river mouths, estuaries, and freshwater river systems worldwide",
-    diet: "Fish, rays, sea turtles, dolphins, birds, and other sharks",
-    size: "Up to 3.4 m (11 ft); females larger",
-    threats: "Targeted fishing for meat and fins, habitat loss in river systems from dams and pollution, water quality degradation",
-  },
-  {
-    id: "tiger-shark",
-    commonName: "Tiger Shark",
-    scientificName: "Galeocerdo cuvier",
-    statusLabel: "Near Threatened",
-    lifePercent: 68,
-    photo: null,
-    funFact: "Tiger sharks have serrated, cockscomb-shaped teeth that can cut through sea turtle shells — one of the only predators capable of cracking that armor.",
-    description: "Tiger sharks are apex predators and critically important for maintaining the health of seagrass meadows and coral reef ecosystems. By preying on sea turtles, they prevent overgrazing of seagrass beds. They are notably indiscriminate feeders — their stomachs have been found to contain license plates, tires, and boat parts.",
-    habitat: "Tropical and subtropical waters worldwide; coastal, reef, and open ocean environments",
-    diet: "Sea turtles, fish, marine mammals, seabirds, rays, and almost any other prey item",
-    size: "Up to 5.5 m (18 ft)",
-    threats: "Targeted fishing for fins and liver oil, bycatch, and lethal culling programs in Australia and Hawaii",
-  },
-];
+// Requires: WIKI_DATA global (loaded by wiki.html bootstrap)
+// Requires: PROJECT_CATALOG, applyProjectTheme (from shared.js)
+
+const wikiProject = PROJECT_CATALOG.find((p) => p.id === WIKI_DATA.projectId);
+
+if (wikiProject) {
+  applyProjectTheme(wikiProject);
+  document.title = wikiProject.name + " — Sustainability Tracker";
+  document.getElementById("wiki-title").textContent = wikiProject.name;
+}
+
+const wikiProjectEmoji = wikiProject ? wikiProject.emoji : "?";
 
 function getLifeBarColor(percent) {
   if (percent <= 25) return "#c0320a";
@@ -80,11 +20,11 @@ function getLifeBarColor(percent) {
 }
 
 function loadFavorites() {
-  return JSON.parse(localStorage.getItem("sharkFavorites") || "[]");
+  return JSON.parse(localStorage.getItem(WIKI_DATA.favoritesKey) || "[]");
 }
 
 function saveFavorites(ids) {
-  localStorage.setItem("sharkFavorites", JSON.stringify(ids));
+  localStorage.setItem(WIKI_DATA.favoritesKey, JSON.stringify(ids));
 }
 
 // Species detail modal
@@ -102,8 +42,9 @@ function openSpeciesModal(species, cardEl) {
     document.getElementById("species-modal-emoji").style.display = "none";
   } else {
     imgArea.style.backgroundImage = "";
-    imgArea.style.background = "linear-gradient(135deg, #0a1525, #1a3a6a)";
+    imgArea.style.background = "linear-gradient(135deg, #0a0a0a, var(--color-primary))";
     document.getElementById("species-modal-emoji").style.display = "";
+    document.getElementById("species-modal-emoji").textContent = wikiProjectEmoji;
   }
 
   document.getElementById("species-modal-name").textContent = species.commonName;
@@ -121,11 +62,11 @@ function openSpeciesModal(species, cardEl) {
   document.getElementById("species-modal-threats").textContent = species.threats;
   document.getElementById("species-modal-funfact").textContent = species.funFact;
 
-  const modalContent = speciesModal.querySelector('.species-modal');
+  const modalContent = speciesModal.querySelector(".species-modal");
   const cardRect = cardEl.getBoundingClientRect();
 
   // Disable transition and show overlay (starts its opacity fade)
-  modalContent.style.transition = 'none';
+  modalContent.style.transition = "none";
   speciesModal.classList.remove("hidden");
 
   // Force reflow to get modal's natural centered position
@@ -141,16 +82,16 @@ function openSpeciesModal(species, cardEl) {
   modalContent.getBoundingClientRect(); // commit starting state
 
   // Re-enable transition and animate to natural centered position
-  modalContent.style.transition = '';
+  modalContent.style.transition = "";
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
-      modalContent.style.transform = '';
+      modalContent.style.transform = "";
     });
   });
 }
 
 function closeSpeciesModal() {
-  const modalContent = speciesModal.querySelector('.species-modal');
+  const modalContent = speciesModal.querySelector(".species-modal");
 
   if (activeCard) {
     const cardRect = activeCard.getBoundingClientRect();
@@ -166,7 +107,7 @@ function closeSpeciesModal() {
 
     // After animation, reset for next open
     setTimeout(() => {
-      modalContent.style.transform = '';
+      modalContent.style.transform = "";
       activeCard = null;
     }, 400);
   } else {
@@ -179,17 +120,19 @@ speciesModal.addEventListener("click", (e) => {
   if (e.target === speciesModal) closeSpeciesModal();
 });
 
+const wikiSearch = document.getElementById("wiki-search");
+
 function renderWikiGrid(query) {
   const grid = document.getElementById("wiki-grid");
   const q = query ? query.trim().toLowerCase() : "";
   const filtered = q
-    ? SHARK_SPECIES.filter(
+    ? WIKI_DATA.items.filter(
         (s) =>
           s.commonName.toLowerCase().includes(q) ||
           s.scientificName.toLowerCase().includes(q) ||
           s.statusLabel.toLowerCase().includes(q)
       )
-    : SHARK_SPECIES;
+    : WIKI_DATA.items;
 
   const favIds = loadFavorites();
   const sorted = [
@@ -222,8 +165,8 @@ function renderWikiGrid(query) {
       imgArea.style.backgroundSize = "cover";
       imgArea.style.backgroundPosition = "center";
     } else {
-      imgArea.textContent = "🦈";
-      imgArea.style.background = "linear-gradient(135deg, #0a1525, #1a3a6a)";
+      imgArea.textContent = wikiProjectEmoji;
+      imgArea.style.background = "linear-gradient(135deg, #0a0a0a, var(--color-primary))";
     }
 
     // Favorite star button
@@ -305,11 +248,6 @@ function renderWikiGrid(query) {
   });
 }
 
-// Force shark project theme on this page
-const sharkProject = PROJECT_CATALOG.find((p) => p.id === "shark-populations");
-applyProjectTheme(sharkProject);
-
-const wikiSearch = document.getElementById("wiki-search");
 wikiSearch.addEventListener("input", () => renderWikiGrid(wikiSearch.value));
 
 renderWikiGrid("");
