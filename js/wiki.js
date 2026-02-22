@@ -55,33 +55,11 @@ function openSpeciesModal(species, cardEl) {
   fill.style.background = getLifeBarColor(species.lifePercent);
   document.getElementById("species-modal-status").textContent = species.statusLabel;
 
-  document.getElementById("species-modal-desc").textContent = species.description;
-  document.getElementById("species-modal-habitat").textContent = species.habitat;
-  document.getElementById("species-modal-diet").textContent = species.diet;
-  document.getElementById("species-modal-size").textContent = species.size;
-  document.getElementById("species-modal-threats").textContent = species.threats;
-  document.getElementById("species-modal-funfact").textContent = species.funFact;
-
-  const detailsContainer = document.getElementById("species-modal-details");
-  detailsContainer.innerHTML = "";
-  if (species.details && species.details.length) {
-    species.details.forEach(({ label, text }) => {
-      const section = document.createElement("div");
-      section.className = "species-modal-section";
-      const lbl = document.createElement("div");
-      lbl.className = "funfact-label";
-      lbl.textContent = label;
-      const txt = document.createElement("div");
-      txt.className = "funfact-text";
-      text.split("\n\n").forEach((para, i) => {
-        if (i > 0) txt.appendChild(document.createElement("br"));
-        txt.appendChild(document.createTextNode(para));
-      });
-      section.appendChild(lbl);
-      section.appendChild(txt);
-      detailsContainer.appendChild(section);
-    });
-  }
+  activateTab("vital");
+  renderVitalSigns(species.vitalSigns);
+  renderHealthMetrics(species.healthMetrics);
+  renderThreats(species.threats);
+  renderActionItems(species.actionItems);
 
   const modalContent = speciesModal.querySelector(".species-modal");
   const cardRect = cardEl.getBoundingClientRect();
@@ -140,6 +118,205 @@ document.getElementById("species-modal-close").addEventListener("click", closeSp
 speciesModal.addEventListener("click", (e) => {
   if (e.target === speciesModal) closeSpeciesModal();
 });
+
+// ── Tab switching ──────────────────────────────────────────────
+
+function activateTab(tabKey) {
+  document.querySelectorAll(".species-tab").forEach((btn) => {
+    const isActive = btn.dataset.tab === tabKey;
+    btn.classList.toggle("active", isActive);
+    btn.setAttribute("aria-selected", String(isActive));
+  });
+  document.querySelectorAll(".species-tab-panel").forEach((panel) => {
+    panel.classList.toggle("active", panel.id === "tab-panel-" + tabKey);
+  });
+}
+
+document.querySelectorAll(".species-tab").forEach((btn) => {
+  btn.addEventListener("click", () => activateTab(btn.dataset.tab));
+});
+
+// ── Tab content renderers ──────────────────────────────────────
+
+function renderVitalSigns(items) {
+  const panel = document.getElementById("tab-panel-vital");
+  panel.innerHTML = "";
+
+  if (!Array.isArray(items) || !items.length) {
+    panel.innerHTML =
+      '<div class="tab-placeholder">' +
+        '<span class="tab-placeholder-icon">📊</span>' +
+        "Vital statistics data is not yet available for this species." +
+      "</div>";
+    return;
+  }
+
+  const list = document.createElement("div");
+  list.className = "tab-vital-list";
+
+  items.forEach(({ label, value }) => {
+    const row = document.createElement("div");
+    row.className = "tab-vital-row";
+
+    const lbl = document.createElement("span");
+    lbl.className = "tab-vital-label";
+    lbl.textContent = label;
+
+    const val = document.createElement("span");
+    val.className = "tab-vital-value";
+    val.textContent = value;
+
+    row.appendChild(lbl);
+    row.appendChild(val);
+    list.appendChild(row);
+  });
+
+  panel.appendChild(list);
+}
+
+function renderHealthMetrics(items) {
+  const panel = document.getElementById("tab-panel-health");
+  panel.innerHTML = "";
+
+  if (!Array.isArray(items) || !items.length) {
+    panel.innerHTML =
+      '<div class="tab-placeholder">' +
+        '<span class="tab-placeholder-icon">🩺</span>' +
+        "Health and conservation metric data is not yet available for this species." +
+      "</div>";
+    return;
+  }
+
+  const list = document.createElement("div");
+  list.className = "tab-health-list";
+
+  const TREND_SYMBOLS = { up: "▲", down: "▼", stable: "—" };
+  const TREND_CLASSES  = { up: "tab-trend--up", down: "tab-trend--down", stable: "tab-trend--stable" };
+
+  items.forEach(({ label, value, trend }) => {
+    const row = document.createElement("div");
+    row.className = "tab-health-row";
+
+    const lbl = document.createElement("span");
+    lbl.className = "tab-health-label";
+    lbl.textContent = label;
+
+    const valueWrap = document.createElement("div");
+    valueWrap.className = "tab-health-value-wrap";
+
+    const val = document.createElement("span");
+    val.className = "tab-health-value";
+    val.textContent = value;
+    valueWrap.appendChild(val);
+
+    if (trend && TREND_SYMBOLS[trend]) {
+      const indicator = document.createElement("span");
+      indicator.className = "tab-trend " + (TREND_CLASSES[trend] || "");
+      indicator.textContent = TREND_SYMBOLS[trend];
+      indicator.setAttribute("aria-label", trend);
+      valueWrap.appendChild(indicator);
+    }
+
+    row.appendChild(lbl);
+    row.appendChild(valueWrap);
+    list.appendChild(row);
+  });
+
+  panel.appendChild(list);
+}
+
+function renderThreats(items) {
+  const panel = document.getElementById("tab-panel-threats");
+  panel.innerHTML = "";
+
+  if (!Array.isArray(items) || !items.length) {
+    panel.innerHTML =
+      '<div class="tab-placeholder">' +
+        '<span class="tab-placeholder-icon">⚠️</span>' +
+        "Threat data is not yet available for this species." +
+      "</div>";
+    return;
+  }
+
+  const list = document.createElement("div");
+  list.className = "tab-threats-list";
+
+  items.forEach(({ name, severity, description }) => {
+    const card = document.createElement("div");
+    card.className = "tab-threat-card";
+
+    const header = document.createElement("div");
+    header.className = "tab-threat-header";
+
+    const threatName = document.createElement("span");
+    threatName.className = "tab-threat-name";
+    threatName.textContent = name;
+
+    const badge = document.createElement("span");
+    badge.className = "tab-severity-badge tab-severity-badge--" + (severity || "medium");
+    badge.textContent = severity || "unknown";
+
+    header.appendChild(threatName);
+    header.appendChild(badge);
+
+    const desc = document.createElement("div");
+    desc.className = "tab-threat-desc";
+    desc.textContent = description;
+
+    card.appendChild(header);
+    card.appendChild(desc);
+    list.appendChild(card);
+  });
+
+  panel.appendChild(list);
+}
+
+function renderActionItems(items) {
+  const panel = document.getElementById("tab-panel-actions");
+  panel.innerHTML = "";
+
+  if (!Array.isArray(items) || !items.length) {
+    panel.innerHTML =
+      '<div class="tab-placeholder">' +
+        '<span class="tab-placeholder-icon">🌱</span>' +
+        "Conservation action data is not yet available for this species." +
+      "</div>";
+    return;
+  }
+
+  const list = document.createElement("div");
+  list.className = "tab-actions-list";
+
+  items.forEach(({ title, description, link }) => {
+    const card = document.createElement("div");
+    card.className = "tab-action-card";
+
+    const titleEl = document.createElement("div");
+    titleEl.className = "tab-action-title";
+    titleEl.textContent = title;
+
+    const descEl = document.createElement("div");
+    descEl.className = "tab-action-desc";
+    descEl.textContent = description;
+
+    card.appendChild(titleEl);
+    card.appendChild(descEl);
+
+    if (link) {
+      const a = document.createElement("a");
+      a.className = "tab-action-link";
+      a.href = link;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      a.textContent = "Learn more →";
+      card.appendChild(a);
+    }
+
+    list.appendChild(card);
+  });
+
+  panel.appendChild(list);
+}
 
 const wikiSearch = document.getElementById("wiki-search");
 

@@ -72,38 +72,17 @@
             <div id="species-modal-status" class="species-life-label"></div>
           </div>
         </div>
-        <div class="modal-body species-modal-body">
-          <div class="species-modal-col">
-            <div class="species-modal-section">
-              <div class="funfact-label">About</div>
-              <div id="species-modal-desc" class="funfact-text"></div>
-            </div>
-            <div class="species-modal-stats">
-              <div class="species-modal-stat">
-                <div class="funfact-label">Habitat</div>
-                <div id="species-modal-habitat" class="funfact-text"></div>
-              </div>
-              <div class="species-modal-stat">
-                <div class="funfact-label">Diet</div>
-                <div id="species-modal-diet" class="funfact-text"></div>
-              </div>
-              <div class="species-modal-stat">
-                <div class="funfact-label">Max Size</div>
-                <div id="species-modal-size" class="funfact-text"></div>
-              </div>
-            </div>
-            <div class="species-modal-section">
-              <div class="funfact-label">Primary Threats</div>
-              <div id="species-modal-threats" class="funfact-text"></div>
-            </div>
-          </div>
-          <div class="species-modal-col">
-            <div class="species-modal-section">
-              <div class="funfact-label">Fun Fact</div>
-              <div id="species-modal-funfact" class="funfact-text"></div>
-            </div>
-            <div id="species-modal-details"></div>
-          </div>
+        <div class="species-tabs" role="tablist">
+          <button class="species-tab active" data-tab="vital"   id="tab-btn-vital">Vital Signs</button>
+          <button class="species-tab"        data-tab="health"  id="tab-btn-health">Health Metrics</button>
+          <button class="species-tab"        data-tab="threats" id="tab-btn-threats">Threats</button>
+          <button class="species-tab"        data-tab="actions" id="tab-btn-actions">Action Items</button>
+        </div>
+        <div class="species-tab-panels">
+          <div class="species-tab-panel active" id="tab-panel-vital"></div>
+          <div class="species-tab-panel"        id="tab-panel-health"></div>
+          <div class="species-tab-panel"        id="tab-panel-threats"></div>
+          <div class="species-tab-panel"        id="tab-panel-actions"></div>
         </div>
       </div>
     </div>

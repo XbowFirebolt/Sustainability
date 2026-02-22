@@ -14,36 +14,37 @@ window.WIKI_DATA = {
       habitat: "Cool coastal and offshore waters globally; coastal and offshore waters of continental and insular shelves, shallow bays, and near pinniped colonies. Recorded at depths to 4,199 ft (1,280 m).",
       diet: "Juveniles feed primarily on fish; adults shift to marine mammals — seals, sea lions, and dolphins — as well as large fish, rays, and sea turtles.",
       size: "Males mature at ~7.8 ft (2.4 m); max confirmed 20.9 ft (6.4 m), possibly exceeding 26 ft (8 m).",
-      threats: "Bycatch in commercial fisheries, targeted poaching for jaws and fins, habitat degradation, and prey depletion",
-      details: [
-        {
-          label: "What to Look For",
-          text: "A large shark with a heavy spindle-shaped body, conical snout, caudal keel, and lunate caudal fin.",
-        },
-        {
-          label: "Color",
-          text: "Slate brown to black above, white below. Often a black spot at the pectoral fin axil; undersides of pectoral fins have black markings that vary among individuals.",
-        },
-        {
-          label: "Teeth",
-          text: "Large triangular serrated teeth in both jaws. Upper jaw teeth are broad; lower jaw teeth are narrower.",
-        },
-        {
-          label: "Distribution",
-          text: "Temperate, subtropical, and tropical waters worldwide. Western Atlantic: Newfoundland to Argentina, including the Bahamas. Eastern Atlantic: France to the Cape of Good Hope, and the Mediterranean Sea. Eastern Pacific: Gulf of Alaska to Chile. Central Pacific: Easter Island, Hawaiian Islands, and Marshall Islands. Western Pacific: Siberia to Tasmania. Red Sea and Indian Ocean including South Africa, Mozambique, Madagascar, Mauritius, Seychelles, and Western Australia.",
-        },
-        {
-          label: "Biology",
-          text: "General — Able to maintain body temperature up to 14.4°F (8°C) above ambient water, giving muscles and organs greater strength and energy than cold-bodied sharks.\n\nPrey — Juveniles feed on fish; adults feed primarily on marine mammals.\n\nReproduction — Ovoviviparous.",
-        },
-        {
-          label: "Behavior",
-          text: "The apex super-predator of the ocean. Swims stiffly and is capable of great speed — tagged individuals averaged 3.2 kph cruising speed. Occasionally raises its head above water (\"spy-hopping\"), a behavior frequently observed near seal colonies and in baited situations.",
-        },
-        {
-          label: "Disposition",
-          text: "Intelligent, curious, and learns by experience. Often uses its teeth to inspect unfamiliar objects — a behavior sometimes misread as aggression.\n\nDanger to Humans — A sighting does not mean an attack is inevitable; the shark is often indifferent to divers. However, this species has been implicated in numerous unprovoked attacks on swimmers, surfers, and divers. Most bites are not fatal, but partial consumption of humans has occurred. In baited situations, divers are advised to remain inside a shark cage.",
-        },
+      vitalSigns: [
+        { label: "Estimated Population", value: "~3,500 adults" },
+        { label: "Lifespan",             value: "70+ years" },
+        { label: "Max Length",           value: "6.4 m (20.9 ft) confirmed" },
+        { label: "Max Weight",           value: "~2,000 kg (4,400 lbs)" },
+        { label: "Reproductive Rate",    value: "2–10 pups per litter; gestates ~18 months" },
+        { label: "Age at Maturity",      value: "~9–10 years (females later)" },
+        { label: "Global Range",         value: "Temperate, subtropical & tropical oceans worldwide" },
+        { label: "Depth Range",          value: "Surface to 1,280 m (4,199 ft)" },
+      ],
+      healthMetrics: [
+        { label: "IUCN Status",          value: "Vulnerable",                                      trend: "stable" },
+        { label: "Population Trend",     value: "Decreasing",                                      trend: "down"   },
+        { label: "Habitat Quality",      value: "Moderate — coastal zones under pressure",          trend: null     },
+        { label: "Prey Availability",    value: "Declining in key regions",                         trend: "down"   },
+        { label: "Fishing Pressure",     value: "High — bycatch and targeted poaching",             trend: "down"   },
+        { label: "Protection Coverage",  value: "Partial — CITES Appendix II, some EEZs",          trend: "stable" },
+      ],
+      threats: [
+        { name: "Bycatch",             severity: "critical", description: "Caught unintentionally in longlines, gill nets, and drum lines set for other species. The leading cause of mortality globally." },
+        { name: "Targeted Poaching",   severity: "high",     description: "Hunted for jaws, teeth, fins, and liver oil. Trophy jaws can fetch tens of thousands of dollars on the black market." },
+        { name: "Habitat Degradation", severity: "high",     description: "Coastal development, pollution, and noise reduce the quality of pupping and feeding grounds near seal colonies." },
+        { name: "Prey Depletion",      severity: "medium",   description: "Overfishing of pinnipeds and large fish reduces the food base, forcing sharks to travel further and expend more energy." },
+        { name: "Climate Change",      severity: "medium",   description: "Warming oceans shift prey distributions, alter migration routes, and may affect juvenile survival in pupping areas." },
+      ],
+      actionItems: [
+        { title: "Support Shark Conservation Organizations", description: "Donate to or volunteer with groups like Shark Trust, Save Our Seas Foundation, and Shark Research Institute that fund research, advocacy, and education.", link: "https://www.sharktrust.org" },
+        { title: "Advocate for Stronger Bycatch Regulations", description: "Contact your representatives to support legislation requiring circle hooks, excluder devices, and observer programs on commercial fishing vessels.", link: null },
+        { title: "Choose Sustainable Seafood", description: "Use guides from the Monterey Bay Aquarium Seafood Watch program. Avoiding unsustainable fisheries reduces bycatch pressure on shark populations.", link: "https://www.seafoodwatch.org" },
+        { title: "Oppose Shark Finning", description: "Refuse to purchase or consume shark fin products, and support restaurants and markets that have pledged not to carry them.", link: null },
+        { title: "Spread Accurate Information", description: "Challenge fear-based media portrayals. Sharing science-based facts about shark behavior helps build public support for conservation.", link: null },
       ],
     },
     {
