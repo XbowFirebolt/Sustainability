@@ -31,6 +31,8 @@ function saveFavorites(ids) {
 const speciesModal = document.getElementById("species-modal");
 let activeCard = null;
 let tabPanelsScrollListener = null;
+let unitMode = localStorage.getItem("wiki_unit_mode") || "metric";
+let currentModalSpecies = null;
 
 function openSpeciesModal(species, cardEl) {
   activeCard = cardEl;
@@ -56,6 +58,7 @@ function openSpeciesModal(species, cardEl) {
   fill.style.background = getLifeBarColor(species.lifePercent);
   document.getElementById("species-modal-status").textContent = species.statusLabel;
 
+  currentModalSpecies = species;
   activateTab("vital");
   renderVitalSigns(species);
   renderHealthMetrics(species.healthMetrics);
@@ -175,21 +178,45 @@ function renderVitalSigns(species) {
     return;
   }
 
+  // ── Unit toggle ──────────────────────────────────────────────
+  const toggle = document.createElement("div");
+  toggle.className = "vital-unit-toggle";
+
+  ["metric", "imperial"].forEach((unit) => {
+    const btn = document.createElement("button");
+    btn.className = "vital-unit-btn" + (unitMode === unit ? " active" : "");
+    btn.dataset.unit = unit;
+    btn.textContent = unit === "metric" ? "Metric" : "Imperial";
+    btn.addEventListener("click", () => {
+      unitMode = unit;
+      localStorage.setItem("wiki_unit_mode", unit);
+      renderVitalSigns(currentModalSpecies);
+    });
+    toggle.appendChild(btn);
+  });
+
+  panel.appendChild(toggle);
+
   // ── Stats ────────────────────────────────────────────────────
   const list = document.createElement("div");
   list.className = "tab-vital-list";
 
-  items.forEach(({ label, value }) => {
+  items.forEach((item) => {
+    const displayValue =
+      unitMode === "metric"   && item.metric   ? item.metric   :
+      unitMode === "imperial" && item.imperial ? item.imperial :
+      item.value;
+
     const row = document.createElement("div");
     row.className = "tab-vital-row";
 
     const lbl = document.createElement("span");
     lbl.className = "tab-vital-label";
-    lbl.textContent = label;
+    lbl.textContent = item.label;
 
     const val = document.createElement("span");
     val.className = "tab-vital-value";
-    val.textContent = value;
+    val.textContent = displayValue;
 
     row.appendChild(lbl);
     row.appendChild(val);
@@ -234,8 +261,14 @@ function renderVitalSigns(species) {
       habitatImg.src = species.habitatImage;
       habitatImg.alt = "Habitat map for " + species.commonName;
 
+      const mapLink = document.createElement("a");
+      mapLink.className = "vital-map-link";
+      mapLink.href = "index.html";
+      mapLink.textContent = "View on Map \u2192";
+
       habitatSection.appendChild(habitatHeader);
       habitatSection.appendChild(habitatImg);
+      habitatSection.appendChild(mapLink);
       imageRow.appendChild(habitatSection);
     }
 
@@ -245,17 +278,22 @@ function renderVitalSigns(species) {
       const rangeList = document.createElement("div");
       rangeList.className = "tab-vital-list tab-vital-list--habitat";
 
-      species.habitatStats.forEach(({ label, value }) => {
+      species.habitatStats.forEach((item) => {
+        const displayValue =
+          unitMode === "metric"   && item.metric   ? item.metric   :
+          unitMode === "imperial" && item.imperial ? item.imperial :
+          item.value;
+
         const row = document.createElement("div");
         row.className = "tab-vital-row";
 
         const lbl = document.createElement("span");
         lbl.className = "tab-vital-label";
-        lbl.textContent = label;
+        lbl.textContent = item.label;
 
         const val = document.createElement("span");
         val.className = "tab-vital-value";
-        val.textContent = value;
+        val.textContent = displayValue;
 
         row.appendChild(lbl);
         row.appendChild(val);

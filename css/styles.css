@@ -794,6 +794,54 @@ body.no-map {
   margin-top: 0.75rem;
 }
 
+/* ── Vital Signs: unit toggle ── */
+.vital-unit-toggle {
+  display: flex;
+  gap: 4px;
+  justify-content: flex-end;
+  padding: 0 0 10px 0;
+}
+
+.vital-unit-btn {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.vital-unit-btn.active {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+
+/* ── Vital Signs: habitat map link ── */
+.vital-map-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-primary);
+  text-decoration: none;
+  border: 1px solid var(--color-primary);
+  border-radius: 20px;
+  padding: 3px 12px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.vital-map-link:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
 /* ── Health Metrics ── */
 .tab-health-list {
   display: flex;
