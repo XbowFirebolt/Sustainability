@@ -8,13 +8,43 @@ window.WIKI_DATA = {
       scientificName: "Carcharodon carcharias",
       statusLabel: "Vulnerable",
       lifePercent: 55,
-      photo: null,
+      photo: "projects/shark-populations/images/white_shark.jpg",
       funFact: "Great white sharks can detect a single drop of blood diluted across 25 gallons of water, and sense the faint electrical fields produced by beating hearts.",
       description: "The great white shark is the world's largest predatory fish, found in cool coastal and offshore waters across the globe. Despite their fearsome reputation, attacks on humans are rare and typically cases of mistaken identity — they strongly prefer fat-rich marine mammals over people.",
-      habitat: "Cool coastal and offshore waters globally; common off South Africa, Australia, and California",
-      diet: "Marine mammals (seals, sea lions), large fish, rays, and occasionally sea turtles",
-      size: "Up to 6 m (20 ft); females larger than males",
+      habitat: "Cool coastal and offshore waters globally; coastal and offshore waters of continental and insular shelves, shallow bays, and near pinniped colonies. Recorded at depths to 4,199 ft (1,280 m).",
+      diet: "Juveniles feed primarily on fish; adults shift to marine mammals — seals, sea lions, and dolphins — as well as large fish, rays, and sea turtles.",
+      size: "Males mature at ~7.8 ft (2.4 m); max confirmed 20.9 ft (6.4 m), possibly exceeding 26 ft (8 m).",
       threats: "Bycatch in commercial fisheries, targeted poaching for jaws and fins, habitat degradation, and prey depletion",
+      details: [
+        {
+          label: "What to Look For",
+          text: "A large shark with a heavy spindle-shaped body, conical snout, caudal keel, and lunate caudal fin.",
+        },
+        {
+          label: "Color",
+          text: "Slate brown to black above, white below. Often a black spot at the pectoral fin axil; undersides of pectoral fins have black markings that vary among individuals.",
+        },
+        {
+          label: "Teeth",
+          text: "Large triangular serrated teeth in both jaws. Upper jaw teeth are broad; lower jaw teeth are narrower.",
+        },
+        {
+          label: "Distribution",
+          text: "Temperate, subtropical, and tropical waters worldwide. Western Atlantic: Newfoundland to Argentina, including the Bahamas. Eastern Atlantic: France to the Cape of Good Hope, and the Mediterranean Sea. Eastern Pacific: Gulf of Alaska to Chile. Central Pacific: Easter Island, Hawaiian Islands, and Marshall Islands. Western Pacific: Siberia to Tasmania. Red Sea and Indian Ocean including South Africa, Mozambique, Madagascar, Mauritius, Seychelles, and Western Australia.",
+        },
+        {
+          label: "Biology",
+          text: "General — Able to maintain body temperature up to 14.4°F (8°C) above ambient water, giving muscles and organs greater strength and energy than cold-bodied sharks.\n\nPrey — Juveniles feed on fish; adults feed primarily on marine mammals.\n\nReproduction — Ovoviviparous.",
+        },
+        {
+          label: "Behavior",
+          text: "The apex super-predator of the ocean. Swims stiffly and is capable of great speed — tagged individuals averaged 3.2 kph cruising speed. Occasionally raises its head above water (\"spy-hopping\"), a behavior frequently observed near seal colonies and in baited situations.",
+        },
+        {
+          label: "Disposition",
+          text: "Intelligent, curious, and learns by experience. Often uses its teeth to inspect unfamiliar objects — a behavior sometimes misread as aggression.\n\nDanger to Humans — A sighting does not mean an attack is inevitable; the shark is often indifferent to divers. However, this species has been implicated in numerous unprovoked attacks on swimmers, surfers, and divers. Most bites are not fatal, but partial consumption of humans has occurred. In baited situations, divers are advised to remain inside a shark cage.",
+        },
+      ],
     },
     {
       id: "scalloped-hammerhead",

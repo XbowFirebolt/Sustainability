@@ -62,6 +62,27 @@ function openSpeciesModal(species, cardEl) {
   document.getElementById("species-modal-threats").textContent = species.threats;
   document.getElementById("species-modal-funfact").textContent = species.funFact;
 
+  const detailsContainer = document.getElementById("species-modal-details");
+  detailsContainer.innerHTML = "";
+  if (species.details && species.details.length) {
+    species.details.forEach(({ label, text }) => {
+      const section = document.createElement("div");
+      section.className = "species-modal-section";
+      const lbl = document.createElement("div");
+      lbl.className = "funfact-label";
+      lbl.textContent = label;
+      const txt = document.createElement("div");
+      txt.className = "funfact-text";
+      text.split("\n\n").forEach((para, i) => {
+        if (i > 0) txt.appendChild(document.createElement("br"));
+        txt.appendChild(document.createTextNode(para));
+      });
+      section.appendChild(lbl);
+      section.appendChild(txt);
+      detailsContainer.appendChild(section);
+    });
+  }
+
   const modalContent = speciesModal.querySelector(".species-modal");
   const cardRect = cardEl.getBoundingClientRect();
 
