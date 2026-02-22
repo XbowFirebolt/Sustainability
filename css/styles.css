@@ -592,8 +592,12 @@ body.no-map {
 .species-modal {
   width: min(95vw, 1200px);
   height: 92vh;
-  display: flex;
-  flex-direction: column;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.species-modal::-webkit-scrollbar {
+  display: none;
 }
 
 .species-modal-image {
@@ -602,7 +606,14 @@ body.no-map {
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, #0a1525, #1a3a6a);
-  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.species-modal-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--color-bg);
 }
 
 .species-modal-emoji {
@@ -616,16 +627,11 @@ body.no-map {
   justify-content: space-between;
   gap: 0.75rem;
   padding: 0.6rem 1.25rem;
-  position: sticky;
-  top: 0;
-  z-index: 2;
 }
 
 .species-modal-hero {
   padding: 0.5rem 1.25rem 0.65rem;
   border-bottom: 1px solid var(--color-border);
-  flex-shrink: 0;
-  background: var(--color-bg);
 }
 
 .species-modal-name {
@@ -651,12 +657,8 @@ body.no-map {
   display: flex;
   border-bottom: 2px solid var(--color-border);
   background: var(--color-bg);
-  flex-shrink: 0;
   overflow-x: auto;
   scrollbar-width: none;
-  position: sticky;
-  top: 0;
-  z-index: 1;
 }
 
 .species-tabs::-webkit-scrollbar {
@@ -678,6 +680,18 @@ body.no-map {
   text-transform: uppercase;
   letter-spacing: 0.04em;
   transition: color 0.15s ease, border-color 0.15s ease;
+  position: relative;
+}
+
+.species-tab + .species-tab::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 55%;
+  background-color: var(--color-border);
 }
 
 .species-tab:hover {
@@ -691,9 +705,7 @@ body.no-map {
 
 /* ── Tab content panels ── */
 .species-tab-panels {
-  flex: 1;
-  min-height: 0;
-  overflow-y: auto;
+  min-height: 100%;
 }
 
 .species-tab-panel {
@@ -738,6 +750,48 @@ body.no-map {
   font-size: 0.88rem;
   color: var(--color-text);
   text-align: right;
+}
+
+/* ── Vital Signs sub-sections ── */
+.tab-vital-image-row {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.tab-vital-image-row .tab-vital-subsection {
+  flex: 1;
+  min-width: 0;
+  margin-top: 0;
+}
+
+.tab-vital-subsection {
+  margin-top: 1.25rem;
+}
+
+.tab-vital-subsection-header {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.tab-vital-subsection-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 220px;
+  object-fit: contain;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+}
+
+.tab-vital-list--habitat {
+  margin-top: 0.75rem;
 }
 
 /* ── Health Metrics ── */

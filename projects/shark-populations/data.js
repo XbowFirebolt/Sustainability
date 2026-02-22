@@ -21,8 +21,12 @@ window.WIKI_DATA = {
         { label: "Max Weight",           value: "~2,000 kg (4,400 lbs)" },
         { label: "Reproductive Rate",    value: "2–10 pups per litter; gestates ~18 months" },
         { label: "Age at Maturity",      value: "~9–10 years (females later)" },
-        { label: "Global Range",         value: "Temperate, subtropical & tropical oceans worldwide" },
-        { label: "Depth Range",          value: "Surface to 1,280 m (4,199 ft)" },
+      ],
+      physicalScaleImage: "projects/shark-populations/images/white_shark_size.png",
+      habitatImage:       "projects/shark-populations/images/white_shark_habitat.png",
+      habitatStats: [
+        { label: "Global Range", value: "Temperate, subtropical & tropical oceans worldwide" },
+        { label: "Depth Range",  value: "Surface to 1,280 m (4,199 ft)" },
       ],
       healthMetrics: [
         { label: "IUCN Status",          value: "Vulnerable",                                      trend: "stable" },

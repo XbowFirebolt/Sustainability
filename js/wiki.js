@@ -30,6 +30,7 @@ function saveFavorites(ids) {
 // Species detail modal
 const speciesModal = document.getElementById("species-modal");
 let activeCard = null;
+let tabPanelsScrollListener = null;
 
 function openSpeciesModal(species, cardEl) {
   activeCard = cardEl;
@@ -56,12 +57,27 @@ function openSpeciesModal(species, cardEl) {
   document.getElementById("species-modal-status").textContent = species.statusLabel;
 
   activateTab("vital");
-  renderVitalSigns(species.vitalSigns);
+  renderVitalSigns(species);
   renderHealthMetrics(species.healthMetrics);
   renderThreats(species.threats);
   renderActionItems(species.actionItems);
 
   const modalContent = speciesModal.querySelector(".species-modal");
+
+  // Reset scroll and image opacity for fresh open
+  const imgAreaEl = document.getElementById("species-modal-image");
+  imgAreaEl.style.opacity = "";
+  modalContent.scrollTop = 0;
+
+  // Clean up any previous scroll listener
+  if (tabPanelsScrollListener) {
+    modalContent.removeEventListener("scroll", tabPanelsScrollListener);
+  }
+  tabPanelsScrollListener = function () {
+    imgAreaEl.style.opacity = Math.max(0, 1 - modalContent.scrollTop / 200);
+  };
+  modalContent.addEventListener("scroll", tabPanelsScrollListener);
+
   const cardRect = cardEl.getBoundingClientRect();
 
   // Disable transition and show overlay (starts its opacity fade)
@@ -91,6 +107,12 @@ function openSpeciesModal(species, cardEl) {
 
 function closeSpeciesModal() {
   const modalContent = speciesModal.querySelector(".species-modal");
+
+  // Remove scroll listener
+  if (tabPanelsScrollListener) {
+    modalContent.removeEventListener("scroll", tabPanelsScrollListener);
+    tabPanelsScrollListener = null;
+  }
 
   if (activeCard) {
     const cardRect = activeCard.getBoundingClientRect();
@@ -138,9 +160,11 @@ document.querySelectorAll(".species-tab").forEach((btn) => {
 
 // ── Tab content renderers ──────────────────────────────────────
 
-function renderVitalSigns(items) {
+function renderVitalSigns(species) {
   const panel = document.getElementById("tab-panel-vital");
   panel.innerHTML = "";
+
+  const items = species.vitalSigns;
 
   if (!Array.isArray(items) || !items.length) {
     panel.innerHTML =
@@ -151,6 +175,7 @@ function renderVitalSigns(items) {
     return;
   }
 
+  // ── Stats ────────────────────────────────────────────────────
   const list = document.createElement("div");
   list.className = "tab-vital-list";
 
@@ -172,6 +197,74 @@ function renderVitalSigns(items) {
   });
 
   panel.appendChild(list);
+
+  // ── Physical Scale + Habitat (side by side) ──────────────────
+  if (species.physicalScaleImage || species.habitatImage) {
+    const imageRow = document.createElement("div");
+    imageRow.className = "tab-vital-image-row";
+
+    if (species.physicalScaleImage) {
+      const scaleSection = document.createElement("div");
+      scaleSection.className = "tab-vital-subsection";
+
+      const scaleHeader = document.createElement("div");
+      scaleHeader.className = "tab-vital-subsection-header";
+      scaleHeader.textContent = "Physical Scale";
+
+      const scaleImg = document.createElement("img");
+      scaleImg.className = "tab-vital-subsection-image";
+      scaleImg.src = species.physicalScaleImage;
+      scaleImg.alt = "Size comparison of " + species.commonName + " to a human";
+
+      scaleSection.appendChild(scaleHeader);
+      scaleSection.appendChild(scaleImg);
+      imageRow.appendChild(scaleSection);
+    }
+
+    if (species.habitatImage) {
+      const habitatSection = document.createElement("div");
+      habitatSection.className = "tab-vital-subsection";
+
+      const habitatHeader = document.createElement("div");
+      habitatHeader.className = "tab-vital-subsection-header";
+      habitatHeader.textContent = "Habitat";
+
+      const habitatImg = document.createElement("img");
+      habitatImg.className = "tab-vital-subsection-image";
+      habitatImg.src = species.habitatImage;
+      habitatImg.alt = "Habitat map for " + species.commonName;
+
+      habitatSection.appendChild(habitatHeader);
+      habitatSection.appendChild(habitatImg);
+      imageRow.appendChild(habitatSection);
+    }
+
+    panel.appendChild(imageRow);
+
+    if (Array.isArray(species.habitatStats) && species.habitatStats.length) {
+      const rangeList = document.createElement("div");
+      rangeList.className = "tab-vital-list tab-vital-list--habitat";
+
+      species.habitatStats.forEach(({ label, value }) => {
+        const row = document.createElement("div");
+        row.className = "tab-vital-row";
+
+        const lbl = document.createElement("span");
+        lbl.className = "tab-vital-label";
+        lbl.textContent = label;
+
+        const val = document.createElement("span");
+        val.className = "tab-vital-value";
+        val.textContent = value;
+
+        row.appendChild(lbl);
+        row.appendChild(val);
+        rangeList.appendChild(row);
+      });
+
+      panel.appendChild(rangeList);
+    }
+  }
 }
 
 function renderHealthMetrics(items) {

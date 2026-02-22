@@ -57,27 +57,29 @@
         <div id="species-modal-image" class="species-modal-image">
           <span id="species-modal-emoji" class="species-modal-emoji"></span>
         </div>
-        <div class="modal-header">
-          <div>
-            <div id="species-modal-name" class="species-modal-name"></div>
-            <div id="species-modal-sci" class="species-modal-sci"></div>
-          </div>
-          <button id="species-modal-close" class="close-btn">&times;</button>
-        </div>
-        <div class="species-modal-hero">
-          <div class="species-life-wrap">
-            <div class="species-life-bar">
-              <div id="species-modal-fill" class="species-life-fill"></div>
+        <div class="species-modal-sticky">
+          <div class="modal-header">
+            <div>
+              <div id="species-modal-name" class="species-modal-name"></div>
+              <div id="species-modal-sci" class="species-modal-sci"></div>
             </div>
-            <div id="species-modal-status" class="species-life-label"></div>
+            <button id="species-modal-close" class="close-btn">&times;</button>
           </div>
-        </div>
-        <div class="species-tabs" role="tablist">
-          <button class="species-tab active" data-tab="vital"   id="tab-btn-vital">Vital Signs</button>
-          <button class="species-tab"        data-tab="health"  id="tab-btn-health">Health Metrics</button>
-          <button class="species-tab"        data-tab="threats" id="tab-btn-threats">Threats</button>
-          <button class="species-tab"        data-tab="actions" id="tab-btn-actions">Action Items</button>
-        </div>
+          <div class="species-modal-hero">
+            <div class="species-life-wrap">
+              <div class="species-life-bar">
+                <div id="species-modal-fill" class="species-life-fill"></div>
+              </div>
+              <div id="species-modal-status" class="species-life-label"></div>
+            </div>
+          </div>
+          <div class="species-tabs" role="tablist">
+            <button class="species-tab active" data-tab="vital"   id="tab-btn-vital">Vital Signs</button>
+            <button class="species-tab"        data-tab="health"  id="tab-btn-health">Health Metrics</button>
+            <button class="species-tab"        data-tab="threats" id="tab-btn-threats">Threats</button>
+            <button class="species-tab"        data-tab="actions" id="tab-btn-actions">Action Items</button>
+          </div>
+        </div><!-- /.species-modal-sticky -->
         <div class="species-tab-panels">
           <div class="species-tab-panel active" id="tab-panel-vital"></div>
           <div class="species-tab-panel"        id="tab-panel-health"></div>
