@@ -675,6 +675,15 @@ body.no-map {
   white-space: nowrap;
 }
 
+.search-highlight {
+  background: rgba(250, 200, 30, 0.38);
+  color: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  border-radius: 2px;
+  padding: 0 1px;
+}
+
 /* Fun fact */
 .species-funfact {
   margin-top: 0.1rem;
