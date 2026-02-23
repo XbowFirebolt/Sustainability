@@ -481,6 +481,13 @@ body.no-map {
   transform: translateY(-2px);
 }
 
+.species-card.keyboard-focused {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  box-shadow: 0 4px 24px rgba(var(--color-primary-rgb), 0.32);
+  transform: translateY(-2px);
+}
+
 .species-card-image {
   height: 180px;
   display: flex;

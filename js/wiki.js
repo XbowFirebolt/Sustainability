@@ -148,9 +148,11 @@ function closeSpeciesModal() {
     speciesModal.classList.add("hidden");
 
     // After animation, reset for next open
+    const cardToRefocus = activeCard;
     setTimeout(() => {
       modalContent.style.transform = "";
       activeCard = null;
+      if (cardToRefocus) cardToRefocus.focus({ preventScroll: true });
     }, 400);
   } else {
     speciesModal.classList.add("hidden");
@@ -659,6 +661,8 @@ function renderActionItems(items) {
 
 const wikiSearch = document.getElementById("wiki-search");
 
+let focusedCardIndex = -1;
+
 function renderWikiGrid(query) {
   const grid = document.getElementById("wiki-grid");
   const q = query ? query.trim().toLowerCase() : "";
@@ -678,6 +682,7 @@ function renderWikiGrid(query) {
   ];
 
   grid.innerHTML = "";
+  focusedCardIndex = -1;
 
   if (sorted.length === 0) {
     const empty = document.createElement("p");
@@ -693,6 +698,7 @@ function renderWikiGrid(query) {
     const card = document.createElement("div");
     card.className = "species-card";
     card.dataset.speciesId = species.id;
+    card.tabIndex = 0;
     card.addEventListener("click", () => openSpeciesModal(species, card));
 
     // Image area
@@ -787,6 +793,80 @@ function renderWikiGrid(query) {
 }
 
 wikiSearch.addEventListener("input", () => renderWikiGrid(wikiSearch.value));
+
+// ── Keyboard navigation ────────────────────────────────────────
+
+function getVisibleCards() {
+  return Array.from(document.querySelectorAll(".species-card"));
+}
+
+function setFocusedCard(index) {
+  const cards = getVisibleCards();
+  cards.forEach((c) => c.classList.remove("keyboard-focused"));
+  if (index < 0 || index >= cards.length) {
+    focusedCardIndex = -1;
+    return;
+  }
+  focusedCardIndex = index;
+  const card = cards[index];
+  card.classList.add("keyboard-focused");
+  card.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  card.focus({ preventScroll: true });
+}
+
+document.addEventListener("keydown", (e) => {
+  const modalOpen = !speciesModal.classList.contains("hidden");
+
+  if (modalOpen) {
+    if (e.key === "Escape") {
+      e.preventDefault();
+      closeSpeciesModal();
+      return;
+    }
+    if (e.key === "Tab") {
+      const tabs = Array.from(document.querySelectorAll(".species-tab"));
+      const activeIdx = tabs.findIndex((t) => t.classList.contains("active"));
+      e.preventDefault();
+      const nextIdx = e.shiftKey
+        ? (activeIdx - 1 + tabs.length) % tabs.length
+        : (activeIdx + 1) % tabs.length;
+      activateTab(tabs[nextIdx].dataset.tab);
+      tabs[nextIdx].focus();
+      return;
+    }
+    return;
+  }
+
+  // Modal closed — card navigation
+  if (e.target === wikiSearch) return;
+
+  if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+    const cards = getVisibleCards();
+    if (!cards.length) return;
+    e.preventDefault();
+    let next;
+    if (focusedCardIndex === -1) {
+      next = e.key === "ArrowRight" ? 0 : cards.length - 1;
+    } else {
+      next =
+        e.key === "ArrowRight"
+          ? (focusedCardIndex + 1) % cards.length
+          : (focusedCardIndex - 1 + cards.length) % cards.length;
+    }
+    setFocusedCard(next);
+    return;
+  }
+
+  if (e.key === "Enter" && focusedCardIndex !== -1) {
+    const cards = getVisibleCards();
+    const card = cards[focusedCardIndex];
+    if (!card) return;
+    e.preventDefault();
+    const species = WIKI_DATA.items.find((s) => s.id === card.dataset.speciesId);
+    if (species) openSpeciesModal(species, card);
+    return;
+  }
+});
 
 renderWikiGrid("");
 
