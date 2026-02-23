@@ -868,7 +868,88 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
+// ── At-a-glance status bar ─────────────────────────────────────
+
+const STATUS_ORDER = [
+  { label: "Extinct",               color: "#888888", bg: "rgba(136,136,136,0.13)" },
+  { label: "Extinct in the Wild",   color: "#9c3d9c", bg: "rgba(156,61,156,0.13)"  },
+  { label: "Critically Endangered", color: "#c0320a", bg: "rgba(192,50,10,0.13)"   },
+  { label: "Endangered",            color: "#c07a10", bg: "rgba(192,122,16,0.13)"  },
+  { label: "Vulnerable",            color: "#b0a010", bg: "rgba(176,160,16,0.13)"  },
+  { label: "Near Threatened",       color: "#5a8a2a", bg: "rgba(90,138,42,0.13)"   },
+  { label: "Least Concern",         color: "#2d6a2d", bg: "rgba(45,106,45,0.13)"   },
+  { label: "Data Deficient",        color: "#707070", bg: "rgba(112,112,112,0.13)" },
+  { label: "Not Evaluated",         color: "#505050", bg: "rgba(80,80,80,0.13)"    },
+];
+
+function renderStatusBar() {
+  const bar = document.getElementById("wiki-status-bar");
+  if (!bar) return;
+
+  const counts = {};
+  WIKI_DATA.items.forEach((s) => {
+    counts[s.statusLabel] = (counts[s.statusLabel] || 0) + 1;
+  });
+
+  bar.innerHTML = "";
+
+  const heading = document.createElement("span");
+  heading.className = "wiki-status-heading";
+  heading.textContent = "At a glance";
+  bar.appendChild(heading);
+
+  let hasChips = false;
+
+  STATUS_ORDER.forEach(({ label, color, bg }) => {
+    const count = counts[label];
+    if (!count) return;
+    hasChips = true;
+
+    const chip = document.createElement("div");
+    chip.className = "status-chip";
+    chip.style.setProperty("--chip-color", color);
+    chip.style.setProperty("--chip-bg", bg);
+
+    const countEl = document.createElement("span");
+    countEl.className = "status-chip-count";
+    countEl.textContent = count;
+
+    const labelEl = document.createElement("span");
+    labelEl.className = "status-chip-label";
+    labelEl.textContent = label;
+
+    chip.appendChild(countEl);
+    chip.appendChild(labelEl);
+    bar.appendChild(chip);
+  });
+
+  // Any statuses not in the config table go at the end
+  Object.entries(counts).forEach(([label, count]) => {
+    if (STATUS_ORDER.find((s) => s.label === label)) return;
+    const chip = document.createElement("div");
+    chip.className = "status-chip";
+    chip.style.setProperty("--chip-color", "#707070");
+    chip.style.setProperty("--chip-bg", "rgba(112,112,112,0.13)");
+
+    const countEl = document.createElement("span");
+    countEl.className = "status-chip-count";
+    countEl.textContent = count;
+
+    const labelEl = document.createElement("span");
+    labelEl.className = "status-chip-label";
+    labelEl.textContent = label;
+
+    chip.appendChild(countEl);
+    chip.appendChild(labelEl);
+    bar.appendChild(chip);
+    hasChips = true;
+  });
+
+  bar.style.display = hasChips ? "" : "none";
+}
+
 renderWikiGrid("");
+renderStatusBar();
 
 // Open modal directly if species is specified in the URL (deep link / bookmark)
 const initSpeciesId = new URLSearchParams(window.location.search).get("species");
