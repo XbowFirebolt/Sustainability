@@ -33,8 +33,15 @@ let activeCard = null;
 let tabPanelsScrollListener = null;
 let unitMode = localStorage.getItem("wiki_unit_mode") || "metric";
 let currentModalSpecies = null;
+let suppressHistoryUpdate = false;
 
 function openSpeciesModal(species, cardEl) {
+  if (!suppressHistoryUpdate) {
+    const url = new URL(window.location);
+    url.searchParams.set("species", species.id);
+    history.pushState({ speciesId: species.id }, "", url);
+  }
+
   activeCard = cardEl;
 
   const imgArea = document.getElementById("species-modal-image");
@@ -81,34 +88,45 @@ function openSpeciesModal(species, cardEl) {
   };
   modalContent.addEventListener("scroll", tabPanelsScrollListener);
 
-  const cardRect = cardEl.getBoundingClientRect();
+  if (cardEl) {
+    const cardRect = cardEl.getBoundingClientRect();
 
-  // Disable transition and show overlay (starts its opacity fade)
-  modalContent.style.transition = "none";
-  speciesModal.classList.remove("hidden");
+    // Disable transition and show overlay (starts its opacity fade)
+    modalContent.style.transition = "none";
+    speciesModal.classList.remove("hidden");
 
-  // Force reflow to get modal's natural centered position
-  const modalRect = modalContent.getBoundingClientRect();
+    // Force reflow to get modal's natural centered position
+    const modalRect = modalContent.getBoundingClientRect();
 
-  // Translate + scale to place the modal exactly over the card
-  const tx = (cardRect.left + cardRect.width / 2) - (modalRect.left + modalRect.width / 2);
-  const ty = (cardRect.top + cardRect.height / 2) - (modalRect.top + modalRect.height / 2);
-  const scale = cardRect.width / modalRect.width;
+    // Translate + scale to place the modal exactly over the card
+    const tx = (cardRect.left + cardRect.width / 2) - (modalRect.left + modalRect.width / 2);
+    const ty = (cardRect.top + cardRect.height / 2) - (modalRect.top + modalRect.height / 2);
+    const scale = cardRect.width / modalRect.width;
 
-  // Snap to card position (no transition yet)
-  modalContent.style.transform = `translate(${tx}px, ${ty}px) scale(${scale})`;
-  modalContent.getBoundingClientRect(); // commit starting state
+    // Snap to card position (no transition yet)
+    modalContent.style.transform = `translate(${tx}px, ${ty}px) scale(${scale})`;
+    modalContent.getBoundingClientRect(); // commit starting state
 
-  // Re-enable transition and animate to natural centered position
-  modalContent.style.transition = "";
-  requestAnimationFrame(() => {
+    // Re-enable transition and animate to natural centered position
+    modalContent.style.transition = "";
     requestAnimationFrame(() => {
-      modalContent.style.transform = "";
+      requestAnimationFrame(() => {
+        modalContent.style.transform = "";
+      });
     });
-  });
+  } else {
+    // No card to morph from (e.g. deep link) — just fade in
+    speciesModal.classList.remove("hidden");
+  }
 }
 
 function closeSpeciesModal() {
+  if (!suppressHistoryUpdate) {
+    const url = new URL(window.location);
+    url.searchParams.delete("species");
+    history.pushState({}, "", url);
+  }
+
   const modalContent = speciesModal.querySelector(".species-modal");
 
   // Remove scroll listener
@@ -142,6 +160,22 @@ function closeSpeciesModal() {
 document.getElementById("species-modal-close").addEventListener("click", closeSpeciesModal);
 speciesModal.addEventListener("click", (e) => {
   if (e.target === speciesModal) closeSpeciesModal();
+});
+
+window.addEventListener("popstate", () => {
+  suppressHistoryUpdate = true;
+  const params = new URLSearchParams(window.location.search);
+  const speciesId = params.get("species");
+  if (speciesId) {
+    const species = WIKI_DATA.items.find((s) => s.id === speciesId);
+    if (species) {
+      const cardEl = document.querySelector(`[data-species-id="${speciesId}"]`);
+      openSpeciesModal(species, cardEl);
+    }
+  } else if (!speciesModal.classList.contains("hidden")) {
+    closeSpeciesModal();
+  }
+  suppressHistoryUpdate = false;
 });
 
 // ── Tab switching ──────────────────────────────────────────────
@@ -658,6 +692,7 @@ function renderWikiGrid(query) {
 
     const card = document.createElement("div");
     card.className = "species-card";
+    card.dataset.speciesId = species.id;
     card.addEventListener("click", () => openSpeciesModal(species, card));
 
     // Image area
@@ -754,3 +789,14 @@ function renderWikiGrid(query) {
 wikiSearch.addEventListener("input", () => renderWikiGrid(wikiSearch.value));
 
 renderWikiGrid("");
+
+// Open modal directly if species is specified in the URL (deep link / bookmark)
+const initSpeciesId = new URLSearchParams(window.location.search).get("species");
+if (initSpeciesId) {
+  const initSpecies = WIKI_DATA.items.find((s) => s.id === initSpeciesId);
+  if (initSpecies) {
+    suppressHistoryUpdate = true;
+    openSpeciesModal(initSpecies, document.querySelector(`[data-species-id="${initSpeciesId}"]`));
+    suppressHistoryUpdate = false;
+  }
+}
