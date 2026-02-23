@@ -665,7 +665,7 @@ body.no-map {
 .species-life-fill {
   height: 100%;
   border-radius: 999px;
-  transition: width 0.4s ease;
+  transition: width 0.65s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .species-life-label {

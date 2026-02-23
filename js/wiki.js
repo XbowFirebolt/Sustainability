@@ -785,7 +785,8 @@ function renderWikiGrid(query) {
 
     const lifeFill = document.createElement("div");
     lifeFill.className = "species-life-fill";
-    lifeFill.style.width = `${species.lifePercent}%`;
+    lifeFill.style.width = "0%";
+    lifeFill.dataset.targetWidth = species.lifePercent;
     lifeFill.style.background = getLifeBarColor(species.lifePercent);
 
     const lifeLabel = document.createElement("div");
@@ -819,6 +820,24 @@ function renderWikiGrid(query) {
     card.appendChild(body);
     grid.appendChild(card);
   });
+
+  // Animate life bars from 0% to their value as cards enter the viewport
+  if (window._wikiLifeObserver) window._wikiLifeObserver.disconnect();
+  window._wikiLifeObserver = new IntersectionObserver((entries) => {
+    const visible = entries
+      .filter((e) => e.isIntersecting)
+      .sort(
+        (a, b) =>
+          a.boundingClientRect.top - b.boundingClientRect.top ||
+          a.boundingClientRect.left - b.boundingClientRect.left
+      );
+    visible.forEach((entry, i) => {
+      const fill = entry.target.querySelector(".species-life-fill");
+      if (fill) setTimeout(() => { fill.style.width = fill.dataset.targetWidth + "%"; }, i * 60);
+      window._wikiLifeObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.15 });
+  grid.querySelectorAll(".species-card").forEach((card) => window._wikiLifeObserver.observe(card));
 }
 
 wikiSearch.addEventListener("input", () => renderWikiGrid(wikiSearch.value));
