@@ -199,6 +199,32 @@ document.querySelectorAll(".species-tab").forEach((btn) => {
 
 // ── Tab content renderers ──────────────────────────────────────
 
+function renderCredits(panel) {
+  const sources = WIKI_DATA.sources;
+  if (!Array.isArray(sources) || !sources.length) return;
+
+  const credits = document.createElement("div");
+  credits.className = "tab-credits";
+
+  const label = document.createElement("span");
+  label.className = "tab-credits-label";
+  label.textContent = "Sources:";
+  credits.appendChild(label);
+
+  sources.forEach(({ label: srcLabel, url }, i) => {
+    if (i > 0) credits.appendChild(document.createTextNode(", "));
+    const a = document.createElement("a");
+    a.className = "tab-credits-link";
+    a.href = url;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    a.textContent = srcLabel;
+    credits.appendChild(a);
+  });
+
+  panel.appendChild(credits);
+}
+
 function renderVitalSigns(species) {
   const panel = document.getElementById("tab-panel-vital");
   panel.innerHTML = "";
@@ -211,6 +237,7 @@ function renderVitalSigns(species) {
         '<span class="tab-placeholder-icon">📊</span>' +
         "Vital statistics data is not yet available for this species." +
       "</div>";
+    renderCredits(panel);
     return;
   }
 
@@ -339,6 +366,8 @@ function renderVitalSigns(species) {
       panel.appendChild(rangeList);
     }
   }
+
+  renderCredits(panel);
 }
 
 function renderPopulationChart(container, data) {
@@ -467,6 +496,7 @@ function renderHealthMetrics(species) {
         '<span class="tab-placeholder-icon">🩺</span>' +
         "Health and conservation metric data is not yet available for this species." +
       "</div>";
+    renderCredits(panel);
     return;
   }
 
@@ -564,6 +594,8 @@ function renderHealthMetrics(species) {
     panel.appendChild(pressureTitle);
     renderRegionGrid(panel, species.fishingPressureRegions);
   }
+
+  renderCredits(panel);
 }
 
 function renderThreats(items) {
@@ -576,6 +608,7 @@ function renderThreats(items) {
         '<span class="tab-placeholder-icon">⚠️</span>' +
         "Threat data is not yet available for this species." +
       "</div>";
+    renderCredits(panel);
     return;
   }
 
@@ -610,6 +643,7 @@ function renderThreats(items) {
   });
 
   panel.appendChild(list);
+  renderCredits(panel);
 }
 
 function renderActionItems(items) {
@@ -622,6 +656,7 @@ function renderActionItems(items) {
         '<span class="tab-placeholder-icon">🌱</span>' +
         "Conservation action data is not yet available for this species." +
       "</div>";
+    renderCredits(panel);
     return;
   }
 
@@ -657,6 +692,7 @@ function renderActionItems(items) {
   });
 
   panel.appendChild(list);
+  renderCredits(panel);
 }
 
 const wikiSearch = document.getElementById("wiki-search");

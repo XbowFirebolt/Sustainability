@@ -1,6 +1,12 @@
 window.WIKI_DATA = {
   projectId: "shark-populations",
   favoritesKey: "wiki_favorites_shark-populations",
+  sources: [
+    { label: "IUCN Red List",    url: "https://www.iucnredlist.org" },
+    { label: "CITES Appendices", url: "https://cites.org/eng/app/appendices.php" },
+    { label: "Shark Trust",      url: "https://www.sharktrust.org" },
+    { label: "NOAA Fisheries",   url: "https://www.fisheries.noaa.gov" },
+  ],
   items: [
     {
       id: "great-white",
