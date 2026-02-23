@@ -891,6 +891,103 @@ body.no-map {
 .tab-trend--down   { color: #c0320a; }
 .tab-trend--stable { color: var(--color-text-muted); }
 
+/* ── Health Metrics — sections & chart ── */
+.health-section-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  margin: 1.1rem 0 0.5rem;
+}
+
+.health-section-title:first-child {
+  margin-top: 0;
+}
+
+.health-chart-wrap {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0.6rem 0.5rem 0.4rem;
+  overflow: hidden;
+}
+
+.health-chart-svg {
+  width: 100%;
+  display: block;
+}
+
+.health-chart-year {
+  font-size: 10px;
+  fill: var(--color-text-muted);
+}
+
+.health-chart-value {
+  font-size: 10px;
+  fill: var(--color-text-muted);
+}
+
+/* ── Health Metrics — right column (value + optional links) ── */
+.tab-health-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+}
+
+/* ── Health Metrics — region grid ── */
+.health-region-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.5rem;
+}
+
+.health-region-card {
+  padding: 0.5rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.health-region-name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 0.25rem;
+}
+
+.health-region-note {
+  font-size: 0.72rem;
+  color: var(--color-text-dim);
+  line-height: 1.4;
+  margin-top: 0.3rem;
+}
+
+/* ── Health Metrics — protection coverage links ── */
+.health-metric-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.45rem;
+}
+
+.health-metric-link {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.health-metric-link:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
 /* ── Threats ── */
 .tab-threats-list {
   display: flex;

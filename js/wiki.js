@@ -61,7 +61,7 @@ function openSpeciesModal(species, cardEl) {
   currentModalSpecies = species;
   activateTab("vital");
   renderVitalSigns(species);
-  renderHealthMetrics(species.healthMetrics);
+  renderHealthMetrics(species);
   renderThreats(species.threats);
   renderActionItems(species.actionItems);
 
@@ -305,9 +305,125 @@ function renderVitalSigns(species) {
   }
 }
 
-function renderHealthMetrics(items) {
+function renderPopulationChart(container, data) {
+  const PAD = { top: 14, right: 16, bottom: 28, left: 48 };
+  const W = 480, H = 160;
+  const innerW = W - PAD.left - PAD.right;
+  const innerH = H - PAD.top - PAD.bottom;
+
+  const values = data.map((d) => d.value);
+  const minVal = Math.min(...values);
+  const maxVal = Math.max(...values);
+  const valRange = maxVal - minVal || 1;
+
+  const xOf = (i) => PAD.left + (i / (data.length - 1)) * innerW;
+  const yOf = (v) => PAD.top + innerH - ((v - minVal) / valRange) * innerH;
+
+  const svgNS = "http://www.w3.org/2000/svg";
+
+  const svg = document.createElementNS(svgNS, "svg");
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  svg.setAttribute("preserveAspectRatio", "xMidYMid meet");
+  svg.className = "health-chart-svg";
+
+  // Grid lines at 0%, 33%, 67%, 100% of value range
+  [0, 0.33, 0.67, 1].forEach((t) => {
+    const y = PAD.top + innerH - t * innerH;
+    const line = document.createElementNS(svgNS, "line");
+    line.setAttribute("x1", PAD.left);
+    line.setAttribute("x2", PAD.left + innerW);
+    line.setAttribute("y1", y);
+    line.setAttribute("y2", y);
+    line.setAttribute("stroke", "currentColor");
+    line.setAttribute("stroke-opacity", "0.08");
+    line.setAttribute("stroke-width", "1");
+    svg.appendChild(line);
+
+    const gridLabel = document.createElementNS(svgNS, "text");
+    gridLabel.setAttribute("x", PAD.left - 5);
+    gridLabel.setAttribute("y", y + 3.5);
+    gridLabel.setAttribute("text-anchor", "end");
+    gridLabel.className = "health-chart-value";
+    gridLabel.textContent = "~" + Math.round(minVal + t * valRange).toLocaleString();
+    svg.appendChild(gridLabel);
+  });
+
+  // Shaded area fill
+  const areaPoints =
+    data.map((d, i) => `${xOf(i)},${yOf(d.value)}`).join(" ") +
+    ` ${xOf(data.length - 1)},${PAD.top + innerH} ${xOf(0)},${PAD.top + innerH}`;
+  const area = document.createElementNS(svgNS, "polygon");
+  area.setAttribute("points", areaPoints);
+  area.setAttribute("fill", "var(--color-primary)");
+  area.setAttribute("fill-opacity", "0.12");
+  svg.appendChild(area);
+
+  // Data line
+  const polyline = document.createElementNS(svgNS, "polyline");
+  polyline.setAttribute("points", data.map((d, i) => `${xOf(i)},${yOf(d.value)}`).join(" "));
+  polyline.setAttribute("fill", "none");
+  polyline.setAttribute("stroke", "var(--color-primary)");
+  polyline.setAttribute("stroke-width", "2");
+  polyline.setAttribute("stroke-linejoin", "round");
+  svg.appendChild(polyline);
+
+  // Dots and year labels
+  data.forEach((d, i) => {
+    const cx = xOf(i), cy = yOf(d.value);
+
+    const dot = document.createElementNS(svgNS, "circle");
+    dot.setAttribute("cx", cx);
+    dot.setAttribute("cy", cy);
+    dot.setAttribute("r", "3.5");
+    dot.setAttribute("fill", "var(--color-primary)");
+    svg.appendChild(dot);
+
+    const yearLabel = document.createElementNS(svgNS, "text");
+    yearLabel.setAttribute("x", cx);
+    yearLabel.setAttribute("y", H - 6);
+    yearLabel.setAttribute("text-anchor", "middle");
+    yearLabel.className = "health-chart-year";
+    yearLabel.textContent = d.year;
+    svg.appendChild(yearLabel);
+  });
+
+  container.appendChild(svg);
+}
+
+function renderRegionGrid(container, regions) {
+  const grid = document.createElement("div");
+  grid.className = "health-region-grid";
+
+  regions.forEach(({ name, severity, note }) => {
+    const card = document.createElement("div");
+    card.className = "health-region-card";
+
+    const nameEl = document.createElement("div");
+    nameEl.className = "health-region-name";
+    nameEl.textContent = name;
+
+    const badge = document.createElement("span");
+    badge.className = "tab-severity-badge tab-severity-badge--" + (severity || "medium");
+    badge.textContent = severity || "unknown";
+
+    const noteEl = document.createElement("div");
+    noteEl.className = "health-region-note";
+    noteEl.textContent = note;
+
+    card.appendChild(nameEl);
+    card.appendChild(badge);
+    card.appendChild(noteEl);
+    grid.appendChild(card);
+  });
+
+  container.appendChild(grid);
+}
+
+function renderHealthMetrics(species) {
   const panel = document.getElementById("tab-panel-health");
   panel.innerHTML = "";
+
+  const items = species.healthMetrics;
 
   if (!Array.isArray(items) || !items.length) {
     panel.innerHTML =
@@ -318,19 +434,42 @@ function renderHealthMetrics(items) {
     return;
   }
 
-  const list = document.createElement("div");
-  list.className = "tab-health-list";
-
   const TREND_SYMBOLS = { up: "▲", down: "▼", stable: "—" };
   const TREND_CLASSES  = { up: "tab-trend--up", down: "tab-trend--down", stable: "tab-trend--stable" };
 
-  items.forEach(({ label, value, trend }) => {
+  // ── Population Trend Chart ─────────────────────────────────────
+  if (Array.isArray(species.populationTrend) && species.populationTrend.length) {
+    const sectionTitle = document.createElement("div");
+    sectionTitle.className = "health-section-title";
+    sectionTitle.textContent = "Population Trend";
+    panel.appendChild(sectionTitle);
+
+    const chartWrap = document.createElement("div");
+    chartWrap.className = "health-chart-wrap";
+    renderPopulationChart(chartWrap, species.populationTrend);
+    panel.appendChild(chartWrap);
+  }
+
+  // ── Key Metrics list ───────────────────────────────────────────
+  const metricsTitle = document.createElement("div");
+  metricsTitle.className = "health-section-title";
+  metricsTitle.textContent = "Key Metrics";
+  panel.appendChild(metricsTitle);
+
+  const list = document.createElement("div");
+  list.className = "tab-health-list";
+
+  items.forEach(({ label, value, trend, links }) => {
+    const hasLinks = Array.isArray(links) && links.length;
     const row = document.createElement("div");
     row.className = "tab-health-row";
 
     const lbl = document.createElement("span");
     lbl.className = "tab-health-label";
     lbl.textContent = label;
+
+    const rightCol = document.createElement("div");
+    rightCol.className = "tab-health-right";
 
     const valueWrap = document.createElement("div");
     valueWrap.className = "tab-health-value-wrap";
@@ -348,12 +487,47 @@ function renderHealthMetrics(items) {
       valueWrap.appendChild(indicator);
     }
 
+    rightCol.appendChild(valueWrap);
+
+    if (hasLinks) {
+      const linksWrap = document.createElement("div");
+      linksWrap.className = "health-metric-links";
+      links.forEach(({ label: linkLabel, url }) => {
+        const a = document.createElement("a");
+        a.className = "health-metric-link";
+        a.href = url;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        a.textContent = linkLabel;
+        linksWrap.appendChild(a);
+      });
+      rightCol.appendChild(linksWrap);
+    }
+
     row.appendChild(lbl);
-    row.appendChild(valueWrap);
+    row.appendChild(rightCol);
     list.appendChild(row);
   });
 
   panel.appendChild(list);
+
+  // ── Prey Availability by Region ────────────────────────────────
+  if (Array.isArray(species.preyDeclineRegions) && species.preyDeclineRegions.length) {
+    const preyTitle = document.createElement("div");
+    preyTitle.className = "health-section-title";
+    preyTitle.textContent = "Prey Availability by Region";
+    panel.appendChild(preyTitle);
+    renderRegionGrid(panel, species.preyDeclineRegions);
+  }
+
+  // ── Fishing Pressure by Region ─────────────────────────────────
+  if (Array.isArray(species.fishingPressureRegions) && species.fishingPressureRegions.length) {
+    const pressureTitle = document.createElement("div");
+    pressureTitle.className = "health-section-title";
+    pressureTitle.textContent = "Fishing Pressure by Region";
+    panel.appendChild(pressureTitle);
+    renderRegionGrid(panel, species.fishingPressureRegions);
+  }
 }
 
 function renderThreats(items) {
