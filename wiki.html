@@ -24,7 +24,19 @@
       <div class="discover-search-wrap">
         <input id="wiki-search" class="discover-search" type="search" placeholder="Search by name, species, or status…" />
       </div>
-      <div id="wiki-status-bar" class="wiki-status-bar"></div>
+      <div id="wiki-status-bar" class="wiki-status-bar">
+        <div id="wiki-chips-area" class="wiki-chips-area"></div>
+        <div class="wiki-sort-group">
+          <span class="wiki-filter-label">Sort</span>
+          <select id="wiki-sort" class="wiki-sort-select">
+            <option value="default">Default</option>
+            <option value="name-asc">Name A→Z</option>
+            <option value="health-asc">Health % ↑</option>
+            <option value="health-desc">Health % ↓</option>
+            <option value="threat-desc">Threat Severity</option>
+          </select>
+        </div>
+      </div>
       <div id="wiki-grid" class="wiki-grid"></div>
     </main>
     <div id="account-modal" class="modal-overlay hidden">

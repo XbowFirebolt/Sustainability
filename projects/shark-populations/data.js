@@ -98,7 +98,12 @@ window.WIKI_DATA = {
       habitat: "Tropical and warm temperate seas worldwide; coastal, estuarine, and semi-oceanic",
       diet: "Fish, squid, octopus, and crustaceans",
       size: "Up to 4.3 m (14 ft)",
-      threats: "Highly prized fins in the shark fin trade, bycatch in tuna and swordfish longline fisheries, coastal habitat loss",
+      threats: [
+        { name: "Shark Fin Trade",    severity: "critical", description: "The scalloped hammerhead's distinctive fins are among the most prized in the trade. Demand has driven an 80%+ population collapse, with targeted finning the primary driver of decline." },
+        { name: "Bycatch",            severity: "critical", description: "Caught incidentally in tuna and swordfish longline fisheries at extremely high rates. Schools near the surface make them especially vulnerable during daytime aggregations." },
+        { name: "Coastal Habitat Loss", severity: "high",  description: "Pups and juveniles rely on shallow estuaries and coastal bays as nursery habitat. Urban development, mangrove loss, and pollution degrade these critical areas." },
+        { name: "Climate Change",     severity: "medium",   description: "Warming seas compress preferred temperature bands and shift prey distributions, putting additional pressure on already fragmented populations." },
+      ],
     },
     {
       id: "whale-shark",
@@ -112,7 +117,13 @@ window.WIKI_DATA = {
       habitat: "Tropical and warm temperate seas worldwide; open ocean and productive coastal areas, especially near upwelling zones",
       diet: "Plankton, fish eggs, krill, small fish, and squid",
       size: "Up to 12 m (40 ft); possibly larger",
-      threats: "Ship strikes, entanglement in fishing gear, tourism pressure, plastic ingestion, and climate-driven changes to plankton availability",
+      threats: [
+        { name: "Ship Strikes",           severity: "high",   description: "Slow-moving and surface-dwelling, whale sharks are frequently struck by vessels. Propeller wounds are documented globally, and strikes often go unreported in open-ocean shipping lanes." },
+        { name: "Fishing Gear Entanglement", severity: "high", description: "Large body size does not prevent entanglement in purse seines and gill nets. Feeding aggregations near productive coastal upwelling zones overlap heavily with active fisheries." },
+        { name: "Tourism Pressure",       severity: "medium", description: "Unregulated swim-with interactions cause chronic stress, alter feeding behavior, and expose sharks to repeated boat traffic at known aggregation sites." },
+        { name: "Plastic Ingestion",      severity: "medium", description: "Filter feeding ingests microplastics and larger debris alongside plankton. Plastic concentrations in surface waters are highest in the tropical feeding grounds this species depends on." },
+        { name: "Climate Change",         severity: "medium", description: "Shifting ocean temperatures and declining plankton productivity reduce food availability and force longer migrations between feeding aggregations." },
+      ],
     },
     {
       id: "bull-shark",
@@ -126,7 +137,12 @@ window.WIKI_DATA = {
       habitat: "Tropical and subtropical coastal waters, river mouths, estuaries, and freshwater river systems worldwide",
       diet: "Fish, rays, sea turtles, dolphins, birds, and other sharks",
       size: "Up to 3.4 m (11 ft); females larger",
-      threats: "Targeted fishing for meat and fins, habitat loss in river systems from dams and pollution, water quality degradation",
+      threats: [
+        { name: "Targeted Fishing",       severity: "high",   description: "Heavily fished for meat, fins, and liver oil in tropical and subtropical markets. Shallow coastal and riverine habitat makes them easy to intercept with nets and longlines." },
+        { name: "Freshwater Habitat Loss", severity: "high",  description: "Dams block river access to nursery areas, while agricultural runoff and urban pollution degrade water quality throughout their freshwater range. Bull sharks depend on low-salinity estuaries to give birth." },
+        { name: "Water Quality Degradation", severity: "medium", description: "Chemical pollutants and heavy metals accumulate in coastal and riverine systems where bull sharks forage and pup, affecting juvenile survival and reproductive success." },
+        { name: "Bycatch",               severity: "medium",  description: "Incidentally caught in coastal gillnets and longlines targeting other species. Coastal development that concentrates fishing effort near river mouths compounds this pressure." },
+      ],
     },
     {
       id: "tiger-shark",
@@ -140,7 +156,12 @@ window.WIKI_DATA = {
       habitat: "Tropical and subtropical waters worldwide; coastal, reef, and open ocean environments",
       diet: "Sea turtles, fish, marine mammals, seabirds, rays, and almost any other prey item",
       size: "Up to 5.5 m (18 ft)",
-      threats: "Targeted fishing for fins and liver oil, bycatch, and lethal culling programs in Australia and Hawaii",
+      threats: [
+        { name: "Targeted Fishing",       severity: "high",   description: "Fins are among the most valuable in the shark fin trade, and liver oil is used in cosmetics and supplements. Demand drives directed fishing across the Indo-Pacific and Atlantic." },
+        { name: "Bycatch",               severity: "high",   description: "Frequently caught incidentally in pelagic longlines, gillnets, and drum lines targeting tuna and billfish. Wide-ranging movements across ocean basins increase exposure to diverse fisheries." },
+        { name: "Lethal Culling Programs", severity: "high",  description: "Government-sanctioned drum line and shark net programs in Australia and Hawaii kill hundreds of tiger sharks annually to reduce perceived risk to swimmers, with limited evidence of effectiveness." },
+        { name: "Habitat Pressures",     severity: "low",    description: "Coastal development and reef degradation reduce prey availability in nearshore habitats, but wide-ranging oceanic behavior provides some buffer against localized habitat loss." },
+      ],
     },
   ],
 };

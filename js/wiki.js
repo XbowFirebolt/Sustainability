@@ -662,24 +662,50 @@ function renderActionItems(items) {
 const wikiSearch = document.getElementById("wiki-search");
 
 let focusedCardIndex = -1;
+let activeStatusFilters = new Set();
+let sortMode = "default";
+
+const SEVERITY_SCORE = { critical: 4, high: 3, medium: 2, low: 1 };
+
+function getThreatSeverityScore(species) {
+  if (!species.threats || species.threats.length === 0) return 0;
+  return Math.max(...species.threats.map((t) => SEVERITY_SCORE[t.severity] || 0));
+}
 
 function renderWikiGrid(query) {
   const grid = document.getElementById("wiki-grid");
   const q = query ? query.trim().toLowerCase() : "";
-  const filtered = q
+  let filtered = q
     ? WIKI_DATA.items.filter(
         (s) =>
           s.commonName.toLowerCase().includes(q) ||
           s.scientificName.toLowerCase().includes(q) ||
           s.statusLabel.toLowerCase().includes(q)
       )
-    : WIKI_DATA.items;
+    : [...WIKI_DATA.items];
+
+  if (activeStatusFilters.size > 0) {
+    filtered = filtered.filter((s) => activeStatusFilters.has(s.statusLabel));
+  }
 
   const favIds = loadFavorites();
-  const sorted = [
-    ...filtered.filter((s) => favIds.includes(s.id)),
-    ...filtered.filter((s) => !favIds.includes(s.id)),
-  ];
+  let sorted;
+  if (sortMode === "default") {
+    sorted = [
+      ...filtered.filter((s) => favIds.includes(s.id)),
+      ...filtered.filter((s) => !favIds.includes(s.id)),
+    ];
+  } else if (sortMode === "name-asc") {
+    sorted = [...filtered].sort((a, b) => a.commonName.localeCompare(b.commonName));
+  } else if (sortMode === "health-asc") {
+    sorted = [...filtered].sort((a, b) => a.lifePercent - b.lifePercent);
+  } else if (sortMode === "health-desc") {
+    sorted = [...filtered].sort((a, b) => b.lifePercent - a.lifePercent);
+  } else if (sortMode === "threat-desc") {
+    sorted = [...filtered].sort((a, b) => getThreatSeverityScore(b) - getThreatSeverityScore(a));
+  } else {
+    sorted = filtered;
+  }
 
   grid.innerHTML = "";
   focusedCardIndex = -1;
@@ -687,7 +713,10 @@ function renderWikiGrid(query) {
   if (sorted.length === 0) {
     const empty = document.createElement("p");
     empty.className = "discover-empty";
-    empty.textContent = "No species match your search.";
+    empty.textContent =
+      activeStatusFilters.size > 0
+        ? "No species match your search or filters."
+        : "No species match your search.";
     grid.appendChild(empty);
     return;
   }
@@ -794,6 +823,11 @@ function renderWikiGrid(query) {
 
 wikiSearch.addEventListener("input", () => renderWikiGrid(wikiSearch.value));
 
+document.getElementById("wiki-sort").addEventListener("change", (e) => {
+  sortMode = e.target.value;
+  renderWikiGrid(wikiSearch.value);
+});
+
 // ── Keyboard navigation ────────────────────────────────────────
 
 function getVisibleCards() {
@@ -883,32 +917,31 @@ const STATUS_ORDER = [
 ];
 
 function renderStatusBar() {
+  const area = document.getElementById("wiki-chips-area");
   const bar = document.getElementById("wiki-status-bar");
-  if (!bar) return;
+  if (!area || !bar) return;
 
   const counts = {};
   WIKI_DATA.items.forEach((s) => {
     counts[s.statusLabel] = (counts[s.statusLabel] || 0) + 1;
   });
 
-  bar.innerHTML = "";
+  area.innerHTML = "";
 
   const heading = document.createElement("span");
   heading.className = "wiki-status-heading";
   heading.textContent = "At a glance";
-  bar.appendChild(heading);
+  area.appendChild(heading);
 
   let hasChips = false;
 
-  STATUS_ORDER.forEach(({ label, color, bg }) => {
-    const count = counts[label];
-    if (!count) return;
+  function makeChip(label, color, bg, count) {
     hasChips = true;
-
-    const chip = document.createElement("div");
+    const chip = document.createElement("button");
     chip.className = "status-chip";
     chip.style.setProperty("--chip-color", color);
     chip.style.setProperty("--chip-bg", bg);
+    chip.setAttribute("aria-pressed", "false");
 
     const countEl = document.createElement("span");
     countEl.className = "status-chip-count";
@@ -920,29 +953,33 @@ function renderStatusBar() {
 
     chip.appendChild(countEl);
     chip.appendChild(labelEl);
-    bar.appendChild(chip);
+
+    chip.addEventListener("click", () => {
+      if (activeStatusFilters.has(label)) {
+        activeStatusFilters.delete(label);
+        chip.classList.remove("active");
+        chip.setAttribute("aria-pressed", "false");
+      } else {
+        activeStatusFilters.add(label);
+        chip.classList.add("active");
+        chip.setAttribute("aria-pressed", "true");
+      }
+      renderWikiGrid(wikiSearch.value);
+    });
+
+    return chip;
+  }
+
+  STATUS_ORDER.forEach(({ label, color, bg }) => {
+    const count = counts[label];
+    if (!count) return;
+    area.appendChild(makeChip(label, color, bg, count));
   });
 
   // Any statuses not in the config table go at the end
   Object.entries(counts).forEach(([label, count]) => {
     if (STATUS_ORDER.find((s) => s.label === label)) return;
-    const chip = document.createElement("div");
-    chip.className = "status-chip";
-    chip.style.setProperty("--chip-color", "#707070");
-    chip.style.setProperty("--chip-bg", "rgba(112,112,112,0.13)");
-
-    const countEl = document.createElement("span");
-    countEl.className = "status-chip-count";
-    countEl.textContent = count;
-
-    const labelEl = document.createElement("span");
-    labelEl.className = "status-chip-label";
-    labelEl.textContent = label;
-
-    chip.appendChild(countEl);
-    chip.appendChild(labelEl);
-    bar.appendChild(chip);
-    hasChips = true;
+    area.appendChild(makeChip(label, "#707070", "rgba(112,112,112,0.13)", count));
   });
 
   bar.style.display = hasChips ? "" : "none";
