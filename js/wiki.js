@@ -672,6 +672,11 @@ function getThreatSeverityScore(species) {
   return Math.max(...species.threats.map((t) => SEVERITY_SCORE[t.severity] || 0));
 }
 
+function getMaxSeverityLabel(species) {
+  const score = getThreatSeverityScore(species);
+  return { 4: "critical", 3: "high", 2: "medium", 1: "low" }[score] || null;
+}
+
 function renderWikiGrid(query) {
   const grid = document.getElementById("wiki-grid");
   const q = query ? query.trim().toLowerCase() : "";
@@ -776,6 +781,15 @@ function renderWikiGrid(query) {
     sci.className = "species-card-sci";
     sci.textContent = species.scientificName;
 
+    // Threat severity badge
+    const maxSeverity = getMaxSeverityLabel(species);
+    let threatBadge = null;
+    if (maxSeverity) {
+      threatBadge = document.createElement("div");
+      threatBadge.className = `card-threat-badge tab-severity-badge tab-severity-badge--${maxSeverity}`;
+      threatBadge.textContent = maxSeverity.charAt(0).toUpperCase() + maxSeverity.slice(1);
+    }
+
     // Life bar
     const lifeWrap = document.createElement("div");
     lifeWrap.className = "species-life-wrap";
@@ -814,6 +828,7 @@ function renderWikiGrid(query) {
 
     body.appendChild(name);
     body.appendChild(sci);
+    if (threatBadge) body.appendChild(threatBadge);
     body.appendChild(lifeWrap);
     body.appendChild(funfact);
     card.appendChild(imgArea);
