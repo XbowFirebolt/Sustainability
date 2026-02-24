@@ -62,6 +62,12 @@ function openSpeciesModal(species, cardEl) {
   document.getElementById("species-modal-name").textContent = species.commonName;
   document.getElementById("species-modal-sci").textContent = species.scientificName;
 
+  const isFav = loadFavorites().includes(species.id);
+  const modalStarBtn = document.getElementById("modal-star-btn");
+  modalStarBtn.textContent = isFav ? "\u2605" : "\u2606";
+  modalStarBtn.classList.toggle("favorited", isFav);
+  modalStarBtn.setAttribute("aria-label", isFav ? `Unfavorite ${species.commonName}` : `Favorite ${species.commonName}`);
+
   const fill = document.getElementById("species-modal-fill");
   fill.style.width = `${species.lifePercent}%`;
   fill.style.background = getLifeBarColor(species.lifePercent);
@@ -180,6 +186,24 @@ function navigateModal(dir) {
   const newIndex = (currentModalIndex + dir + total) % total;
   openSpeciesModal(currentFilteredSorted[newIndex], null);
 }
+
+document.getElementById("modal-star-btn").addEventListener("click", () => {
+  if (!currentModalSpecies) return;
+  const ids = loadFavorites();
+  const idx = ids.indexOf(currentModalSpecies.id);
+  if (idx === -1) {
+    ids.push(currentModalSpecies.id);
+  } else {
+    ids.splice(idx, 1);
+  }
+  saveFavorites(ids);
+  const isFav = ids.includes(currentModalSpecies.id);
+  const btn = document.getElementById("modal-star-btn");
+  btn.textContent = isFav ? "\u2605" : "\u2606";
+  btn.classList.toggle("favorited", isFav);
+  btn.setAttribute("aria-label", isFav ? `Unfavorite ${currentModalSpecies.commonName}` : `Favorite ${currentModalSpecies.commonName}`);
+  renderWikiGrid(wikiSearch.value);
+});
 
 document.getElementById("modal-prev").addEventListener("click", () => navigateModal(-1));
 document.getElementById("modal-next").addEventListener("click", () => navigateModal(1));

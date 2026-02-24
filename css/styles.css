@@ -798,6 +798,11 @@ body.no-map {
   cursor: default;
 }
 
+.modal-star-btn.favorited {
+  color: #c8900a;
+  border-color: rgba(200, 144, 10, 0.5);
+}
+
 .modal-nav-counter {
   font-size: 0.72rem;
   color: rgba(244, 248, 244, 0.7);
