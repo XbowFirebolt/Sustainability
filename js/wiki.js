@@ -34,6 +34,8 @@ let tabPanelsScrollListener = null;
 let unitMode = localStorage.getItem("wiki_unit_mode") || "metric";
 let currentModalSpecies = null;
 let suppressHistoryUpdate = false;
+let currentFilteredSorted = [];
+let currentModalIndex = -1;
 
 function openSpeciesModal(species, cardEl) {
   if (!suppressHistoryUpdate) {
@@ -66,6 +68,8 @@ function openSpeciesModal(species, cardEl) {
   document.getElementById("species-modal-status").textContent = species.statusLabel;
 
   currentModalSpecies = species;
+  currentModalIndex = currentFilteredSorted.findIndex((s) => s.id === species.id);
+  updateModalNavState();
   activateTab("vital");
   renderVitalSigns(species);
   renderHealthMetrics(species);
@@ -158,6 +162,27 @@ function closeSpeciesModal() {
     speciesModal.classList.add("hidden");
   }
 }
+
+function updateModalNavState() {
+  const prevBtn = document.getElementById("modal-prev");
+  const nextBtn = document.getElementById("modal-next");
+  const counter = document.getElementById("modal-counter");
+  const total = currentFilteredSorted.length;
+  const canNav = total > 1 && currentModalIndex >= 0;
+  prevBtn.disabled = !canNav;
+  nextBtn.disabled = !canNav;
+  counter.textContent = currentModalIndex >= 0 ? `${currentModalIndex + 1} / ${total}` : "";
+}
+
+function navigateModal(dir) {
+  const total = currentFilteredSorted.length;
+  if (total === 0 || currentModalIndex < 0) return;
+  const newIndex = (currentModalIndex + dir + total) % total;
+  openSpeciesModal(currentFilteredSorted[newIndex], null);
+}
+
+document.getElementById("modal-prev").addEventListener("click", () => navigateModal(-1));
+document.getElementById("modal-next").addEventListener("click", () => navigateModal(1));
 
 document.getElementById("species-modal-close").addEventListener("click", closeSpeciesModal);
 speciesModal.addEventListener("click", (e) => {
@@ -768,6 +793,12 @@ function renderWikiGrid(query) {
     sorted = filtered;
   }
 
+  currentFilteredSorted = sorted;
+  if (currentModalSpecies && !speciesModal.classList.contains("hidden")) {
+    currentModalIndex = currentFilteredSorted.findIndex((s) => s.id === currentModalSpecies.id);
+    updateModalNavState();
+  }
+
   grid.innerHTML = "";
   focusedCardIndex = -1;
 
@@ -945,6 +976,16 @@ document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       e.preventDefault();
       closeSpeciesModal();
+      return;
+    }
+    if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      navigateModal(-1);
+      return;
+    }
+    if (e.key === "ArrowRight") {
+      e.preventDefault();
+      navigateModal(1);
       return;
     }
     if (e.key === "Tab") {

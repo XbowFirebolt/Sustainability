@@ -766,6 +766,46 @@ body.no-map {
   padding: 0.6rem 1.25rem;
 }
 
+.modal-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  flex-shrink: 0;
+}
+
+.modal-nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 1px solid rgba(244, 248, 244, 0.3);
+  border-radius: 50%;
+  background: transparent;
+  color: #f4f8f4;
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s ease, opacity 0.15s ease;
+}
+
+.modal-nav-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.modal-nav-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.modal-nav-counter {
+  font-size: 0.72rem;
+  color: rgba(244, 248, 244, 0.7);
+  min-width: 2.5rem;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
 .species-modal-hero {
   padding: 0.5rem 1.25rem 0.65rem;
   border-bottom: 1px solid var(--color-border);
