@@ -36,6 +36,7 @@ let currentModalSpecies = null;
 let suppressHistoryUpdate = false;
 let currentFilteredSorted = [];
 let currentModalIndex = -1;
+let isNavAnimating = false;
 
 function openSpeciesModal(species, cardEl, tabKey = "overview") {
   if (!suppressHistoryUpdate) {
@@ -170,11 +171,45 @@ function updateModalNavState() {
 }
 
 function navigateModal(dir) {
+  if (isNavAnimating) return;
   const total = currentFilteredSorted.length;
   if (total === 0 || currentModalIndex < 0) return;
   const newIndex = (currentModalIndex + dir + total) % total;
   const activeTab = document.querySelector(".species-tab.active")?.dataset.tab || "overview";
-  openSpeciesModal(currentFilteredSorted[newIndex], null, activeTab);
+  const modalContent = speciesModal.querySelector(".species-modal");
+
+  isNavAnimating = true;
+  const slideOut = dir > 0 ? "-28px" : "28px";
+  const slideIn  = dir > 0 ?  "28px" : "-28px";
+
+  // Fade + slide out
+  modalContent.style.transition = "opacity 0.2s ease, transform 0.2s ease";
+  modalContent.style.opacity   = "0";
+  modalContent.style.transform = `translateX(${slideOut})`;
+
+  setTimeout(() => {
+    // Swap content while invisible
+    openSpeciesModal(currentFilteredSorted[newIndex], null, activeTab);
+
+    // Jump to enter position (no transition)
+    modalContent.style.transition = "none";
+    modalContent.style.opacity    = "0";
+    modalContent.style.transform  = `translateX(${slideIn})`;
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        // Animate into place
+        modalContent.style.transition = "opacity 0.2s ease, transform 0.2s ease";
+        modalContent.style.opacity    = "";
+        modalContent.style.transform  = "";
+
+        setTimeout(() => {
+          modalContent.style.transition = "";
+          isNavAnimating = false;
+        }, 200);
+      });
+    });
+  }, 200);
 }
 
 document.getElementById("modal-star-btn").addEventListener("click", () => {

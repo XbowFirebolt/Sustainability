@@ -47,7 +47,7 @@ Check off items as they're completed. Add notes inline as needed.
 
 ## Visuals & UI Polish
 
-- [ ] **Smoother Prev/Next transition** — animate the modal content swap instead of an instant replace (fade or slide)
+- [x] **Smoother Prev/Next transition** — animate the modal content swap instead of an instant replace (fade or slide)
 - [ ] **Image zoom in modal** — click/tap on hero image to open a full-screen zoom view
 - [ ] **Multiple photos per species (gallery)** — swipeable image strip in the hero area when a species has more than one photo
 - [ ] **Progress ring on cards** — swap or supplement the life bar with a circular progress ring for a more visual health indicator
