@@ -37,7 +37,7 @@ let suppressHistoryUpdate = false;
 let currentFilteredSorted = [];
 let currentModalIndex = -1;
 
-function openSpeciesModal(species, cardEl) {
+function openSpeciesModal(species, cardEl, tabKey = "overview") {
   if (!suppressHistoryUpdate) {
     const url = new URL(window.location);
     url.searchParams.set("species", species.id);
@@ -76,7 +76,7 @@ function openSpeciesModal(species, cardEl) {
   currentModalSpecies = species;
   currentModalIndex = currentFilteredSorted.findIndex((s) => s.id === species.id);
   updateModalNavState();
-  activateTab("overview");
+  activateTab(tabKey);
   renderOverview(species);
   renderVitalSigns(species);
   renderHealthMetrics(species);
@@ -173,7 +173,8 @@ function navigateModal(dir) {
   const total = currentFilteredSorted.length;
   if (total === 0 || currentModalIndex < 0) return;
   const newIndex = (currentModalIndex + dir + total) % total;
-  openSpeciesModal(currentFilteredSorted[newIndex], null);
+  const activeTab = document.querySelector(".species-tab.active")?.dataset.tab || "overview";
+  openSpeciesModal(currentFilteredSorted[newIndex], null, activeTab);
 }
 
 document.getElementById("modal-star-btn").addEventListener("click", () => {
