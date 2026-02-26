@@ -5,8 +5,8 @@ const wikiProject = PROJECT_CATALOG.find((p) => p.id === WIKI_DATA.projectId);
 
 if (wikiProject) {
   applyProjectTheme(wikiProject);
-  document.title = wikiProject.name + " — Sustainability Tracker";
-  document.getElementById("wiki-title").textContent = wikiProject.name;
+  document.title = wikiProject.name + " Wiki — Sustainability Tracker";
+  document.getElementById("wiki-title").textContent = wikiProject.name + " Wiki";
 }
 
 const wikiProjectEmoji = wikiProject ? wikiProject.emoji : "?";
