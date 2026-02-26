@@ -283,6 +283,7 @@ function renderOverview(species) {
   const statusBar = document.createElement("div");
   statusBar.className = "overview-status-bar";
   statusBar.style.borderColor = barColor;
+  statusBar.style.background = barColor + "11";
 
   const badge = document.createElement("span");
   badge.className = "overview-status-badge";
@@ -504,7 +505,7 @@ function renderVitalSigns(species) {
 }
 
 function renderPopulationChart(container, data) {
-  const PAD = { top: 14, right: 16, bottom: 28, left: 64 };
+  const PAD = { top: 14, right: 16, bottom: 28, left: 48 };
   const W = 480, H = 160;
   const innerW = W - PAD.left - PAD.right;
   const innerH = H - PAD.top - PAD.bottom;
@@ -639,10 +640,12 @@ function renderHealthMetrics(species) {
   // ── Population Trend Chart ─────────────────────────────────────
   if (Array.isArray(species.populationTrend) && species.populationTrend.length) {
     const box = createSectionBox("\ud83d\udcc8", "Population Trend");
+    const chartBody = box.querySelector(".section-box-body");
+    chartBody.style.padding = "0.65rem 0.75rem";
     const chartWrap = document.createElement("div");
     chartWrap.className = "health-chart-wrap";
     renderPopulationChart(chartWrap, species.populationTrend);
-    box.querySelector(".section-box-body").appendChild(chartWrap);
+    chartBody.appendChild(chartWrap);
     panel.appendChild(box);
   }
 
