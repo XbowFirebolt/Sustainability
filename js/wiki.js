@@ -1177,6 +1177,13 @@ document.getElementById("wiki-clear-filters").addEventListener("click", () => {
   renderWikiGrid("");
 });
 
+document.getElementById("wiki-surprise-btn").addEventListener("click", () => {
+  const items = WIKI_DATA.items;
+  if (!items || items.length === 0) return;
+  const randomSpecies = items[Math.floor(Math.random() * items.length)];
+  openSpeciesModal(randomSpecies, null);
+});
+
 // ── Keyboard navigation ────────────────────────────────────────
 
 function getVisibleCards() {

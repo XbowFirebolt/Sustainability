@@ -31,7 +31,7 @@ Check off items as they're completed. Add notes inline as needed.
 - [x] **"Show Favorites Only" toggle** — quick button to filter grid to starred species only, separate from sort
 - [x] **Clear all filters button** — single click to reset search, status chips, and sort to defaults
 - [x] **"No results" empty state** — when filters return nothing, show a friendly message with a clear-filters action instead of a blank grid
-- [ ] **Random species button** — "Surprise me" button that opens a random species modal
+- [x] **Random species button** — "Surprise me" button that opens a random species modal
 - [ ] **Recently viewed tracking** — track which species were opened, add a "Recently Viewed" sort option
 - [ ] **Share / copy URL button** — clipboard button in modal header that copies the deep link for that species
 - [ ] **Search within tabs** — allow search to match content inside threat descriptions, action items, etc.
@@ -76,7 +76,7 @@ Check off items as they're completed. Add notes inline as needed.
 
 ## Organization & Navigation
 
-- [ ] **Dynamic page title** — show the project name in the header (e.g., "Shark Wiki" not just "Wiki") and in the browser tab title
+- [x] **Dynamic page title** — show the project name in the header (e.g., "Shark Wiki" not just "Wiki") and in the browser tab title
 - [ ] **Collapsible filter/sort panel** — on mobile, collapse the status chips + sort controls behind a "Filters" button to save vertical space
 - [ ] **Reorder tabs** — consider: Overview → Threats → Health Metrics → Action Items (lead with quick context, then data)
 - [ ] **Add an "Overview" tab** — a summary panel with: description, habitat, diet, size snapshot, and IUCN status blurb — the most-needed info in one place
