@@ -76,7 +76,8 @@ function openSpeciesModal(species, cardEl) {
   currentModalSpecies = species;
   currentModalIndex = currentFilteredSorted.findIndex((s) => s.id === species.id);
   updateModalNavState();
-  activateTab("vital");
+  activateTab("overview");
+  renderOverview(species);
   renderVitalSigns(species);
   renderHealthMetrics(species);
   renderThreats(species.threats);
@@ -84,19 +85,7 @@ function openSpeciesModal(species, cardEl) {
 
   const modalContent = speciesModal.querySelector(".species-modal");
 
-  // Reset scroll and image opacity for fresh open
-  const imgAreaEl = document.getElementById("species-modal-image");
-  imgAreaEl.style.opacity = "";
   modalContent.scrollTop = 0;
-
-  // Clean up any previous scroll listener
-  if (tabPanelsScrollListener) {
-    modalContent.removeEventListener("scroll", tabPanelsScrollListener);
-  }
-  tabPanelsScrollListener = function () {
-    imgAreaEl.style.opacity = Math.max(0, 1 - modalContent.scrollTop / 200);
-  };
-  modalContent.addEventListener("scroll", tabPanelsScrollListener);
 
   if (cardEl) {
     const cardRect = cardEl.getBoundingClientRect();
@@ -240,6 +229,8 @@ function activateTab(tabKey) {
   document.querySelectorAll(".species-tab-panel").forEach((panel) => {
     panel.classList.toggle("active", panel.id === "tab-panel-" + tabKey);
   });
+  const modalContent = speciesModal.querySelector(".species-modal");
+  if (modalContent) modalContent.scrollTop = 0;
 }
 
 document.querySelectorAll(".species-tab").forEach((btn) => {
@@ -247,6 +238,159 @@ document.querySelectorAll(".species-tab").forEach((btn) => {
 });
 
 // ── Tab content renderers ──────────────────────────────────────
+
+function createSectionBox(icon, title, headerSlot) {
+  const box = document.createElement("div");
+  box.className = "section-box";
+
+  const header = document.createElement("div");
+  header.className = "section-box-header";
+
+  const titleEl = document.createElement("div");
+  titleEl.className = "section-box-title";
+
+  const iconEl = document.createElement("span");
+  iconEl.className = "section-box-icon";
+  iconEl.textContent = icon;
+
+  titleEl.appendChild(iconEl);
+  titleEl.appendChild(document.createTextNode("\u00a0" + title));
+  header.appendChild(titleEl);
+  if (headerSlot) header.appendChild(headerSlot);
+  box.appendChild(header);
+
+  const body = document.createElement("div");
+  body.className = "section-box-body";
+  box.appendChild(body);
+
+  return box;
+}
+
+function renderOverview(species) {
+  const panel = document.getElementById("tab-panel-overview");
+  panel.innerHTML = "";
+
+  // Description
+  if (species.description) {
+    const desc = document.createElement("p");
+    desc.className = "overview-description";
+    desc.textContent = species.description;
+    panel.appendChild(desc);
+  }
+
+  // Status bar
+  const barColor = getLifeBarColor(species.lifePercent);
+  const statusBar = document.createElement("div");
+  statusBar.className = "overview-status-bar";
+  statusBar.style.borderColor = barColor;
+
+  const badge = document.createElement("span");
+  badge.className = "overview-status-badge";
+  badge.textContent = species.statusLabel;
+  badge.style.background = barColor + "22";
+  badge.style.color = barColor;
+  badge.style.borderColor = barColor + "66";
+  badge.style.border = "1px solid " + barColor + "66";
+
+  const fillWrap = document.createElement("div");
+  fillWrap.className = "overview-status-fill-wrap";
+
+  const track = document.createElement("div");
+  track.className = "overview-status-track";
+
+  const fill = document.createElement("div");
+  fill.className = "overview-status-fill";
+  fill.style.width = species.lifePercent + "%";
+  fill.style.background = barColor;
+
+  const pct = document.createElement("div");
+  pct.className = "overview-status-pct";
+  pct.textContent = "Population health: " + species.lifePercent + "%";
+
+  track.appendChild(fill);
+  fillWrap.appendChild(track);
+  fillWrap.appendChild(pct);
+  statusBar.appendChild(badge);
+  statusBar.appendChild(fillWrap);
+  panel.appendChild(statusBar);
+
+  // Fun fact
+  if (species.funFact) {
+    const funfact = document.createElement("div");
+    funfact.className = "overview-funfact";
+
+    const label = document.createElement("div");
+    label.className = "overview-funfact-label";
+    label.textContent = "Did you know?";
+
+    const text = document.createElement("div");
+    text.className = "overview-funfact-text";
+    text.textContent = species.funFact;
+
+    funfact.appendChild(label);
+    funfact.appendChild(text);
+    panel.appendChild(funfact);
+  }
+
+  // At a Glance section box
+  const allVitals = Array.isArray(species.vitalSigns) ? species.vitalSigns : [];
+  const glanceItems = allVitals.filter((v) => v.glance).slice(0, 6);
+  const fallbackItems = allVitals.slice(0, 6);
+  const statItems = glanceItems.length ? glanceItems : fallbackItems;
+
+  if (statItems.length) {
+    const box = createSectionBox("🔍", "At a Glance");
+    const grid = document.createElement("div");
+    grid.className = "overview-stats-grid";
+
+    statItems.forEach((item) => {
+      const displayValue =
+        unitMode === "metric"   && item.metric   ? item.metric   :
+        unitMode === "imperial" && item.imperial ? item.imperial :
+        item.value;
+
+      const card = document.createElement("div");
+      card.className = "overview-stat-card";
+
+      const lbl = document.createElement("div");
+      lbl.className = "overview-stat-label";
+      lbl.textContent = item.label;
+
+      const val = document.createElement("div");
+      val.className = "overview-stat-value";
+      val.textContent = displayValue;
+
+      card.appendChild(lbl);
+      card.appendChild(val);
+      grid.appendChild(card);
+    });
+
+    box.querySelector(".section-box-body").appendChild(grid);
+    panel.appendChild(box);
+  }
+
+  // Habitat Distribution section box
+  if (species.habitatImage) {
+    const box = createSectionBox("🗺️", "Habitat Distribution");
+    const body = box.querySelector(".section-box-body");
+
+    const img = document.createElement("img");
+    img.className = "overview-habitat-img";
+    img.src = species.habitatImage;
+    img.alt = "Habitat distribution map for " + species.commonName;
+
+    const mapLink = document.createElement("a");
+    mapLink.className = "overview-map-link";
+    mapLink.href = "index.html";
+    mapLink.textContent = "View on Map \u2192";
+
+    body.appendChild(img);
+    body.appendChild(mapLink);
+    panel.appendChild(box);
+  }
+
+  renderCredits(panel);
+}
 
 function renderCredits(panel) {
   const sources = WIKI_DATA.sources;
@@ -279,8 +423,10 @@ function renderVitalSigns(species) {
   panel.innerHTML = "";
 
   const items = species.vitalSigns;
+  const hasStats = Array.isArray(items) && items.length;
+  const hasScale = !!species.physicalScaleImage;
 
-  if (!Array.isArray(items) || !items.length) {
+  if (!hasStats && !hasScale) {
     panel.innerHTML =
       '<div class="tab-placeholder">' +
         '<span class="tab-placeholder-icon">📊</span>' +
@@ -290,143 +436,81 @@ function renderVitalSigns(species) {
     return;
   }
 
-  // ── Unit toggle ──────────────────────────────────────────────
-  const toggle = document.createElement("div");
-  toggle.className = "vital-unit-toggle";
+  // ── ⚖️ Physical Biology section box ──────────────────────────
+  if (hasStats) {
+    // Build unit toggle for section box header
+    const toggle = document.createElement("div");
+    toggle.className = "vital-unit-toggle";
 
-  ["metric", "imperial"].forEach((unit) => {
-    const btn = document.createElement("button");
-    btn.className = "vital-unit-btn" + (unitMode === unit ? " active" : "");
-    btn.dataset.unit = unit;
-    btn.textContent = unit === "metric" ? "Metric" : "Imperial";
-    btn.addEventListener("click", () => {
-      unitMode = unit;
-      localStorage.setItem("wiki_unit_mode", unit);
-      renderVitalSigns(currentModalSpecies);
-    });
-    toggle.appendChild(btn);
-  });
-
-  panel.appendChild(toggle);
-
-  // ── Stats ────────────────────────────────────────────────────
-  const list = document.createElement("div");
-  list.className = "tab-vital-list";
-
-  items.forEach((item) => {
-    const displayValue =
-      unitMode === "metric"   && item.metric   ? item.metric   :
-      unitMode === "imperial" && item.imperial ? item.imperial :
-      item.value;
-
-    const row = document.createElement("div");
-    row.className = "tab-vital-row";
-
-    const lbl = document.createElement("span");
-    lbl.className = "tab-vital-label";
-    lbl.textContent = item.label;
-
-    const val = document.createElement("span");
-    val.className = "tab-vital-value";
-    val.textContent = displayValue;
-
-    row.appendChild(lbl);
-    row.appendChild(val);
-    list.appendChild(row);
-  });
-
-  panel.appendChild(list);
-
-  // ── Physical Scale + Habitat (side by side) ──────────────────
-  if (species.physicalScaleImage || species.habitatImage) {
-    const imageRow = document.createElement("div");
-    imageRow.className = "tab-vital-image-row";
-
-    if (species.physicalScaleImage) {
-      const scaleSection = document.createElement("div");
-      scaleSection.className = "tab-vital-subsection";
-
-      const scaleHeader = document.createElement("div");
-      scaleHeader.className = "tab-vital-subsection-header";
-      scaleHeader.textContent = "Physical Scale";
-
-      const scaleImg = document.createElement("img");
-      scaleImg.className = "tab-vital-subsection-image";
-      scaleImg.src = species.physicalScaleImage;
-      scaleImg.alt = "Size comparison of " + species.commonName + " to a human";
-
-      scaleSection.appendChild(scaleHeader);
-      scaleSection.appendChild(scaleImg);
-      imageRow.appendChild(scaleSection);
-    }
-
-    if (species.habitatImage) {
-      const habitatSection = document.createElement("div");
-      habitatSection.className = "tab-vital-subsection";
-
-      const habitatHeader = document.createElement("div");
-      habitatHeader.className = "tab-vital-subsection-header";
-      habitatHeader.textContent = "Habitat";
-
-      const habitatImg = document.createElement("img");
-      habitatImg.className = "tab-vital-subsection-image";
-      habitatImg.src = species.habitatImage;
-      habitatImg.alt = "Habitat map for " + species.commonName;
-
-      const mapLink = document.createElement("a");
-      mapLink.className = "vital-map-link";
-      mapLink.href = "index.html";
-      mapLink.textContent = "View on Map \u2192";
-
-      habitatSection.appendChild(habitatHeader);
-      habitatSection.appendChild(habitatImg);
-      habitatSection.appendChild(mapLink);
-      imageRow.appendChild(habitatSection);
-    }
-
-    panel.appendChild(imageRow);
-
-    if (Array.isArray(species.habitatStats) && species.habitatStats.length) {
-      const rangeList = document.createElement("div");
-      rangeList.className = "tab-vital-list tab-vital-list--habitat";
-
-      species.habitatStats.forEach((item) => {
-        const displayValue =
-          unitMode === "metric"   && item.metric   ? item.metric   :
-          unitMode === "imperial" && item.imperial ? item.imperial :
-          item.value;
-
-        const row = document.createElement("div");
-        row.className = "tab-vital-row";
-
-        const lbl = document.createElement("span");
-        lbl.className = "tab-vital-label";
-        lbl.textContent = item.label;
-
-        const val = document.createElement("span");
-        val.className = "tab-vital-value";
-        val.textContent = displayValue;
-
-        row.appendChild(lbl);
-        row.appendChild(val);
-        rangeList.appendChild(row);
+    ["metric", "imperial"].forEach((unit) => {
+      const btn = document.createElement("button");
+      btn.className = "vital-unit-btn" + (unitMode === unit ? " active" : "");
+      btn.dataset.unit = unit;
+      btn.textContent = unit === "metric" ? "Metric" : "Imperial";
+      btn.addEventListener("click", () => {
+        unitMode = unit;
+        localStorage.setItem("wiki_unit_mode", unit);
+        renderVitalSigns(currentModalSpecies);
       });
+      toggle.appendChild(btn);
+    });
 
-      panel.appendChild(rangeList);
-    }
+    const bioBox = createSectionBox("\u2696\ufe0f", "Physical Biology", toggle);
+    const list = document.createElement("div");
+    list.className = "tab-vital-list";
+
+    items.forEach((item) => {
+      const displayValue =
+        unitMode === "metric"   && item.metric   ? item.metric   :
+        unitMode === "imperial" && item.imperial ? item.imperial :
+        item.value;
+
+      const row = document.createElement("div");
+      row.className = "tab-vital-row";
+
+      const lbl = document.createElement("span");
+      lbl.className = "tab-vital-label";
+      lbl.textContent = item.label;
+
+      const val = document.createElement("span");
+      val.className = "tab-vital-value";
+      val.textContent = displayValue;
+
+      row.appendChild(lbl);
+      row.appendChild(val);
+      list.appendChild(row);
+    });
+
+    bioBox.querySelector(".section-box-body").appendChild(list);
+    panel.appendChild(bioBox);
+  }
+
+  // ── 📏 Size Comparison section box ───────────────────────────
+  if (hasScale) {
+    const scaleBox = createSectionBox("\ud83d\udccf", "Size Comparison");
+    const body = scaleBox.querySelector(".section-box-body");
+    body.style.padding = "0.6rem 0.9rem";
+
+    const img = document.createElement("img");
+    img.className = "tab-vital-subsection-image";
+    img.src = species.physicalScaleImage;
+    img.alt = "Size comparison of " + species.commonName + " to a human";
+
+    body.appendChild(img);
+    panel.appendChild(scaleBox);
   }
 
   renderCredits(panel);
 }
 
 function renderPopulationChart(container, data) {
-  const PAD = { top: 14, right: 16, bottom: 28, left: 48 };
+  const PAD = { top: 14, right: 16, bottom: 28, left: 64 };
   const W = 480, H = 160;
   const innerW = W - PAD.left - PAD.right;
   const innerH = H - PAD.top - PAD.bottom;
 
   const values = data.map((d) => d.value);
-  const minVal = Math.min(...values);
+  const minVal = 0;
   const maxVal = Math.max(...values);
   const valRange = maxVal - minVal || 1;
 
@@ -554,23 +638,16 @@ function renderHealthMetrics(species) {
 
   // ── Population Trend Chart ─────────────────────────────────────
   if (Array.isArray(species.populationTrend) && species.populationTrend.length) {
-    const sectionTitle = document.createElement("div");
-    sectionTitle.className = "health-section-title";
-    sectionTitle.textContent = "Population Trend";
-    panel.appendChild(sectionTitle);
-
+    const box = createSectionBox("\ud83d\udcc8", "Population Trend");
     const chartWrap = document.createElement("div");
     chartWrap.className = "health-chart-wrap";
     renderPopulationChart(chartWrap, species.populationTrend);
-    panel.appendChild(chartWrap);
+    box.querySelector(".section-box-body").appendChild(chartWrap);
+    panel.appendChild(box);
   }
 
-  // ── Key Metrics list ───────────────────────────────────────────
-  const metricsTitle = document.createElement("div");
-  metricsTitle.className = "health-section-title";
-  metricsTitle.textContent = "Key Metrics";
-  panel.appendChild(metricsTitle);
-
+  // ── Key Indicators list ────────────────────────────────────────
+  const indicatorsBox = createSectionBox("\ud83d\udcca", "Key Indicators");
   const list = document.createElement("div");
   list.className = "tab-health-list";
 
@@ -624,24 +701,34 @@ function renderHealthMetrics(species) {
     list.appendChild(row);
   });
 
-  panel.appendChild(list);
+  indicatorsBox.querySelector(".section-box-body").appendChild(list);
+  panel.appendChild(indicatorsBox);
 
-  // ── Prey Availability by Region ────────────────────────────────
-  if (Array.isArray(species.preyDeclineRegions) && species.preyDeclineRegions.length) {
-    const preyTitle = document.createElement("div");
-    preyTitle.className = "health-section-title";
-    preyTitle.textContent = "Prey Availability by Region";
-    panel.appendChild(preyTitle);
-    renderRegionGrid(panel, species.preyDeclineRegions);
-  }
+  // ── Regional Pressures ─────────────────────────────────────────
+  const hasPrey    = Array.isArray(species.preyDeclineRegions)    && species.preyDeclineRegions.length;
+  const hasFishing = Array.isArray(species.fishingPressureRegions) && species.fishingPressureRegions.length;
 
-  // ── Fishing Pressure by Region ─────────────────────────────────
-  if (Array.isArray(species.fishingPressureRegions) && species.fishingPressureRegions.length) {
-    const pressureTitle = document.createElement("div");
-    pressureTitle.className = "health-section-title";
-    pressureTitle.textContent = "Fishing Pressure by Region";
-    panel.appendChild(pressureTitle);
-    renderRegionGrid(panel, species.fishingPressureRegions);
+  if (hasPrey || hasFishing) {
+    const pressureBox = createSectionBox("\ud83c\udf0d", "Regional Pressures");
+    const body = pressureBox.querySelector(".section-box-body");
+
+    if (hasPrey) {
+      const subheader = document.createElement("div");
+      subheader.className = "region-subheader";
+      subheader.textContent = "Prey Availability";
+      body.appendChild(subheader);
+      renderRegionGrid(body, species.preyDeclineRegions);
+    }
+
+    if (hasFishing) {
+      const subheader = document.createElement("div");
+      subheader.className = "region-subheader";
+      subheader.textContent = "Fishing Pressure";
+      body.appendChild(subheader);
+      renderRegionGrid(body, species.fishingPressureRegions);
+    }
+
+    panel.appendChild(pressureBox);
   }
 
   renderCredits(panel);
@@ -661,37 +748,50 @@ function renderThreats(items) {
     return;
   }
 
-  const list = document.createElement("div");
-  list.className = "tab-threats-list";
-
-  items.forEach(({ name, severity, description }) => {
-    const card = document.createElement("div");
-    card.className = "tab-threat-card";
-
-    const header = document.createElement("div");
-    header.className = "tab-threat-header";
-
-    const threatName = document.createElement("span");
-    threatName.className = "tab-threat-name";
-    threatName.textContent = name;
-
-    const badge = document.createElement("span");
-    badge.className = "tab-severity-badge tab-severity-badge--" + (severity || "medium");
-    badge.textContent = severity || "unknown";
-
-    header.appendChild(threatName);
-    header.appendChild(badge);
-
-    const desc = document.createElement("div");
-    desc.className = "tab-threat-desc";
-    desc.textContent = description;
-
-    card.appendChild(header);
-    card.appendChild(desc);
-    list.appendChild(card);
+  const SEVERITY_ORDER = ["critical", "high", "medium", "low"];
+  const groups = {};
+  SEVERITY_ORDER.forEach(sev => { groups[sev] = []; });
+  items.forEach(item => {
+    const sev = item.severity || "medium";
+    (groups[sev] || (groups["medium"])).push(item);
   });
 
-  panel.appendChild(list);
+  SEVERITY_ORDER.forEach(sev => {
+    const group = groups[sev];
+    if (!group.length) return;
+
+    const groupEl = document.createElement("div");
+    groupEl.className = "threat-group";
+
+    const header = document.createElement("div");
+    header.className = "threat-group-header threat-group-header--" + sev;
+    header.textContent = sev.charAt(0).toUpperCase() + sev.slice(1);
+    groupEl.appendChild(header);
+
+    const cards = document.createElement("div");
+    cards.className = "threat-group-cards";
+
+    group.forEach(({ name, description }) => {
+      const card = document.createElement("div");
+      card.className = "tab-threat-card";
+
+      const nameEl = document.createElement("span");
+      nameEl.className = "tab-threat-name";
+      nameEl.textContent = name;
+
+      const desc = document.createElement("div");
+      desc.className = "tab-threat-desc";
+      desc.textContent = description;
+
+      card.appendChild(nameEl);
+      card.appendChild(desc);
+      cards.appendChild(card);
+    });
+
+    groupEl.appendChild(cards);
+    panel.appendChild(groupEl);
+  });
+
   renderCredits(panel);
 }
 
