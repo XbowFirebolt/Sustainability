@@ -974,12 +974,33 @@ function renderWikiGrid(query) {
   focusedCardIndex = -1;
 
   if (sorted.length === 0) {
-    const empty = document.createElement("p");
-    empty.className = "discover-empty";
-    empty.textContent =
-      activeStatusFilters.size > 0 || showFavoritesOnly
-        ? "No species match your search or filters."
-        : "No species match your search.";
+    const hasActiveFilters = activeStatusFilters.size > 0 || showFavoritesOnly || q !== "";
+    const empty = document.createElement("div");
+    empty.className = "wiki-empty-state";
+
+    const icon = document.createElement("div");
+    icon.className = "wiki-empty-icon";
+    icon.textContent = "🔍";
+
+    const msg = document.createElement("p");
+    msg.className = "wiki-empty-msg";
+    msg.textContent = hasActiveFilters
+      ? "No species match your current filters."
+      : "No species found.";
+
+    empty.appendChild(icon);
+    empty.appendChild(msg);
+
+    if (hasActiveFilters) {
+      const clearBtn = document.createElement("button");
+      clearBtn.className = "wiki-empty-clear-btn";
+      clearBtn.textContent = "Clear all filters";
+      clearBtn.addEventListener("click", () => {
+        document.getElementById("wiki-clear-filters").click();
+      });
+      empty.appendChild(clearBtn);
+    }
+
     grid.appendChild(empty);
     return;
   }

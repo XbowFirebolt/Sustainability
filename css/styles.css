@@ -540,6 +540,45 @@ body.no-map {
   padding: 2rem;
 }
 
+.wiki-empty-state {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.wiki-empty-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+  opacity: 0.6;
+}
+
+.wiki-empty-msg {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.wiki-empty-clear-btn {
+  margin-top: 0.5rem;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-primary);
+  background: transparent;
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.wiki-empty-clear-btn:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
 /* At a glance status bar */
 .wiki-status-bar {
   display: flex;
