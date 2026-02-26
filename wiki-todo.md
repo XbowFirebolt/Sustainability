@@ -27,8 +27,8 @@ Check off items as they're completed. Add notes inline as needed.
 ## Functionality
 
 - [x] **Tab state persistence during nav** — when clicking Prev/Next, remember which tab was active instead of resetting to Vital Signs
-- [ ] **"Show Favorites Only" toggle** — quick button to filter grid to starred species only, separate from sort
-- [ ] **Clear all filters button** — single click to reset search, status chips, and sort to defaults
+- [x] **"Show Favorites Only" toggle** — quick button to filter grid to starred species only, separate from sort
+- [x] **Clear all filters button** — single click to reset search, status chips, and sort to defaults
 - [ ] **Random species button** — "Surprise me" button that opens a random species modal
 - [ ] **Recently viewed tracking** — track which species were opened, add a "Recently Viewed" sort option
 - [ ] **Share / copy URL button** — clipboard button in modal header that copies the deep link for that species

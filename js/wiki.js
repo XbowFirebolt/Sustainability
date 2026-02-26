@@ -855,6 +855,7 @@ const wikiSearch = document.getElementById("wiki-search");
 let focusedCardIndex = -1;
 let activeStatusFilters = new Set();
 let sortMode = "default";
+let showFavoritesOnly = false;
 
 const SEVERITY_SCORE = { critical: 4, high: 3, medium: 2, low: 1 };
 
@@ -900,11 +901,16 @@ function renderWikiGrid(query) {
       )
     : [...WIKI_DATA.items];
 
+  const favIds = loadFavorites();
+
   if (activeStatusFilters.size > 0) {
     filtered = filtered.filter((s) => activeStatusFilters.has(s.statusLabel));
   }
 
-  const favIds = loadFavorites();
+  if (showFavoritesOnly) {
+    filtered = filtered.filter((s) => favIds.includes(s.id));
+  }
+
   let sorted;
   if (sortMode === "default") {
     sorted = [
@@ -936,7 +942,7 @@ function renderWikiGrid(query) {
     const empty = document.createElement("p");
     empty.className = "discover-empty";
     empty.textContent =
-      activeStatusFilters.size > 0
+      activeStatusFilters.size > 0 || showFavoritesOnly
         ? "No species match your search or filters."
         : "No species match your search.";
     grid.appendChild(empty);
@@ -1070,6 +1076,7 @@ function renderWikiGrid(query) {
     });
   }, { threshold: 0.15 });
   grid.querySelectorAll(".species-card").forEach((card) => window._wikiLifeObserver.observe(card));
+  updateClearFiltersVisibility();
 }
 
 wikiSearch.addEventListener("input", () => renderWikiGrid(wikiSearch.value));
@@ -1077,6 +1084,41 @@ wikiSearch.addEventListener("input", () => renderWikiGrid(wikiSearch.value));
 document.getElementById("wiki-sort").addEventListener("change", (e) => {
   sortMode = e.target.value;
   renderWikiGrid(wikiSearch.value);
+});
+
+document.getElementById("wiki-favorites-toggle").addEventListener("click", () => {
+  showFavoritesOnly = !showFavoritesOnly;
+  const btn = document.getElementById("wiki-favorites-toggle");
+  btn.classList.toggle("active", showFavoritesOnly);
+  btn.setAttribute("aria-pressed", String(showFavoritesOnly));
+  btn.textContent = (showFavoritesOnly ? "\u2605" : "\u2606") + " Favorites";
+  renderWikiGrid(wikiSearch.value);
+});
+
+function updateClearFiltersVisibility() {
+  const hasFilters =
+    wikiSearch.value.trim() !== "" ||
+    activeStatusFilters.size > 0 ||
+    sortMode !== "default" ||
+    showFavoritesOnly;
+  document.getElementById("wiki-clear-filters").hidden = !hasFilters;
+}
+
+document.getElementById("wiki-clear-filters").addEventListener("click", () => {
+  wikiSearch.value = "";
+  activeStatusFilters.clear();
+  sortMode = "default";
+  showFavoritesOnly = false;
+  document.getElementById("wiki-sort").value = "default";
+  const favBtn = document.getElementById("wiki-favorites-toggle");
+  favBtn.classList.remove("active");
+  favBtn.setAttribute("aria-pressed", "false");
+  favBtn.textContent = "\u2606 Favorites";
+  document.querySelectorAll(".status-chip").forEach((chip) => {
+    chip.classList.remove("active");
+    chip.setAttribute("aria-pressed", "false");
+  });
+  renderWikiGrid("");
 });
 
 // ── Keyboard navigation ────────────────────────────────────────
