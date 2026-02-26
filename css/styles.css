@@ -14,6 +14,8 @@
   --color-text-dim: #4a6a4a;
   --color-border: #e8f0e8;
   --color-input-border: #c8dfc8;
+  --color-header-text: #f4f8f4;
+  --color-header-hover-bg: rgba(255, 255, 255, 0.15);
 }
 
 body {
@@ -50,7 +52,7 @@ header {
   align-items: center;
   padding: 0.75rem 1.5rem;
   background-color: var(--color-primary);
-  color: #f4f8f4;
+  color: var(--color-header-text);
   transition: background-color 0.5s ease;
 }
 
@@ -74,12 +76,16 @@ header {
 
 header button {
   background: transparent;
-  border: 1px solid #f4f8f4;
-  color: #f4f8f4;
+  border: 1px solid var(--color-header-text);
+  color: var(--color-header-text);
   padding: 0.4rem 1rem;
   border-radius: 4px;
   cursor: pointer;
   font-size: 0.9rem;
+}
+
+header button:hover {
+  background: var(--color-header-hover-bg);
 }
 
 /* Modal */
@@ -122,7 +128,7 @@ header button {
   justify-content: space-between;
   padding: 1rem 1.25rem;
   background-color: var(--color-primary);
-  color: #f4f8f4;
+  color: var(--color-header-text);
 }
 
 .modal-header h2 {
@@ -133,7 +139,7 @@ header button {
 .close-btn {
   background: transparent;
   border: none;
-  color: #f4f8f4;
+  color: var(--color-header-text);
   font-size: 1.5rem;
   line-height: 1;
   cursor: pointer;
@@ -142,7 +148,7 @@ header button {
 }
 
 .close-btn:hover {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: var(--color-header-hover-bg);
 }
 
 .modal-body {
@@ -219,7 +225,7 @@ header button {
 .dock-item {
   background: transparent;
   border: none;
-  color: #f4f8f4;
+  color: var(--color-header-text);
   cursor: pointer;
   padding: 0.25rem 0.85rem;
   border-radius: 999px;
@@ -234,7 +240,7 @@ header button {
 }
 
 .dock-item:focus-visible {
-  outline: 2px solid #f4f8f4;
+  outline: 2px solid var(--color-header-text);
   outline-offset: -3px;
 }
 
@@ -268,7 +274,7 @@ header button {
   height: 52px;
   border-radius: 50%;
   background-color: var(--color-primary);
-  color: #f4f8f4;
+  color: var(--color-header-text);
   border: none;
   font-size: 1.75rem;
   line-height: 1;
@@ -296,7 +302,7 @@ header button {
   height: 52px;
   border-radius: 10px;
   background-color: var(--color-primary);
-  color: #f4f8f4;
+  color: var(--color-header-text);
   border: none;
   font-size: 1.25rem;
   line-height: 1;
@@ -325,17 +331,17 @@ header button {
 
 /* Back link (discover page header) */
 .back-btn {
-  color: #f4f8f4;
+  color: var(--color-header-text);
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
   padding: 0.4rem 1rem;
-  border: 1px solid #f4f8f4;
+  border: 1px solid var(--color-header-text);
   border-radius: 4px;
 }
 
 .back-btn:hover {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: var(--color-header-hover-bg);
 }
 
 /* Suppress map background on pages that don't use it */
@@ -639,6 +645,19 @@ body.no-map {
   margin-bottom: 0.1rem;
 }
 
+.species-card.keyboard-focused .species-card-body {
+  background: #fff;
+}
+
+.species-card.keyboard-focused .species-card-name {
+  color: #111;
+  font-weight: 700;
+}
+
+.species-card.keyboard-focused .species-card-sci {
+  color: #555;
+}
+
 /* Species favorite star button */
 .species-card-star {
   position: absolute;
@@ -766,7 +785,7 @@ body.no-map {
   justify-content: space-between;
   gap: 0.75rem;
   padding: 0.6rem 1.25rem;
-  color: var(--color-text);
+  color: var(--color-header-text);
 }
 
 .modal-header-actions {
@@ -807,11 +826,27 @@ body.no-map {
 }
 
 .species-modal .close-btn {
-  color: var(--color-text-muted);
+  color: var(--color-header-text);
 }
 
 .species-modal .close-btn:hover {
-  background-color: var(--color-border);
+  background-color: var(--color-header-hover-bg);
+}
+
+.species-modal .modal-nav-btn {
+  color: var(--color-header-text);
+  border-color: var(--color-header-text);
+  opacity: 0.85;
+}
+
+.species-modal .modal-nav-btn:hover:not(:disabled) {
+  background: var(--color-header-hover-bg);
+  opacity: 1;
+}
+
+.species-modal .modal-nav-counter {
+  color: var(--color-header-text);
+  opacity: 0.65;
 }
 
 .modal-nav-counter {
@@ -830,13 +865,14 @@ body.no-map {
 .species-modal-name {
   font-size: 1.15rem;
   font-weight: 700;
-  color: var(--color-text);
+  color: var(--color-header-text);
 }
 
 .species-modal-sci {
   font-size: 0.85rem;
   font-style: italic;
-  color: var(--color-text-muted);
+  color: var(--color-header-text);
+  opacity: 0.75;
   margin-top: 0.1rem;
 }
 

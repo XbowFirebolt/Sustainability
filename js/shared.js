@@ -39,15 +39,20 @@ function applyProjectTheme(project) {
   const pg = parseInt(project.color.slice(3, 5), 16);
   const pb = parseInt(project.color.slice(5, 7), 16);
   const sat = Math.min(s, 25);
+  const bright = pr * 0.299 + pg * 0.587 + pb * 0.114;
+  const headerText = bright > 120 ? "#111" : "#f4f8f4";
+  const headerHoverBg = bright > 120 ? "rgba(0, 0, 0, 0.1)" : "rgba(255, 255, 255, 0.15)";
   const root = document.documentElement;
-  root.style.setProperty("--color-primary",      project.color);
-  root.style.setProperty("--color-primary-rgb",  `${pr}, ${pg}, ${pb}`);
-  root.style.setProperty("--color-bg",           `hsl(${h}, ${sat}%, 96%)`);
-  root.style.setProperty("--color-text",         `hsl(${h}, ${Math.min(s, 30)}%, 12%)`);
-  root.style.setProperty("--color-text-muted",   `hsl(${h}, ${sat}%, 42%)`);
-  root.style.setProperty("--color-text-dim",     `hsl(${h}, ${sat}%, 37%)`);
-  root.style.setProperty("--color-border",       `hsl(${h}, ${sat}%, 88%)`);
-  root.style.setProperty("--color-input-border", `hsl(${h}, ${Math.min(s, 35)}%, 76%)`);
+  root.style.setProperty("--color-primary",        project.color);
+  root.style.setProperty("--color-primary-rgb",    `${pr}, ${pg}, ${pb}`);
+  root.style.setProperty("--color-bg",             `hsl(${h}, ${sat}%, 96%)`);
+  root.style.setProperty("--color-text",           `hsl(${h}, ${Math.min(s, 30)}%, 12%)`);
+  root.style.setProperty("--color-text-muted",     `hsl(${h}, ${sat}%, 42%)`);
+  root.style.setProperty("--color-text-dim",       `hsl(${h}, ${sat}%, 37%)`);
+  root.style.setProperty("--color-border",         `hsl(${h}, ${sat}%, 88%)`);
+  root.style.setProperty("--color-input-border",   `hsl(${h}, ${Math.min(s, 35)}%, 76%)`);
+  root.style.setProperty("--color-header-text",    headerText);
+  root.style.setProperty("--color-header-hover-bg", headerHoverBg);
   if (!document.body.classList.contains("no-map")) {
     document.body.style.backgroundImage = `url('./${project.map}')`;
   }
