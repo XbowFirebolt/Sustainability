@@ -1361,12 +1361,10 @@ body.no-map {
 }
 
 .health-chart-year {
-  font-size: 9px;
   fill: var(--color-text-muted);
 }
 
 .health-chart-value {
-  font-size: 9px;
   fill: var(--color-text-muted);
 }
 

@@ -505,7 +505,7 @@ function renderVitalSigns(species) {
 }
 
 function renderPopulationChart(container, data) {
-  const PAD = { top: 14, right: 16, bottom: 28, left: 48 };
+  const PAD = { top: 14, right: 16, bottom: 32, left: 62 };
   const W = 480, H = 160;
   const innerW = W - PAD.left - PAD.right;
   const innerH = H - PAD.top - PAD.bottom;
@@ -542,6 +542,7 @@ function renderPopulationChart(container, data) {
     gridLabel.setAttribute("x", PAD.left - 5);
     gridLabel.setAttribute("y", y + 3.5);
     gridLabel.setAttribute("text-anchor", "end");
+    gridLabel.setAttribute("font-size", "9");
     gridLabel.className = "health-chart-value";
     gridLabel.textContent = "~" + Math.round(minVal + t * valRange).toLocaleString();
     svg.appendChild(gridLabel);
@@ -579,8 +580,9 @@ function renderPopulationChart(container, data) {
 
     const yearLabel = document.createElementNS(svgNS, "text");
     yearLabel.setAttribute("x", cx);
-    yearLabel.setAttribute("y", H - 6);
+    yearLabel.setAttribute("y", H - 8);
     yearLabel.setAttribute("text-anchor", "middle");
+    yearLabel.setAttribute("font-size", "9");
     yearLabel.className = "health-chart-year";
     yearLabel.textContent = d.year;
     svg.appendChild(yearLabel);
