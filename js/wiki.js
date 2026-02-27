@@ -19,6 +19,24 @@ function getLifeBarColor(percent) {
   return "#2d6a2d";
 }
 
+const RING_CIRCUMFERENCE = 131.95; // 2π × r21
+
+const HABITAT_BADGE = {
+  "ocean":      { icon: "🌊", label: "Ocean"       },
+  "coastal":    { icon: "🏖",  label: "Coastal"     },
+  "tropical":   { icon: "🌡",  label: "Tropical"    },
+  "pelagic":    { icon: "🌐",  label: "Pelagic"     },
+  "freshwater": { icon: "💧",  label: "Freshwater"  },
+  "reef":       { icon: "🪸",  label: "Reef"        },
+};
+
+const DIET_BADGE = {
+  "carnivore":     { icon: "🦷", label: "Carnivore"     },
+  "filter-feeder": { icon: "💧", label: "Filter Feeder" },
+  "omnivore":      { icon: "🍽", label: "Omnivore"      },
+  "apex-predator": { icon: "⬆",  label: "Apex Predator" },
+};
+
 function loadFavorites() {
   return JSON.parse(localStorage.getItem(WIKI_DATA.favoritesKey) || "[]");
 }
@@ -1240,26 +1258,47 @@ function renderWikiGrid(query) {
       threatBadge.textContent = maxSeverity.charAt(0).toUpperCase() + maxSeverity.slice(1);
     }
 
-    // Life bar
-    const lifeWrap = document.createElement("div");
-    lifeWrap.className = "species-life-wrap";
+    // Habitat + diet badges
+    const badgeRow = document.createElement("div");
+    badgeRow.className = "card-badges";
+    (species.habitatTypes || []).forEach((type) => {
+      const info = HABITAT_BADGE[type];
+      if (!info) return;
+      const b = document.createElement("span");
+      b.className = `card-badge card-badge--habitat card-badge--${type}`;
+      b.textContent = `${info.icon} ${info.label}`;
+      badgeRow.appendChild(b);
+    });
+    if (species.dietType) {
+      const info = DIET_BADGE[species.dietType];
+      if (info) {
+        const b = document.createElement("span");
+        b.className = `card-badge card-badge--diet card-badge--${species.dietType}`;
+        b.textContent = `${info.icon} ${info.label}`;
+        badgeRow.appendChild(b);
+      }
+    }
 
-    const lifeBar = document.createElement("div");
-    lifeBar.className = "species-life-bar";
-
-    const lifeFill = document.createElement("div");
-    lifeFill.className = "species-life-fill";
-    lifeFill.style.width = "0%";
-    lifeFill.dataset.targetWidth = species.lifePercent;
-    lifeFill.style.background = getLifeBarColor(species.lifePercent);
-
-    const lifeLabel = document.createElement("div");
-    lifeLabel.className = "species-life-label";
-    applyHighlight(lifeLabel, species.statusLabel, q);
-
-    lifeBar.appendChild(lifeFill);
-    lifeWrap.appendChild(lifeBar);
-    lifeWrap.appendChild(lifeLabel);
+    // Progress ring
+    const ringColor = getLifeBarColor(species.lifePercent);
+    const targetOffset = (RING_CIRCUMFERENCE * (1 - species.lifePercent / 100)).toFixed(2);
+    const ringWrap = document.createElement("div");
+    ringWrap.className = "card-ring-wrap";
+    ringWrap.innerHTML = `
+      <svg class="card-ring-svg" viewBox="0 0 52 52" width="50" height="50" aria-hidden="true">
+        <circle class="ring-track" cx="26" cy="26" r="21"/>
+        <circle class="ring-fill" cx="26" cy="26" r="21"
+          stroke="${ringColor}"
+          style="stroke-dashoffset:${RING_CIRCUMFERENCE}"
+          data-target-offset="${targetOffset}"
+          transform="rotate(-90,26,26)"/>
+        <text class="ring-pct-txt" x="26" y="26">${species.lifePercent}%</text>
+      </svg>
+      <div class="card-ring-meta">
+        <div class="card-ring-status"></div>
+        <div class="card-ring-sub">Population health</div>
+      </div>`;
+    applyHighlight(ringWrap.querySelector(".card-ring-status"), species.statusLabel, q);
 
     // Fun fact
     const funfact = document.createElement("div");
@@ -1278,15 +1317,16 @@ function renderWikiGrid(query) {
 
     body.appendChild(name);
     body.appendChild(sci);
+    body.appendChild(badgeRow);
     if (threatBadge) body.appendChild(threatBadge);
-    body.appendChild(lifeWrap);
+    body.appendChild(ringWrap);
     body.appendChild(funfact);
     card.appendChild(imgArea);
     card.appendChild(body);
     grid.appendChild(card);
   });
 
-  // Animate life bars from 0% to their value as cards enter the viewport
+  // Animate progress rings from 0 to their value as cards enter the viewport
   if (window._wikiLifeObserver) window._wikiLifeObserver.disconnect();
   window._wikiLifeObserver = new IntersectionObserver((entries) => {
     const visible = entries
@@ -1297,8 +1337,8 @@ function renderWikiGrid(query) {
           a.boundingClientRect.left - b.boundingClientRect.left
       );
     visible.forEach((entry, i) => {
-      const fill = entry.target.querySelector(".species-life-fill");
-      if (fill) setTimeout(() => { fill.style.width = fill.dataset.targetWidth + "%"; }, i * 60);
+      const ring = entry.target.querySelector(".ring-fill");
+      if (ring) setTimeout(() => { ring.style.strokeDashoffset = ring.dataset.targetOffset; }, i * 60);
       window._wikiLifeObserver.unobserve(entry.target);
     });
   }, { threshold: 0.15 });

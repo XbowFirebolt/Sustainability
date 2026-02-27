@@ -842,6 +842,64 @@ body.no-map {
   white-space: nowrap;
 }
 
+/* Card progress ring */
+.card-ring-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0.5rem 0;
+}
+.ring-track {
+  fill: none;
+  stroke: var(--color-border);
+  stroke-width: 4;
+}
+.ring-fill {
+  fill: none;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 131.95;
+  transition: stroke-dashoffset 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.ring-pct-txt {
+  font-size: 10px;
+  font-weight: 700;
+  fill: var(--color-text);
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+.card-ring-meta { display: flex; flex-direction: column; gap: 0.06rem; }
+.card-ring-status { font-size: 0.72rem; font-weight: 600; color: var(--color-text); }
+.card-ring-sub   { font-size: 0.63rem; color: var(--color-text-muted); }
+
+/* Habitat + diet badges */
+.card-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.28rem;
+  margin-bottom: 0.4rem;
+}
+.card-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.62rem;
+  font-weight: 600;
+  padding: 0.18rem 0.44rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  line-height: 1;
+}
+.card-badge--ocean      { background: rgba(24,90,168,0.1);   border-color: rgba(24,90,168,0.22);   color: #185aa8; }
+.card-badge--coastal    { background: rgba(18,118,96,0.1);   border-color: rgba(18,118,96,0.22);   color: #136050; }
+.card-badge--tropical   { background: rgba(10,138,72,0.1);   border-color: rgba(10,138,72,0.22);   color: #0a7640; }
+.card-badge--pelagic    { background: rgba(56,76,180,0.1);   border-color: rgba(56,76,180,0.22);   color: #28369a; }
+.card-badge--freshwater { background: rgba(24,140,180,0.1);  border-color: rgba(24,140,180,0.22);  color: #106890; }
+.card-badge--reef       { background: rgba(200,100,20,0.1);  border-color: rgba(200,100,20,0.22);  color: #905010; }
+.card-badge--apex-predator  { background: rgba(80,20,100,0.1);  border-color: rgba(80,20,100,0.22);  color: #501460; }
+.card-badge--carnivore      { background: rgba(160,40,40,0.1);  border-color: rgba(160,40,40,0.22);  color: #881818; }
+.card-badge--filter-feeder  { background: rgba(24,90,168,0.12); border-color: rgba(24,90,168,0.28);  color: #185aa8; }
+.card-badge--omnivore       { background: rgba(100,70,10,0.1);  border-color: rgba(100,70,10,0.22);  color: #604010; }
+
 .search-highlight {
   background: rgba(250, 200, 30, 0.38);
   color: inherit;
