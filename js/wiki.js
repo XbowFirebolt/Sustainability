@@ -56,6 +56,114 @@ let currentFilteredSorted = [];
 let currentModalIndex = -1;
 let isNavAnimating = false;
 
+// ── Gallery state ───────────────────────────────────────────────
+let galleryPhotos = [];
+let galleryIndex = 0;
+const galleryOverlay = document.getElementById("photo-gallery");
+const galleryImg = document.getElementById("gallery-img");
+const galleryCounter = document.getElementById("gallery-counter");
+const galleryThumbsEl = document.getElementById("gallery-thumbs");
+
+function getSpeciesPhotos(species) {
+  return species.photos || [];
+}
+
+function renderGallerySlide() {
+  galleryImg.src = galleryPhotos[galleryIndex];
+  galleryImg.alt = `Photo ${galleryIndex + 1} of ${galleryPhotos.length}`;
+  galleryCounter.textContent = galleryPhotos.length > 1 ? `${galleryIndex + 1} / ${galleryPhotos.length}` : "";
+  const thumbs = galleryThumbsEl.querySelectorAll(".gallery-thumb");
+  thumbs.forEach((t, i) => t.classList.toggle("active", i === galleryIndex));
+}
+
+function renderGalleryThumbs() {
+  galleryThumbsEl.innerHTML = "";
+  if (galleryPhotos.length <= 1) {
+    galleryThumbsEl.style.display = "none";
+    return;
+  }
+  galleryThumbsEl.style.display = "";
+  galleryPhotos.forEach((src, i) => {
+    const btn = document.createElement("button");
+    btn.className = "gallery-thumb" + (i === galleryIndex ? " active" : "");
+    btn.setAttribute("aria-label", `View photo ${i + 1}`);
+    btn.style.backgroundImage = `url(${src})`;
+    btn.addEventListener("click", () => {
+      if (i === galleryIndex) return;
+      galleryImg.style.transition = "opacity 0.15s ease";
+      galleryImg.style.opacity = "0";
+      setTimeout(() => {
+        galleryIndex = i;
+        renderGallerySlide();
+        galleryImg.style.transition = "opacity 0.15s ease";
+        galleryImg.style.opacity = "";
+        setTimeout(() => { galleryImg.style.transition = ""; }, 150);
+      }, 150);
+    });
+    galleryThumbsEl.appendChild(btn);
+  });
+}
+
+function openGallery(photos, startIndex = 0) {
+  galleryPhotos = photos;
+  galleryIndex = startIndex;
+  renderGalleryThumbs();
+  renderGallerySlide();
+  galleryOverlay.classList.remove("hidden");
+
+  // Scale-up entrance animation
+  galleryImg.style.transition = "none";
+  galleryImg.style.opacity = "0";
+  galleryImg.style.transform = "scale(0.9)";
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      galleryImg.style.transition = "opacity 0.25s ease, transform 0.25s ease";
+      galleryImg.style.opacity = "";
+      galleryImg.style.transform = "";
+      setTimeout(() => { galleryImg.style.transition = ""; }, 250);
+    });
+  });
+}
+
+function closeGallery() {
+  galleryOverlay.classList.add("hidden");
+}
+
+function navigateGallery(dir) {
+  if (galleryPhotos.length <= 1) return;
+  const slideOut = dir > 0 ? "-50px" : "50px";
+  const slideIn  = dir > 0 ?  "50px" : "-50px";
+
+  galleryImg.style.transition = "opacity 0.18s ease, transform 0.18s ease";
+  galleryImg.style.opacity = "0";
+  galleryImg.style.transform = `translateX(${slideOut})`;
+
+  setTimeout(() => {
+    galleryIndex = (galleryIndex + dir + galleryPhotos.length) % galleryPhotos.length;
+    renderGallerySlide();
+
+    galleryImg.style.transition = "none";
+    galleryImg.style.opacity = "0";
+    galleryImg.style.transform = `translateX(${slideIn})`;
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        galleryImg.style.transition = "opacity 0.18s ease, transform 0.18s ease";
+        galleryImg.style.opacity = "";
+        galleryImg.style.transform = "";
+        setTimeout(() => { galleryImg.style.transition = ""; }, 180);
+      });
+    });
+  }, 180);
+}
+
+document.getElementById("gallery-close").addEventListener("click", (e) => { e.stopPropagation(); closeGallery(); });
+document.getElementById("gallery-prev").addEventListener("click", (e) => { e.stopPropagation(); navigateGallery(-1); });
+document.getElementById("gallery-next").addEventListener("click", (e) => { e.stopPropagation(); navigateGallery(1); });
+galleryImg.addEventListener("click", (e) => e.stopPropagation());
+galleryThumbsEl.addEventListener("click", (e) => e.stopPropagation());
+galleryOverlay.addEventListener("click", closeGallery);
+
 function openSpeciesModal(species, cardEl, tabKey = "overview") {
   if (!suppressHistoryUpdate) {
     const url = new URL(window.location);
@@ -66,8 +174,9 @@ function openSpeciesModal(species, cardEl, tabKey = "overview") {
   activeCard = cardEl;
 
   const imgArea = document.getElementById("species-modal-image");
-  if (species.photo) {
-    imgArea.style.backgroundImage = `url(${species.photo})`;
+  const firstPhoto = species.photos && species.photos[0];
+  if (firstPhoto) {
+    imgArea.style.backgroundImage = `url(${firstPhoto})`;
     imgArea.style.backgroundSize = "cover";
     imgArea.style.backgroundPosition = "center";
     document.getElementById("species-modal-emoji").style.display = "none";
@@ -76,6 +185,31 @@ function openSpeciesModal(species, cardEl, tabKey = "overview") {
     imgArea.style.background = "linear-gradient(135deg, #0a0a0a, var(--color-primary))";
     document.getElementById("species-modal-emoji").style.display = "";
     document.getElementById("species-modal-emoji").textContent = wikiProjectEmoji;
+  }
+
+  // Photo count badge + click-to-gallery
+  const photos = getSpeciesPhotos(species);
+  let badge = imgArea.querySelector(".photo-count-badge");
+  if (photos.length > 0) {
+    if (!badge) {
+      badge = document.createElement("div");
+      badge.className = "photo-count-badge";
+      imgArea.appendChild(badge);
+    }
+    badge.textContent = photos.length === 1 ? `\u229e 1 photo` : `\u229e ${photos.length} photos`;
+  } else {
+    if (badge) badge.remove();
+  }
+  if (photos.length > 0) {
+    imgArea.style.cursor = "pointer";
+    imgArea.onclick = () => openGallery(photos, 0);
+    imgArea.setAttribute("role", "button");
+    imgArea.setAttribute("aria-label", photos.length > 1 ? `View ${photos.length} photos` : "View photo");
+  } else {
+    imgArea.style.cursor = "";
+    imgArea.onclick = null;
+    imgArea.removeAttribute("role");
+    imgArea.removeAttribute("aria-label");
   }
 
   document.getElementById("species-modal-name").textContent = species.commonName;
@@ -1043,13 +1177,24 @@ function renderWikiGrid(query) {
     // Image area
     const imgArea = document.createElement("div");
     imgArea.className = "species-card-image";
-    if (species.photo) {
-      imgArea.style.backgroundImage = `url(${species.photo})`;
+    const cardPhoto = species.photos && species.photos[0];
+    if (cardPhoto) {
+      imgArea.style.backgroundImage = `url(${cardPhoto})`;
       imgArea.style.backgroundSize = "cover";
       imgArea.style.backgroundPosition = "center";
     } else {
       imgArea.textContent = wikiProjectEmoji;
       imgArea.style.background = "linear-gradient(135deg, #0a0a0a, var(--color-primary))";
+    }
+
+    // Photo count badge
+    if (species.photos && species.photos.length > 0) {
+      const photoBadge = document.createElement("div");
+      photoBadge.className = "card-photo-count";
+      photoBadge.textContent = species.photos.length === 1
+        ? "1 photo"
+        : `${species.photos.length} photos`;
+      imgArea.appendChild(photoBadge);
     }
 
     // Favorite star button
@@ -1232,6 +1377,14 @@ function setFocusedCard(index) {
 }
 
 document.addEventListener("keydown", (e) => {
+  const galleryOpen = !galleryOverlay.classList.contains("hidden");
+  if (galleryOpen) {
+    if (e.key === "Escape") { e.preventDefault(); closeGallery(); return; }
+    if (e.key === "ArrowLeft")  { e.preventDefault(); navigateGallery(-1); return; }
+    if (e.key === "ArrowRight") { e.preventDefault(); navigateGallery(1);  return; }
+    return;
+  }
+
   const modalOpen = !speciesModal.classList.contains("hidden");
 
   if (modalOpen) {

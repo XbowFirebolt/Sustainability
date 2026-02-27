@@ -54,8 +54,8 @@ Check off items as they're completed. Add notes inline as needed.
 ## Visuals & UI Polish
 
 - [x] **Smoother Prev/Next transition** — animate the modal content swap instead of an instant replace (fade or slide)
-- [ ] **Image zoom in modal** — click/tap on hero image to open a full-screen zoom view
-- [ ] **Multiple photos per species (gallery)** — swipeable image strip in the hero area when a species has more than one photo
+- [x] **Image zoom in modal** — click/tap on hero image to open a full-screen zoom view
+- [x] **Multiple photos per species (gallery)** — swipeable image strip in the hero area when a species has more than one photo
 - [ ] **Progress ring on cards** — swap or supplement the life bar with a circular progress ring for a more visual health indicator
 - [ ] **Habitat + diet badges on cards** — small icon badges on the card for quick at-a-glance info (ocean, freshwater, omnivore, etc.)
 - [ ] **Loading skeleton screens** — show skeleton card shapes while species images load, instead of empty/blank cards

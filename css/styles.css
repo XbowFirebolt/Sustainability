@@ -793,6 +793,26 @@ body.no-map {
   color: #c8900a;
 }
 
+.card-photo-count {
+  position: absolute;
+  bottom: 8px;
+  left: 10px;
+  background: rgba(0,0,0,0.52);
+  color: rgba(255,255,255,0.88);
+  font-size: 0.68rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: 3px;
+  pointer-events: none;
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.species-card:hover .card-photo-count,
+.species-card.keyboard-focused .card-photo-count {
+  opacity: 1;
+}
+
 /* Life bar */
 .species-life-wrap {
   display: flex;
@@ -1666,4 +1686,165 @@ body.no-map {
 
 .tab-credits-link:hover {
   text-decoration: underline;
+}
+
+/* ── Photo gallery lightbox ──────────────────────────────────── */
+
+.gallery-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  background: rgba(0, 0, 0, 0.93);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: opacity 0.22s ease, visibility 0.22s ease;
+}
+
+.gallery-overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.gallery-close {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+  z-index: 1;
+}
+
+.gallery-close:hover {
+  background: rgba(255,255,255,0.18);
+}
+
+/* gallery-main fills all available vertical space */
+.gallery-main {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Image fills the container — arrows float over the edges */
+.gallery-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+  user-select: none;
+  display: block;
+}
+
+/* Counter is a flex sibling below gallery-main */
+.gallery-counter {
+  flex-shrink: 0;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.78rem;
+  padding: 0.35rem 0 0.3rem;
+  height: 1.6rem;
+  text-align: center;
+}
+
+/* Nav arrows are absolutely positioned over the overlay, floating on image edges */
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.45);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  font-size: 2.2rem;
+  line-height: 1;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+  z-index: 1;
+  backdrop-filter: blur(6px);
+}
+
+.gallery-nav:hover:not(:disabled) {
+  background: rgba(255,255,255,0.15);
+}
+
+.gallery-nav:disabled {
+  opacity: 0.15;
+  cursor: default;
+}
+
+.gallery-nav--prev { left: 0.75rem; }
+.gallery-nav--next { right: 0.75rem; }
+
+.gallery-thumbs {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0 1rem 1rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  flex-shrink: 0;
+}
+
+.gallery-thumbs::-webkit-scrollbar { display: none; }
+
+.gallery-thumb {
+  width: 64px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: border-color 0.15s, opacity 0.15s;
+  opacity: 0.5;
+}
+
+.gallery-thumb.active {
+  border-color: #fff;
+  opacity: 1;
+}
+
+.gallery-thumb:hover:not(.active) {
+  opacity: 0.82;
+}
+
+/* Hero image photo count badge */
+.photo-count-badge {
+  position: absolute;
+  bottom: 0.65rem;
+  right: 0.75rem;
+  background: rgba(0,0,0,0.55);
+  color: rgba(255,255,255,0.9);
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  pointer-events: none;
+  backdrop-filter: blur(4px);
+}
+
+/* Make hero image position:relative so badge can position against it */
+.species-modal-image {
+  position: relative;
 }

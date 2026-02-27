@@ -120,6 +120,17 @@
         </div>
       </div>
     </div>
+    <!-- Photo gallery lightbox -->
+    <div id="photo-gallery" class="gallery-overlay hidden" role="dialog" aria-modal="true" aria-label="Photo gallery">
+      <button id="gallery-close" class="gallery-close" aria-label="Close gallery">&times;</button>
+      <button id="gallery-prev" class="gallery-nav gallery-nav--prev" aria-label="Previous photo">&#8249;</button>
+      <div class="gallery-main">
+        <img id="gallery-img" class="gallery-img" src="" alt="" />
+      </div>
+      <div id="gallery-counter" class="gallery-counter"></div>
+      <button id="gallery-next" class="gallery-nav gallery-nav--next" aria-label="Next photo">&#8250;</button>
+      <div id="gallery-thumbs" class="gallery-thumbs"></div>
+    </div>
     <script src="js/shared.js"></script>
     <script>
       (function () {
