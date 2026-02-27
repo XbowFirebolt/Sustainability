@@ -749,7 +749,7 @@ body.no-map {
   font-size: 0.8rem;
   font-style: italic;
   color: var(--color-text-muted);
-  margin-bottom: 0.1rem;
+  margin-bottom: 0.4rem;
 }
 
 .species-card.keyboard-focused .species-card-body {
@@ -813,34 +813,6 @@ body.no-map {
   opacity: 1;
 }
 
-/* Life bar */
-.species-life-wrap {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin: 0.65rem 0;
-}
-
-.species-life-bar {
-  flex: 1;
-  height: 8px;
-  border-radius: 999px;
-  background: var(--color-border);
-  overflow: hidden;
-}
-
-.species-life-fill {
-  height: 100%;
-  border-radius: 999px;
-  transition: width 0.65s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.species-life-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--color-text-muted);
-  white-space: nowrap;
-}
 
 /* Card progress ring */
 .card-ring-wrap {
@@ -1042,10 +1014,6 @@ body.no-map {
   font-variant-numeric: tabular-nums;
 }
 
-.species-modal-hero {
-  padding: 0.5rem 1.25rem 0.65rem;
-  border-bottom: 1px solid var(--color-border);
-}
 
 .species-modal-name {
   font-size: 1.15rem;

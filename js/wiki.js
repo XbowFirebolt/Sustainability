@@ -239,11 +239,6 @@ function openSpeciesModal(species, cardEl, tabKey = "overview") {
   modalStarBtn.classList.toggle("favorited", isFav);
   modalStarBtn.setAttribute("aria-label", isFav ? `Unfavorite ${species.commonName}` : `Favorite ${species.commonName}`);
 
-  const fill = document.getElementById("species-modal-fill");
-  fill.style.width = `${species.lifePercent}%`;
-  fill.style.background = getLifeBarColor(species.lifePercent);
-  document.getElementById("species-modal-status").textContent = species.statusLabel;
-
   currentModalSpecies = species;
   recordRecentlyViewed(species.id);
   currentModalIndex = currentFilteredSorted.findIndex((s) => s.id === species.id);
