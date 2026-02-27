@@ -982,6 +982,11 @@ body.no-map {
   border-color: rgba(200, 144, 10, 0.5);
 }
 
+.modal-share-copied {
+  color: #2d9a2d;
+  border-color: rgba(45, 154, 45, 0.5);
+}
+
 .species-modal .close-btn {
   color: var(--color-header-text);
 }

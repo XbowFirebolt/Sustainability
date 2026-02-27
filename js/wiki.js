@@ -399,6 +399,19 @@ document.getElementById("modal-star-btn").addEventListener("click", () => {
 document.getElementById("modal-prev").addEventListener("click", () => navigateModal(-1));
 document.getElementById("modal-next").addEventListener("click", () => navigateModal(1));
 
+document.getElementById("modal-share-btn").addEventListener("click", () => {
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    const btn = document.getElementById("modal-share-btn");
+    const prev = btn.innerHTML;
+    btn.innerHTML = "&#10003;";
+    btn.classList.add("modal-share-copied");
+    setTimeout(() => {
+      btn.innerHTML = prev;
+      btn.classList.remove("modal-share-copied");
+    }, 1500);
+  });
+});
+
 document.getElementById("species-modal-close").addEventListener("click", closeSpeciesModal);
 speciesModal.addEventListener("click", (e) => {
   if (e.target === speciesModal) closeSpeciesModal();
