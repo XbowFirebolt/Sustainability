@@ -70,7 +70,7 @@ Check off items as they're completed. Add notes inline as needed.
 - [ ] **Count-up animation in modal** — animate the lifePercent number counting up when the modal opens
 - [ ] **Mobile full-screen modal** — on small viewports render the modal as a full-screen bottom sheet instead of a floating overlay
 - [ ] **Drag-to-dismiss on mobile** — allow swiping the modal sheet down to close it on touch devices
-- [ ] **Card hover lift** — subtle elevation/shadow increase on card hover for a tactile feel
+- [x] **Card hover lift** — subtle elevation/shadow increase on card hover for a tactile feel
 
 ---
 
@@ -78,8 +78,8 @@ Check off items as they're completed. Add notes inline as needed.
 
 - [x] **Dynamic page title** — show the project name in the header (e.g., "Shark Wiki" not just "Wiki") and in the browser tab title
 - [ ] **Collapsible filter/sort panel** — on mobile, collapse the status chips + sort controls behind a "Filters" button to save vertical space
-- [ ] **Reorder tabs** — consider: Overview → Threats → Health Metrics → Action Items (lead with quick context, then data)
-- [ ] **Add an "Overview" tab** — a summary panel with: description, habitat, diet, size snapshot, and IUCN status blurb — the most-needed info in one place
+- [x] **Reorder tabs** — consider: Overview → Threats → Health Metrics → Action Items (lead with quick context, then data)
+- [x] **Add an "Overview" tab** — a summary panel with: description, habitat, diet, size snapshot, and IUCN status blurb — the most-needed info in one place
 - [ ] **Move threat severity legend to tooltip** — instead of always showing the legend strip, show it on hover over a `?` icon near severity badges
 - [ ] **Group grid by status** — optional sectioned layout: "Critically Endangered (2)", "Vulnerable (1)", etc. as section headers
 - [ ] **Breadcrumb in modal** — show the filtered context the user came from (e.g., "Filtered: Critically Endangered › 2 of 2")

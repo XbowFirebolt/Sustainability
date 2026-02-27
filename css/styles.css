@@ -1046,6 +1046,8 @@ body.no-map {
   border-bottom: 2px solid var(--color-border);
   background: var(--color-bg);
   overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior: none;
   scrollbar-width: none;
 }
 
@@ -1067,7 +1069,7 @@ body.no-map {
   white-space: nowrap;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
   position: relative;
 }
 
@@ -1089,6 +1091,7 @@ body.no-map {
 .species-tab.active {
   color: var(--color-primary);
   border-bottom-color: var(--color-primary);
+  background: rgba(var(--color-primary-rgb), 0.07);
 }
 
 /* ── Tab content panels ── */
