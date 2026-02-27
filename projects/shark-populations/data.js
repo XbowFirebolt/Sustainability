@@ -1,6 +1,7 @@
 window.WIKI_DATA = {
   projectId: "shark-populations",
   favoritesKey: "wiki_favorites_shark-populations",
+  recentlyViewedKey: "wiki_recently_viewed_shark-populations",
   sources: [
     { label: "IUCN Red List",    url: "https://www.iucnredlist.org" },
     { label: "CITES Appendices", url: "https://cites.org/eng/app/appendices.php" },

@@ -27,6 +27,17 @@ function saveFavorites(ids) {
   localStorage.setItem(WIKI_DATA.favoritesKey, JSON.stringify(ids));
 }
 
+function loadRecentlyViewed() {
+  return JSON.parse(localStorage.getItem(WIKI_DATA.recentlyViewedKey) || "[]");
+}
+
+function recordRecentlyViewed(id) {
+  const MAX = 20;
+  const list = loadRecentlyViewed().filter((x) => x !== id);
+  list.unshift(id);
+  localStorage.setItem(WIKI_DATA.recentlyViewedKey, JSON.stringify(list.slice(0, MAX)));
+}
+
 function updateFavoritesToggleText() {
   const btn = document.getElementById("wiki-favorites-toggle");
   const count = loadFavorites().length;
@@ -82,6 +93,7 @@ function openSpeciesModal(species, cardEl, tabKey = "overview") {
   document.getElementById("species-modal-status").textContent = species.statusLabel;
 
   currentModalSpecies = species;
+  recordRecentlyViewed(species.id);
   currentModalIndex = currentFilteredSorted.findIndex((s) => s.id === species.id);
   updateModalNavState();
   activateTab(tabKey);
@@ -967,6 +979,13 @@ function renderWikiGrid(query) {
     sorted = [...filtered].sort((a, b) => b.lifePercent - a.lifePercent);
   } else if (sortMode === "threat-desc") {
     sorted = [...filtered].sort((a, b) => getThreatSeverityScore(b) - getThreatSeverityScore(a));
+  } else if (sortMode === "recently-viewed") {
+    const recentIds = loadRecentlyViewed();
+    const recentRank = (s) => {
+      const i = recentIds.indexOf(s.id);
+      return i === -1 ? Infinity : i;
+    };
+    sorted = [...filtered].sort((a, b) => recentRank(a) - recentRank(b));
   } else {
     sorted = filtered;
   }
