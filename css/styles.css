@@ -611,16 +611,6 @@ body.no-map {
   transition: background-color 0.5s ease;
 }
 
-.wiki-threat-legend {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.3rem 1rem;
-  border-bottom: 1px solid var(--color-border);
-  background-color: var(--color-bg);
-  transition: background-color 0.5s ease;
-}
-
 .wiki-threat-legend-label {
   font-size: 0.7rem;
   font-weight: 600;
@@ -629,7 +619,68 @@ body.no-map {
   color: var(--color-text-muted);
   white-space: nowrap;
   flex-shrink: 0;
-  margin-right: 0.1rem;
+  margin-bottom: 0.45rem;
+}
+
+.wiki-legend-hint {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.wiki-legend-btn {
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background: none;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1;
+}
+
+.wiki-legend-popup {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  right: 0;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 0.5rem 0.65rem;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  z-index: 20;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.wiki-legend-rows {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  row-gap: 0.3rem;
+  column-gap: 0.55rem;
+}
+
+.wiki-legend-desc {
+  font-size: 0.68rem;
+  color: var(--color-text-muted);
+}
+
+.wiki-legend-hint:hover .wiki-legend-popup,
+.wiki-legend-hint:focus-within .wiki-legend-popup {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .wiki-chips-area {

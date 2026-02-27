@@ -40,13 +40,22 @@
             <option value="recently-viewed">Recently Viewed</option>
           </select>
         </div>
-      </div>
-      <div class="wiki-threat-legend" aria-label="Threat severity legend">
-        <span class="wiki-threat-legend-label">Threat severity</span>
-        <span class="tab-severity-badge tab-severity-badge--critical">Critical</span>
-        <span class="tab-severity-badge tab-severity-badge--high">High</span>
-        <span class="tab-severity-badge tab-severity-badge--medium">Medium</span>
-        <span class="tab-severity-badge tab-severity-badge--low">Low</span>
+        <div class="wiki-legend-hint">
+          <button class="wiki-legend-btn" aria-label="Threat severity legend" tabindex="0">?</button>
+          <div class="wiki-legend-popup" role="tooltip">
+            <span class="wiki-threat-legend-label">Threat severity</span>
+            <div class="wiki-legend-rows">
+              <span class="tab-severity-badge tab-severity-badge--critical">Critical</span>
+              <span class="wiki-legend-desc">Extinction risk is immediate</span>
+              <span class="tab-severity-badge tab-severity-badge--high">High</span>
+              <span class="wiki-legend-desc">Severe, ongoing pressure</span>
+              <span class="tab-severity-badge tab-severity-badge--medium">Medium</span>
+              <span class="wiki-legend-desc">Notable but manageable stress</span>
+              <span class="tab-severity-badge tab-severity-badge--low">Low</span>
+              <span class="wiki-legend-desc">Generally stable population</span>
+            </div>
+          </div>
+        </div>
       </div>
       <div id="wiki-grid" class="wiki-grid"></div>
     </main>

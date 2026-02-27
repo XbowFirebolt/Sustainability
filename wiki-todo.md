@@ -80,7 +80,7 @@ Check off items as they're completed. Add notes inline as needed.
 - [ ] **Collapsible filter/sort panel** — on mobile, collapse the status chips + sort controls behind a "Filters" button to save vertical space
 - [x] **Reorder tabs** — consider: Overview → Threats → Health Metrics → Action Items (lead with quick context, then data)
 - [x] **Add an "Overview" tab** — a summary panel with: description, habitat, diet, size snapshot, and IUCN status blurb — the most-needed info in one place
-- [ ] **Move threat severity legend to tooltip** — instead of always showing the legend strip, show it on hover over a `?` icon near severity badges
+- [x] **Move threat severity legend to tooltip** — instead of always showing the legend strip, show it on hover over a `?` icon near severity badges
 - [ ] **Group grid by status** — optional sectioned layout: "Critically Endangered (2)", "Vulnerable (1)", etc. as section headers
 - [ ] **Breadcrumb in modal** — show the filtered context the user came from (e.g., "Filtered: Critically Endangered › 2 of 2")
 - [ ] **Sort + filter state in URL** — serialize current search/sort/filter to URL params so users can share a filtered view (extend existing `?species=` deep link)
