@@ -1295,27 +1295,11 @@ function renderWikiGrid(query) {
       </div>`;
     applyHighlight(ringWrap.querySelector(".card-ring-status"), species.statusLabel, q);
 
-    // Fun fact
-    const funfact = document.createElement("div");
-    funfact.className = "species-funfact";
-
-    const funfactLabel = document.createElement("div");
-    funfactLabel.className = "funfact-label";
-    funfactLabel.textContent = "Fun Fact";
-
-    const funfactText = document.createElement("div");
-    funfactText.className = "funfact-text";
-    funfactText.textContent = species.funFact;
-
-    funfact.appendChild(funfactLabel);
-    funfact.appendChild(funfactText);
-
     body.appendChild(name);
     body.appendChild(sci);
     body.appendChild(badgeRow);
     if (threatBadge) body.appendChild(threatBadge);
     body.appendChild(ringWrap);
-    body.appendChild(funfact);
     card.appendChild(imgArea);
     card.appendChild(body);
     grid.appendChild(card);
