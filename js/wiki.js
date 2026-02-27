@@ -27,6 +27,13 @@ function saveFavorites(ids) {
   localStorage.setItem(WIKI_DATA.favoritesKey, JSON.stringify(ids));
 }
 
+function updateFavoritesToggleText() {
+  const btn = document.getElementById("wiki-favorites-toggle");
+  const count = loadFavorites().length;
+  const star = showFavoritesOnly ? "\u2605" : "\u2606";
+  btn.textContent = star + " Favorites" + (count > 0 ? ` (${count})` : "");
+}
+
 // Species detail modal
 const speciesModal = document.getElementById("species-modal");
 let activeCard = null;
@@ -1133,6 +1140,7 @@ function renderWikiGrid(query) {
   }, { threshold: 0.15 });
   grid.querySelectorAll(".species-card").forEach((card) => window._wikiLifeObserver.observe(card));
   updateClearFiltersVisibility();
+  updateFavoritesToggleText();
 }
 
 wikiSearch.addEventListener("input", () => renderWikiGrid(wikiSearch.value));
@@ -1147,7 +1155,7 @@ document.getElementById("wiki-favorites-toggle").addEventListener("click", () =>
   const btn = document.getElementById("wiki-favorites-toggle");
   btn.classList.toggle("active", showFavoritesOnly);
   btn.setAttribute("aria-pressed", String(showFavoritesOnly));
-  btn.textContent = (showFavoritesOnly ? "\u2605" : "\u2606") + " Favorites";
+  updateFavoritesToggleText();
   renderWikiGrid(wikiSearch.value);
 });
 
@@ -1169,7 +1177,7 @@ document.getElementById("wiki-clear-filters").addEventListener("click", () => {
   const favBtn = document.getElementById("wiki-favorites-toggle");
   favBtn.classList.remove("active");
   favBtn.setAttribute("aria-pressed", "false");
-  favBtn.textContent = "\u2606 Favorites";
+  updateFavoritesToggleText();
   document.querySelectorAll(".status-chip").forEach((chip) => {
     chip.classList.remove("active");
     chip.setAttribute("aria-pressed", "false");
