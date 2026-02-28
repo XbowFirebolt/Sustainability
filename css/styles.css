@@ -1282,6 +1282,66 @@ body.no-map {
   color: var(--color-text-muted);
 }
 
+.overview-status-pct-hint {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.overview-status-info-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  line-height: 1;
+  opacity: 0.6;
+  transition: opacity 0.1s ease;
+}
+
+.overview-status-info-btn:hover {
+  opacity: 1;
+}
+
+.overview-status-tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 0;
+  width: 230px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 7px;
+  padding: 0.55rem 0.7rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  z-index: 20;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.overview-status-tooltip strong {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.3rem;
+}
+
+.overview-status-tooltip p {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.overview-status-pct-hint:hover .overview-status-tooltip,
+.overview-status-pct-hint:focus-within .overview-status-tooltip {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .overview-funfact {
   background: white;
   border-left: 3px solid var(--color-primary);

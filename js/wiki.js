@@ -519,13 +519,37 @@ function renderOverview(species) {
   fill.style.width = species.lifePercent + "%";
   fill.style.background = barColor;
 
+  const pctHint = document.createElement("div");
+  pctHint.className = "overview-status-pct-hint";
+
   const pct = document.createElement("div");
   pct.className = "overview-status-pct";
   pct.textContent = "Population health: " + species.lifePercent + "%";
 
+  const infoBtn = document.createElement("button");
+  infoBtn.className = "overview-status-info-btn";
+  infoBtn.setAttribute("type", "button");
+  infoBtn.setAttribute("aria-label", "About population health score");
+  infoBtn.textContent = "\u24d8";
+
+  const tooltip = document.createElement("div");
+  tooltip.className = "overview-status-tooltip";
+  tooltip.setAttribute("role", "tooltip");
+  const tooltipTitle = document.createElement("strong");
+  tooltipTitle.textContent = "Population health score";
+  const tooltipBody = document.createElement("p");
+  tooltipBody.textContent =
+    "An estimate of how much of this species\u2019 historical population remains today, based on IUCN Red List assessments and long-term wildlife surveys.";
+  tooltip.appendChild(tooltipTitle);
+  tooltip.appendChild(tooltipBody);
+
+  pctHint.appendChild(pct);
+  pctHint.appendChild(infoBtn);
+  pctHint.appendChild(tooltip);
+
   track.appendChild(fill);
   fillWrap.appendChild(track);
-  fillWrap.appendChild(pct);
+  fillWrap.appendChild(pctHint);
   statusBar.appendChild(badge);
   statusBar.appendChild(fillWrap);
   panel.appendChild(statusBar);

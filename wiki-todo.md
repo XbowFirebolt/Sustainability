@@ -47,7 +47,7 @@ Check off items as they're completed. Add notes inline as needed.
 - [ ] **Pagination or infinite scroll** — for projects with many species, virtualize the grid so it doesn't render 500+ DOM nodes at once
 - [ ] **Swipe left/right gesture** — navigate Prev/Next in modal via touch swipes on mobile
 - [ ] **Deep-link animation fallback** — when `?species=` is in the URL on page load, play a fade-in instead of the morph (morph requires visible source card)
-- [ ] **Life bar tooltip** — on hover/tap, explain what "Population health: X%" means and how it's calculated
+- [x] **Life bar tooltip** — on hover/tap, explain what "Population health: X%" means and how it's calculated
 
 ---
 
@@ -81,7 +81,7 @@ Check off items as they're completed. Add notes inline as needed.
 - [x] **Reorder tabs** — consider: Overview → Threats → Health Metrics → Action Items (lead with quick context, then data)
 - [x] **Add an "Overview" tab** — a summary panel with: description, habitat, diet, size snapshot, and IUCN status blurb — the most-needed info in one place
 - [x] **Move threat severity legend to tooltip** — instead of always showing the legend strip, show it on hover over a `?` icon near severity badges
-- [ ] **Group grid by status** — optional sectioned layout: "Critically Endangered (2)", "Vulnerable (1)", etc. as section headers
+- [x] **Group grid by status** — optional sectioned layout: "Critically Endangered (2)", "Vulnerable (1)", etc. as section headers
 - [ ] **Breadcrumb in modal** — show the filtered context the user came from (e.g., "Filtered: Critically Endangered › 2 of 2")
 - [ ] **Sort + filter state in URL** — serialize current search/sort/filter to URL params so users can share a filtered view (extend existing `?species=` deep link)
 - [ ] **Open Graph meta tags** — add dynamic OG tags for rich social/Slack previews when sharing deep links
