@@ -22,19 +22,25 @@ function getLifeBarColor(percent) {
 const RING_CIRCUMFERENCE = 131.95; // 2π × r21
 
 const HABITAT_BADGE = {
-  "ocean":      { icon: "🌊", label: "Ocean"       },
-  "coastal":    { icon: "🏖",  label: "Coastal"     },
-  "tropical":   { icon: "🌡",  label: "Tropical"    },
-  "pelagic":    { icon: "🌐",  label: "Pelagic"     },
-  "freshwater": { icon: "💧",  label: "Freshwater"  },
-  "reef":       { icon: "🪸",  label: "Reef"        },
+  "ocean":      { icon: "🌊", label: "Ocean",       color: "#185aa8", bg: "rgba(24,90,168,0.1)"   },
+  "coastal":    { icon: "🏖",  label: "Coastal",     color: "#136050", bg: "rgba(18,118,96,0.1)"   },
+  "tropical":   { icon: "🌡",  label: "Tropical",    color: "#0a7640", bg: "rgba(10,138,72,0.1)"   },
+  "pelagic":    { icon: "🌐",  label: "Pelagic",     color: "#28369a", bg: "rgba(56,76,180,0.1)"   },
+  "freshwater": { icon: "💧",  label: "Freshwater",  color: "#106890", bg: "rgba(24,140,180,0.1)"  },
+  "reef":       { icon: "🪸",  label: "Reef",        color: "#905010", bg: "rgba(200,100,20,0.1)"  },
 };
 
 const DIET_BADGE = {
-  "carnivore":     { icon: "🦷", label: "Carnivore"     },
-  "filter-feeder": { icon: "💧", label: "Filter Feeder" },
-  "omnivore":      { icon: "🍽", label: "Omnivore"      },
-  "apex-predator": { icon: "⬆",  label: "Apex Predator" },
+  "carnivore":     { icon: "🦷", label: "Carnivore",     color: "#881818", bg: "rgba(160,40,40,0.1)"   },
+  "filter-feeder": { icon: "💧", label: "Filter Feeder", color: "#185aa8", bg: "rgba(24,90,168,0.12)"  },
+  "omnivore":      { icon: "🍽", label: "Omnivore",      color: "#604010", bg: "rgba(100,70,10,0.1)"   },
+  "apex-predator": { icon: "⬆",  label: "Apex Predator", color: "#501460", bg: "rgba(80,20,100,0.1)"   },
+};
+
+const GEOGRAPHIC_REGION = {
+  "tropical":      { icon: "🌴", label: "Tropical",      color: "#0a7640", bg: "rgba(10,138,72,0.1)"   },
+  "temperate":     { icon: "🌊", label: "Temperate",      color: "#185aa8", bg: "rgba(24,90,168,0.1)"   },
+  "mediterranean": { icon: "🏛",  label: "Mediterranean",  color: "#905010", bg: "rgba(200,100,20,0.1)"  },
 };
 
 function loadFavorites() {
@@ -1092,9 +1098,13 @@ function renderActionItems(items, q) {
 const wikiSearch = document.getElementById("wiki-search");
 
 let focusedCardIndex = -1;
-let activeStatusFilters = new Set();
+let activeStatusFilters  = new Set();
+let activeHabitatFilters = new Set();
+let activeDietFilters    = new Set();
+let activeRegionFilters  = new Set();
 let sortMode = "default";
 let showFavoritesOnly = false;
+let filterPanelOpen = false;
 
 const SEVERITY_SCORE = { critical: 4, high: 3, medium: 2, low: 1 };
 
@@ -1299,6 +1309,22 @@ function renderWikiGrid(query) {
     filtered = filtered.filter((s) => activeStatusFilters.has(s.statusLabel));
   }
 
+  if (activeHabitatFilters.size > 0) {
+    filtered = filtered.filter((s) =>
+      (s.habitatTypes || []).some((h) => activeHabitatFilters.has(h))
+    );
+  }
+
+  if (activeDietFilters.size > 0) {
+    filtered = filtered.filter((s) => activeDietFilters.has(s.dietType));
+  }
+
+  if (activeRegionFilters.size > 0) {
+    filtered = filtered.filter((s) =>
+      (s.geographicRegions || []).some((r) => activeRegionFilters.has(r))
+    );
+  }
+
   if (showFavoritesOnly) {
     filtered = filtered.filter((s) => favIds.includes(s.id));
   }
@@ -1329,6 +1355,7 @@ function renderWikiGrid(query) {
   }
 
   currentFilteredSorted = sorted;
+  renderGlanceBar(sorted);
   if (currentModalSpecies && !speciesModal.classList.contains("hidden")) {
     currentModalIndex = currentFilteredSorted.findIndex((s) => s.id === currentModalSpecies.id);
     updateModalNavState();
@@ -1338,7 +1365,7 @@ function renderWikiGrid(query) {
   focusedCardIndex = -1;
 
   if (sorted.length === 0) {
-    const hasActiveFilters = activeStatusFilters.size > 0 || showFavoritesOnly || q !== "";
+    const hasActiveFilters = activeStatusFilters.size > 0 || activeHabitatFilters.size > 0 || activeDietFilters.size > 0 || activeRegionFilters.size > 0 || showFavoritesOnly || q !== "";
     const empty = document.createElement("div");
     empty.className = "wiki-empty-state";
 
@@ -1442,6 +1469,9 @@ function updateClearFiltersVisibility() {
   const hasFilters =
     wikiSearch.value.trim() !== "" ||
     activeStatusFilters.size > 0 ||
+    activeHabitatFilters.size > 0 ||
+    activeDietFilters.size > 0 ||
+    activeRegionFilters.size > 0 ||
     sortMode !== "default" ||
     showFavoritesOnly;
   document.getElementById("wiki-clear-filters").hidden = !hasFilters;
@@ -1450,6 +1480,9 @@ function updateClearFiltersVisibility() {
 document.getElementById("wiki-clear-filters").addEventListener("click", () => {
   wikiSearch.value = "";
   activeStatusFilters.clear();
+  activeHabitatFilters.clear();
+  activeDietFilters.clear();
+  activeRegionFilters.clear();
   sortMode = "default";
   showFavoritesOnly = false;
   document.getElementById("wiki-sort").value = "default";
@@ -1457,10 +1490,11 @@ document.getElementById("wiki-clear-filters").addEventListener("click", () => {
   favBtn.classList.remove("active");
   favBtn.setAttribute("aria-pressed", "false");
   updateFavoritesToggleText();
-  document.querySelectorAll(".status-chip").forEach((chip) => {
+  document.querySelectorAll(".wiki-filter-chip").forEach((chip) => {
     chip.classList.remove("active");
     chip.setAttribute("aria-pressed", "false");
   });
+  updateFilterBtnState();
   renderWikiGrid("");
 });
 
@@ -1577,77 +1611,159 @@ const STATUS_ORDER = [
   { label: "Not Evaluated",         color: "#505050", bg: "rgba(80,80,80,0.13)"    },
 ];
 
-function renderStatusBar() {
-  const area = document.getElementById("wiki-chips-area");
-  const bar = document.getElementById("wiki-status-bar");
-  if (!area || !bar) return;
 
-  const counts = {};
-  WIKI_DATA.items.forEach((s) => {
-    counts[s.statusLabel] = (counts[s.statusLabel] || 0) + 1;
-  });
+function updateFilterBtnState() {
+  const btn = document.getElementById("wiki-filter-btn");
+  if (!btn) return;
+  const count = activeStatusFilters.size + activeHabitatFilters.size + activeDietFilters.size + activeRegionFilters.size;
+  btn.classList.toggle("active", count > 0);
+  const arrow = filterPanelOpen ? "▴" : "▾";
+  btn.textContent = count > 0 ? `Filter (${count}) ${arrow}` : `Filter ${arrow}`;
+}
 
-  area.innerHTML = "";
+function renderFilterPanel() {
+  const panel = document.getElementById("wiki-filter-panel");
+  if (!panel) return;
 
-  const heading = document.createElement("span");
-  heading.className = "wiki-status-heading";
-  heading.textContent = "At a glance";
-  area.appendChild(heading);
+  panel.innerHTML = "";
 
-  let hasChips = false;
-
-  function makeChip(label, color, bg, count) {
-    hasChips = true;
+  function makeFilterChip(key, text, color, bg, activeSet) {
     const chip = document.createElement("button");
-    chip.className = "status-chip";
+    chip.className = "wiki-filter-chip";
     chip.style.setProperty("--chip-color", color);
     chip.style.setProperty("--chip-bg", bg);
-    chip.setAttribute("aria-pressed", "false");
-
-    const countEl = document.createElement("span");
-    countEl.className = "status-chip-count";
-    countEl.textContent = count;
-
-    const labelEl = document.createElement("span");
-    labelEl.className = "status-chip-label";
-    labelEl.textContent = label;
-
-    chip.appendChild(countEl);
-    chip.appendChild(labelEl);
-
+    chip.setAttribute("aria-pressed", String(activeSet.has(key)));
+    if (activeSet.has(key)) chip.classList.add("active");
+    chip.textContent = text;
     chip.addEventListener("click", () => {
-      if (activeStatusFilters.has(label)) {
-        activeStatusFilters.delete(label);
+      if (activeSet.has(key)) {
+        activeSet.delete(key);
         chip.classList.remove("active");
         chip.setAttribute("aria-pressed", "false");
       } else {
-        activeStatusFilters.add(label);
+        activeSet.add(key);
         chip.classList.add("active");
         chip.setAttribute("aria-pressed", "true");
       }
+      updateFilterBtnState();
       renderWikiGrid(wikiSearch.value);
+      updateClearFiltersVisibility();
     });
-
     return chip;
   }
 
+  function makeGroup(labelText, chips) {
+    if (chips.length === 0) return;
+    const group = document.createElement("div");
+    group.className = "wiki-filter-group";
+    const lbl = document.createElement("span");
+    lbl.className = "wiki-filter-group-label";
+    lbl.textContent = labelText;
+    group.appendChild(lbl);
+    chips.forEach((chip) => group.appendChild(chip));
+    panel.appendChild(group);
+  }
+
+  // Status group
+  const statusCounts = {};
+  WIKI_DATA.items.forEach((s) => { statusCounts[s.statusLabel] = (statusCounts[s.statusLabel] || 0) + 1; });
+  const statusChips = [];
   STATUS_ORDER.forEach(({ label, color, bg }) => {
-    const count = counts[label];
-    if (!count) return;
-    area.appendChild(makeChip(label, color, bg, count));
+    if (!statusCounts[label]) return;
+    statusChips.push(makeFilterChip(label, label, color, bg, activeStatusFilters));
   });
-
-  // Any statuses not in the config table go at the end
-  Object.entries(counts).forEach(([label, count]) => {
+  Object.keys(statusCounts).forEach((label) => {
     if (STATUS_ORDER.find((s) => s.label === label)) return;
-    area.appendChild(makeChip(label, "#707070", "rgba(112,112,112,0.13)", count));
+    statusChips.push(makeFilterChip(label, label, "#707070", "rgba(112,112,112,0.13)", activeStatusFilters));
   });
+  makeGroup("Status", statusChips);
 
-  bar.style.display = hasChips ? "" : "none";
+  // Habitat group
+  makeGroup("Habitat", Object.keys(HABITAT_BADGE)
+    .filter((k) => WIKI_DATA.items.some((s) => (s.habitatTypes || []).includes(k)))
+    .map((k) => makeFilterChip(k, `${HABITAT_BADGE[k].icon} ${HABITAT_BADGE[k].label}`, HABITAT_BADGE[k].color, HABITAT_BADGE[k].bg, activeHabitatFilters)));
+
+  // Diet group
+  makeGroup("Diet", Object.keys(DIET_BADGE)
+    .filter((k) => WIKI_DATA.items.some((s) => s.dietType === k))
+    .map((k) => makeFilterChip(k, `${DIET_BADGE[k].icon} ${DIET_BADGE[k].label}`, DIET_BADGE[k].color, DIET_BADGE[k].bg, activeDietFilters)));
+
+  // Region group
+  makeGroup("Region", Object.keys(GEOGRAPHIC_REGION)
+    .filter((k) => WIKI_DATA.items.some((s) => (s.geographicRegions || []).includes(k)))
+    .map((k) => makeFilterChip(k, `${GEOGRAPHIC_REGION[k].icon} ${GEOGRAPHIC_REGION[k].label}`, GEOGRAPHIC_REGION[k].color, GEOGRAPHIC_REGION[k].bg, activeRegionFilters)));
+}
+
+document.getElementById("wiki-filter-btn").addEventListener("click", () => {
+  filterPanelOpen = !filterPanelOpen;
+  const panel = document.getElementById("wiki-filter-panel");
+  panel.classList.toggle("hidden", !filterPanelOpen);
+  updateFilterBtnState();
+});
+
+function renderGlanceBar(items) {
+  const el = document.getElementById("wiki-glance");
+  if (!el) return;
+
+  const src = items ?? WIKI_DATA.items;
+  const avg = src.length
+    ? Math.round(src.reduce((sum, s) => sum + (s.lifePercent || 0), 0) / src.length)
+    : null;
+  const color     = avg !== null ? getLifeBarColor(avg) : "var(--color-text-muted)";
+  const targetW   = avg !== null ? `${avg}%` : "0%";
+  const displayTxt = avg !== null ? `${avg}%` : "—";
+
+  // Build DOM once; update in-place on subsequent calls so CSS transitions fire
+  let barFill = el.querySelector(".wiki-glance-bar-fill");
+  const isFirst = !barFill;
+
+  if (isFirst) {
+    el.innerHTML = "";
+
+    const label = document.createElement("span");
+    label.className = "wiki-glance-label";
+    label.textContent = "At a glance";
+    el.appendChild(label);
+
+    const barWrap = document.createElement("div");
+    barWrap.className = "wiki-glance-bar-wrap";
+    barFill = document.createElement("div");
+    barFill.className = "wiki-glance-bar-fill";
+    barFill.style.width = "0%";       // start collapsed for load animation
+    barFill.style.background = color;
+    barWrap.appendChild(barFill);
+    el.appendChild(barWrap);
+
+    const pct = document.createElement("span");
+    pct.className = "wiki-glance-pct";
+    pct.style.color = color;
+    pct.textContent = displayTxt;
+    el.appendChild(pct);
+
+    const sub = document.createElement("span");
+    sub.className = "wiki-glance-sub";
+    sub.textContent = "avg. health";
+    el.appendChild(sub);
+
+    // Kick off the load animation after the first paint
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      barFill.style.width = targetW;
+    }));
+    return;
+  }
+
+  // Subsequent updates — transition handles the animation
+  barFill.style.width      = targetW;
+  barFill.style.background = color;
+
+  const pctEl = el.querySelector(".wiki-glance-pct");
+  pctEl.style.color   = color;
+  pctEl.textContent   = displayTxt;
 }
 
 renderWikiGrid("");
-renderStatusBar();
+renderFilterPanel();
+updateFilterBtnState();
 
 // Open modal directly if species is specified in the URL (deep link / bookmark)
 const initSpeciesId = new URLSearchParams(window.location.search).get("species");

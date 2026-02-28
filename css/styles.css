@@ -481,6 +481,92 @@ body.no-map {
   color: var(--color-text);
 }
 
+.wiki-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.18rem 0.55rem;
+  border: 1px solid var(--color-input-border);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+
+.wiki-filter-btn:hover {
+  border-color: var(--color-text-muted);
+  color: var(--color-text);
+}
+
+.wiki-filter-btn.active {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: rgba(var(--color-primary-rgb, 24, 90, 168), 0.08);
+}
+
+.wiki-filter-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg);
+  transition: background-color 0.5s ease;
+}
+
+.wiki-filter-panel.hidden {
+  display: none;
+}
+
+.wiki-filter-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.wiki-filter-group-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  min-width: 4rem;
+  flex-shrink: 0;
+}
+
+.wiki-filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.12rem 0.5rem;
+  border: 1px solid var(--color-input-border);
+  border-radius: 99px;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+
+.wiki-filter-chip:hover {
+  border-color: var(--color-text-muted);
+  color: var(--color-text);
+}
+
+.wiki-filter-chip.active {
+  border-color: var(--chip-color);
+  color: var(--chip-color);
+  background: var(--chip-bg);
+  font-weight: 600;
+}
+
 .discover-grid {
   padding: 1rem;
   display: grid;
@@ -600,7 +686,7 @@ body.no-map {
   color: #fff;
 }
 
-/* At a glance status bar */
+/* Wiki toolbar bar */
 .wiki-status-bar {
   display: flex;
   align-items: center;
@@ -609,6 +695,54 @@ body.no-map {
   border-bottom: 1px solid var(--color-border);
   background-color: var(--color-bg);
   transition: background-color 0.5s ease;
+}
+
+.wiki-bar-spacer {
+  flex: 1;
+}
+
+.wiki-glance {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-shrink: 0;
+}
+
+.wiki-glance-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.wiki-glance-bar-wrap {
+  width: 110px;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--color-border);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.wiki-glance-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.6s ease, background 0.4s ease;
+}
+
+.wiki-glance-pct {
+  font-size: 0.92rem;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: color 0.4s ease;
+}
+
+.wiki-glance-sub {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
 }
 
 .wiki-threat-legend-label {
@@ -681,63 +815,6 @@ body.no-map {
 .wiki-legend-hint:focus-within .wiki-legend-popup {
   opacity: 1;
   pointer-events: auto;
-}
-
-.wiki-chips-area {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 0.35rem;
-  flex: 1;
-  min-width: 0;
-}
-
-.wiki-status-heading {
-  font-size: 0.7rem;
-  font-weight: 600;
-  color: var(--color-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-right: 0.1rem;
-  flex-shrink: 0;
-}
-
-.status-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  padding: 0.22rem 0.6rem;
-  border-radius: 999px;
-  background: var(--chip-bg);
-  border: 1px solid var(--chip-color);
-  font-size: 0.78rem;
-  line-height: 1.3;
-  cursor: pointer;
-  transition: box-shadow 0.15s ease, background 0.15s ease;
-}
-
-.status-chip:hover {
-  box-shadow: 0 0 0 1px var(--chip-color);
-}
-
-.status-chip.active {
-  background: var(--chip-color);
-  box-shadow: 0 0 0 1px var(--chip-color);
-}
-
-.status-chip.active .status-chip-count,
-.status-chip.active .status-chip-label {
-  color: #fff;
-}
-
-.status-chip-count {
-  font-weight: 700;
-  color: var(--chip-color);
-}
-
-.status-chip-label {
-  color: var(--color-text-dim);
 }
 
 /* Wiki species grid */

@@ -25,9 +25,11 @@
         <input id="wiki-search" class="discover-search" type="search" placeholder="Search by name, species, or status…" />
       </div>
       <div id="wiki-status-bar" class="wiki-status-bar">
-        <div id="wiki-chips-area" class="wiki-chips-area"></div>
+        <div id="wiki-glance" class="wiki-glance"></div>
+        <div class="wiki-bar-spacer"></div>
         <button id="wiki-favorites-toggle" class="wiki-fav-toggle" aria-pressed="false">&#9734; Favorites</button>
         <button id="wiki-clear-filters" class="wiki-clear-btn" hidden>Clear</button>
+        <button id="wiki-filter-btn" class="wiki-filter-btn">Filter ▾</button>
         <button id="wiki-surprise-btn" class="wiki-surprise-btn" title="Open a random species">&#127922; Surprise me</button>
         <div class="wiki-sort-group">
           <span class="wiki-filter-label">Sort</span>
@@ -57,6 +59,7 @@
           </div>
         </div>
       </div>
+      <div id="wiki-filter-panel" class="wiki-filter-panel hidden"></div>
       <div id="wiki-grid" class="wiki-grid"></div>
     </main>
     <div id="account-modal" class="modal-overlay hidden">
