@@ -83,7 +83,8 @@ function updateFavoritesToggleText() {
 }
 
 // Species detail modal
-const speciesModal = document.getElementById("species-modal");
+const speciesModal   = document.getElementById("species-modal");
+const kbHelpOverlay  = document.getElementById("kb-help-overlay");
 let activeCard = null;
 let tabPanelsScrollListener = null;
 let unitMode = localStorage.getItem("wiki_unit_mode") || "metric";
@@ -1626,6 +1627,14 @@ document.getElementById("wiki-surprise-btn").addEventListener("click", () => {
   openSpeciesModal(randomSpecies, null);
 });
 
+// ── Keyboard shortcut help overlay ────────────────────────────
+
+function openKbHelp()  { kbHelpOverlay.classList.remove("hidden"); }
+function closeKbHelp() { kbHelpOverlay.classList.add("hidden"); }
+
+document.getElementById("kb-help-close").addEventListener("click", closeKbHelp);
+kbHelpOverlay.addEventListener("click", (e) => { if (e.target === kbHelpOverlay) closeKbHelp(); });
+
 // ── Keyboard navigation ────────────────────────────────────────
 
 function getVisibleCards() {
@@ -1647,6 +1656,12 @@ function setFocusedCard(index) {
 }
 
 document.addEventListener("keydown", (e) => {
+  const kbHelpOpen = !kbHelpOverlay.classList.contains("hidden");
+  if (kbHelpOpen) {
+    if (e.key === "Escape" || e.key === "?") { e.preventDefault(); closeKbHelp(); }
+    return;
+  }
+
   const galleryOpen = !galleryOverlay.classList.contains("hidden");
   if (galleryOpen) {
     if (e.key === "Escape") { e.preventDefault(); closeGallery(); return; }
@@ -1688,6 +1703,7 @@ document.addEventListener("keydown", (e) => {
   }
 
   // Modal closed — card navigation
+  if (e.key === "?") { e.preventDefault(); openKbHelp(); return; }
   if (e.target === wikiSearch) return;
 
   if (e.key === "ArrowRight" || e.key === "ArrowLeft") {

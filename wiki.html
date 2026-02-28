@@ -133,6 +133,35 @@
         </div>
       </div>
     </div>
+    <!-- Keyboard shortcut help overlay -->
+    <div id="kb-help-overlay" class="kb-help-overlay hidden" role="dialog" aria-modal="true" aria-label="Keyboard shortcuts">
+      <div class="kb-help-panel">
+        <div class="kb-help-header">
+          <span class="kb-help-title">Keyboard Shortcuts</span>
+          <button id="kb-help-close" class="close-btn" aria-label="Close keyboard shortcuts">&times;</button>
+        </div>
+        <div class="kb-help-body">
+          <div class="kb-help-section">
+            <div class="kb-help-section-title">Grid</div>
+            <div class="kb-help-row"><span class="kb-help-keys"><kbd>←</kbd><kbd>→</kbd></span><span>Navigate cards</span></div>
+            <div class="kb-help-row"><span class="kb-help-keys"><kbd>Enter</kbd></span><span>Open focused card</span></div>
+            <div class="kb-help-row"><span class="kb-help-keys"><kbd>?</kbd></span><span>Show this help</span></div>
+          </div>
+          <div class="kb-help-section">
+            <div class="kb-help-section-title">Species modal</div>
+            <div class="kb-help-row"><span class="kb-help-keys"><kbd>←</kbd><kbd>→</kbd></span><span>Previous / next species</span></div>
+            <div class="kb-help-row"><span class="kb-help-keys"><kbd>Tab</kbd></span><span>Cycle tabs forward</span></div>
+            <div class="kb-help-row"><span class="kb-help-keys"><kbd>Shift</kbd><kbd>Tab</kbd></span><span>Cycle tabs backward</span></div>
+            <div class="kb-help-row"><span class="kb-help-keys"><kbd>Esc</kbd></span><span>Close modal</span></div>
+          </div>
+          <div class="kb-help-section">
+            <div class="kb-help-section-title">Photo gallery</div>
+            <div class="kb-help-row"><span class="kb-help-keys"><kbd>←</kbd><kbd>→</kbd></span><span>Previous / next photo</span></div>
+            <div class="kb-help-row"><span class="kb-help-keys"><kbd>Esc</kbd></span><span>Close gallery</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Photo gallery lightbox -->
     <div id="photo-gallery" class="gallery-overlay hidden" role="dialog" aria-modal="true" aria-label="Photo gallery">
       <button id="gallery-close" class="gallery-close" aria-label="Close gallery">&times;</button>
