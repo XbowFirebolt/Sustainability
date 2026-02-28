@@ -43,6 +43,16 @@ const GEOGRAPHIC_REGION = {
   "mediterranean": { icon: "🏛",  label: "Mediterranean",  color: "#905010", bg: "rgba(200,100,20,0.1)"  },
 };
 
+const TAG_BADGE = {
+  "migratory": { icon: "🧭", label: "Migratory", color: "#0e7c8a", bg: "rgba(14,124,138,0.12)" },
+  "schooling":  { icon: "🐟", label: "Schooling", color: "#1a6e5c", bg: "rgba(26,110,92,0.12)"  },
+  "solitary":   { icon: "🦈", label: "Solitary",  color: "#3d4f6e", bg: "rgba(61,79,110,0.12)"  },
+  "nocturnal":  { icon: "🌙", label: "Nocturnal", color: "#4a1a6e", bg: "rgba(74,26,110,0.12)"  },
+  "bycatch":    { icon: "🎣", label: "Bycatch",   color: "#7a4010", bg: "rgba(122,64,16,0.12)"  },
+  "finning":    { icon: "✂️", label: "Finning",   color: "#7a1818", bg: "rgba(122,24,24,0.12)"  },
+  "keystone":   { icon: "🔑", label: "Keystone",  color: "#7a6010", bg: "rgba(122,96,16,0.12)"  },
+};
+
 function loadFavorites() {
   return JSON.parse(localStorage.getItem(WIKI_DATA.favoritesKey) || "[]");
 }
@@ -1102,6 +1112,7 @@ let activeStatusFilters  = new Set();
 let activeHabitatFilters = new Set();
 let activeDietFilters    = new Set();
 let activeRegionFilters  = new Set();
+let activeTagFilters     = new Set();
 let sortMode = "default";
 let showFavoritesOnly = false;
 let filterPanelOpen = false;
@@ -1325,6 +1336,12 @@ function renderWikiGrid(query) {
     );
   }
 
+  if (activeTagFilters.size > 0) {
+    filtered = filtered.filter((s) =>
+      (s.tags || []).some((t) => activeTagFilters.has(t))
+    );
+  }
+
   if (showFavoritesOnly) {
     filtered = filtered.filter((s) => favIds.includes(s.id));
   }
@@ -1365,7 +1382,7 @@ function renderWikiGrid(query) {
   focusedCardIndex = -1;
 
   if (sorted.length === 0) {
-    const hasActiveFilters = activeStatusFilters.size > 0 || activeHabitatFilters.size > 0 || activeDietFilters.size > 0 || activeRegionFilters.size > 0 || showFavoritesOnly || q !== "";
+    const hasActiveFilters = activeStatusFilters.size > 0 || activeHabitatFilters.size > 0 || activeDietFilters.size > 0 || activeRegionFilters.size > 0 || activeTagFilters.size > 0 || showFavoritesOnly || q !== "";
     const empty = document.createElement("div");
     empty.className = "wiki-empty-state";
 
@@ -1472,6 +1489,7 @@ function updateClearFiltersVisibility() {
     activeHabitatFilters.size > 0 ||
     activeDietFilters.size > 0 ||
     activeRegionFilters.size > 0 ||
+    activeTagFilters.size > 0 ||
     sortMode !== "default" ||
     showFavoritesOnly;
   document.getElementById("wiki-clear-filters").hidden = !hasFilters;
@@ -1483,6 +1501,7 @@ document.getElementById("wiki-clear-filters").addEventListener("click", () => {
   activeHabitatFilters.clear();
   activeDietFilters.clear();
   activeRegionFilters.clear();
+  activeTagFilters.clear();
   sortMode = "default";
   showFavoritesOnly = false;
   document.getElementById("wiki-sort").value = "default";
@@ -1615,7 +1634,7 @@ const STATUS_ORDER = [
 function updateFilterBtnState() {
   const btn = document.getElementById("wiki-filter-btn");
   if (!btn) return;
-  const count = activeStatusFilters.size + activeHabitatFilters.size + activeDietFilters.size + activeRegionFilters.size;
+  const count = activeStatusFilters.size + activeHabitatFilters.size + activeDietFilters.size + activeRegionFilters.size + activeTagFilters.size;
   btn.classList.toggle("active", count > 0);
   const arrow = filterPanelOpen ? "▴" : "▾";
   btn.textContent = count > 0 ? `Filter (${count}) ${arrow}` : `Filter ${arrow}`;
@@ -1692,6 +1711,11 @@ function renderFilterPanel() {
   makeGroup("Region", Object.keys(GEOGRAPHIC_REGION)
     .filter((k) => WIKI_DATA.items.some((s) => (s.geographicRegions || []).includes(k)))
     .map((k) => makeFilterChip(k, `${GEOGRAPHIC_REGION[k].icon} ${GEOGRAPHIC_REGION[k].label}`, GEOGRAPHIC_REGION[k].color, GEOGRAPHIC_REGION[k].bg, activeRegionFilters)));
+
+  // Tags group
+  makeGroup("Tags", Object.keys(TAG_BADGE)
+    .filter((k) => WIKI_DATA.items.some((s) => (s.tags || []).includes(k)))
+    .map((k) => makeFilterChip(k, `${TAG_BADGE[k].icon} ${TAG_BADGE[k].label}`, TAG_BADGE[k].color, TAG_BADGE[k].bg, activeTagFilters)));
 }
 
 document.getElementById("wiki-filter-btn").addEventListener("click", () => {
