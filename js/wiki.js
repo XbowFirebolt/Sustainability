@@ -53,6 +53,12 @@ const TAG_BADGE = {
   "keystone":   { icon: "🔑", label: "Keystone",  color: "#7a6010", bg: "rgba(122,96,16,0.12)"  },
 };
 
+const COMPLETENESS_FIELDS = ["vitalSigns", "populationTrend", "healthMetrics", "actionItems"];
+
+function isSpeciesIncomplete(species) {
+  return COMPLETENESS_FIELDS.some((f) => !species[f] || (Array.isArray(species[f]) && species[f].length === 0));
+}
+
 function loadFavorites() {
   return JSON.parse(localStorage.getItem(WIKI_DATA.favoritesKey) || "[]");
 }
@@ -252,6 +258,7 @@ function openSpeciesModal(species, cardEl, tabKey = "overview") {
 
   document.getElementById("species-modal-name").textContent = species.commonName;
   document.getElementById("species-modal-sci").textContent = species.scientificName;
+  document.getElementById("species-modal-incomplete").hidden = !isSpeciesIncomplete(species);
 
   const isFav = loadFavorites().includes(species.id);
   const modalStarBtn = document.getElementById("modal-star-btn");
@@ -1207,6 +1214,16 @@ function createSpeciesCard(species, q, favIds) {
       ? "1 photo"
       : `${species.photos.length} photos`;
     imgArea.appendChild(photoBadge);
+  }
+
+  // Incomplete data icon (image overlay)
+  if (isSpeciesIncomplete(species)) {
+    const incompleteIcon = document.createElement("div");
+    incompleteIcon.className = "card-incomplete-icon";
+    incompleteIcon.title = "Incomplete data";
+    incompleteIcon.setAttribute("aria-label", "Incomplete data");
+    incompleteIcon.textContent = "⚠";
+    imgArea.appendChild(incompleteIcon);
   }
 
   // Favorite star button (or manage-mode selection indicator)

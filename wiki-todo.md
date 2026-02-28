@@ -41,8 +41,8 @@ Check off items as they're completed. Add notes inline as needed.
 - [x] **Multi-select favorites management** — a "manage favorites" mode to bulk remove stars
 - [x] **Favorites count badge** — show number of favorited species on the toggle button (e.g., "★ Favorites (3)")
 - [x] **Keyboard shortcut help overlay** — press `?` to see all keyboard shortcuts for the wiki page
-- [ ] **Autocomplete / search suggestions** — as-you-type dropdown showing matching species names
-- [ ] **Data completeness indicator** — show on cards/modal if a species is missing data (e.g., a small "incomplete data" badge)
+- [x] **Autocomplete / search suggestions** — as-you-type dropdown showing matching species names
+- [x] **Data completeness indicator** — show on cards/modal if a species is missing data (e.g., a small "incomplete data" badge)
 - [ ] **Print / export** — print-friendly stylesheet or PDF export button for a species detail page
 - [ ] **Pagination or infinite scroll** — for projects with many species, virtualize the grid so it doesn't render 500+ DOM nodes at once
 - [ ] **Swipe left/right gesture** — navigate Prev/Next in modal via touch swipes on mobile

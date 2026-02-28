@@ -2048,6 +2048,64 @@ body.no-map {
   margin-bottom: 0.25rem;
 }
 
+.card-incomplete-icon {
+  position: absolute;
+  bottom: 9px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  font-size: 0.78rem;
+  line-height: 1;
+  color: #c8900a;
+  cursor: default;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-incomplete-icon::after {
+  content: "Missing data";
+  position: absolute;
+  bottom: calc(100% + 6px);
+  right: 0;
+  white-space: nowrap;
+  background: #fff;
+  color: #1a1a1a;
+  font-size: 0.68rem;
+  font-family: inherit;
+  padding: 3px 8px;
+  border-radius: 4px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.18);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.card-incomplete-icon:hover::after {
+  opacity: 1;
+}
+
+.modal-incomplete-badge {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 3px;
+  padding: 1px 6px;
+  margin-top: 0.25rem;
+}
+
+.modal-incomplete-badge[hidden] {
+  display: none;
+}
+
+.modal-incomplete-badge:not([hidden]) {
+  display: inline-block;
+}
+
 .tab-threat-desc {
   font-size: 0.84rem;
   color: var(--color-text-dim);
