@@ -1504,7 +1504,96 @@ function renderWikiGrid(query) {
   updateFavoritesToggleText();
 }
 
-wikiSearch.addEventListener("input", () => renderWikiGrid(wikiSearch.value));
+// ── Autocomplete ─────────────────────────────────────────────────────────────
+const autocompleteList = document.getElementById("wiki-autocomplete");
+let acActiveIndex = -1;
+
+function highlightMatchInline(text, query) {
+  const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return text.replace(new RegExp(`(${escaped})`, "gi"), "<mark class='search-highlight'>$1</mark>");
+}
+
+function renderAutocomplete(q) {
+  const query = q.trim();
+  acActiveIndex = -1;
+  if (!query) {
+    autocompleteList.hidden = true;
+    autocompleteList.innerHTML = "";
+    return;
+  }
+  const ql = query.toLowerCase();
+  const suggestions = WIKI_DATA.items
+    .filter((s) => s.commonName.toLowerCase().includes(ql) || s.scientificName.toLowerCase().includes(ql))
+    .slice(0, 5);
+  if (!suggestions.length) {
+    autocompleteList.hidden = true;
+    autocompleteList.innerHTML = "";
+    return;
+  }
+  autocompleteList.innerHTML = suggestions
+    .map(
+      (s) =>
+        `<li class="search-ac-item" role="option" data-id="${s.id}">` +
+        `<span class="search-ac-common">${highlightMatchInline(s.commonName, query)}</span>` +
+        `<span class="search-ac-sci">${highlightMatchInline(s.scientificName, query)}</span>` +
+        `</li>`
+    )
+    .join("");
+  autocompleteList.querySelectorAll(".search-ac-item").forEach((item) => {
+    item.addEventListener("mousedown", (e) => {
+      e.preventDefault();
+      const species = WIKI_DATA.items.find((s) => s.id === item.dataset.id);
+      if (species) {
+        wikiSearch.value = species.commonName;
+        renderWikiGrid(species.commonName);
+        autocompleteList.hidden = true;
+        autocompleteList.innerHTML = "";
+        acActiveIndex = -1;
+        wikiSearch.focus();
+      }
+    });
+  });
+  autocompleteList.hidden = false;
+}
+
+wikiSearch.addEventListener("input", () => {
+  renderWikiGrid(wikiSearch.value);
+  renderAutocomplete(wikiSearch.value);
+});
+
+wikiSearch.addEventListener("keydown", (e) => {
+  if (autocompleteList.hidden) return;
+  const items = autocompleteList.querySelectorAll(".search-ac-item");
+  if (!items.length) return;
+  if (e.key === "ArrowDown") {
+    e.preventDefault();
+    acActiveIndex = Math.min(acActiveIndex + 1, items.length - 1);
+    items.forEach((item, i) => item.classList.toggle("search-ac-item--active", i === acActiveIndex));
+  } else if (e.key === "ArrowUp") {
+    e.preventDefault();
+    acActiveIndex = Math.max(acActiveIndex - 1, 0);
+    items.forEach((item, i) => item.classList.toggle("search-ac-item--active", i === acActiveIndex));
+  } else if (e.key === "Enter" && acActiveIndex >= 0) {
+    e.preventDefault();
+    items[acActiveIndex].dispatchEvent(new MouseEvent("mousedown"));
+  } else if (e.key === "Escape") {
+    autocompleteList.hidden = true;
+    autocompleteList.innerHTML = "";
+    acActiveIndex = -1;
+  }
+});
+
+wikiSearch.addEventListener("blur", () => {
+  setTimeout(() => {
+    autocompleteList.hidden = true;
+    autocompleteList.innerHTML = "";
+    acActiveIndex = -1;
+  }, 150);
+});
+
+wikiSearch.addEventListener("focus", () => {
+  if (wikiSearch.value.trim()) renderAutocomplete(wikiSearch.value);
+});
 
 document.getElementById("wiki-sort").addEventListener("change", (e) => {
   sortMode = e.target.value;

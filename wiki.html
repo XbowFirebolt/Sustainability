@@ -22,7 +22,10 @@
     </header>
     <main class="discover-page">
       <div class="discover-search-wrap">
-        <input id="wiki-search" class="discover-search" type="search" placeholder="Search by name, species, or status…" />
+        <div class="search-autocomplete-wrap">
+          <input id="wiki-search" class="discover-search" type="search" placeholder="Search by name, species, or status…" autocomplete="off" aria-autocomplete="list" aria-controls="wiki-autocomplete" />
+          <ul id="wiki-autocomplete" class="search-autocomplete-list" hidden role="listbox" aria-label="Search suggestions"></ul>
+        </div>
       </div>
       <div id="wiki-status-bar" class="wiki-status-bar">
         <div id="wiki-glance" class="wiki-glance"></div>
