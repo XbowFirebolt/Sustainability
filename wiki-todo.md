@@ -34,7 +34,7 @@ Check off items as they're completed. Add notes inline as needed.
 - [x] **Random species button** — "Surprise me" button that opens a random species modal
 - [x] **Recently viewed tracking** — track which species were opened, add a "Recently Viewed" sort option
 - [x] **Share / copy URL button** — clipboard button in modal header that copies the deep link for that species
-- [ ] **Search within tabs** — allow search to match content inside threat descriptions, action items, etc.
+- [x] **Search within tabs** — allow search to match content inside threat descriptions, action items, etc.
 - [ ] **Additional filter dimensions** — filter by habitat type, diet (carnivore/omnivore), or geographic region
 - [ ] **Tag-based filtering** — filter chips or dropdown for tags (once `tags` field is added to data)
 - [ ] **Species comparison view** — select 2–3 species and see a side-by-side stat comparison table

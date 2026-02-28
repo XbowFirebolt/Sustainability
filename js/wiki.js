@@ -247,8 +247,9 @@ function openSpeciesModal(species, cardEl, tabKey = "overview") {
   renderOverview(species);
   renderVitalSigns(species);
   renderHealthMetrics(species);
-  renderThreats(species.threats);
-  renderActionItems(species.actionItems);
+  const currentQ = wikiSearch.value.trim().toLowerCase();
+  renderThreats(species.threats, currentQ);
+  renderActionItems(species.actionItems, currentQ);
 
   const modalContent = speciesModal.querySelector(".species-modal");
 
@@ -978,7 +979,7 @@ function renderHealthMetrics(species) {
   renderCredits(panel);
 }
 
-function renderThreats(items) {
+function renderThreats(items, q) {
   const panel = document.getElementById("tab-panel-threats");
   panel.innerHTML = "";
 
@@ -1021,11 +1022,11 @@ function renderThreats(items) {
 
       const nameEl = document.createElement("span");
       nameEl.className = "tab-threat-name";
-      nameEl.textContent = name;
+      applyHighlight(nameEl, name, q);
 
       const desc = document.createElement("div");
       desc.className = "tab-threat-desc";
-      desc.textContent = description;
+      applyHighlight(desc, description, q);
 
       card.appendChild(nameEl);
       card.appendChild(desc);
@@ -1039,7 +1040,7 @@ function renderThreats(items) {
   renderCredits(panel);
 }
 
-function renderActionItems(items) {
+function renderActionItems(items, q) {
   const panel = document.getElementById("tab-panel-actions");
   panel.innerHTML = "";
 
@@ -1062,11 +1063,11 @@ function renderActionItems(items) {
 
     const titleEl = document.createElement("div");
     titleEl.className = "tab-action-title";
-    titleEl.textContent = title;
+    applyHighlight(titleEl, title, q);
 
     const descEl = document.createElement("div");
     descEl.className = "tab-action-desc";
-    descEl.textContent = description;
+    applyHighlight(descEl, description, q);
 
     card.appendChild(titleEl);
     card.appendChild(descEl);
@@ -1134,7 +1135,8 @@ function createSpeciesCard(species, q, favIds) {
   card.className = "species-card";
   card.dataset.speciesId = species.id;
   card.tabIndex = 0;
-  card.addEventListener("click", () => openSpeciesModal(species, card));
+  const tabMatch = q && !matchesPrimary(species, q) ? matchesTabContent(species, q) : null;
+  card.addEventListener("click", () => openSpeciesModal(species, card, tabMatch || "overview"));
 
   // Image area
   const imgArea = document.createElement("div");
@@ -1248,10 +1250,38 @@ function createSpeciesCard(species, q, favIds) {
   body.appendChild(sci);
   body.appendChild(badgeRow);
   if (threatBadge) body.appendChild(threatBadge);
+  if (tabMatch) {
+    const tabLabel = tabMatch === "threats" ? "Threats" : tabMatch === "actions" ? "Actions" : "Description";
+    const matchBadge = document.createElement("div");
+    matchBadge.className = "card-tab-match-badge";
+    matchBadge.textContent = `Match in ${tabLabel}`;
+    body.appendChild(matchBadge);
+  }
   body.appendChild(ringWrap);
   card.appendChild(imgArea);
   card.appendChild(body);
   return card;
+}
+
+function matchesPrimary(s, q) {
+  return (
+    s.commonName.toLowerCase().includes(q) ||
+    s.scientificName.toLowerCase().includes(q) ||
+    s.statusLabel.toLowerCase().includes(q)
+  );
+}
+
+function matchesTabContent(s, q) {
+  if (s.description && s.description.toLowerCase().includes(q)) return "overview";
+  if (s.threats && s.threats.some((t) =>
+    t.name.toLowerCase().includes(q) ||
+    t.description.toLowerCase().includes(q)
+  )) return "threats";
+  if (s.actionItems && s.actionItems.some((a) =>
+    a.title.toLowerCase().includes(q) ||
+    a.description.toLowerCase().includes(q)
+  )) return "actions";
+  return null;
 }
 
 function renderWikiGrid(query) {
@@ -1259,10 +1289,7 @@ function renderWikiGrid(query) {
   const q = query ? query.trim().toLowerCase() : "";
   let filtered = q
     ? WIKI_DATA.items.filter(
-        (s) =>
-          s.commonName.toLowerCase().includes(q) ||
-          s.scientificName.toLowerCase().includes(q) ||
-          s.statusLabel.toLowerCase().includes(q)
+        (s) => matchesPrimary(s, q) || matchesTabContent(s, q) !== null
       )
     : [...WIKI_DATA.items];
 
