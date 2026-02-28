@@ -1103,6 +1103,133 @@ function applyHighlight(el, text, query) {
   });
 }
 
+function createSpeciesCard(species, q, favIds) {
+  const isFav = favIds.includes(species.id);
+
+  const card = document.createElement("div");
+  card.className = "species-card";
+  card.dataset.speciesId = species.id;
+  card.tabIndex = 0;
+  card.addEventListener("click", () => openSpeciesModal(species, card));
+
+  // Image area
+  const imgArea = document.createElement("div");
+  imgArea.className = "species-card-image";
+  const cardPhoto = species.photos && species.photos[0];
+  if (cardPhoto) {
+    imgArea.style.backgroundImage = `url(${cardPhoto})`;
+    imgArea.style.backgroundSize = "cover";
+    imgArea.style.backgroundPosition = "center";
+  } else {
+    imgArea.textContent = wikiProjectEmoji;
+    imgArea.style.background = "linear-gradient(135deg, #0a0a0a, var(--color-primary))";
+  }
+
+  // Photo count badge
+  if (species.photos && species.photos.length > 0) {
+    const photoBadge = document.createElement("div");
+    photoBadge.className = "card-photo-count";
+    photoBadge.textContent = species.photos.length === 1
+      ? "1 photo"
+      : `${species.photos.length} photos`;
+    imgArea.appendChild(photoBadge);
+  }
+
+  // Favorite star button
+  const starBtn = document.createElement("button");
+  starBtn.className = "species-card-star" + (isFav ? " favorited" : "");
+  starBtn.textContent = isFav ? "★" : "☆";
+  starBtn.setAttribute(
+    "aria-label",
+    isFav ? `Unfavorite ${species.commonName}` : `Favorite ${species.commonName}`
+  );
+  starBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const ids = loadFavorites();
+    const idx = ids.indexOf(species.id);
+    if (idx === -1) {
+      ids.push(species.id);
+    } else {
+      ids.splice(idx, 1);
+    }
+    saveFavorites(ids);
+    renderWikiGrid(wikiSearch.value);
+  });
+  imgArea.appendChild(starBtn);
+
+  // Card body
+  const body = document.createElement("div");
+  body.className = "species-card-body";
+
+  const name = document.createElement("div");
+  name.className = "species-card-name";
+  applyHighlight(name, species.commonName, q);
+
+  const sci = document.createElement("div");
+  sci.className = "species-card-sci";
+  applyHighlight(sci, species.scientificName, q);
+
+  // Threat severity badge
+  const maxSeverity = getMaxSeverityLabel(species);
+  let threatBadge = null;
+  if (maxSeverity) {
+    threatBadge = document.createElement("div");
+    threatBadge.className = `card-threat-badge tab-severity-badge tab-severity-badge--${maxSeverity}`;
+    threatBadge.textContent = maxSeverity.charAt(0).toUpperCase() + maxSeverity.slice(1);
+  }
+
+  // Habitat + diet badges
+  const badgeRow = document.createElement("div");
+  badgeRow.className = "card-badges";
+  (species.habitatTypes || []).forEach((type) => {
+    const info = HABITAT_BADGE[type];
+    if (!info) return;
+    const b = document.createElement("span");
+    b.className = `card-badge card-badge--habitat card-badge--${type}`;
+    b.textContent = `${info.icon} ${info.label}`;
+    badgeRow.appendChild(b);
+  });
+  if (species.dietType) {
+    const info = DIET_BADGE[species.dietType];
+    if (info) {
+      const b = document.createElement("span");
+      b.className = `card-badge card-badge--diet card-badge--${species.dietType}`;
+      b.textContent = `${info.icon} ${info.label}`;
+      badgeRow.appendChild(b);
+    }
+  }
+
+  // Progress ring
+  const ringColor = getLifeBarColor(species.lifePercent);
+  const targetOffset = (RING_CIRCUMFERENCE * (1 - species.lifePercent / 100)).toFixed(2);
+  const ringWrap = document.createElement("div");
+  ringWrap.className = "card-ring-wrap";
+  ringWrap.innerHTML = `
+    <svg class="card-ring-svg" viewBox="0 0 52 52" width="50" height="50" aria-hidden="true">
+      <circle class="ring-track" cx="26" cy="26" r="21"/>
+      <circle class="ring-fill" cx="26" cy="26" r="21"
+        stroke="${ringColor}"
+        style="stroke-dashoffset:${RING_CIRCUMFERENCE}"
+        data-target-offset="${targetOffset}"
+        transform="rotate(-90,26,26)"/>
+      <text class="ring-pct-txt" x="26" y="26">${species.lifePercent}%</text>
+    </svg>
+    <div class="card-ring-meta">
+      <div class="card-ring-status"></div>
+      <div class="card-ring-sub">Population health</div>
+    </div>`;
+  applyHighlight(ringWrap.querySelector(".card-ring-status"), species.statusLabel, q);
+
+  body.appendChild(name);
+  body.appendChild(sci);
+  body.appendChild(badgeRow);
+  if (threatBadge) body.appendChild(threatBadge);
+  body.appendChild(ringWrap);
+  card.appendChild(imgArea);
+  card.appendChild(body);
+  return card;
+}
+
 function renderWikiGrid(query) {
   const grid = document.getElementById("wiki-grid");
   const q = query ? query.trim().toLowerCase() : "";
@@ -1191,132 +1318,37 @@ function renderWikiGrid(query) {
     return;
   }
 
-  sorted.forEach((species) => {
-    const isFav = favIds.includes(species.id);
+  if (sortMode === "threat-desc") {
+    const severityGroups = [
+      { severity: "critical", score: 4 },
+      { severity: "high",     score: 3 },
+      { severity: "medium",   score: 2 },
+      { severity: "low",      score: 1 },
+      { severity: null,       score: 0 },
+    ];
+    severityGroups.forEach(({ severity, score }) => {
+      const group = sorted.filter((s) => getThreatSeverityScore(s) === score);
+      if (group.length === 0) return;
 
-    const card = document.createElement("div");
-    card.className = "species-card";
-    card.dataset.speciesId = species.id;
-    card.tabIndex = 0;
-    card.addEventListener("click", () => openSpeciesModal(species, card));
+      const header = document.createElement("div");
+      header.className = `wiki-severity-header wiki-severity-header--${severity || "none"}`;
 
-    // Image area
-    const imgArea = document.createElement("div");
-    imgArea.className = "species-card-image";
-    const cardPhoto = species.photos && species.photos[0];
-    if (cardPhoto) {
-      imgArea.style.backgroundImage = `url(${cardPhoto})`;
-      imgArea.style.backgroundSize = "cover";
-      imgArea.style.backgroundPosition = "center";
-    } else {
-      imgArea.textContent = wikiProjectEmoji;
-      imgArea.style.background = "linear-gradient(135deg, #0a0a0a, var(--color-primary))";
-    }
+      const label = document.createElement("span");
+      label.className = "wiki-severity-header-label";
+      label.textContent = `${(severity || "No Threats").toUpperCase()} (${group.length})`;
 
-    // Photo count badge
-    if (species.photos && species.photos.length > 0) {
-      const photoBadge = document.createElement("div");
-      photoBadge.className = "card-photo-count";
-      photoBadge.textContent = species.photos.length === 1
-        ? "1 photo"
-        : `${species.photos.length} photos`;
-      imgArea.appendChild(photoBadge);
-    }
+      const rule = document.createElement("span");
+      rule.className = "wiki-severity-header-rule";
 
-    // Favorite star button
-    const starBtn = document.createElement("button");
-    starBtn.className = "species-card-star" + (isFav ? " favorited" : "");
-    starBtn.textContent = isFav ? "★" : "☆";
-    starBtn.setAttribute(
-      "aria-label",
-      isFav ? `Unfavorite ${species.commonName}` : `Favorite ${species.commonName}`
-    );
-    starBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const ids = loadFavorites();
-      const idx = ids.indexOf(species.id);
-      if (idx === -1) {
-        ids.push(species.id);
-      } else {
-        ids.splice(idx, 1);
-      }
-      saveFavorites(ids);
-      renderWikiGrid(wikiSearch.value);
+      header.appendChild(label);
+      header.appendChild(rule);
+      grid.appendChild(header);
+
+      group.forEach((species) => grid.appendChild(createSpeciesCard(species, q, favIds)));
     });
-    imgArea.appendChild(starBtn);
-
-    // Card body
-    const body = document.createElement("div");
-    body.className = "species-card-body";
-
-    const name = document.createElement("div");
-    name.className = "species-card-name";
-    applyHighlight(name, species.commonName, q);
-
-    const sci = document.createElement("div");
-    sci.className = "species-card-sci";
-    applyHighlight(sci, species.scientificName, q);
-
-    // Threat severity badge
-    const maxSeverity = getMaxSeverityLabel(species);
-    let threatBadge = null;
-    if (maxSeverity) {
-      threatBadge = document.createElement("div");
-      threatBadge.className = `card-threat-badge tab-severity-badge tab-severity-badge--${maxSeverity}`;
-      threatBadge.textContent = maxSeverity.charAt(0).toUpperCase() + maxSeverity.slice(1);
-    }
-
-    // Habitat + diet badges
-    const badgeRow = document.createElement("div");
-    badgeRow.className = "card-badges";
-    (species.habitatTypes || []).forEach((type) => {
-      const info = HABITAT_BADGE[type];
-      if (!info) return;
-      const b = document.createElement("span");
-      b.className = `card-badge card-badge--habitat card-badge--${type}`;
-      b.textContent = `${info.icon} ${info.label}`;
-      badgeRow.appendChild(b);
-    });
-    if (species.dietType) {
-      const info = DIET_BADGE[species.dietType];
-      if (info) {
-        const b = document.createElement("span");
-        b.className = `card-badge card-badge--diet card-badge--${species.dietType}`;
-        b.textContent = `${info.icon} ${info.label}`;
-        badgeRow.appendChild(b);
-      }
-    }
-
-    // Progress ring
-    const ringColor = getLifeBarColor(species.lifePercent);
-    const targetOffset = (RING_CIRCUMFERENCE * (1 - species.lifePercent / 100)).toFixed(2);
-    const ringWrap = document.createElement("div");
-    ringWrap.className = "card-ring-wrap";
-    ringWrap.innerHTML = `
-      <svg class="card-ring-svg" viewBox="0 0 52 52" width="50" height="50" aria-hidden="true">
-        <circle class="ring-track" cx="26" cy="26" r="21"/>
-        <circle class="ring-fill" cx="26" cy="26" r="21"
-          stroke="${ringColor}"
-          style="stroke-dashoffset:${RING_CIRCUMFERENCE}"
-          data-target-offset="${targetOffset}"
-          transform="rotate(-90,26,26)"/>
-        <text class="ring-pct-txt" x="26" y="26">${species.lifePercent}%</text>
-      </svg>
-      <div class="card-ring-meta">
-        <div class="card-ring-status"></div>
-        <div class="card-ring-sub">Population health</div>
-      </div>`;
-    applyHighlight(ringWrap.querySelector(".card-ring-status"), species.statusLabel, q);
-
-    body.appendChild(name);
-    body.appendChild(sci);
-    body.appendChild(badgeRow);
-    if (threatBadge) body.appendChild(threatBadge);
-    body.appendChild(ringWrap);
-    card.appendChild(imgArea);
-    card.appendChild(body);
-    grid.appendChild(card);
-  });
+  } else {
+    sorted.forEach((species) => grid.appendChild(createSpeciesCard(species, q, favIds)));
+  }
 
   // Animate progress rings from 0 to their value as cards enter the viewport
   if (window._wikiLifeObserver) window._wikiLifeObserver.disconnect();
