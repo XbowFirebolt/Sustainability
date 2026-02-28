@@ -440,6 +440,245 @@ document.getElementById("modal-share-btn").addEventListener("click", () => {
   });
 });
 
+// ── Export / Print ────────────────────────────────────────────────────────────
+(function () {
+  const exportBtn = document.getElementById("modal-export-btn");
+
+  // Wrap button in a position:relative anchor for the dropdown
+  const wrap = document.createElement("div");
+  wrap.className = "modal-export-wrap";
+  exportBtn.parentNode.insertBefore(wrap, exportBtn);
+  wrap.appendChild(exportBtn);
+
+  // Build dropdown
+  const dropdown = document.createElement("div");
+  dropdown.className = "export-dropdown";
+  dropdown.hidden = true;
+  dropdown.innerHTML =
+    '<div class="export-dropdown-header">Export species detail</div>' +
+    '<button class="export-dropdown-option" id="export-opt-pdf">' +
+      '<span class="export-dropdown-icon">📄</span>' +
+      '<div><div class="export-dropdown-label">Save as PDF</div>' +
+      '<div class="export-dropdown-sub">Download a full-detail PDF</div></div>' +
+    '</button>' +
+    '<button class="export-dropdown-option" id="export-opt-print">' +
+      '<span class="export-dropdown-icon">🖨️</span>' +
+      '<div><div class="export-dropdown-label">Print</div>' +
+      '<div class="export-dropdown-sub">Open browser print dialog</div></div>' +
+    '</button>';
+  wrap.appendChild(dropdown);
+
+  exportBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    dropdown.hidden = !dropdown.hidden;
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!wrap.contains(e.target)) dropdown.hidden = true;
+  });
+
+  document.getElementById("export-opt-pdf").addEventListener("click", () => {
+    dropdown.hidden = true;
+    if (currentModalSpecies) openPrintWindow(currentModalSpecies);
+  });
+
+  document.getElementById("export-opt-print").addEventListener("click", () => {
+    dropdown.hidden = true;
+    if (currentModalSpecies) openPrintWindow(currentModalSpecies);
+  });
+})();
+
+function openPrintWindow(species) {
+  function esc(str) {
+    return String(str || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  const hColor = getLifeBarColor(species.lifePercent);
+  const pColor = (wikiProject && wikiProject.color) || "#2d6a2d";
+
+  // At-a-Glance stats (mirrors renderOverview logic)
+  const allVitals = Array.isArray(species.vitalSigns) ? species.vitalSigns : [];
+  const glanceItems = allVitals.filter((v) => v.glance).slice(0, 6);
+  const statItems = glanceItems.length ? glanceItems : allVitals.slice(0, 6);
+  const statsHTML = statItems.length
+    ? '<div class="pp-stats-grid">' +
+        statItems.map((v) =>
+          '<div class="pp-stat-card">' +
+            '<div class="pp-stat-label">' + esc(v.label) + "</div>" +
+            '<div class="pp-stat-value">' + esc(v.metric || v.value) + "</div>" +
+          "</div>"
+        ).join("") +
+      "</div>"
+    : "";
+
+  // Vital Signs rows (all items, metric preferred)
+  const vitalsHTML = allVitals.length
+    ? allVitals.map((v) =>
+        '<div class="pp-row">' +
+          '<span class="pp-row-name">' + esc(v.label) + "</span>" +
+          '<span class="pp-row-val">' + esc(v.metric || v.value) + "</span>" +
+        "</div>"
+      ).join("")
+    : '<p class="pp-empty">No vital sign data available.</p>';
+
+  // Health Metrics rows
+  const TREND_SYM = { up: " \u25b2", down: " \u25bc", stable: "" };
+  const healthHTML = Array.isArray(species.healthMetrics) && species.healthMetrics.length
+    ? species.healthMetrics.map((m) =>
+        '<div class="pp-row">' +
+          '<span class="pp-row-name">' + esc(m.label) + "</span>" +
+          '<span class="pp-row-val">' + esc(m.value) + (TREND_SYM[m.trend] || "") + "</span>" +
+        "</div>"
+      ).join("")
+    : '<p class="pp-empty">No health metric data available.</p>';
+
+  // Threats (sorted by severity)
+  const SEV_ORDER = ["critical", "high", "medium", "low"];
+  const BADGE_CLS = { critical: "pp-badge-crit", high: "pp-badge-high", medium: "pp-badge-med", low: "pp-badge-low" };
+  const threatsHTML = Array.isArray(species.threats) && species.threats.length
+    ? species.threats.slice()
+        .sort((a, b) => SEV_ORDER.indexOf(a.severity) - SEV_ORDER.indexOf(b.severity))
+        .map((t) =>
+          '<div class="pp-threat-row">' +
+            '<span class="pp-threat-badge ' + (BADGE_CLS[t.severity] || "pp-badge-low") + '">' + esc(t.severity) + "</span>" +
+            '<span class="pp-threat-name">' + esc(t.name) + "</span>" +
+            '<span class="pp-threat-desc">' + esc(t.description || "") + "</span>" +
+          "</div>"
+        ).join("")
+    : '<p class="pp-empty">No threat data available.</p>';
+
+  // Action Items
+  const actionsHTML = Array.isArray(species.actionItems) && species.actionItems.length
+    ? species.actionItems.map((a) =>
+        '<div class="pp-action-row">' +
+          '<div class="pp-action-title">' + esc(a.title) + "</div>" +
+          (a.description ? '<div class="pp-action-desc">' + esc(a.description) + "</div>" : "") +
+        "</div>"
+      ).join("")
+    : '<p class="pp-empty">No action item data available.</p>';
+
+  // Sources
+  const sources = Array.isArray(WIKI_DATA.sources) ? WIKI_DATA.sources : [];
+  const sourcesText = sources.map((s) => esc(s.label)).join(" \u00b7 ") || "\u2014";
+
+  const dateStr = new Date().toLocaleDateString("en-US", { month: "long", year: "numeric" });
+
+  const descHTML = species.description
+    ? '<p class="pp-body">' + esc(species.description) + "</p>"
+    : "";
+
+  const funFactHTML = species.funFact
+    ? '<div class="pp-funfact"><span class="pp-funfact-label">Did you know?</span> ' + esc(species.funFact) + "</div>"
+    : "";
+
+  const html = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n" +
+    '<meta charset="UTF-8"/>\n' +
+    "<title>" + esc(species.commonName) + " \u2014 Species Detail</title>\n" +
+    "<style>\n" +
+    "*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }\n" +
+    "@page { margin: 2cm 2.2cm; }\n" +
+    "body { font-family: Georgia, 'Times New Roman', serif; font-size: 11pt; color: #111; background: white; line-height: 1.6; padding: 2rem 2.5rem; max-width: 760px; margin: 0 auto; print-color-adjust: exact; -webkit-print-color-adjust: exact; }\n" +
+    ".pp-header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid " + pColor + "; padding-bottom: 0.9rem; margin-bottom: 1.2rem; }\n" +
+    ".pp-name { font-size: 1.5rem; font-weight: 700; color: " + pColor + "; line-height: 1.2; }\n" +
+    ".pp-sci  { font-size: 0.95rem; font-style: italic; color: " + pColor + "aa; margin-top: 0.2rem; }\n" +
+    ".pp-badge-col { display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem; }\n" +
+    ".pp-status-badge { font-family: -apple-system, Arial, sans-serif; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; border-radius: 4px; padding: 0.25rem 0.65rem; display: inline-block; }\n" +
+    ".pp-health-row { display: flex; align-items: center; gap: 0.55rem; }\n" +
+    ".pp-health-bar { width: 120px; height: 8px; background: #e0e0e0; border-radius: 4px; overflow: hidden; }\n" +
+    ".pp-health-fill { height: 100%; border-radius: 4px; }\n" +
+    ".pp-health-pct { font-family: -apple-system, Arial, sans-serif; font-size: 0.68rem; color: #6a6a6a; }\n" +
+    ".pp-section { margin-top: 1.3rem; }\n" +
+    ".pp-section-title { font-family: -apple-system, Arial, sans-serif; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: " + pColor + "; border-bottom: 1px solid " + pColor + "44; padding-bottom: 0.25rem; margin-bottom: 0.65rem; }\n" +
+    ".pp-body { font-size: 0.88rem; line-height: 1.7; color: #222; }\n" +
+    ".pp-empty { font-size: 0.82rem; color: #888; font-style: italic; }\n" +
+    ".pp-funfact { font-size: 0.84rem; font-style: italic; color: #444; margin-top: 0.6rem; padding: 0.5rem 0.75rem; background: " + pColor + "12; border-left: 3px solid " + pColor + "; border-radius: 0 4px 4px 0; }\n" +
+    ".pp-funfact-label { font-weight: 700; font-style: normal; color: " + pColor + "; margin-right: 0.35rem; }\n" +
+    ".pp-stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-top: 0.55rem; }\n" +
+    ".pp-stat-card { border: 1px solid " + pColor + "44; border-radius: 4px; padding: 0.4rem 0.55rem; background: " + pColor + "0e; }\n" +
+    ".pp-stat-label { font-family: -apple-system, Arial, sans-serif; font-size: 0.58rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: " + pColor + "bb; }\n" +
+    ".pp-stat-value { font-family: -apple-system, Arial, sans-serif; font-size: 0.83rem; font-weight: 600; color: #111; margin-top: 0.08rem; }\n" +
+    ".pp-row { display: grid; grid-template-columns: 185px 1fr; gap: 0.5rem; padding: 0.38rem 0; border-bottom: 1px solid #eee; font-size: 0.85rem; align-items: baseline; }\n" +
+    ".pp-row:last-child { border-bottom: none; }\n" +
+    ".pp-row-name { font-weight: 700; color: #111; }\n" +
+    ".pp-row-val { color: #444; }\n" +
+    ".pp-threat-row { display: grid; grid-template-columns: 72px 155px 1fr; gap: 0.5rem; padding: 0.38rem 0; border-bottom: 1px solid #eee; font-size: 0.85rem; align-items: baseline; }\n" +
+    ".pp-threat-row:last-child { border-bottom: none; }\n" +
+    ".pp-threat-badge { font-family: -apple-system, Arial, sans-serif; font-size: 0.57rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.18rem 0.4rem; border-radius: 3px; display: inline-block; }\n" +
+    ".pp-badge-crit { background: #fde8e8; color: #b91c1c; border: 1px solid #fca5a5; }\n" +
+    ".pp-badge-high { background: #fef3e2; color: #b45309; border: 1px solid #fcd34d; }\n" +
+    ".pp-badge-med  { background: #fefce8; color: #a16207; border: 1px solid #fde68a; }\n" +
+    ".pp-badge-low  { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }\n" +
+    ".pp-threat-name { font-weight: 700; color: #111; }\n" +
+    ".pp-threat-desc { color: #444; }\n" +
+    ".pp-action-row { padding: 0.38rem 0; border-bottom: 1px solid #eee; font-size: 0.85rem; }\n" +
+    ".pp-action-row:last-child { border-bottom: none; }\n" +
+    ".pp-action-title { font-weight: 700; color: #111; }\n" +
+    ".pp-action-desc  { color: #444; line-height: 1.5; margin-top: 0.12rem; }\n" +
+    ".pp-footer { margin-top: 1.6rem; padding-top: 0.65rem; border-top: 1px solid #ccc; display: flex; justify-content: space-between; align-items: baseline; font-family: -apple-system, Arial, sans-serif; font-size: 0.65rem; color: #888; }\n" +
+    ".pp-logo-text { font-weight: 700; color: " + pColor + "; }\n" +
+    "@media print { body { padding: 0; } .pp-stats-grid { grid-template-columns: repeat(3, 1fr); } .pp-threat-row, .pp-action-row, .pp-row { page-break-inside: avoid; } }\n" +
+    "</style>\n</head>\n<body>\n" +
+    '<div class="pp-header">\n' +
+      "<div>\n" +
+        '<div class="pp-name">' + esc(species.commonName) + "</div>\n" +
+        '<div class="pp-sci">' + esc(species.scientificName) + "</div>\n" +
+      "</div>\n" +
+      '<div class="pp-badge-col">\n' +
+        '<span class="pp-status-badge" style="background:' + hColor + '30;color:' + hColor + ';border:2px solid ' + hColor + ';">' + esc(species.statusLabel) + "</span>\n" +
+        '<div class="pp-health-row">\n' +
+          '<div class="pp-health-bar"><div class="pp-health-fill" style="width:' + species.lifePercent + '%;background:' + hColor + '"></div></div>\n' +
+          '<span class="pp-health-pct">' + species.lifePercent + "% health</span>\n" +
+        "</div>\n" +
+      "</div>\n" +
+    "</div>\n" +
+    '<div class="pp-section">\n' +
+      '<div class="pp-section-title">Overview</div>\n' +
+      descHTML + "\n" + funFactHTML + "\n" + statsHTML + "\n" +
+    "</div>\n" +
+    '<div class="pp-section">\n' +
+      '<div class="pp-section-title">Vital Signs</div>\n' +
+      vitalsHTML + "\n" +
+    "</div>\n" +
+    '<div class="pp-section">\n' +
+      '<div class="pp-section-title">Health Metrics</div>\n' +
+      healthHTML + "\n" +
+    "</div>\n" +
+    '<div class="pp-section">\n' +
+      '<div class="pp-section-title">Threats</div>\n' +
+      threatsHTML + "\n" +
+    "</div>\n" +
+    '<div class="pp-section">\n' +
+      '<div class="pp-section-title">Action Items</div>\n' +
+      actionsHTML + "\n" +
+    "</div>\n" +
+    '<div class="pp-footer">\n' +
+      "<div><strong>Sources:</strong> " + sourcesText + "</div>\n" +
+      "<div>Generated by <span class=\"pp-logo-text\">Sustainability Tracker</span><br/>" + dateStr + "</div>\n" +
+    "</div>\n" +
+    "</body>\n</html>";
+
+  const blob = new Blob([html], { type: "text/html" });
+  const url  = URL.createObjectURL(blob);
+
+  const iframe = document.createElement("iframe");
+  iframe.style.cssText = "position:fixed;width:0;height:0;border:none;left:-9999px;top:-9999px;";
+  iframe.src = url;
+  document.body.appendChild(iframe);
+
+  iframe.addEventListener("load", () => {
+    iframe.contentWindow.focus();
+    iframe.contentWindow.print();
+    setTimeout(() => {
+      iframe.remove();
+      URL.revokeObjectURL(url);
+    }, 1000);
+  });
+}
+
 document.getElementById("species-modal-close").addEventListener("click", closeSpeciesModal);
 speciesModal.addEventListener("click", (e) => {
   if (e.target === speciesModal) closeSpeciesModal();

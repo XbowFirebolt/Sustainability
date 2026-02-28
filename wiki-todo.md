@@ -43,7 +43,7 @@ Check off items as they're completed. Add notes inline as needed.
 - [x] **Keyboard shortcut help overlay** — press `?` to see all keyboard shortcuts for the wiki page
 - [x] **Autocomplete / search suggestions** — as-you-type dropdown showing matching species names
 - [x] **Data completeness indicator** — show on cards/modal if a species is missing data (e.g., a small "incomplete data" badge)
-- [ ] **Print / export** — print-friendly stylesheet or PDF export button for a species detail page
+- [x] **Print / export** — print-friendly stylesheet or PDF export button for a species detail page
 - [ ] **Pagination or infinite scroll** — for projects with many species, virtualize the grid so it doesn't render 500+ DOM nodes at once
 - [ ] **Swipe left/right gesture** — navigate Prev/Next in modal via touch swipes on mobile
 - [ ] **Deep-link animation fallback** — when `?species=` is in the URL on page load, play a fade-in instead of the morph (morph requires visible source card)
