@@ -38,7 +38,7 @@ Check off items as they're completed. Add notes inline as needed.
 - [x] **Additional filter dimensions** — filter by habitat type, diet (carnivore/omnivore), or geographic region
 - [x] **Tag-based filtering** — filter chips or dropdown for tags (once `tags` field is added to data)
 - [ ] **Species comparison view** — select 2–3 species and see a side-by-side stat comparison table
-- [ ] **Multi-select favorites management** — a "manage favorites" mode to bulk remove stars
+- [x] **Multi-select favorites management** — a "manage favorites" mode to bulk remove stars
 - [x] **Favorites count badge** — show number of favorited species on the toggle button (e.g., "★ Favorites (3)")
 - [ ] **Keyboard shortcut help overlay** — press `?` to see all keyboard shortcuts for the wiki page
 - [ ] **Autocomplete / search suggestions** — as-you-type dropdown showing matching species names

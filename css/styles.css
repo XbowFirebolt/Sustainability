@@ -440,6 +440,112 @@ body.no-map {
   background: rgba(200, 144, 10, 0.1);
 }
 
+.wiki-manage-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.18rem 0.55rem;
+  border: 1px solid var(--color-input-border);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.wiki-manage-btn:hover {
+  border-color: var(--color-text-muted);
+  color: var(--color-text);
+}
+
+.wiki-manage-btn.active {
+  border-color: #c8900a;
+  color: #c8900a;
+  background: rgba(200, 144, 10, 0.1);
+}
+
+.wiki-manage-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.75rem;
+  background: rgba(200, 144, 10, 0.07);
+  border: 1px solid rgba(200, 144, 10, 0.28);
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.wiki-manage-toolbar.hidden {
+  display: none;
+}
+
+.wiki-manage-toolbar-label {
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: #c8900a;
+  flex: 1;
+  min-width: 120px;
+}
+
+.wiki-manage-count {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  min-width: 80px;
+  text-align: center;
+}
+
+.wiki-manage-select-all,
+.wiki-manage-remove-btn,
+.wiki-manage-done-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.wiki-manage-select-all {
+  border: 1px solid var(--color-input-border);
+  background: transparent;
+  color: var(--color-text-muted);
+}
+
+.wiki-manage-select-all:hover {
+  border-color: var(--color-text-muted);
+  color: var(--color-text);
+}
+
+.wiki-manage-remove-btn {
+  border: 1px solid rgba(180, 40, 40, 0.5);
+  background: transparent;
+  color: #b42828;
+}
+
+.wiki-manage-remove-btn:hover:not(:disabled) {
+  background: rgba(180, 40, 40, 0.1);
+}
+
+.wiki-manage-remove-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.wiki-manage-done-btn {
+  border: 1px solid var(--color-primary);
+  background: transparent;
+  color: var(--color-primary);
+}
+
+.wiki-manage-done-btn:hover {
+  background: rgba(var(--color-primary-rgb, 24, 90, 168), 0.08);
+}
+
 .wiki-clear-btn {
   display: inline-flex;
   align-items: center;
@@ -952,6 +1058,28 @@ body.no-map {
 
 .species-card-star.favorited {
   color: #c8900a;
+}
+
+.card-manage-check {
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--color-text);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+.card-manage-check.selected {
+  background: #c8900a;
+  color: #fff;
+  border-color: #c8900a;
+}
+
+.species-card.manage-mode {
+  cursor: pointer;
+}
+
+.species-card.manage-selected {
+  outline: 2.5px solid #c8900a;
+  outline-offset: 0;
 }
 
 .card-photo-count {

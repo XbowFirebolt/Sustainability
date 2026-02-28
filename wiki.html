@@ -28,6 +28,7 @@
         <div id="wiki-glance" class="wiki-glance"></div>
         <div class="wiki-bar-spacer"></div>
         <button id="wiki-favorites-toggle" class="wiki-fav-toggle" aria-pressed="false">&#9734; Favorites</button>
+        <button id="wiki-manage-favorites-btn" class="wiki-manage-btn" hidden title="Bulk-remove favorites">&#9733; Manage</button>
         <button id="wiki-clear-filters" class="wiki-clear-btn" hidden>Clear</button>
         <button id="wiki-filter-btn" class="wiki-filter-btn">Filter ▾</button>
         <button id="wiki-surprise-btn" class="wiki-surprise-btn" title="Open a random species">&#127922; Surprise me</button>
@@ -58,6 +59,13 @@
             </div>
           </div>
         </div>
+      </div>
+      <div id="wiki-manage-toolbar" class="wiki-manage-toolbar hidden">
+        <span class="wiki-manage-toolbar-label">&#9733; Manage Favorites</span>
+        <button id="wiki-manage-select-all" class="wiki-manage-select-all">Select all</button>
+        <span id="wiki-manage-count" class="wiki-manage-count">None selected</span>
+        <button id="wiki-manage-remove-btn" class="wiki-manage-remove-btn" disabled>Remove selected</button>
+        <button id="wiki-manage-done-btn" class="wiki-manage-done-btn">Done</button>
       </div>
       <div id="wiki-filter-panel" class="wiki-filter-panel hidden"></div>
       <div id="wiki-grid" class="wiki-grid"></div>

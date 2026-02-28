@@ -77,6 +77,9 @@ function updateFavoritesToggleText() {
   const count = loadFavorites().length;
   const star = showFavoritesOnly ? "\u2605" : "\u2606";
   btn.textContent = star + " Favorites" + (count > 0 ? ` (${count})` : "");
+  const manageBtn = document.getElementById("wiki-manage-favorites-btn");
+  manageBtn.hidden = count === 0;
+  manageBtn.classList.toggle("active", manageFavoritesMode);
 }
 
 // Species detail modal
@@ -1115,6 +1118,8 @@ let activeRegionFilters  = new Set();
 let activeTagFilters     = new Set();
 let sortMode = "default";
 let showFavoritesOnly = false;
+let manageFavoritesMode = false;
+let manageFavoritesSelected = new Set();
 let filterPanelOpen = false;
 
 const SEVERITY_SCORE = { critical: 4, high: 3, medium: 2, low: 1 };
@@ -1153,11 +1158,32 @@ function createSpeciesCard(species, q, favIds) {
   const isFav = favIds.includes(species.id);
 
   const card = document.createElement("div");
-  card.className = "species-card";
+  card.className = "species-card" + (manageFavoritesMode ? " manage-mode" : "");
+  if (manageFavoritesMode && manageFavoritesSelected.has(species.id)) card.classList.add("manage-selected");
   card.dataset.speciesId = species.id;
   card.tabIndex = 0;
   const tabMatch = q && !matchesPrimary(species, q) ? matchesTabContent(species, q) : null;
-  card.addEventListener("click", () => openSpeciesModal(species, card, tabMatch || "overview"));
+  card.addEventListener("click", () => {
+    if (manageFavoritesMode) {
+      const isSelected = manageFavoritesSelected.has(species.id);
+      if (isSelected) {
+        manageFavoritesSelected.delete(species.id);
+        card.classList.remove("manage-selected");
+        starBtn.textContent = "\u2610";
+        starBtn.classList.remove("selected");
+        starBtn.setAttribute("aria-label", `Select ${species.commonName}`);
+      } else {
+        manageFavoritesSelected.add(species.id);
+        card.classList.add("manage-selected");
+        starBtn.textContent = "\u2713";
+        starBtn.classList.add("selected");
+        starBtn.setAttribute("aria-label", `Deselect ${species.commonName}`);
+      }
+      updateManageToolbar();
+    } else {
+      openSpeciesModal(species, card, tabMatch || "overview");
+    }
+  });
 
   // Image area
   const imgArea = document.createElement("div");
@@ -1182,26 +1208,37 @@ function createSpeciesCard(species, q, favIds) {
     imgArea.appendChild(photoBadge);
   }
 
-  // Favorite star button
+  // Favorite star button (or manage-mode selection indicator)
   const starBtn = document.createElement("button");
-  starBtn.className = "species-card-star" + (isFav ? " favorited" : "");
-  starBtn.textContent = isFav ? "★" : "☆";
-  starBtn.setAttribute(
-    "aria-label",
-    isFav ? `Unfavorite ${species.commonName}` : `Favorite ${species.commonName}`
-  );
-  starBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    const ids = loadFavorites();
-    const idx = ids.indexOf(species.id);
-    if (idx === -1) {
-      ids.push(species.id);
-    } else {
-      ids.splice(idx, 1);
-    }
-    saveFavorites(ids);
-    renderWikiGrid(wikiSearch.value);
-  });
+  if (manageFavoritesMode) {
+    const isSelected = manageFavoritesSelected.has(species.id);
+    starBtn.className = "species-card-star card-manage-check" + (isSelected ? " selected" : "");
+    starBtn.textContent = isSelected ? "\u2713" : "\u2610";
+    starBtn.setAttribute("aria-label", isSelected ? `Deselect ${species.commonName}` : `Select ${species.commonName}`);
+    starBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      card.click();
+    });
+  } else {
+    starBtn.className = "species-card-star" + (isFav ? " favorited" : "");
+    starBtn.textContent = isFav ? "★" : "☆";
+    starBtn.setAttribute(
+      "aria-label",
+      isFav ? `Unfavorite ${species.commonName}` : `Favorite ${species.commonName}`
+    );
+    starBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const ids = loadFavorites();
+      const idx = ids.indexOf(species.id);
+      if (idx === -1) {
+        ids.push(species.id);
+      } else {
+        ids.splice(idx, 1);
+      }
+      saveFavorites(ids);
+      renderWikiGrid(wikiSearch.value);
+    });
+  }
   imgArea.appendChild(starBtn);
 
   // Card body
@@ -1342,7 +1379,7 @@ function renderWikiGrid(query) {
     );
   }
 
-  if (showFavoritesOnly) {
+  if (showFavoritesOnly || manageFavoritesMode) {
     filtered = filtered.filter((s) => favIds.includes(s.id));
   }
 
@@ -1482,6 +1519,70 @@ document.getElementById("wiki-favorites-toggle").addEventListener("click", () =>
   renderWikiGrid(wikiSearch.value);
 });
 
+// ── Manage Favorites mode ───────────────────────────────────────
+
+function updateManageToolbar() {
+  const total = loadFavorites().length;
+  const count = manageFavoritesSelected.size;
+  document.getElementById("wiki-manage-count").textContent =
+    count === 0 ? "None selected" : count === 1 ? "1 selected" : `${count} selected`;
+  document.getElementById("wiki-manage-remove-btn").disabled = count === 0;
+  document.getElementById("wiki-manage-select-all").textContent =
+    count === total && total > 0 ? "Deselect all" : "Select all";
+}
+
+function enterManageFavoritesMode() {
+  manageFavoritesMode = true;
+  manageFavoritesSelected.clear();
+  document.getElementById("wiki-manage-toolbar").classList.remove("hidden");
+  updateManageToolbar();
+  renderWikiGrid(wikiSearch.value);
+}
+
+function exitManageFavoritesMode() {
+  manageFavoritesMode = false;
+  manageFavoritesSelected.clear();
+  document.getElementById("wiki-manage-toolbar").classList.add("hidden");
+  updateFavoritesToggleText();
+  renderWikiGrid(wikiSearch.value);
+}
+
+document.getElementById("wiki-manage-favorites-btn").addEventListener("click", () => {
+  if (manageFavoritesMode) exitManageFavoritesMode();
+  else enterManageFavoritesMode();
+});
+document.getElementById("wiki-manage-done-btn").addEventListener("click", exitManageFavoritesMode);
+
+document.getElementById("wiki-manage-select-all").addEventListener("click", () => {
+  const favIds = loadFavorites();
+  if (manageFavoritesSelected.size === favIds.length) {
+    manageFavoritesSelected.clear();
+    document.querySelectorAll(".species-card.manage-mode").forEach((cardEl) => {
+      cardEl.classList.remove("manage-selected");
+      const btn = cardEl.querySelector(".card-manage-check");
+      if (btn) { btn.textContent = "\u2610"; btn.classList.remove("selected"); btn.setAttribute("aria-label", `Select ${cardEl.dataset.speciesId}`); }
+    });
+  } else {
+    favIds.forEach((id) => manageFavoritesSelected.add(id));
+    document.querySelectorAll(".species-card.manage-mode").forEach((cardEl) => {
+      const id = cardEl.dataset.speciesId;
+      if (favIds.includes(id)) {
+        cardEl.classList.add("manage-selected");
+        const btn = cardEl.querySelector(".card-manage-check");
+        if (btn) { btn.textContent = "\u2713"; btn.classList.add("selected"); btn.setAttribute("aria-label", `Deselect ${id}`); }
+      }
+    });
+  }
+  updateManageToolbar();
+});
+
+document.getElementById("wiki-manage-remove-btn").addEventListener("click", () => {
+  if (manageFavoritesSelected.size === 0) return;
+  const ids = loadFavorites().filter((id) => !manageFavoritesSelected.has(id));
+  saveFavorites(ids);
+  exitManageFavoritesMode();
+});
+
 function updateClearFiltersVisibility() {
   const hasFilters =
     wikiSearch.value.trim() !== "" ||
@@ -1496,6 +1597,7 @@ function updateClearFiltersVisibility() {
 }
 
 document.getElementById("wiki-clear-filters").addEventListener("click", () => {
+  if (manageFavoritesMode) exitManageFavoritesMode();
   wikiSearch.value = "";
   activeStatusFilters.clear();
   activeHabitatFilters.clear();
