@@ -670,11 +670,20 @@ body.no-map {
   padding: 0.6rem 1rem;
   border-bottom: 1px solid var(--color-border);
   background: var(--color-bg);
-  transition: background-color 0.5s ease;
+  overflow: hidden;
+  max-height: 600px;
+  opacity: 1;
+  /* closing transition: fade out first, then collapse height */
+  transition: max-height 0.28s ease-in 0.08s, opacity 0.18s ease, padding 0.28s ease-in 0.08s, background-color 0.5s ease;
 }
 
 .wiki-filter-panel.hidden {
-  display: none;
+  max-height: 0;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  /* opening transition: expand height and fade in together */
+  transition: max-height 0.32s ease, opacity 0.22s ease, padding 0.32s ease, background-color 0.5s ease;
 }
 
 .wiki-filter-group {
@@ -695,6 +704,11 @@ body.no-map {
   flex-shrink: 0;
 }
 
+@keyframes chipIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 .wiki-filter-chip {
   display: inline-flex;
   align-items: center;
@@ -708,6 +722,7 @@ body.no-map {
   cursor: pointer;
   white-space: nowrap;
   transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+  animation: chipIn 0.18s ease both;
 }
 
 .wiki-filter-chip:hover {

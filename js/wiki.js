@@ -2153,9 +2153,12 @@ function renderFilterPanel() {
 
   panel.innerHTML = "";
 
+  let chipIndex = 0;
+
   function makeFilterChip(key, text, color, bg, activeSet) {
     const chip = document.createElement("button");
     chip.className = "wiki-filter-chip";
+    chip.style.animationDelay = `${chipIndex++ * 25}ms`;
     chip.style.setProperty("--chip-color", color);
     chip.style.setProperty("--chip-bg", bg);
     chip.setAttribute("aria-pressed", String(activeSet.has(key)));
@@ -2229,6 +2232,7 @@ function renderFilterPanel() {
 document.getElementById("wiki-filter-btn").addEventListener("click", () => {
   filterPanelOpen = !filterPanelOpen;
   const panel = document.getElementById("wiki-filter-panel");
+  if (filterPanelOpen) renderFilterPanel();
   panel.classList.toggle("hidden", !filterPanelOpen);
   updateFilterBtnState();
 });

@@ -21,7 +21,7 @@ Check off items as they're completed. Add notes inline as needed.
 - [ ] Add links to external resources within species (papers, org pages) in Action Items
 - [ ] Add `emoji` field for all species (fallback in hero image area)
 - [ ] Add a `lastUpdated` timestamp per species for data freshness tracking
-- [ ] Add a `tags` array per species (e.g., `["pelagic", "apex predator", "reef"]`) to enable richer tag-based filtering
+- [x] Add a `tags` array per species (e.g., `["pelagic", "apex predator", "reef"]`) to enable richer tag-based filtering
 
 ---
 
@@ -101,7 +101,7 @@ Check off items as they're completed. Add notes inline as needed.
 
 ## Performance
 
-- [ ] **Debounce search input** — ensure search doesn't re-render on every keystroke, only after a short delay (check if already in place)
+- [ ] **Debounce search input** — search currently re-renders on every keystroke; add a short delay (e.g., 150ms setTimeout)
 - [ ] **Cache rendered tab panel HTML** — don't re-render tab panel HTML on every modal open; cache it per species ID
 - [ ] **Debounce modal resize recalculation** — if any resize listeners exist, ensure they're debounced
 
@@ -122,7 +122,7 @@ Check off items as they're completed. Add notes inline as needed.
 
 - Only **Great White Shark** currently has complete data — all other 4 species need significant data work
 - The architecture is already generic; a second project wiki can be added with just a new `data.js`
-- Deep linking (`?species=great-white`) works but skips the morph animation — tracked as a todo above (fade-in fallback)
+- Deep linking (`?species=great-white`) works with a fade-in animation fallback (morph requires a visible source card in the viewport)
 - Modal morphing animation only works when the source card is visible in the viewport at open time
 - Metric/imperial unit toggle is already implemented in the Vital Signs tab header
 - Data sources (WIKI_DATA.sources) are already rendered at the bottom of the Vital Signs tab
