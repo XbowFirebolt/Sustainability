@@ -309,8 +309,17 @@ function openSpeciesModal(species, cardEl, tabKey = "overview") {
       });
     });
   } else {
-    // No card to morph from (e.g. deep link) — just fade in
+    // No card to morph from (deep link / surprise) — fade in with subtle scale-up
+    modalContent.style.transition = "none";
+    modalContent.style.transform = "scale(0.95)";
     speciesModal.classList.remove("hidden");
+    modalContent.getBoundingClientRect(); // commit starting state
+    modalContent.style.transition = "";
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        modalContent.style.transform = "";
+      });
+    });
   }
 }
 
@@ -2258,7 +2267,7 @@ if (initSpeciesId) {
   const initSpecies = WIKI_DATA.items.find((s) => s.id === initSpeciesId);
   if (initSpecies) {
     suppressHistoryUpdate = true;
-    openSpeciesModal(initSpecies, document.querySelector(`[data-species-id="${initSpeciesId}"]`));
+    openSpeciesModal(initSpecies, null); // always fade in on deep link (card not visually established yet)
     suppressHistoryUpdate = false;
   }
 }
