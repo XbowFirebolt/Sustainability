@@ -83,7 +83,7 @@ Check off items as they're completed. Add notes inline as needed.
 - [x] **Move threat severity legend to tooltip** — instead of always showing the legend strip, show it on hover over a `?` icon near severity badges
 - [x] **Group grid by status** — optional sectioned layout: "Critically Endangered (2)", "Vulnerable (1)", etc. as section headers
 - [ ] **Breadcrumb in modal** — show the filtered context the user came from (e.g., "Filtered: Critically Endangered › 2 of 2")
-- [ ] **Sort + filter state in URL** — serialize current search/sort/filter to URL params so users can share a filtered view (extend existing `?species=` deep link)
+- [x] **Sort + filter state in URL** — serialize current search/sort/filter to URL params so users can share a filtered view (extend existing `?species=` deep link)
 - [ ] **Open Graph meta tags** — add dynamic OG tags for rich social/Slack previews when sharing deep links
 - [ ] **Section headers in modal** — within tab panels, use clearer visual section grouping to reduce the wall-of-info feeling
 

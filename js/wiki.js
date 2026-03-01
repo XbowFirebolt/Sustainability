@@ -1824,6 +1824,7 @@ function renderAutocomplete(q) {
 wikiSearch.addEventListener("input", () => {
   renderWikiGrid(wikiSearch.value);
   renderAutocomplete(wikiSearch.value);
+  syncUrlFromState();
 });
 
 wikiSearch.addEventListener("keydown", (e) => {
@@ -1863,6 +1864,7 @@ wikiSearch.addEventListener("focus", () => {
 document.getElementById("wiki-sort").addEventListener("change", (e) => {
   sortMode = e.target.value;
   renderWikiGrid(wikiSearch.value);
+  syncUrlFromState();
 });
 
 document.getElementById("wiki-favorites-toggle").addEventListener("click", () => {
@@ -1872,6 +1874,7 @@ document.getElementById("wiki-favorites-toggle").addEventListener("click", () =>
   btn.setAttribute("aria-pressed", String(showFavoritesOnly));
   updateFavoritesToggleText();
   renderWikiGrid(wikiSearch.value);
+  syncUrlFromState();
 });
 
 // ── Manage Favorites mode ───────────────────────────────────────
@@ -1951,6 +1954,37 @@ function updateClearFiltersVisibility() {
   document.getElementById("wiki-clear-filters").hidden = !hasFilters;
 }
 
+function syncUrlFromState() {
+  const url = new URL(window.location);
+
+  const q = wikiSearch.value.trim();
+  if (q) url.searchParams.set("q", q);
+  else url.searchParams.delete("q");
+
+  if (sortMode !== "default") url.searchParams.set("sort", sortMode);
+  else url.searchParams.delete("sort");
+
+  if (activeStatusFilters.size > 0) url.searchParams.set("status", [...activeStatusFilters].join(","));
+  else url.searchParams.delete("status");
+
+  if (activeHabitatFilters.size > 0) url.searchParams.set("habitat", [...activeHabitatFilters].join(","));
+  else url.searchParams.delete("habitat");
+
+  if (activeDietFilters.size > 0) url.searchParams.set("diet", [...activeDietFilters].join(","));
+  else url.searchParams.delete("diet");
+
+  if (activeRegionFilters.size > 0) url.searchParams.set("region", [...activeRegionFilters].join(","));
+  else url.searchParams.delete("region");
+
+  if (activeTagFilters.size > 0) url.searchParams.set("tag", [...activeTagFilters].join(","));
+  else url.searchParams.delete("tag");
+
+  if (showFavoritesOnly) url.searchParams.set("fav", "1");
+  else url.searchParams.delete("fav");
+
+  history.replaceState(history.state, "", url);
+}
+
 document.getElementById("wiki-clear-filters").addEventListener("click", () => {
   if (manageFavoritesMode) exitManageFavoritesMode();
   wikiSearch.value = "";
@@ -1972,6 +2006,7 @@ document.getElementById("wiki-clear-filters").addEventListener("click", () => {
   });
   updateFilterBtnState();
   renderWikiGrid("");
+  syncUrlFromState();
 });
 
 document.getElementById("wiki-surprise-btn").addEventListener("click", () => {
@@ -2139,6 +2174,7 @@ function renderFilterPanel() {
       updateFilterBtnState();
       renderWikiGrid(wikiSearch.value);
       updateClearFiltersVisibility();
+      syncUrlFromState();
     });
     return chip;
   }
@@ -2257,9 +2293,47 @@ function renderGlanceBar(items) {
   pctEl.textContent   = displayTxt;
 }
 
-renderWikiGrid("");
+// Restore search/sort/filter state from URL params (supports shareable filtered views)
+(function initStateFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+
+  const q = params.get("q");
+  if (q) wikiSearch.value = q;
+
+  const sort = params.get("sort");
+  if (sort) {
+    sortMode = sort;
+    document.getElementById("wiki-sort").value = sort;
+  }
+
+  const status = params.get("status");
+  if (status) status.split(",").forEach((v) => { if (v.trim()) activeStatusFilters.add(v.trim()); });
+
+  const habitat = params.get("habitat");
+  if (habitat) habitat.split(",").forEach((v) => { if (v.trim()) activeHabitatFilters.add(v.trim()); });
+
+  const diet = params.get("diet");
+  if (diet) diet.split(",").forEach((v) => { if (v.trim()) activeDietFilters.add(v.trim()); });
+
+  const region = params.get("region");
+  if (region) region.split(",").forEach((v) => { if (v.trim()) activeRegionFilters.add(v.trim()); });
+
+  const tag = params.get("tag");
+  if (tag) tag.split(",").forEach((v) => { if (v.trim()) activeTagFilters.add(v.trim()); });
+
+  if (params.get("fav") === "1") {
+    showFavoritesOnly = true;
+    const btn = document.getElementById("wiki-favorites-toggle");
+    btn.classList.add("active");
+    btn.setAttribute("aria-pressed", "true");
+    updateFavoritesToggleText();
+  }
+})();
+
+renderWikiGrid(wikiSearch.value);
 renderFilterPanel();
 updateFilterBtnState();
+updateClearFiltersVisibility();
 
 // Open modal directly if species is specified in the URL (deep link / bookmark)
 const initSpeciesId = new URLSearchParams(window.location.search).get("species");
