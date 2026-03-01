@@ -792,7 +792,7 @@ function renderOverview(species) {
 
   const fill = document.createElement("div");
   fill.className = "overview-status-fill";
-  fill.style.width = species.lifePercent + "%";
+  fill.style.width = "0%";
   fill.style.background = barColor;
 
   const pctHint = document.createElement("div");
@@ -800,7 +800,7 @@ function renderOverview(species) {
 
   const pct = document.createElement("div");
   pct.className = "overview-status-pct";
-  pct.textContent = "Population health: " + species.lifePercent + "%";
+  pct.textContent = "Population health: 0%";
 
   const infoBtn = document.createElement("button");
   infoBtn.className = "overview-status-info-btn";
@@ -829,6 +829,20 @@ function renderOverview(species) {
   statusBar.appendChild(badge);
   statusBar.appendChild(fillWrap);
   panel.appendChild(statusBar);
+
+  // Animate bar fill and count-up number after modal open settles
+  const _animTarget = species.lifePercent;
+  setTimeout(() => {
+    fill.style.width = _animTarget + "%";
+    const _animStart = performance.now();
+    const _animDuration = 800;
+    (function tick(now) {
+      const progress = Math.min((now - _animStart) / _animDuration, 1);
+      const eased = 1 - Math.pow(1 - progress, 2);
+      pct.textContent = "Population health: " + Math.round(eased * _animTarget) + "%";
+      if (progress < 1) requestAnimationFrame(tick);
+    })(performance.now());
+  }, 280);
 
   // Fun fact
   if (species.funFact) {
@@ -1561,8 +1575,9 @@ function createSpeciesCard(species, q, favIds) {
         stroke="${ringColor}"
         style="stroke-dashoffset:${RING_CIRCUMFERENCE}"
         data-target-offset="${targetOffset}"
+        data-target-pct="${species.lifePercent}"
         transform="rotate(-90,26,26)"/>
-      <text class="ring-pct-txt" x="26" y="26">${species.lifePercent}%</text>
+      <text class="ring-pct-txt" x="26" y="26">0%</text>
     </svg>
     <div class="card-ring-meta">
       <div class="card-ring-status"></div>
@@ -1760,7 +1775,21 @@ function renderWikiGrid(query) {
       );
     visible.forEach((entry, i) => {
       const ring = entry.target.querySelector(".ring-fill");
-      if (ring) setTimeout(() => { ring.style.strokeDashoffset = ring.dataset.targetOffset; }, i * 60);
+      if (ring) setTimeout(() => {
+        ring.style.strokeDashoffset = ring.dataset.targetOffset;
+        const txt = entry.target.querySelector(".ring-pct-txt");
+        if (txt) {
+          const target = +ring.dataset.targetPct;
+          const duration = 650;
+          const start = performance.now();
+          (function tick(now) {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 2);
+            txt.textContent = Math.round(eased * target) + "%";
+            if (progress < 1) requestAnimationFrame(tick);
+          })(performance.now());
+        }
+      }, i * 60);
       window._wikiLifeObserver.unobserve(entry.target);
     });
   }, { threshold: 0.15 });
@@ -2247,8 +2276,6 @@ function renderGlanceBar(items) {
     : null;
   const color     = avg !== null ? getLifeBarColor(avg) : "var(--color-text-muted)";
   const targetW   = avg !== null ? `${avg}%` : "0%";
-  const displayTxt = avg !== null ? `${avg}%` : "—";
-
   // Build DOM once; update in-place on subsequent calls so CSS transitions fire
   let barFill = el.querySelector(".wiki-glance-bar-fill");
   const isFirst = !barFill;
@@ -2273,7 +2300,7 @@ function renderGlanceBar(items) {
     const pct = document.createElement("span");
     pct.className = "wiki-glance-pct";
     pct.style.color = color;
-    pct.textContent = displayTxt;
+    pct.textContent = avg !== null ? "0%" : "—";
     el.appendChild(pct);
 
     const sub = document.createElement("span");
@@ -2284,17 +2311,40 @@ function renderGlanceBar(items) {
     // Kick off the load animation after the first paint
     requestAnimationFrame(() => requestAnimationFrame(() => {
       barFill.style.width = targetW;
+      if (avg !== null) {
+        const duration = 600;
+        const start = performance.now();
+        (function tick(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 2);
+          pct.textContent = Math.round(eased * avg) + "%";
+          if (progress < 1) requestAnimationFrame(tick);
+        })(performance.now());
+      }
     }));
     return;
   }
 
-  // Subsequent updates — transition handles the animation
+  // Subsequent updates — transition handles bar animation, count text between values
   barFill.style.width      = targetW;
   barFill.style.background = color;
 
   const pctEl = el.querySelector(".wiki-glance-pct");
-  pctEl.style.color   = color;
-  pctEl.textContent   = displayTxt;
+  pctEl.style.color = color;
+
+  if (avg !== null) {
+    const fromVal = parseInt(pctEl.textContent) || 0;
+    const duration = 600;
+    const start = performance.now();
+    (function tick(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 2);
+      pctEl.textContent = Math.round(fromVal + eased * (avg - fromVal)) + "%";
+      if (progress < 1) requestAnimationFrame(tick);
+    })(performance.now());
+  } else {
+    pctEl.textContent = "—";
+  }
 }
 
 // Restore search/sort/filter state from URL params (supports shareable filtered views)
