@@ -212,6 +212,11 @@ function openSpeciesModal(species, cardEl, tabKey = "overview") {
   if (!suppressHistoryUpdate) {
     const url = new URL(window.location);
     url.searchParams.set("species", species.id);
+    if (tabKey && tabKey !== "overview") {
+      url.searchParams.set("tab", tabKey);
+    } else {
+      url.searchParams.delete("tab");
+    }
     history.pushState({ speciesId: species.id }, "", url);
   }
 
@@ -327,6 +332,7 @@ function closeSpeciesModal() {
   if (!suppressHistoryUpdate) {
     const url = new URL(window.location);
     url.searchParams.delete("species");
+    url.searchParams.delete("tab");
     history.pushState({}, "", url);
   }
 
@@ -701,7 +707,7 @@ window.addEventListener("popstate", () => {
     const species = WIKI_DATA.items.find((s) => s.id === speciesId);
     if (species) {
       const cardEl = document.querySelector(`[data-species-id="${speciesId}"]`);
-      openSpeciesModal(species, cardEl);
+      openSpeciesModal(species, cardEl, params.get("tab") || "overview");
     }
   } else if (!speciesModal.classList.contains("hidden")) {
     closeSpeciesModal();
@@ -725,7 +731,18 @@ function activateTab(tabKey) {
 }
 
 document.querySelectorAll(".species-tab").forEach((btn) => {
-  btn.addEventListener("click", () => activateTab(btn.dataset.tab));
+  btn.addEventListener("click", () => {
+    activateTab(btn.dataset.tab);
+    if (currentModalSpecies) {
+      const url = new URL(window.location);
+      if (btn.dataset.tab && btn.dataset.tab !== "overview") {
+        url.searchParams.set("tab", btn.dataset.tab);
+      } else {
+        url.searchParams.delete("tab");
+      }
+      history.replaceState(history.state, "", url);
+    }
+  });
 });
 
 // ── Tab content renderers ──────────────────────────────────────
@@ -2401,12 +2418,13 @@ updateFilterBtnState();
 updateClearFiltersVisibility();
 
 // Open modal directly if species is specified in the URL (deep link / bookmark)
-const initSpeciesId = new URLSearchParams(window.location.search).get("species");
+const initParams = new URLSearchParams(window.location.search);
+const initSpeciesId = initParams.get("species");
 if (initSpeciesId) {
   const initSpecies = WIKI_DATA.items.find((s) => s.id === initSpeciesId);
   if (initSpecies) {
     suppressHistoryUpdate = true;
-    openSpeciesModal(initSpecies, null); // always fade in on deep link (card not visually established yet)
+    openSpeciesModal(initSpecies, null, initParams.get("tab") || "overview"); // always fade in on deep link (card not visually established yet)
     suppressHistoryUpdate = false;
   }
 }
