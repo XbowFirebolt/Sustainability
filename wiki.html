@@ -21,56 +21,58 @@
       </section>
     </header>
     <main class="discover-page">
-      <div class="discover-search-wrap">
-        <div class="search-autocomplete-wrap">
-          <input id="wiki-search" class="discover-search" type="search" placeholder="Search by name, species, or status…" autocomplete="off" aria-autocomplete="list" aria-controls="wiki-autocomplete" />
-          <ul id="wiki-autocomplete" class="search-autocomplete-list" hidden role="listbox" aria-label="Search suggestions"></ul>
+      <div class="wiki-sticky-toolbar">
+        <div class="discover-search-wrap">
+          <div class="search-autocomplete-wrap">
+            <input id="wiki-search" class="discover-search" type="search" placeholder="Search by name, species, or status…" autocomplete="off" aria-autocomplete="list" aria-controls="wiki-autocomplete" />
+            <ul id="wiki-autocomplete" class="search-autocomplete-list" hidden role="listbox" aria-label="Search suggestions"></ul>
+          </div>
         </div>
-      </div>
-      <div id="wiki-status-bar" class="wiki-status-bar">
-        <div id="wiki-glance" class="wiki-glance"></div>
-        <div class="wiki-bar-spacer"></div>
-        <button id="wiki-favorites-toggle" class="wiki-fav-toggle" aria-pressed="false">&#9734; Favorites</button>
-        <button id="wiki-manage-favorites-btn" class="wiki-manage-btn" hidden title="Bulk-remove favorites">&#9733; Manage</button>
-        <button id="wiki-clear-filters" class="wiki-clear-btn" hidden>Clear</button>
-        <button id="wiki-filter-btn" class="wiki-filter-btn">Filter ▾</button>
-        <button id="wiki-surprise-btn" class="wiki-surprise-btn" title="Open a random species">&#127922; Surprise me</button>
-        <div class="wiki-sort-group">
-          <span class="wiki-filter-label">Sort</span>
-          <select id="wiki-sort" class="wiki-sort-select">
-            <option value="default">Default</option>
-            <option value="name-asc">Name A→Z</option>
-            <option value="health-asc">Health % ↑</option>
-            <option value="health-desc">Health % ↓</option>
-            <option value="threat-desc">Threat Severity</option>
-            <option value="recently-viewed">Recently Viewed</option>
-          </select>
-        </div>
-        <div class="wiki-legend-hint">
-          <button class="wiki-legend-btn" aria-label="Threat severity legend" tabindex="0">?</button>
-          <div class="wiki-legend-popup" role="tooltip">
-            <span class="wiki-threat-legend-label">Threat severity</span>
-            <div class="wiki-legend-rows">
-              <span class="tab-severity-badge tab-severity-badge--critical">Critical</span>
-              <span class="wiki-legend-desc">Extinction risk is immediate</span>
-              <span class="tab-severity-badge tab-severity-badge--high">High</span>
-              <span class="wiki-legend-desc">Severe, ongoing pressure</span>
-              <span class="tab-severity-badge tab-severity-badge--medium">Medium</span>
-              <span class="wiki-legend-desc">Notable but manageable stress</span>
-              <span class="tab-severity-badge tab-severity-badge--low">Low</span>
-              <span class="wiki-legend-desc">Generally stable population</span>
+        <div id="wiki-status-bar" class="wiki-status-bar">
+          <div id="wiki-glance" class="wiki-glance"></div>
+          <div class="wiki-bar-spacer"></div>
+          <button id="wiki-favorites-toggle" class="wiki-fav-toggle" aria-pressed="false">&#9734; Favorites</button>
+          <button id="wiki-manage-favorites-btn" class="wiki-manage-btn" hidden title="Bulk-remove favorites">&#9733; Manage</button>
+          <button id="wiki-clear-filters" class="wiki-clear-btn" hidden>Clear</button>
+          <button id="wiki-filter-btn" class="wiki-filter-btn">Filter ▾</button>
+          <button id="wiki-surprise-btn" class="wiki-surprise-btn" title="Open a random species">&#127922; Surprise me</button>
+          <div class="wiki-sort-group">
+            <span class="wiki-filter-label">Sort</span>
+            <select id="wiki-sort" class="wiki-sort-select">
+              <option value="default">Default</option>
+              <option value="name-asc">Name A→Z</option>
+              <option value="health-asc">Health % ↑</option>
+              <option value="health-desc">Health % ↓</option>
+              <option value="threat-desc">Threat Severity</option>
+              <option value="recently-viewed">Recently Viewed</option>
+            </select>
+          </div>
+          <div class="wiki-legend-hint">
+            <button class="wiki-legend-btn" aria-label="Threat severity legend" tabindex="0">?</button>
+            <div class="wiki-legend-popup" role="tooltip">
+              <span class="wiki-threat-legend-label">Threat severity</span>
+              <div class="wiki-legend-rows">
+                <span class="tab-severity-badge tab-severity-badge--critical">Critical</span>
+                <span class="wiki-legend-desc">Extinction risk is immediate</span>
+                <span class="tab-severity-badge tab-severity-badge--high">High</span>
+                <span class="wiki-legend-desc">Severe, ongoing pressure</span>
+                <span class="tab-severity-badge tab-severity-badge--medium">Medium</span>
+                <span class="wiki-legend-desc">Notable but manageable stress</span>
+                <span class="tab-severity-badge tab-severity-badge--low">Low</span>
+                <span class="wiki-legend-desc">Generally stable population</span>
+              </div>
             </div>
           </div>
         </div>
+        <div id="wiki-manage-toolbar" class="wiki-manage-toolbar hidden">
+          <span class="wiki-manage-toolbar-label">&#9733; Manage Favorites</span>
+          <button id="wiki-manage-select-all" class="wiki-manage-select-all">Select all</button>
+          <span id="wiki-manage-count" class="wiki-manage-count">None selected</span>
+          <button id="wiki-manage-remove-btn" class="wiki-manage-remove-btn" disabled>Remove selected</button>
+          <button id="wiki-manage-done-btn" class="wiki-manage-done-btn">Done</button>
+        </div>
+        <div id="wiki-filter-panel" class="wiki-filter-panel hidden"></div>
       </div>
-      <div id="wiki-manage-toolbar" class="wiki-manage-toolbar hidden">
-        <span class="wiki-manage-toolbar-label">&#9733; Manage Favorites</span>
-        <button id="wiki-manage-select-all" class="wiki-manage-select-all">Select all</button>
-        <span id="wiki-manage-count" class="wiki-manage-count">None selected</span>
-        <button id="wiki-manage-remove-btn" class="wiki-manage-remove-btn" disabled>Remove selected</button>
-        <button id="wiki-manage-done-btn" class="wiki-manage-done-btn">Done</button>
-      </div>
-      <div id="wiki-filter-panel" class="wiki-filter-panel hidden"></div>
       <div id="wiki-grid" class="wiki-grid"></div>
     </main>
     <div id="account-modal" class="modal-overlay hidden">

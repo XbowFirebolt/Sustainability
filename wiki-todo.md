@@ -64,7 +64,7 @@ Check off items as they're completed. Add notes inline as needed.
 - [ ] **Compact vs. expanded card view toggle** — let users switch between a dense compact list view and the current large card grid
 - [ ] **Masonry or variable-height grid option** — alternative to the fixed-width uniform grid
 - [ ] **Better color coding on region grids** — color the region cards by severity with stronger visual contrast
-- [ ] **Sticky search bar** — keep the search input visible as the user scrolls down the grid
+- [x] **Sticky search bar** — keep the search input visible as the user scrolls down the grid
 - [x] **Animate status chips appearance** — stagger-animate the At a Glance chips on page load for a polished intro
 - [x] **Species count badge in status chips** — make the count more prominent (e.g., large number above label), like an app badge
 - [x] **Count-up animation in modal** — animate the lifePercent number counting up when the modal opens

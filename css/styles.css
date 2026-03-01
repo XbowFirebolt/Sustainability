@@ -355,6 +355,14 @@ body.no-map {
   padding: 0 0 2rem;
 }
 
+.wiki-sticky-toolbar {
+  position: sticky;
+  top: var(--header-height);
+  z-index: 10;
+  background-color: var(--color-bg);
+  transition: background-color 0.5s ease;
+}
+
 .discover-search-wrap {
   padding: 1rem;
   border-bottom: 1px solid var(--color-border);
@@ -363,6 +371,13 @@ body.no-map {
   background-color: var(--color-bg);
   z-index: 10;
   transition: background-color 0.5s ease;
+}
+
+/* Within the wiki sticky toolbar the wrapper handles sticky; search wrap is static */
+.wiki-sticky-toolbar .discover-search-wrap {
+  position: static;
+  background-color: transparent;
+  z-index: auto;
 }
 
 .discover-search {
