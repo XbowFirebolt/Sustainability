@@ -737,6 +737,20 @@ body.no-map {
   font-weight: 600;
 }
 
+.wiki-filter-chip .chip-count {
+  font-weight: 700;
+  color: var(--chip-color);
+}
+
+.wiki-filter-chip .chip-label {
+  color: var(--color-text-muted);
+}
+
+.wiki-filter-chip.active .chip-count,
+.wiki-filter-chip.active .chip-label {
+  color: var(--chip-color);
+}
+
 .discover-grid {
   padding: 1rem;
   display: grid;

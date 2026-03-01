@@ -66,7 +66,7 @@ Check off items as they're completed. Add notes inline as needed.
 - [ ] **Better color coding on region grids** — color the region cards by severity with stronger visual contrast
 - [ ] **Sticky search bar** — keep the search input visible as the user scrolls down the grid
 - [x] **Animate status chips appearance** — stagger-animate the At a Glance chips on page load for a polished intro
-- [ ] **Species count badge in status chips** — make the count more prominent (e.g., large number above label), like an app badge
+- [x] **Species count badge in status chips** — make the count more prominent (e.g., large number above label), like an app badge
 - [x] **Count-up animation in modal** — animate the lifePercent number counting up when the modal opens
 - [ ] **Mobile full-screen modal** — on small viewports render the modal as a full-screen bottom sheet instead of a floating overlay
 - [ ] **Drag-to-dismiss on mobile** — allow swiping the modal sheet down to close it on touch devices

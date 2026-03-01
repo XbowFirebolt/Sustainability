@@ -2184,7 +2184,7 @@ function renderFilterPanel() {
 
   let chipIndex = 0;
 
-  function makeFilterChip(key, text, color, bg, activeSet) {
+  function makeFilterChip(key, text, color, bg, activeSet, count) {
     const chip = document.createElement("button");
     chip.className = "wiki-filter-chip";
     chip.style.animationDelay = `${chipIndex++ * 25}ms`;
@@ -2192,7 +2192,18 @@ function renderFilterPanel() {
     chip.style.setProperty("--chip-bg", bg);
     chip.setAttribute("aria-pressed", String(activeSet.has(key)));
     if (activeSet.has(key)) chip.classList.add("active");
-    chip.textContent = text;
+    if (count !== undefined) {
+      const countEl = document.createElement("span");
+      countEl.className = "chip-count";
+      countEl.textContent = count;
+      const labelEl = document.createElement("span");
+      labelEl.className = "chip-label";
+      labelEl.textContent = text;
+      chip.appendChild(countEl);
+      chip.appendChild(labelEl);
+    } else {
+      chip.textContent = text;
+    }
     chip.addEventListener("click", () => {
       if (activeSet.has(key)) {
         activeSet.delete(key);
@@ -2229,11 +2240,11 @@ function renderFilterPanel() {
   const statusChips = [];
   STATUS_ORDER.forEach(({ label, color, bg }) => {
     if (!statusCounts[label]) return;
-    statusChips.push(makeFilterChip(label, label, color, bg, activeStatusFilters));
+    statusChips.push(makeFilterChip(label, label, color, bg, activeStatusFilters, statusCounts[label]));
   });
   Object.keys(statusCounts).forEach((label) => {
     if (STATUS_ORDER.find((s) => s.label === label)) return;
-    statusChips.push(makeFilterChip(label, label, "#707070", "rgba(112,112,112,0.13)", activeStatusFilters));
+    statusChips.push(makeFilterChip(label, label, "#707070", "rgba(112,112,112,0.13)", activeStatusFilters, statusCounts[label]));
   });
   makeGroup("Status", statusChips);
 
