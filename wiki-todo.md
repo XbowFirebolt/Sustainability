@@ -60,7 +60,7 @@ Check off items as they're completed. Add notes inline as needed.
 - [x] **Habitat + diet badges on cards** — small icon badges on the card for quick at-a-glance info (ocean, freshwater, omnivore, etc.)
 - [ ] **Loading skeleton screens** — show skeleton card shapes while species images load, instead of empty/blank cards
 - [ ] **Lazy load images** — use IntersectionObserver so off-screen species photos don't load until scrolled into view
-- [ ] **Interactive population chart** — hover/tap data points to see exact year and value tooltips
+- [x] **Interactive population chart** — hover/tap data points to see exact year and value tooltips
 - [ ] **Compact vs. expanded card view toggle** — let users switch between a dense compact list view and the current large card grid
 - [ ] **Masonry or variable-height grid option** — alternative to the fixed-width uniform grid
 - [x] **Sticky search bar** — keep the search input visible as the user scrolls down the grid
@@ -90,7 +90,7 @@ Check off items as they're completed. Add notes inline as needed.
 
 ## Accessibility
 
-- [ ] **Focus trap in modal** — tab key should cycle only within the open modal, not reach background elements
+- [x] **Focus trap in modal** — tab key should cycle only within the open modal, not reach background elements
 - [ ] **ARIA live region for filter changes** — announce to screen readers when the species count changes after filtering (e.g., "5 results")
 - [ ] **More descriptive ARIA labels** — e.g., star button should say "Add Great White Shark to favorites" not just "Favorite species"
 - [ ] **Skip-to-content link** — add a visually hidden skip link at the top of the page for keyboard users

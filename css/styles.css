@@ -1955,7 +1955,85 @@ body.no-map {
 }
 
 .health-chart-wrap {
+  position: relative;
   padding: 0.2rem 0 0.1rem;
+}
+
+.chart-data-tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 0.3rem 0.55rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.13);
+  white-space: nowrap;
+  z-index: 10;
+  opacity: 0;
+  transform: translate(-50%, calc(-100% - 10px));
+  transition: opacity 0.12s ease;
+}
+
+/* Caret — outer (border color) */
+.chart-data-tooltip::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: var(--caret-x, 50%);
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--color-border);
+  border-bottom: none;
+}
+
+/* Caret — inner (fill color, overlays ::before) */
+.chart-data-tooltip::after {
+  content: "";
+  position: absolute;
+  top: calc(100% - 1px);
+  left: var(--caret-x, 50%);
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--color-bg);
+  border-bottom: none;
+}
+
+.chart-data-tooltip.visible {
+  opacity: 1;
+}
+
+.chart-data-tooltip-year {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.chart-data-tooltip-value {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+}
+
+.chart-data-tooltip-change {
+  font-size: 0.68rem;
+  font-weight: 600;
+  margin-top: 0.1rem;
+}
+
+.chart-data-tooltip-change[data-dir="down"] { color: #b91c1c; }
+.chart-data-tooltip-change[data-dir="up"]   { color: var(--color-primary); }
+
+.chart-dot {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.15s ease;
+}
+
+.chart-dot.active {
+  transform: scale(1.57);
+}
+
+.chart-rule {
+  transition: opacity 0.12s ease;
 }
 
 .health-chart-svg {

@@ -1064,6 +1064,11 @@ function renderPopulationChart(container, data) {
   const xOf = (i) => PAD.left + (i / (data.length - 1)) * innerW;
   const yOf = (v) => PAD.top + innerH - ((v - minVal) / valRange) * innerH;
 
+  // Precompute % change from previous data point
+  const changes = data.map((d, i) =>
+    i === 0 ? null : (d.value - data[i - 1].value) / data[i - 1].value * 100
+  );
+
   const svgNS = "http://www.w3.org/2000/svg";
 
   const svg = document.createElementNS(svgNS, "svg");
@@ -1094,6 +1099,23 @@ function renderPopulationChart(container, data) {
     svg.appendChild(gridLabel);
   });
 
+  // Vertical rule lines per data point — rendered below area fill so dots stay on top
+  const rules = data.map((d, i) => {
+    const rule = document.createElementNS(svgNS, "line");
+    const cx = xOf(i), cy = yOf(d.value);
+    rule.setAttribute("x1", cx);
+    rule.setAttribute("x2", cx);
+    rule.setAttribute("y1", cy);
+    rule.setAttribute("y2", PAD.top + innerH);
+    rule.setAttribute("stroke", "var(--color-primary)");
+    rule.setAttribute("stroke-width", "1");
+    rule.setAttribute("stroke-dasharray", "3,3");
+    rule.setAttribute("class", "chart-rule");
+    rule.style.opacity = "0";
+    svg.appendChild(rule);
+    return rule;
+  });
+
   // Shaded area fill
   const areaPoints =
     data.map((d, i) => `${xOf(i)},${yOf(d.value)}`).join(" ") +
@@ -1113,7 +1135,22 @@ function renderPopulationChart(container, data) {
   polyline.setAttribute("stroke-linejoin", "round");
   svg.appendChild(polyline);
 
-  // Dots and year labels
+  // Tooltip (created before the data loop so closures can reference it)
+  container.appendChild(svg);
+  const tooltip = document.createElement("div");
+  tooltip.className = "chart-data-tooltip";
+  const ttYear = document.createElement("div");
+  ttYear.className = "chart-data-tooltip-year";
+  const ttValue = document.createElement("div");
+  ttValue.className = "chart-data-tooltip-value";
+  const ttChange = document.createElement("div");
+  ttChange.className = "chart-data-tooltip-change";
+  tooltip.appendChild(ttYear);
+  tooltip.appendChild(ttValue);
+  tooltip.appendChild(ttChange);
+  container.appendChild(tooltip);
+
+  // Dots, year labels, and interactive hit targets
   data.forEach((d, i) => {
     const cx = xOf(i), cy = yOf(d.value);
 
@@ -1122,6 +1159,7 @@ function renderPopulationChart(container, data) {
     dot.setAttribute("cy", cy);
     dot.setAttribute("r", "3.5");
     dot.setAttribute("fill", "var(--color-primary)");
+    dot.setAttribute("class", "chart-dot");
     svg.appendChild(dot);
 
     const yearLabel = document.createElementNS(svgNS, "text");
@@ -1132,9 +1170,56 @@ function renderPopulationChart(container, data) {
     yearLabel.className = "health-chart-year";
     yearLabel.textContent = d.year;
     svg.appendChild(yearLabel);
-  });
 
-  container.appendChild(svg);
+    // Larger transparent hit target for easier hover/tap
+    const hit = document.createElementNS(svgNS, "circle");
+    hit.setAttribute("cx", cx);
+    hit.setAttribute("cy", cy);
+    hit.setAttribute("r", "12");
+    hit.setAttribute("fill", "transparent");
+    svg.appendChild(hit);
+
+    const show = () => {
+      // Set content first so offsetWidth reflects the rendered size
+      ttYear.textContent = d.year;
+      ttValue.textContent = d.value.toLocaleString();
+      const change = changes[i];
+      if (change !== null) {
+        ttChange.textContent = (change >= 0 ? "▲" : "▼") + " " + Math.abs(Math.round(change)) + "%";
+        ttChange.dataset.dir = change >= 0 ? "up" : "down";
+        ttChange.style.display = "";
+      } else {
+        ttChange.style.display = "none";
+      }
+
+      // Position with edge clamping so the card never clips outside the container
+      const svgRect = svg.getBoundingClientRect();
+      const wrapRect = container.getBoundingClientRect();
+      const dotX = svgRect.left - wrapRect.left + cx * (svgRect.width / W);
+      const dotY = svgRect.top - wrapRect.top + cy * (svgRect.height / H);
+      const halfW = tooltip.offsetWidth / 2;
+      const clampedCenter = Math.max(halfW, Math.min(dotX, wrapRect.width - halfW));
+      tooltip.style.left = clampedCenter + "px";
+      tooltip.style.top = dotY + "px";
+      // Keep caret pointing at the actual dot even when the box has shifted
+      tooltip.style.setProperty("--caret-x", (halfW + dotX - clampedCenter) + "px");
+
+      tooltip.classList.add("visible");
+      dot.classList.add("active");
+      rules[i].style.opacity = "0.45";
+    };
+
+    const hide = () => {
+      tooltip.classList.remove("visible");
+      dot.classList.remove("active");
+      rules[i].style.opacity = "0";
+    };
+
+    hit.addEventListener("mouseenter", show);
+    hit.addEventListener("mouseleave", hide);
+    hit.addEventListener("touchstart", (e) => { e.preventDefault(); show(); }, { passive: false });
+    hit.addEventListener("touchend", () => { setTimeout(hide, 1500); });
+  });
 }
 
 function renderRegionGrid(container, regions) {
