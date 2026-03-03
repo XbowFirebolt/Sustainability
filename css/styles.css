@@ -2050,6 +2050,10 @@ body.no-map {
   fill: var(--color-text-muted);
 }
 
+.health-chart-axis-label {
+  fill: var(--color-text-muted);
+}
+
 /* ── Health Metrics — right column (value + optional links) ── */
 .tab-health-right {
   display: flex;

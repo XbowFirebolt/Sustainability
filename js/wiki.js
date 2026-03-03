@@ -1051,8 +1051,8 @@ function renderVitalSigns(species) {
 }
 
 function renderPopulationChart(container, data) {
-  const PAD = { top: 14, right: 16, bottom: 32, left: 62 };
-  const W = 480, H = 160;
+  const PAD = { top: 14, right: 16, bottom: 46, left: 62 };
+  const W = 480, H = 174;
   const innerW = W - PAD.left - PAD.right;
   const innerH = H - PAD.top - PAD.bottom;
 
@@ -1060,6 +1060,9 @@ function renderPopulationChart(container, data) {
   const minVal = 0;
   const maxVal = Math.max(...values);
   const valRange = maxVal - minVal || 1;
+
+  const scale     = maxVal >= 1_000_000 ? 1_000_000 : maxVal >= 1_000 ? 1_000 : 1;
+  const scaleUnit = scale === 1_000_000 ? " (M)" : scale === 1_000 ? " (K)" : "";
 
   const xOf = (i) => PAD.left + (i / (data.length - 1)) * innerW;
   const yOf = (v) => PAD.top + innerH - ((v - minVal) / valRange) * innerH;
@@ -1074,7 +1077,7 @@ function renderPopulationChart(container, data) {
   const svg = document.createElementNS(svgNS, "svg");
   svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
   svg.setAttribute("preserveAspectRatio", "xMidYMid meet");
-  svg.className = "health-chart-svg";
+  svg.setAttribute("class", "health-chart-svg");
 
   // Grid lines at 0%, 33%, 67%, 100% of value range
   [0, 0.33, 0.67, 1].forEach((t) => {
@@ -1094,10 +1097,19 @@ function renderPopulationChart(container, data) {
     gridLabel.setAttribute("y", y + 3.5);
     gridLabel.setAttribute("text-anchor", "end");
     gridLabel.setAttribute("font-size", "9");
-    gridLabel.className = "health-chart-value";
-    gridLabel.textContent = "~" + Math.round(minVal + t * valRange).toLocaleString();
+    gridLabel.setAttribute("class", "health-chart-value");
+    gridLabel.textContent = "~" + (Math.round(minVal + t * valRange) / scale).toLocaleString();
     svg.appendChild(gridLabel);
   });
+
+  // Y-axis label
+  const yAxisLabel = document.createElementNS(svgNS, "text");
+  yAxisLabel.setAttribute("transform", `translate(10, ${PAD.top + innerH / 2}) rotate(-90)`);
+  yAxisLabel.setAttribute("text-anchor", "middle");
+  yAxisLabel.setAttribute("font-size", "8");
+  yAxisLabel.setAttribute("class", "health-chart-axis-label");
+  yAxisLabel.textContent = "Individuals" + scaleUnit;
+  svg.appendChild(yAxisLabel);
 
   // Vertical rule lines per data point — rendered below area fill so dots stay on top
   const rules = data.map((d, i) => {
@@ -1140,13 +1152,13 @@ function renderPopulationChart(container, data) {
   const tooltip = document.createElement("div");
   tooltip.className = "chart-data-tooltip";
   const ttYear = document.createElement("div");
-  ttYear.className = "chart-data-tooltip-year";
+  ttYear.className = "chart-data-tooltip-value";
   const ttValue = document.createElement("div");
-  ttValue.className = "chart-data-tooltip-value";
+  ttValue.className = "chart-data-tooltip-year";
   const ttChange = document.createElement("div");
   ttChange.className = "chart-data-tooltip-change";
-  tooltip.appendChild(ttYear);
   tooltip.appendChild(ttValue);
+  tooltip.appendChild(ttYear);
   tooltip.appendChild(ttChange);
   container.appendChild(tooltip);
 
@@ -1164,10 +1176,10 @@ function renderPopulationChart(container, data) {
 
     const yearLabel = document.createElementNS(svgNS, "text");
     yearLabel.setAttribute("x", cx);
-    yearLabel.setAttribute("y", H - 8);
+    yearLabel.setAttribute("y", PAD.top + innerH + 24);
     yearLabel.setAttribute("text-anchor", "middle");
     yearLabel.setAttribute("font-size", "9");
-    yearLabel.className = "health-chart-year";
+    yearLabel.setAttribute("class", "health-chart-year");
     yearLabel.textContent = d.year;
     svg.appendChild(yearLabel);
 
@@ -1220,6 +1232,16 @@ function renderPopulationChart(container, data) {
     hit.addEventListener("touchstart", (e) => { e.preventDefault(); show(); }, { passive: false });
     hit.addEventListener("touchend", () => { setTimeout(hide, 1500); });
   });
+
+  // X-axis label
+  const xAxisLabel = document.createElementNS(svgNS, "text");
+  xAxisLabel.setAttribute("x", PAD.left + innerW / 2);
+  xAxisLabel.setAttribute("y", PAD.top + innerH + 38);
+  xAxisLabel.setAttribute("text-anchor", "middle");
+  xAxisLabel.setAttribute("font-size", "8");
+  xAxisLabel.setAttribute("class", "health-chart-axis-label");
+  xAxisLabel.textContent = "Year";
+  svg.appendChild(xAxisLabel);
 }
 
 function renderRegionGrid(container, regions) {
