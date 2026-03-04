@@ -32,7 +32,7 @@ A stub species renders a complete, valid card in the grid and opens a working mo
 
 ---
 
-## Phase 1 — Finish the Current 5 (now → complete)
+## ~~Phase 1 — Finish the Current 5~~ ✅
 
 Before scaling out, stabilize the foundation.
 
@@ -56,14 +56,14 @@ Before scaling out, stabilize the foundation.
 
 Before adding species, make adding species easier.
 
-### 2a. Document the schema
+### ~~2a. Document the schema~~ ✅
 
 Extract the schema into `projects/shark-populations/data-schema.md`. Document every field: type, whether it's required, what happens if it's missing, and example values. This is the reference for anyone (or any script) authoring new entries.
 
 Reference from `wiki-todo.md`:
 > Extract data.js schema documentation — add a data-schema.md or comments in data.js explaining every field
 
-### 2b. Write a data completeness checker
+### ~~2b. Write a data completeness checker~~ ✅
 
 A small Node script (or browser console snippet) that reads `WIKI_DATA.items` and prints a table of which fields each species is missing. Run it before every batch add.
 
