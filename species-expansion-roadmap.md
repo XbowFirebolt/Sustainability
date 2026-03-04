@@ -45,7 +45,7 @@ Before scaling out, stabilize the foundation.
 
 **Checklist:**
 - [x] Fill `vitalSigns` for Scalloped Hammerhead, Whale Shark, Bull Shark, Tiger Shark
-- [ ] Fill `healthMetrics` for the 4 partial species
+- [x] Fill `healthMetrics` for the 4 partial species
 - [ ] Add shark-silhouette fallback logic so species without real photos still look clean
 - [x] Add `emoji` field to all 5 (`🦈` works for most)
 - [ ] Confirm modal renders gracefully when `populationTrend`, `preyDeclineRegions`, and `fishingPressureRegions` are empty arrays

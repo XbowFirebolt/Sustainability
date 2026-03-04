@@ -1310,6 +1310,25 @@ function renderHealthMetrics(species) {
     chartWrap.className = "health-chart-wrap";
     renderPopulationChart(chartWrap, species.populationTrend);
     chartBody.appendChild(chartWrap);
+
+    const meta = species.populationTrendMeta;
+    if (meta) {
+      const footer = document.createElement("div");
+      footer.className = "chart-confidence-footer";
+
+      const badge = document.createElement("span");
+      badge.className = "chart-confidence-badge chart-confidence-badge--" + meta.confidence;
+      badge.textContent = meta.confidence === "rough" ? "Rough estimate" : "Estimated";
+
+      const noteEl = document.createElement("span");
+      noteEl.className = "chart-confidence-note";
+      noteEl.textContent = meta.note;
+
+      footer.appendChild(badge);
+      footer.appendChild(noteEl);
+      chartBody.appendChild(footer);
+    }
+
     panel.appendChild(box);
   }
 
