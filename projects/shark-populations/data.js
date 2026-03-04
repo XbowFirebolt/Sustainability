@@ -215,6 +215,13 @@ window.WIKI_DATA = {
         { name: "Coastal Habitat Loss", severity: "high",  description: "Pups and juveniles rely on shallow estuaries and coastal bays as nursery habitat. Urban development, mangrove loss, and pollution degrade these critical areas." },
         { name: "Climate Change",     severity: "medium",   description: "Warming seas compress preferred temperature bands and shift prey distributions, putting additional pressure on already fragmented populations." },
       ],
+      actionItems: [
+        { title: "Refuse Shark Fin Products", description: "Scalloped hammerhead fins are among the most traded in the global fin trade. Refusing to buy or consume shark fin soup and related products directly reduces demand driving their decline.", link: null },
+        { title: "Urge Stronger CITES Enforcement", description: "The scalloped hammerhead is listed on CITES Appendix II, but trade continues illegally. Contact your government representatives to push for stronger enforcement and expanded trade restrictions.", link: "https://cites.org/eng/app/appendices.php" },
+        { title: "Support Hammerhead Conservation Research", description: "Donate to organizations like the Shark Trust and Save Our Seas Foundation that fund population research and advocate for stronger protections for this critically endangered species.", link: "https://www.sharktrust.org" },
+        { title: "Choose Sustainable Seafood", description: "Bycatch in tuna and swordfish fisheries is the second major driver of decline. Use the Monterey Bay Aquarium Seafood Watch to avoid seafood caught with methods that incidentally kill hammerheads.", link: "https://www.seafoodwatch.org" },
+        { title: "Protect Coastal Nursery Habitats", description: "Support organizations and policies that protect mangroves, estuaries, and coastal bays — the nursery areas juvenile hammerheads depend on. Coastal habitat loss is an underappreciated threat to recovery.", link: null },
+      ],
     },
     {
       id: "whale-shark",
@@ -311,6 +318,13 @@ window.WIKI_DATA = {
         { name: "Plastic Ingestion",      severity: "medium", description: "Filter feeding ingests microplastics and larger debris alongside plankton. Plastic concentrations in surface waters are highest in the tropical feeding grounds this species depends on." },
         { name: "Climate Change",         severity: "medium", description: "Shifting ocean temperatures and declining plankton productivity reduce food availability and force longer migrations between feeding aggregations." },
       ],
+      actionItems: [
+        { title: "Choose Responsible Whale Shark Tourism", description: "If you visit a whale shark aggregation site, select operators that follow established codes of conduct: no touching, minimum approach distances, no flash photography. Irresponsible interactions cause chronic stress and disrupt feeding.", link: null },
+        { title: "Reduce Plastic and Ocean Pollution", description: "As filter feeders, whale sharks ingest microplastics alongside plankton. Reducing single-use plastic consumption, supporting coastal cleanups, and advocating for plastic regulation directly help this species.", link: null },
+        { title: "Contribute to Citizen Science Photo-ID", description: "Researchers use spot patterns to track individual whale sharks across ocean basins. Submit underwater photos taken during dives to the Wildbook for Whale Sharks citizen science database.", link: "https://www.whaleshark.org" },
+        { title: "Support Marine Protected Areas at Aggregation Sites", description: "Key feeding aggregations in the Coral Triangle, Gulf of Mexico, and Indian Ocean need robust marine protection. Contact representatives to support expanded MPAs at known whale shark hotspots.", link: null },
+        { title: "Support Whale Shark Conservation Organizations", description: "Donate to or follow the work of groups like the Marine Megafauna Foundation, Shark Research Institute, and Shark Trust that fund tagging, research, and advocacy for whale shark protections globally.", link: "https://www.sharktrust.org" },
+      ],
     },
     {
       id: "bull-shark",
@@ -405,6 +419,13 @@ window.WIKI_DATA = {
         { name: "Water Quality Degradation", severity: "medium", description: "Chemical pollutants and heavy metals accumulate in coastal and riverine systems where bull sharks forage and pup, affecting juvenile survival and reproductive success." },
         { name: "Bycatch",               severity: "medium",  description: "Incidentally caught in coastal gillnets and longlines targeting other species. Coastal development that concentrates fishing effort near river mouths compounds this pressure." },
       ],
+      actionItems: [
+        { title: "Advocate for River and Estuarine Habitat Protection", description: "Bull sharks need low-salinity estuaries and river systems to give birth and raise pups. Support policies that limit dam construction, reduce agricultural runoff, and protect mangrove and estuarine ecosystems.", link: null },
+        { title: "Support Shark Finning Bans and Enforcement", description: "Bull shark fins are commercially valuable and targeted across the tropics. Support national and international legislation banning the shark fin trade and pushing for genuine enforcement in SE Asia and West Africa.", link: null },
+        { title: "Advocate for Clean Water Legislation", description: "Chemical pollutants and heavy metals accumulate in coastal and riverine systems where bull sharks live and pup. Support clean water policy and corporate accountability for industrial discharge into coastal waterways.", link: null },
+        { title: "Choose Sustainable Seafood", description: "Coastal gillnet and longline bycatch is a significant source of bull shark mortality. Use the Monterey Bay Aquarium Seafood Watch guide to avoid seafood caught with methods that incidentally kill bull sharks.", link: "https://www.seafoodwatch.org" },
+        { title: "Challenge Fear-Based Narratives", description: "Bull sharks' reputation as uniquely dangerous is largely a function of habitat overlap with humans, not inherent aggression. Sharing science-based information about bull shark ecology builds public support for their conservation.", link: null },
+      ],
     },
     {
       id: "tiger-shark",
@@ -498,6 +519,13 @@ window.WIKI_DATA = {
         { name: "Bycatch",               severity: "high",   description: "Frequently caught incidentally in pelagic longlines, gillnets, and drum lines targeting tuna and billfish. Wide-ranging movements across ocean basins increase exposure to diverse fisheries." },
         { name: "Lethal Culling Programs", severity: "high",  description: "Government-sanctioned drum line and shark net programs in Australia and Hawaii kill hundreds of tiger sharks annually to reduce perceived risk to swimmers, with limited evidence of effectiveness." },
         { name: "Habitat Pressures",     severity: "low",    description: "Coastal development and reef degradation reduce prey availability in nearshore habitats, but wide-ranging oceanic behavior provides some buffer against localized habitat loss." },
+      ],
+      actionItems: [
+        { title: "Oppose Lethal Shark Mitigation Programs", description: "Government drum line and shark net programs in Australia and Hawaii kill hundreds of tiger sharks annually with limited evidence of effectiveness. Advocate for SMART drumlines, drones, and other non-lethal alternatives that protect both swimmers and sharks.", link: null },
+        { title: "Oppose Shark Finning and the Fin Trade", description: "Tiger shark fins are highly valued globally. Refusing to buy or consume shark fin products and supporting fin ban legislation reduces the financial incentive driving targeted fishing of this species.", link: null },
+        { title: "Support Shark Conservation Organizations", description: "Donate to or follow the work of Shark Trust, Save Our Seas Foundation, and Ocean Conservancy — groups that fund research, advocate against culling programs, and push for stronger international protections.", link: "https://www.sharktrust.org" },
+        { title: "Protect Sea Turtle Populations", description: "Tiger sharks regulate sea turtle populations, which in turn protect seagrass meadows critical to coastal ocean health. Supporting sea turtle conservation — nesting beach protections, bycatch reduction — keeps this ecosystem intact.", link: null },
+        { title: "Choose Sustainable Seafood", description: "Tiger sharks are frequently caught as bycatch in pelagic longlines targeting tuna and billfish. Use the Monterey Bay Aquarium Seafood Watch to choose seafood caught with lower bycatch rates.", link: "https://www.seafoodwatch.org" },
       ],
     },
   ],
