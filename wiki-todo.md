@@ -18,7 +18,7 @@ Check off items as they're completed. Add notes inline as needed.
 - [ ] Add more shark species beyond the current 5 (there are 500+ shark species)
 - [x] Add taxonomy info per species (Family, Order, Class) to Vital Signs
 - [ ] Add geographic range description as a data field
-- [ ] Add conservation status history (e.g., "Was Near Threatened in 2000, now Vulnerable")
+- [x] Add conservation status history (e.g., "Was Near Threatened in 2000, now Vulnerable")
 - [ ] Add "related species" cross-references between cards
 - [ ] Add links to external resources within species (papers, org pages) in Action Items
 - [x] Add `emoji` field for all species (fallback in hero image area)
