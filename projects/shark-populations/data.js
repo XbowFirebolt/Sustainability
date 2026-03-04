@@ -58,6 +58,10 @@ window.WIKI_DATA = {
         { label: "Global Range", value: "Temperate, subtropical & tropical oceans worldwide" },
         { label: "Depth Range",  value: "Surface to 1,280 m (4,199 ft)", metric: "Surface to 1,280 m", imperial: "Surface to 4,199 ft" },
       ],
+      statusHistory: [
+        { year: 1970, status: "Not Evaluated" },
+        { year: 1996, status: "Vulnerable" },
+      ],
       populationTrend: [
         { year: 1970, value: 10000 },
         { year: 1980, value: 8500 },
@@ -156,6 +160,12 @@ window.WIKI_DATA = {
         { label: "Key Senses",             value: "Cephalofoil provides 360° vertical vision and enhanced electroreception via expanded Ampullae of Lorenzini" },
       ],
       habitatImage: "projects/shark-populations/images/scalloped_hammerhead/scalloped_hammerhead_habitat.png",
+      statusHistory: [
+        { year: 1970, status: "Not Evaluated" },
+        { year: 1996, status: "Vulnerable" },
+        { year: 2008, status: "Endangered" },
+        { year: 2019, status: "Critically Endangered" },
+      ],
       populationTrend: [
         { year: 1970, value: 120000 },
         { year: 1980, value: 100000 },
@@ -246,6 +256,11 @@ window.WIKI_DATA = {
         { label: "Key Adaptations",        value: "Unique spot/stripe pattern used for individual ID; ram filtration through dermal denticle-lined gill rakers" },
       ],
       habitatImage: "projects/shark-populations/images/whale_shark/whale_shark_habitat.png",
+      statusHistory: [
+        { year: 1970, status: "Not Evaluated" },
+        { year: 2000, status: "Vulnerable" },
+        { year: 2016, status: "Endangered" },
+      ],
       populationTrend: [
         { year: 1970, value: 260000 },
         { year: 1980, value: 240000 },
@@ -337,6 +352,10 @@ window.WIKI_DATA = {
         { label: "Key Adaptations",        value: "Unique osmoregulation via kidneys and rectal gland; can survive in freshwater for years — the only large shark to do so" },
       ],
       habitatImage: "projects/shark-populations/images/bull_shark/bull_shark_habitat.png",
+      statusHistory: [
+        { year: 1985, status: "Data Deficient" },
+        { year: 2009, status: "Near Threatened" },
+      ],
       populationTrend: [
         { year: 1985, value: 2000000 },
         { year: 1993, value: 1750000 },
@@ -427,6 +446,10 @@ window.WIKI_DATA = {
         { label: "Key Senses",             value: "Highly sensitive Ampullae of Lorenzini and lateral line; olfactory lobes among largest relative to brain size of any shark" },
       ],
       habitatImage: "projects/shark-populations/images/tiger_shark/tiger_shark_habitat.png",
+      statusHistory: [
+        { year: 1985, status: "Data Deficient" },
+        { year: 2009, status: "Near Threatened" },
+      ],
       populationTrend: [
         { year: 1985, value: 3500000 },
         { year: 1993, value: 3100000 },

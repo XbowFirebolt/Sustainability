@@ -2419,6 +2419,36 @@ body.no-map {
   line-height: 1.5;
 }
 
+/* ── Population chart — status history legend ── */
+.chart-status-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+  padding: 0.45rem 0 0.1rem;
+  margin-top: 0.25rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.chart-status-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.67rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+.chart-status-dot {
+  flex-shrink: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.chart-status-year {
+  opacity: 0.7;
+}
+
 /* ── Health Metrics — right column (value + optional links) ── */
 .tab-health-right {
   display: flex;

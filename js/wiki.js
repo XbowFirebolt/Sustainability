@@ -53,6 +53,32 @@ const TAG_BADGE = {
   "keystone":   { icon: "🔑", label: "Keystone",  color: "#7a6010", bg: "rgba(122,96,16,0.12)"  },
 };
 
+const STATUS_ORDER = [
+  { label: "Extinct",               color: "#888888", bg: "rgba(136,136,136,0.13)" },
+  { label: "Extinct in the Wild",   color: "#9c3d9c", bg: "rgba(156,61,156,0.13)"  },
+  { label: "Critically Endangered", color: "#c0320a", bg: "rgba(192,50,10,0.13)"   },
+  { label: "Endangered",            color: "#c07a10", bg: "rgba(192,122,16,0.13)"  },
+  { label: "Vulnerable",            color: "#b0a010", bg: "rgba(176,160,16,0.13)"  },
+  { label: "Near Threatened",       color: "#5a8a2a", bg: "rgba(90,138,42,0.13)"   },
+  { label: "Least Concern",         color: "#2d6a2d", bg: "rgba(45,106,45,0.13)"   },
+  { label: "Data Deficient",        color: "#707070", bg: "rgba(112,112,112,0.13)" },
+  { label: "Not Evaluated",         color: "#505050", bg: "rgba(80,80,80,0.13)"    },
+];
+
+function getStatusAtYear(statusHistory, year) {
+  if (!Array.isArray(statusHistory) || !statusHistory.length) return null;
+  let result = null;
+  for (const entry of statusHistory) {
+    if (entry.year <= year) result = entry.status;
+  }
+  return result;
+}
+
+function getStatusColor(statusLabel) {
+  const found = STATUS_ORDER.find((s) => s.label === statusLabel);
+  return found ? found.color : null;
+}
+
 const COMPLETENESS_FIELDS = ["vitalSigns", "populationTrend", "healthMetrics", "actionItems"];
 
 function isSpeciesIncomplete(species) {
@@ -1099,7 +1125,7 @@ function renderVitalSigns(species) {
   renderCredits(panel);
 }
 
-function renderPopulationChart(container, data) {
+function renderPopulationChart(container, data, statusHistory) {
   const PAD = { top: 14, right: 16, bottom: 46, left: 62 };
   const W = 480, H = 174;
   const innerW = W - PAD.left - PAD.right;
@@ -1215,11 +1241,14 @@ function renderPopulationChart(container, data) {
   data.forEach((d, i) => {
     const cx = xOf(i), cy = yOf(d.value);
 
+    const statusAtYear = getStatusAtYear(statusHistory, d.year);
+    const dotColor = statusAtYear ? getStatusColor(statusAtYear) : null;
+
     const dot = document.createElementNS(svgNS, "circle");
     dot.setAttribute("cx", cx);
     dot.setAttribute("cy", cy);
     dot.setAttribute("r", "3.5");
-    dot.setAttribute("fill", "var(--color-primary)");
+    dot.setAttribute("fill", dotColor || "var(--color-primary)");
     dot.setAttribute("class", "chart-dot");
     svg.appendChild(dot);
 
@@ -1291,6 +1320,39 @@ function renderPopulationChart(container, data) {
   xAxisLabel.setAttribute("class", "health-chart-axis-label");
   xAxisLabel.textContent = "Year";
   svg.appendChild(xAxisLabel);
+
+  // Status history legend — only if multiple distinct statuses appear in the data range
+  if (Array.isArray(statusHistory) && statusHistory.length) {
+    const dataYears = data.map((d) => d.year);
+    const minYear = Math.min(...dataYears);
+    const maxYear = Math.max(...dataYears);
+    const sorted = [...statusHistory].sort((a, b) => a.year - b.year);
+
+    const entries = sorted
+      .map((entry, idx) => ({
+        status: entry.status,
+        fromYear: entry.year,
+        toYear: idx < sorted.length - 1 ? sorted[idx + 1].year : null,
+      }))
+      .filter((e) => e.fromYear <= maxYear && (e.toYear === null || e.toYear > minYear));
+
+    const uniqueStatuses = new Set(entries.map((e) => e.status));
+    if (uniqueStatuses.size > 1) {
+      const legend = document.createElement("div");
+      legend.className = "chart-status-legend";
+      entries.forEach((e) => {
+        const color = getStatusColor(e.status) || "var(--color-primary)";
+        const yearRange = e.toYear ? `${e.fromYear}–${e.toYear}` : `${e.fromYear}–present`;
+        const item = document.createElement("span");
+        item.className = "chart-status-legend-item";
+        item.innerHTML =
+          `<span class="chart-status-dot" style="background:${color}"></span>` +
+          `${e.status} <span class="chart-status-year">(${yearRange})</span>`;
+        legend.appendChild(item);
+      });
+      container.appendChild(legend);
+    }
+  }
 }
 
 function renderRegionGrid(container, regions) {
@@ -1348,7 +1410,7 @@ function renderHealthMetrics(species) {
     chartBody.style.padding = "0.65rem 0.75rem";
     const chartWrap = document.createElement("div");
     chartWrap.className = "health-chart-wrap";
-    renderPopulationChart(chartWrap, species.populationTrend);
+    renderPopulationChart(chartWrap, species.populationTrend, species.statusHistory);
     chartBody.appendChild(chartWrap);
 
     const meta = species.populationTrendMeta;
@@ -2679,19 +2741,6 @@ document.addEventListener("keydown", (e) => {
 });
 
 // ── At-a-glance status bar ─────────────────────────────────────
-
-const STATUS_ORDER = [
-  { label: "Extinct",               color: "#888888", bg: "rgba(136,136,136,0.13)" },
-  { label: "Extinct in the Wild",   color: "#9c3d9c", bg: "rgba(156,61,156,0.13)"  },
-  { label: "Critically Endangered", color: "#c0320a", bg: "rgba(192,50,10,0.13)"   },
-  { label: "Endangered",            color: "#c07a10", bg: "rgba(192,122,16,0.13)"  },
-  { label: "Vulnerable",            color: "#b0a010", bg: "rgba(176,160,16,0.13)"  },
-  { label: "Near Threatened",       color: "#5a8a2a", bg: "rgba(90,138,42,0.13)"   },
-  { label: "Least Concern",         color: "#2d6a2d", bg: "rgba(45,106,45,0.13)"   },
-  { label: "Data Deficient",        color: "#707070", bg: "rgba(112,112,112,0.13)" },
-  { label: "Not Evaluated",         color: "#505050", bg: "rgba(80,80,80,0.13)"    },
-];
-
 
 function updateFilterBtnState() {
   const btn = document.getElementById("wiki-filter-btn");
