@@ -1511,6 +1511,7 @@ let activeDietFilters    = new Set();
 let activeRegionFilters  = new Set();
 let activeTagFilters     = new Set();
 let sortMode = "default";
+let wikiViewMode = localStorage.getItem("wiki-view-mode") || "grid";
 let showFavoritesOnly = false;
 let manageFavoritesMode = false;
 let manageFavoritesSelected = new Set();
@@ -1713,6 +1714,12 @@ function createSpeciesCard(species, q, favIds) {
   body.appendChild(sci);
   body.appendChild(badgeRow);
   if (threatBadge) body.appendChild(threatBadge);
+  if (species.description) {
+    const desc = document.createElement("div");
+    desc.className = "card-desc";
+    desc.textContent = species.description;
+    body.appendChild(desc);
+  }
   if (tabMatch) {
     const tabLabel = tabMatch === "threats" ? "Threats" : tabMatch === "actions" ? "Actions" : "Description";
     const matchBadge = document.createElement("div");
@@ -1724,6 +1731,281 @@ function createSpeciesCard(species, q, favIds) {
   card.appendChild(imgArea);
   card.appendChild(body);
   return card;
+}
+
+function createListHeader() {
+  const hdr = document.createElement("div");
+  hdr.className = "list-header-row";
+  [
+    { label: "",                   cls: "list-col-lbl--star" },
+    { label: "Species",            cls: "list-col-lbl--species" },
+    { label: "Habitat \u00b7 Diet",cls: "list-col-lbl--habdiet" },
+    { label: "Key Stats",          cls: "list-col-lbl--stats" },
+    { label: "Population Health",  cls: "list-col-lbl--health" },
+    { label: "",                   cls: "list-col-lbl--chevron" },
+  ].forEach(({ label, cls }) => {
+    const col = document.createElement("span");
+    col.className = `list-col-lbl ${cls}`;
+    col.textContent = label;
+    hdr.appendChild(col);
+  });
+  return hdr;
+}
+
+const THREAT_DOT_COLOR = { critical: "#dc2626", high: "#e67e22", medium: "#f59e0b", low: "#16a34a" };
+
+function createListExtra(species) {
+  const extra = document.createElement("div");
+  extra.className = "list-extra";
+
+  // Overview
+  if (species.description) {
+    const g = document.createElement("div");
+    g.className = "list-extra-group list-extra-group--overview";
+    const lbl = document.createElement("div");
+    lbl.className = "list-extra-label";
+    lbl.textContent = "Overview";
+    const val = document.createElement("div");
+    val.className = "list-extra-overview";
+    val.textContent = species.description;
+    g.appendChild(lbl);
+    g.appendChild(val);
+    extra.appendChild(g);
+  }
+
+  // Primary Threats
+  if (species.threats && species.threats.length > 0) {
+    const g = document.createElement("div");
+    g.className = "list-extra-group";
+    const lbl = document.createElement("div");
+    lbl.className = "list-extra-label";
+    lbl.textContent = "Primary Threats";
+    const list = document.createElement("div");
+    list.className = "list-extra-threats";
+    species.threats.slice(0, 3).forEach((t) => {
+      const item = document.createElement("div");
+      item.className = "list-extra-threat-item";
+      const dot = document.createElement("span");
+      dot.className = "list-extra-threat-dot";
+      dot.style.background = THREAT_DOT_COLOR[t.severity] || THREAT_DOT_COLOR.medium;
+      const name = document.createTextNode(t.name);
+      item.appendChild(dot);
+      item.appendChild(name);
+      list.appendChild(item);
+    });
+    g.appendChild(lbl);
+    g.appendChild(list);
+    extra.appendChild(g);
+  }
+
+  // Regions
+  if (species.geographicRegions && species.geographicRegions.length > 0) {
+    const g = document.createElement("div");
+    g.className = "list-extra-group";
+    const lbl = document.createElement("div");
+    lbl.className = "list-extra-label";
+    lbl.textContent = "Regions";
+    const tags = document.createElement("div");
+    tags.className = "list-extra-tags";
+    species.geographicRegions.forEach((r) => {
+      const tag = document.createElement("span");
+      tag.className = "list-extra-tag";
+      tag.textContent = r.charAt(0).toUpperCase() + r.slice(1);
+      tags.appendChild(tag);
+    });
+    g.appendChild(lbl);
+    g.appendChild(tags);
+    extra.appendChild(g);
+  }
+
+  // Tags
+  if (species.tags && species.tags.length > 0) {
+    const g = document.createElement("div");
+    g.className = "list-extra-group";
+    const lbl = document.createElement("div");
+    lbl.className = "list-extra-label";
+    lbl.textContent = "Tags";
+    const tags = document.createElement("div");
+    tags.className = "list-extra-tags";
+    species.tags.forEach((t) => {
+      const tag = document.createElement("span");
+      tag.className = "list-extra-tag";
+      tag.textContent = t.charAt(0).toUpperCase() + t.slice(1);
+      tags.appendChild(tag);
+    });
+    g.appendChild(lbl);
+    g.appendChild(tags);
+    extra.appendChild(g);
+  }
+
+  return extra;
+}
+
+function createListRow(species, q, favIds) {
+  const isFav = favIds.includes(species.id);
+  const tabMatch = q && !matchesPrimary(species, q) ? matchesTabContent(species, q) : null;
+
+  const row = document.createElement("div");
+  row.className = "list-row" + (manageFavoritesMode ? " manage-mode" : "");
+  if (manageFavoritesMode && manageFavoritesSelected.has(species.id)) row.classList.add("manage-selected");
+  row.dataset.speciesId = species.id;
+  row.tabIndex = 0;
+
+  // Star / manage-select button
+  const starBtn = document.createElement("button");
+  if (manageFavoritesMode) {
+    const isSelected = manageFavoritesSelected.has(species.id);
+    starBtn.className = "list-star" + (isSelected ? " selected" : "");
+    starBtn.textContent = isSelected ? "\u2713" : "\u2610";
+    starBtn.setAttribute("aria-label", isSelected ? `Deselect ${species.commonName}` : `Select ${species.commonName}`);
+    starBtn.addEventListener("click", (e) => { e.stopPropagation(); row.click(); });
+  } else {
+    starBtn.className = "list-star" + (isFav ? " favorited" : "");
+    starBtn.textContent = isFav ? "\u2605" : "\u2606";
+    starBtn.setAttribute("aria-label", isFav ? `Unfavorite ${species.commonName}` : `Favorite ${species.commonName}`);
+    starBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const ids = loadFavorites();
+      const idx = ids.indexOf(species.id);
+      if (idx === -1) ids.push(species.id);
+      else ids.splice(idx, 1);
+      saveFavorites(ids);
+      renderWikiGrid(wikiSearch.value);
+    });
+  }
+
+  // Row click — expand/collapse inline detail
+  row.addEventListener("click", () => {
+    if (manageFavoritesMode) {
+      const isSelected = manageFavoritesSelected.has(species.id);
+      if (isSelected) {
+        manageFavoritesSelected.delete(species.id);
+        row.classList.remove("manage-selected");
+        starBtn.textContent = "\u2610";
+        starBtn.classList.remove("selected");
+        starBtn.setAttribute("aria-label", `Select ${species.commonName}`);
+      } else {
+        manageFavoritesSelected.add(species.id);
+        row.classList.add("manage-selected");
+        starBtn.textContent = "\u2713";
+        starBtn.classList.add("selected");
+        starBtn.setAttribute("aria-label", `Deselect ${species.commonName}`);
+      }
+      updateManageToolbar();
+    } else {
+      const isExpanded = row.classList.contains("list-row--expanded");
+      if (isExpanded) {
+        row.classList.remove("list-row--expanded");
+        const extra = row.querySelector(".list-extra");
+        if (extra) extra.remove();
+      } else {
+        row.classList.add("list-row--expanded");
+        row.appendChild(createListExtra(species));
+      }
+    }
+  });
+
+  // Names
+  const names = document.createElement("div");
+  names.className = "list-names";
+  const common = document.createElement("div");
+  common.className = "list-common";
+  applyHighlight(common, species.commonName, q);
+  const sci = document.createElement("div");
+  sci.className = "list-sci";
+  applyHighlight(sci, species.scientificName, q);
+  names.appendChild(common);
+  names.appendChild(sci);
+
+  // Middle: badges + description snippet
+  const middle = document.createElement("div");
+  middle.className = "list-middle";
+
+  const badges = document.createElement("div");
+  badges.className = "list-badges";
+  (species.habitatTypes || []).forEach((type) => {
+    const info = HABITAT_BADGE[type];
+    if (!info) return;
+    const b = document.createElement("span");
+    b.className = `card-badge card-badge--habitat card-badge--${type}`;
+    b.textContent = `${info.icon} ${info.label}`;
+    badges.appendChild(b);
+  });
+  if (species.dietType) {
+    const info = DIET_BADGE[species.dietType];
+    if (info) {
+      const b = document.createElement("span");
+      b.className = `card-badge card-badge--diet card-badge--${species.dietType}`;
+      b.textContent = `${info.icon} ${info.label}`;
+      badges.appendChild(b);
+    }
+  }
+  const maxSeverity = getMaxSeverityLabel(species);
+  if (maxSeverity) {
+    const b = document.createElement("span");
+    b.className = `card-threat-badge tab-severity-badge tab-severity-badge--${maxSeverity}`;
+    b.textContent = maxSeverity.charAt(0).toUpperCase() + maxSeverity.slice(1);
+    badges.appendChild(b);
+  }
+  middle.appendChild(badges);
+
+  // Key stats pills (glance vitalSigns)
+  const allVitals = Array.isArray(species.vitalSigns) ? species.vitalSigns : [];
+  const glanceVitals = allVitals.filter((v) => v.glance).slice(0, 3);
+  const statItems = glanceVitals.length ? glanceVitals : allVitals.slice(0, 3);
+  const stats = document.createElement("div");
+  stats.className = "list-stats";
+  statItems.forEach((v) => {
+    const pill = document.createElement("span");
+    pill.className = "list-stat";
+    const val = unitMode === "metric" && v.metric ? v.metric :
+                unitMode === "imperial" && v.imperial ? v.imperial : v.value;
+    pill.textContent = `${v.label}: ${val}`;
+    stats.appendChild(pill);
+  });
+
+  // Health bar
+  const health = document.createElement("div");
+  health.className = "list-health";
+  const healthRow = document.createElement("div");
+  healthRow.className = "list-health-row";
+  const bar = document.createElement("div");
+  bar.className = "list-health-bar";
+  const fill = document.createElement("div");
+  fill.className = "list-health-fill";
+  fill.style.background = getLifeBarColor(species.lifePercent);
+  fill.dataset.targetPct = species.lifePercent;
+  bar.appendChild(fill);
+  const pct = document.createElement("div");
+  pct.className = "list-health-pct";
+  pct.textContent = "0%";
+  healthRow.appendChild(bar);
+  healthRow.appendChild(pct);
+  const statusEl = document.createElement("div");
+  statusEl.className = "list-health-status";
+  applyHighlight(statusEl, species.statusLabel, q);
+  health.appendChild(healthRow);
+  health.appendChild(statusEl);
+
+  // Chevron — opens the species card
+  const chevron = document.createElement("button");
+  chevron.className = "list-chevron";
+  chevron.innerHTML = `<svg class="list-chevron-icon" viewBox="0 0 10 22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,4 7,11 3,18"/></svg>`;
+  chevron.title = "Open species card";
+  chevron.setAttribute("aria-label", `Open ${species.commonName} card`);
+  chevron.addEventListener("click", (e) => {
+    e.stopPropagation();
+    openSpeciesModal(species, row, tabMatch || "overview");
+  });
+
+  row.appendChild(starBtn);
+  row.appendChild(names);
+  row.appendChild(middle);
+  row.appendChild(stats);
+  row.appendChild(health);
+  row.appendChild(chevron);
+
+  return row;
 }
 
 function matchesPrimary(s, q) {
@@ -1821,6 +2103,9 @@ function renderWikiGrid(query) {
   }
 
   grid.innerHTML = "";
+  grid.className = "wiki-grid" +
+    (wikiViewMode === "masonry" ? " wiki-grid--masonry" :
+     wikiViewMode === "list"    ? " wiki-grid--list"    : "");
   focusedCardIndex = -1;
 
   if (sorted.length === 0) {
@@ -1855,6 +2140,10 @@ function renderWikiGrid(query) {
     return;
   }
 
+  if (wikiViewMode === "list") {
+    grid.appendChild(createListHeader());
+  }
+
   if (sortMode === "threat-desc") {
     const severityGroups = [
       { severity: "critical", score: 4 },
@@ -1881,13 +2170,21 @@ function renderWikiGrid(query) {
       header.appendChild(rule);
       grid.appendChild(header);
 
-      group.forEach((species) => grid.appendChild(createSpeciesCard(species, q, favIds)));
+      group.forEach((species) => {
+        grid.appendChild(wikiViewMode === "list"
+          ? createListRow(species, q, favIds)
+          : createSpeciesCard(species, q, favIds));
+      });
     });
   } else {
-    sorted.forEach((species) => grid.appendChild(createSpeciesCard(species, q, favIds)));
+    sorted.forEach((species) => {
+      grid.appendChild(wikiViewMode === "list"
+        ? createListRow(species, q, favIds)
+        : createSpeciesCard(species, q, favIds));
+    });
   }
 
-  // Animate progress rings from 0 to their value as cards enter the viewport
+  // Animate health indicators from 0 to their value as items enter the viewport
   if (window._wikiLifeObserver) window._wikiLifeObserver.disconnect();
   window._wikiLifeObserver = new IntersectionObserver((entries) => {
     const visible = entries
@@ -1898,6 +2195,7 @@ function renderWikiGrid(query) {
           a.boundingClientRect.left - b.boundingClientRect.left
       );
     visible.forEach((entry, i) => {
+      // Progress ring (grid / masonry cards)
       const ring = entry.target.querySelector(".ring-fill");
       if (ring) setTimeout(() => {
         ring.style.strokeDashoffset = ring.dataset.targetOffset;
@@ -1914,10 +2212,27 @@ function renderWikiGrid(query) {
           })(performance.now());
         }
       }, i * 60);
+      // Health bar (list rows)
+      const fill = entry.target.querySelector(".list-health-fill");
+      if (fill) setTimeout(() => {
+        const target = +fill.dataset.targetPct;
+        fill.style.width = target + "%";
+        const pctEl = entry.target.querySelector(".list-health-pct");
+        if (pctEl) {
+          const duration = 650;
+          const start = performance.now();
+          (function tick(now) {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 2);
+            pctEl.textContent = Math.round(eased * target) + "%";
+            if (progress < 1) requestAnimationFrame(tick);
+          })(performance.now());
+        }
+      }, i * 60);
       window._wikiLifeObserver.unobserve(entry.target);
     });
   }, { threshold: 0.15 });
-  grid.querySelectorAll(".species-card").forEach((card) => window._wikiLifeObserver.observe(card));
+  grid.querySelectorAll(".species-card, .list-row").forEach((el) => window._wikiLifeObserver.observe(el));
   updateClearFiltersVisibility();
   updateFavoritesToggleText();
 }
@@ -2018,6 +2333,26 @@ document.getElementById("wiki-sort").addEventListener("change", (e) => {
   sortMode = e.target.value;
   renderWikiGrid(wikiSearch.value);
   syncUrlFromState();
+});
+
+// ── View mode toggle ─────────────────────────────────────────────
+
+function setViewMode(mode) {
+  wikiViewMode = mode;
+  localStorage.setItem("wiki-view-mode", mode);
+  document.querySelectorAll(".wiki-view-btn").forEach((btn) => {
+    btn.classList.toggle("active", btn.dataset.view === mode);
+  });
+  renderWikiGrid(wikiSearch.value);
+}
+
+["wiki-view-grid", "wiki-view-masonry", "wiki-view-list"].forEach((id) => {
+  const btn = document.getElementById(id);
+  if (!btn) return;
+  const mode = id.replace("wiki-view-", "");
+  btn.dataset.view = mode;
+  btn.classList.toggle("active", mode === wikiViewMode);
+  btn.addEventListener("click", () => setViewMode(mode));
 });
 
 document.getElementById("wiki-favorites-toggle").addEventListener("click", () => {
@@ -2180,7 +2515,7 @@ kbHelpOverlay.addEventListener("click", (e) => { if (e.target === kbHelpOverlay)
 // ── Keyboard navigation ────────────────────────────────────────
 
 function getVisibleCards() {
-  return Array.from(document.querySelectorAll(".species-card"));
+  return Array.from(document.querySelectorAll(".species-card, .list-row"));
 }
 
 function setFocusedCard(index) {
@@ -2270,8 +2605,7 @@ document.addEventListener("keydown", (e) => {
     const card = cards[focusedCardIndex];
     if (!card) return;
     e.preventDefault();
-    const species = WIKI_DATA.items.find((s) => s.id === card.dataset.speciesId);
-    if (species) openSpeciesModal(species, card);
+    card.click();
     return;
   }
 });

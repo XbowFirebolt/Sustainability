@@ -61,8 +61,8 @@ Check off items as they're completed. Add notes inline as needed.
 - [ ] **Loading skeleton screens** — show skeleton card shapes while species images load, instead of empty/blank cards
 - [ ] **Lazy load images** — use IntersectionObserver so off-screen species photos don't load until scrolled into view
 - [x] **Interactive population chart** — hover/tap data points to see exact year and value tooltips
-- [ ] **Compact vs. expanded card view toggle** — let users switch between a dense compact list view and the current large card grid
-- [ ] **Masonry or variable-height grid option** — alternative to the fixed-width uniform grid
+- [x] **Compact vs. expanded card view toggle** — let users switch between a dense compact list view and the current large card grid
+- [x] **Masonry or variable-height grid option** — alternative to the fixed-width uniform grid
 - [x] **Sticky search bar** — keep the search input visible as the user scrolls down the grid
 - [x] **Animate status chips appearance** — stagger-animate the At a Glance chips on page load for a polished intro
 - [x] **Species count badge in status chips** — make the count more prominent (e.g., large number above label), like an app badge
