@@ -76,14 +76,59 @@ node scripts/check-completeness.js
 Reference from `wiki-todo.md`:
 > Data completeness audit script
 
-### 2c. Consider splitting data.js
+### 2c. Split data.js into per-species JSON files + build script
 
-At 50+ species, a single `data.js` becomes hard to edit. Options:
+At 50+ species, a single `data.js` becomes impossible to maintain. The plan: author each species as a standalone `.json` file, generate `data.js` via a Node build script, and use the same pipeline for IUCN-automated stub generation.
 
-- **One file per species:** `data/great-white.js`, `data/scalloped-hammerhead.js` — concatenated at build time
-- **JSON source + JS wrapper:** author species in `.json` files, generate `data.js` via a build script
+**Target file structure:**
+```
+projects/shark-populations/
+  data/
+    config.json           ← project metadata (sources, keys, silhouette path)
+    species/
+      great-white.json
+      whale-shark.json
+      ...                 ← one file per species
+  scripts/
+    build-data.js         ← reads data/ → writes data.js
+    generate-stubs.js     ← IUCN API → writes new .json files to data/species/
+    check-completeness.js   (already exists)
+  data.js                 ← GENERATED, not hand-edited
+```
 
-The JSON approach unlocks automation (pull from APIs, validate with a schema, generate JS). Decide before Phase 3.
+**Workflow:**
+- **Edit a species** → edit its `.json` file, run `build-data.js`
+- **Add species (manual)** → create a new `.json` stub, run `build-data.js`
+- **Add species (automated)** → run `generate-stubs.js`, then `build-data.js`
+- **Browser** → loads `data.js` exactly as today (no app code changes)
+
+**Why JSON over JS files:**
+- JSON is what the IUCN API returns — no translation layer needed
+- Easier to validate against the data schema
+- Clean git diffs when a single species is updated
+- `build-data.js` is trivial: read all `.json` files in `data/species/`, merge with `config.json`, write `window.WIKI_DATA = {...}`
+
+**The automation script (`generate-stubs.js`):**
+
+The IUCN Red List API (`apiv3.iucnredlist.org`) returns structured assessments for any evaluated species. The script will:
+1. Fetch all shark species from IUCN (family-level search)
+2. For each species, fetch its full assessment
+3. Map IUCN fields → data schema fields (e.g. `category` → `statusLabel`, threat codes → `threats` array, habitat codes → `habitatTypes`)
+4. Write `data/species/<slug>.json` at Stub tier — leaving Full/Standard fields empty for later
+5. Print a summary of what was generated and what needs manual fill-in
+
+What stays manual (automation can't populate these):
+- `photos`, `physicalScaleImage`, `habitatImage` (Full tier)
+- `vitalSigns` numeric data (Standard tier)
+- `funFact` and `description` prose
+- Anything IUCN doesn't have structured data for
+
+**Checklist:**
+- [ ] Migrate the 5 existing species from `data.js` → individual `.json` files + `config.json`
+- [ ] Write `build-data.js` and verify the generated `data.js` is identical to the current hand-authored one
+- [ ] Write `generate-stubs.js` with IUCN API field mapping
+- [ ] Test stub generation on a known species and QA the output against `data-schema.md`
+- [ ] Mark `data.js` as generated in a comment at the top of the file
 
 ---
 
