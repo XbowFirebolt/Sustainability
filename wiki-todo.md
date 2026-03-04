@@ -16,7 +16,7 @@ Check off items as they're completed. Add notes inline as needed.
 - [ ] Add population trend chart data for all species (currently only Great White has this)
 - [ ] Add prey decline + fishing pressure regional data for all species
 - [ ] Add more shark species beyond the current 5 (there are 500+ shark species)
-- [ ] Add taxonomy info per species (Family, Order, Class) to Vital Signs
+- [x] Add taxonomy info per species (Family, Order, Class) to Vital Signs
 - [ ] Add geographic range description as a data field
 - [ ] Add conservation status history (e.g., "Was Near Threatened in 2000, now Vulnerable")
 - [ ] Add "related species" cross-references between cards

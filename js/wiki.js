@@ -1056,6 +1056,46 @@ function renderVitalSigns(species) {
     panel.appendChild(scaleBox);
   }
 
+  // ── 🔬 Taxonomy / Classification section box ─────────────────
+  if (species.taxonomy) {
+    const tx = species.taxonomy;
+    const RANKS = [
+      { label: "Kingdom", key: "kingdom" },
+      { label: "Phylum",  key: "phylum"  },
+      { label: "Class",   key: "class"   },
+      { label: "Order",   key: "order"   },
+      { label: "Family",  key: "family"  },
+      { label: "Genus",   key: "genus"   },
+      { label: "Species", key: "species" },
+    ];
+    const taxBox = createSectionBox("🔬", "Classification");
+    const txList = document.createElement("div");
+    txList.className = "tab-vital-list";
+    RANKS.forEach(({ label, key }) => {
+      if (!tx[key]) return;
+      const row = document.createElement("div");
+      row.className = "tab-vital-row";
+      const lbl = document.createElement("span");
+      lbl.className = "tab-vital-label";
+      lbl.textContent = label;
+      const val = document.createElement("span");
+      val.className = "tab-vital-value";
+      const isItalic = key === "genus" || key === "species";
+      if (isItalic) {
+        const em = document.createElement("em");
+        em.textContent = tx[key];
+        val.appendChild(em);
+      } else {
+        val.textContent = tx[key];
+      }
+      row.appendChild(lbl);
+      row.appendChild(val);
+      txList.appendChild(row);
+    });
+    taxBox.querySelector(".section-box-body").appendChild(txList);
+    panel.appendChild(taxBox);
+  }
+
   renderCredits(panel);
 }
 
