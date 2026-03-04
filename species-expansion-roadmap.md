@@ -48,7 +48,7 @@ Before scaling out, stabilize the foundation.
 - [x] Fill `healthMetrics` for the 4 partial species
 - [x] Add shark-silhouette fallback logic so species without real photos still look clean
 - [x] Add `emoji` field to all 5 (`🦈` works for most)
-- [ ] Confirm modal renders gracefully when `populationTrend`, `preyDeclineRegions`, and `fishingPressureRegions` are empty arrays
+- [x] Confirm modal renders gracefully when `populationTrend`, `preyDeclineRegions`, and `fishingPressureRegions` are empty arrays
 
 ---
 
