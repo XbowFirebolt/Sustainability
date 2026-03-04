@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mock-up C — Dashboard Split</title>
+  <style>
+    :root {
+      --color-primary: #2d6a2d;
+      --color-bg: #f4f8f4;
+      --color-text: #1a2e1a;
+      --color-text-muted: #5a8a5a;
+      --color-text-dim: #4a6a4a;
+      --color-border: #e8f0e8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #c8d8c8;
+      min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center; padding: 1.5rem 1rem;
+    }
+    .mockup-banner {
+      width: 100%; max-width: 900px; background: #1a2e1a; color: #f4f8f4;
+      padding: 0.65rem 1rem; border-radius: 8px 8px 0 0;
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: 0.75rem; gap: 1rem;
+    }
+    .mockup-banner strong { font-size: 0.8rem; letter-spacing: 0.04em; }
+    .mockup-banner em { opacity: 0.65; font-style: normal; }
+    .species-modal {
+      width: 100%; max-width: 900px; height: 88vh; overflow-y: auto;
+      background: var(--color-bg); border-radius: 0 0 12px 12px;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.28); scrollbar-width: none;
+    }
+    .species-modal::-webkit-scrollbar { display: none; }
+    .species-modal-image {
+      height: 280px;
+      background: url('../projects/shark-populations/images/white_shark/white_shark1.png') center/cover no-repeat, linear-gradient(135deg, #0a1525, #1a3a6a);
+    }
+    .species-modal-sticky { position: sticky; top: 0; z-index: 2; background: var(--color-bg); }
+    .modal-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.75rem; padding: 0.6rem 1.25rem; }
+    .species-modal-name { font-size: 1.15rem; font-weight: 700; color: var(--color-text); }
+    .species-modal-sci { font-size: 0.85rem; font-style: italic; color: var(--color-text-muted); margin-top: 0.1rem; }
+    .modal-header-actions { display: flex; align-items: center; gap: 0.3rem; }
+    .modal-nav-btn, .close-btn {
+      width: 1.75rem; height: 1.75rem; border: 1px solid var(--color-border); border-radius: 50%;
+      background: transparent; color: var(--color-text-muted); font-size: 1.05rem; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .modal-nav-counter { font-size: 0.72rem; color: var(--color-text-dim); min-width: 2.5rem; text-align: center; }
+    .species-modal-hero { padding: 0.5rem 1.25rem 0.65rem; border-bottom: 1px solid var(--color-border); }
+    .species-life-wrap { display: flex; align-items: center; gap: 0.75rem; }
+    .species-life-bar { flex: 1; height: 6px; background: var(--color-border); border-radius: 3px; overflow: hidden; }
+    .species-life-fill { height: 100%; border-radius: 3px; background: #b0a010; width: 55%; }
+    .species-life-label { font-size: 0.72rem; font-weight: 600; color: #a08000; text-transform: uppercase; letter-spacing: 0.04em; white-space: nowrap; }
+    .species-tabs { display: flex; border-bottom: 2px solid var(--color-border); overflow-x: auto; scrollbar-width: none; }
+    .species-tabs::-webkit-scrollbar { display: none; }
+    .species-tab {
+      flex: 1 0 auto; padding: 0.65rem 0.6rem; background: transparent; border: none;
+      border-bottom: 2px solid transparent; margin-bottom: -2px; font-size: 0.73rem;
+      font-weight: 600; color: var(--color-text-muted); cursor: pointer;
+      white-space: nowrap; text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .species-tab + .species-tab { border-left: 1px solid var(--color-border); }
+    .species-tab.active { color: var(--color-primary); border-bottom-color: var(--color-primary); }
+    .species-tab-panel { display: none; padding: 1rem 1.25rem 1.5rem; }
+    .species-tab-panel.active { display: block; }
+
+    /* ─── Two-column grid (the main new pattern for Design C) ─── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+    @media (max-width: 580px) {
+      .two-col { grid-template-columns: 1fr; }
+    }
+
+    /* Column panels */
+    .col-panel {
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .col-panel-header {
+      padding: 0.55rem 0.85rem;
+      background: linear-gradient(to bottom, #eef5ee, #f4f8f4);
+      border-bottom: 1px solid var(--color-border);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .col-panel-title {
+      font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.06em; color: var(--color-text-muted);
+    }
+    .col-panel-body { padding: 0.7rem 0.85rem; }
+
+    /* Full-width panel */
+    .full-panel {
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 0.85rem;
+    }
+    .full-panel-header {
+      padding: 0.55rem 0.85rem;
+      background: linear-gradient(to bottom, #eef5ee, #f4f8f4);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .full-panel-title {
+      font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.06em; color: var(--color-text-muted);
+    }
+    .full-panel-body { padding: 0.65rem 0.75rem; }
+
+    /* Unit toggle */
+    .vital-unit-toggle {
+      display: flex; border: 1px solid var(--color-border); border-radius: 5px; overflow: hidden;
+    }
+    .vital-unit-btn {
+      padding: 0.2rem 0.6rem; font-size: 0.68rem; font-weight: 600;
+      background: transparent; border: none; cursor: pointer; color: var(--color-text-muted);
+    }
+    .vital-unit-btn.active { background: var(--color-primary); color: white; }
+
+    /* Stats list */
+    .tab-vital-list { display: flex; flex-direction: column; }
+    .tab-vital-row { display: flex; justify-content: space-between; align-items: baseline; gap: 0.75rem; padding: 0.45rem 0; border-bottom: 1px solid var(--color-border); }
+    .tab-vital-row:last-child { border-bottom: none; }
+    .tab-vital-label { font-size: 0.73rem; font-weight: 600; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.04em; flex-shrink: 0; }
+    .tab-vital-value { font-size: 0.84rem; color: var(--color-text); text-align: right; }
+
+    /* Scale image in column */
+    .col-scale-img { width: 100%; height: 100%; min-height: 160px; object-fit: contain; display: block; }
+
+    /* Habitat section */
+    .habitat-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.9rem;
+      align-items: start;
+      margin-top: 0.85rem;
+    }
+    @media (max-width: 580px) { .habitat-row { grid-template-columns: 1fr; } }
+    .habitat-map-wrap { display: flex; flex-direction: column; gap: 0.4rem; }
+    .habitat-map-img { width: 100%; border-radius: 6px; border: 1px solid var(--color-border); display: block; }
+    .habitat-map-link { font-size: 0.77rem; color: var(--color-primary); text-decoration: none; }
+    .habitat-section-label {
+      font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+      color: var(--color-text-muted); margin-bottom: 0.45rem; padding-bottom: 0.35rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    /* Health chart */
+    .health-chart-svg { width: 100%; height: auto; color: var(--color-text-dim); }
+    .health-chart-value { font-size: 9px; fill: currentColor; font-family: inherit; }
+    .health-chart-year  { font-size: 9px; fill: currentColor; font-family: inherit; }
+
+    /* Key metrics */
+    .tab-health-list { display: flex; flex-direction: column; }
+    .tab-health-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.75rem; padding: 0.44rem 0; border-bottom: 1px solid var(--color-border); }
+    .tab-health-row:last-child { border-bottom: none; }
+    .tab-health-label { font-size: 0.73rem; font-weight: 600; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
+    .tab-health-right { display: flex; flex-direction: column; align-items: flex-end; gap: 0.18rem; }
+    .tab-health-value-wrap { display: flex; align-items: center; gap: 0.3rem; }
+    .tab-health-value { font-size: 0.84rem; color: var(--color-text); text-align: right; }
+    .tab-trend { font-size: 0.73rem; font-weight: 700; }
+    .tab-trend--up     { color: #2d6a2d; }
+    .tab-trend--down   { color: #c0320a; }
+    .tab-trend--stable { color: var(--color-text-muted); }
+    .health-metric-links { display: flex; flex-wrap: wrap; gap: 0.25rem; justify-content: flex-end; }
+    .health-metric-link { font-size: 0.67rem; color: var(--color-primary); text-decoration: none; border: 1px solid var(--color-border); border-radius: 4px; padding: 0.1rem 0.35rem; }
+
+    /* Region grids in column */
+    .region-sublabel {
+      font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+      color: var(--color-text-muted); margin-bottom: 0.38rem;
+    }
+    .region-sublabel:not(:first-child) { margin-top: 0.75rem; }
+    .health-region-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 0.35rem; margin-bottom: 0.25rem; }
+    .health-region-card { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 6px; padding: 0.4rem 0.5rem; }
+    .health-region-name { font-size: 0.71rem; font-weight: 600; color: var(--color-text); margin-bottom: 0.18rem; }
+    .health-region-note { font-size: 0.63rem; color: var(--color-text-muted); line-height: 1.35; margin-top: 0.18rem; }
+
+    /* Severity badges */
+    .tab-severity-badge { display: inline-block; font-size: 0.61rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; padding: 0.12rem 0.38rem; border-radius: 3px; }
+    .tab-severity-badge--critical { background: #fde8e8; color: #b91c1c; }
+    .tab-severity-badge--high     { background: #fef3e2; color: #b45309; }
+    .tab-severity-badge--medium   { background: #fefce8; color: #a16207; }
+    .tab-severity-badge--low      { background: #f0fdf4; color: #15803d; }
+
+    /* ─── Threats: grouped by severity ─── */
+    .threat-group { margin-bottom: 1rem; }
+    .threat-group:last-child { margin-bottom: 0; }
+    .threat-group-header {
+      font-size: 0.67rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+      padding: 0.28rem 0; margin-bottom: 0.5rem;
+      border-bottom: 2px solid currentColor;
+    }
+    .threat-group-header--critical { color: #b91c1c; }
+    .threat-group-header--high     { color: #b45309; }
+    .threat-group-header--medium   { color: #a16207; }
+    .threat-group-header--low      { color: #15803d; }
+    .threat-group-cards { display: flex; flex-direction: column; gap: 0.5rem; }
+    .tab-threat-card { background: white; border: 1px solid var(--color-border); border-radius: 8px; padding: 0.65rem 0.9rem; }
+    .tab-threat-name { font-size: 0.88rem; font-weight: 700; color: var(--color-text); margin-bottom: 0.3rem; }
+    .tab-threat-desc { font-size: 0.83rem; color: var(--color-text-dim); line-height: 1.5; }
+
+    /* Actions */
+    .tab-actions-list { display: flex; flex-direction: column; gap: 0.55rem; }
+    .tab-action-card { background: white; border: 1px solid var(--color-border); border-radius: 8px; padding: 0.75rem 1rem; }
+    .tab-action-title { font-size: 0.88rem; font-weight: 700; color: var(--color-text); margin-bottom: 0.3rem; }
+    .tab-action-desc { font-size: 0.83rem; color: var(--color-text-dim); line-height: 1.5; }
+    .tab-action-link { display: inline-block; margin-top: 0.4rem; font-size: 0.79rem; color: var(--color-primary); text-decoration: none; font-weight: 500; }
+
+    /* Credits */
+    .tab-credits { margin-top: 1.1rem; padding-top: 0.6rem; border-top: 1px solid var(--color-border); font-size: 0.71rem; color: var(--color-text-muted); }
+    .tab-credits-link { color: var(--color-primary); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<div class="mockup-banner">
+  <strong>MOCK-UP C — DASHBOARD SPLIT</strong>
+  <em>Two-column layouts for stat-heavy sections; threats grouped by severity level</em>
+</div>
+
+<div class="species-modal">
+
+  <div class="species-modal-image"></div>
+
+  <div class="species-modal-sticky">
+    <div class="modal-header">
+      <div>
+        <div class="species-modal-name">Great White Shark</div>
+        <div class="species-modal-sci">Carcharodon carcharias</div>
+      </div>
+      <div class="modal-header-actions">
+        <button class="modal-nav-btn" title="Favorite">☆</button>
+        <button class="modal-nav-btn">‹</button>
+        <span class="modal-nav-counter">1 / 5</span>
+        <button class="modal-nav-btn">›</button>
+        <button class="close-btn">×</button>
+      </div>
+    </div>
+    <div class="species-modal-hero">
+      <div class="species-life-wrap">
+        <div class="species-life-bar"><div class="species-life-fill"></div></div>
+        <div class="species-life-label">Vulnerable</div>
+      </div>
+    </div>
+    <div class="species-tabs">
+      <button class="species-tab active"  onclick="switchTab('vital',this)">Vital Signs</button>
+      <button class="species-tab"         onclick="switchTab('health',this)">Health Metrics</button>
+      <button class="species-tab"         onclick="switchTab('threats',this)">Threats</button>
+      <button class="species-tab"         onclick="switchTab('actions',this)">Action Items</button>
+    </div>
+  </div>
+
+  <div class="species-tab-panels">
+
+    <!-- VITAL SIGNS (2-column top: stats | scale image; full-width bottom: habitat) -->
+    <div class="species-tab-panel active" id="panel-vital">
+
+      <!-- Top row: stats left, scale image right -->
+      <div class="two-col" style="margin-bottom: 0.85rem;">
+        <div class="col-panel">
+          <div class="col-panel-header">
+            <div class="col-panel-title">Physical Biology</div>
+            <div class="vital-unit-toggle">
+              <button class="vital-unit-btn active">Metric</button>
+              <button class="vital-unit-btn">Imperial</button>
+            </div>
+          </div>
+          <div class="col-panel-body">
+            <div class="tab-vital-list">
+              <div class="tab-vital-row">
+                <span class="tab-vital-label">Max Length</span>
+                <span class="tab-vital-value">6.4 m</span>
+              </div>
+              <div class="tab-vital-row">
+                <span class="tab-vital-label">Max Weight</span>
+                <span class="tab-vital-value">~2,000 kg</span>
+              </div>
+              <div class="tab-vital-row">
+                <span class="tab-vital-label">Top Speed</span>
+                <span class="tab-vital-value">~56 km/h</span>
+              </div>
+              <div class="tab-vital-row">
+                <span class="tab-vital-label">Lifespan</span>
+                <span class="tab-vital-value">70+ years</span>
+              </div>
+              <div class="tab-vital-row">
+                <span class="tab-vital-label">Maturity</span>
+                <span class="tab-vital-value">~9–10 years</span>
+              </div>
+              <div class="tab-vital-row">
+                <span class="tab-vital-label">Litter Size</span>
+                <span class="tab-vital-value">2–10 pups</span>
+              </div>
+              <div class="tab-vital-row">
+                <span class="tab-vital-label">Gestation</span>
+                <span class="tab-vital-value">~18 months</span>
+              </div>
+              <div class="tab-vital-row">
+                <span class="tab-vital-label">Role</span>
+                <span class="tab-vital-value">Apex Predator</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-panel" style="display:flex; flex-direction:column; overflow:hidden;">
+          <div class="col-panel-header">
+            <div class="col-panel-title">Size Comparison</div>
+          </div>
+          <div style="flex:1; display:flex; align-items:center; justify-content:center; padding:0.6rem; background:white;">
+            <img class="col-scale-img" src="../projects/shark-populations/images/white_shark_size.png" alt="Size comparison" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom: Habitat & Range -->
+      <div class="full-panel">
+        <div class="full-panel-header">
+          <div class="full-panel-title">Habitat &amp; Range</div>
+        </div>
+        <div class="full-panel-body">
+          <div class="habitat-row">
+            <div class="habitat-map-wrap">
+              <img class="habitat-map-img" src="../projects/shark-populations/images/white_shark_habitat.png" alt="Habitat distribution" />
+              <a class="habitat-map-link" href="#">View on Map →</a>
+            </div>
+            <div>
+              <div class="habitat-section-label">Range Statistics</div>
+              <div class="tab-vital-list">
+                <div class="tab-vital-row">
+                  <span class="tab-vital-label">Global Range</span>
+                  <span class="tab-vital-value">Temperate, subtropical &amp; tropical oceans</span>
+                </div>
+                <div class="tab-vital-row">
+                  <span class="tab-vital-label">Depth Range</span>
+                  <span class="tab-vital-value">Surface to 1,280 m</span>
+                </div>
+                <div class="tab-vital-row">
+                  <span class="tab-vital-label">Population Est.</span>
+                  <span class="tab-vital-value">~3,500 adults</span>
+                </div>
+                <div class="tab-vital-row">
+                  <span class="tab-vital-label">Growth Rate</span>
+                  <span class="tab-vital-value">&lt; 5% / year</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-credits">
+        <span style="font-weight:600;">Sources:</span>
+        <a class="tab-credits-link" href="#">IUCN Red List</a>,
+        <a class="tab-credits-link" href="#">NOAA Fisheries</a>
+      </div>
+    </div>
+
+    <!-- HEALTH METRICS (full-width chart; 2-col split below) -->
+    <div class="species-tab-panel" id="panel-health">
+
+      <!-- Population Trend (full-width) -->
+      <div class="full-panel">
+        <div class="full-panel-header">
+          <div class="full-panel-title">Population Trend</div>
+        </div>
+        <div class="full-panel-body">
+          <svg class="health-chart-svg" viewBox="0 0 480 160" preserveAspectRatio="xMidYMid meet">
+            <line x1="48" x2="464" y1="132" y2="132" stroke="currentColor" stroke-opacity="0.08" stroke-width="1"/>
+            <line x1="48" x2="464" y1="93"  y2="93"  stroke="currentColor" stroke-opacity="0.08" stroke-width="1"/>
+            <line x1="48" x2="464" y1="53"  y2="53"  stroke="currentColor" stroke-opacity="0.08" stroke-width="1"/>
+            <line x1="48" x2="464" y1="14"  y2="14"  stroke="currentColor" stroke-opacity="0.08" stroke-width="1"/>
+            <text x="43" y="135.5" text-anchor="end" class="health-chart-value">~3,500</text>
+            <text x="43" y="96.5"  text-anchor="end" class="health-chart-value">~5,645</text>
+            <text x="43" y="56.5"  text-anchor="end" class="health-chart-value">~7,855</text>
+            <text x="43" y="17.5"  text-anchor="end" class="health-chart-value">~10,000</text>
+            <polygon points="48,14 131,41 214,72 298,101 381,121 464,132 464,132 48,132" fill="#2d6a2d" fill-opacity="0.12"/>
+            <polyline points="48,14 131,41 214,72 298,101 381,121 464,132" fill="none" stroke="#2d6a2d" stroke-width="2" stroke-linejoin="round"/>
+            <circle cx="48"  cy="14"  r="3.5" fill="#2d6a2d"/>
+            <circle cx="131" cy="41"  r="3.5" fill="#2d6a2d"/>
+            <circle cx="214" cy="72"  r="3.5" fill="#2d6a2d"/>
+            <circle cx="298" cy="101" r="3.5" fill="#2d6a2d"/>
+            <circle cx="381" cy="121" r="3.5" fill="#2d6a2d"/>
+            <circle cx="464" cy="132" r="3.5" fill="#2d6a2d"/>
+            <text x="48"  y="154" text-anchor="middle" class="health-chart-year">1970</text>
+            <text x="131" y="154" text-anchor="middle" class="health-chart-year">1980</text>
+            <text x="214" y="154" text-anchor="middle" class="health-chart-year">1990</text>
+            <text x="298" y="154" text-anchor="middle" class="health-chart-year">2000</text>
+            <text x="381" y="154" text-anchor="middle" class="health-chart-year">2010</text>
+            <text x="464" y="154" text-anchor="middle" class="health-chart-year">2020</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Key Indicators (left) + Regional Pressures (right) -->
+      <div class="two-col">
+        <div class="col-panel">
+          <div class="col-panel-header">
+            <div class="col-panel-title">Key Indicators</div>
+          </div>
+          <div class="col-panel-body">
+            <div class="tab-health-list">
+              <div class="tab-health-row">
+                <span class="tab-health-label">IUCN Status</span>
+                <div class="tab-health-right"><div class="tab-health-value-wrap"><span class="tab-health-value">Vulnerable</span><span class="tab-trend tab-trend--stable">—</span></div></div>
+              </div>
+              <div class="tab-health-row">
+                <span class="tab-health-label">Pop. Trend</span>
+                <div class="tab-health-right"><div class="tab-health-value-wrap"><span class="tab-health-value">Decreasing</span><span class="tab-trend tab-trend--down">▼</span></div></div>
+              </div>
+              <div class="tab-health-row">
+                <span class="tab-health-label">Habitat</span>
+                <div class="tab-health-right"><div class="tab-health-value-wrap"><span class="tab-health-value">Moderate pressure</span></div></div>
+              </div>
+              <div class="tab-health-row">
+                <span class="tab-health-label">Prey</span>
+                <div class="tab-health-right"><div class="tab-health-value-wrap"><span class="tab-health-value">Declining</span><span class="tab-trend tab-trend--down">▼</span></div></div>
+              </div>
+              <div class="tab-health-row">
+                <span class="tab-health-label">Fishing</span>
+                <div class="tab-health-right"><div class="tab-health-value-wrap"><span class="tab-health-value">High</span><span class="tab-trend tab-trend--down">▼</span></div></div>
+              </div>
+              <div class="tab-health-row">
+                <span class="tab-health-label">Protection</span>
+                <div class="tab-health-right">
+                  <div class="tab-health-value-wrap"><span class="tab-health-value">CITES App. II</span><span class="tab-trend tab-trend--stable">—</span></div>
+                  <div class="health-metric-links">
+                    <a class="health-metric-link" href="#">CITES</a>
+                    <a class="health-metric-link" href="#">IUCN</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-panel">
+          <div class="col-panel-header">
+            <div class="col-panel-title">Regional Pressures</div>
+          </div>
+          <div class="col-panel-body">
+            <div class="region-sublabel">Prey Availability</div>
+            <div class="health-region-grid">
+              <div class="health-region-card"><div class="health-region-name">Mediterranean</div><span class="tab-severity-badge tab-severity-badge--critical">Critical</span><div class="health-region-note">Bluefin tuna collapse</div></div>
+              <div class="health-region-card"><div class="health-region-name">N. Atlantic</div><span class="tab-severity-badge tab-severity-badge--high">High</span><div class="health-region-note">Seals, herring depleted</div></div>
+              <div class="health-region-card"><div class="health-region-name">N. Pacific</div><span class="tab-severity-badge tab-severity-badge--high">High</span><div class="health-region-note">Salmon reduced</div></div>
+              <div class="health-region-card"><div class="health-region-name">S. Africa</div><span class="tab-severity-badge tab-severity-badge--medium">Medium</span><div class="health-region-note">Fur seals pressured</div></div>
+              <div class="health-region-card"><div class="health-region-name">Australia</div><span class="tab-severity-badge tab-severity-badge--medium">Medium</span><div class="health-region-note">Bluefin depleted</div></div>
+              <div class="health-region-card"><div class="health-region-name">S. Atlantic</div><span class="tab-severity-badge tab-severity-badge--low">Low</span><div class="health-region-note">Relatively stable</div></div>
+            </div>
+            <div class="region-sublabel">Fishing Pressure</div>
+            <div class="health-region-grid">
+              <div class="health-region-card"><div class="health-region-name">Mediterranean</div><span class="tab-severity-badge tab-severity-badge--critical">Critical</span><div class="health-region-note">Dense longlines</div></div>
+              <div class="health-region-card"><div class="health-region-name">N. Atlantic</div><span class="tab-severity-badge tab-severity-badge--high">High</span><div class="health-region-note">Swordfish bycatch</div></div>
+              <div class="health-region-card"><div class="health-region-name">Australia</div><span class="tab-severity-badge tab-severity-badge--high">High</span><div class="health-region-note">Drum lines, nets</div></div>
+              <div class="health-region-card"><div class="health-region-name">N. Pacific</div><span class="tab-severity-badge tab-severity-badge--high">High</span><div class="health-region-note">Illegal finning</div></div>
+              <div class="health-region-card"><div class="health-region-name">S. Africa</div><span class="tab-severity-badge tab-severity-badge--medium">Medium</span><div class="health-region-note">Beach nets</div></div>
+              <div class="health-region-card"><div class="health-region-name">S. Atlantic</div><span class="tab-severity-badge tab-severity-badge--low">Low</span><div class="health-region-note">Open ocean</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-credits">
+        <span style="font-weight:600;">Sources:</span>
+        <a class="tab-credits-link" href="#">IUCN Red List</a>,
+        <a class="tab-credits-link" href="#">CITES Appendices</a>,
+        <a class="tab-credits-link" href="#">Shark Trust</a>,
+        <a class="tab-credits-link" href="#">NOAA Fisheries</a>
+      </div>
+    </div>
+
+    <!-- THREATS (grouped by severity) -->
+    <div class="species-tab-panel" id="panel-threats">
+
+      <div class="threat-group">
+        <div class="threat-group-header threat-group-header--critical">Critical</div>
+        <div class="threat-group-cards">
+          <div class="tab-threat-card">
+            <div class="tab-threat-name">Bycatch</div>
+            <div class="tab-threat-desc">Caught unintentionally in longlines, gill nets, and drum lines set for other species. The leading cause of mortality globally.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="threat-group">
+        <div class="threat-group-header threat-group-header--high">High</div>
+        <div class="threat-group-cards">
+          <div class="tab-threat-card">
+            <div class="tab-threat-name">Targeted Poaching</div>
+            <div class="tab-threat-desc">Hunted for jaws, teeth, fins, and liver oil. Trophy jaws can fetch tens of thousands of dollars on the black market.</div>
+          </div>
+          <div class="tab-threat-card">
+            <div class="tab-threat-name">Habitat Degradation</div>
+            <div class="tab-threat-desc">Coastal development, pollution, and noise reduce the quality of pupping and feeding grounds near seal colonies.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="threat-group">
+        <div class="threat-group-header threat-group-header--medium">Medium</div>
+        <div class="threat-group-cards">
+          <div class="tab-threat-card">
+            <div class="tab-threat-name">Prey Depletion</div>
+            <div class="tab-threat-desc">Overfishing of pinnipeds and large fish reduces the food base, forcing sharks to travel further and expend more energy.</div>
+          </div>
+          <div class="tab-threat-card">
+            <div class="tab-threat-name">Climate Change</div>
+            <div class="tab-threat-desc">Warming oceans shift prey distributions, alter migration routes, and may affect juvenile survival in pupping areas.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-credits">
+        <span style="font-weight:600;">Sources:</span>
+        <a class="tab-credits-link" href="#">IUCN Red List</a>,
+        <a class="tab-credits-link" href="#">Shark Trust</a>
+      </div>
+    </div>
+
+    <!-- ACTION ITEMS -->
+    <div class="species-tab-panel" id="panel-actions">
+      <div class="tab-actions-list">
+        <div class="tab-action-card">
+          <div class="tab-action-title">Support Shark Conservation Organizations</div>
+          <div class="tab-action-desc">Donate to or volunteer with groups like Shark Trust, Save Our Seas Foundation, and Shark Research Institute that fund research, advocacy, and education.</div>
+          <a class="tab-action-link" href="#">Learn more →</a>
+        </div>
+        <div class="tab-action-card">
+          <div class="tab-action-title">Advocate for Stronger Bycatch Regulations</div>
+          <div class="tab-action-desc">Contact your representatives to support legislation requiring circle hooks, excluder devices, and observer programs on commercial fishing vessels.</div>
+        </div>
+        <div class="tab-action-card">
+          <div class="tab-action-title">Choose Sustainable Seafood</div>
+          <div class="tab-action-desc">Use guides from the Monterey Bay Aquarium Seafood Watch program. Avoiding unsustainable fisheries reduces bycatch pressure on shark populations.</div>
+          <a class="tab-action-link" href="#">Learn more →</a>
+        </div>
+        <div class="tab-action-card">
+          <div class="tab-action-title">Oppose Shark Finning</div>
+          <div class="tab-action-desc">Refuse to purchase or consume shark fin products, and support restaurants and markets that have pledged not to carry them.</div>
+        </div>
+        <div class="tab-action-card">
+          <div class="tab-action-title">Spread Accurate Information</div>
+          <div class="tab-action-desc">Challenge fear-based media portrayals. Sharing science-based facts about shark behavior helps build public support for conservation.</div>
+        </div>
+      </div>
+      <div class="tab-credits">
+        <span style="font-weight:600;">Sources:</span>
+        <a class="tab-credits-link" href="#">Shark Trust</a>,
+        <a class="tab-credits-link" href="#">NOAA Fisheries</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function switchTab(tabId, btn) {
+  document.querySelectorAll('.species-tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.species-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + tabId).classList.add('active');
+  btn.classList.add('active');
+  document.querySelector('.species-modal').scrollTop = 0;
+}
+</script>
+</body>
+</html>

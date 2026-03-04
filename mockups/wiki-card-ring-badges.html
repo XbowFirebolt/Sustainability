@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Card Variants — Progress Ring &amp; Habitat Badges</title>
+  <style>
+    :root {
+      --color-primary: #2d6a2d;
+      --color-bg: #f4f8f4;
+      --color-text: #1a2e1a;
+      --color-text-muted: #5a8a5a;
+      --color-border: #e8f0e8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #c8d8c8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 1.5rem 4rem;
+    }
+
+    /* ── Banner ── */
+    .mockup-banner {
+      width: 100%;
+      max-width: 1020px;
+      background: #1a2e1a;
+      color: #f4f8f4;
+      padding: 0.65rem 1.25rem;
+      border-radius: 0 0 8px 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .mockup-banner strong { font-size: 0.82rem; letter-spacing: 0.04em; }
+    .mockup-banner em { opacity: 0.6; font-style: normal; }
+
+    /* ── Page layout ── */
+    .page {
+      width: 100%;
+      max-width: 1020px;
+      display: flex;
+      flex-direction: column;
+      gap: 2.75rem;
+    }
+
+    .variant-section { display: flex; flex-direction: column; gap: 0.85rem; }
+
+    .variant-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #1a2e1a;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.8rem;
+      background: rgba(255,255,255,0.55);
+      border-radius: 6px;
+      border-left: 3px solid var(--color-primary);
+    }
+    .variant-label .note {
+      font-weight: 400;
+      text-transform: none;
+      letter-spacing: 0;
+      opacity: 0.6;
+      font-size: 0.72rem;
+    }
+
+    .card-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* ── Card base ── */
+    .species-card {
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      width: 218px;
+      flex-shrink: 0;
+    }
+
+    .species-card-image {
+      height: 155px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.25rem;
+      position: relative;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, #0a1a0a, #1a3a1a);
+      overflow: hidden;
+    }
+    .species-card-image.photo {
+      background: url('../projects/shark-populations/images/white_shark/white_shark1.png') center / cover no-repeat,
+                  linear-gradient(135deg, #0a1a0a, #1a3a1a);
+    }
+
+    .species-card-star {
+      position: absolute;
+      top: 8px; right: 8px;
+      background: rgba(255,255,255,0.88);
+      border: none;
+      border-radius: 50%;
+      width: 29px; height: 29px;
+      font-size: 0.95rem;
+      display: flex; align-items: center; justify-content: center;
+      color: #c8900a;
+      cursor: pointer;
+    }
+
+    .species-card-body {
+      padding: 0.8rem 0.9rem 0.85rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .species-card-name {
+      font-size: 0.93rem;
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 0.12rem;
+    }
+    .species-card-sci {
+      font-size: 0.73rem;
+      font-style: italic;
+      color: var(--color-text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    /* Threat badge */
+    .threat-badge {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 0.15rem 0.48rem;
+      border-radius: 999px;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.45rem;
+      align-self: flex-start;
+    }
+    .threat--critical { background: rgba(192,57,43,0.13); color: #8c1515; }
+    .threat--high     { background: rgba(230,126,34,0.13); color: #944000; }
+
+    /* Life bar */
+    .life-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0.4rem 0 0.45rem;
+    }
+    .life-bar {
+      flex: 1;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--color-border);
+      overflow: hidden;
+    }
+    .life-fill {
+      height: 100%;
+      border-radius: 999px;
+      transition: width 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .life-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      white-space: nowrap;
+    }
+
+    /* Fun fact */
+    .funfact {
+      margin-top: 0.45rem;
+      padding-top: 0.45rem;
+      border-top: 1px solid var(--color-border);
+    }
+    .funfact-lbl {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: 0.18rem;
+    }
+    .funfact-txt {
+      font-size: 0.7rem;
+      color: var(--color-text);
+      line-height: 1.42;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* ── Progress ring (inline) ── */
+    .ring-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin: 0.35rem 0 0.4rem;
+    }
+    .ring-track {
+      fill: none;
+      stroke: var(--color-border);
+      stroke-width: 4;
+    }
+    .ring-fill {
+      fill: none;
+      stroke-width: 4;
+      stroke-linecap: round;
+      /* circumference of r=21: 2π×21 = 131.95 */
+      stroke-dasharray: 131.95;
+      stroke-dashoffset: var(--target, 131.95);
+      animation: ring-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+    }
+    @keyframes ring-in {
+      from { stroke-dashoffset: 131.95; }
+      to   { stroke-dashoffset: var(--target, 131.95); }
+    }
+    .ring-pct-txt {
+      font-size: 10px;
+      font-weight: 700;
+      fill: var(--color-text);
+      text-anchor: middle;
+      dominant-baseline: central;
+    }
+    .ring-meta { display: flex; flex-direction: column; gap: 0.08rem; }
+    .ring-status { font-size: 0.71rem; font-weight: 600; color: var(--color-text); }
+    .ring-sub    { font-size: 0.63rem; color: var(--color-text-muted); }
+
+    /* ── Progress ring (image corner overlay) ── */
+    .ring-corner {
+      position: absolute;
+      bottom: 9px; right: 9px;
+      width: 50px; height: 50px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.22);
+      backdrop-filter: blur(4px);
+    }
+
+    /* ── Habitat & diet badges ── */
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.28rem;
+      margin-bottom: 0.4rem;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.22rem;
+      font-size: 0.63rem;
+      font-weight: 600;
+      padding: 0.18rem 0.44rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      line-height: 1;
+    }
+    /* Habitat types */
+    .b-ocean    { background: rgba(24,90,168,0.1);  border-color: rgba(24,90,168,0.22);  color: #185aa8; }
+    .b-coastal  { background: rgba(18,118,96,0.1);  border-color: rgba(18,118,96,0.22);  color: #136050; }
+    .b-tropical { background: rgba(10,138,72,0.1);  border-color: rgba(10,138,72,0.22);  color: #0a7640; }
+    .b-pelagic  { background: rgba(56,76,180,0.1);  border-color: rgba(56,76,180,0.22);  color: #28369a; }
+    /* Diet types */
+    .b-apex     { background: rgba(80,20,100,0.1);  border-color: rgba(80,20,100,0.22);  color: #501460; }
+    .b-carnivore{ background: rgba(160,40,40,0.1);  border-color: rgba(160,40,40,0.22);  color: #881818; }
+    .b-filter   { background: rgba(24,90,168,0.12); border-color: rgba(24,90,168,0.28);  color: #185aa8; }
+
+    /* ── Implementation notes ── */
+    .impl-note {
+      background: rgba(255,255,255,0.58);
+      border: 1px solid var(--color-border);
+      border-left: 3px solid #888;
+      border-radius: 6px;
+      padding: 0.7rem 1rem;
+      font-size: 0.71rem;
+      color: #3a4a3a;
+      line-height: 1.6;
+    }
+    .impl-note strong { color: #1a2e1a; }
+    .impl-note code {
+      background: rgba(0,0,0,0.07);
+      border-radius: 3px;
+      padding: 0.05rem 0.3rem;
+      font-size: 0.68rem;
+      font-family: "SF Mono", "Fira Code", monospace;
+    }
+  </style>
+</head>
+<body>
+
+<div class="mockup-banner">
+  <strong>MOCKUP — Card UI: Progress Ring &amp; Habitat/Diet Badges</strong>
+  <em>wiki-todo lines 59–60 · 2026-02-27</em>
+</div>
+
+<div class="page">
+
+  <!-- ════════════════════════════════════
+       SECTION 0 — Current design (ref)
+       ════════════════════════════════════ -->
+  <section class="variant-section">
+    <div class="variant-label">Current Design <span class="note">— reference, unchanged</span></div>
+    <div class="card-row">
+
+      <!-- Great White -->
+      <div class="species-card">
+        <div class="species-card-image photo">
+          <button class="species-card-star">★</button>
+        </div>
+        <div class="species-card-body">
+          <div class="species-card-name">Great White Shark</div>
+          <div class="species-card-sci">Carcharodon carcharias</div>
+          <div class="threat-badge threat--critical">Critical</div>
+          <div class="life-wrap">
+            <div class="life-bar"><div class="life-fill" style="width:55%;background:#f39c12"></div></div>
+            <div class="life-label">Vulnerable</div>
+          </div>
+          <div class="funfact">
+            <div class="funfact-lbl">Fun Fact</div>
+            <div class="funfact-txt">Can detect a drop of blood diluted across 25 gallons of water, and sense the faint electrical fields of beating hearts.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scalloped Hammerhead -->
+      <div class="species-card">
+        <div class="species-card-image">🦈</div>
+        <div class="species-card-body">
+          <div class="species-card-name">Scalloped Hammerhead</div>
+          <div class="species-card-sci">Sphyrna lewini</div>
+          <div class="threat-badge threat--critical">Critical</div>
+          <div class="life-wrap">
+            <div class="life-bar"><div class="life-fill" style="width:20%;background:#c0392b"></div></div>
+            <div class="life-label">Critically Endangered</div>
+          </div>
+          <div class="funfact">
+            <div class="funfact-lbl">Fun Fact</div>
+            <div class="funfact-txt">Aggregates in huge schools during the day — rare social behavior among sharks.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Whale Shark -->
+      <div class="species-card">
+        <div class="species-card-image">🐋</div>
+        <div class="species-card-body">
+          <div class="species-card-name">Whale Shark</div>
+          <div class="species-card-sci">Rhincodon typus</div>
+          <div class="threat-badge threat--high">High</div>
+          <div class="life-wrap">
+            <div class="life-bar"><div class="life-fill" style="width:40%;background:#e67e22"></div></div>
+            <div class="life-label">Endangered</div>
+          </div>
+          <div class="funfact">
+            <div class="funfact-lbl">Fun Fact</div>
+            <div class="funfact-txt">Each whale shark's spot pattern is unique — used like a fingerprint to track individuals across ocean basins.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       SECTION A1 — Ring inline (replaces bar)
+       ════════════════════════════════════ -->
+  <section class="variant-section">
+    <div class="variant-label">Option A1 — Progress Ring, inline <span class="note">— ring replaces the horizontal life bar; % shown in center</span></div>
+    <div class="card-row">
+
+      <!-- Great White · 55% · #f39c12 · dashoffset = 131.95×0.45 = 59.38 -->
+      <div class="species-card">
+        <div class="species-card-image photo">
+          <button class="species-card-star">★</button>
+        </div>
+        <div class="species-card-body">
+          <div class="species-card-name">Great White Shark</div>
+          <div class="species-card-sci">Carcharodon carcharias</div>
+          <div class="threat-badge threat--critical">Critical</div>
+          <div class="ring-wrap">
+            <svg viewBox="0 0 52 52" width="50" height="50" style="--target:59.38" aria-hidden="true">
+              <circle class="ring-track" cx="26" cy="26" r="21"/>
+              <circle class="ring-fill" cx="26" cy="26" r="21" stroke="#f39c12" transform="rotate(-90,26,26)"/>
+              <text class="ring-pct-txt" x="26" y="26">55%</text>
+            </svg>
+            <div class="ring-meta">
+              <div class="ring-status">Vulnerable</div>
+              <div class="ring-sub">Population health</div>
+            </div>
+          </div>
+          <div class="funfact">
+            <div class="funfact-lbl">Fun Fact</div>
+            <div class="funfact-txt">Can detect a drop of blood diluted across 25 gallons of water, and sense the faint electrical fields of beating hearts.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scalloped Hammerhead · 20% · #c0392b · dashoffset = 131.95×0.80 = 105.56 -->
+      <div class="species-card">
+        <div class="species-card-image">🦈</div>
+        <div class="species-card-body">
+          <div class="species-card-name">Scalloped Hammerhead</div>
+          <div class="species-card-sci">Sphyrna lewini</div>
+          <div class="threat-badge threat--critical">Critical</div>
+          <div class="ring-wrap">
+            <svg viewBox="0 0 52 52" width="50" height="50" style="--target:105.56" aria-hidden="true">
+              <circle class="ring-track" cx="26" cy="26" r="21"/>
+              <circle class="ring-fill" cx="26" cy="26" r="21" stroke="#c0392b" transform="rotate(-90,26,26)"/>
+              <text class="ring-pct-txt" x="26" y="26">20%</text>
+            </svg>
+            <div class="ring-meta">
+              <div class="ring-status">Critically Endangered</div>
+              <div class="ring-sub">Population health</div>
+            </div>
+          </div>
+          <div class="funfact">
+            <div class="funfact-lbl">Fun Fact</div>
+            <div class="funfact-txt">Aggregates in huge schools during the day — rare social behavior among sharks.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Whale Shark · 40% · #e67e22 · dashoffset = 131.95×0.60 = 79.17 -->
+      <div class="species-card">
+        <div class="species-card-image">🐋</div>
+        <div class="species-card-body">
+          <div class="species-card-name">Whale Shark</div>
+          <div class="species-card-sci">Rhincodon typus</div>
+          <div class="threat-badge threat--high">High</div>
+          <div class="ring-wrap">
+            <svg viewBox="0 0 52 52" width="50" height="50" style="--target:79.17" aria-hidden="true">
+              <circle class="ring-track" cx="26" cy="26" r="21"/>
+              <circle class="ring-fill" cx="26" cy="26" r="21" stroke="#e67e22" transform="rotate(-90,26,26)"/>
+              <text class="ring-pct-txt" x="26" y="26">40%</text>
+            </svg>
+            <div class="ring-meta">
+              <div class="ring-status">Endangered</div>
+              <div class="ring-sub">Population health</div>
+            </div>
+          </div>
+          <div class="funfact">
+            <div class="funfact-lbl">Fun Fact</div>
+            <div class="funfact-txt">Each whale shark's spot pattern is unique — used like a fingerprint to track individuals across ocean basins.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       SECTION A2 — Ring as image corner overlay
+       ════════════════════════════════════ -->
+  <section class="variant-section">
+    <div class="variant-label">Option A2 — Progress Ring, image overlay <span class="note">— ring badge sits in bottom-right corner of card photo</span></div>
+    <div class="card-row">
+
+      <!-- Great White -->
+      <div class="species-card">
+        <div class="species-card-image photo">
+          <button class="species-card-star">★</button>
+          <div class="ring-corner">
+            <svg viewBox="0 0 52 52" width="44" height="44" style="--target:59.38" aria-hidden="true">
+              <circle class="ring-track" cx="26" cy="26" r="21"/>
+              <circle class="ring-fill" cx="26" cy="26" r="21" stroke="#f39c12" transform="rotate(-90,26,26)"/>
+              <text class="ring-pct-txt" x="26" y="26">55%</text>
+            </svg>
+          </div>
+        </div>
+        <div class="species-card-body">
+          <div class="species-card-name">Great White Shark</div>
+          <div class="species-card-sci">Carcharodon carcharias</div>
+          <div class="threat-badge threat--critical">Critical</div>
+          <div class="life-label" style="margin:0.3rem 0 0.45rem;font-size:0.7rem;font-weight:600;color:var(--color-text)">Vulnerable</div>
+          <div class="funfact">
+            <div class="funfact-lbl">Fun Fact</div>
+            <div class="funfact-txt">Can detect a drop of blood diluted across 25 gallons of water, and sense the faint electrical fields of beating hearts.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scalloped Hammerhead -->
+      <div class="species-card">
+        <div class="species-card-image">
+          <span>🦈</span>
+          <div class="ring-corner">
+            <svg viewBox="0 0 52 52" width="44" height="44" style="--target:105.56" aria-hidden="true">
+              <circle class="ring-track" cx="26" cy="26" r="21"/>
+              <circle class="ring-fill" cx="26" cy="26" r="21" stroke="#c0392b" transform="rotate(-90,26,26)"/>
+              <text class="ring-pct-txt" x="26" y="26">20%</text>
+            </svg>
+          </div>
+        </div>
+        <div class="species-card-body">
+          <div class="species-card-name">Scalloped Hammerhead</div>
+          <div class="species-card-sci">Sphyrna lewini</div>
+          <div class="threat-badge threat--critical">Critical</div>
+          <div class="life-label" style="margin:0.3rem 0 0.45rem;font-size:0.7rem;font-weight:600;color:var(--color-text)">Critically Endangered</div>
+          <div class="funfact">
+            <div class="funfact-lbl">Fun Fact</div>
+            <div class="funfact-txt">Aggregates in huge schools during the day — rare social behavior among sharks.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Whale Shark -->
+      <div class="species-card">
+        <div class="species-card-image">
+          <span>🐋</span>
+          <div class="ring-corner">
+            <svg viewBox="0 0 52 52" width="44" height="44" style="--target:79.17" aria-hidden="true">
+              <circle class="ring-track" cx="26" cy="26" r="21"/>
+              <circle class="ring-fill" cx="26" cy="26" r="21" stroke="#e67e22" transform="rotate(-90,26,26)"/>
+              <text class="ring-pct-txt" x="26" y="26">40%</text>
+            </svg>
+          </div>
+        </div>
+        <div class="species-card-body">
+          <div class="species-card-name">Whale Shark</div>
+          <div class="species-card-sci">Rhincodon typus</div>
+          <div class="threat-badge threat--high">High</div>
+          <div class="life-label" style="margin:0.3rem 0 0.45rem;font-size:0.7rem;font-weight:600;color:var(--color-text)">Endangered</div>
+          <div class="funfact">
+            <div class="funfact-lbl">Fun Fact</div>
+            <div class="funfact-txt">Each whale shark's spot pattern is unique — used like a fingerprint to track individuals across ocean basins.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       SECTION B — Habitat & diet badges only
+       ════════════════════════════════════ -->
+  <section class="variant-section">
+    <div class="variant-label">Option B — Habitat &amp; Diet Badges <span class="note">— new badge fields in data.js; life bar stays</span></div>
+    <div class="card-row">
+
+      <!-- Great White -->
+      <div class="species-card">
+        <div class="species-card-image photo">
+          <button class="species-card-star">★</button>
+        </div>
+        <div class="species-card-body">
+          <div class="species-card-name">Great White Shark</div>
+          <div class="species-card-sci">Carcharodon carcharias</div>
+          <div class="badge-row">
+            <span class="badge b-ocean">🌊 Ocean</span>
+            <span class="badge b-coastal">🏖 Coastal</span>
+            <span class="badge b-apex">⬆ Apex Predator</span>
+          </div>
+          <div class="threat-badge threat--critical">Critical</div>
+          <div class="life-wrap">
+            <div class="life-bar"><div class="life-fill" style="width:55%;background:#f39c12"></div></div>
+            <div class="life-label">Vulnerable</div>
+          </div>
+          <div class="funfact">
+            <div class="funfact-lbl">Fun Fact</div>
+            <div class="funfact-txt">Can detect a drop of blood diluted across 25 gallons of water, and sense the faint electrical fields of beating hearts.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scalloped Hammerhead -->
+      <div class="species-card">
+        <div class="species-card-image">🦈</div>
+        <div class="species-card-body">
+          <div class="species-card-name">Scalloped Hammerhead</div>
+          <div class="species-card-sci">Sphyrna lewini</div>
+          <div class="badge-row">
+            <span class="badge b-ocean">🌊 Ocean</span>
+            <span class="badge b-pelagic">🌐 Pelagic</span>
+            <span class="badge b-carnivore">🦷 Carnivore</span>
+          </div>
+          <div class="threat-badge threat--critical">Critical</div>
+          <div class="life-wrap">
+            <div class="life-bar"><div class="life-fill" style="width:20%;background:#c0392b"></div></div>
+            <div class="life-label">Critically Endangered</div>
+          </div>
+          <div class="funfact">
+            <div class="funfact-lbl">Fun Fact</div>
+            <div class="funfact-txt">Aggregates in huge schools during the day — rare social behavior among sharks.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Whale Shark -->
+      <div class="species-card">
+        <div class="species-card-image">🐋</div>
+        <div class="species-card-body">
+          <div class="species-card-name">Whale Shark</div>
+          <div class="species-card-sci">Rhincodon typus</div>
+          <div class="badge-row">
+            <span class="badge b-tropical">🌡 Tropical</span>
+            <span class="badge b-pelagic">🌐 Pelagic</span>
+            <span class="badge b-filter">💧 Filter Feeder</span>
+          </div>
+          <div class="threat-badge threat--high">High</div>
+          <div class="life-wrap">
+            <div class="life-bar"><div class="life-fill" style="width:40%;background:#e67e22"></div></div>
+            <div class="life-label">Endangered</div>
+          </div>
+          <div class="funfact">
+            <div class="funfact-lbl">Fun Fact</div>
+            <div class="funfact-txt">Each whale shark's spot pattern is unique — used like a fingerprint to track individuals across ocean basins.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       SECTION C — Full: Ring A1 + Badges
+       ════════════════════════════════════ -->
+  <section class="variant-section">
+    <div class="variant-label">Option C — Combined: Ring (inline) + Badges <span class="note">— the "everything" card</span></div>
+    <div class="card-row">
+
+      <!-- Great White -->
+      <div class="species-card">
+        <div class="species-card-image photo">
+          <button class="species-card-star">★</button>
+        </div>
+        <div class="species-card-body">
+          <div class="species-card-name">Great White Shark</div>
+          <div class="species-card-sci">Carcharodon carcharias</div>
+          <div class="badge-row">
+            <span class="badge b-ocean">🌊 Ocean</span>
+            <span class="badge b-coastal">🏖 Coastal</span>
+            <span class="badge b-apex">⬆ Apex Predator</span>
+          </div>
+          <div class="threat-badge threat--critical">Critical</div>
+          <div class="ring-wrap">
+            <svg viewBox="0 0 52 52" width="50" height="50" style="--target:59.38" aria-hidden="true">
+              <circle class="ring-track" cx="26" cy="26" r="21"/>
+              <circle class="ring-fill" cx="26" cy="26" r="21" stroke="#f39c12" transform="rotate(-90,26,26)"/>
+              <text class="ring-pct-txt" x="26" y="26">55%</text>
+            </svg>
+            <div class="ring-meta">
+              <div class="ring-status">Vulnerable</div>
+              <div class="ring-sub">Population health</div>
+            </div>
+          </div>
+          <div class="funfact">
+            <div class="funfact-lbl">Fun Fact</div>
+            <div class="funfact-txt">Can detect a drop of blood diluted across 25 gallons of water, and sense the faint electrical fields of beating hearts.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scalloped Hammerhead -->
+      <div class="species-card">
+        <div class="species-card-image">🦈</div>
+        <div class="species-card-body">
+          <div class="species-card-name">Scalloped Hammerhead</div>
+          <div class="species-card-sci">Sphyrna lewini</div>
+          <div class="badge-row">
+            <span class="badge b-ocean">🌊 Ocean</span>
+            <span class="badge b-pelagic">🌐 Pelagic</span>
+            <span class="badge b-carnivore">🦷 Carnivore</span>
+          </div>
+          <div class="threat-badge threat--critical">Critical</div>
+          <div class="ring-wrap">
+            <svg viewBox="0 0 52 52" width="50" height="50" style="--target:105.56" aria-hidden="true">
+              <circle class="ring-track" cx="26" cy="26" r="21"/>
+              <circle class="ring-fill" cx="26" cy="26" r="21" stroke="#c0392b" transform="rotate(-90,26,26)"/>
+              <text class="ring-pct-txt" x="26" y="26">20%</text>
+            </svg>
+            <div class="ring-meta">
+              <div class="ring-status">Critically Endangered</div>
+              <div class="ring-sub">Population health</div>
+            </div>
+          </div>
+          <div class="funfact">
+            <div class="funfact-lbl">Fun Fact</div>
+            <div class="funfact-txt">Aggregates in huge schools during the day — rare social behavior among sharks.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Whale Shark -->
+      <div class="species-card">
+        <div class="species-card-image">🐋</div>
+        <div class="species-card-body">
+          <div class="species-card-name">Whale Shark</div>
+          <div class="species-card-sci">Rhincodon typus</div>
+          <div class="badge-row">
+            <span class="badge b-tropical">🌡 Tropical</span>
+            <span class="badge b-pelagic">🌐 Pelagic</span>
+            <span class="badge b-filter">💧 Filter Feeder</span>
+          </div>
+          <div class="threat-badge threat--high">High</div>
+          <div class="ring-wrap">
+            <svg viewBox="0 0 52 52" width="50" height="50" style="--target:79.17" aria-hidden="true">
+              <circle class="ring-track" cx="26" cy="26" r="21"/>
+              <circle class="ring-fill" cx="26" cy="26" r="21" stroke="#e67e22" transform="rotate(-90,26,26)"/>
+              <text class="ring-pct-txt" x="26" y="26">40%</text>
+            </svg>
+            <div class="ring-meta">
+              <div class="ring-status">Endangered</div>
+              <div class="ring-sub">Population health</div>
+            </div>
+          </div>
+          <div class="funfact">
+            <div class="funfact-lbl">Fun Fact</div>
+            <div class="funfact-txt">Each whale shark's spot pattern is unique — used like a fingerprint to track individuals across ocean basins.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       Implementation notes
+       ════════════════════════════════════ -->
+  <div class="impl-note">
+    <strong>Implementation notes</strong><br/>
+    <br/>
+    <strong>Progress ring (A1 / A2)</strong> — SVG ring using <code>stroke-dashoffset</code> on a circle with <code>r=21</code> (circumference ≈ 131.95px).
+    The same <code>getLifeBarColor()</code> logic drives the stroke color.
+    A CSS <code>@keyframes</code> animation draws the ring from 0 → target on card entry, slotting into the existing <code>IntersectionObserver</code> callback.
+    A1 replaces the horizontal bar entirely; A2 keeps the bar hidden and overlays the ring on the card image.<br/>
+    <br/>
+    <strong>Habitat &amp; diet badges (B)</strong> — Requires two new fields per species in <code>data.js</code>:
+    <code>habitatTypes: ["ocean", "coastal"]</code> (array, picks from a fixed set) and
+    <code>dietType: "apex-predator"</code> (single value).
+    Badge color and icon are keyed to each type string. Rendered as <code>.badge-row</code> pills between the sci name and threat badge.<br/>
+    <br/>
+    <strong>Combined (C)</strong> — Ring replaces the bar; badges sit below the sci name. Total card height ~30px taller than current.
+    The card body stays a single-column flex column — no layout restructuring needed.
+  </div>
+
+</div>
+</body>
+</html>

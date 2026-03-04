@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mock-up — Print / Export</title>
+  <style>
+    :root {
+      --color-primary: #2d6a2d;
+      --color-bg: #f4f8f4;
+      --color-text: #1a2e1a;
+      --color-text-muted: #5a8a5a;
+      --color-text-dim: #4a6a4a;
+      --color-border: #e8f0e8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #c8d8c8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem 1rem 3rem;
+      gap: 2rem;
+    }
+    .mockup-banner {
+      width: 100%; max-width: 900px; background: #1a2e1a; color: #f4f8f4;
+      padding: 0.65rem 1rem; border-radius: 8px 8px 0 0;
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: 0.75rem; gap: 1rem; flex-shrink: 0;
+    }
+    .mockup-banner strong { font-size: 0.8rem; letter-spacing: 0.04em; }
+    .mockup-banner em { opacity: 0.65; font-style: normal; }
+
+    /* ── Section headers ── */
+    .section-label {
+      width: 100%; max-width: 900px;
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; color: #3a5a3a;
+      padding: 0 0 0.3rem; border-bottom: 1px dashed #8aaa8a;
+    }
+
+    /* ════════════════════════════════════════════
+       PART 1 — Modal with export button callout
+    ════════════════════════════════════════════ */
+    .species-modal {
+      width: 100%; max-width: 900px;
+      background: var(--color-bg);
+      border-radius: 0 0 12px 12px;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.28);
+      overflow: hidden;
+    }
+    .species-modal-image {
+      height: 220px;
+      background: url('../projects/shark-populations/images/white_shark/white_shark1.png') center/cover no-repeat,
+                  linear-gradient(135deg, #0a1525, #1a3a6a);
+    }
+    .species-modal-sticky { background: var(--color-bg); }
+    .modal-header {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 0.75rem; padding: 0.6rem 1.25rem;
+    }
+    .species-modal-name { font-size: 1.15rem; font-weight: 700; color: var(--color-text); }
+    .species-modal-sci  { font-size: 0.85rem; font-style: italic; color: var(--color-text-muted); margin-top: 0.1rem; }
+    .modal-header-actions { display: flex; align-items: center; gap: 0.3rem; flex-wrap: nowrap; }
+    .modal-nav-btn, .close-btn {
+      width: 1.75rem; height: 1.75rem; border: 1px solid var(--color-border); border-radius: 50%;
+      background: transparent; color: var(--color-text-muted); font-size: 1rem; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .modal-nav-counter { font-size: 0.72rem; color: var(--color-text-dim); min-width: 2.5rem; text-align: center; }
+
+    /* ── Export button — new addition ── */
+    .modal-export-btn {
+      display: flex; align-items: center; gap: 0.3rem;
+      padding: 0 0.65rem; height: 1.75rem;
+      border: 1px solid var(--color-primary); border-radius: 10px;
+      background: transparent; color: var(--color-primary);
+      font-size: 0.7rem; font-weight: 600; cursor: pointer;
+      white-space: nowrap; letter-spacing: 0.02em;
+      flex-shrink: 0;
+    }
+    .modal-export-btn:hover { background: #e8f5e8; }
+    .modal-export-btn svg { flex-shrink: 0; }
+
+    /* ── Callout annotation ── */
+    .callout-wrap {
+      position: relative;
+      display: flex; flex-direction: column; align-items: flex-end;
+      padding-right: 1.25rem;
+    }
+    .callout-arrow {
+      width: 100%; max-width: 900px;
+      display: flex; justify-content: flex-end;
+      padding-right: 1.25rem;
+    }
+    .callout-box {
+      background: #fffbea; border: 1px solid #d4a010; border-radius: 6px;
+      padding: 0.45rem 0.7rem; font-size: 0.72rem; color: #7a5a00;
+      max-width: 260px; text-align: right; line-height: 1.5;
+      position: relative;
+    }
+    .callout-box::before {
+      content: '';
+      position: absolute; top: -8px; right: 54px;
+      border: 4px solid transparent;
+      border-bottom-color: #d4a010;
+    }
+    .callout-box::after {
+      content: '';
+      position: absolute; top: -6px; right: 55px;
+      border: 3px solid transparent;
+      border-bottom-color: #fffbea;
+    }
+
+    .species-life-wrap { display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 1.25rem 0.65rem; border-bottom: 1px solid var(--color-border); }
+    .species-life-bar  { flex: 1; height: 6px; background: var(--color-border); border-radius: 3px; overflow: hidden; }
+    .species-life-fill { height: 100%; border-radius: 3px; background: #b0a010; width: 55%; }
+    .species-life-label { font-size: 0.72rem; font-weight: 600; color: #a08000; text-transform: uppercase; letter-spacing: 0.04em; white-space: nowrap; }
+
+    .species-tabs { display: flex; border-bottom: 2px solid var(--color-border); overflow-x: auto; scrollbar-width: none; }
+    .species-tab {
+      flex: 1 0 auto; padding: 0.65rem 0.6rem; background: transparent; border: none;
+      border-bottom: 2px solid transparent; margin-bottom: -2px;
+      font-size: 0.73rem; font-weight: 600; color: var(--color-text-muted);
+      cursor: pointer; white-space: nowrap; text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .species-tab + .species-tab { border-left: 1px solid var(--color-border); }
+    .species-tab.active { color: var(--color-primary); border-bottom-color: var(--color-primary); }
+    .species-tab-body { padding: 1rem 1.25rem 1.5rem; font-size: 0.88rem; color: var(--color-text); line-height: 1.65; }
+
+    /* ════════════════════════════════════════════
+       PART 2 — Print preview (A4-style document)
+    ════════════════════════════════════════════ */
+    .print-preview-wrap {
+      width: 100%; max-width: 900px;
+      background: #6a8a6a; border-radius: 8px;
+      padding: 1.5rem;
+      display: flex; flex-direction: column; align-items: center; gap: 0.75rem;
+    }
+    .print-preview-label {
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; color: #e8f5e8; align-self: flex-start;
+    }
+    .print-page {
+      width: 100%; max-width: 680px;
+      background: white;
+      border-radius: 2px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.35);
+      padding: 2.5rem 2.75rem;
+      font-family: Georgia, "Times New Roman", serif;
+      color: #111;
+    }
+
+    /* Print page — header strip */
+    .pp-header {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      border-bottom: 2px solid #1a3a1a; padding-bottom: 1rem; margin-bottom: 1.25rem;
+    }
+    .pp-name { font-size: 1.5rem; font-weight: 700; color: #1a3a1a; line-height: 1.2; }
+    .pp-sci  { font-size: 0.95rem; font-style: italic; color: #4a6a4a; margin-top: 0.2rem; }
+    .pp-badge-col { display: flex; flex-direction: column; align-items: flex-end; gap: 0.4rem; }
+    .pp-status-badge {
+      font-family: -apple-system, sans-serif;
+      font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em;
+      background: #fef3c7; color: #92400e; border: 1px solid #d97706;
+      border-radius: 3px; padding: 0.2rem 0.55rem;
+    }
+    .pp-health-row { display: flex; align-items: center; gap: 0.5rem; }
+    .pp-health-bar { width: 90px; height: 5px; background: #e0e0e0; border-radius: 3px; overflow: hidden; }
+    .pp-health-fill { height: 100%; background: #b0a010; width: 55%; border-radius: 3px; }
+    .pp-health-pct { font-family: -apple-system, sans-serif; font-size: 0.68rem; color: #6a6a6a; }
+
+    /* Print page — section heading */
+    .pp-section { margin-top: 1.4rem; }
+    .pp-section-title {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+      color: #2d6a2d; border-bottom: 1px solid #c8dfc8; padding-bottom: 0.3rem; margin-bottom: 0.7rem;
+    }
+    .pp-body { font-size: 0.88rem; line-height: 1.7; color: #222; }
+
+    /* Stats grid in print */
+    .pp-stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.55rem; margin-top: 0.6rem; }
+    .pp-stat-card { border: 1px solid #d8e8d8; border-radius: 4px; padding: 0.45rem 0.6rem; }
+    .pp-stat-label { font-family: -apple-system, sans-serif; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #4a6a4a; }
+    .pp-stat-value { font-family: -apple-system, sans-serif; font-size: 0.85rem; font-weight: 600; color: #111; margin-top: 0.1rem; }
+
+    /* Threats in print */
+    .pp-threat-row {
+      display: flex; align-items: baseline; gap: 0.65rem;
+      padding: 0.42rem 0; border-bottom: 1px solid #eee; font-size: 0.86rem;
+    }
+    .pp-threat-row:last-child { border-bottom: none; }
+    .pp-threat-badge {
+      font-family: -apple-system, sans-serif;
+      font-size: 0.58rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;
+      padding: 0.1rem 0.38rem; border-radius: 2px; flex-shrink: 0;
+    }
+    .pp-badge-crit   { background: #fde8e8; color: #b91c1c; }
+    .pp-badge-high   { background: #fef3e2; color: #b45309; }
+    .pp-badge-medium { background: #fefce8; color: #a16207; }
+    .pp-threat-name { font-weight: 700; color: #111; }
+    .pp-threat-desc { color: #444; line-height: 1.5; }
+
+    /* Actions in print */
+    .pp-action-row { padding: 0.42rem 0; border-bottom: 1px solid #eee; font-size: 0.86rem; }
+    .pp-action-row:last-child { border-bottom: none; }
+    .pp-action-title { font-weight: 700; color: #111; }
+    .pp-action-desc  { color: #444; line-height: 1.5; margin-top: 0.15rem; }
+
+    /* Footer strip */
+    .pp-footer {
+      margin-top: 1.75rem; padding-top: 0.7rem;
+      border-top: 1px solid #ccc;
+      display: flex; justify-content: space-between; align-items: baseline;
+      font-family: -apple-system, sans-serif; font-size: 0.67rem; color: #888;
+    }
+    .pp-sources { font-size: 0.67rem; color: #888; }
+    .pp-sources strong { color: #555; }
+    .pp-generated { font-size: 0.65rem; color: #aaa; text-align: right; }
+    .pp-logo-text { font-weight: 700; color: #2d6a2d; }
+
+    /* ── Export dialog (dropdown) ── */
+    .export-dialog-wrap {
+      width: 100%; max-width: 900px;
+      display: flex; justify-content: flex-end;
+      padding-right: 1.25rem;
+    }
+    .export-dialog {
+      background: white; border: 1px solid var(--color-border);
+      border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+      width: 210px; overflow: hidden;
+    }
+    .export-dialog-header {
+      font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em;
+      color: var(--color-text-muted); padding: 0.5rem 0.85rem 0.35rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .export-option {
+      display: flex; align-items: center; gap: 0.6rem;
+      padding: 0.6rem 0.85rem; cursor: pointer; font-size: 0.84rem; color: var(--color-text);
+    }
+    .export-option:hover { background: #f0f8f0; }
+    .export-option + .export-option { border-top: 1px solid var(--color-border); }
+    .export-option-icon { font-size: 1rem; width: 1.25rem; text-align: center; flex-shrink: 0; }
+    .export-option-label { font-weight: 600; font-size: 0.82rem; }
+    .export-option-sub   { font-size: 0.69rem; color: var(--color-text-muted); margin-top: 0.05rem; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     PART 1 — Modal with Print button
+══════════════════════════════════════ -->
+<div class="mockup-banner">
+  <strong>MOCK-UP — PRINT / EXPORT</strong>
+  <em>Part 1 of 3: Export button added to modal header actions row</em>
+</div>
+<div class="species-modal">
+  <div class="species-modal-image"></div>
+  <div class="species-modal-sticky">
+    <div class="modal-header">
+      <div>
+        <div class="species-modal-name">Great White Shark</div>
+        <div class="species-modal-sci">Carcharodon carcharias</div>
+      </div>
+      <div class="modal-header-actions">
+        <button class="modal-nav-btn" title="Favorite">☆</button>
+        <button class="modal-nav-btn">‹</button>
+        <span class="modal-nav-counter">1 / 5</span>
+        <button class="modal-nav-btn">›</button>
+        <button class="modal-nav-btn" title="Copy link">🔗</button>
+        <!-- NEW: export button -->
+        <button class="modal-export-btn" title="Export / Print">
+          <svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12h10M8 3v7M5 7l3 3 3-3"/>
+          </svg>
+          Export
+        </button>
+        <button class="close-btn">×</button>
+      </div>
+    </div>
+    <div class="species-life-wrap">
+      <div class="species-life-bar"><div class="species-life-fill"></div></div>
+      <div class="species-life-label">Vulnerable</div>
+    </div>
+    <div class="species-tabs">
+      <button class="species-tab active">Overview</button>
+      <button class="species-tab">Vital Signs</button>
+      <button class="species-tab">Health Metrics</button>
+      <button class="species-tab">Threats</button>
+      <button class="species-tab">Action Items</button>
+    </div>
+  </div>
+  <div class="species-tab-body">
+    The great white shark is the world's largest predatory fish, found in cool coastal and offshore waters across the globe. Despite their fearsome reputation, attacks on humans are rare and typically cases of mistaken identity…
+  </div>
+</div>
+<!-- Callout annotation -->
+<div class="export-dialog-wrap">
+  <div class="callout-box">
+    New <strong>Export</strong> button sits alongside the share and close buttons. Clicking it opens the dropdown below.
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     PART 2 — Export dropdown
+══════════════════════════════════════ -->
+<div class="section-label">Part 2 of 3 — Export dropdown (opens on click)</div>
+<div class="export-dialog-wrap">
+  <div class="export-dialog">
+    <div class="export-dialog-header">Export species detail</div>
+    <div class="export-option">
+      <div class="export-option-icon">📄</div>
+      <div>
+        <div class="export-option-label">Save as PDF</div>
+        <div class="export-option-sub">Download a full-detail PDF</div>
+      </div>
+    </div>
+    <div class="export-option">
+      <div class="export-option-icon">🖨️</div>
+      <div>
+        <div class="export-option-label">Print</div>
+        <div class="export-option-sub">Open browser print dialog</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     PART 3 — Print / PDF output layout
+══════════════════════════════════════ -->
+<div class="section-label">Part 3 of 3 — Print / PDF output (all tabs shown on one page, no modal chrome)</div>
+<div class="print-preview-wrap">
+  <div class="print-preview-label">⬇ Print preview / exported PDF</div>
+  <div class="print-page">
+
+    <!-- Header -->
+    <div class="pp-header">
+      <div>
+        <div class="pp-name">Great White Shark</div>
+        <div class="pp-sci">Carcharodon carcharias</div>
+      </div>
+      <div class="pp-badge-col">
+        <span class="pp-status-badge">Vulnerable</span>
+        <div class="pp-health-row">
+          <div class="pp-health-bar"><div class="pp-health-fill"></div></div>
+          <span class="pp-health-pct">55% health</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Overview -->
+    <div class="pp-section">
+      <div class="pp-section-title">Overview</div>
+      <p class="pp-body">The great white shark is the world's largest predatory fish, found in cool coastal and offshore waters across the globe. Despite their fearsome reputation, attacks on humans are rare and typically cases of mistaken identity — they strongly prefer fat-rich marine mammals over people.</p>
+      <div class="pp-stats-grid">
+        <div class="pp-stat-card"><div class="pp-stat-label">Max Length</div><div class="pp-stat-value">6.4 m</div></div>
+        <div class="pp-stat-card"><div class="pp-stat-label">Lifespan</div><div class="pp-stat-value">70+ years</div></div>
+        <div class="pp-stat-card"><div class="pp-stat-label">Role</div><div class="pp-stat-value">Apex Predator</div></div>
+        <div class="pp-stat-card"><div class="pp-stat-label">Range</div><div class="pp-stat-value">Global oceans</div></div>
+        <div class="pp-stat-card"><div class="pp-stat-label">Max Depth</div><div class="pp-stat-value">1,280 m</div></div>
+        <div class="pp-stat-card"><div class="pp-stat-label">Population Est.</div><div class="pp-stat-value">~3,500</div></div>
+      </div>
+    </div>
+
+    <!-- Vital Signs -->
+    <div class="pp-section">
+      <div class="pp-section-title">Vital Signs</div>
+      <div class="pp-threat-row"><span class="pp-threat-name">Max Weight</span><span class="pp-threat-desc">~2,000 kg</span></div>
+      <div class="pp-threat-row"><span class="pp-threat-name">Top Speed</span><span class="pp-threat-desc">~56 km/h in bursts</span></div>
+      <div class="pp-threat-row"><span class="pp-threat-name">Age at Maturity</span><span class="pp-threat-desc">~9–10 years</span></div>
+      <div class="pp-threat-row"><span class="pp-threat-name">Reproductive Rate</span><span class="pp-threat-desc">2–10 pups; ~18 months gestation</span></div>
+      <div class="pp-threat-row"><span class="pp-threat-name">Key Senses</span><span class="pp-threat-desc">Electroreception; detects 1 drop per 100 L</span></div>
+    </div>
+
+    <!-- Health Metrics -->
+    <div class="pp-section">
+      <div class="pp-section-title">Health Metrics</div>
+      <div class="pp-threat-row"><span class="pp-threat-name">IUCN Status</span><span class="pp-threat-desc">Vulnerable — stable classification</span></div>
+      <div class="pp-threat-row"><span class="pp-threat-name">Population Trend</span><span class="pp-threat-desc">Decreasing ▼</span></div>
+      <div class="pp-threat-row"><span class="pp-threat-name">Habitat Quality</span><span class="pp-threat-desc">Moderate — coastal zones under pressure</span></div>
+      <div class="pp-threat-row"><span class="pp-threat-name">Prey Availability</span><span class="pp-threat-desc">Declining in key regions ▼</span></div>
+      <div class="pp-threat-row"><span class="pp-threat-name">Fishing Pressure</span><span class="pp-threat-desc">High — bycatch and poaching ▼</span></div>
+      <div class="pp-threat-row"><span class="pp-threat-name">Protection Coverage</span><span class="pp-threat-desc">Partial — CITES Appendix II</span></div>
+    </div>
+
+    <!-- Threats -->
+    <div class="pp-section">
+      <div class="pp-section-title">Threats</div>
+      <div class="pp-threat-row">
+        <span class="pp-threat-badge pp-badge-crit">Critical</span>
+        <div><span class="pp-threat-name">Bycatch</span> — <span class="pp-threat-desc">Caught unintentionally in longlines, gill nets, and drum lines. The leading cause of mortality globally.</span></div>
+      </div>
+      <div class="pp-threat-row">
+        <span class="pp-threat-badge pp-badge-high">High</span>
+        <div><span class="pp-threat-name">Targeted Poaching</span> — <span class="pp-threat-desc">Hunted for jaws, teeth, fins, and liver oil. Trophy jaws fetch tens of thousands on the black market.</span></div>
+      </div>
+      <div class="pp-threat-row">
+        <span class="pp-threat-badge pp-badge-high">High</span>
+        <div><span class="pp-threat-name">Habitat Degradation</span> — <span class="pp-threat-desc">Coastal development and pollution reduce quality of pupping and feeding grounds.</span></div>
+      </div>
+      <div class="pp-threat-row">
+        <span class="pp-threat-badge pp-badge-medium">Medium</span>
+        <div><span class="pp-threat-name">Climate Change</span> — <span class="pp-threat-desc">Warming oceans shift prey distributions and may affect juvenile survival in pupping areas.</span></div>
+      </div>
+    </div>
+
+    <!-- Action Items -->
+    <div class="pp-section">
+      <div class="pp-section-title">Action Items</div>
+      <div class="pp-action-row">
+        <div class="pp-action-title">Support Shark Conservation Organizations</div>
+        <div class="pp-action-desc">Donate to or volunteer with groups like Shark Trust, Save Our Seas Foundation, and Shark Research Institute.</div>
+      </div>
+      <div class="pp-action-row">
+        <div class="pp-action-title">Advocate for Stronger Bycatch Regulations</div>
+        <div class="pp-action-desc">Support legislation requiring circle hooks, excluder devices, and observer programs on commercial fishing vessels.</div>
+      </div>
+      <div class="pp-action-row">
+        <div class="pp-action-title">Choose Sustainable Seafood</div>
+        <div class="pp-action-desc">Use the Monterey Bay Aquarium Seafood Watch guide to avoid unsustainable fisheries that increase bycatch pressure.</div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="pp-footer">
+      <div class="pp-sources">
+        <strong>Sources:</strong> IUCN Red List · CITES Appendices · Shark Trust · NOAA Fisheries
+      </div>
+      <div class="pp-generated">
+        Generated by <span class="pp-logo-text">Sustainability Tracker</span><br/>
+        March 2026
+      </div>
+    </div>
+
+  </div><!-- /.print-page -->
+</div><!-- /.print-preview-wrap -->
+
+</body>
+</html>

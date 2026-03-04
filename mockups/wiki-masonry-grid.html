@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grid / Masonry / List Views — Mockup</title>
+  <style>
+    :root {
+      --color-primary: #2d6a2d;
+      --color-primary-rgb: 45, 106, 45;
+      --color-bg: #f4f8f4;
+      --color-text: #1a2e1a;
+      --color-text-muted: #5a8a5a;
+      --color-border: #e8f0e8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #c8d8c8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 1.5rem 4rem;
+    }
+
+    /* ── Mockup banner ── */
+    .mockup-banner {
+      width: 100%;
+      max-width: 1060px;
+      background: #1a2e1a;
+      color: #f4f8f4;
+      padding: 0.65rem 1.25rem;
+      border-radius: 0 0 8px 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .mockup-banner strong { font-size: 0.82rem; letter-spacing: 0.04em; }
+    .mockup-banner em { opacity: 0.6; font-style: normal; }
+
+    /* ── Two-panel comparison wrapper ── */
+    .comparison {
+      width: 100%;
+      max-width: 1060px;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .panel {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: var(--color-bg);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    }
+
+    /* ── Simulated wiki toolbar ── */
+    .wiki-toolbar {
+      background: var(--color-bg);
+      border-bottom: 1px solid var(--color-border);
+      padding: 0.55rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .wiki-toolbar-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-right: auto;
+      letter-spacing: -0.01em;
+    }
+    .wiki-toolbar-count {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      background: rgba(45,106,45,0.09);
+      border-radius: 999px;
+      padding: 0.18rem 0.5rem;
+    }
+    .toolbar-search-fake {
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      padding: 0.3rem 0.7rem;
+      font-size: 0.77rem;
+      color: #aaa;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      width: 160px;
+    }
+    .toolbar-search-fake svg { flex-shrink: 0; opacity: 0.45; }
+
+    /* View toggle */
+    .view-toggle {
+      display: flex;
+      background: rgba(45,106,45,0.08);
+      border-radius: 8px;
+      padding: 2px;
+      gap: 1px;
+    }
+    .view-toggle-btn {
+      border: none;
+      background: transparent;
+      border-radius: 6px;
+      padding: 0.3rem 0.55rem;
+      cursor: pointer;
+      color: var(--color-text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.28rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      transition: background 0.12s, color 0.12s;
+    }
+    .view-toggle-btn.active {
+      background: white;
+      color: var(--color-primary);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+    }
+    .view-toggle-btn svg { width: 14px; height: 14px; }
+
+    /* Panel label */
+    .panel-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--color-text-muted);
+      padding: 0.5rem 1rem 0.2rem;
+    }
+
+    /* ── GRID mode ── */
+    .wiki-grid--uniform {
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+      align-content: start;
+    }
+
+    /* ── MASONRY mode (CSS columns) ── */
+    .wiki-grid--masonry {
+      padding: 1rem;
+      column-count: 4;
+      column-gap: 1rem;
+    }
+    .wiki-grid--masonry .species-card {
+      break-inside: avoid;
+      margin-bottom: 1rem;
+      display: block;
+      width: 100%;
+    }
+
+    /* ── Species card base ── */
+    .species-card {
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+      cursor: pointer;
+      transition: box-shadow 0.15s ease, transform 0.15s ease;
+    }
+    .species-card:hover {
+      box-shadow: 0 4px 20px rgba(45,106,45, 0.18);
+      transform: translateY(-2px);
+    }
+
+    /* Image area — variable heights for masonry effect */
+    .species-card-image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      position: relative;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, #0e220e, #1e3e1e);
+      overflow: hidden;
+    }
+    .species-card-image.h-sm  { height: 120px; }
+    .species-card-image.h-md  { height: 160px; }
+    .species-card-image.h-lg  { height: 200px; }
+    .species-card-image.photo {
+      background-image: url('../projects/shark-populations/images/white_shark/white_shark1.png');
+      background-size: cover;
+      background-position: center;
+    }
+    .species-card-image.photo-dark {
+      background-image: url('../projects/shark-populations/images/shark-silhouette.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Star */
+    .species-card-star {
+      position: absolute;
+      top: 8px; right: 8px;
+      background: rgba(255,255,255,0.88);
+      border: none;
+      border-radius: 50%;
+      width: 28px; height: 28px;
+      font-size: 0.9rem;
+      display: flex; align-items: center; justify-content: center;
+      color: #c8900a;
+      cursor: pointer;
+    }
+
+    /* Body */
+    .species-card-body {
+      padding: 0.85rem 0.95rem 0.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .species-card-name {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 0.1rem;
+      line-height: 1.25;
+    }
+    .species-card-sci {
+      font-size: 0.72rem;
+      font-style: italic;
+      color: var(--color-text-muted);
+      margin-bottom: 0.45rem;
+    }
+
+    /* Badges row */
+    .card-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.28rem;
+      margin-bottom: 0.45rem;
+    }
+    .card-badge {
+      font-size: 0.62rem;
+      font-weight: 600;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .card-badge--ocean   { background: rgba(37,99,235,0.10); color: #1d4ed8; }
+    .card-badge--coastal { background: rgba(22,163,74,0.10);  color: #15803d; }
+    .card-badge--deep    { background: rgba(109,40,217,0.10); color: #6d28d9; }
+    .card-badge--reef    { background: rgba(234,179,8,0.10);  color: #92400e; }
+    .card-badge--diet    { background: rgba(239,68,68,0.08);  color: #b91c1c; }
+
+    /* Threat badge */
+    .card-threat-badge {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.62rem;
+      font-weight: 700;
+      padding: 0.13rem 0.42rem;
+      border-radius: 999px;
+      align-self: flex-start;
+      margin-bottom: 0.45rem;
+    }
+    .card-threat-badge--critical { background: rgba(192,57,43,0.12); color: #8c1515; }
+    .card-threat-badge--high     { background: rgba(230,126,34,0.12); color: #944000; }
+    .card-threat-badge--medium   { background: rgba(234,179,8,0.12);  color: #92400e; }
+
+    /* Description snippet */
+    .card-desc {
+      font-size: 0.72rem;
+      color: #4a6a4a;
+      line-height: 1.45;
+      margin-bottom: 0.55rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* Fun fact */
+    .card-funfact {
+      background: rgba(45,106,45,0.06);
+      border-radius: 7px;
+      padding: 0.45rem 0.55rem;
+      margin-bottom: 0.55rem;
+    }
+    .card-funfact-lbl {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: 0.2rem;
+    }
+    .card-funfact-txt {
+      font-size: 0.68rem;
+      color: var(--color-text);
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* Progress ring row */
+    .card-ring-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--color-border);
+      margin-top: auto;
+    }
+    .card-ring-svg { flex-shrink: 0; }
+    .ring-track { fill: none; stroke: var(--color-border); stroke-width: 3.5; }
+    .ring-fill  { fill: none; stroke-width: 3.5; stroke-linecap: round; }
+    .ring-pct-txt {
+      dominant-baseline: middle;
+      text-anchor: middle;
+      font-size: 9px;
+      font-weight: 700;
+      fill: var(--color-text);
+    }
+    .card-ring-meta { display: flex; flex-direction: column; gap: 0.1rem; }
+    .card-ring-status {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--color-text);
+    }
+    .card-ring-sub {
+      font-size: 0.6rem;
+      color: var(--color-text-muted);
+    }
+
+    /* ── Annotation callouts ── */
+    .annotation-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 0.85rem 1rem;
+      border-top: 1px solid var(--color-border);
+      background: rgba(45,106,45,0.035);
+    }
+    .annotation {
+      font-size: 0.73rem;
+      color: #2d6a2d;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.45rem;
+      line-height: 1.4;
+    }
+    .annotation::before {
+      content: "→";
+      flex-shrink: 0;
+      font-weight: 700;
+      margin-top: 0.02rem;
+    }
+    .annotation strong { font-weight: 700; }
+
+    /* ── Gap annotation (visual overlay) ── */
+    .gap-label {
+      font-size: 0.6rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: rgba(185,28,28,0.65);
+      text-align: center;
+      padding: 0.2rem;
+      background: rgba(185,28,28,0.06);
+      border: 1px dashed rgba(185,28,28,0.25);
+      border-radius: 5px;
+    }
+    .gap-placeholder {
+      border: 1.5px dashed rgba(185,28,28,0.3);
+      border-radius: 10px;
+      background: rgba(185,28,28,0.03);
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── LIST mode ── */
+    .wiki-list {
+      display: flex;
+      flex-direction: column;
+      padding: 0.75rem 1rem 1rem;
+    }
+
+    .list-row {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      padding: 0.6rem 0.55rem;
+      border-bottom: 1px solid var(--color-border);
+      border-radius: 8px;
+      cursor: default;
+      transition: background 0.12s;
+    }
+    .list-row:hover { background: rgba(45,106,45,0.025); }
+    .list-row:last-child { border-bottom: none; }
+
+    .list-star {
+      flex: 0 0 auto;
+      background: none;
+      border: none;
+      font-size: 0.95rem;
+      color: #c8900a;
+      cursor: pointer;
+      padding: 0;
+      width: 20px;
+      text-align: center;
+    }
+
+    .list-names {
+      flex: 0 0 185px;
+    }
+    .list-common {
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      line-height: 1.2;
+      text-decoration: underline;
+      text-decoration-color: rgba(45,106,45,0.3);
+      text-underline-offset: 2px;
+      cursor: pointer;
+      display: inline;
+    }
+    .list-common:hover {
+      text-decoration-color: var(--color-primary);
+    }
+    .list-sci {
+      font-size: 0.67rem;
+      font-style: italic;
+      color: var(--color-text-muted);
+      margin-top: 0.1rem;
+    }
+
+    .list-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.22rem;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .list-stats {
+      display: flex;
+      gap: 0.28rem;
+      flex: 0 0 auto;
+    }
+    .list-stat {
+      background: rgba(45,106,45,0.08);
+      border-radius: 999px;
+      padding: 0.14rem 0.46rem;
+      font-size: 0.61rem;
+      color: var(--color-text);
+      white-space: nowrap;
+      font-weight: 500;
+    }
+    .list-stat-icon { opacity: 0.55; margin-right: 0.18rem; }
+
+    .list-health {
+      flex: 0 0 136px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.22rem;
+    }
+    .list-health-row {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .list-health-bar {
+      flex: 1;
+      height: 5px;
+      background: var(--color-border);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .list-health-fill { height: 100%; border-radius: 999px; }
+    .list-health-pct {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--color-text);
+      flex: 0 0 26px;
+      text-align: right;
+    }
+    .list-health-status {
+      font-size: 0.61rem;
+      color: var(--color-text-muted);
+      white-space: nowrap;
+    }
+
+    .list-chevron {
+      flex: 0 0 auto;
+      color: #aac8aa;
+      font-size: 0.75rem;
+      line-height: 1;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.2rem 0.3rem;
+      border-radius: 5px;
+      transition: background 0.1s, color 0.1s;
+    }
+    .list-chevron:hover {
+      background: rgba(45,106,45,0.08);
+      color: var(--color-primary);
+    }
+
+    /* Expanded row — one species shown with extra detail */
+    .list-row--expanded {
+      flex-wrap: wrap;
+      background: rgba(45,106,45,0.03);
+      border-radius: 10px;
+      border: 1px solid rgba(45,106,45,0.15);
+      margin: 0.2rem 0;
+      border-bottom: 1px solid rgba(45,106,45,0.15) !important;
+    }
+    .list-row--expanded .list-chevron { color: var(--color-primary); }
+    .list-extra {
+      flex: 0 0 100%;
+      padding: 0.55rem 0.6rem 0.5rem 1.8rem;
+      display: flex;
+      gap: 0;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--color-border);
+      margin-top: 0.1rem;
+    }
+    .list-extra-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.12rem;
+      padding: 0 1rem 0 0;
+      margin-right: 1rem;
+      border-right: 1px solid var(--color-border);
+    }
+    .list-extra-group:last-child { border-right: none; padding-right: 0; margin-right: 0; }
+    .list-extra-label {
+      font-size: 0.57rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--color-text-muted);
+    }
+    .list-extra-value {
+      font-size: 0.71rem;
+      color: var(--color-text);
+      font-weight: 500;
+    }
+    .list-extra-tags {
+      display: flex;
+      gap: 0.22rem;
+      flex-wrap: wrap;
+      margin-top: 0.08rem;
+    }
+    .list-extra-tag {
+      font-size: 0.6rem;
+      background: rgba(45,106,45,0.08);
+      color: var(--color-text-muted);
+      border-radius: 999px;
+      padding: 0.1rem 0.38rem;
+      font-weight: 600;
+    }
+
+    /* Column header row in list */
+    .list-header {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      padding: 0.3rem 0.55rem 0.5rem;
+      border-bottom: 2px solid var(--color-border);
+      margin-bottom: 0.15rem;
+    }
+    .list-col-label {
+      font-size: 0.6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--color-text-muted);
+    }
+    .list-col-label.lc-name  { flex: 0 0 205px; }
+    .list-col-label.lc-tags  { flex: 1; }
+    .list-col-label.lc-stats { flex: 0 0 auto; min-width: 170px; }
+    .list-col-label.lc-health{ flex: 0 0 136px; }
+    .list-col-label.lc-end   { flex: 0 0 20px; }
+
+    @media (max-width: 860px) {
+      .wiki-grid--masonry { column-count: 3; }
+    }
+    @media (max-width: 600px) {
+      .wiki-grid--masonry { column-count: 2; }
+      .wiki-grid--uniform { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="mockup-banner">
+  <div><strong>Mockup</strong> &nbsp;·&nbsp; <em>wiki-masonry-grid.html</em></div>
+  <div><em>Exploring grid / masonry / list views — three layout modes for the wiki</em></div>
+</div>
+
+<div class="comparison">
+
+  <!-- ════════════════════════════════════════════════
+       PANEL 1 — CURRENT: Uniform grid
+  ═════════════════════════════════════════════════ -->
+  <div class="panel">
+    <div class="wiki-toolbar">
+      <span class="wiki-toolbar-title">Shark Populations</span>
+      <span class="wiki-toolbar-count">14 species</span>
+      <div class="toolbar-search-fake">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6.5" cy="6.5" r="4"/><line x1="10" y1="10" x2="14" y2="14"/></svg>
+        Search…
+      </div>
+      <div class="view-toggle">
+        <button class="view-toggle-btn active">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6">
+            <rect x="1" y="1" width="6" height="6" rx="1.5"/><rect x="9" y="1" width="6" height="6" rx="1.5"/>
+            <rect x="1" y="9" width="6" height="6" rx="1.5"/><rect x="9" y="9" width="6" height="6" rx="1.5"/>
+          </svg>
+          Grid
+        </button>
+        <button class="view-toggle-btn">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6">
+            <rect x="1" y="1" width="4" height="9" rx="1.5"/><rect x="6" y="1" width="4" height="5" rx="1.5"/>
+            <rect x="11" y="1" width="4" height="12" rx="1.5"/><rect x="6" y="8" width="4" height="7" rx="1.5"/>
+          </svg>
+          Masonry
+        </button>
+        <button class="view-toggle-btn">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6">
+            <circle cx="3" cy="4.5" r="1.4" fill="currentColor" stroke="none"/><line x1="6.5" y1="4.5" x2="15" y2="4.5"/>
+            <circle cx="3" cy="8.5" r="1.4" fill="currentColor" stroke="none"/><line x1="6.5" y1="8.5" x2="15" y2="8.5"/>
+            <circle cx="3" cy="12.5" r="1.4" fill="currentColor" stroke="none"/><line x1="6.5" y1="12.5" x2="15" y2="12.5"/>
+          </svg>
+          List
+        </button>
+      </div>
+    </div>
+
+    <div class="panel-label">Current — uniform grid (all cards same height, gaps visible below short content)</div>
+
+    <div class="wiki-grid--uniform">
+
+      <!-- Card A — tall (has description + many badges) -->
+      <div class="species-card">
+        <div class="species-card-image h-md photo">
+          <button class="species-card-star">★</button>
+        </div>
+        <div class="species-card-body">
+          <div class="species-card-name">Great White Shark</div>
+          <div class="species-card-sci">Carcharodon carcharias</div>
+          <div class="card-badges">
+            <span class="card-badge card-badge--ocean">🌊 Ocean</span>
+            <span class="card-badge card-badge--coastal">🏖 Coastal</span>
+            <span class="card-badge card-badge--diet">🦈 Apex Predator</span>
+          </div>
+          <div class="card-threat-badge card-threat-badge--high">High Threat</div>
+          <div class="card-desc">The great white shark is the world's largest predatory fish. Despite their fearsome reputation, attacks on humans are rare and typically cases of mistaken identity.</div>
+          <div class="card-ring-wrap">
+            <svg class="card-ring-svg" viewBox="0 0 52 52" width="44" height="44">
+              <circle class="ring-track" cx="26" cy="26" r="21"/>
+              <circle class="ring-fill" cx="26" cy="26" r="21" stroke="#e67e22"
+                stroke-dasharray="131.95" stroke-dashoffset="59.38" transform="rotate(-90,26,26)"/>
+              <text class="ring-pct-txt" x="26" y="26">55%</text>
+            </svg>
+            <div class="card-ring-meta">
+              <div class="card-ring-status">Vulnerable</div>
+              <div class="card-ring-sub">Population health</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card B — short (few badges, no description) -->
+      <div class="species-card">
+        <div class="species-card-image h-md">🦈
+          <button class="species-card-star">☆</button>
+        </div>
+        <div class="species-card-body">
+          <div class="species-card-name">Bull Shark</div>
+          <div class="species-card-sci">Carcharhinus leucas</div>
+          <div class="card-badges">
+            <span class="card-badge card-badge--coastal">🏖 Coastal</span>
+          </div>
+          <div class="card-ring-wrap">
+            <svg class="card-ring-svg" viewBox="0 0 52 52" width="44" height="44">
+              <circle class="ring-track" cx="26" cy="26" r="21"/>
+              <circle class="ring-fill" cx="26" cy="26" r="21" stroke="#f59e0b"
+                stroke-dasharray="131.95" stroke-dashoffset="79.17" transform="rotate(-90,26,26)"/>
+              <text class="ring-pct-txt" x="26" y="26">40%</text>
+            </svg>
+            <div class="card-ring-meta">
+              <div class="card-ring-status">Near Threatened</div>
+              <div class="card-ring-sub">Population health</div>
+            </div>
+          </div>
+          <!-- Empty space below — wasted in uniform grid -->
+        </div>
+      </div>
+
+      <!-- Card C — medium -->
+      <div class="species-card">
+        <div class="species-card-image h-md">🦈
+          <button class="species-card-star">☆</button>
+        </div>
+        <div class="species-card-body">
+          <div class="species-card-name">Scalloped Hammerhead</div>
+          <div class="species-card-sci">Sphyrna lewini</div>
+          <div class="card-badges">
+            <span class="card-badge card-badge--ocean">🌊 Ocean</span>
+            <span class="card-badge card-badge--coastal">🏖 Coastal</span>
+          </div>
+          <div class="card-threat-badge card-threat-badge--critical">Critically Endangered</div>
+          <div class="card-ring-wrap">
+            <svg class="card-ring-svg" viewBox="0 0 52 52" width="44" height="44">
+              <circle class="ring-track" cx="26" cy="26" r="21"/>
+              <circle class="ring-fill" cx="26" cy="26" r="21" stroke="#dc2626"
+                stroke-dasharray="131.95" stroke-dashoffset="105.56" transform="rotate(-90,26,26)"/>
+              <text class="ring-pct-txt" x="26" y="26">20%</text>
+            </svg>
+            <div class="card-ring-meta">
+              <div class="card-ring-status">Critically Endangered</div>
+              <div class="card-ring-sub">Population health</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card D — short -->
+      <div class="species-card">
+        <div class="species-card-image h-md">🦈
+          <button class="species-card-star">☆</button>
+        </div>
+        <div class="species-card-body">
+          <div class="species-card-name">Tiger Shark</div>
+          <div class="species-card-sci">Galeocerdo cuvier</div>
+          <div class="card-badges">
+            <span class="card-badge card-badge--ocean">🌊 Ocean</span>
+            <span class="card-badge card-badge--coastal">🏖 Coastal</span>
+            <span class="card-badge card-badge--reef">🪸 Reef</span>
+          </div>
+          <div class="card-ring-wrap">
+            <svg class="card-ring-svg" viewBox="0 0 52 52" width="44" height="44">
+              <circle class="ring-track" cx="26" cy="26" r="21"/>
+              <circle class="ring-fill" cx="26" cy="26" r="21" stroke="#16a34a"
+                stroke-dasharray="131.95" stroke-dashoffset="39.59" transform="rotate(-90,26,26)"/>
+              <text class="ring-pct-txt" x="26" y="26">70%</text>
+            </svg>
+            <div class="card-ring-meta">
+              <div class="card-ring-status">Near Threatened</div>
+              <div class="card-ring-sub">Population health</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /wiki-grid--uniform -->
+
+    <div class="annotation-wrap">
+      <div class="annotation">
+        <strong>Problem:</strong> all cards in a row are stretched to the height of the tallest. Short cards (Bull Shark, Tiger Shark) leave blank space at the bottom — especially visible with varied content like descriptions or fun facts.
+      </div>
+      <div class="annotation">
+        <strong>When this matters:</strong> if cards ever show description snippets, fun facts, or variable badge counts, whitespace grows. The uniform grid trades density for a strict row-aligned look.
+      </div>
+    </div>
+  </div><!-- /panel 1 -->
+
+
+  <!-- ════════════════════════════════════════════════
+       PANEL 2 — MASONRY: CSS columns
+  ═════════════════════════════════════════════════ -->
+  <div class="panel">
+    <div class="wiki-toolbar">
+      <span class="wiki-toolbar-title">Shark Populations</span>
+      <span class="wiki-toolbar-count">14 species</span>
+      <div class="toolbar-search-fake">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6.5" cy="6.5" r="4"/><line x1="10" y1="10" x2="14" y2="14"/></svg>
+        Search…
+      </div>
+      <div class="view-toggle">
+        <button class="view-toggle-btn">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6">
+            <rect x="1" y="1" width="6" height="6" rx="1.5"/><rect x="9" y="1" width="6" height="6" rx="1.5"/>
+            <rect x="1" y="9" width="6" height="6" rx="1.5"/><rect x="9" y="9" width="6" height="6" rx="1.5"/>
+          </svg>
+          Grid
+        </button>
+        <button class="view-toggle-btn active">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6">
+            <rect x="1" y="1" width="4" height="9" rx="1.5"/><rect x="6" y="1" width="4" height="5" rx="1.5"/>
+            <rect x="11" y="1" width="4" height="12" rx="1.5"/><rect x="6" y="8" width="4" height="7" rx="1.5"/>
+          </svg>
+          Masonry
+        </button>
+        <button class="view-toggle-btn">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6">
+            <circle cx="3" cy="4.5" r="1.4" fill="currentColor" stroke="none"/><line x1="6.5" y1="4.5" x2="15" y2="4.5"/>
+            <circle cx="3" cy="8.5" r="1.4" fill="currentColor" stroke="none"/><line x1="6.5" y1="8.5" x2="15" y2="8.5"/>
+            <circle cx="3" cy="12.5" r="1.4" fill="currentColor" stroke="none"/><line x1="6.5" y1="12.5" x2="15" y2="12.5"/>
+          </svg>
+          List
+        </button>
+      </div>
+    </div>
+
+    <div class="panel-label">Masonry (CSS columns) — cards pack tightly, no wasted whitespace</div>
+
+    <div class="wiki-grid--masonry">
+
+      <!-- Col 1: tall + short (stacked) -->
+      <!-- Card 1 — Great White — tall: photo + desc + badges -->
+      <div class="species-card">
+        <div class="species-card-image h-lg photo">
+          <button class="species-card-star">★</button>
+        </div>
+        <div class="species-card-body">
+          <div class="species-card-name">Great White Shark</div>
+          <div class="species-card-sci">Carcharodon carcharias</div>
+          <div class="card-badges">
+            <span class="card-badge card-badge--ocean">🌊 Ocean</span>
+            <span class="card-badge card-badge--coastal">🏖 Coastal</span>
+            <span class="card-badge card-badge--diet">🦈 Apex Predator</span>
+          </div>
+          <div class="card-threat-badge card-threat-badge--high">High Threat</div>
+          <div class="card-desc">The world's largest predatory fish, found in cool coastal and offshore waters. Despite their fearsome reputation, attacks on humans are rare and typically cases of mistaken identity.</div>
+          <div class="card-ring-wrap">
+            <svg class="card-ring-svg" viewBox="0 0 52 52" width="44" height="44">
+              <circle class="ring-track" cx="26" cy="26" r="21"/>
+              <circle class="ring-fill" cx="26" cy="26" r="21" stroke="#e67e22"
+                stroke-dasharray="131.95" stroke-dashoffset="59.38" transform="rotate(-90,26,26)"/>
+              <text class="ring-pct-txt" x="26" y="26">55%</text>
+            </svg>
+            <div class="card-ring-meta">
+              <div class="card-ring-status">Vulnerable</div>
+              <div class="card-ring-sub">Population health</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 — Tiger Shark — short: 3 badges, no description -->
+      <div class="species-card">
+        <div class="species-card-image h-sm">🦈
+          <button class="species-card-star">☆</button>
+        </div>
+        <div class="species-card-body">
+          <div class="species-card-name">Tiger Shark</div>
+          <div class="species-card-sci">Galeocerdo cuvier</div>
+          <div class="card-badges">
+            <span class="card-badge card-badge--ocean">🌊 Ocean</span>
+            <span class="card-badge card-badge--coastal">🏖 Coastal</span>
+            <span class="card-badge card-badge--reef">🪸 Reef</span>
+          </div>
+          <div class="card-ring-wrap">
+            <svg class="card-ring-svg" viewBox="0 0 52 52" width="44" height="44">
+              <circle class="ring-track" cx="26" cy="26" r="21"/>
+              <circle class="ring-fill" cx="26" cy="26" r="21" stroke="#16a34a"
+                stroke-dasharray="131.95" stroke-dashoffset="39.59" transform="rotate(-90,26,26)"/>
+              <text class="ring-pct-txt" x="26" y="26">70%</text>
+            </svg>
+            <div class="card-ring-meta">
+              <div class="card-ring-status">Near Threatened</div>
+              <div class="card-ring-sub">Population health</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 — Whale Shark — medium: fun fact -->
+      <div class="species-card">
+        <div class="species-card-image h-md">🐋
+          <button class="species-card-star">☆</button>
+        </div>
+        <div class="species-card-body">
+          <div class="species-card-name">Whale Shark</div>
+          <div class="species-card-sci">Rhincodon typus</div>
+          <div class="card-badges">
+            <span class="card-badge card-badge--ocean">🌊 Ocean</span>
+            <span class="card-badge card-badge--coastal">🏖 Coastal</span>
+          </div>
+          <div class="card-funfact">
+            <div class="card-funfact-lbl">Fun fact</div>
+            <div class="card-funfact-txt">The whale shark is the largest fish on Earth, reaching up to 12 m (40 ft). Despite its size, it's a filter feeder — straining tiny plankton and fish eggs.</div>
+          </div>
+          <div class="card-ring-wrap">
+            <svg class="card-ring-svg" viewBox="0 0 52 52" width="44" height="44">
+              <circle class="ring-track" cx="26" cy="26" r="21"/>
+              <circle class="ring-fill" cx="26" cy="26" r="21" stroke="#dc2626"
+                stroke-dasharray="131.95" stroke-dashoffset="92.37" transform="rotate(-90,26,26)"/>
+              <text class="ring-pct-txt" x="26" y="26">30%</text>
+            </svg>
+            <div class="card-ring-meta">
+              <div class="card-ring-status">Endangered</div>
+              <div class="card-ring-sub">Population health</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 — Scalloped Hammerhead — tall: critical, description -->
+      <div class="species-card">
+        <div class="species-card-image h-md">🦈
+          <button class="species-card-star">☆</button>
+        </div>
+        <div class="species-card-body">
+          <div class="species-card-name">Scalloped Hammerhead</div>
+          <div class="species-card-sci">Sphyrna lewini</div>
+          <div class="card-badges">
+            <span class="card-badge card-badge--ocean">🌊 Ocean</span>
+            <span class="card-badge card-badge--coastal">🏖 Coastal</span>
+          </div>
+          <div class="card-threat-badge card-threat-badge--critical">Critically Endangered</div>
+          <div class="card-desc">One of the most heavily fished shark species globally, prized for its fins. Populations have declined by over 95% in the Atlantic and over 80% in the Indo-Pacific in the last 50 years.</div>
+          <div class="card-ring-wrap">
+            <svg class="card-ring-svg" viewBox="0 0 52 52" width="44" height="44">
+              <circle class="ring-track" cx="26" cy="26" r="21"/>
+              <circle class="ring-fill" cx="26" cy="26" r="21" stroke="#dc2626"
+                stroke-dasharray="131.95" stroke-dashoffset="105.56" transform="rotate(-90,26,26)"/>
+              <text class="ring-pct-txt" x="26" y="26">20%</text>
+            </svg>
+            <div class="card-ring-meta">
+              <div class="card-ring-status">Critically Endangered</div>
+              <div class="card-ring-sub">Population health</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 — Bull Shark — short -->
+      <div class="species-card">
+        <div class="species-card-image h-sm">🦈
+          <button class="species-card-star">☆</button>
+        </div>
+        <div class="species-card-body">
+          <div class="species-card-name">Bull Shark</div>
+          <div class="species-card-sci">Carcharhinus leucas</div>
+          <div class="card-badges">
+            <span class="card-badge card-badge--coastal">🏖 Coastal</span>
+          </div>
+          <div class="card-ring-wrap">
+            <svg class="card-ring-svg" viewBox="0 0 52 52" width="44" height="44">
+              <circle class="ring-track" cx="26" cy="26" r="21"/>
+              <circle class="ring-fill" cx="26" cy="26" r="21" stroke="#f59e0b"
+                stroke-dasharray="131.95" stroke-dashoffset="79.17" transform="rotate(-90,26,26)"/>
+              <text class="ring-pct-txt" x="26" y="26">40%</text>
+            </svg>
+            <div class="card-ring-meta">
+              <div class="card-ring-status">Near Threatened</div>
+              <div class="card-ring-sub">Population health</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 — Basking Shark — medium: funfact + deep badge -->
+      <div class="species-card">
+        <div class="species-card-image h-md">🦈
+          <button class="species-card-star">☆</button>
+        </div>
+        <div class="species-card-body">
+          <div class="species-card-name">Basking Shark</div>
+          <div class="species-card-sci">Cetorhinus maximus</div>
+          <div class="card-badges">
+            <span class="card-badge card-badge--ocean">🌊 Ocean</span>
+            <span class="card-badge card-badge--coastal">🏖 Coastal</span>
+            <span class="card-badge card-badge--deep">🌑 Deep</span>
+          </div>
+          <div class="card-funfact">
+            <div class="card-funfact-lbl">Fun fact</div>
+            <div class="card-funfact-txt">Can filter over 2,000 tonnes of water per hour through its massive gaping mouth. Its liver, rich in squalene, makes up 25% of its body weight and aids buoyancy.</div>
+          </div>
+          <div class="card-ring-wrap">
+            <svg class="card-ring-svg" viewBox="0 0 52 52" width="44" height="44">
+              <circle class="ring-track" cx="26" cy="26" r="21"/>
+              <circle class="ring-fill" cx="26" cy="26" r="21" stroke="#e67e22"
+                stroke-dasharray="131.95" stroke-dashoffset="65.98" transform="rotate(-90,26,26)"/>
+              <text class="ring-pct-txt" x="26" y="26">50%</text>
+            </svg>
+            <div class="card-ring-meta">
+              <div class="card-ring-status">Endangered</div>
+              <div class="card-ring-sub">Population health</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 7 — Oceanic Whitetip — short: 1 badge, threat -->
+      <div class="species-card">
+        <div class="species-card-image h-sm">🦈
+          <button class="species-card-star">☆</button>
+        </div>
+        <div class="species-card-body">
+          <div class="species-card-name">Oceanic Whitetip</div>
+          <div class="species-card-sci">Carcharhinus longimanus</div>
+          <div class="card-badges">
+            <span class="card-badge card-badge--ocean">🌊 Ocean</span>
+          </div>
+          <div class="card-threat-badge card-threat-badge--critical">Critically Endangered</div>
+          <div class="card-ring-wrap">
+            <svg class="card-ring-svg" viewBox="0 0 52 52" width="44" height="44">
+              <circle class="ring-track" cx="26" cy="26" r="21"/>
+              <circle class="ring-fill" cx="26" cy="26" r="21" stroke="#dc2626"
+                stroke-dasharray="131.95" stroke-dashoffset="118.76" transform="rotate(-90,26,26)"/>
+              <text class="ring-pct-txt" x="26" y="26">10%</text>
+            </svg>
+            <div class="card-ring-meta">
+              <div class="card-ring-status">Critically Endangered</div>
+              <div class="card-ring-sub">Population health</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 8 — Shortfin Mako — medium: description -->
+      <div class="species-card">
+        <div class="species-card-image h-md photo-dark">
+          <button class="species-card-star">☆</button>
+        </div>
+        <div class="species-card-body">
+          <div class="species-card-name">Shortfin Mako</div>
+          <div class="species-card-sci">Isurus oxyrinchus</div>
+          <div class="card-badges">
+            <span class="card-badge card-badge--ocean">🌊 Ocean</span>
+            <span class="card-badge card-badge--diet">🦈 Apex Predator</span>
+          </div>
+          <div class="card-threat-badge card-threat-badge--high">Endangered</div>
+          <div class="card-desc">The fastest shark, reaching bursts of 74 km/h. Heavily targeted by commercial longline fisheries for its meat and fins. Atlantic populations fell 60% in the last decade.</div>
+          <div class="card-ring-wrap">
+            <svg class="card-ring-svg" viewBox="0 0 52 52" width="44" height="44">
+              <circle class="ring-track" cx="26" cy="26" r="21"/>
+              <circle class="ring-fill" cx="26" cy="26" r="21" stroke="#dc2626"
+                stroke-dasharray="131.95" stroke-dashoffset="79.17" transform="rotate(-90,26,26)"/>
+              <text class="ring-pct-txt" x="26" y="26">40%</text>
+            </svg>
+            <div class="card-ring-meta">
+              <div class="card-ring-status">Endangered</div>
+              <div class="card-ring-sub">Population health</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /wiki-grid--masonry -->
+
+    <div class="annotation-wrap">
+      <div class="annotation">
+        <strong>CSS columns approach:</strong> each column fills top-to-bottom. No inter-row gaps — cards pack tightly regardless of height differences. Works in all modern browsers with zero JS.
+      </div>
+      <div class="annotation">
+        <strong>Trade-off:</strong> reading order goes top→bottom per column, not left→right across the row. This can feel unintuitive when content has a natural sequence. A JS-based masonry (absolute positioning) would preserve row order but adds complexity.
+      </div>
+      <div class="annotation">
+        <strong>When this shines:</strong> description snippets, fun facts, variable badge counts, or mixed photo/no-photo cards — anywhere card height naturally varies. Less useful if all cards stay the same height.
+      </div>
+    </div>
+  </div><!-- /panel 2 -->
+
+
+  <!-- ════════════════════════════════════════════════
+       PANEL 3 — LIST view
+  ═════════════════════════════════════════════════ -->
+  <div class="panel">
+    <div class="wiki-toolbar">
+      <span class="wiki-toolbar-title">Shark Populations</span>
+      <span class="wiki-toolbar-count">14 species</span>
+      <div class="toolbar-search-fake">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6.5" cy="6.5" r="4"/><line x1="10" y1="10" x2="14" y2="14"/></svg>
+        Search…
+      </div>
+      <div class="view-toggle">
+        <button class="view-toggle-btn">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6">
+            <rect x="1" y="1" width="6" height="6" rx="1.5"/><rect x="9" y="1" width="6" height="6" rx="1.5"/>
+            <rect x="1" y="9" width="6" height="6" rx="1.5"/><rect x="9" y="9" width="6" height="6" rx="1.5"/>
+          </svg>
+          Grid
+        </button>
+        <button class="view-toggle-btn">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6">
+            <rect x="1" y="1" width="4" height="9" rx="1.5"/><rect x="6" y="1" width="4" height="5" rx="1.5"/>
+            <rect x="11" y="1" width="4" height="12" rx="1.5"/><rect x="6" y="8" width="4" height="7" rx="1.5"/>
+          </svg>
+          Masonry
+        </button>
+        <button class="view-toggle-btn active">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6">
+            <circle cx="3" cy="4.5" r="1.4" fill="currentColor" stroke="none"/><line x1="6.5" y1="4.5" x2="15" y2="4.5"/>
+            <circle cx="3" cy="8.5" r="1.4" fill="currentColor" stroke="none"/><line x1="6.5" y1="8.5" x2="15" y2="8.5"/>
+            <circle cx="3" cy="12.5" r="1.4" fill="currentColor" stroke="none"/><line x1="6.5" y1="12.5" x2="15" y2="12.5"/>
+          </svg>
+          List
+        </button>
+      </div>
+    </div>
+
+    <div class="panel-label">List — no photos, maximum density, glanceable stats per row</div>
+
+    <div class="wiki-list">
+
+      <!-- Column headers -->
+      <div class="list-header">
+        <div style="flex:0 0 20px;"></div>
+        <div class="list-col-label lc-name">Species</div>
+        <div class="list-col-label lc-tags">Habitat · Diet</div>
+        <div class="list-col-label lc-stats">Key Stats</div>
+        <div class="list-col-label lc-health">Population Health</div>
+        <div class="list-col-label lc-end"></div>
+      </div>
+
+      <!-- Row 1 — Great White (expanded to show extra detail) -->
+      <div class="list-row list-row--expanded">
+        <button class="list-star">★</button>
+        <div class="list-names">
+          <div class="list-common">Great White Shark</div>
+          <div class="list-sci">Carcharodon carcharias</div>
+        </div>
+        <div class="list-badges">
+          <span class="card-badge card-badge--ocean">🌊 Ocean</span>
+          <span class="card-badge card-badge--coastal">🏖 Coastal</span>
+          <span class="card-badge card-badge--diet">🦈 Apex Predator</span>
+          <div class="card-threat-badge card-threat-badge--high" style="margin:0;">High Threat</div>
+        </div>
+        <div class="list-stats">
+          <span class="list-stat">~3,500 adults</span>
+          <span class="list-stat">6.4 m max</span>
+          <span class="list-stat">70+ yr lifespan</span>
+        </div>
+        <div class="list-health">
+          <div class="list-health-row">
+            <div class="list-health-bar"><div class="list-health-fill" style="width:55%;background:#e67e22;"></div></div>
+            <div class="list-health-pct">55%</div>
+          </div>
+          <div class="list-health-status">Vulnerable</div>
+        </div>
+        <button class="list-chevron" title="Collapse">▾</button>
+        <!-- Expanded extra detail -->
+        <div class="list-extra">
+          <div class="list-extra-group" style="flex:1; min-width:200px; max-width:340px;">
+            <div class="list-extra-label">Overview</div>
+            <div class="list-extra-value" style="font-weight:400; font-size:0.69rem; line-height:1.5; color:#4a6a4a;">
+              The world's largest predatory fish. Found in cool coastal and offshore waters globally. Attacks on humans are rare — typically cases of mistaken identity with pinnipeds.
+            </div>
+          </div>
+          <div class="list-extra-group">
+            <div class="list-extra-label">Primary Threats</div>
+            <div style="display:flex; flex-direction:column; gap:0.2rem; margin-top:0.1rem;">
+              <div style="font-size:0.68rem; color:var(--color-text); display:flex; align-items:baseline; gap:0.3rem;">
+                <span style="width:6px;height:6px;border-radius:50%;background:#dc2626;flex-shrink:0;margin-top:0.2rem;display:inline-block;"></span>Bycatch &amp; targeted poaching
+              </div>
+              <div style="font-size:0.68rem; color:var(--color-text); display:flex; align-items:baseline; gap:0.3rem;">
+                <span style="width:6px;height:6px;border-radius:50%;background:#e67e22;flex-shrink:0;margin-top:0.2rem;display:inline-block;"></span>Prey stock depletion
+              </div>
+              <div style="font-size:0.68rem; color:var(--color-text); display:flex; align-items:baseline; gap:0.3rem;">
+                <span style="width:6px;height:6px;border-radius:50%;background:#f59e0b;flex-shrink:0;margin-top:0.2rem;display:inline-block;"></span>Shark nets &amp; drum lines
+              </div>
+            </div>
+          </div>
+          <div class="list-extra-group">
+            <div class="list-extra-label">Regions</div>
+            <div class="list-extra-tags">
+              <span class="list-extra-tag">Temperate</span>
+              <span class="list-extra-tag">Mediterranean</span>
+            </div>
+          </div>
+          <div class="list-extra-group">
+            <div class="list-extra-label">Tags</div>
+            <div class="list-extra-tags">
+              <span class="list-extra-tag">Migratory</span>
+              <span class="list-extra-tag">Solitary</span>
+              <span class="list-extra-tag">Keystone</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2 — Scalloped Hammerhead -->
+      <div class="list-row">
+        <button class="list-star">☆</button>
+        <div class="list-names">
+          <div class="list-common">Scalloped Hammerhead</div>
+          <div class="list-sci">Sphyrna lewini</div>
+        </div>
+        <div class="list-badges">
+          <span class="card-badge card-badge--ocean">🌊 Ocean</span>
+          <span class="card-badge card-badge--coastal">🏖 Coastal</span>
+          <div class="card-threat-badge card-threat-badge--critical" style="margin:0;">Critically Endangered</div>
+        </div>
+        <div class="list-stats">
+          <span class="list-stat">&gt;95% decline (Atl.)</span>
+          <span class="list-stat">4.3 m max</span>
+        </div>
+        <div class="list-health">
+          <div class="list-health-row">
+            <div class="list-health-bar"><div class="list-health-fill" style="width:20%;background:#dc2626;"></div></div>
+            <div class="list-health-pct">20%</div>
+          </div>
+          <div class="list-health-status">Critically Endangered</div>
+        </div>
+        <button class="list-chevron" title="Expand">▸</button>
+      </div>
+
+      <!-- Row 3 — Whale Shark -->
+      <div class="list-row">
+        <button class="list-star">☆</button>
+        <div class="list-names">
+          <div class="list-common">Whale Shark</div>
+          <div class="list-sci">Rhincodon typus</div>
+        </div>
+        <div class="list-badges">
+          <span class="card-badge card-badge--ocean">🌊 Ocean</span>
+          <span class="card-badge card-badge--coastal">🏖 Coastal</span>
+        </div>
+        <div class="list-stats">
+          <span class="list-stat">~unknown pop.</span>
+          <span class="list-stat">12 m max</span>
+          <span class="list-stat">~70 yr lifespan</span>
+        </div>
+        <div class="list-health">
+          <div class="list-health-row">
+            <div class="list-health-bar"><div class="list-health-fill" style="width:30%;background:#dc2626;"></div></div>
+            <div class="list-health-pct">30%</div>
+          </div>
+          <div class="list-health-status">Endangered</div>
+        </div>
+        <button class="list-chevron" title="Expand">▸</button>
+      </div>
+
+      <!-- Row 4 — Oceanic Whitetip -->
+      <div class="list-row">
+        <button class="list-star">☆</button>
+        <div class="list-names">
+          <div class="list-common">Oceanic Whitetip</div>
+          <div class="list-sci">Carcharhinus longimanus</div>
+        </div>
+        <div class="list-badges">
+          <span class="card-badge card-badge--ocean">🌊 Ocean</span>
+          <div class="card-threat-badge card-threat-badge--critical" style="margin:0;">Critically Endangered</div>
+        </div>
+        <div class="list-stats">
+          <span class="list-stat">&gt;98% decline</span>
+          <span class="list-stat">3.9 m max</span>
+        </div>
+        <div class="list-health">
+          <div class="list-health-row">
+            <div class="list-health-bar"><div class="list-health-fill" style="width:10%;background:#dc2626;"></div></div>
+            <div class="list-health-pct">10%</div>
+          </div>
+          <div class="list-health-status">Critically Endangered</div>
+        </div>
+        <button class="list-chevron" title="Expand">▸</button>
+      </div>
+
+      <!-- Row 5 — Shortfin Mako -->
+      <div class="list-row">
+        <button class="list-star">☆</button>
+        <div class="list-names">
+          <div class="list-common">Shortfin Mako</div>
+          <div class="list-sci">Isurus oxyrinchus</div>
+        </div>
+        <div class="list-badges">
+          <span class="card-badge card-badge--ocean">🌊 Ocean</span>
+          <span class="card-badge card-badge--diet">🦈 Apex Predator</span>
+          <div class="card-threat-badge card-threat-badge--high" style="margin:0;">Endangered</div>
+        </div>
+        <div class="list-stats">
+          <span class="list-stat">~74 km/h top speed</span>
+          <span class="list-stat">3.8 m max</span>
+        </div>
+        <div class="list-health">
+          <div class="list-health-row">
+            <div class="list-health-bar"><div class="list-health-fill" style="width:40%;background:#dc2626;"></div></div>
+            <div class="list-health-pct">40%</div>
+          </div>
+          <div class="list-health-status">Endangered</div>
+        </div>
+        <button class="list-chevron" title="Expand">▸</button>
+      </div>
+
+      <!-- Row 6 — Basking Shark -->
+      <div class="list-row">
+        <button class="list-star">☆</button>
+        <div class="list-names">
+          <div class="list-common">Basking Shark</div>
+          <div class="list-sci">Cetorhinus maximus</div>
+        </div>
+        <div class="list-badges">
+          <span class="card-badge card-badge--ocean">🌊 Ocean</span>
+          <span class="card-badge card-badge--coastal">🏖 Coastal</span>
+          <span class="card-badge card-badge--deep">🌑 Deep</span>
+        </div>
+        <div class="list-stats">
+          <span class="list-stat">~10,000 est.</span>
+          <span class="list-stat">10 m max</span>
+          <span class="list-stat">~50 yr lifespan</span>
+        </div>
+        <div class="list-health">
+          <div class="list-health-row">
+            <div class="list-health-bar"><div class="list-health-fill" style="width:50%;background:#e67e22;"></div></div>
+            <div class="list-health-pct">50%</div>
+          </div>
+          <div class="list-health-status">Endangered</div>
+        </div>
+        <button class="list-chevron" title="Expand">▸</button>
+      </div>
+
+      <!-- Row 7 — Bull Shark -->
+      <div class="list-row">
+        <button class="list-star">☆</button>
+        <div class="list-names">
+          <div class="list-common">Bull Shark</div>
+          <div class="list-sci">Carcharhinus leucas</div>
+        </div>
+        <div class="list-badges">
+          <span class="card-badge card-badge--coastal">🏖 Coastal</span>
+          <span class="card-badge card-badge--reef">🪸 Reef</span>
+        </div>
+        <div class="list-stats">
+          <span class="list-stat">freshwater capable</span>
+          <span class="list-stat">3.4 m max</span>
+        </div>
+        <div class="list-health">
+          <div class="list-health-row">
+            <div class="list-health-bar"><div class="list-health-fill" style="width:40%;background:#f59e0b;"></div></div>
+            <div class="list-health-pct">40%</div>
+          </div>
+          <div class="list-health-status">Near Threatened</div>
+        </div>
+        <button class="list-chevron" title="Expand">▸</button>
+      </div>
+
+      <!-- Row 8 — Tiger Shark -->
+      <div class="list-row">
+        <button class="list-star">☆</button>
+        <div class="list-names">
+          <div class="list-common">Tiger Shark</div>
+          <div class="list-sci">Galeocerdo cuvier</div>
+        </div>
+        <div class="list-badges">
+          <span class="card-badge card-badge--ocean">🌊 Ocean</span>
+          <span class="card-badge card-badge--coastal">🏖 Coastal</span>
+          <span class="card-badge card-badge--reef">🪸 Reef</span>
+          <span class="card-badge card-badge--diet">🦈 Apex Predator</span>
+        </div>
+        <div class="list-stats">
+          <span class="list-stat">5.5 m max</span>
+          <span class="list-stat">~27 yr lifespan</span>
+        </div>
+        <div class="list-health">
+          <div class="list-health-row">
+            <div class="list-health-bar"><div class="list-health-fill" style="width:70%;background:#16a34a;"></div></div>
+            <div class="list-health-pct">70%</div>
+          </div>
+          <div class="list-health-status">Near Threatened</div>
+        </div>
+        <button class="list-chevron" title="Expand">▸</button>
+      </div>
+
+    </div><!-- /wiki-list -->
+
+    <div class="annotation-wrap">
+      <div class="annotation">
+        <strong>No photos:</strong> each row is ~52 px tall — 8 species visible without scrolling vs. 4 in grid view. Ideal for power users, large datasets, or comparing many species quickly.
+      </div>
+      <div class="annotation">
+        <strong>Two distinct actions:</strong> the species name (underlined, green) opens the full modal — same as clicking a card in grid view. The ▸/▾ chevron on the right independently toggles the inline expand. Row background hover is intentionally subtle to avoid implying the whole row is clickable.
+      </div>
+      <div class="annotation">
+        <strong>Column headers</strong> double as sort triggers (name A→Z, health ↑↓, threat severity). Sortable list is much simpler to implement here than in the grid/masonry layouts.
+      </div>
+    </div>
+  </div><!-- /panel 3 -->
+
+
+  <!-- ════════════════════════════════════════════════
+       PANEL 4 — Side-by-side comparison at glance
+  ═════════════════════════════════════════════════ -->
+  <div class="panel">
+    <div class="panel-label" style="padding:0.85rem 1rem 0.75rem; border-bottom:1px solid var(--color-border);">
+      Summary — when to use each layout
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0; border-bottom: 1px solid var(--color-border);">
+
+      <!-- Grid -->
+      <div style="padding:1.1rem 1.25rem; border-right:1px solid var(--color-border);">
+        <div style="font-size:0.78rem; font-weight:700; color:var(--color-text); margin-bottom:0.6rem; display:flex; align-items:center; gap:0.4rem;">
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7">
+            <rect x="1" y="1" width="6" height="6" rx="1.5"/><rect x="9" y="1" width="6" height="6" rx="1.5"/>
+            <rect x="1" y="9" width="6" height="6" rx="1.5"/><rect x="9" y="9" width="6" height="6" rx="1.5"/>
+          </svg>
+          Grid (current)
+        </div>
+        <div style="font-size:0.72rem; color:var(--color-text); line-height:1.55; display:flex; flex-direction:column; gap:0.38rem;">
+          <div style="color:#16a34a;">✓ Ordered rows, natural left→right scan</div>
+          <div style="color:#16a34a;">✓ Photos prominent — good first impression</div>
+          <div style="color:#16a34a;">✓ Simple CSS, no JS needed</div>
+          <div style="color:#b91c1c;">✗ Blank space below short cards</div>
+          <div style="color:#b91c1c;">✗ Only ~4 species visible at once</div>
+          <div style="color:#b91c1c;">✗ Hard to compare stats across cards</div>
+        </div>
+      </div>
+
+      <!-- Masonry -->
+      <div style="padding:1.1rem 1.25rem; border-right:1px solid var(--color-border);">
+        <div style="font-size:0.78rem; font-weight:700; color:var(--color-text); margin-bottom:0.6rem; display:flex; align-items:center; gap:0.4rem;">
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7">
+            <rect x="1" y="1" width="4" height="9" rx="1.5"/><rect x="6" y="1" width="4" height="5" rx="1.5"/>
+            <rect x="11" y="1" width="4" height="12" rx="1.5"/><rect x="6" y="8" width="4" height="7" rx="1.5"/>
+          </svg>
+          Masonry
+        </div>
+        <div style="font-size:0.72rem; color:var(--color-text); line-height:1.55; display:flex; flex-direction:column; gap:0.38rem;">
+          <div style="color:#16a34a;">✓ No wasted space — cards pack tightly</div>
+          <div style="color:#16a34a;">✓ Feels rich and dynamic</div>
+          <div style="color:#16a34a;">✓ Photos still present, visual appeal</div>
+          <div style="color:#b91c1c;">✗ Reads top→bottom per column</div>
+          <div style="color:#b91c1c;">✗ Hard to compare cards in same "row"</div>
+          <div style="color:#b91c1c;">✗ Filter transitions can look jarring</div>
+        </div>
+      </div>
+
+      <!-- List -->
+      <div style="padding:1.1rem 1.25rem;">
+        <div style="font-size:0.78rem; font-weight:700; color:var(--color-text); margin-bottom:0.6rem; display:flex; align-items:center; gap:0.4rem;">
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7">
+            <circle cx="3" cy="4.5" r="1.4" fill="currentColor" stroke="none"/><line x1="6.5" y1="4.5" x2="15" y2="4.5"/>
+            <circle cx="3" cy="8.5" r="1.4" fill="currentColor" stroke="none"/><line x1="6.5" y1="8.5" x2="15" y2="8.5"/>
+            <circle cx="3" cy="12.5" r="1.4" fill="currentColor" stroke="none"/><line x1="6.5" y1="12.5" x2="15" y2="12.5"/>
+          </svg>
+          List
+        </div>
+        <div style="font-size:0.72rem; color:var(--color-text); line-height:1.55; display:flex; flex-direction:column; gap:0.38rem;">
+          <div style="color:#16a34a;">✓ Most compact — 8+ species visible at once</div>
+          <div style="color:#16a34a;">✓ Easy to compare stats across species</div>
+          <div style="color:#16a34a;">✓ Sortable columns (name, health, threat)</div>
+          <div style="color:#16a34a;">✓ Expandable rows for deeper detail</div>
+          <div style="color:#b91c1c;">✗ No photos — less visually engaging</div>
+          <div style="color:#b91c1c;">✗ More complex to implement (column layout)</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:0.85rem 1.25rem; font-size:0.73rem; color:#4a6a4a; line-height:1.5;">
+      <strong>Recommendation:</strong> all three work well as user-toggled options. Grid is the right default. Masonry adds value if cards gain variable content (descriptions, fun facts). List is the power-user mode — especially useful once there are 20+ species and users want to sort or scan stats quickly.
+    </div>
+  </div>
+
+</div><!-- /comparison -->
+
+</body>
+</html>
