@@ -10,6 +10,26 @@ if (wikiProject) {
 }
 
 const wikiProjectEmoji = wikiProject ? wikiProject.emoji : "?";
+const SILHOUETTE_FALLBACK = WIKI_DATA.silhouetteFallback || null;
+
+function applySilhouetteBg(el) {
+  el.style.background = "";
+  el.style.backgroundImage = `url(${SILHOUETTE_FALLBACK})`;
+  el.style.backgroundSize = "cover";
+  el.style.backgroundPosition = "center";
+}
+
+function applyPhotoBg(el, src) {
+  el.style.background = "";
+  el.style.backgroundImage = `url(${src})`;
+  el.style.backgroundSize = "cover";
+  el.style.backgroundPosition = "center";
+  if (SILHOUETTE_FALLBACK) {
+    const probe = new Image();
+    probe.onerror = () => applySilhouetteBg(el);
+    probe.src = src;
+  }
+}
 
 function getLifeBarColor(percent) {
   if (percent <= 25) return "#c0320a";
@@ -251,9 +271,10 @@ function openSpeciesModal(species, cardEl, tabKey = "overview") {
   const imgArea = document.getElementById("species-modal-image");
   const firstPhoto = species.photos && species.photos[0];
   if (firstPhoto) {
-    imgArea.style.backgroundImage = `url(${firstPhoto})`;
-    imgArea.style.backgroundSize = "cover";
-    imgArea.style.backgroundPosition = "center";
+    applyPhotoBg(imgArea, firstPhoto);
+    document.getElementById("species-modal-emoji").style.display = "none";
+  } else if (SILHOUETTE_FALLBACK) {
+    applySilhouetteBg(imgArea);
     document.getElementById("species-modal-emoji").style.display = "none";
   } else {
     imgArea.style.backgroundImage = "";
@@ -1715,9 +1736,9 @@ function createSpeciesCard(species, q, favIds) {
   imgArea.className = "species-card-image";
   const cardPhoto = species.photos && species.photos[0];
   if (cardPhoto) {
-    imgArea.style.backgroundImage = `url(${cardPhoto})`;
-    imgArea.style.backgroundSize = "cover";
-    imgArea.style.backgroundPosition = "center";
+    applyPhotoBg(imgArea, cardPhoto);
+  } else if (SILHOUETTE_FALLBACK) {
+    applySilhouetteBg(imgArea);
   } else {
     imgArea.textContent = species.emoji || wikiProjectEmoji;
     imgArea.style.background = "linear-gradient(135deg, #0a0a0a, var(--color-primary))";
