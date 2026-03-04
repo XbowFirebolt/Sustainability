@@ -11,6 +11,7 @@ window.WIKI_DATA = {
   items: [
     {
       id: "great-white",
+      lastUpdated: "2025-01-10",
       emoji: "🦈",
       commonName: "Great White Shark",
       scientificName: "Carcharodon carcharias",
@@ -103,6 +104,7 @@ window.WIKI_DATA = {
     },
     {
       id: "scalloped-hammerhead",
+      lastUpdated: "2024-11-03",
       emoji: "🦈",
       commonName: "Scalloped Hammerhead",
       scientificName: "Sphyrna lewini",
@@ -127,6 +129,7 @@ window.WIKI_DATA = {
     },
     {
       id: "whale-shark",
+      lastUpdated: "2024-12-19",
       emoji: "🦈",
       commonName: "Whale Shark",
       scientificName: "Rhincodon typus",
@@ -152,6 +155,7 @@ window.WIKI_DATA = {
     },
     {
       id: "bull-shark",
+      lastUpdated: "2024-10-28",
       emoji: "🦈",
       commonName: "Bull Shark",
       scientificName: "Carcharhinus leucas",
@@ -176,6 +180,7 @@ window.WIKI_DATA = {
     },
     {
       id: "tiger-shark",
+      lastUpdated: "2025-02-14",
       emoji: "🦈",
       commonName: "Tiger Shark",
       scientificName: "Galeocerdo cuvier",

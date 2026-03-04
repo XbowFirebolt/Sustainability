@@ -22,7 +22,7 @@ Check off items as they're completed. Add notes inline as needed.
 - [ ] Add "related species" cross-references between cards
 - [ ] Add links to external resources within species (papers, org pages) in Action Items
 - [x] Add `emoji` field for all species (fallback in hero image area)
-- [ ] Add a `lastUpdated` timestamp per species for data freshness tracking
+- [x] Add a `lastUpdated` timestamp per species for data freshness tracking
 
 ### Functionality
 

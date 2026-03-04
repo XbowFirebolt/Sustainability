@@ -936,10 +936,10 @@ function renderOverview(species) {
     panel.appendChild(box);
   }
 
-  renderCredits(panel);
+  renderCredits(panel, species);
 }
 
-function renderCredits(panel) {
+function renderCredits(panel, species) {
   const sources = WIKI_DATA.sources;
   if (!Array.isArray(sources) || !sources.length) return;
 
@@ -961,6 +961,15 @@ function renderCredits(panel) {
     a.textContent = srcLabel;
     credits.appendChild(a);
   });
+
+  if (species && species.lastUpdated) {
+    const date = new Date(species.lastUpdated + "T00:00:00");
+    const formatted = date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+    const updated = document.createElement("div");
+    updated.className = "tab-credits-updated";
+    updated.textContent = "Data last updated: " + formatted;
+    credits.appendChild(updated);
+  }
 
   panel.appendChild(credits);
 }

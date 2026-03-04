@@ -2647,6 +2647,10 @@ body.no-map {
   text-decoration: underline;
 }
 
+.tab-credits-updated {
+  margin-top: 0.25rem;
+}
+
 /* ── Photo gallery lightbox ──────────────────────────────────── */
 
 .gallery-overlay {
