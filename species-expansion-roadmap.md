@@ -8,11 +8,11 @@ A phased plan for expanding the shark wiki from its current state (5 species in 
 
 | Species | Complete? | Notes |
 |---|---|---|
-| Great White Shark | ✅ Full | Photos, vitalSigns, populationTrend, prey/fishing regions, healthMetrics, threats, actionItems |
-| Scalloped Hammerhead | ⚠️ Partial | Has threats; missing vitalSigns, populationTrend, regions, healthMetrics |
-| Whale Shark | ⚠️ Partial | Similar gaps |
-| Bull Shark | ⚠️ Partial | Similar gaps |
-| Tiger Shark | ⚠️ Partial | Similar gaps |
+| Great White Shark | ✅ Full | Photos, vitalSigns, populationTrend, prey/fishing regions, healthMetrics, threats, actionItems, statusHistory |
+| Scalloped Hammerhead | ✅ Full | Photos, vitalSigns, populationTrend, prey/fishing regions, healthMetrics, threats, actionItems, statusHistory |
+| Whale Shark | ✅ Full | Photos, vitalSigns, populationTrend, prey/fishing regions, healthMetrics, threats, actionItems, statusHistory |
+| Bull Shark | ✅ Full | Photos, vitalSigns, populationTrend, prey/fishing regions, healthMetrics, threats, actionItems, statusHistory |
+| Tiger Shark | ✅ Full | Photos, vitalSigns, populationTrend, prey/fishing regions, healthMetrics, threats, actionItems, statusHistory |
 
 **Core problem:** The current `data.js` schema is hand-authored and deeply detailed. A single fully complete species entry is ~100 lines of JS. 500 species × 100 lines = 50,000+ lines — not feasible to write by hand.
 
