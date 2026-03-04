@@ -21,7 +21,7 @@ Check off items as they're completed. Add notes inline as needed.
 - [ ] Add conservation status history (e.g., "Was Near Threatened in 2000, now Vulnerable")
 - [ ] Add "related species" cross-references between cards
 - [ ] Add links to external resources within species (papers, org pages) in Action Items
-- [ ] Add `emoji` field for all species (fallback in hero image area)
+- [x] Add `emoji` field for all species (fallback in hero image area)
 - [ ] Add a `lastUpdated` timestamp per species for data freshness tracking
 
 ### Functionality

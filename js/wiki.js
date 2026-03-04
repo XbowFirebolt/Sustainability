@@ -233,7 +233,7 @@ function openSpeciesModal(species, cardEl, tabKey = "overview") {
     imgArea.style.backgroundImage = "";
     imgArea.style.background = "linear-gradient(135deg, #0a0a0a, var(--color-primary))";
     document.getElementById("species-modal-emoji").style.display = "";
-    document.getElementById("species-modal-emoji").textContent = wikiProjectEmoji;
+    document.getElementById("species-modal-emoji").textContent = species.emoji || wikiProjectEmoji;
   }
 
   // Photo count badge + click-to-gallery
@@ -1589,7 +1589,7 @@ function createSpeciesCard(species, q, favIds) {
     imgArea.style.backgroundSize = "cover";
     imgArea.style.backgroundPosition = "center";
   } else {
-    imgArea.textContent = wikiProjectEmoji;
+    imgArea.textContent = species.emoji || wikiProjectEmoji;
     imgArea.style.background = "linear-gradient(135deg, #0a0a0a, var(--color-primary))";
   }
 

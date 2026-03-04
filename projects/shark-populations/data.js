@@ -11,6 +11,7 @@ window.WIKI_DATA = {
   items: [
     {
       id: "great-white",
+      emoji: "🦈",
       commonName: "Great White Shark",
       scientificName: "Carcharodon carcharias",
       statusLabel: "Vulnerable",
@@ -102,6 +103,7 @@ window.WIKI_DATA = {
     },
     {
       id: "scalloped-hammerhead",
+      emoji: "🦈",
       commonName: "Scalloped Hammerhead",
       scientificName: "Sphyrna lewini",
       statusLabel: "Critically Endangered",
@@ -125,6 +127,7 @@ window.WIKI_DATA = {
     },
     {
       id: "whale-shark",
+      emoji: "🦈",
       commonName: "Whale Shark",
       scientificName: "Rhincodon typus",
       statusLabel: "Endangered",
@@ -149,6 +152,7 @@ window.WIKI_DATA = {
     },
     {
       id: "bull-shark",
+      emoji: "🦈",
       commonName: "Bull Shark",
       scientificName: "Carcharhinus leucas",
       statusLabel: "Near Threatened",
@@ -172,6 +176,7 @@ window.WIKI_DATA = {
     },
     {
       id: "tiger-shark",
+      emoji: "🦈",
       commonName: "Tiger Shark",
       scientificName: "Galeocerdo cuvier",
       statusLabel: "Near Threatened",
