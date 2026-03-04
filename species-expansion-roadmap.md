@@ -11,8 +11,8 @@ A phased plan for expanding the shark wiki from its current state (5 species in 
 | Great White Shark | ✅ Full | Photos, vitalSigns, populationTrend, prey/fishing regions, healthMetrics, threats, actionItems |
 | Scalloped Hammerhead | ⚠️ Partial | Has threats; missing vitalSigns, populationTrend, regions, healthMetrics |
 | Whale Shark | ⚠️ Partial | Similar gaps |
-| Shortfin Mako | ⚠️ Partial | Similar gaps |
-| Oceanic Whitetip | ⚠️ Partial | Similar gaps |
+| Bull Shark | ⚠️ Partial | Similar gaps |
+| Tiger Shark | ⚠️ Partial | Similar gaps |
 
 **Core problem:** The current `data.js` schema is hand-authored and deeply detailed. A single fully complete species entry is ~100 lines of JS. 500 species × 100 lines = 50,000+ lines — not feasible to write by hand.
 
@@ -44,10 +44,10 @@ Before scaling out, stabilize the foundation.
 **Why first:** Every bug found in 5 species is 500 bugs avoided later.
 
 **Checklist:**
-- [ ] Fill `vitalSigns` for Scalloped Hammerhead, Whale Shark, Shortfin Mako, Oceanic Whitetip
+- [x] Fill `vitalSigns` for Scalloped Hammerhead, Whale Shark, Bull Shark, Tiger Shark
 - [ ] Fill `healthMetrics` for the 4 partial species
 - [ ] Add shark-silhouette fallback logic so species without real photos still look clean
-- [ ] Add `emoji` field to all 5 (`🦈` works for most)
+- [x] Add `emoji` field to all 5 (`🦈` works for most)
 - [ ] Confirm modal renders gracefully when `populationTrend`, `preyDeclineRegions`, and `fishingPressureRegions` are empty arrays
 
 ---
