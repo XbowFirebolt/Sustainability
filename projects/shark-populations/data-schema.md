@@ -42,7 +42,7 @@ These are the minimum fields needed to render a valid grid card and open a worki
 
 | Field | Type | Required | Notes |
 |---|---|---|---|
-| `id` | string | yes | Kebab-case unique identifier, e.g. `"great-white"`. Used in URLs and localStorage keys. |
+| `id` | string | yes | Kebab-case scientific name identifier, e.g. `"carcharodon-carcharias"`. Used in URLs and localStorage keys. |
 | `commonName` | string | yes | Common English name, e.g. `"Great White Shark"` |
 | `scientificName` | string | yes | Binomial name, e.g. `"Carcharodon carcharias"` |
 | `statusLabel` | string | yes | IUCN status string. One of: `"Least Concern"`, `"Near Threatened"`, `"Vulnerable"`, `"Endangered"`, `"Critically Endangered"`, `"Extinct in the Wild"`, `"Extinct"`, `"Data Deficient"`, `"Not Evaluated"` |

@@ -10,10 +10,10 @@
     { "label": "NOAA Fisheries",   "url": "https://www.fisheries.noaa.gov" }
   ],
   "speciesOrder": [
-    "great-white",
-    "scalloped-hammerhead",
-    "whale-shark",
-    "bull-shark",
-    "tiger-shark"
+    "carcharodon-carcharias",
+    "sphyrna-lewini",
+    "rhincodon-typus",
+    "carcharhinus-leucas",
+    "galeocerdo-cuvier"
   ]
 }

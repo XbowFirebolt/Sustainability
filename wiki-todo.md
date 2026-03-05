@@ -128,7 +128,7 @@ Check off items as they're completed. Add notes inline as needed.
 
 - Only **Great White Shark** currently has complete data — all other 4 species need significant data work
 - The architecture is already generic; a second project wiki can be added with just a new `data.js`
-- Deep linking (`?species=great-white`) works with a fade-in animation fallback (morph requires a visible source card in the viewport)
+- Deep linking (`?species=carcharodon-carcharias`) works with a fade-in animation fallback (morph requires a visible source card in the viewport)
 - Modal morphing animation only works when the source card is visible in the viewport at open time
 - Metric/imperial unit toggle is already implemented in the Vital Signs tab header
 - Data sources (WIKI_DATA.sources) are already rendered at the bottom of the Vital Signs tab

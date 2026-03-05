@@ -26,7 +26,7 @@ window.WIKI_DATA = {
   ],
   "items": [
     {
-      "id": "great-white",
+      "id": "carcharodon-carcharias",
       "lastUpdated": "2025-01-10",
       "emoji": "🦈",
       "commonName": "Great White Shark",
@@ -343,7 +343,7 @@ window.WIKI_DATA = {
       ]
     },
     {
-      "id": "scalloped-hammerhead",
+      "id": "sphyrna-lewini",
       "lastUpdated": "2024-11-03",
       "emoji": "🦈",
       "commonName": "Scalloped Hammerhead",
@@ -650,7 +650,7 @@ window.WIKI_DATA = {
       ]
     },
     {
-      "id": "whale-shark",
+      "id": "rhincodon-typus",
       "lastUpdated": "2024-12-19",
       "emoji": "🦈",
       "commonName": "Whale Shark",
@@ -955,7 +955,7 @@ window.WIKI_DATA = {
       ]
     },
     {
-      "id": "bull-shark",
+      "id": "carcharhinus-leucas",
       "lastUpdated": "2024-10-28",
       "emoji": "🦈",
       "commonName": "Bull Shark",
@@ -1251,7 +1251,7 @@ window.WIKI_DATA = {
       ]
     },
     {
-      "id": "tiger-shark",
+      "id": "galeocerdo-cuvier",
       "lastUpdated": "2025-02-14",
       "emoji": "🦈",
       "commonName": "Tiger Shark",

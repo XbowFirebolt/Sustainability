@@ -86,8 +86,8 @@ projects/shark-populations/
   data/
     config.json           ← project metadata (sources, keys, silhouette path)
     species/
-      great-white.json
-      whale-shark.json
+      carcharodon-carcharias.json
+      rhincodon-typus.json
       ...                 ← one file per species
   scripts/
     build-data.js         ← reads data/ → writes data.js
