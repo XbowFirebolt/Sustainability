@@ -78,7 +78,7 @@ Reference from `wiki-todo.md`:
 
 ### 2c. Split data.js into per-species JSON files + build script
 
-At 50+ species, a single `data.js` becomes impossible to maintain. The plan: author each species as a standalone `.json` file, generate `data.js` via a Node build script, and use the same pipeline for IUCN-automated stub generation.
+At 50+ species, a single `data.js` becomes impossible to maintain. The plan: author each species as a standalone `.json` file, generate `data.js` via a Node build script, and use the same pipeline for automated stub generation.
 
 **Target file structure:**
 ```
@@ -91,7 +91,7 @@ projects/shark-populations/
       ...                 ← one file per species
   scripts/
     build-data.js         ← reads data/ → writes data.js
-    generate-stubs.js     ← IUCN API → writes new .json files to data/species/
+    generate-stubs.js     ← Wikidata + Wikipedia → writes new .json files to data/species/
     check-completeness.js   (already exists)
   data.js                 ← GENERATED, not hand-edited
 ```
@@ -103,30 +103,39 @@ projects/shark-populations/
 - **Browser** → loads `data.js` exactly as today (no app code changes)
 
 **Why JSON over JS files:**
-- JSON is what the IUCN API returns — no translation layer needed
-- Easier to validate against the data schema
+- Structured data is easy to validate against the data schema
 - Clean git diffs when a single species is updated
 - `build-data.js` is trivial: read all `.json` files in `data/species/`, merge with `config.json`, write `window.WIKI_DATA = {...}`
 
 **The automation script (`generate-stubs.js`):**
 
-The IUCN Red List API (`apiv3.iucnredlist.org`) returns structured assessments for any evaluated species. The script will:
-1. Fetch all shark species from IUCN (family-level search)
-2. For each species, fetch its full assessment
-3. Map IUCN fields → data schema fields (e.g. `category` → `statusLabel`, threat codes → `threats` array, habitat codes → `habitatTypes`)
-4. Write `data/species/<slug>.json` at Stub tier — leaving Full/Standard fields empty for later
-5. Print a summary of what was generated and what needs manual fill-in
+Uses two openly licensed, no-token-required data sources:
 
-What stays manual (automation can't populate these):
+| Source | License | Provides |
+|---|---|---|
+| **Wikidata SPARQL** | CC0 (public domain) | Scientific name, common name, IUCN status, full taxonomy |
+| **Wikipedia REST API** | CC BY-SA | Species description (first paragraph) |
+
+The IUCN Red List API was considered but excluded — its terms of use prohibit use by or on behalf of for-profit entities. Commercial use requires a paid IBAT subscription.
+
+The script:
+1. Queries Wikidata for all shark species under Selachimorpha in a single SPARQL request
+2. For each species, fetches the Wikipedia page summary for the description
+3. Maps fields → data schema (status QID → `statusLabel`/`lifePercent`, taxonomy, order-based `habitatTypes`, family-based `dietType`)
+4. Writes `data/species/<slug>.json` at Stub tier — leaving Standard/Full fields for later
+5. Prints a summary with a checklist of what still needs manual fill-in
+
+What stays manual (no open structured source exists):
+- `funFact` — no equivalent in any open dataset
+- `description` — review/improve the Wikipedia excerpt
+- `habitatTypes`, `geographicRegions`, `tags` — verify the heuristic defaults
 - `photos`, `physicalScaleImage`, `habitatImage` (Full tier)
-- `vitalSigns` numeric data (Standard tier)
-- `funFact` and `description` prose
-- Anything IUCN doesn't have structured data for
+- `vitalSigns`, `threats`, `actionItems` (Standard tier)
 
 **Checklist:**
 - [x] Migrate the 5 existing species from `data.js` → individual `.json` files + `config.json`
-- [ ] Write `build-data.js` and verify the generated `data.js` is identical to the current hand-authored one
-- [ ] Write `generate-stubs.js` with IUCN API field mapping
+- [x] Write `build-data.js` and verify the generated `data.js` is identical to the current hand-authored one
+- [x] Write `generate-stubs.js` with IUCN API field mapping
 - [ ] Test stub generation on a known species and QA the output against `data-schema.md`
 - [ ] Mark `data.js` as generated in a comment at the top of the file
 
@@ -145,27 +154,65 @@ With schema docs and a completeness checker in place, start adding stubs in prio
 
 ### Data sources for stubs
 
-Stub data can be assembled from public sources with reasonable research time per species:
+| Field | Automated source | Manual fallback |
+|---|---|---|
+| `commonName`, `scientificName` | Wikidata SPARQL | Wikipedia, WoRMS |
+| `statusLabel`, `lifePercent` | Wikidata (P141 IUCN status, CC0) | IUCN Red List website |
+| `taxonomy` | Wikidata SPARQL | FishBase |
+| `description` | Wikipedia REST API (CC BY-SA) | Write from Wikipedia + FishBase |
+| `habitatTypes`, `dietType` | Order/family heuristic in script | FishBase, species pages |
+| `geographicRegions`, `tags` | Defaults ("global", solitary/keystone) | Manual curation |
+| `funFact` | — | Write by hand |
 
-| Field | Source |
-|---|---|
-| `commonName`, `scientificName` | FishBase, Wikipedia |
-| `statusLabel`, `lifePercent` (rough) | IUCN Red List API |
-| `habitatTypes`, `dietType`, `geographicRegions` | FishBase, IUCN narrative |
-| `tags` | Manual curation based on behavior notes |
-| `description`, `funFact` | Write from FishBase + IUCN summaries |
+**Note on the IUCN Red List API:** The API (`apiv3.iucnredlist.org`) prohibits use by for-profit entities. Commercial use requires a paid IBAT subscription. The IUCN Red List *website* can still be consulted manually for research. The IUCN status values themselves are available via Wikidata (P141) under CC0.
 
-### IUCN Red List API
+### Wikidata + Wikipedia (the automation path)
 
-The IUCN has a public API (`apiv3.iucnredlist.org`) that returns structured JSON for any assessed species — including status, population trend narrative, habitat codes, and threat codes. This is the most reliable automation path for stub data.
+`generate-stubs.js` uses a single Wikidata SPARQL query to fetch all shark species under Selachimorpha, then hits the Wikipedia summary API for descriptions. No token required; both sources are openly licensed.
 
-A short script could:
-1. Pull a list of all shark species from IUCN
-2. For each species, fetch its assessment
-3. Map IUCN fields → `data.js` fields
-4. Output a stub JS object ready to paste (or auto-write) into data.js
+**This single script can generate 200–300 stubs in an afternoon.**
 
-**This single script could generate 200–300 stubs in an afternoon.**
+### Per-stub review checklist
+
+After running `generate-stubs.js`, every generated file needs a human review pass. Use this checklist for each stub:
+
+```
+Species: ______________________
+
+Wikidata fields (accurate but verify):
+  [ ] commonName     — confirm it's the standard English name, not a synonym or
+                       the scientific name (fallback for species with no en label)
+  [ ] statusLabel    — spot-check against IUCN Red List website for recent reclassifications
+  [ ] taxonomy       — confirm order/family are correct (Wikidata occasionally has errors)
+
+Heuristic fields (rough defaults, fix before publishing):
+  [ ] habitatTypes   — script uses order-level defaults; check actual species range
+                       e.g. a coastal Squaliformes wrongly gets ["ocean", "deep-sea"]
+                       add "freshwater" for river sharks (Glyphis spp., bull shark already done)
+                       add "tropical" for reef species
+  [ ] geographicRegions — script defaults to ["global"]; fix for regionally endemic species:
+                       Mediterranean endemics → ["mediterranean"]
+                       Indo-Pacific only → ["tropical"]
+                       Cold-water/deep → ["temperate"] or ["arctic"]
+  [ ] dietType       — check family heuristic held; benthic Carcharhinidae may be "carnivore"
+                       not "apex-predator"
+  [ ] tags           — script only adds "solitary"/"schooling" + "keystone"; also add:
+                       "migratory" if the species makes long seasonal migrations
+                       "bycatch"   if it is a known bycatch target
+                       "finning"   if the shark fin trade is a documented threat
+
+Wikipedia-sourced fields (review quality):
+  [ ] description    — read it; Wikipedia excerpts can be too technical, describe the genus
+                       instead of the species, or be a stub sentence. Rewrite if needed.
+                       Target: 2–4 plain-English sentences covering habitat, diet, status.
+
+Must be written from scratch (no automated source):
+  [ ] funFact        — replace the TODO placeholder with one striking, specific fact
+                       (size record, sensory ability, behavior, ecological role, etc.)
+```
+
+**What "done" looks like:** all boxes checked, `funFact` is real prose, and the card looks
+correct in the wiki grid after running `build-data.js`.
 
 ### Batch size discipline
 
