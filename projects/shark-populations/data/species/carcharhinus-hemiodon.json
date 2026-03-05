@@ -1,0 +1,33 @@
+{
+  "id": "carcharhinus-hemiodon",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Pondicherry Shark",
+  "scientificName": "Carcharhinus hemiodon",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Carcharhinidae",
+    "genus": "Carcharhinus",
+    "species": "C. hemiodon"
+  },
+  "statusLabel": "Critically Endangered",
+  "lifePercent": 15,
+  "habitatTypes": [
+    "ocean",
+    "coastal"
+  ],
+  "dietType": "apex-predator",
+  "geographicRegions": [
+    "tropical"
+  ],
+  "tags": [
+    "solitary",
+    "keystone"
+  ],
+  "description": "The Pondicherry Shark (Carcharhinus hemiodon) is an extremely rare species of requiem shark, in the family Carcharhinidae. A small and stocky gray shark, it grows not much longer than 1 m (3.3 ft) and has a fairly long, pointed snout.",
+  "funFact": "No confirmed sighting of the Pondicherry Shark has been recorded since 1979, and fewer than 20 specimens are known to science — leading some researchers to fear it may already be extinct.",
+  "habitat": "The Pondicherry Shark appears to have been broadly distributed in coastal Indo-Pacific waters. It may have once been common, as it was reportedly a regular catch off India and Pakistan, but is now extremely rare."
+}

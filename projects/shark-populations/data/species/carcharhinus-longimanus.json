@@ -1,0 +1,35 @@
+{
+  "id": "carcharhinus-longimanus",
+  "lastUpdated": "2026-03-05",
+  "emoji": "🦈",
+  "commonName": "Oceanic Whitetip Shark",
+  "scientificName": "Carcharhinus longimanus",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Carcharhinidae",
+    "genus": "Carcharhinus",
+    "species": "C. longimanus"
+  },
+  "statusLabel": "Critically Endangered",
+  "lifePercent": 15,
+  "habitatTypes": [
+    "ocean",
+    "coastal"
+  ],
+  "dietType": "apex-predator",
+  "geographicRegions": [
+    "tropical",
+    "temperate"
+  ],
+  "tags": [
+    "solitary",
+    "keystone",
+    "bycatch"
+  ],
+  "description": "The oceanic whitetip shark (Carcharhinus longimanus) is a large requiem shark inhabiting the pelagic zone of tropical and warm temperate seas. It has a stocky body and iconic elongated rounded fins, with white tips. The species is typically solitary, though they may gather in large numbers at food concentrations.",
+  "funFact": "Once considered one of the most abundant large ocean animals on Earth, the Oceanic Whitetip Shark has suffered a population collapse estimated at over 98% in parts of the Atlantic since the 1950s — one of the most dramatic declines of any large marine predator ever recorded.",
+  "habitat": "Found worldwide between 45°N and 43°S latitude in deep, open ocean. Prefers water temperatures above 20°C (68°F) but can range into waters as cool as 15°C (59°F). A truly pelagic shark, it rarely approaches coastlines or shallow areas."
+}

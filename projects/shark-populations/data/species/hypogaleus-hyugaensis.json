@@ -1,0 +1,32 @@
+{
+  "id": "hypogaleus-hyugaensis",
+  "lastUpdated": "2026-03-05",
+  "emoji": "🦈",
+  "commonName": "Whitefin Topeshark",
+  "scientificName": "Hypogaleus hyugaensis",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Triakidae",
+    "genus": "Hypogaleus",
+    "species": "H. hyugaensis"
+  },
+  "statusLabel": "Critically Endangered",
+  "lifePercent": 15,
+  "habitatTypes": [
+    "ocean",
+    "coastal"
+  ],
+  "dietType": "carnivore",
+  "geographicRegions": [
+    "tropical",
+    "temperate"
+  ],
+  "tags": [
+    "solitary"
+  ],
+  "description": "The blacktip tope (Hypogaleus hyugaensis), also known as pencil shark or blacktip topeshark, is a houndshark of the family Triakidae, and the only member of the genus Hypogaleus. It is found in the deep waters of the continental shelf in the Indo-West Pacific, from East Africa to Japan, at depths between 40 and 230 m. It can grow up to a length of 1.27 m.",
+  "funFact": "The sole member of its genus with no close living relatives, the Whitefin Topeshark is so infrequently encountered that scientists cannot yet determine basic facts about its biology — including gestation period, litter size, and maximum lifespan — making conservation planning nearly impossible."
+}

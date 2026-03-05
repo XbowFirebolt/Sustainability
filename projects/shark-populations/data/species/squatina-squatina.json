@@ -1,0 +1,35 @@
+{
+  "id": "squatina-squatina",
+  "lastUpdated": "2026-03-05",
+  "emoji": "🦈",
+  "commonName": "Angelshark",
+  "scientificName": "Squatina squatina",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Squatiniformes",
+    "family": "Squatinidae",
+    "genus": "Squatina",
+    "species": "S. squatina"
+  },
+  "statusLabel": "Critically Endangered",
+  "lifePercent": 15,
+  "habitatTypes": [
+    "ocean",
+    "coastal"
+  ],
+  "dietType": "carnivore",
+  "geographicRegions": [
+    "temperate",
+    "mediterranean"
+  ],
+  "tags": [
+    "solitary",
+    "migratory",
+    "bycatch"
+  ],
+  "description": "Squatina squatina, known as the angelshark, is a species of shark in the family Squatinidae (known generally also as angel sharks), that were once widespread in the coastal waters of the northeastern Atlantic Ocean. Well-adapted for camouflaging itself on the sea floor, the angelshark has a flattened form with enlarged pectoral and pelvic fins, giving it a superficial resemblance to a ray.",
+  "funFact": "The Angelshark was once so abundant in the North Sea that it supported commercial fisheries — it has since been virtually wiped out across its entire northern range and now survives mainly around the Canary Islands, making it the first European shark to be classified as Critically Endangered.",
+  "habitat": "The angelshark occurs in the temperate waters of the northeastern Atlantic, from southern Norway and Sweden to the Western Sahara and the Canary Islands, including around Ireland and Britain and in the Mediterranean."
+}

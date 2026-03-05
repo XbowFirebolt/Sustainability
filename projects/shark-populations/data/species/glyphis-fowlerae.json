@@ -1,0 +1,34 @@
+{
+  "id": "glyphis-fowlerae",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Borneo River Shark",
+  "scientificName": "Glyphis fowlerae",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Carcharhinidae",
+    "genus": "Glyphis",
+    "species": "G. fowlerae"
+  },
+  "statusLabel": "Critically Endangered",
+  "lifePercent": 15,
+  "habitatTypes": [
+    "ocean",
+    "coastal",
+    "freshwater"
+  ],
+  "dietType": "apex-predator",
+  "geographicRegions": [
+    "tropical"
+  ],
+  "tags": [
+    "solitary",
+    "keystone"
+  ],
+  "description": "The Borneo River Shark (Glyphis fowlerae) is one of the world's rarest and least-known sharks, described formally in 2010. It is known from only a handful of specimens collected from the Kinabatangan River in Sabah, Borneo, Malaysia. Like other river sharks in the genus Glyphis, it inhabits shallow, turbid freshwater and brackish estuarine environments.",
+  "funFact": "Formally described only in 2010, the Borneo River Shark is one of the most recently named sharks in the world — yet almost nothing is known about it. The Kinabatangan River where it lives is Borneo's longest river and one of the last refuges for orangutans, pygmy elephants, and proboscis monkeys, making it a critical wildlife corridor for multiple threatened species.",
+  "habitat": "Known only from the Kinabatangan River drainage in Sabah, on the island of Borneo, Malaysia. It occupies shallow, turbid freshwater and estuarine river reaches with extremely limited visibility."
+}

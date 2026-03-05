@@ -1,0 +1,36 @@
+{
+  "id": "glyphis-gangeticus",
+  "lastUpdated": "2026-03-05",
+  "emoji": "🦈",
+  "commonName": "Ganges Shark",
+  "scientificName": "Glyphis gangeticus",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Carcharhinidae",
+    "genus": "Glyphis",
+    "species": "G. gangeticus"
+  },
+  "statusLabel": "Critically Endangered",
+  "lifePercent": 15,
+  "habitatTypes": [
+    "ocean",
+    "coastal",
+    "freshwater"
+  ],
+  "dietType": "apex-predator",
+  "geographicRegions": [
+    "tropical"
+  ],
+  "tags": [
+    "solitary",
+    "keystone",
+    "migratory",
+    "finning"
+  ],
+  "description": "The Ganges shark (Glyphis gangeticus) is a critically endangered species of requiem shark found in the Ganges River (Padma River) and the Brahmaputra River of India and Bangladesh. It is often confused with the more common bull shark (Carcharhinus leucas), which also inhabits the Ganges River and is sometimes incorrectly referred to as the Ganges shark.",
+  "funFact": "The Ganges Shark has tiny, upward-facing eyes adapted for life in near-zero visibility river water, and is so frequently confused with the bull shark that most historical reports of \"Ganges shark\" attacks are now attributed to bull sharks — the true Ganges Shark is thought to be far too rare and reclusive to be a threat to humans.",
+  "habitat": "The Ganges shark, as its name suggests, is largely restricted to the rivers of eastern and northeastern India, particularly the Hooghly River of West Bengal, and the Ganges, Brahmaputra, and Mahanadi in Bihar, Assam, and Odisha, respectively."
+}

@@ -1,0 +1,34 @@
+{
+  "id": "glyphis-glyphis",
+  "lastUpdated": "2026-03-05",
+  "emoji": "🦈",
+  "commonName": "Speartooth Shark",
+  "scientificName": "Glyphis glyphis",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Carcharhinidae",
+    "genus": "Glyphis",
+    "species": "G. glyphis"
+  },
+  "statusLabel": "Critically Endangered",
+  "lifePercent": 15,
+  "habitatTypes": [
+    "ocean",
+    "coastal",
+    "freshwater"
+  ],
+  "dietType": "apex-predator",
+  "geographicRegions": [
+    "tropical"
+  ],
+  "tags": [
+    "solitary",
+    "keystone"
+  ],
+  "description": "The speartooth shark (Glyphis glyphis) is a rare species of river shark, belonging to the family Carcharhinidae. It inhabits coastal marine waters and tidal reaches of large tropical rivers in northern Australia and New Guinea. Despite being a member of the river shark genus, it is also found in near-shore marine waters, favoring highly turbid environments over a wide range of salinities.",
+  "funFact": "Named for its uniquely serrated, spear-shaped lower teeth unlike those of any other river shark, the Speartooth Shark can tolerate salinities ranging from fully marine to hundreds of kilometers upriver — a physiological flexibility rare among large sharks.",
+  "habitat": "Juvenile and subadult speartooth sharks are found in a few large, mangrove-lined tropical rivers in northern Australia and New Guinea, from the estuary to hundreds of kilometers upstream; a single possible record from the South China Sea exists."
+}

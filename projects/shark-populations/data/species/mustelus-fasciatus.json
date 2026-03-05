@@ -1,0 +1,32 @@
+{
+  "id": "mustelus-fasciatus",
+  "lastUpdated": "2026-03-05",
+  "emoji": "🦈",
+  "commonName": "Striped Smoothhound",
+  "scientificName": "Mustelus fasciatus",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Triakidae",
+    "genus": "Mustelus",
+    "species": "M. fasciatus"
+  },
+  "statusLabel": "Critically Endangered",
+  "lifePercent": 15,
+  "habitatTypes": [
+    "ocean",
+    "coastal"
+  ],
+  "dietType": "carnivore",
+  "geographicRegions": [
+    "temperate"
+  ],
+  "tags": [
+    "solitary",
+    "bycatch"
+  ],
+  "description": "The striped smooth-hound (Mustelus fasciatus) is a houndshark of the family Triakidae, found on the continental shelves of the subtropical southwest Atlantic from southern Brazil to northern Argentina between latitudes 30° S and 47° S, from the surface to 250 m (820 ft). It can grow up to a length of 1.77 m (5 ft 10 in).",
+  "funFact": "The Striped Smoothhound's bold dark stripes are present only in juveniles and fade completely with age — adults and young look so different that fishermen historically treated them as separate species. Heavily caught for South American fish markets under the name \"cazón,\" it has no formal catch limits despite its Critically Endangered status."
+}

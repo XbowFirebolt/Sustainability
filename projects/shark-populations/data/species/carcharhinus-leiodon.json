@@ -1,0 +1,34 @@
+{
+  "id": "carcharhinus-leiodon",
+  "lastUpdated": "2026-03-05",
+  "emoji": "🦈",
+  "commonName": "Smoothtooth Blacktip Shark",
+  "scientificName": "Carcharhinus leiodon",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Carcharhinidae",
+    "genus": "Carcharhinus",
+    "species": "C. leiodon"
+  },
+  "statusLabel": "Critically Endangered",
+  "lifePercent": 15,
+  "habitatTypes": [
+    "ocean",
+    "coastal"
+  ],
+  "dietType": "apex-predator",
+  "geographicRegions": [
+    "tropical"
+  ],
+  "tags": [
+    "solitary",
+    "keystone",
+    "bycatch"
+  ],
+  "description": "The smoothtooth blacktip shark (Carcharhinus leiodon) is a species of requiem shark in the family Carcharhinidae. It is known only from the type specimen caught from the Gulf of Aden, off eastern Yemen, and a handful of additional specimens caught from the Persian Gulf, off Kuwait.",
+  "funFact": "The Smoothtooth Blacktip Shark is so poorly known that the entire species is described from fewer than 10 specimens — the type specimen was collected in 1905 but the species wasn't formally described until 1985. Its entire confirmed range spans just two locations nearly 3,000 km apart.",
+  "habitat": "The smoothtooth blacktip shark has only been recorded from eastern Yemen and Kuwait, some 3,000 km (1,900 mi) apart."
+}

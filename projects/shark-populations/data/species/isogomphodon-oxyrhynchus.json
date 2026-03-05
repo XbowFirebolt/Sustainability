@@ -1,0 +1,34 @@
+{
+  "id": "isogomphodon-oxyrhynchus",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Daggernose Shark",
+  "scientificName": "Isogomphodon oxyrhynchus",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Carcharhinidae",
+    "genus": "Isogomphodon",
+    "species": "I. oxyrhynchus"
+  },
+  "statusLabel": "Critically Endangered",
+  "lifePercent": 15,
+  "habitatTypes": [
+    "ocean",
+    "coastal"
+  ],
+  "dietType": "apex-predator",
+  "geographicRegions": [
+    "tropical"
+  ],
+  "tags": [
+    "solitary",
+    "keystone",
+    "bycatch"
+  ],
+  "description": "The Daggernose Shark (Isogomphodon oxyrhynchus) is a little-known species of requiem shark, in the family Carcharhinidae. It inhabits shallow tropical waters off northeastern South America, from Trinidad to northern Brazil, favoring muddy habitats such as mangroves, estuaries, and river mouths, though it is intolerant of fresh water.",
+  "funFact": "The Daggernose Shark has one of the most proportionally elongated snouts of any shark — its flat, blade-like rostrum extends far beyond its small eyes, an adaptation believed to help it detect prey hidden in the murky sediment of river mouths.",
+  "habitat": "The Daggernose Shark is found along the northeastern coast of South America, off Trinidad, Guyana, Suriname, French Guiana, and northern Brazil."
+}

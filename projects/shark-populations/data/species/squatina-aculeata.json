@@ -1,0 +1,33 @@
+{
+  "id": "squatina-aculeata",
+  "lastUpdated": "2026-03-05",
+  "emoji": "🦈",
+  "commonName": "Sawback Angelshark",
+  "scientificName": "Squatina aculeata",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Squatiniformes",
+    "family": "Squatinidae",
+    "genus": "Squatina",
+    "species": "S. aculeata"
+  },
+  "statusLabel": "Critically Endangered",
+  "lifePercent": 15,
+  "habitatTypes": [
+    "ocean",
+    "coastal"
+  ],
+  "dietType": "carnivore",
+  "geographicRegions": [
+    "temperate",
+    "mediterranean"
+  ],
+  "tags": [
+    "solitary"
+  ],
+  "description": "The Sawback Angelshark (Squatina aculeata) is an angelshark of the family Squatinidae. It is one of the rarest sharks known to science and one of three angelshark species that inhabit the Mediterranean. It lives on sandy and muddy seafloors at depths of 30–500 m.",
+  "funFact": "Named for the row of enlarged thorn-like denticles running down its back, the Sawback Angelshark is an ambush predator that lies motionless and camouflaged on the seafloor — then strikes with explosive speed, swallowing prey in under a second.",
+  "diet": "Sawback angelsharks are ambush predators, meaning they lie on the ocean floor and wait for their prey to pass by. They feed on small sharks, bony fishes, cephalopods, and crustaceans."
+}

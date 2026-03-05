@@ -29,21 +29,21 @@ Species to add as stubs, in priority order. Check off each species as it's gener
 
 | # | Species | Scientific Name | IUCN Status | Generated | Reviewed | Committed |
 |---|---|---|---|---|---|---|
-| 1 | Oceanic Whitetip Shark | *Carcharhinus longimanus* | Critically Endangered | [ ] | [ ] | [ ] |
-| 2 | Pondicherry Shark | *Carcharhinus hemiodon* | Critically Endangered | [ ] | [ ] | [ ] |
-| 3 | Daggernose Shark | *Isogomphodon oxyrhynchus* | Critically Endangered | [ ] | [ ] | [ ] |
-| 4 | Smoothtooth Blacktip Shark | *Carcharhinus leiodon* | Critically Endangered | [ ] | [ ] | [ ] |
-| 5 | Striped Smoothhound | *Mustelus fasciatus* | Critically Endangered | [ ] | [ ] | [ ] |
-| 6 | Sawback Angelshark | *Squatina aculeata* | Critically Endangered | [ ] | [ ] | [ ] |
-| 7 | Smoothback Angelshark | *Squatina oculata* | Critically Endangered | [ ] | [ ] | [ ] |
-| 8 | Angelshark | *Squatina squatina* | Critically Endangered | [ ] | [ ] | [ ] |
-| 9 | Ganges Shark | *Glyphis gangeticus* | Critically Endangered | [ ] | [ ] | [ ] |
-| 10 | Speartooth Shark | *Glyphis glyphis* | Critically Endangered | [ ] | [ ] | [ ] |
-| 11 | New Guinea River Shark | *Glyphis garricki* | Critically Endangered | [ ] | [ ] | [ ] |
-| 12 | Irrawaddy River Shark | *Glyphis siamensis* | Critically Endangered | [ ] | [ ] | [ ] |
-| 13 | Borneo River Shark | *Glyphis fowlerae* | Critically Endangered | [ ] | [ ] | [ ] |
-| 14 | Whitefin Topeshark | *Hypogaleus hyugaensis* | Critically Endangered | [ ] | [ ] | [ ] |
-| 15 | Natal Shyshark | *Haploblepharus kistnasamyi* | Critically Endangered | [ ] | [ ] | [ ] |
+| 1 | Oceanic Whitetip Shark | *Carcharhinus longimanus* | Critically Endangered | [x] | [x] | [ ] |
+| 2 | Pondicherry Shark | *Carcharhinus hemiodon* | Critically Endangered | [x] | [x] | [ ] |
+| 3 | Daggernose Shark | *Isogomphodon oxyrhynchus* | Critically Endangered | [x] | [x] | [ ] |
+| 4 | Smoothtooth Blacktip Shark | *Carcharhinus leiodon* | Critically Endangered | [x] | [x] | [ ] |
+| 5 | Striped Smoothhound | *Mustelus fasciatus* | Critically Endangered | [x] | [x] | [ ] |
+| 6 | Sawback Angelshark | *Squatina aculeata* | Critically Endangered | [x] | [x] | [ ] |
+| 7 | Smoothback Angelshark | *Squatina oculata* | Critically Endangered | [x] | [x] | [ ] |
+| 8 | Angelshark | *Squatina squatina* | Critically Endangered | [x] | [x] | [ ] |
+| 9 | Ganges Shark | *Glyphis gangeticus* | Critically Endangered | [x] | [x] | [ ] |
+| 10 | Speartooth Shark | *Glyphis glyphis* | Critically Endangered | [x] | [x] | [ ] |
+| 11 | New Guinea River Shark | *Glyphis garricki* | Critically Endangered | [x] | [x] | [ ] |
+| 12 | Irrawaddy River Shark | *Glyphis siamensis* | Critically Endangered | [x] | [x] | [ ] |
+| 13 | Borneo River Shark | *Glyphis fowlerae* | Critically Endangered | [x] | [x] | [ ] |
+| 14 | Whitefin Topeshark | *Hypogaleus hyugaensis* | Critically Endangered | [x] | [x] | [ ] |
+| 15 | Natal Shyshark | *Haploblepharus kistnasamyi* | Critically Endangered | [x] | [x] | [ ] |
 
 ### Batch 2 — Well-Known / High Public Interest
 
@@ -106,9 +106,9 @@ Species that have been added as stubs and are candidates for Standard tier promo
 
 | Tier | Count |
 |---|---|
-| Full | 5 |
-| Standard | 0 |
-| Stub | 0 |
-| **Total** | **5** |
+| Full | 1 |
+| Standard | 4 |
+| Stub | 15 |
+| **Total** | **20** |
 
 *Update manually after each batch commit.*

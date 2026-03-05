@@ -1,0 +1,33 @@
+{
+  "id": "squatina-oculata",
+  "lastUpdated": "2026-03-05",
+  "emoji": "🦈",
+  "commonName": "Smoothback Angelshark",
+  "scientificName": "Squatina oculata",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Squatiniformes",
+    "family": "Squatinidae",
+    "genus": "Squatina",
+    "species": "S. oculata"
+  },
+  "statusLabel": "Critically Endangered",
+  "lifePercent": 15,
+  "habitatTypes": [
+    "ocean",
+    "coastal"
+  ],
+  "dietType": "carnivore",
+  "geographicRegions": [
+    "temperate",
+    "mediterranean"
+  ],
+  "tags": [
+    "solitary"
+  ],
+  "description": "The smoothback angelshark (Squatina oculata) is an angelshark of the family Squatinidae found in the eastern Atlantic and Mediterranean.",
+  "funFact": "The Smoothback Angelshark gets its name from the absence of thorny denticles on its back — the key feature distinguishing it from its close relatives. Like all angelsharks, its flattened body and sandy coloration make it essentially invisible against the seafloor until it strikes.",
+  "habitat": "The smoothback angelshark is found on Africa's western coast down to Namibia, as well as in the Mediterranean. It lives in the outer margins of the continental shelf at depths between 20 and 500 meters, although it usually resides in depths above 100 meters."
+}

@@ -1,0 +1,32 @@
+{
+  "id": "haploblepharus-kistnasamyi",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Natal Shyshark",
+  "scientificName": "Haploblepharus kistnasamyi",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Scyliorhinidae",
+    "genus": "Haploblepharus",
+    "species": "H. kistnasamyi"
+  },
+  "statusLabel": "Critically Endangered",
+  "lifePercent": 15,
+  "habitatTypes": [
+    "ocean",
+    "coastal"
+  ],
+  "dietType": "carnivore",
+  "geographicRegions": [
+    "temperate"
+  ],
+  "tags": [
+    "solitary"
+  ],
+  "description": "The Natal Shyshark, eastern shyshark or happy chappie (Haploblepharus kistnasamyi) is a species of shark belonging to the family Scyliorhinidae. It was once regarded as the \"Natal\" form of the puffadder shyshark (H. edwardsii). This shark is endemic to a small area off South Africa from the Western Cape to KwaZulu-Natal.",
+  "funFact": "Like all shysharks, the Natal Shyshark curls into a tight ring and covers its eyes with its tail when threatened — the behavior that gives the genus its name. Its entire known range covers less than 100 km² off the KwaZulu-Natal coast, making it one of the most geographically restricted sharks on Earth.",
+  "habitat": "The distribution of the Natal Shyshark is restricted to the waters off KwaZulu-Natal, and possibly also the Western Cape and Eastern Cape Provinces of South Africa. Its total range is estimated to encompass an area of under 100 km² (39 mi²)."
+}

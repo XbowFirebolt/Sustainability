@@ -1,0 +1,34 @@
+{
+  "id": "glyphis-siamensis",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Irrawaddy River Shark",
+  "scientificName": "Glyphis siamensis",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Carcharhinidae",
+    "genus": "Glyphis",
+    "species": "G. siamensis"
+  },
+  "statusLabel": "Critically Endangered",
+  "lifePercent": 15,
+  "habitatTypes": [
+    "ocean",
+    "coastal",
+    "freshwater"
+  ],
+  "dietType": "apex-predator",
+  "geographicRegions": [
+    "tropical"
+  ],
+  "tags": [
+    "solitary",
+    "keystone"
+  ],
+  "description": "The Irrawaddy River Shark (Glyphis siamensis) is one of the world's most mysterious and poorly known sharks, described by Steindachner in 1896 from a dried jaw specimen collected in what is now Thailand. Like other members of the river shark genus Glyphis, it likely inhabits shallow, turbid freshwater and brackish river systems in Southeast Asia.",
+  "funFact": "The entire scientific record of the Irrawaddy River Shark consists of a single dried jaw collected before 1900 — no live specimen has ever been confirmed, making it one of the most enigmatic sharks on Earth and a strong candidate for functional extinction.",
+  "habitat": "Known only from the original type specimen collected from Siam (modern-day Thailand), likely from the Chao Phraya or Irrawaddy River drainage. No verified living specimens have been recorded in over a century."
+}

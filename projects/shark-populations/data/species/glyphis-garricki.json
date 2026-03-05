@@ -1,0 +1,34 @@
+{
+  "id": "glyphis-garricki",
+  "lastUpdated": "2026-03-05",
+  "emoji": "🦈",
+  "commonName": "New Guinea River Shark",
+  "scientificName": "Glyphis garricki",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Carcharhinidae",
+    "genus": "Glyphis",
+    "species": "G. garricki"
+  },
+  "statusLabel": "Critically Endangered",
+  "lifePercent": 15,
+  "habitatTypes": [
+    "ocean",
+    "coastal",
+    "freshwater"
+  ],
+  "dietType": "apex-predator",
+  "geographicRegions": [
+    "tropical"
+  ],
+  "tags": [
+    "solitary",
+    "keystone"
+  ],
+  "description": "The northern river shark or New Guinea river shark (Glyphis garricki) is a species of requiem shark, in the family Carcharhinidae, found in scattered tidal rivers and associated coastal waters in northern Australia and in Papua New Guinea. This species inhabits areas with poor visibility, soft bottoms, and large tides, with immature sharks ranging into fresh and brackish water.",
+  "funFact": "The New Guinea River Shark was considered possibly extinct until researchers confirmed living specimens in Australia's Northern Territory rivers during targeted surveys. Its survival depends on the same remote, mangrove-lined river systems that are increasingly threatened by agriculture, fishing, and development.",
+  "habitat": "The northern river shark has been reported from King Sound, the Ord River, and Doctors Creek near Derby, Western Australia, the Adelaide and Alligator Rivers in Australia's Northern Territory, and the Daru region and possibly the Fly River in Papua New Guinea."
+}

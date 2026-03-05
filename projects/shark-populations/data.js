@@ -1547,6 +1547,511 @@ window.WIKI_DATA = {
           "link": "https://www.seafoodwatch.org"
         }
       ]
+    },
+    {
+      "id": "carcharhinus-longimanus",
+      "lastUpdated": "2026-03-05",
+      "emoji": "🦈",
+      "commonName": "Oceanic Whitetip Shark",
+      "scientificName": "Carcharhinus longimanus",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Carcharhiniformes",
+        "family": "Carcharhinidae",
+        "genus": "Carcharhinus",
+        "species": "C. longimanus"
+      },
+      "statusLabel": "Critically Endangered",
+      "lifePercent": 15,
+      "habitatTypes": [
+        "ocean",
+        "coastal"
+      ],
+      "dietType": "apex-predator",
+      "geographicRegions": [
+        "tropical",
+        "temperate"
+      ],
+      "tags": [
+        "solitary",
+        "keystone",
+        "bycatch"
+      ],
+      "description": "The oceanic whitetip shark (Carcharhinus longimanus) is a large requiem shark inhabiting the pelagic zone of tropical and warm temperate seas. It has a stocky body and iconic elongated rounded fins, with white tips. The species is typically solitary, though they may gather in large numbers at food concentrations.",
+      "funFact": "Once considered one of the most abundant large ocean animals on Earth, the Oceanic Whitetip Shark has suffered a population collapse estimated at over 98% in parts of the Atlantic since the 1950s — one of the most dramatic declines of any large marine predator ever recorded.",
+      "habitat": "Found worldwide between 45°N and 43°S latitude in deep, open ocean. Prefers water temperatures above 20°C (68°F) but can range into waters as cool as 15°C (59°F). A truly pelagic shark, it rarely approaches coastlines or shallow areas."
+    },
+    {
+      "id": "glyphis-gangeticus",
+      "lastUpdated": "2026-03-05",
+      "emoji": "🦈",
+      "commonName": "Ganges Shark",
+      "scientificName": "Glyphis gangeticus",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Carcharhiniformes",
+        "family": "Carcharhinidae",
+        "genus": "Glyphis",
+        "species": "G. gangeticus"
+      },
+      "statusLabel": "Critically Endangered",
+      "lifePercent": 15,
+      "habitatTypes": [
+        "ocean",
+        "coastal",
+        "freshwater"
+      ],
+      "dietType": "apex-predator",
+      "geographicRegions": [
+        "tropical"
+      ],
+      "tags": [
+        "solitary",
+        "keystone",
+        "migratory",
+        "finning"
+      ],
+      "description": "The Ganges shark (Glyphis gangeticus) is a critically endangered species of requiem shark found in the Ganges River (Padma River) and the Brahmaputra River of India and Bangladesh. It is often confused with the more common bull shark (Carcharhinus leucas), which also inhabits the Ganges River and is sometimes incorrectly referred to as the Ganges shark.",
+      "funFact": "The Ganges Shark has tiny, upward-facing eyes adapted for life in near-zero visibility river water, and is so frequently confused with the bull shark that most historical reports of \"Ganges shark\" attacks are now attributed to bull sharks — the true Ganges Shark is thought to be far too rare and reclusive to be a threat to humans.",
+      "habitat": "The Ganges shark, as its name suggests, is largely restricted to the rivers of eastern and northeastern India, particularly the Hooghly River of West Bengal, and the Ganges, Brahmaputra, and Mahanadi in Bihar, Assam, and Odisha, respectively."
+    },
+    {
+      "id": "isogomphodon-oxyrhynchus",
+      "lastUpdated": "2026-03-06",
+      "emoji": "🦈",
+      "commonName": "Daggernose Shark",
+      "scientificName": "Isogomphodon oxyrhynchus",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Carcharhiniformes",
+        "family": "Carcharhinidae",
+        "genus": "Isogomphodon",
+        "species": "I. oxyrhynchus"
+      },
+      "statusLabel": "Critically Endangered",
+      "lifePercent": 15,
+      "habitatTypes": [
+        "ocean",
+        "coastal"
+      ],
+      "dietType": "apex-predator",
+      "geographicRegions": [
+        "tropical"
+      ],
+      "tags": [
+        "solitary",
+        "keystone",
+        "bycatch"
+      ],
+      "description": "The Daggernose Shark (Isogomphodon oxyrhynchus) is a little-known species of requiem shark, in the family Carcharhinidae. It inhabits shallow tropical waters off northeastern South America, from Trinidad to northern Brazil, favoring muddy habitats such as mangroves, estuaries, and river mouths, though it is intolerant of fresh water.",
+      "funFact": "The Daggernose Shark has one of the most proportionally elongated snouts of any shark — its flat, blade-like rostrum extends far beyond its small eyes, an adaptation believed to help it detect prey hidden in the murky sediment of river mouths.",
+      "habitat": "The Daggernose Shark is found along the northeastern coast of South America, off Trinidad, Guyana, Suriname, French Guiana, and northern Brazil."
+    },
+    {
+      "id": "squatina-squatina",
+      "lastUpdated": "2026-03-05",
+      "emoji": "🦈",
+      "commonName": "Angelshark",
+      "scientificName": "Squatina squatina",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Squatiniformes",
+        "family": "Squatinidae",
+        "genus": "Squatina",
+        "species": "S. squatina"
+      },
+      "statusLabel": "Critically Endangered",
+      "lifePercent": 15,
+      "habitatTypes": [
+        "ocean",
+        "coastal"
+      ],
+      "dietType": "carnivore",
+      "geographicRegions": [
+        "temperate",
+        "mediterranean"
+      ],
+      "tags": [
+        "solitary",
+        "migratory",
+        "bycatch"
+      ],
+      "description": "Squatina squatina, known as the angelshark, is a species of shark in the family Squatinidae (known generally also as angel sharks), that were once widespread in the coastal waters of the northeastern Atlantic Ocean. Well-adapted for camouflaging itself on the sea floor, the angelshark has a flattened form with enlarged pectoral and pelvic fins, giving it a superficial resemblance to a ray.",
+      "funFact": "The Angelshark was once so abundant in the North Sea that it supported commercial fisheries — it has since been virtually wiped out across its entire northern range and now survives mainly around the Canary Islands, making it the first European shark to be classified as Critically Endangered.",
+      "habitat": "The angelshark occurs in the temperate waters of the northeastern Atlantic, from southern Norway and Sweden to the Western Sahara and the Canary Islands, including around Ireland and Britain and in the Mediterranean."
+    },
+    {
+      "id": "squatina-aculeata",
+      "lastUpdated": "2026-03-05",
+      "emoji": "🦈",
+      "commonName": "Sawback Angelshark",
+      "scientificName": "Squatina aculeata",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Squatiniformes",
+        "family": "Squatinidae",
+        "genus": "Squatina",
+        "species": "S. aculeata"
+      },
+      "statusLabel": "Critically Endangered",
+      "lifePercent": 15,
+      "habitatTypes": [
+        "ocean",
+        "coastal"
+      ],
+      "dietType": "carnivore",
+      "geographicRegions": [
+        "temperate",
+        "mediterranean"
+      ],
+      "tags": [
+        "solitary"
+      ],
+      "description": "The Sawback Angelshark (Squatina aculeata) is an angelshark of the family Squatinidae. It is one of the rarest sharks known to science and one of three angelshark species that inhabit the Mediterranean. It lives on sandy and muddy seafloors at depths of 30–500 m.",
+      "funFact": "Named for the row of enlarged thorn-like denticles running down its back, the Sawback Angelshark is an ambush predator that lies motionless and camouflaged on the seafloor — then strikes with explosive speed, swallowing prey in under a second.",
+      "diet": "Sawback angelsharks are ambush predators, meaning they lie on the ocean floor and wait for their prey to pass by. They feed on small sharks, bony fishes, cephalopods, and crustaceans."
+    },
+    {
+      "id": "squatina-oculata",
+      "lastUpdated": "2026-03-05",
+      "emoji": "🦈",
+      "commonName": "Smoothback Angelshark",
+      "scientificName": "Squatina oculata",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Squatiniformes",
+        "family": "Squatinidae",
+        "genus": "Squatina",
+        "species": "S. oculata"
+      },
+      "statusLabel": "Critically Endangered",
+      "lifePercent": 15,
+      "habitatTypes": [
+        "ocean",
+        "coastal"
+      ],
+      "dietType": "carnivore",
+      "geographicRegions": [
+        "temperate",
+        "mediterranean"
+      ],
+      "tags": [
+        "solitary"
+      ],
+      "description": "The smoothback angelshark (Squatina oculata) is an angelshark of the family Squatinidae found in the eastern Atlantic and Mediterranean.",
+      "funFact": "The Smoothback Angelshark gets its name from the absence of thorny denticles on its back — the key feature distinguishing it from its close relatives. Like all angelsharks, its flattened body and sandy coloration make it essentially invisible against the seafloor until it strikes.",
+      "habitat": "The smoothback angelshark is found on Africa's western coast down to Namibia, as well as in the Mediterranean. It lives in the outer margins of the continental shelf at depths between 20 and 500 meters, although it usually resides in depths above 100 meters."
+    },
+    {
+      "id": "glyphis-glyphis",
+      "lastUpdated": "2026-03-05",
+      "emoji": "🦈",
+      "commonName": "Speartooth Shark",
+      "scientificName": "Glyphis glyphis",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Carcharhiniformes",
+        "family": "Carcharhinidae",
+        "genus": "Glyphis",
+        "species": "G. glyphis"
+      },
+      "statusLabel": "Critically Endangered",
+      "lifePercent": 15,
+      "habitatTypes": [
+        "ocean",
+        "coastal",
+        "freshwater"
+      ],
+      "dietType": "apex-predator",
+      "geographicRegions": [
+        "tropical"
+      ],
+      "tags": [
+        "solitary",
+        "keystone"
+      ],
+      "description": "The speartooth shark (Glyphis glyphis) is a rare species of river shark, belonging to the family Carcharhinidae. It inhabits coastal marine waters and tidal reaches of large tropical rivers in northern Australia and New Guinea. Despite being a member of the river shark genus, it is also found in near-shore marine waters, favoring highly turbid environments over a wide range of salinities.",
+      "funFact": "Named for its uniquely serrated, spear-shaped lower teeth unlike those of any other river shark, the Speartooth Shark can tolerate salinities ranging from fully marine to hundreds of kilometers upriver — a physiological flexibility rare among large sharks.",
+      "habitat": "Juvenile and subadult speartooth sharks are found in a few large, mangrove-lined tropical rivers in northern Australia and New Guinea, from the estuary to hundreds of kilometers upstream; a single possible record from the South China Sea exists."
+    },
+    {
+      "id": "glyphis-garricki",
+      "lastUpdated": "2026-03-05",
+      "emoji": "🦈",
+      "commonName": "New Guinea River Shark",
+      "scientificName": "Glyphis garricki",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Carcharhiniformes",
+        "family": "Carcharhinidae",
+        "genus": "Glyphis",
+        "species": "G. garricki"
+      },
+      "statusLabel": "Critically Endangered",
+      "lifePercent": 15,
+      "habitatTypes": [
+        "ocean",
+        "coastal",
+        "freshwater"
+      ],
+      "dietType": "apex-predator",
+      "geographicRegions": [
+        "tropical"
+      ],
+      "tags": [
+        "solitary",
+        "keystone"
+      ],
+      "description": "The northern river shark or New Guinea river shark (Glyphis garricki) is a species of requiem shark, in the family Carcharhinidae, found in scattered tidal rivers and associated coastal waters in northern Australia and in Papua New Guinea. This species inhabits areas with poor visibility, soft bottoms, and large tides, with immature sharks ranging into fresh and brackish water.",
+      "funFact": "The New Guinea River Shark was considered possibly extinct until researchers confirmed living specimens in Australia's Northern Territory rivers during targeted surveys. Its survival depends on the same remote, mangrove-lined river systems that are increasingly threatened by agriculture, fishing, and development.",
+      "habitat": "The northern river shark has been reported from King Sound, the Ord River, and Doctors Creek near Derby, Western Australia, the Adelaide and Alligator Rivers in Australia's Northern Territory, and the Daru region and possibly the Fly River in Papua New Guinea."
+    },
+    {
+      "id": "glyphis-siamensis",
+      "lastUpdated": "2026-03-06",
+      "emoji": "🦈",
+      "commonName": "Irrawaddy River Shark",
+      "scientificName": "Glyphis siamensis",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Carcharhiniformes",
+        "family": "Carcharhinidae",
+        "genus": "Glyphis",
+        "species": "G. siamensis"
+      },
+      "statusLabel": "Critically Endangered",
+      "lifePercent": 15,
+      "habitatTypes": [
+        "ocean",
+        "coastal",
+        "freshwater"
+      ],
+      "dietType": "apex-predator",
+      "geographicRegions": [
+        "tropical"
+      ],
+      "tags": [
+        "solitary",
+        "keystone"
+      ],
+      "description": "The Irrawaddy River Shark (Glyphis siamensis) is one of the world's most mysterious and poorly known sharks, described by Steindachner in 1896 from a dried jaw specimen collected in what is now Thailand. Like other members of the river shark genus Glyphis, it likely inhabits shallow, turbid freshwater and brackish river systems in Southeast Asia.",
+      "funFact": "The entire scientific record of the Irrawaddy River Shark consists of a single dried jaw collected before 1900 — no live specimen has ever been confirmed, making it one of the most enigmatic sharks on Earth and a strong candidate for functional extinction.",
+      "habitat": "Known only from the original type specimen collected from Siam (modern-day Thailand), likely from the Chao Phraya or Irrawaddy River drainage. No verified living specimens have been recorded in over a century."
+    },
+    {
+      "id": "glyphis-fowlerae",
+      "lastUpdated": "2026-03-06",
+      "emoji": "🦈",
+      "commonName": "Borneo River Shark",
+      "scientificName": "Glyphis fowlerae",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Carcharhiniformes",
+        "family": "Carcharhinidae",
+        "genus": "Glyphis",
+        "species": "G. fowlerae"
+      },
+      "statusLabel": "Critically Endangered",
+      "lifePercent": 15,
+      "habitatTypes": [
+        "ocean",
+        "coastal",
+        "freshwater"
+      ],
+      "dietType": "apex-predator",
+      "geographicRegions": [
+        "tropical"
+      ],
+      "tags": [
+        "solitary",
+        "keystone"
+      ],
+      "description": "The Borneo River Shark (Glyphis fowlerae) is one of the world's rarest and least-known sharks, described formally in 2010. It is known from only a handful of specimens collected from the Kinabatangan River in Sabah, Borneo, Malaysia. Like other river sharks in the genus Glyphis, it inhabits shallow, turbid freshwater and brackish estuarine environments.",
+      "funFact": "Formally described only in 2010, the Borneo River Shark is one of the most recently named sharks in the world — yet almost nothing is known about it. The Kinabatangan River where it lives is Borneo's longest river and one of the last refuges for orangutans, pygmy elephants, and proboscis monkeys, making it a critical wildlife corridor for multiple threatened species.",
+      "habitat": "Known only from the Kinabatangan River drainage in Sabah, on the island of Borneo, Malaysia. It occupies shallow, turbid freshwater and estuarine river reaches with extremely limited visibility."
+    },
+    {
+      "id": "carcharhinus-hemiodon",
+      "lastUpdated": "2026-03-06",
+      "emoji": "🦈",
+      "commonName": "Pondicherry Shark",
+      "scientificName": "Carcharhinus hemiodon",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Carcharhiniformes",
+        "family": "Carcharhinidae",
+        "genus": "Carcharhinus",
+        "species": "C. hemiodon"
+      },
+      "statusLabel": "Critically Endangered",
+      "lifePercent": 15,
+      "habitatTypes": [
+        "ocean",
+        "coastal"
+      ],
+      "dietType": "apex-predator",
+      "geographicRegions": [
+        "tropical"
+      ],
+      "tags": [
+        "solitary",
+        "keystone"
+      ],
+      "description": "The Pondicherry Shark (Carcharhinus hemiodon) is an extremely rare species of requiem shark, in the family Carcharhinidae. A small and stocky gray shark, it grows not much longer than 1 m (3.3 ft) and has a fairly long, pointed snout.",
+      "funFact": "No confirmed sighting of the Pondicherry Shark has been recorded since 1979, and fewer than 20 specimens are known to science — leading some researchers to fear it may already be extinct.",
+      "habitat": "The Pondicherry Shark appears to have been broadly distributed in coastal Indo-Pacific waters. It may have once been common, as it was reportedly a regular catch off India and Pakistan, but is now extremely rare."
+    },
+    {
+      "id": "carcharhinus-leiodon",
+      "lastUpdated": "2026-03-05",
+      "emoji": "🦈",
+      "commonName": "Smoothtooth Blacktip Shark",
+      "scientificName": "Carcharhinus leiodon",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Carcharhiniformes",
+        "family": "Carcharhinidae",
+        "genus": "Carcharhinus",
+        "species": "C. leiodon"
+      },
+      "statusLabel": "Critically Endangered",
+      "lifePercent": 15,
+      "habitatTypes": [
+        "ocean",
+        "coastal"
+      ],
+      "dietType": "apex-predator",
+      "geographicRegions": [
+        "tropical"
+      ],
+      "tags": [
+        "solitary",
+        "keystone",
+        "bycatch"
+      ],
+      "description": "The smoothtooth blacktip shark (Carcharhinus leiodon) is a species of requiem shark in the family Carcharhinidae. It is known only from the type specimen caught from the Gulf of Aden, off eastern Yemen, and a handful of additional specimens caught from the Persian Gulf, off Kuwait.",
+      "funFact": "The Smoothtooth Blacktip Shark is so poorly known that the entire species is described from fewer than 10 specimens — the type specimen was collected in 1905 but the species wasn't formally described until 1985. Its entire confirmed range spans just two locations nearly 3,000 km apart.",
+      "habitat": "The smoothtooth blacktip shark has only been recorded from eastern Yemen and Kuwait, some 3,000 km (1,900 mi) apart."
+    },
+    {
+      "id": "mustelus-fasciatus",
+      "lastUpdated": "2026-03-05",
+      "emoji": "🦈",
+      "commonName": "Striped Smoothhound",
+      "scientificName": "Mustelus fasciatus",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Carcharhiniformes",
+        "family": "Triakidae",
+        "genus": "Mustelus",
+        "species": "M. fasciatus"
+      },
+      "statusLabel": "Critically Endangered",
+      "lifePercent": 15,
+      "habitatTypes": [
+        "ocean",
+        "coastal"
+      ],
+      "dietType": "carnivore",
+      "geographicRegions": [
+        "temperate"
+      ],
+      "tags": [
+        "solitary",
+        "bycatch"
+      ],
+      "description": "The striped smooth-hound (Mustelus fasciatus) is a houndshark of the family Triakidae, found on the continental shelves of the subtropical southwest Atlantic from southern Brazil to northern Argentina between latitudes 30° S and 47° S, from the surface to 250 m (820 ft). It can grow up to a length of 1.77 m (5 ft 10 in).",
+      "funFact": "The Striped Smoothhound's bold dark stripes are present only in juveniles and fade completely with age — adults and young look so different that fishermen historically treated them as separate species. Heavily caught for South American fish markets under the name \"cazón,\" it has no formal catch limits despite its Critically Endangered status."
+    },
+    {
+      "id": "hypogaleus-hyugaensis",
+      "lastUpdated": "2026-03-05",
+      "emoji": "🦈",
+      "commonName": "Whitefin Topeshark",
+      "scientificName": "Hypogaleus hyugaensis",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Carcharhiniformes",
+        "family": "Triakidae",
+        "genus": "Hypogaleus",
+        "species": "H. hyugaensis"
+      },
+      "statusLabel": "Critically Endangered",
+      "lifePercent": 15,
+      "habitatTypes": [
+        "ocean",
+        "coastal"
+      ],
+      "dietType": "carnivore",
+      "geographicRegions": [
+        "tropical",
+        "temperate"
+      ],
+      "tags": [
+        "solitary"
+      ],
+      "description": "The blacktip tope (Hypogaleus hyugaensis), also known as pencil shark or blacktip topeshark, is a houndshark of the family Triakidae, and the only member of the genus Hypogaleus. It is found in the deep waters of the continental shelf in the Indo-West Pacific, from East Africa to Japan, at depths between 40 and 230 m. It can grow up to a length of 1.27 m.",
+      "funFact": "The sole member of its genus with no close living relatives, the Whitefin Topeshark is so infrequently encountered that scientists cannot yet determine basic facts about its biology — including gestation period, litter size, and maximum lifespan — making conservation planning nearly impossible."
+    },
+    {
+      "id": "haploblepharus-kistnasamyi",
+      "lastUpdated": "2026-03-06",
+      "emoji": "🦈",
+      "commonName": "Natal Shyshark",
+      "scientificName": "Haploblepharus kistnasamyi",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Carcharhiniformes",
+        "family": "Scyliorhinidae",
+        "genus": "Haploblepharus",
+        "species": "H. kistnasamyi"
+      },
+      "statusLabel": "Critically Endangered",
+      "lifePercent": 15,
+      "habitatTypes": [
+        "ocean",
+        "coastal"
+      ],
+      "dietType": "carnivore",
+      "geographicRegions": [
+        "temperate"
+      ],
+      "tags": [
+        "solitary"
+      ],
+      "description": "The Natal Shyshark, eastern shyshark or happy chappie (Haploblepharus kistnasamyi) is a species of shark belonging to the family Scyliorhinidae. It was once regarded as the \"Natal\" form of the puffadder shyshark (H. edwardsii). This shark is endemic to a small area off South Africa from the Western Cape to KwaZulu-Natal.",
+      "funFact": "Like all shysharks, the Natal Shyshark curls into a tight ring and covers its eyes with its tail when threatened — the behavior that gives the genus its name. Its entire known range covers less than 100 km² off the KwaZulu-Natal coast, making it one of the most geographically restricted sharks on Earth.",
+      "habitat": "The distribution of the Natal Shyshark is restricted to the waters off KwaZulu-Natal, and possibly also the Western Cape and Eastern Cape Provinces of South Africa. Its total range is estimated to encompass an area of under 100 km² (39 mi²)."
     }
   ]
 };
