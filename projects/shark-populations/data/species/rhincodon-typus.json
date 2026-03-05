@@ -1,0 +1,55 @@
+{
+  "id": "rhincodon-typus",
+  "lastUpdated": "2026-03-05",
+  "emoji": "🦈",
+  "commonName": "Whale Shark",
+  "scientificName": "Rhincodon typus",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Orectolobiformes",
+    "family": "Rhincodontidae",
+    "genus": "Rhincodon",
+    "species": "R. typus"
+  },
+  "statusLabel": "Endangered",
+  "lifePercent": 35,
+  "habitatTypes": [
+    "ocean",
+    "coastal",
+    "freshwater"
+  ],
+  "dietType": "filter-feeder",
+  "geographicRegions": [
+    "tropical",
+    "temperate",
+    "arctic"
+  ],
+  "tags": [
+    "solitary",
+    "migratory",
+    "bycatch"
+  ],
+  "description": "The whale shark (Rhincodon typus) is a slow-moving, filter-feeding carpet shark and the largest known extant fish species. An individual with a length of 18.8 m (61.7 ft) has been considered the largest reliably recorded. The whale shark holds many records for size in the animal kingdom, most notably being by far the most massive living non-cetacean animal.",
+  "funFact": "TODO: Add a striking fun fact about Whale Shark.",
+  "size": "Up to 46 m (150.9 ft); 12 kg (26 lb)",
+  "habitat": "The whale shark inhabits all tropical and warm-temperate seas. The fish is primarily pelagic, and can be found in both coastal and oceanic habitats. Tracking devices have shown that the whale shark displays dynamic patterns of habitat utilization, likely in response to availability of prey.",
+  "diet": "The whale shark is a filter feeder – one of only three known filter-feeding shark species (along with the basking shark and the megamouth shark).",
+  "vitalSigns": [
+    {
+      "label": "Max Length",
+      "value": "46 m (150.9 ft)",
+      "metric": "46 m",
+      "imperial": "150.9 ft",
+      "glance": true
+    },
+    {
+      "label": "Max Weight",
+      "value": "12 kg (26 lb)",
+      "metric": "12 kg",
+      "imperial": "26 lb",
+      "glance": true
+    }
+  ]
+}

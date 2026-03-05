@@ -1,0 +1,53 @@
+{
+  "id": "carcharodon-carcharias",
+  "lastUpdated": "2026-03-05",
+  "emoji": "🦈",
+  "commonName": "Great White Shark",
+  "scientificName": "Carcharodon carcharias",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Lamniformes",
+    "family": "Lamnidae",
+    "genus": "Carcharodon",
+    "species": "C. carcharias"
+  },
+  "statusLabel": "Vulnerable",
+  "lifePercent": 55,
+  "habitatTypes": [
+    "ocean",
+    "pelagic",
+    "coastal"
+  ],
+  "dietType": "apex-predator",
+  "geographicRegions": [
+    "tropical",
+    "temperate",
+    "mediterranean"
+  ],
+  "tags": [
+    "solitary",
+    "keystone",
+    "migratory",
+    "bycatch"
+  ],
+  "description": "The great white shark (Carcharodon carcharias), also known as the white shark, white pointer, or simply great white, is the largest living macropredatory shark and fish. It is a mackerel shark and closely related to the mako sharks, the porbeagle, and the salmon shark. It is a robustly built species with a grayish upperside and a white underside.",
+  "funFact": "TODO: Add a striking fun fact about Great White Shark.",
+  "size": "2,400 kg (5,291 lb)",
+  "habitat": "Great white sharks range from tropical to temperate and even colder waters around the world, with major populations in the northwestern and northeastern Pacific, western North Atlantic, the Mediterranean, southern African waters and Oceania.",
+  "diet": "The great white shark is an apex predator that opportunistically feeds on fish, cephalopods, marine mammals, sea birds and sea turtles.",
+  "vitalSigns": [
+    {
+      "label": "Max Weight",
+      "value": "2,400 kg (5,291 lb)",
+      "metric": "2,400 kg",
+      "imperial": "5,291 lb",
+      "glance": true
+    },
+    {
+      "label": "Lifespan",
+      "value": "Up to 73 years"
+    }
+  ]
+}

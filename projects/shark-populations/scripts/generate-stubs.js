@@ -25,13 +25,16 @@
  *   --delay=MS          Delay between Wikipedia API requests in ms (default: 200)
  *
  * What gets auto-populated from Wikidata/Wikipedia:
- *   id, emoji, commonName, scientificName, taxonomy, statusLabel, lifePercent,
- *   habitatTypes (order-based heuristic), dietType (family-based heuristic),
- *   geographicRegions (defaults to ["global"]), tags (family-based), description
+ *   Stub tier:     id, emoji, commonName, scientificName, taxonomy, statusLabel, lifePercent,
+ *                  habitatTypes (order heuristic), dietType (family heuristic),
+ *                  geographicRegions (defaults to ["global"]), tags (family heuristic), description
+ *   Standard tier: size, habitat, diet (Wikipedia sections), vitalSigns with Max Length,
+ *                  Max Weight, Lifespan (Wikidata P2043/P2067/P2250, where available)
  *
  * What needs manual authoring after generation:
- *   funFact, description (review/improve the Wikipedia excerpt), habitatTypes,
- *   geographicRegions, threats, vitalSigns, actionItems, photos, and all Full tier fields
+ *   funFact, habitatTypes (verify heuristic), geographicRegions (refine from default),
+ *   tags (add bycatch/finning/migratory), threats, actionItems, statusHistory, photos,
+ *   and all Full tier fields
  */
 
 const fs    = require('fs');
@@ -76,24 +79,49 @@ const C = NO_COLOR
       magenta: '\x1b[35m',
     };
 
-// ── Wikidata IUCN status QID → schema values ──────────────────────────────────
+// ── Wikidata IUCN status resolution ───────────────────────────────────────────
 //
-// Wikidata P141 (conservation status) points to these items.
+// Wikidata P141 (conservation status) uses inconsistent QIDs across species.
+// We resolve status by English label first (most robust), then QID as fallback.
+//
 // lifePercent heuristics from data-schema.md: CR≈10–25, EN≈30–50, VU≈50–65, NT≈70–80, LC≈85–100
 
-const WIKIDATA_STATUS = {
-  Q719675:  { statusLabel: 'Least Concern',        lifePercent: 90 },
-  Q11401:   { statusLabel: 'Near Threatened',       lifePercent: 75 },
-  Q11394:   { statusLabel: 'Vulnerable',            lifePercent: 55 },
-  Q11527:   { statusLabel: 'Endangered',            lifePercent: 35 },
-  Q11375:   { statusLabel: 'Critically Endangered', lifePercent: 15 },
-  Q237350:  { statusLabel: 'Extinct in the Wild',   lifePercent: 5  },
-  Q237244:  { statusLabel: 'Extinct',               lifePercent: 0  },
-  Q57625908:{ statusLabel: 'Data Deficient',        lifePercent: 50 },
-  Q62035487:{ statusLabel: 'Not Evaluated',         lifePercent: 50 },
+// Label-based map (primary). Covers Wikidata label variations for each category.
+const LABEL_STATUS = {
+  'least concern':         { statusLabel: 'Least Concern',        lifePercent: 90 },
+  'near threatened':       { statusLabel: 'Near Threatened',      lifePercent: 75 },
+  'vulnerable':            { statusLabel: 'Vulnerable',           lifePercent: 55 },
+  'endangered':            { statusLabel: 'Endangered',           lifePercent: 35 },
+  'endangered species':    { statusLabel: 'Endangered',           lifePercent: 35 },
+  'endangered status':     { statusLabel: 'Endangered',           lifePercent: 35 },
+  'critically endangered': { statusLabel: 'Critically Endangered',lifePercent: 15 },
+  'extinct in the wild':   { statusLabel: 'Extinct in the Wild',  lifePercent: 5  },
+  'extinct species':       { statusLabel: 'Extinct',              lifePercent: 0  },
+  'extinct':               { statusLabel: 'Extinct',              lifePercent: 0  },
+  'data deficient':        { statusLabel: 'Data Deficient',       lifePercent: 50 },
+  'not evaluated':         { statusLabel: 'Not Evaluated',        lifePercent: 50 },
 };
 
-function mapStatus(qid) {
+// QID-based map (fallback). QIDs verified against Wikidata as of 2026-03.
+const WIKIDATA_STATUS = {
+  Q211005:  { statusLabel: 'Least Concern',        lifePercent: 90 },
+  Q719675:  { statusLabel: 'Near Threatened',      lifePercent: 75 },
+  Q278113:  { statusLabel: 'Vulnerable',           lifePercent: 55 },
+  Q11394:   { statusLabel: 'Endangered',           lifePercent: 35 }, // "endangered species"
+  Q96377276:{ statusLabel: 'Endangered',           lifePercent: 35 }, // "Endangered status" (common in WD)
+  Q219127:  { statusLabel: 'Critically Endangered',lifePercent: 15 },
+  Q239509:  { statusLabel: 'Extinct in the Wild',  lifePercent: 5  },
+  Q237350:  { statusLabel: 'Extinct',              lifePercent: 0  }, // "extinct species"
+  Q3245245: { statusLabel: 'Data Deficient',       lifePercent: 50 },
+  Q3350324: { statusLabel: 'Not Evaluated',        lifePercent: 50 },
+};
+
+// Resolve IUCN status. Label takes precedence over QID to handle Wikidata inconsistencies.
+function mapStatus(qid, wikidataLabel) {
+  if (wikidataLabel) {
+    const match = LABEL_STATUS[wikidataLabel.toLowerCase().trim()];
+    if (match) return match;
+  }
   return WIKIDATA_STATUS[qid] ?? { statusLabel: 'Not Evaluated', lifePercent: 50 };
 }
 
@@ -240,11 +268,15 @@ function buildSparqlQuery(sciNames = []) {
 SELECT DISTINCT
   ?taxon
   ?scientificName
-  (SAMPLE(?commonNameVal) AS ?commonName)
-  (SAMPLE(?iucnStatusQID)  AS ?iucnStatus)
-  (SAMPLE(?familyNameVal)  AS ?familyName)
-  (SAMPLE(?orderNameVal)   AS ?orderName)
-  (SAMPLE(?genusNameVal)   AS ?genusName)
+  (SAMPLE(?commonNameVal)      AS ?commonName)
+  (SAMPLE(?iucnStatusQID)      AS ?iucnStatus)
+  (SAMPLE(?iucnStatusLabelVal) AS ?iucnStatusLabel)
+  (SAMPLE(?familyNameVal)      AS ?familyName)
+  (SAMPLE(?orderNameVal)       AS ?orderName)
+  (SAMPLE(?genusNameVal)       AS ?genusName)
+  (SAMPLE(?bodyLengthVal)      AS ?bodyLength)
+  (SAMPLE(?massVal)            AS ?mass)
+  (SAMPLE(?lifespanVal)        AS ?lifespan)
 WHERE {
   ${filter}
 
@@ -256,6 +288,10 @@ WHERE {
   OPTIONAL {
     ?taxon wdt:P141 ?iucnStatusEntity.
     BIND(STRAFTER(STR(?iucnStatusEntity), "entity/") AS ?iucnStatusQID)
+    OPTIONAL {
+      ?iucnStatusEntity rdfs:label ?iucnStatusLabelVal.
+      FILTER(LANG(?iucnStatusLabelVal) = "en")
+    }
   }
 
   OPTIONAL {
@@ -274,6 +310,10 @@ WHERE {
     ?taxon wdt:P171 ?genusEntity.
     ?genusEntity wdt:P225 ?genusNameVal.
   }
+
+  OPTIONAL { ?taxon wdt:P2043 ?bodyLengthVal. }  # max body length (metres, SI-normalised)
+  OPTIONAL { ?taxon wdt:P2067 ?massVal. }         # mass (kg, SI-normalised)
+  OPTIONAL { ?taxon wdt:P2250 ?lifespanVal. }     # lifespan (years)
 }
 GROUP BY ?taxon ?scientificName`.trim();
 }
@@ -284,48 +324,195 @@ async function queryWikidata(sparql) {
   const data = await httpGet(url, { Accept: 'application/sparql-results+json' }, 90000);
   return (data.results?.bindings ?? []).map(row => {
     const val = key => row[key]?.value ?? null;
-    const qid = val('iucnStatus'); // e.g. "Q11394"
+    const num = key => { const v = val(key); return v !== null ? parseFloat(v) : null; };
     return {
-      taxonQID:     val('taxon')?.replace('http://www.wikidata.org/entity/', '') ?? null,
-      scientificName: val('scientificName'),
-      commonName:   val('commonName'),
-      iucnStatusQID: qid,
-      familyName:   val('familyName'),
-      orderName:    val('orderName'),
-      genusName:    val('genusName'),
+      taxonQID:        val('taxon')?.replace('http://www.wikidata.org/entity/', '') ?? null,
+      scientificName:  val('scientificName'),
+      commonName:      val('commonName'),
+      iucnStatusQID:   val('iucnStatus'),
+      iucnStatusLabel: val('iucnStatusLabel'),
+      familyName:      val('familyName'),
+      orderName:       val('orderName'),
+      genusName:       val('genusName'),
+      bodyLengthM:     num('bodyLength'), // metres (P2043)
+      massKg:          num('mass'),       // kg (P2067)
+      lifespanYrs:     num('lifespan'),   // years (P2250)
     };
   }).filter(r => r.scientificName);
 }
 
-// ── Wikipedia summary API ─────────────────────────────────────────────────────
+// ── Wikipedia API ─────────────────────────────────────────────────────────────
+//
+// Uses the stable MediaWiki action API (extracts) rather than the REST API.
+// explaintext=true + exsectionformat=wiki returns plain text with == headings ==,
+// which we split into a section map for targeted extraction.
 
-async function fetchWikipediaSummary(title) {
-  const encoded = encodeURIComponent(title.replace(/ /g, '_'));
-  const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encoded}`;
-  try {
-    const data = await httpGet(url, { Accept: 'application/json' }, 15000);
-    return data.extract ?? null;
-  } catch {
-    return null;
+const HABITAT_SECTIONS = new Set([
+  'habitat', 'distribution', 'distribution and habitat', 'range',
+  'range and habitat', 'ecology', 'geographic range', 'occurrence',
+]);
+const DIET_SECTIONS = new Set([
+  'diet', 'feeding', 'diet and feeding', 'feeding behavior',
+  'feeding behaviour', 'prey', 'predation', 'food habits',
+]);
+
+// Split a plain-text Wikipedia extract into { lowercaseTitle: content } map.
+// Lead text (before the first heading) is stored under the empty-string key.
+function parseSections(extract) {
+  const parts = extract.split(/\n={2,}\s*([^=\n]+?)\s*={2,}\n?/);
+  const sections = { '': parts[0] ?? '' };
+  for (let i = 1; i + 1 < parts.length; i += 2) {
+    const title = parts[i].trim().toLowerCase();
+    if (!(title in sections)) sections[title] = parts[i + 1] ?? '';
   }
+  return sections;
+}
+
+async function fetchWikipediaData(title) {
+  const params = new URLSearchParams({
+    action:          'query',
+    titles:          title,
+    prop:            'extracts',
+    exsectionformat: 'wiki',
+    explaintext:     'true',
+    redirects:       'true',
+    format:          'json',
+  });
+  const url = `https://en.wikipedia.org/w/api.php?${params}`;
+  try {
+    const data = await httpGet(url, { Accept: 'application/json' }, 20000);
+    const page = Object.values(data.query?.pages ?? {})[0];
+    if (!page || page.missing !== undefined) return { description: null, habitat: null, diet: null };
+
+    const sections = parseSections(page.extract ?? '');
+    const findSection = (titleSet, maxChars) => {
+      for (const key of Object.keys(sections)) {
+        if (titleSet.has(key)) return extractText(sections[key], maxChars) || null;
+      }
+      return null;
+    };
+
+    // Full article text used for keyword inference in buildStub (not stored in output JSON).
+    // We use the complete extract so keywords deep in habitat/conservation sections aren't cut off.
+    const inferenceText = page.extract ?? '';
+
+    return {
+      description:   extractText(sections[''], 400) || null,
+      habitat:       findSection(HABITAT_SECTIONS, 300),
+      diet:          findSection(DIET_SECTIONS, 300),
+      inferenceText,
+    };
+  } catch {
+    return { description: null, habitat: null, diet: null, inferenceText: '' };
+  }
+}
+
+
+// ── Text-based field inference ────────────────────────────────────────────────
+//
+// These replace the simple order/family heuristics with keyword scanning of the
+// Wikipedia inferenceText (lead + habitat + diet, raw, up to 2000 chars).
+// The order/family heuristics still provide the base; text signals augment them.
+
+function inferGeographicRegions(orderName, text) {
+  const t = (text ?? '').toLowerCase();
+  const regions = new Set();
+  if (/\btropical\b/.test(t))         regions.add('tropical');
+  if (/\btemperate\b/.test(t))        regions.add('temperate');
+  if (/\barctic\b|\bpolar\b/.test(t)) regions.add('arctic');
+  if (/\bmediterranean\b/.test(t))    regions.add('mediterranean');
+  return regions.size > 0 ? [...regions] : mapGeographicRegions(orderName);
+}
+
+function inferHabitatTypes(orderName, text) {
+  const base = new Set(mapHabitatTypes(orderName));
+  const t = (text ?? '').toLowerCase();
+  if (/\bcoastal\b|\bnearshore\b|\bshallow/.test(t))        base.add('coastal');
+  if (/\bdeep[- ]sea\b|\bdeep\s+water\b|\bbenthic/.test(t)) base.add('deep-sea');
+  if (/\bfreshwater\b|\briver\b|\bestuar/.test(t))           base.add('freshwater');
+  if (/\breef\b/.test(t))                                    base.add('coastal');
+  return [...base];
+}
+
+function inferTags(familyName, orderName, text) {
+  const base = new Set(mapTags(familyName, orderName));
+  const t = (text ?? '').toLowerCase();
+  if (/\bmigrat/.test(t))                    base.add('migratory');
+  if (/\bbycatch\b/.test(t))                 base.add('bycatch');
+  if (/\bfinning\b|\bfin\s+trade\b/.test(t)) base.add('finning');
+  return [...base];
+}
+
+// ── Standard tier builders ────────────────────────────────────────────────────
+
+// Build a human-readable size string from Wikidata biometrics.
+function buildSizeString(lengthM, massKg) {
+  const parts = [];
+  if (lengthM != null) {
+    const ft = (lengthM * 3.28084).toFixed(1);
+    parts.push(`Up to ${lengthM} m (${ft} ft)`);
+  }
+  if (massKg != null) {
+    const lbs = Math.round(massKg * 2.20462).toLocaleString();
+    parts.push(`${Math.round(massKg).toLocaleString()} kg (${lbs} lb)`);
+  }
+  return parts.length ? parts.join('; ') : null;
+}
+
+// Build vitalSigns array from Wikidata biometrics. Only includes fields with data.
+function buildVitalSigns(lengthM, massKg, lifespanYrs) {
+  const vitals = [];
+  if (lengthM != null) {
+    const ft = (lengthM * 3.28084).toFixed(1);
+    vitals.push({
+      label:    'Max Length',
+      value:    `${lengthM} m (${ft} ft)`,
+      metric:   `${lengthM} m`,
+      imperial: `${ft} ft`,
+      glance:   true,
+    });
+  }
+  if (massKg != null) {
+    const kg  = Math.round(massKg).toLocaleString();
+    const lbs = Math.round(massKg * 2.20462).toLocaleString();
+    vitals.push({
+      label:    'Max Weight',
+      value:    `${kg} kg (${lbs} lb)`,
+      metric:   `${kg} kg`,
+      imperial: `${lbs} lb`,
+      glance:   true,
+    });
+  }
+  if (lifespanYrs != null) {
+    vitals.push({ label: 'Lifespan', value: `Up to ${lifespanYrs} years` });
+  }
+  return vitals;
 }
 
 // ── Stub builder ──────────────────────────────────────────────────────────────
 
-function buildStub(record, wikiDescription) {
-  const { scientificName, commonName, iucnStatusQID, familyName, orderName, genusName } = record;
-  const { statusLabel, lifePercent } = mapStatus(iucnStatusQID);
+function buildStub(record, wikiData) {
+  const {
+    scientificName, commonName, iucnStatusQID, iucnStatusLabel,
+    familyName, orderName, genusName,
+    bodyLengthM, massKg, lifespanYrs,
+  } = record;
+  const { description: wikiDesc, habitat, diet, inferenceText } = wikiData;
+  const { statusLabel, lifePercent } = mapStatus(iucnStatusQID, iucnStatusLabel);
   const genus   = genusName ?? scientificName.split(' ')[0];
   const epithet = scientificName.split(' ').slice(1).join(' ');
   const name    = commonName || scientificName;
 
-  const description = extractText(wikiDescription, 400) ||
+  const description = wikiDesc ||
     `${name} (${scientificName}) is a shark species. ` +
     (statusLabel !== 'Not Evaluated'
       ? `It is currently assessed as ${statusLabel} on the IUCN Red List.`
       : 'Its conservation status has not been fully evaluated.');
 
-  return {
+  const size      = buildSizeString(bodyLengthM, massKg);
+  const vitalSigns = buildVitalSigns(bodyLengthM, massKg, lifespanYrs);
+
+  const stub = {
     id:          toSlug(scientificName),
     lastUpdated: new Date().toISOString().slice(0, 10),
     emoji:       '🦈',
@@ -342,13 +529,21 @@ function buildStub(record, wikiDescription) {
     },
     statusLabel,
     lifePercent,
-    habitatTypes:      mapHabitatTypes(orderName),
+    habitatTypes:      inferHabitatTypes(orderName, inferenceText),
     dietType:          mapDietType(familyName),
-    geographicRegions: mapGeographicRegions(orderName),
-    tags:              mapTags(familyName, orderName),
+    geographicRegions: inferGeographicRegions(orderName, inferenceText),
+    tags:              inferTags(familyName, orderName, inferenceText),
     description,
     funFact: `TODO: Add a striking fun fact about ${name}.`,
   };
+
+  // Standard tier — only included when data is available
+  if (size)              stub.size       = size;
+  if (habitat)           stub.habitat    = habitat;
+  if (diet)              stub.diet       = diet;
+  if (vitalSigns.length) stub.vitalSigns = vitalSigns;
+
+  return stub;
 }
 
 // ── Main ──────────────────────────────────────────────────────────────────────
@@ -422,14 +617,14 @@ async function main() {
 
     try {
       // Try scientific name first, then common name as fallback
-      let wikiDesc = await fetchWikipediaSummary(rec.scientificName);
-      if (!wikiDesc && rec.commonName) {
+      let wikiData = await fetchWikipediaData(rec.scientificName);
+      if (!wikiData.description && rec.commonName) {
         await sleep(DELAY_MS);
-        wikiDesc = await fetchWikipediaSummary(rec.commonName);
+        wikiData = await fetchWikipediaData(rec.commonName);
       }
       await sleep(DELAY_MS);
 
-      const stub     = buildStub(rec, wikiDesc);
+      const stub     = buildStub(rec, wikiData);
       const filePath = path.join(speciesDir, `${stub.id}.json`);
       const json     = JSON.stringify(stub, null, 2) + '\n';
       const relPath  = path.relative(root, filePath);
@@ -440,8 +635,10 @@ async function main() {
         fs.writeFileSync(filePath, json, 'utf8');
         print(`  ✓ ${relPath}`, C.green);
       }
+      const extras = [stub.size && 'size', stub.habitat && 'habitat', stub.diet && 'diet', stub.vitalSigns?.length && `${stub.vitalSigns.length} vitals`].filter(Boolean);
       print(`  ${stub.commonName} · ${stub.statusLabel} · ${stub.dietType} · [${stub.habitatTypes.join(', ')}]`, C.dim);
-      if (!wikiDesc) print(`  (no Wikipedia description found — placeholder used)`, C.yellow);
+      if (extras.length) print(`  Standard tier: ${extras.join(', ')}`, C.dim);
+      if (!wikiData.description) print(`  (no Wikipedia description found — placeholder used)`, C.yellow);
 
       written.push({ slug: stub.id, commonName: stub.commonName, statusLabel: stub.statusLabel });
     } catch (err) {
@@ -471,13 +668,16 @@ async function main() {
   if (skipped.length > 0) print(`\nSkipped ${skipped.length} already-existing species.`, C.dim);
 
   if (!DRY_RUN && written.length > 0) {
-    console.log(`\n${C.bold}Fields requiring manual authoring in each stub:${C.reset}`);
-    console.log(`  ${C.yellow}funFact${C.reset}         — no open data equivalent`);
-    console.log(`  ${C.yellow}description${C.reset}     — review/improve the Wikipedia excerpt`);
-    console.log(`  ${C.yellow}habitatTypes${C.reset}    — verify order-based heuristic`);
-    console.log(`  ${C.yellow}geographicRegions${C.reset} — refine from "global" default`);
-    console.log(`  ${C.yellow}tags${C.reset}            — add bycatch, finning, migratory as appropriate`);
-    console.log(`  ${C.yellow}threats, vitalSigns, actionItems${C.reset} — Standard tier`);
+    console.log(`\n${C.bold}Fields requiring manual authoring:${C.reset}`);
+    console.log(`  ${C.yellow}funFact${C.reset}           — no open data equivalent`);
+    console.log(`  ${C.yellow}description${C.reset}       — review/improve the Wikipedia excerpt`);
+    console.log(`  ${C.yellow}habitatTypes${C.reset}      — verify order-based heuristic`);
+    console.log(`  ${C.yellow}geographicRegions${C.reset} — refine from default`);
+    console.log(`  ${C.yellow}tags${C.reset}              — add bycatch, finning, migratory as appropriate`);
+    console.log(`  ${C.yellow}threats, actionItems, statusHistory${C.reset} — Standard tier (no open data source)`);
+    console.log(`  ${C.yellow}photos${C.reset}            — licensing requires manual sourcing`);
+    console.log(`\n${C.bold}Auto-populated Standard tier fields (where data exists):${C.reset}`);
+    console.log(`  size · habitat · diet · vitalSigns (Max Length, Max Weight, Lifespan)`);
     console.log(`\n${C.bold}Next steps:${C.reset}`);
     console.log('  1. Add new species IDs to data/config.json "speciesOrder"');
     console.log('  2. node scripts/build-data.js');
