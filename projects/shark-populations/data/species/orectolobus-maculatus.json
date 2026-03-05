@@ -1,0 +1,34 @@
+{
+  "id": "orectolobus-maculatus",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Spotted Wobbegong",
+  "scientificName": "Orectolobus maculatus",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Orectolobiformes",
+    "family": "Orectolobidae",
+    "genus": "Orectolobus",
+    "species": "O. maculatus"
+  },
+  "statusLabel": "Least Concern",
+  "lifePercent": 76,
+  "habitatTypes": [
+    "coastal",
+    "reef"
+  ],
+  "dietType": "carnivore",
+  "geographicRegions": [
+    "temperate"
+  ],
+  "tags": [
+    "benthic",
+    "solitary",
+    "ambush"
+  ],
+  "description": "The spotted wobbegong is a large carpet shark of southern Australian coastal waters, reaching up to 3.2 m (10.5 ft). Its flattened body is covered in elaborate mottled patterns and adorned with branching lobes of skin around its head that provide extraordinary camouflage against rocky reefs, kelp, and sand. Like other wobbegongs, it is an ambush predator that lies motionless and strikes with explosive speed at passing fish, octopus, and crustaceans. Despite its docile appearance, it can inflict serious bites on divers who accidentally disturb it.",
+  "funFact": "One spotted wobbegong was documented slowly engulfing a banded wobbegong of nearly equal length in an act of intraspecific predation that took several hours — the consumed shark's tail remained protruding from the predator's mouth while it waited for digestion to make room.",
+  "habitat": "Rocky reefs, kelp forests, seagrass beds, and sandy flats in temperate coastal waters of southern and eastern Australia, from the intertidal zone to at least 110 m depth. Highly site-faithful, often found resting in the same location day after day."
+}

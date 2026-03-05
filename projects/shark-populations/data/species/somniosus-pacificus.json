@@ -1,0 +1,35 @@
+{
+  "id": "somniosus-pacificus",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Pacific Sleeper Shark",
+  "scientificName": "Somniosus pacificus",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Squaliformes",
+    "family": "Somniosidae",
+    "genus": "Somniosus",
+    "species": "S. pacificus"
+  },
+  "statusLabel": "Least Concern",
+  "lifePercent": 68,
+  "habitatTypes": [
+    "ocean",
+    "deep-sea"
+  ],
+  "dietType": "apex-predator",
+  "geographicRegions": [
+    "arctic",
+    "temperate"
+  ],
+  "tags": [
+    "deep-sea",
+    "slow-growing",
+    "bycatch"
+  ],
+  "description": "The Pacific sleeper shark is a large, sluggish deepwater shark of the North Pacific, closely related to the Greenland shark. Like its Atlantic cousin, it is a cold-water specialist found from shallow coastal waters to depths exceeding 2,000 m. It is an opportunistic predator and scavenger known to consume giant Pacific octopus, salmon, and marine mammal remains. Though rarely seen, it is occasionally caught as bycatch in commercial fisheries.",
+  "funFact": "Pacific sleeper sharks have been filmed by deep-sea cameras stealing bait from fishing lines set for other species at extreme depths — their slow, almost effortless movements belie the fact that they are capable of successfully catching fast prey like salmon.",
+  "habitat": "Cold, deep waters of the North Pacific from Japan and Alaska to southern California and across to the Bering Sea. Occupies depths from near the surface to over 2,000 m, with most observations between 200–1,000 m in waters below 10°C."
+}

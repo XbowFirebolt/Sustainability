@@ -1,0 +1,35 @@
+{
+  "id": "galeorhinus-galeus",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Tope Shark",
+  "scientificName": "Galeorhinus galeus",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Triakidae",
+    "genus": "Galeorhinus",
+    "species": "G. galeus"
+  },
+  "statusLabel": "Critically Endangered",
+  "lifePercent": 10,
+  "habitatTypes": [
+    "coastal",
+    "ocean"
+  ],
+  "dietType": "carnivore",
+  "geographicRegions": [
+    "temperate",
+    "global"
+  ],
+  "tags": [
+    "migratory",
+    "bycatch",
+    "overfished"
+  ],
+  "description": "The tope shark (also called school shark, soupfin shark, or snapper shark) is a slender, migratory houndshark found in temperate coastal waters worldwide. Once heavily targeted for its liver oil (rich in vitamin A before synthetic production), it continues to be heavily exploited for its fins and meat and is subject to significant bycatch pressure. Its slow reproductive rate — late maturity, low litter sizes, and long gestation — makes recovery from overfishing extremely slow, and populations in many regions have declined by over 80%.",
+  "funFact": "Before synthetic vitamin A became available in the 1950s, tope sharks were intensively hunted for their enormous livers — which can make up 25% of their body weight and contain exceptionally high concentrations of vitamin A — causing population crashes in California, Australia, and New Zealand within just a few decades of commercial fishing.",
+  "habitat": "Temperate coastal and continental shelf waters worldwide, including the Mediterranean, northeast and southwest Atlantic, eastern Pacific, and southern hemisphere. Typically found at depths of 0–550 m, undertaking extensive seasonal migrations between nursery grounds and adult foraging areas."
+}

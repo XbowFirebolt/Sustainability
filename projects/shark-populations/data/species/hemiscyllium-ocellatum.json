@@ -1,0 +1,34 @@
+{
+  "id": "hemiscyllium-ocellatum",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Epaulette Shark",
+  "scientificName": "Hemiscyllium ocellatum",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Orectolobiformes",
+    "family": "Hemiscylliidae",
+    "genus": "Hemiscyllium",
+    "species": "H. ocellatum"
+  },
+  "statusLabel": "Least Concern",
+  "lifePercent": 82,
+  "habitatTypes": [
+    "coastal",
+    "reef"
+  ],
+  "dietType": "carnivore",
+  "geographicRegions": [
+    "tropical"
+  ],
+  "tags": [
+    "benthic",
+    "solitary",
+    "walking"
+  ],
+  "description": "The epaulette shark is a small, slender carpet shark of Australian and New Guinean coral reefs, reaching about 1 m (3.3 ft). It is famous for its ability to 'walk' across reef flats using its flexible pectoral and pelvic fins to move between tide pools — one of only a handful of shark species capable of terrestrial locomotion. It can also survive in severely oxygen-depleted water for extended periods, a remarkable physiological adaptation that allows it to remain active in tide pools abandoned by other fish during low tide.",
+  "funFact": "During low tide, epaulette sharks can survive in water with almost no oxygen by dramatically reducing their brain activity and heart rate — a response so extreme that their brain effectively shuts down non-essential functions, making them one of the most hypoxia-tolerant vertebrates known.",
+  "habitat": "Shallow coral reef flats and lagoons of northern Australia and southern New Guinea. Typically found in less than 5 m of water, frequently in intertidal zones that can become temporarily exposed or severely deoxygenated at low tide."
+}

@@ -1,0 +1,36 @@
+{
+  "id": "squalus-acanthias",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Spiny Dogfish",
+  "scientificName": "Squalus acanthias",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Squaliformes",
+    "family": "Squalidae",
+    "genus": "Squalus",
+    "species": "S. acanthias"
+  },
+  "statusLabel": "Vulnerable",
+  "lifePercent": 38,
+  "habitatTypes": [
+    "coastal",
+    "ocean"
+  ],
+  "dietType": "carnivore",
+  "geographicRegions": [
+    "temperate",
+    "global"
+  ],
+  "tags": [
+    "schooling",
+    "migratory",
+    "bycatch",
+    "overfished"
+  ],
+  "description": "The spiny dogfish is one of the most abundant and well-studied sharks in the world, yet remains Vulnerable globally due to heavy exploitation and its very slow reproductive rate. Named for the sharp spines in front of each dorsal fin (used defensively), it travels in large, often sex-segregated schools and undertakes long seasonal migrations. It has been a major commercial target, particularly in Europe where it is sold as 'rock salmon' or 'huss' for fish and chips, and has been heavily overfished in the northeast Atlantic.",
+  "funFact": "The spiny dogfish has a gestation period of approximately 22–24 months — one of the longest documented among sharks and far longer than most other vertebrates — meaning a female produces a new litter only every other year at best, which makes population recovery from overfishing extremely slow.",
+  "habitat": "Temperate coastal and shelf waters worldwide, from surface to depths of 900 m. Strongly prefers water temperatures of 6–13°C and undertakes seasonal north-south and inshore-offshore migrations following preferred temperature bands. Found in both the Atlantic and Pacific."
+}

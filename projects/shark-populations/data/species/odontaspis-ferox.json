@@ -1,0 +1,37 @@
+{
+  "id": "odontaspis-ferox",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Smalltooth Sand Tiger",
+  "scientificName": "Odontaspis ferox",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Lamniformes",
+    "family": "Odontaspididae",
+    "genus": "Odontaspis",
+    "species": "O. ferox"
+  },
+  "statusLabel": "Vulnerable",
+  "lifePercent": 28,
+  "habitatTypes": [
+    "coastal",
+    "ocean",
+    "deep-sea"
+  ],
+  "dietType": "apex-predator",
+  "geographicRegions": [
+    "tropical",
+    "temperate",
+    "global"
+  ],
+  "tags": [
+    "deep-sea",
+    "rare",
+    "slow-reproducing"
+  ],
+  "description": "The smalltooth sand tiger is an elusive and poorly understood shark that closely resembles its relative the sand tiger shark but is distinguished by its smaller teeth and preference for deeper water. Encounters with living specimens are rare, with most records coming from bycatch in deep-set longlines and occasional sightings at aggregation sites in the Mediterranean and around the Canary Islands. Like other lamniform sharks, it likely reproduces very slowly, making it highly vulnerable to fishing pressure.",
+  "funFact": "The smalltooth sand tiger is so rarely seen that much of what scientists know about its biology comes from examination of bycatch specimens — a living individual was not reliably photographed underwater until divers discovered a seasonal aggregation site off Gran Canaria in the Canary Islands in the 2010s.",
+  "habitat": "Continental shelves and slopes in tropical to warm temperate seas worldwide, typically at depths of 13–2,000 m. More deepwater-oriented than the sand tiger shark. Confirmed records from the Mediterranean, Atlantic, Indian Ocean, and Pacific, but sightings are scattered and uncommon."
+}

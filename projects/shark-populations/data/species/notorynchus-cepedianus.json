@@ -1,0 +1,35 @@
+{
+  "id": "notorynchus-cepedianus",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Broadnose Sevengill Shark",
+  "scientificName": "Notorynchus cepedianus",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Hexanchiformes",
+    "family": "Hexanchidae",
+    "genus": "Notorynchus",
+    "species": "N. cepedianus"
+  },
+  "statusLabel": "Data Deficient",
+  "lifePercent": 52,
+  "habitatTypes": [
+    "coastal",
+    "ocean"
+  ],
+  "dietType": "apex-predator",
+  "geographicRegions": [
+    "temperate",
+    "global"
+  ],
+  "tags": [
+    "ancient",
+    "solitary",
+    "keystone"
+  ],
+  "description": "The broadnose sevengill shark is the only extant member of the genus Notorynchus and is distinguished by its seven gill slits, a primitive feature found in only a few surviving shark lineages. It is a powerful coastal predator of cool temperate waters, known to hunt in loose groups when targeting large prey such as rays, dolphins, and other sharks. Despite its apex predator status, population data are sparse and its conservation status is listed as Data Deficient.",
+  "funFact": "Unlike most sharks which have five gill slits, the broadnose sevengill has seven — a feature shared with cow sharks and frilled sharks that links them anatomically to some of the earliest sharks in the fossil record, dating back over 200 million years.",
+  "habitat": "Cool temperate coastal and nearshore waters worldwide. Found in bays, estuaries, and shallow inshore areas to depths of around 570 m. Common in locations such as San Francisco Bay, the Cape of Good Hope, southern Australia, and New Zealand."
+}

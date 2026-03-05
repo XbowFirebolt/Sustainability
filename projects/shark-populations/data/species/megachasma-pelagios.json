@@ -1,0 +1,35 @@
+{
+  "id": "megachasma-pelagios",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Megamouth Shark",
+  "scientificName": "Megachasma pelagios",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Lamniformes",
+    "family": "Megachasmidae",
+    "genus": "Megachasma",
+    "species": "M. pelagios"
+  },
+  "statusLabel": "Least Concern",
+  "lifePercent": 70,
+  "habitatTypes": [
+    "ocean",
+    "deep-sea"
+  ],
+  "dietType": "filter-feeder",
+  "geographicRegions": [
+    "tropical",
+    "global"
+  ],
+  "tags": [
+    "deep-sea",
+    "rare",
+    "solitary"
+  ],
+  "description": "The megamouth shark is one of the rarest and most mysterious of all shark species, with fewer than 300 recorded observations since it was first discovered in 1976 when one became entangled in a US Navy anchor off Hawaii. It is the third known filter-feeding shark after the whale shark and basking shark, using its enormous mouth to engulf clouds of shrimp, jellyfish, and copepods. Its luminescent tissue inside its mouth may act as a lure to attract prey in dark water.",
+  "funFact": "The megamouth shark was entirely unknown to science until 1976 — a reminder that the deep ocean still harbors large, previously unknown animals. Despite being over 5 m long, it eluded discovery for all of recorded human history before that first accidental capture.",
+  "habitat": "Open ocean in tropical to temperate latitudes, performing daily vertical migrations — spending daylight hours at depths of 120–166 m and rising to within 12–25 m of the surface at night to follow migrating layers of planktonic prey. Found across the Pacific, Atlantic, and Indian Oceans."
+}

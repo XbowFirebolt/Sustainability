@@ -1,0 +1,35 @@
+{
+  "id": "isistius-brasiliensis",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Cookiecutter Shark",
+  "scientificName": "Isistius brasiliensis",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Squaliformes",
+    "family": "Dalatiidae",
+    "genus": "Isistius",
+    "species": "I. brasiliensis"
+  },
+  "statusLabel": "Least Concern",
+  "lifePercent": 78,
+  "habitatTypes": [
+    "ocean",
+    "deep-sea"
+  ],
+  "dietType": "carnivore",
+  "geographicRegions": [
+    "tropical",
+    "temperate"
+  ],
+  "tags": [
+    "deep-sea",
+    "bioluminescent",
+    "solitary"
+  ],
+  "description": "The cookiecutter shark is a small but remarkable parasite-predator, reaching only about 50 cm (20 in), yet capable of gouging perfectly circular plugs of flesh from much larger animals including great white sharks, dolphins, tuna, and even military submarines. It attaches via suctorial lips, then rotates its body to cut out a neat cookie-shaped chunk of flesh. Bioluminescent on its ventral surface, it likely uses light to lure prey from below while a dark collar around its neck may act as a lure mimicking a small fish silhouette.",
+  "funFact": "Cookiecutter sharks periodically swallow their own shed lower teeth — rather than losing the entire tooth row at once, they periodically shed all lower teeth as a single unit and consume them to recycle the calcium, a highly unusual behaviour among sharks.",
+  "habitat": "Open tropical and subtropical ocean, conducting dramatic daily vertical migrations — descending to depths of around 3,500 m during daylight and rising to the surface at night to feed. Found worldwide in warm oceanic waters between approximately 20°N and 20°S."
+}

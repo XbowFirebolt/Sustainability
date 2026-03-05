@@ -1,0 +1,34 @@
+{
+  "id": "heterodontus-francisci",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Horn Shark",
+  "scientificName": "Heterodontus francisci",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Heterodontiformes",
+    "family": "Heterodontidae",
+    "genus": "Heterodontus",
+    "species": "H. francisci"
+  },
+  "statusLabel": "Least Concern",
+  "lifePercent": 80,
+  "habitatTypes": [
+    "coastal",
+    "reef"
+  ],
+  "dietType": "carnivore",
+  "geographicRegions": [
+    "temperate"
+  ],
+  "tags": [
+    "benthic",
+    "nocturnal",
+    "solitary"
+  ],
+  "description": "The horn shark is a small, bottom-dwelling shark of the eastern Pacific coast, rarely exceeding 1.2 m (4 ft). It is named for the prominent ridges above its eyes and the stout spines in front of each dorsal fin, which deter predators. Unlike most sharks, horn sharks are slow-moving and highly site-faithful, often resting motionless in rock crevices or kelp beds during the day and actively hunting invertebrates at night. Their flattened molariform rear teeth are specialized for crushing hard-shelled prey.",
+  "funFact": "Female horn sharks lay eggs in distinctive corkscrew-shaped egg cases — they then pick up the egg case in their mouth and wedge it into rocky crevices, where the spiral shape anchors it firmly against currents until the pup hatches months later.",
+  "habitat": "Rocky reefs, kelp beds, and sandy channels along the eastern Pacific coast from central California to the Gulf of California, at depths of 2–150 m. Highly philopatric (site-faithful), individuals often return to the same resting crevice each day."
+}

@@ -1,0 +1,36 @@
+{
+  "id": "carcharias-taurus",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Sand Tiger Shark",
+  "scientificName": "Carcharias taurus",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Lamniformes",
+    "family": "Odontaspididae",
+    "genus": "Carcharias",
+    "species": "C. taurus"
+  },
+  "statusLabel": "Vulnerable",
+  "lifePercent": 35,
+  "habitatTypes": [
+    "coastal",
+    "reef",
+    "ocean"
+  ],
+  "dietType": "apex-predator",
+  "geographicRegions": [
+    "temperate",
+    "global"
+  ],
+  "tags": [
+    "solitary",
+    "slow-reproducing",
+    "overfished"
+  ],
+  "description": "The sand tiger shark's rows of protruding, ragged teeth give it a ferocious appearance, yet it is one of the most docile sharks toward humans. It is the only shark known to gulp air at the surface and hold it in its stomach to achieve near-neutral buoyancy — allowing it to hover motionless in the water column. Found in warm and temperate coastal waters worldwide, it is a slow-reproducing species with a highly unusual embryonic development: pups cannibalize each other in the womb, and only two survive to birth (one per uterus).",
+  "funFact": "Sand tiger shark embryos engage in intrauterine cannibalism — the first embryo to develop a functional jaw actively hunts and consumes its siblings in the womb. Only one pup per uterus survives, emerging as an already-experienced predator about 1 m long at birth.",
+  "habitat": "Warm temperate to tropical coastal waters worldwide, typically found near the seafloor in surf zones, shallow bays, rocky reefs, and around offshore islands. Depth range extends from the intertidal zone to at least 191 m. Also commonly found in aquariums due to their docility."
+}

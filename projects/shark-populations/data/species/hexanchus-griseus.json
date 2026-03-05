@@ -1,0 +1,35 @@
+{
+  "id": "hexanchus-griseus",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Bluntnose Sixgill Shark",
+  "scientificName": "Hexanchus griseus",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Hexanchiformes",
+    "family": "Hexanchidae",
+    "genus": "Hexanchus",
+    "species": "H. griseus"
+  },
+  "statusLabel": "Least Concern",
+  "lifePercent": 65,
+  "habitatTypes": [
+    "ocean",
+    "deep-sea"
+  ],
+  "dietType": "apex-predator",
+  "geographicRegions": [
+    "global",
+    "temperate"
+  ],
+  "tags": [
+    "deep-sea",
+    "ancient",
+    "solitary"
+  ],
+  "description": "The bluntnose sixgill shark is one of the largest predatory sharks in the ocean, reaching up to 5.5 m (18 ft) and over 600 kg. It is a primitive species with six gill slits and a single dorsal fin set far back on its body — features that link it to ancient shark lineages. Primarily a deep-water species, it migrates to shallower water at night to feed. It is an opportunistic apex predator consuming fish, rays, other sharks, seals, and carrion.",
+  "funFact": "Bluntnose sixgill sharks are known to conduct nightly vertical migrations of hundreds of metres — rising from dark depths to shallower water to hunt under cover of darkness, then retreating back to the deep before dawn.",
+  "habitat": "Found worldwide in tropical to temperate seas, primarily in deep water from 90 to over 2,500 m. Juveniles occupy shallower coastal environments; adults are typically found in deep offshore water and only approach the surface or shallows nocturnally."
+}

@@ -1,0 +1,35 @@
+{
+  "id": "mitsukurina-owstoni",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Goblin Shark",
+  "scientificName": "Mitsukurina owstoni",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Lamniformes",
+    "family": "Mitsukurinidae",
+    "genus": "Mitsukurina",
+    "species": "M. owstoni"
+  },
+  "statusLabel": "Least Concern",
+  "lifePercent": 70,
+  "habitatTypes": [
+    "ocean",
+    "deep-sea"
+  ],
+  "dietType": "carnivore",
+  "geographicRegions": [
+    "global",
+    "temperate"
+  ],
+  "tags": [
+    "deep-sea",
+    "ancient",
+    "solitary"
+  ],
+  "description": "The goblin shark is the sole living species of the family Mitsukurinidae and is one of the most distinctive-looking sharks on Earth. Its elongated, flattened snout is lined with electroreceptors (ampullae of Lorenzini) that detect prey in the lightless deep, and its jaw can project rapidly forward to engulf prey — a feeding strategy unique among living sharks. Soft-bodied and flabby, it is adapted for the low-energy environment of the deep sea and is rarely encountered by humans.",
+  "funFact": "The goblin shark's jaws can project forward at up to 3.1 m/s, extending roughly 9% of its body length in a fraction of a second — one of the fastest jaw-protrusion events recorded in any shark, allowing it to snatch prey without needing to lunge its entire sluggish body.",
+  "habitat": "Deep outer continental shelves, submarine canyons, and seamounts worldwide, typically at depths of 270–1,300 m. Most specimens have been caught in the Pacific (particularly around Japan) and the Atlantic, with occasional records from the Indian Ocean."
+}

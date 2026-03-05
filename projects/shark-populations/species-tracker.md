@@ -53,6 +53,21 @@ Tracks every species in the wiki: current tier, IUCN status, and what still need
 | Bigeye Thresher | *Alopias superciliosus* | Vulnerable | Stub | Phase 3 Batch 2 |
 | Zebra Shark | *Stegostoma tigrinum* | Endangered | Stub | Phase 3 Batch 2 |
 | Tasselled Wobbegong | *Eucrossorhinus dasypogon* | Least Concern | Stub | Phase 3 Batch 2 |
+| Greenland Shark | *Somniosus microcephalus* | Least Concern | Stub | Phase 3 Batch 3 |
+| Pacific Sleeper Shark | *Somniosus pacificus* | Least Concern | Stub | Phase 3 Batch 3 |
+| Frilled Shark | *Chlamydoselachus anguineus* | Least Concern | Stub | Phase 3 Batch 3 |
+| Broadnose Sevengill Shark | *Notorynchus cepedianus* | Data Deficient | Stub | Phase 3 Batch 3 |
+| Bluntnose Sixgill Shark | *Hexanchus griseus* | Least Concern | Stub | Phase 3 Batch 3 |
+| Horn Shark | *Heterodontus francisci* | Least Concern | Stub | Phase 3 Batch 3 |
+| Spiny Dogfish | *Squalus acanthias* | Vulnerable | Stub | Phase 3 Batch 3 |
+| Cookiecutter Shark | *Isistius brasiliensis* | Least Concern | Stub | Phase 3 Batch 3 |
+| Epaulette Shark | *Hemiscyllium ocellatum* | Least Concern | Stub | Phase 3 Batch 3 |
+| Spotted Wobbegong | *Orectolobus maculatus* | Least Concern | Stub | Phase 3 Batch 3 |
+| Goblin Shark | *Mitsukurina owstoni* | Least Concern | Stub | Phase 3 Batch 3 |
+| Megamouth Shark | *Megachasma pelagios* | Least Concern | Stub | Phase 3 Batch 3 |
+| Sand Tiger Shark | *Carcharias taurus* | Vulnerable | Stub | Phase 3 Batch 3 |
+| Smalltooth Sand Tiger | *Odontaspis ferox* | Vulnerable | Stub | Phase 3 Batch 3 |
+| Tope Shark | *Galeorhinus galeus* | Critically Endangered | Stub | Phase 3 Batch 3 |
 
 ---
 
@@ -109,21 +124,21 @@ Species to add as stubs, in priority order. Check off each species as it's gener
 
 | # | Species | Scientific Name | Family/Order | IUCN Status | Generated | Reviewed | Committed |
 |---|---|---|---|---|---|---|---|
-| 1 | Greenland Shark | *Somniosus microcephalus* | Somniosidae | Least Concern | [ ] | [ ] | [ ] |
-| 2 | Pacific Sleeper Shark | *Somniosus pacificus* | Somniosidae | Least Concern | [ ] | [ ] | [ ] |
-| 3 | Frilled Shark | *Chlamydoselachus anguineus* | Chlamydoselachidae | Least Concern | [ ] | [ ] | [ ] |
-| 4 | Broadnose Sevengill Shark | *Notorynchus cepedianus* | Hexanchidae | Data Deficient | [ ] | [ ] | [ ] |
-| 5 | Bluntnose Sixgill Shark | *Hexanchus griseus* | Hexanchidae | Least Concern | [ ] | [ ] | [ ] |
-| 6 | Horn Shark | *Heterodontus francisci* | Heterodontidae | Least Concern | [ ] | [ ] | [ ] |
-| 7 | Spiny Dogfish | *Squalus acanthias* | Squalidae | Vulnerable | [ ] | [ ] | [ ] |
-| 8 | Cookiecutter Shark | *Isistius brasiliensis* | Dalatiidae | Least Concern | [ ] | [ ] | [ ] |
-| 9 | Epaulette Shark | *Hemiscyllium ocellatum* | Hemiscylliidae | Least Concern | [ ] | [ ] | [ ] |
-| 10 | Wobbegong (Spotted) | *Orectolobus maculatus* | Orectolobidae | Least Concern | [ ] | [ ] | [ ] |
-| 11 | Goblin Shark | *Mitsukurina owstoni* | Mitsukurinidae | Least Concern | [ ] | [ ] | [ ] |
-| 12 | Megamouth Shark | *Megachasma pelagios* | Megachasmidae | Least Concern | [ ] | [ ] | [ ] |
-| 13 | Sand Tiger Shark | *Carcharias taurus* | Odontaspididae | Vulnerable | [ ] | [ ] | [ ] |
-| 14 | Smalltooth Sand Tiger | *Odontaspis ferox* | Odontaspididae | Vulnerable | [ ] | [ ] | [ ] |
-| 15 | Tope Shark | *Galeorhinus galeus* | Triakidae | Critically Endangered | [ ] | [ ] | [ ] |
+| 1 | Greenland Shark | *Somniosus microcephalus* | Somniosidae | Least Concern | [x] | [x] | [ ] |
+| 2 | Pacific Sleeper Shark | *Somniosus pacificus* | Somniosidae | Least Concern | [x] | [x] | [ ] |
+| 3 | Frilled Shark | *Chlamydoselachus anguineus* | Chlamydoselachidae | Least Concern | [x] | [x] | [ ] |
+| 4 | Broadnose Sevengill Shark | *Notorynchus cepedianus* | Hexanchidae | Data Deficient | [x] | [x] | [ ] |
+| 5 | Bluntnose Sixgill Shark | *Hexanchus griseus* | Hexanchidae | Least Concern | [x] | [x] | [ ] |
+| 6 | Horn Shark | *Heterodontus francisci* | Heterodontidae | Least Concern | [x] | [x] | [ ] |
+| 7 | Spiny Dogfish | *Squalus acanthias* | Squalidae | Vulnerable | [x] | [x] | [ ] |
+| 8 | Cookiecutter Shark | *Isistius brasiliensis* | Dalatiidae | Least Concern | [x] | [x] | [ ] |
+| 9 | Epaulette Shark | *Hemiscyllium ocellatum* | Hemiscylliidae | Least Concern | [x] | [x] | [ ] |
+| 10 | Spotted Wobbegong | *Orectolobus maculatus* | Orectolobidae | Least Concern | [x] | [x] | [ ] |
+| 11 | Goblin Shark | *Mitsukurina owstoni* | Mitsukurinidae | Least Concern | [x] | [x] | [ ] |
+| 12 | Megamouth Shark | *Megachasma pelagios* | Megachasmidae | Least Concern | [x] | [x] | [ ] |
+| 13 | Sand Tiger Shark | *Carcharias taurus* | Odontaspididae | Vulnerable | [x] | [x] | [ ] |
+| 14 | Smalltooth Sand Tiger | *Odontaspis ferox* | Odontaspididae | Vulnerable | [x] | [x] | [ ] |
+| 15 | Tope Shark | *Galeorhinus galeus* | Triakidae | Critically Endangered | [x] | [x] | [ ] |
 
 ---
 
@@ -143,7 +158,7 @@ Species that have been added as stubs and are candidates for Standard tier promo
 |---|---|
 | Full | 1 |
 | Standard | 4 |
-| Stub | 35 |
-| **Total** | **40** |
+| Stub | 50 |
+| **Total** | **55** |
 
 *Update manually after each batch commit.*
