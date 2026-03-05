@@ -141,7 +141,7 @@ What stays manual (no open structured source exists):
 
 ---
 
-## Phase 3 — Batch Add Stub Species (10 → 50 → 200+)
+## Phase 3 — Batch Add Stub Species (10 → 50 → 200+) *(Batch 1 complete)*
 
 With schema docs and a completeness checker in place, start adding stubs in priority order.
 
@@ -286,14 +286,14 @@ This is optional if images are lazy-loaded and the grid is virtualized, but beco
 
 ## Milestone Summary
 
-| Milestone | Condition | Approx. species count |
-|---|---|---|
-| **Stable base** | All 5 current species at Standard tier; schema documented | 5 |
-| **Meaningful catalog** | All Critically Endangered sharks as stubs; IUCN script working | 15–20 |
-| **Usable at scale** | Virtualized grid + lazy images shipped | any |
-| **Broad coverage** | 100+ stubs; 20+ at Standard tier | 100+ |
-| **Comprehensive** | 300+ stubs covering all major families | 300+ |
-| **Complete** | All ~500 assessed species present as stubs | 500+ |
+| Milestone | Condition | Approx. species count | Status |
+|---|---|---|---|
+| **Stable base** | All 5 current species at Standard tier; schema documented | 5 | ✅ |
+| **Meaningful catalog** | All Critically Endangered sharks as stubs; IUCN script working | 15–20 | ✅ |
+| **Usable at scale** | Virtualized grid + lazy images shipped | any | |
+| **Broad coverage** | 100+ stubs; 20+ at Standard tier | 100+ | |
+| **Comprehensive** | 300+ stubs covering all major families | 300+ | |
+| **Complete** | All ~500 assessed species present as stubs | 500+ | |
 
 ---
 

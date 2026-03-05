@@ -13,11 +13,26 @@ Tracks every species in the wiki: current tier, IUCN status, and what still need
 
 | Species | Scientific Name | IUCN Status | Tier | Notes |
 |---|---|---|---|---|
-| Great White Shark | *Carcharodon carcharias* | Vulnerable | Full | Flagship species |
-| Scalloped Hammerhead | *Sphyrna lewini* | Critically Endangered | Full | Flagship species |
-| Whale Shark | *Rhincodon typus* | Endangered | Full | Flagship species |
-| Bull Shark | *Carcharhinus leucas* | Near Threatened | Full | Flagship species |
-| Tiger Shark | *Galeocerdo cuvier* | Near Threatened | Full | Flagship species |
+| Great White Shark | *Carcharodon carcharias* | Vulnerable | Full | Flagship; only species with physicalScaleImage |
+| Scalloped Hammerhead | *Sphyrna lewini* | Critically Endangered | Standard | Missing physicalScaleImage |
+| Whale Shark | *Rhincodon typus* | Endangered | Standard | Missing physicalScaleImage |
+| Bull Shark | *Carcharhinus leucas* | Near Threatened | Standard | Missing physicalScaleImage |
+| Tiger Shark | *Galeocerdo cuvier* | Near Threatened | Standard | Missing physicalScaleImage |
+| Oceanic Whitetip Shark | *Carcharhinus longimanus* | Critically Endangered | Stub | Phase 3 Batch 1 |
+| Pondicherry Shark | *Carcharhinus hemiodon* | Critically Endangered | Stub | Phase 3 Batch 1 |
+| Daggernose Shark | *Isogomphodon oxyrhynchus* | Critically Endangered | Stub | Phase 3 Batch 1 |
+| Smoothtooth Blacktip Shark | *Carcharhinus leiodon* | Critically Endangered | Stub | Phase 3 Batch 1 |
+| Striped Smoothhound | *Mustelus fasciatus* | Critically Endangered | Stub | Phase 3 Batch 1 |
+| Sawback Angelshark | *Squatina aculeata* | Critically Endangered | Stub | Phase 3 Batch 1 |
+| Smoothback Angelshark | *Squatina oculata* | Critically Endangered | Stub | Phase 3 Batch 1 |
+| Angelshark | *Squatina squatina* | Critically Endangered | Stub | Phase 3 Batch 1 |
+| Ganges Shark | *Glyphis gangeticus* | Critically Endangered | Stub | Phase 3 Batch 1 |
+| Speartooth Shark | *Glyphis glyphis* | Critically Endangered | Stub | Phase 3 Batch 1 |
+| New Guinea River Shark | *Glyphis garricki* | Critically Endangered | Stub | Phase 3 Batch 1 |
+| Irrawaddy River Shark | *Glyphis siamensis* | Critically Endangered | Stub | Phase 3 Batch 1 |
+| Borneo River Shark | *Glyphis fowlerae* | Critically Endangered | Stub | Phase 3 Batch 1 |
+| Whitefin Topeshark | *Hypogaleus hyugaensis* | Critically Endangered | Stub | Phase 3 Batch 1 |
+| Natal Shyshark | *Haploblepharus kistnasamyi* | Critically Endangered | Stub | Phase 3 Batch 1 |
 
 ---
 
@@ -29,21 +44,21 @@ Species to add as stubs, in priority order. Check off each species as it's gener
 
 | # | Species | Scientific Name | IUCN Status | Generated | Reviewed | Committed |
 |---|---|---|---|---|---|---|
-| 1 | Oceanic Whitetip Shark | *Carcharhinus longimanus* | Critically Endangered | [x] | [x] | [ ] |
-| 2 | Pondicherry Shark | *Carcharhinus hemiodon* | Critically Endangered | [x] | [x] | [ ] |
-| 3 | Daggernose Shark | *Isogomphodon oxyrhynchus* | Critically Endangered | [x] | [x] | [ ] |
-| 4 | Smoothtooth Blacktip Shark | *Carcharhinus leiodon* | Critically Endangered | [x] | [x] | [ ] |
-| 5 | Striped Smoothhound | *Mustelus fasciatus* | Critically Endangered | [x] | [x] | [ ] |
-| 6 | Sawback Angelshark | *Squatina aculeata* | Critically Endangered | [x] | [x] | [ ] |
-| 7 | Smoothback Angelshark | *Squatina oculata* | Critically Endangered | [x] | [x] | [ ] |
-| 8 | Angelshark | *Squatina squatina* | Critically Endangered | [x] | [x] | [ ] |
-| 9 | Ganges Shark | *Glyphis gangeticus* | Critically Endangered | [x] | [x] | [ ] |
-| 10 | Speartooth Shark | *Glyphis glyphis* | Critically Endangered | [x] | [x] | [ ] |
-| 11 | New Guinea River Shark | *Glyphis garricki* | Critically Endangered | [x] | [x] | [ ] |
-| 12 | Irrawaddy River Shark | *Glyphis siamensis* | Critically Endangered | [x] | [x] | [ ] |
-| 13 | Borneo River Shark | *Glyphis fowlerae* | Critically Endangered | [x] | [x] | [ ] |
-| 14 | Whitefin Topeshark | *Hypogaleus hyugaensis* | Critically Endangered | [x] | [x] | [ ] |
-| 15 | Natal Shyshark | *Haploblepharus kistnasamyi* | Critically Endangered | [x] | [x] | [ ] |
+| 1 | Oceanic Whitetip Shark | *Carcharhinus longimanus* | Critically Endangered | [x] | [x] | [x] |
+| 2 | Pondicherry Shark | *Carcharhinus hemiodon* | Critically Endangered | [x] | [x] | [x] |
+| 3 | Daggernose Shark | *Isogomphodon oxyrhynchus* | Critically Endangered | [x] | [x] | [x] |
+| 4 | Smoothtooth Blacktip Shark | *Carcharhinus leiodon* | Critically Endangered | [x] | [x] | [x] |
+| 5 | Striped Smoothhound | *Mustelus fasciatus* | Critically Endangered | [x] | [x] | [x] |
+| 6 | Sawback Angelshark | *Squatina aculeata* | Critically Endangered | [x] | [x] | [x] |
+| 7 | Smoothback Angelshark | *Squatina oculata* | Critically Endangered | [x] | [x] | [x] |
+| 8 | Angelshark | *Squatina squatina* | Critically Endangered | [x] | [x] | [x] |
+| 9 | Ganges Shark | *Glyphis gangeticus* | Critically Endangered | [x] | [x] | [x] |
+| 10 | Speartooth Shark | *Glyphis glyphis* | Critically Endangered | [x] | [x] | [x] |
+| 11 | New Guinea River Shark | *Glyphis garricki* | Critically Endangered | [x] | [x] | [x] |
+| 12 | Irrawaddy River Shark | *Glyphis siamensis* | Critically Endangered | [x] | [x] | [x] |
+| 13 | Borneo River Shark | *Glyphis fowlerae* | Critically Endangered | [x] | [x] | [x] |
+| 14 | Whitefin Topeshark | *Hypogaleus hyugaensis* | Critically Endangered | [x] | [x] | [x] |
+| 15 | Natal Shyshark | *Haploblepharus kistnasamyi* | Critically Endangered | [x] | [x] | [x] |
 
 ### Batch 2 — Well-Known / High Public Interest
 
