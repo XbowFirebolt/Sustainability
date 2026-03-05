@@ -14,10 +14,9 @@
     "species": "H. ocellatum"
   },
   "statusLabel": "Least Concern",
-  "lifePercent": 82,
+  "lifePercent": 90,
   "habitatTypes": [
-    "coastal",
-    "reef"
+    "coastal"
   ],
   "dietType": "carnivore",
   "geographicRegions": [

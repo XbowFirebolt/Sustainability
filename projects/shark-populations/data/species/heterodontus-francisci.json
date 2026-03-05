@@ -14,10 +14,9 @@
     "species": "H. francisci"
   },
   "statusLabel": "Least Concern",
-  "lifePercent": 80,
+  "lifePercent": 88,
   "habitatTypes": [
-    "coastal",
-    "reef"
+    "coastal"
   ],
   "dietType": "carnivore",
   "geographicRegions": [

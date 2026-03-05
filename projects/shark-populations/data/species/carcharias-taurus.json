@@ -14,10 +14,9 @@
     "species": "C. taurus"
   },
   "statusLabel": "Vulnerable",
-  "lifePercent": 35,
+  "lifePercent": 50,
   "habitatTypes": [
     "coastal",
-    "reef",
     "ocean"
   ],
   "dietType": "apex-predator",
