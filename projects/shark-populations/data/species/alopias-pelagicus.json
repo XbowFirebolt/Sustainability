@@ -1,0 +1,34 @@
+{
+  "id": "alopias-pelagicus",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Pelagic Thresher",
+  "scientificName": "Alopias pelagicus",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Lamniformes",
+    "family": "Alopiidae",
+    "genus": "Alopias",
+    "species": "A. pelagicus"
+  },
+  "statusLabel": "Endangered",
+  "lifePercent": 38,
+  "habitatTypes": [
+    "ocean",
+    "pelagic"
+  ],
+  "dietType": "carnivore",
+  "geographicRegions": [
+    "tropical"
+  ],
+  "tags": [
+    "migratory",
+    "solitary",
+    "bycatch"
+  ],
+  "description": "The pelagic thresher is the smallest of the three thresher shark species and the most oceanic in habit, spending nearly its entire life in open tropical and subtropical waters of the Indo-Pacific. Like all threshers, it has an enormously elongated upper tail lobe used to stun prey. Population estimates suggest declines of over 70% in parts of its range due to longline and drift-net fisheries.",
+  "funFact": "Pelagic threshers are among the few open-ocean sharks known to visit coral reef cleaning stations — despite living far out to sea, they regularly swim to shallow reef areas where wrasses and other cleaner fish remove parasites from their skin and gills.",
+  "habitat": "Open ocean in tropical and subtropical regions of the Indo-Pacific, from Japan and Hawaii south through Australia and across to the eastern Pacific. Most commonly found far offshore in the upper water column, typically in the top 150 m."
+}

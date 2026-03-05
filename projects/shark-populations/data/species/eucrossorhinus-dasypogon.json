@@ -1,0 +1,32 @@
+{
+  "id": "eucrossorhinus-dasypogon",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Tasselled Wobbegong",
+  "scientificName": "Eucrossorhinus dasypogon",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Orectolobiformes",
+    "family": "Orectolobidae",
+    "genus": "Eucrossorhinus",
+    "species": "E. dasypogon"
+  },
+  "statusLabel": "Least Concern",
+  "lifePercent": 88,
+  "habitatTypes": [
+    "coastal",
+    "tropical"
+  ],
+  "dietType": "carnivore",
+  "geographicRegions": [
+    "tropical"
+  ],
+  "tags": [
+    "solitary"
+  ],
+  "description": "The tasselled wobbegong is a highly camouflaged carpet shark found on coral reefs of New Guinea, northern Australia, and nearby Indonesian islands. Its name comes from the fringe of elaborately branching skin lobes around its head that disrupt its outline and help it blend seamlessly with reef surfaces. It is an ambush predator that lies motionless and lunges at prey that ventures within range.",
+  "funFact": "The tasselled wobbegong has such effective camouflage that it sometimes lures prey by slowly waggling the tip of its tail to mimic the movement of a small fish — attracting curious fish close enough to snatch with a lightning-fast lunge.",
+  "habitat": "Coral reefs in shallow tropical waters of northern Australia, New Guinea, and nearby Indonesian islands. Typically found at depths of 1–40 m, resting on or amid reef substrate where its cryptic coloration provides near-perfect camouflage against coral and rubble."
+}

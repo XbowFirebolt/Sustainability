@@ -1,0 +1,35 @@
+{
+  "id": "carcharhinus-plumbeus",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Sandbar Shark",
+  "scientificName": "Carcharhinus plumbeus",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Carcharhinidae",
+    "genus": "Carcharhinus",
+    "species": "C. plumbeus"
+  },
+  "statusLabel": "Vulnerable",
+  "lifePercent": 55,
+  "habitatTypes": [
+    "ocean",
+    "coastal"
+  ],
+  "dietType": "carnivore",
+  "geographicRegions": [
+    "tropical",
+    "temperate"
+  ],
+  "tags": [
+    "migratory",
+    "solitary",
+    "bycatch"
+  ],
+  "description": "The sandbar shark is one of the largest coastal sharks in the Atlantic and Pacific, recognizable by its proportionally large first dorsal fin and stocky build. It inhabits shallow coastal waters including estuaries, bays, and harbors, and undertakes long seasonal migrations. Sandbar sharks are one of the most commercially important shark species on the US East Coast, targeted for both fins and meat.",
+  "funFact": "The sandbar shark has one of the longest gestation periods of any shark — approximately 12 months — and pups are born in shallow nursery estuaries where they spend their first several years before moving to deeper offshore waters as adults.",
+  "habitat": "Shallow coastal and inshore waters including estuaries, bays, and harbors in tropical and temperate seas worldwide. Commonly found at depths of 20–65 m over sandy or muddy bottoms; may range to 280 m. Uses nearshore estuaries as critical nursery habitats."
+}

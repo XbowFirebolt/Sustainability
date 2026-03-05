@@ -1,0 +1,34 @@
+{
+  "id": "carcharhinus-amblyrhynchos",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Grey Reef Shark",
+  "scientificName": "Carcharhinus amblyrhynchos",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Carcharhinidae",
+    "genus": "Carcharhinus",
+    "species": "C. amblyrhynchos"
+  },
+  "statusLabel": "Endangered",
+  "lifePercent": 38,
+  "habitatTypes": [
+    "coastal",
+    "tropical"
+  ],
+  "dietType": "carnivore",
+  "geographicRegions": [
+    "tropical"
+  ],
+  "tags": [
+    "schooling",
+    "keystone",
+    "bycatch"
+  ],
+  "description": "The grey reef shark is a medium-sized requiem shark found throughout the Indo-Pacific coral reef system. It is one of the most common reef sharks in its range and plays an important role in reef ecology as a mesopredator. Grey reef sharks are known for a distinctive threat display — arching the back, dropping pectoral fins, and swimming in an exaggerated rolling motion to warn off perceived threats.",
+  "funFact": "The grey reef shark performs one of the most distinctive threat displays in the animal kingdom: when feeling cornered, it arches its back, drops its pectoral fins, and swims in an exaggerated rolling pattern — a clear visual warning that it may attack if the threat persists.",
+  "habitat": "Coral reef environments throughout the Indo-Pacific, from the Red Sea and East Africa across to Easter Island. Found in clear, reef-associated waters from the surface to 274 m, most commonly in the upper 60 m along reef drop-offs and passages with strong currents."
+}

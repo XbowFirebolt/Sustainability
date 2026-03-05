@@ -1,0 +1,35 @@
+{
+  "id": "negaprion-brevirostris",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Lemon Shark",
+  "scientificName": "Negaprion brevirostris",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Carcharhinidae",
+    "genus": "Negaprion",
+    "species": "N. brevirostris"
+  },
+  "statusLabel": "Vulnerable",
+  "lifePercent": 58,
+  "habitatTypes": [
+    "coastal",
+    "tropical"
+  ],
+  "dietType": "carnivore",
+  "geographicRegions": [
+    "tropical",
+    "temperate"
+  ],
+  "tags": [
+    "solitary",
+    "keystone",
+    "bycatch"
+  ],
+  "description": "The lemon shark is a large, stocky shark found in shallow subtropical and tropical coastal waters of the Atlantic and Pacific. Named for its yellowish-brown coloration, it inhabits mangroves, estuaries, and coral reefs, often resting on the seafloor. Lemon sharks are among the more social of all shark species and have been extensively studied in long-term behavioral and ecological research.",
+  "funFact": "Young lemon sharks return to the same nursery habitat — the exact mangrove or estuary where they were born — year after year for the first several years of their lives, demonstrating a remarkable site fidelity rarely documented in sharks.",
+  "habitat": "Shallow coastal waters including coral reefs, mangrove estuaries, and sandy flats in subtropical and tropical regions of the western Atlantic and eastern Pacific. Rarely found below 92 m; strongly associated with inshore nursery habitats."
+}

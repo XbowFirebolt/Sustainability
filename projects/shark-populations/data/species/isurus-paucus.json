@@ -1,0 +1,36 @@
+{
+  "id": "isurus-paucus",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Longfin Mako",
+  "scientificName": "Isurus paucus",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Lamniformes",
+    "family": "Lamnidae",
+    "genus": "Isurus",
+    "species": "I. paucus"
+  },
+  "statusLabel": "Endangered",
+  "lifePercent": 35,
+  "habitatTypes": [
+    "ocean",
+    "pelagic",
+    "deep-sea"
+  ],
+  "dietType": "apex-predator",
+  "geographicRegions": [
+    "tropical",
+    "temperate"
+  ],
+  "tags": [
+    "migratory",
+    "solitary",
+    "bycatch"
+  ],
+  "description": "The longfin mako is a large, fast-swimming pelagic shark closely related to the shortfin mako but distinguished by its broader, longer pectoral fins and larger eyes. It inhabits tropical and warm temperate oceanic waters globally and is far less studied than its relative. Like the shortfin mako, it faces serious pressure from bycatch and targeted fishing.",
+  "funFact": "The longfin mako remains one of the least-studied large shark species — so elusive in the open ocean that a live specimen was not scientifically documented until 1966, despite the species being formally described decades earlier.",
+  "habitat": "Oceanic and epipelagic waters in tropical and warm temperate seas worldwide. Tends to remain in deeper waters than the shortfin mako, typically found near the surface to depths of 220 m, often along continental shelf edges and around oceanic islands."
+}

@@ -1,0 +1,37 @@
+{
+  "id": "alopias-superciliosus",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Bigeye Thresher",
+  "scientificName": "Alopias superciliosus",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Lamniformes",
+    "family": "Alopiidae",
+    "genus": "Alopias",
+    "species": "A. superciliosus"
+  },
+  "statusLabel": "Vulnerable",
+  "lifePercent": 55,
+  "habitatTypes": [
+    "ocean",
+    "pelagic",
+    "deep-sea"
+  ],
+  "dietType": "carnivore",
+  "geographicRegions": [
+    "tropical",
+    "temperate",
+    "global"
+  ],
+  "tags": [
+    "migratory",
+    "solitary",
+    "bycatch"
+  ],
+  "description": "The bigeye thresher is named for its extraordinarily large eyes, adapted for hunting in low-light conditions at depth. It inhabits tropical and temperate seas worldwide and performs daily vertical migrations, descending into deep water during the day and ascending toward the surface at night to hunt. Like other threshers, it uses its elongated tail lobe to stun schooling prey.",
+  "funFact": "The bigeye thresher has the largest eyes relative to body size of any shark — up to 10 cm (4 inches) in diameter — and they are tilted upward in its head so it can spot the silhouettes of prey against the dim surface light while lurking in the depths below.",
+  "habitat": "Tropical and temperate offshore waters worldwide, from the surface to at least 730 m depth. Performs pronounced daily vertical migrations: resting in cool deep water during the day and ascending to feed in shallower, prey-rich surface waters at night."
+}

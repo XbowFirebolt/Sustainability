@@ -1,0 +1,37 @@
+{
+  "id": "cetorhinus-maximus",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Basking Shark",
+  "scientificName": "Cetorhinus maximus",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Lamniformes",
+    "family": "Cetorhinidae",
+    "genus": "Cetorhinus",
+    "species": "C. maximus"
+  },
+  "statusLabel": "Endangered",
+  "lifePercent": 38,
+  "habitatTypes": [
+    "ocean",
+    "coastal",
+    "pelagic"
+  ],
+  "dietType": "filter-feeder",
+  "geographicRegions": [
+    "temperate",
+    "global"
+  ],
+  "tags": [
+    "migratory",
+    "solitary",
+    "keystone",
+    "bycatch"
+  ],
+  "description": "The basking shark is the world's second-largest fish, reaching up to 12 m (40 ft), and feeds exclusively by passive filter-feeding on zooplankton as it swims slowly with its enormous mouth agape. Found in cold to warm temperate seas worldwide, it undertakes long seasonal migrations following plankton blooms. Despite its massive size, it is harmless to humans.",
+  "funFact": "A basking shark's mouth can open over 1 m (3.3 ft) wide, and it filters approximately 2,000 tonnes of seawater per hour to collect tiny zooplankton — it must keep swimming continuously to maintain the flow of water through its gill rakers.",
+  "habitat": "Cold to warm temperate coastal and oceanic waters worldwide. Often seen near the surface in coastal areas during summer plankton blooms; suspected to overwinter in deep offshore waters. Most commonly observed in the North Atlantic and North Pacific."
+}

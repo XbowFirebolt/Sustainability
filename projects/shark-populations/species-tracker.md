@@ -33,6 +33,26 @@ Tracks every species in the wiki: current tier, IUCN status, and what still need
 | Borneo River Shark | *Glyphis fowlerae* | Critically Endangered | Stub | Phase 3 Batch 1 |
 | Whitefin Topeshark | *Hypogaleus hyugaensis* | Critically Endangered | Stub | Phase 3 Batch 1 |
 | Natal Shyshark | *Haploblepharus kistnasamyi* | Critically Endangered | Stub | Phase 3 Batch 1 |
+| Shortfin Mako | *Isurus oxyrinchus* | Endangered | Stub | Phase 3 Batch 2 |
+| Longfin Mako | *Isurus paucus* | Endangered | Stub | Phase 3 Batch 2 |
+| Great Hammerhead | *Sphyrna mokarran* | Critically Endangered | Stub | Phase 3 Batch 2 |
+| Smooth Hammerhead | *Sphyrna zygaena* | Vulnerable | Stub | Phase 3 Batch 2 |
+| Basking Shark | *Cetorhinus maximus* | Endangered | Stub | Phase 3 Batch 2 |
+| Nurse Shark | *Ginglymostoma cirratum* | Vulnerable | Stub | Phase 3 Batch 2 |
+| Lemon Shark | *Negaprion brevirostris* | Vulnerable | Stub | Phase 3 Batch 2 |
+| Blue Shark | *Prionace glauca* | Near Threatened | Stub | Phase 3 Batch 2 |
+| Blacktip Reef Shark | *Carcharhinus melanopterus* | Vulnerable | Stub | Phase 3 Batch 2 |
+| Whitetip Reef Shark | *Triaenodon obesus* | Vulnerable | Stub | Phase 3 Batch 2 |
+| Grey Reef Shark | *Carcharhinus amblyrhynchos* | Endangered | Stub | Phase 3 Batch 2 |
+| Sandbar Shark | *Carcharhinus plumbeus* | Vulnerable | Stub | Phase 3 Batch 2 |
+| Dusky Shark | *Carcharhinus obscurus* | Endangered | Stub | Phase 3 Batch 2 |
+| Silky Shark | *Carcharhinus falciformis* | Vulnerable | Stub | Phase 3 Batch 2 |
+| Porbeagle | *Lamna nasus* | Vulnerable | Stub | Phase 3 Batch 2 |
+| Common Thresher | *Alopias vulpinus* | Vulnerable | Stub | Phase 3 Batch 2 |
+| Pelagic Thresher | *Alopias pelagicus* | Endangered | Stub | Phase 3 Batch 2 |
+| Bigeye Thresher | *Alopias superciliosus* | Vulnerable | Stub | Phase 3 Batch 2 |
+| Zebra Shark | *Stegostoma tigrinum* | Endangered | Stub | Phase 3 Batch 2 |
+| Tasselled Wobbegong | *Eucrossorhinus dasypogon* | Least Concern | Stub | Phase 3 Batch 2 |
 
 ---
 
@@ -64,26 +84,26 @@ Species to add as stubs, in priority order. Check off each species as it's gener
 
 | # | Species | Scientific Name | IUCN Status | Generated | Reviewed | Committed |
 |---|---|---|---|---|---|---|
-| 1 | Shortfin Mako | *Isurus oxyrinchus* | Endangered | [ ] | [ ] | [ ] |
-| 2 | Longfin Mako | *Isurus paucus* | Endangered | [ ] | [ ] | [ ] |
-| 3 | Hammerhead Shark (Great) | *Sphyrna mokarran* | Critically Endangered | [ ] | [ ] | [ ] |
-| 4 | Smooth Hammerhead | *Sphyrna zygaena* | Vulnerable | [ ] | [ ] | [ ] |
-| 5 | Basking Shark | *Cetorhinus maximus* | Endangered | [ ] | [ ] | [ ] |
-| 6 | Nurse Shark | *Ginglymostoma cirratum* | Vulnerable | [ ] | [ ] | [ ] |
-| 7 | Lemon Shark | *Negaprion brevirostris* | Vulnerable | [ ] | [ ] | [ ] |
-| 8 | Blue Shark | *Prionace glauca* | Near Threatened | [ ] | [ ] | [ ] |
-| 9 | Blacktip Reef Shark | *Carcharhinus melanopterus* | Vulnerable | [ ] | [ ] | [ ] |
-| 10 | Whitetip Reef Shark | *Triaenodon obesus* | Vulnerable | [ ] | [ ] | [ ] |
-| 11 | Grey Reef Shark | *Carcharhinus amblyrhynchos* | Endangered | [ ] | [ ] | [ ] |
-| 12 | Sandbar Shark | *Carcharhinus plumbeus* | Vulnerable | [ ] | [ ] | [ ] |
-| 13 | Dusky Shark | *Carcharhinus obscurus* | Endangered | [ ] | [ ] | [ ] |
-| 14 | Silky Shark | *Carcharhinus falciformis* | Vulnerable | [ ] | [ ] | [ ] |
-| 15 | Porbeagle | *Lamna nasus* | Vulnerable | [ ] | [ ] | [ ] |
-| 16 | Thresher Shark (Common) | *Alopias vulpinus* | Vulnerable | [ ] | [ ] | [ ] |
-| 17 | Pelagic Thresher | *Alopias pelagicus* | Endangered | [ ] | [ ] | [ ] |
-| 18 | Bigeye Thresher | *Alopias superciliosus* | Vulnerable | [ ] | [ ] | [ ] |
-| 19 | Zebra Shark | *Stegostoma tigrinum* | Endangered | [ ] | [ ] | [ ] |
-| 20 | Tasselled Wobbegong | *Eucrossorhinus dasypogon* | Least Concern | [ ] | [ ] | [ ] |
+| 1 | Shortfin Mako | *Isurus oxyrinchus* | Endangered | [x] | [x] | [x] |
+| 2 | Longfin Mako | *Isurus paucus* | Endangered | [x] | [x] | [x] |
+| 3 | Hammerhead Shark (Great) | *Sphyrna mokarran* | Critically Endangered | [x] | [x] | [x] |
+| 4 | Smooth Hammerhead | *Sphyrna zygaena* | Vulnerable | [x] | [x] | [x] |
+| 5 | Basking Shark | *Cetorhinus maximus* | Endangered | [x] | [x] | [x] |
+| 6 | Nurse Shark | *Ginglymostoma cirratum* | Vulnerable | [x] | [x] | [x] |
+| 7 | Lemon Shark | *Negaprion brevirostris* | Vulnerable | [x] | [x] | [x] |
+| 8 | Blue Shark | *Prionace glauca* | Near Threatened | [x] | [x] | [x] |
+| 9 | Blacktip Reef Shark | *Carcharhinus melanopterus* | Vulnerable | [x] | [x] | [x] |
+| 10 | Whitetip Reef Shark | *Triaenodon obesus* | Vulnerable | [x] | [x] | [x] |
+| 11 | Grey Reef Shark | *Carcharhinus amblyrhynchos* | Endangered | [x] | [x] | [x] |
+| 12 | Sandbar Shark | *Carcharhinus plumbeus* | Vulnerable | [x] | [x] | [x] |
+| 13 | Dusky Shark | *Carcharhinus obscurus* | Endangered | [x] | [x] | [x] |
+| 14 | Silky Shark | *Carcharhinus falciformis* | Vulnerable | [x] | [x] | [x] |
+| 15 | Porbeagle | *Lamna nasus* | Vulnerable | [x] | [x] | [x] |
+| 16 | Thresher Shark (Common) | *Alopias vulpinus* | Vulnerable | [x] | [x] | [x] |
+| 17 | Pelagic Thresher | *Alopias pelagicus* | Endangered | [x] | [x] | [x] |
+| 18 | Bigeye Thresher | *Alopias superciliosus* | Vulnerable | [x] | [x] | [x] |
+| 19 | Zebra Shark | *Stegostoma tigrinum* | Endangered | [x] | [x] | [x] |
+| 20 | Tasselled Wobbegong | *Eucrossorhinus dasypogon* | Least Concern | [x] | [x] | [x] |
 
 ### Batch 3 — Ecologically Distinct (one per family/order)
 
@@ -123,7 +143,7 @@ Species that have been added as stubs and are candidates for Standard tier promo
 |---|---|
 | Full | 1 |
 | Standard | 4 |
-| Stub | 15 |
-| **Total** | **20** |
+| Stub | 35 |
+| **Total** | **40** |
 
 *Update manually after each batch commit.*

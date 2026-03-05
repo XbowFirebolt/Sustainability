@@ -1,0 +1,37 @@
+{
+  "id": "carcharhinus-falciformis",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Silky Shark",
+  "scientificName": "Carcharhinus falciformis",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Carcharhinidae",
+    "genus": "Carcharhinus",
+    "species": "C. falciformis"
+  },
+  "statusLabel": "Vulnerable",
+  "lifePercent": 57,
+  "habitatTypes": [
+    "ocean",
+    "pelagic"
+  ],
+  "dietType": "carnivore",
+  "geographicRegions": [
+    "tropical",
+    "temperate",
+    "global"
+  ],
+  "tags": [
+    "migratory",
+    "schooling",
+    "bycatch",
+    "finning"
+  ],
+  "description": "The silky shark is one of the most abundant large sharks in the open ocean, found throughout tropical and warm temperate seas worldwide. Named for its smooth, silky-textured skin, it is a fast-swimming pelagic species often associated with schools of tuna at the surface. Silky sharks are among the most frequently caught sharks in tuna purse-seine fisheries and are heavily impacted by bycatch.",
+  "funFact": "Silky sharks follow schools of yellowfin and skipjack tuna across the open ocean, and are trapped so frequently in tuna purse-seine nets that they have become one of the most commonly caught sharks in the global industrial tuna fishery.",
+  "habitat": "Open ocean in tropical and warm temperate seas worldwide. A truly pelagic species found from the surface to depths exceeding 500 m, most commonly near continental shelf edges, oceanic islands, and areas of high productivity associated with tuna aggregations."
+}

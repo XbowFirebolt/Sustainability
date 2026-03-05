@@ -1,0 +1,33 @@
+{
+  "id": "stegostoma-tigrinum",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Zebra Shark",
+  "scientificName": "Stegostoma tigrinum",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Orectolobiformes",
+    "family": "Stegostomatidae",
+    "genus": "Stegostoma",
+    "species": "S. tigrinum"
+  },
+  "statusLabel": "Endangered",
+  "lifePercent": 38,
+  "habitatTypes": [
+    "coastal",
+    "tropical"
+  ],
+  "dietType": "carnivore",
+  "geographicRegions": [
+    "tropical"
+  ],
+  "tags": [
+    "solitary",
+    "bycatch"
+  ],
+  "description": "The zebra shark is a distinctive, slow-moving species found on coral reefs and sandy seafloors of the tropical Indo-Pacific. Adults are covered in small dark spots on a pale background, though juveniles bear striking black-and-white stripes — giving the species its common name. It is primarily nocturnal, hunting mollusks, crustaceans, and small fish by probing crevices with its flexible body.",
+  "funFact": "Juvenile zebra sharks are born with bold black-and-white stripes that gradually break up into the adult's spotted pattern over their first few years — making young and adult animals look so different they were once formally described as separate species.",
+  "habitat": "Shallow coral reefs, sandy flats, and rocky seafloors in tropical Indo-Pacific waters from the Red Sea and East Africa to Japan and Australia. Typically found at depths of 0–62 m, often resting motionless on the bottom during the day in areas with strong currents."
+}

@@ -2052,6 +2052,714 @@ window.WIKI_DATA = {
       "description": "The Natal Shyshark, eastern shyshark or happy chappie (Haploblepharus kistnasamyi) is a species of shark belonging to the family Scyliorhinidae. It was once regarded as the \"Natal\" form of the puffadder shyshark (H. edwardsii). This shark is endemic to a small area off South Africa from the Western Cape to KwaZulu-Natal.",
       "funFact": "Like all shysharks, the Natal Shyshark curls into a tight ring and covers its eyes with its tail when threatened — the behavior that gives the genus its name. Its entire known range covers less than 100 km² off the KwaZulu-Natal coast, making it one of the most geographically restricted sharks on Earth.",
       "habitat": "The distribution of the Natal Shyshark is restricted to the waters off KwaZulu-Natal, and possibly also the Western Cape and Eastern Cape Provinces of South Africa. Its total range is estimated to encompass an area of under 100 km² (39 mi²)."
+    },
+    {
+      "id": "isurus-oxyrinchus",
+      "lastUpdated": "2026-03-06",
+      "emoji": "🦈",
+      "commonName": "Shortfin Mako",
+      "scientificName": "Isurus oxyrinchus",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Lamniformes",
+        "family": "Lamnidae",
+        "genus": "Isurus",
+        "species": "I. oxyrinchus"
+      },
+      "statusLabel": "Endangered",
+      "lifePercent": 35,
+      "habitatTypes": [
+        "ocean",
+        "pelagic"
+      ],
+      "dietType": "apex-predator",
+      "geographicRegions": [
+        "tropical",
+        "temperate",
+        "global"
+      ],
+      "tags": [
+        "migratory",
+        "solitary",
+        "bycatch",
+        "finning"
+      ],
+      "description": "The shortfin mako is the world's fastest shark, capable of sustained speeds and spectacular leaps out of the water when hooked or pursuing prey. Found in open ocean worldwide in tropical and temperate seas, it is a highly migratory apex predator. Despite its speed and power, it has suffered steep population declines from bycatch and targeted fishing for its meat and fins.",
+      "funFact": "The shortfin mako can reach burst speeds of up to 45 mph (72 km/h) and has been recorded leaping over 6 m (20 ft) into the air — making it not only the fastest shark but one of the most acrobatic fish in the ocean.",
+      "habitat": "Open ocean in tropical and temperate seas worldwide, from the surface to depths of at least 500 m. A highly pelagic species that rarely enters inshore waters; prefers surface temperatures of 17–22°C but can range into cooler regions."
+    },
+    {
+      "id": "isurus-paucus",
+      "lastUpdated": "2026-03-06",
+      "emoji": "🦈",
+      "commonName": "Longfin Mako",
+      "scientificName": "Isurus paucus",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Lamniformes",
+        "family": "Lamnidae",
+        "genus": "Isurus",
+        "species": "I. paucus"
+      },
+      "statusLabel": "Endangered",
+      "lifePercent": 35,
+      "habitatTypes": [
+        "ocean",
+        "pelagic",
+        "deep-sea"
+      ],
+      "dietType": "apex-predator",
+      "geographicRegions": [
+        "tropical",
+        "temperate"
+      ],
+      "tags": [
+        "migratory",
+        "solitary",
+        "bycatch"
+      ],
+      "description": "The longfin mako is a large, fast-swimming pelagic shark closely related to the shortfin mako but distinguished by its broader, longer pectoral fins and larger eyes. It inhabits tropical and warm temperate oceanic waters globally and is far less studied than its relative. Like the shortfin mako, it faces serious pressure from bycatch and targeted fishing.",
+      "funFact": "The longfin mako remains one of the least-studied large shark species — so elusive in the open ocean that a live specimen was not scientifically documented until 1966, despite the species being formally described decades earlier.",
+      "habitat": "Oceanic and epipelagic waters in tropical and warm temperate seas worldwide. Tends to remain in deeper waters than the shortfin mako, typically found near the surface to depths of 220 m, often along continental shelf edges and around oceanic islands."
+    },
+    {
+      "id": "sphyrna-mokarran",
+      "lastUpdated": "2026-03-06",
+      "emoji": "🦈",
+      "commonName": "Great Hammerhead",
+      "scientificName": "Sphyrna mokarran",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Carcharhiniformes",
+        "family": "Sphyrnidae",
+        "genus": "Sphyrna",
+        "species": "S. mokarran"
+      },
+      "statusLabel": "Critically Endangered",
+      "lifePercent": 12,
+      "habitatTypes": [
+        "ocean",
+        "coastal"
+      ],
+      "dietType": "apex-predator",
+      "geographicRegions": [
+        "tropical",
+        "temperate"
+      ],
+      "tags": [
+        "migratory",
+        "solitary",
+        "keystone",
+        "finning",
+        "bycatch"
+      ],
+      "description": "The great hammerhead is the largest of the hammerhead sharks, reaching up to 6.1 m (20 ft), and identified by its nearly straight-edged, wide cephalofoil. It inhabits tropical and warm temperate coastal and offshore waters worldwide. As an apex predator, it plays a critical role in reef and coastal ecosystems, but it is heavily targeted by the fin trade — its large fins are among the most valuable on the market.",
+      "funFact": "The great hammerhead's distinctive flat, wide head acts like a living metal detector — it sweeps it across the seafloor to detect the faint electrical fields of buried stingrays hiding in the sand, then pins them down with its head before biting.",
+      "habitat": "Coastal and offshore waters in tropical and warm temperate seas worldwide. Found over continental and insular shelves, coral reefs, and in the open ocean. Undertakes long seasonal migrations and is known to aggregate at specific reef sites."
+    },
+    {
+      "id": "sphyrna-zygaena",
+      "lastUpdated": "2026-03-06",
+      "emoji": "🦈",
+      "commonName": "Smooth Hammerhead",
+      "scientificName": "Sphyrna zygaena",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Carcharhiniformes",
+        "family": "Sphyrnidae",
+        "genus": "Sphyrna",
+        "species": "S. zygaena"
+      },
+      "statusLabel": "Vulnerable",
+      "lifePercent": 55,
+      "habitatTypes": [
+        "ocean",
+        "coastal"
+      ],
+      "dietType": "apex-predator",
+      "geographicRegions": [
+        "temperate",
+        "tropical"
+      ],
+      "tags": [
+        "migratory",
+        "schooling",
+        "bycatch",
+        "finning"
+      ],
+      "description": "The smooth hammerhead is one of the larger hammerhead sharks, named for its smooth-edged, evenly curved cephalofoil that lacks the central indentation found in other hammerheads. It ranges widely across temperate and tropical seas and is one of the more commonly encountered hammerhead species. Young sharks are often found in large schools in inshore waters.",
+      "funFact": "Unlike most hammerhead species that prefer warm tropical waters, the smooth hammerhead is one of the most cold-tolerant hammerheads, venturing into waters as cool as 8°C (46°F) — and newborn pups are frequently found in temperate estuaries and bays far from the tropics.",
+      "habitat": "Coastal and offshore waters in tropical and temperate seas worldwide, often in shallower inshore areas, estuaries, and bays. More tolerant of cooler waters than other hammerhead species; found from the surface to at least 200 m depth."
+    },
+    {
+      "id": "cetorhinus-maximus",
+      "lastUpdated": "2026-03-06",
+      "emoji": "🦈",
+      "commonName": "Basking Shark",
+      "scientificName": "Cetorhinus maximus",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Lamniformes",
+        "family": "Cetorhinidae",
+        "genus": "Cetorhinus",
+        "species": "C. maximus"
+      },
+      "statusLabel": "Endangered",
+      "lifePercent": 38,
+      "habitatTypes": [
+        "ocean",
+        "coastal",
+        "pelagic"
+      ],
+      "dietType": "filter-feeder",
+      "geographicRegions": [
+        "temperate",
+        "global"
+      ],
+      "tags": [
+        "migratory",
+        "solitary",
+        "keystone",
+        "bycatch"
+      ],
+      "description": "The basking shark is the world's second-largest fish, reaching up to 12 m (40 ft), and feeds exclusively by passive filter-feeding on zooplankton as it swims slowly with its enormous mouth agape. Found in cold to warm temperate seas worldwide, it undertakes long seasonal migrations following plankton blooms. Despite its massive size, it is harmless to humans.",
+      "funFact": "A basking shark's mouth can open over 1 m (3.3 ft) wide, and it filters approximately 2,000 tonnes of seawater per hour to collect tiny zooplankton — it must keep swimming continuously to maintain the flow of water through its gill rakers.",
+      "habitat": "Cold to warm temperate coastal and oceanic waters worldwide. Often seen near the surface in coastal areas during summer plankton blooms; suspected to overwinter in deep offshore waters. Most commonly observed in the North Atlantic and North Pacific."
+    },
+    {
+      "id": "ginglymostoma-cirratum",
+      "lastUpdated": "2026-03-06",
+      "emoji": "🦈",
+      "commonName": "Nurse Shark",
+      "scientificName": "Ginglymostoma cirratum",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Orectolobiformes",
+        "family": "Ginglymostomatidae",
+        "genus": "Ginglymostoma",
+        "species": "G. cirratum"
+      },
+      "statusLabel": "Vulnerable",
+      "lifePercent": 60,
+      "habitatTypes": [
+        "coastal",
+        "tropical"
+      ],
+      "dietType": "carnivore",
+      "geographicRegions": [
+        "tropical",
+        "temperate"
+      ],
+      "tags": [
+        "solitary",
+        "bycatch"
+      ],
+      "description": "The nurse shark is a slow-moving, bottom-dwelling shark found in shallow tropical and subtropical waters of the Atlantic and eastern Pacific. Primarily nocturnal, it rests motionless on the seafloor during the day — sometimes in groups stacked on top of one another beneath ledges. Nurse sharks use a powerful suction-feeding method, drawing prey from crevices with a vacuum-like bite.",
+      "funFact": "Nurse sharks can breathe while remaining completely still — unlike most sharks that rely on forward motion to ram water over their gills, nurse sharks actively use buccal pumping to move water over their gills, allowing them to rest motionless on the seafloor for hours.",
+      "habitat": "Shallow coastal waters, coral reefs, seagrass beds, and sandy flats in tropical and subtropical zones of the eastern Pacific and western Atlantic. Typically found at depths from intertidal to 130 m, resting on or near the substrate."
+    },
+    {
+      "id": "negaprion-brevirostris",
+      "lastUpdated": "2026-03-06",
+      "emoji": "🦈",
+      "commonName": "Lemon Shark",
+      "scientificName": "Negaprion brevirostris",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Carcharhiniformes",
+        "family": "Carcharhinidae",
+        "genus": "Negaprion",
+        "species": "N. brevirostris"
+      },
+      "statusLabel": "Vulnerable",
+      "lifePercent": 58,
+      "habitatTypes": [
+        "coastal",
+        "tropical"
+      ],
+      "dietType": "carnivore",
+      "geographicRegions": [
+        "tropical",
+        "temperate"
+      ],
+      "tags": [
+        "solitary",
+        "keystone",
+        "bycatch"
+      ],
+      "description": "The lemon shark is a large, stocky shark found in shallow subtropical and tropical coastal waters of the Atlantic and Pacific. Named for its yellowish-brown coloration, it inhabits mangroves, estuaries, and coral reefs, often resting on the seafloor. Lemon sharks are among the more social of all shark species and have been extensively studied in long-term behavioral and ecological research.",
+      "funFact": "Young lemon sharks return to the same nursery habitat — the exact mangrove or estuary where they were born — year after year for the first several years of their lives, demonstrating a remarkable site fidelity rarely documented in sharks.",
+      "habitat": "Shallow coastal waters including coral reefs, mangrove estuaries, and sandy flats in subtropical and tropical regions of the western Atlantic and eastern Pacific. Rarely found below 92 m; strongly associated with inshore nursery habitats."
+    },
+    {
+      "id": "prionace-glauca",
+      "lastUpdated": "2026-03-06",
+      "emoji": "🦈",
+      "commonName": "Blue Shark",
+      "scientificName": "Prionace glauca",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Carcharhiniformes",
+        "family": "Carcharhinidae",
+        "genus": "Prionace",
+        "species": "P. glauca"
+      },
+      "statusLabel": "Near Threatened",
+      "lifePercent": 72,
+      "habitatTypes": [
+        "ocean",
+        "pelagic"
+      ],
+      "dietType": "carnivore",
+      "geographicRegions": [
+        "temperate",
+        "tropical",
+        "global"
+      ],
+      "tags": [
+        "migratory",
+        "solitary",
+        "bycatch",
+        "finning"
+      ],
+      "description": "The blue shark is one of the most wide-ranging and abundant large shark species, distributed across all temperate and tropical oceans. Instantly recognizable by its electric blue coloration and slender, streamlined build, it is highly migratory and known to cross entire ocean basins. Blue sharks are among the most heavily fished sharks globally, primarily as bycatch in longline and trawl fisheries.",
+      "funFact": "Blue sharks are record-breaking ocean travelers — individuals have been tracked migrating over 9,200 km (5,700 miles) across the Atlantic, following circular current patterns to exploit prey across entire ocean basins.",
+      "habitat": "Open ocean in temperate and tropical seas worldwide, from the surface to depths exceeding 350 m. Typically inhabits the epipelagic and mesopelagic zones, preferring cooler temperate surface waters; performs vertical migrations in tropical regions."
+    },
+    {
+      "id": "carcharhinus-melanopterus",
+      "lastUpdated": "2026-03-06",
+      "emoji": "🦈",
+      "commonName": "Blacktip Reef Shark",
+      "scientificName": "Carcharhinus melanopterus",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Carcharhiniformes",
+        "family": "Carcharhinidae",
+        "genus": "Carcharhinus",
+        "species": "C. melanopterus"
+      },
+      "statusLabel": "Vulnerable",
+      "lifePercent": 57,
+      "habitatTypes": [
+        "coastal",
+        "tropical"
+      ],
+      "dietType": "carnivore",
+      "geographicRegions": [
+        "tropical"
+      ],
+      "tags": [
+        "solitary",
+        "keystone",
+        "bycatch"
+      ],
+      "description": "The blacktip reef shark is one of the most recognizable sharks of tropical coral reefs, distinguished by the prominent black tips on all its fins. It inhabits shallow coastal waters throughout the Indo-Pacific, frequently patrolling reef edges and sandy flats. Blacktip reef sharks are an important part of reef ecosystems and are among the most commonly encountered sharks by snorkelers and divers.",
+      "funFact": "Blacktip reef sharks often patrol in water so shallow their dorsal fins slice above the surface — they are regularly found hunting reef fish in water less than 30 cm (1 foot) deep along reef edges and in tidal flats.",
+      "habitat": "Shallow inshore waters over coral reefs, sandy flats, and lagoons throughout the Indo-Pacific, from the Red Sea and East Africa to Hawaii and the eastern Pacific. Commonly found in less than 1 m of water; rarely ventures below 75 m."
+    },
+    {
+      "id": "triaenodon-obesus",
+      "lastUpdated": "2026-03-06",
+      "emoji": "🦈",
+      "commonName": "Whitetip Reef Shark",
+      "scientificName": "Triaenodon obesus",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Carcharhiniformes",
+        "family": "Carcharhinidae",
+        "genus": "Triaenodon",
+        "species": "T. obesus"
+      },
+      "statusLabel": "Vulnerable",
+      "lifePercent": 58,
+      "habitatTypes": [
+        "coastal",
+        "tropical"
+      ],
+      "dietType": "carnivore",
+      "geographicRegions": [
+        "tropical"
+      ],
+      "tags": [
+        "solitary",
+        "keystone",
+        "bycatch"
+      ],
+      "description": "The whitetip reef shark is a slender, medium-sized shark found throughout the Indo-Pacific, easily identified by the distinctive white tips on its dorsal and caudal fins. Unlike most sharks, it can lie motionless on the seafloor and pump water over its gills. It is primarily nocturnal, spending the day resting in caves and under ledges before hunting in groups at night.",
+      "funFact": "Whitetip reef sharks hunt in coordinated packs at night, chasing reef fish into crevices and coral formations where multiple sharks simultaneously wedge into gaps to extract hidden prey — a rare form of cooperative hunting behavior for sharks.",
+      "habitat": "Coral reef environments throughout the Indo-Pacific, from East Africa and the Red Sea to the Pacific coast of Central America. Typically found at depths of 8–40 m, closely associated with the reef substrate in clear lagoon and seaward reef habitats."
+    },
+    {
+      "id": "carcharhinus-amblyrhynchos",
+      "lastUpdated": "2026-03-06",
+      "emoji": "🦈",
+      "commonName": "Grey Reef Shark",
+      "scientificName": "Carcharhinus amblyrhynchos",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Carcharhiniformes",
+        "family": "Carcharhinidae",
+        "genus": "Carcharhinus",
+        "species": "C. amblyrhynchos"
+      },
+      "statusLabel": "Endangered",
+      "lifePercent": 38,
+      "habitatTypes": [
+        "coastal",
+        "tropical"
+      ],
+      "dietType": "carnivore",
+      "geographicRegions": [
+        "tropical"
+      ],
+      "tags": [
+        "schooling",
+        "keystone",
+        "bycatch"
+      ],
+      "description": "The grey reef shark is a medium-sized requiem shark found throughout the Indo-Pacific coral reef system. It is one of the most common reef sharks in its range and plays an important role in reef ecology as a mesopredator. Grey reef sharks are known for a distinctive threat display — arching the back, dropping pectoral fins, and swimming in an exaggerated rolling motion to warn off perceived threats.",
+      "funFact": "The grey reef shark performs one of the most distinctive threat displays in the animal kingdom: when feeling cornered, it arches its back, drops its pectoral fins, and swims in an exaggerated rolling pattern — a clear visual warning that it may attack if the threat persists.",
+      "habitat": "Coral reef environments throughout the Indo-Pacific, from the Red Sea and East Africa across to Easter Island. Found in clear, reef-associated waters from the surface to 274 m, most commonly in the upper 60 m along reef drop-offs and passages with strong currents."
+    },
+    {
+      "id": "carcharhinus-plumbeus",
+      "lastUpdated": "2026-03-06",
+      "emoji": "🦈",
+      "commonName": "Sandbar Shark",
+      "scientificName": "Carcharhinus plumbeus",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Carcharhiniformes",
+        "family": "Carcharhinidae",
+        "genus": "Carcharhinus",
+        "species": "C. plumbeus"
+      },
+      "statusLabel": "Vulnerable",
+      "lifePercent": 55,
+      "habitatTypes": [
+        "ocean",
+        "coastal"
+      ],
+      "dietType": "carnivore",
+      "geographicRegions": [
+        "tropical",
+        "temperate"
+      ],
+      "tags": [
+        "migratory",
+        "solitary",
+        "bycatch"
+      ],
+      "description": "The sandbar shark is one of the largest coastal sharks in the Atlantic and Pacific, recognizable by its proportionally large first dorsal fin and stocky build. It inhabits shallow coastal waters including estuaries, bays, and harbors, and undertakes long seasonal migrations. Sandbar sharks are one of the most commercially important shark species on the US East Coast, targeted for both fins and meat.",
+      "funFact": "The sandbar shark has one of the longest gestation periods of any shark — approximately 12 months — and pups are born in shallow nursery estuaries where they spend their first several years before moving to deeper offshore waters as adults.",
+      "habitat": "Shallow coastal and inshore waters including estuaries, bays, and harbors in tropical and temperate seas worldwide. Commonly found at depths of 20–65 m over sandy or muddy bottoms; may range to 280 m. Uses nearshore estuaries as critical nursery habitats."
+    },
+    {
+      "id": "carcharhinus-obscurus",
+      "lastUpdated": "2026-03-06",
+      "emoji": "🦈",
+      "commonName": "Dusky Shark",
+      "scientificName": "Carcharhinus obscurus",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Carcharhiniformes",
+        "family": "Carcharhinidae",
+        "genus": "Carcharhinus",
+        "species": "C. obscurus"
+      },
+      "statusLabel": "Endangered",
+      "lifePercent": 35,
+      "habitatTypes": [
+        "ocean",
+        "coastal"
+      ],
+      "dietType": "carnivore",
+      "geographicRegions": [
+        "tropical",
+        "temperate",
+        "global"
+      ],
+      "tags": [
+        "migratory",
+        "solitary",
+        "bycatch",
+        "finning"
+      ],
+      "description": "The dusky shark is a large, wide-ranging requiem shark found in tropical and warm temperate waters worldwide. It undertakes extensive coastal migrations and is one of the slowest-maturing and slowest-reproducing of all large sharks, making populations especially vulnerable to fishing pressure. Despite protections in some regions, populations have declined by over 80% in parts of its range.",
+      "funFact": "Dusky sharks have one of the slowest life cycles of any shark — females don't reach maturity until age 20, have a 22–24 month gestation period, and reproduce only every 3 years — meaning populations can take decades to recover from even modest depletion.",
+      "habitat": "Coastal and offshore waters in tropical and warm temperate regions worldwide. Found from inshore bays and estuaries to the open ocean at depths of 0–400 m. Undertakes pronounced north-south seasonal migrations along coastlines."
+    },
+    {
+      "id": "carcharhinus-falciformis",
+      "lastUpdated": "2026-03-06",
+      "emoji": "🦈",
+      "commonName": "Silky Shark",
+      "scientificName": "Carcharhinus falciformis",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Carcharhiniformes",
+        "family": "Carcharhinidae",
+        "genus": "Carcharhinus",
+        "species": "C. falciformis"
+      },
+      "statusLabel": "Vulnerable",
+      "lifePercent": 57,
+      "habitatTypes": [
+        "ocean",
+        "pelagic"
+      ],
+      "dietType": "carnivore",
+      "geographicRegions": [
+        "tropical",
+        "temperate",
+        "global"
+      ],
+      "tags": [
+        "migratory",
+        "schooling",
+        "bycatch",
+        "finning"
+      ],
+      "description": "The silky shark is one of the most abundant large sharks in the open ocean, found throughout tropical and warm temperate seas worldwide. Named for its smooth, silky-textured skin, it is a fast-swimming pelagic species often associated with schools of tuna at the surface. Silky sharks are among the most frequently caught sharks in tuna purse-seine fisheries and are heavily impacted by bycatch.",
+      "funFact": "Silky sharks follow schools of yellowfin and skipjack tuna across the open ocean, and are trapped so frequently in tuna purse-seine nets that they have become one of the most commonly caught sharks in the global industrial tuna fishery.",
+      "habitat": "Open ocean in tropical and warm temperate seas worldwide. A truly pelagic species found from the surface to depths exceeding 500 m, most commonly near continental shelf edges, oceanic islands, and areas of high productivity associated with tuna aggregations."
+    },
+    {
+      "id": "lamna-nasus",
+      "lastUpdated": "2026-03-06",
+      "emoji": "🦈",
+      "commonName": "Porbeagle",
+      "scientificName": "Lamna nasus",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Lamniformes",
+        "family": "Lamnidae",
+        "genus": "Lamna",
+        "species": "L. nasus"
+      },
+      "statusLabel": "Vulnerable",
+      "lifePercent": 55,
+      "habitatTypes": [
+        "ocean",
+        "coastal"
+      ],
+      "dietType": "apex-predator",
+      "geographicRegions": [
+        "temperate"
+      ],
+      "tags": [
+        "migratory",
+        "solitary",
+        "bycatch",
+        "finning"
+      ],
+      "description": "The porbeagle is a large, cold-water shark in the family Lamnidae, closely related to the great white and mako sharks. Found in cold and temperate waters of the North and South Atlantic and the Southern Ocean, it is one of the few sharks capable of maintaining body temperature above ambient water temperature. Porbeagles were once heavily targeted for meat and fins, causing steep population declines in the North Atlantic.",
+      "funFact": "Like great whites and makos, the porbeagle is warm-blooded — it can maintain its body temperature 7–10°C above surrounding cold water, giving it a significant speed and metabolic advantage when hunting in frigid, high-latitude seas.",
+      "habitat": "Cold to temperate oceanic and coastal waters. Found in the North Atlantic from Norway to the Mediterranean, and in the Southern Hemisphere around southern South America, South Africa, and Australia. Occupies depths from the surface to over 700 m."
+    },
+    {
+      "id": "alopias-vulpinus",
+      "lastUpdated": "2026-03-06",
+      "emoji": "🦈",
+      "commonName": "Common Thresher",
+      "scientificName": "Alopias vulpinus",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Lamniformes",
+        "family": "Alopiidae",
+        "genus": "Alopias",
+        "species": "A. vulpinus"
+      },
+      "statusLabel": "Vulnerable",
+      "lifePercent": 55,
+      "habitatTypes": [
+        "ocean",
+        "pelagic"
+      ],
+      "dietType": "carnivore",
+      "geographicRegions": [
+        "temperate",
+        "tropical",
+        "global"
+      ],
+      "tags": [
+        "migratory",
+        "solitary",
+        "bycatch",
+        "finning"
+      ],
+      "description": "The common thresher is the largest of the three thresher shark species, distinguished by its extraordinarily long upper tail fin lobe that can equal half or more of its total body length. Found in temperate and tropical oceans worldwide, it uses its powerful tail to herd and stun schooling prey fish. Thresher sharks are prized for their meat and fins and are heavily affected by longline bycatch.",
+      "funFact": "The common thresher uses its massive scythe-like tail as a weapon — it has been documented performing rapid, spinning tail-slap strikes that stun or kill multiple fish simultaneously, a hunting technique unique among sharks.",
+      "habitat": "Temperate and tropical oceanic and coastal waters worldwide, primarily pelagic but occasionally approaching shore. Found from the surface to at least 550 m depth. More common in temperate regions than in tropical ones."
+    },
+    {
+      "id": "alopias-pelagicus",
+      "lastUpdated": "2026-03-06",
+      "emoji": "🦈",
+      "commonName": "Pelagic Thresher",
+      "scientificName": "Alopias pelagicus",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Lamniformes",
+        "family": "Alopiidae",
+        "genus": "Alopias",
+        "species": "A. pelagicus"
+      },
+      "statusLabel": "Endangered",
+      "lifePercent": 38,
+      "habitatTypes": [
+        "ocean",
+        "pelagic"
+      ],
+      "dietType": "carnivore",
+      "geographicRegions": [
+        "tropical"
+      ],
+      "tags": [
+        "migratory",
+        "solitary",
+        "bycatch"
+      ],
+      "description": "The pelagic thresher is the smallest of the three thresher shark species and the most oceanic in habit, spending nearly its entire life in open tropical and subtropical waters of the Indo-Pacific. Like all threshers, it has an enormously elongated upper tail lobe used to stun prey. Population estimates suggest declines of over 70% in parts of its range due to longline and drift-net fisheries.",
+      "funFact": "Pelagic threshers are among the few open-ocean sharks known to visit coral reef cleaning stations — despite living far out to sea, they regularly swim to shallow reef areas where wrasses and other cleaner fish remove parasites from their skin and gills.",
+      "habitat": "Open ocean in tropical and subtropical regions of the Indo-Pacific, from Japan and Hawaii south through Australia and across to the eastern Pacific. Most commonly found far offshore in the upper water column, typically in the top 150 m."
+    },
+    {
+      "id": "alopias-superciliosus",
+      "lastUpdated": "2026-03-06",
+      "emoji": "🦈",
+      "commonName": "Bigeye Thresher",
+      "scientificName": "Alopias superciliosus",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Lamniformes",
+        "family": "Alopiidae",
+        "genus": "Alopias",
+        "species": "A. superciliosus"
+      },
+      "statusLabel": "Vulnerable",
+      "lifePercent": 55,
+      "habitatTypes": [
+        "ocean",
+        "pelagic",
+        "deep-sea"
+      ],
+      "dietType": "carnivore",
+      "geographicRegions": [
+        "tropical",
+        "temperate",
+        "global"
+      ],
+      "tags": [
+        "migratory",
+        "solitary",
+        "bycatch"
+      ],
+      "description": "The bigeye thresher is named for its extraordinarily large eyes, adapted for hunting in low-light conditions at depth. It inhabits tropical and temperate seas worldwide and performs daily vertical migrations, descending into deep water during the day and ascending toward the surface at night to hunt. Like other threshers, it uses its elongated tail lobe to stun schooling prey.",
+      "funFact": "The bigeye thresher has the largest eyes relative to body size of any shark — up to 10 cm (4 inches) in diameter — and they are tilted upward in its head so it can spot the silhouettes of prey against the dim surface light while lurking in the depths below.",
+      "habitat": "Tropical and temperate offshore waters worldwide, from the surface to at least 730 m depth. Performs pronounced daily vertical migrations: resting in cool deep water during the day and ascending to feed in shallower, prey-rich surface waters at night."
+    },
+    {
+      "id": "stegostoma-tigrinum",
+      "lastUpdated": "2026-03-06",
+      "emoji": "🦈",
+      "commonName": "Zebra Shark",
+      "scientificName": "Stegostoma tigrinum",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Orectolobiformes",
+        "family": "Stegostomatidae",
+        "genus": "Stegostoma",
+        "species": "S. tigrinum"
+      },
+      "statusLabel": "Endangered",
+      "lifePercent": 38,
+      "habitatTypes": [
+        "coastal",
+        "tropical"
+      ],
+      "dietType": "carnivore",
+      "geographicRegions": [
+        "tropical"
+      ],
+      "tags": [
+        "solitary",
+        "bycatch"
+      ],
+      "description": "The zebra shark is a distinctive, slow-moving species found on coral reefs and sandy seafloors of the tropical Indo-Pacific. Adults are covered in small dark spots on a pale background, though juveniles bear striking black-and-white stripes — giving the species its common name. It is primarily nocturnal, hunting mollusks, crustaceans, and small fish by probing crevices with its flexible body.",
+      "funFact": "Juvenile zebra sharks are born with bold black-and-white stripes that gradually break up into the adult's spotted pattern over their first few years — making young and adult animals look so different they were once formally described as separate species.",
+      "habitat": "Shallow coral reefs, sandy flats, and rocky seafloors in tropical Indo-Pacific waters from the Red Sea and East Africa to Japan and Australia. Typically found at depths of 0–62 m, often resting motionless on the bottom during the day in areas with strong currents."
+    },
+    {
+      "id": "eucrossorhinus-dasypogon",
+      "lastUpdated": "2026-03-06",
+      "emoji": "🦈",
+      "commonName": "Tasselled Wobbegong",
+      "scientificName": "Eucrossorhinus dasypogon",
+      "taxonomy": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Chondrichthyes",
+        "order": "Orectolobiformes",
+        "family": "Orectolobidae",
+        "genus": "Eucrossorhinus",
+        "species": "E. dasypogon"
+      },
+      "statusLabel": "Least Concern",
+      "lifePercent": 88,
+      "habitatTypes": [
+        "coastal",
+        "tropical"
+      ],
+      "dietType": "carnivore",
+      "geographicRegions": [
+        "tropical"
+      ],
+      "tags": [
+        "solitary"
+      ],
+      "description": "The tasselled wobbegong is a highly camouflaged carpet shark found on coral reefs of New Guinea, northern Australia, and nearby Indonesian islands. Its name comes from the fringe of elaborately branching skin lobes around its head that disrupt its outline and help it blend seamlessly with reef surfaces. It is an ambush predator that lies motionless and lunges at prey that ventures within range.",
+      "funFact": "The tasselled wobbegong has such effective camouflage that it sometimes lures prey by slowly waggling the tip of its tail to mimic the movement of a small fish — attracting curious fish close enough to snatch with a lightning-fast lunge.",
+      "habitat": "Coral reefs in shallow tropical waters of northern Australia, New Guinea, and nearby Indonesian islands. Typically found at depths of 1–40 m, resting on or amid reef substrate where its cryptic coloration provides near-perfect camouflage against coral and rubble."
     }
   ]
 };

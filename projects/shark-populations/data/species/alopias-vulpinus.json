@@ -1,0 +1,37 @@
+{
+  "id": "alopias-vulpinus",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Common Thresher",
+  "scientificName": "Alopias vulpinus",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Lamniformes",
+    "family": "Alopiidae",
+    "genus": "Alopias",
+    "species": "A. vulpinus"
+  },
+  "statusLabel": "Vulnerable",
+  "lifePercent": 55,
+  "habitatTypes": [
+    "ocean",
+    "pelagic"
+  ],
+  "dietType": "carnivore",
+  "geographicRegions": [
+    "temperate",
+    "tropical",
+    "global"
+  ],
+  "tags": [
+    "migratory",
+    "solitary",
+    "bycatch",
+    "finning"
+  ],
+  "description": "The common thresher is the largest of the three thresher shark species, distinguished by its extraordinarily long upper tail fin lobe that can equal half or more of its total body length. Found in temperate and tropical oceans worldwide, it uses its powerful tail to herd and stun schooling prey fish. Thresher sharks are prized for their meat and fins and are heavily affected by longline bycatch.",
+  "funFact": "The common thresher uses its massive scythe-like tail as a weapon — it has been documented performing rapid, spinning tail-slap strikes that stun or kill multiple fish simultaneously, a hunting technique unique among sharks.",
+  "habitat": "Temperate and tropical oceanic and coastal waters worldwide, primarily pelagic but occasionally approaching shore. Found from the surface to at least 550 m depth. More common in temperate regions than in tropical ones."
+}

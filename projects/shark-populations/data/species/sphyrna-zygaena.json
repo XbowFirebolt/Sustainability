@@ -1,0 +1,36 @@
+{
+  "id": "sphyrna-zygaena",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Smooth Hammerhead",
+  "scientificName": "Sphyrna zygaena",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Sphyrnidae",
+    "genus": "Sphyrna",
+    "species": "S. zygaena"
+  },
+  "statusLabel": "Vulnerable",
+  "lifePercent": 55,
+  "habitatTypes": [
+    "ocean",
+    "coastal"
+  ],
+  "dietType": "apex-predator",
+  "geographicRegions": [
+    "temperate",
+    "tropical"
+  ],
+  "tags": [
+    "migratory",
+    "schooling",
+    "bycatch",
+    "finning"
+  ],
+  "description": "The smooth hammerhead is one of the larger hammerhead sharks, named for its smooth-edged, evenly curved cephalofoil that lacks the central indentation found in other hammerheads. It ranges widely across temperate and tropical seas and is one of the more commonly encountered hammerhead species. Young sharks are often found in large schools in inshore waters.",
+  "funFact": "Unlike most hammerhead species that prefer warm tropical waters, the smooth hammerhead is one of the most cold-tolerant hammerheads, venturing into waters as cool as 8°C (46°F) — and newborn pups are frequently found in temperate estuaries and bays far from the tropics.",
+  "habitat": "Coastal and offshore waters in tropical and temperate seas worldwide, often in shallower inshore areas, estuaries, and bays. More tolerant of cooler waters than other hammerhead species; found from the surface to at least 200 m depth."
+}

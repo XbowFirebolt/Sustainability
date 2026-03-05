@@ -1,0 +1,34 @@
+{
+  "id": "ginglymostoma-cirratum",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Nurse Shark",
+  "scientificName": "Ginglymostoma cirratum",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Orectolobiformes",
+    "family": "Ginglymostomatidae",
+    "genus": "Ginglymostoma",
+    "species": "G. cirratum"
+  },
+  "statusLabel": "Vulnerable",
+  "lifePercent": 60,
+  "habitatTypes": [
+    "coastal",
+    "tropical"
+  ],
+  "dietType": "carnivore",
+  "geographicRegions": [
+    "tropical",
+    "temperate"
+  ],
+  "tags": [
+    "solitary",
+    "bycatch"
+  ],
+  "description": "The nurse shark is a slow-moving, bottom-dwelling shark found in shallow tropical and subtropical waters of the Atlantic and eastern Pacific. Primarily nocturnal, it rests motionless on the seafloor during the day — sometimes in groups stacked on top of one another beneath ledges. Nurse sharks use a powerful suction-feeding method, drawing prey from crevices with a vacuum-like bite.",
+  "funFact": "Nurse sharks can breathe while remaining completely still — unlike most sharks that rely on forward motion to ram water over their gills, nurse sharks actively use buccal pumping to move water over their gills, allowing them to rest motionless on the seafloor for hours.",
+  "habitat": "Shallow coastal waters, coral reefs, seagrass beds, and sandy flats in tropical and subtropical zones of the eastern Pacific and western Atlantic. Typically found at depths from intertidal to 130 m, resting on or near the substrate."
+}

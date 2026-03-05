@@ -1,0 +1,34 @@
+{
+  "id": "carcharhinus-melanopterus",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Blacktip Reef Shark",
+  "scientificName": "Carcharhinus melanopterus",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Carcharhinidae",
+    "genus": "Carcharhinus",
+    "species": "C. melanopterus"
+  },
+  "statusLabel": "Vulnerable",
+  "lifePercent": 57,
+  "habitatTypes": [
+    "coastal",
+    "tropical"
+  ],
+  "dietType": "carnivore",
+  "geographicRegions": [
+    "tropical"
+  ],
+  "tags": [
+    "solitary",
+    "keystone",
+    "bycatch"
+  ],
+  "description": "The blacktip reef shark is one of the most recognizable sharks of tropical coral reefs, distinguished by the prominent black tips on all its fins. It inhabits shallow coastal waters throughout the Indo-Pacific, frequently patrolling reef edges and sandy flats. Blacktip reef sharks are an important part of reef ecosystems and are among the most commonly encountered sharks by snorkelers and divers.",
+  "funFact": "Blacktip reef sharks often patrol in water so shallow their dorsal fins slice above the surface — they are regularly found hunting reef fish in water less than 30 cm (1 foot) deep along reef edges and in tidal flats.",
+  "habitat": "Shallow inshore waters over coral reefs, sandy flats, and lagoons throughout the Indo-Pacific, from the Red Sea and East Africa to Hawaii and the eastern Pacific. Commonly found in less than 1 m of water; rarely ventures below 75 m."
+}

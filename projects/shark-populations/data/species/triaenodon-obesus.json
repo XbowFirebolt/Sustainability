@@ -1,0 +1,34 @@
+{
+  "id": "triaenodon-obesus",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Whitetip Reef Shark",
+  "scientificName": "Triaenodon obesus",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Carcharhinidae",
+    "genus": "Triaenodon",
+    "species": "T. obesus"
+  },
+  "statusLabel": "Vulnerable",
+  "lifePercent": 58,
+  "habitatTypes": [
+    "coastal",
+    "tropical"
+  ],
+  "dietType": "carnivore",
+  "geographicRegions": [
+    "tropical"
+  ],
+  "tags": [
+    "solitary",
+    "keystone",
+    "bycatch"
+  ],
+  "description": "The whitetip reef shark is a slender, medium-sized shark found throughout the Indo-Pacific, easily identified by the distinctive white tips on its dorsal and caudal fins. Unlike most sharks, it can lie motionless on the seafloor and pump water over its gills. It is primarily nocturnal, spending the day resting in caves and under ledges before hunting in groups at night.",
+  "funFact": "Whitetip reef sharks hunt in coordinated packs at night, chasing reef fish into crevices and coral formations where multiple sharks simultaneously wedge into gaps to extract hidden prey — a rare form of cooperative hunting behavior for sharks.",
+  "habitat": "Coral reef environments throughout the Indo-Pacific, from East Africa and the Red Sea to the Pacific coast of Central America. Typically found at depths of 8–40 m, closely associated with the reef substrate in clear lagoon and seaward reef habitats."
+}

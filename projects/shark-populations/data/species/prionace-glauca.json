@@ -1,0 +1,37 @@
+{
+  "id": "prionace-glauca",
+  "lastUpdated": "2026-03-06",
+  "emoji": "🦈",
+  "commonName": "Blue Shark",
+  "scientificName": "Prionace glauca",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Carcharhinidae",
+    "genus": "Prionace",
+    "species": "P. glauca"
+  },
+  "statusLabel": "Near Threatened",
+  "lifePercent": 72,
+  "habitatTypes": [
+    "ocean",
+    "pelagic"
+  ],
+  "dietType": "carnivore",
+  "geographicRegions": [
+    "temperate",
+    "tropical",
+    "global"
+  ],
+  "tags": [
+    "migratory",
+    "solitary",
+    "bycatch",
+    "finning"
+  ],
+  "description": "The blue shark is one of the most wide-ranging and abundant large shark species, distributed across all temperate and tropical oceans. Instantly recognizable by its electric blue coloration and slender, streamlined build, it is highly migratory and known to cross entire ocean basins. Blue sharks are among the most heavily fished sharks globally, primarily as bycatch in longline and trawl fisheries.",
+  "funFact": "Blue sharks are record-breaking ocean travelers — individuals have been tracked migrating over 9,200 km (5,700 miles) across the Atlantic, following circular current patterns to exploit prey across entire ocean basins.",
+  "habitat": "Open ocean in temperate and tropical seas worldwide, from the surface to depths exceeding 350 m. Typically inhabits the epipelagic and mesopelagic zones, preferring cooler temperate surface waters; performs vertical migrations in tropical regions."
+}
