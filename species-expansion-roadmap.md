@@ -52,7 +52,7 @@ Before scaling out, stabilize the foundation.
 
 ---
 
-## Phase 2 — Data Schema + Tooling (parallel to Phase 1)
+## ~~Phase 2 — Data Schema + Tooling (parallel to Phase 1)~~ ✅
 
 Before adding species, make adding species easier.
 
@@ -136,8 +136,8 @@ What stays manual (no open structured source exists):
 - [x] Migrate the 5 existing species from `data.js` → individual `.json` files + `config.json`
 - [x] Write `build-data.js` and verify the generated `data.js` is identical to the current hand-authored one
 - [x] Write `generate-stubs.js` with IUCN API field mapping
-- [ ] Test stub generation on a known species and QA the output against `data-schema.md`
-- [ ] Mark `data.js` as generated in a comment at the top of the file
+- [x] Test stub generation on a known species and QA the output against `data-schema.md`
+- [x] Mark `data.js` as generated in a comment at the top of the file
 
 ---
 
