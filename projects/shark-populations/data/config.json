@@ -1,0 +1,19 @@
+{
+  "projectId": "shark-populations",
+  "favoritesKey": "wiki_favorites_shark-populations",
+  "recentlyViewedKey": "wiki_recently_viewed_shark-populations",
+  "silhouetteFallback": "projects/shark-populations/images/shark_silhouette.png",
+  "sources": [
+    { "label": "IUCN Red List",    "url": "https://www.iucnredlist.org" },
+    { "label": "CITES Appendices", "url": "https://cites.org/eng/app/appendices.php" },
+    { "label": "Shark Trust",      "url": "https://www.sharktrust.org" },
+    { "label": "NOAA Fisheries",   "url": "https://www.fisheries.noaa.gov" }
+  ],
+  "speciesOrder": [
+    "great-white",
+    "scalloped-hammerhead",
+    "whale-shark",
+    "bull-shark",
+    "tiger-shark"
+  ]
+}

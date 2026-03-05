@@ -1,0 +1,103 @@
+{
+  "id": "scalloped-hammerhead",
+  "lastUpdated": "2024-11-03",
+  "emoji": "🦈",
+  "commonName": "Scalloped Hammerhead",
+  "scientificName": "Sphyrna lewini",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum":  "Chordata",
+    "class":   "Chondrichthyes",
+    "order":   "Carcharhiniformes",
+    "family":  "Sphyrnidae",
+    "genus":   "Sphyrna",
+    "species": "S. lewini"
+  },
+  "statusLabel": "Critically Endangered",
+  "lifePercent": 18,
+  "habitatTypes": ["ocean", "coastal"],
+  "dietType": "carnivore",
+  "geographicRegions": ["tropical", "temperate"],
+  "tags": ["migratory", "schooling", "bycatch", "finning"],
+  "photos": ["projects/shark-populations/images/scalloped_hammerhead/scalloped_hammerhead1.png"],
+  "funFact": "Their wide-set eyes grant 360° vertical vision — they can see directly above and below simultaneously, giving them an almost complete view of their surroundings.",
+  "description": "Named for the scalloped front edge of its distinctive hammer-shaped head (cephalofoil), this species aggregates in huge schools during the day — a rare social behavior among sharks. Their populations have collapsed by over 80% in recent decades, driven almost entirely by the fin trade.",
+  "habitat": "Tropical and warm temperate seas worldwide; coastal, estuarine, and semi-oceanic",
+  "diet": "Fish, squid, octopus, and crustaceans",
+  "size": "Up to 4.3 m (14 ft)",
+  "vitalSigns": [
+    { "label": "Estimated Population",   "value": "Depleted — 80%+ global decline",                                                                    "glance": true },
+    { "label": "Lifespan",               "value": "~30 years",                                                                                          "glance": true },
+    { "label": "Max Length",             "value": "4.3 m (14 ft)",                       "metric": "4.3 m",              "imperial": "14 ft",              "glance": true },
+    { "label": "Max Weight",             "value": "~150 kg (~330 lbs)",                  "metric": "~150 kg",            "imperial": "~330 lbs",           "glance": true },
+    { "label": "Reproductive Rate",      "value": "15–31 pups per litter; ~9–10 month gestation; biennial cycle" },
+    { "label": "Age at Maturity",        "value": "~7–9 years (males); ~15–17 years (females)" },
+    { "label": "Top Speed",              "value": "~25 km/h (~15 mph) in bursts",            "metric": "~25 km/h",       "imperial": "~15 mph",             "glance": true },
+    { "label": "Ecological Role",        "value": "Apex Predator",                                                                                      "glance": true },
+    { "label": "Diet",                   "value": "Bony fish, squid, octopus, and crustaceans" },
+    { "label": "Population Growth Rate", "value": "Very low — late female maturity limits recovery" },
+    { "label": "Key Senses",             "value": "Cephalofoil provides 360° vertical vision and enhanced electroreception via expanded Ampullae of Lorenzini" }
+  ],
+  "habitatImage": "projects/shark-populations/images/scalloped_hammerhead/scalloped_hammerhead_habitat.png",
+  "statusHistory": [
+    { "year": 1970, "status": "Not Evaluated" },
+    { "year": 1996, "status": "Vulnerable" },
+    { "year": 2008, "status": "Endangered" },
+    { "year": 2019, "status": "Critically Endangered" }
+  ],
+  "populationTrend": [
+    { "year": 1970, "value": 120000 },
+    { "year": 1980, "value": 100000 },
+    { "year": 1990, "value": 58000 },
+    { "year": 2000, "value": 28000 },
+    { "year": 2010, "value": 16000 },
+    { "year": 2020, "value": 11000 }
+  ],
+  "populationTrendMeta": {
+    "confidence": "estimated",
+    "note": "Absolute numbers are modeled. The shape of the decline is well-supported: multiple independent studies document 80–89% collapses in NW Atlantic and Indo-Pacific subpopulations since the 1980s (IUCN 2008 CR uplisting)."
+  },
+  "preyDeclineRegions": [
+    { "name": "Indo-Pacific",    "severity": "critical", "note": "Reef fish and squid stocks severely depleted by overfishing" },
+    { "name": "Gulf of Mexico",  "severity": "high",     "note": "Coastal fish populations under heavy trawling and longline pressure" },
+    { "name": "N. Pacific",      "severity": "high",     "note": "Tuna and squid populations reduced by commercial fleets" },
+    { "name": "Mediterranean",   "severity": "medium",   "note": "Fish stocks depleted; limited hammerhead range" },
+    { "name": "Red Sea",         "severity": "medium",   "note": "Reef fish under pressure from local and commercial fishing" },
+    { "name": "E. Pacific",      "severity": "low",      "note": "Some prey populations more stable near upwelling zones" }
+  ],
+  "fishingPressureRegions": [
+    { "name": "Indo-Pacific",    "severity": "critical", "note": "Largest fin trade hub; daytime aggregation schools targeted directly" },
+    { "name": "Gulf of Mexico",  "severity": "critical", "note": "Heavy longline bycatch in tuna and swordfish fisheries" },
+    { "name": "N. Pacific",      "severity": "high",     "note": "Finning operations and longline bycatch" },
+    { "name": "Mediterranean",   "severity": "high",     "note": "Longline and gillnet fleets; minimal enforcement" },
+    { "name": "E. Pacific",      "severity": "medium",   "note": "Bycatch in tuna purse seine fisheries" },
+    { "name": "Red Sea",         "severity": "medium",   "note": "Targeted fishing at smaller scale; some artisanal take" }
+  ],
+  "healthMetrics": [
+    { "label": "IUCN Status",         "value": "Critically Endangered",                                   "trend": "down"   },
+    { "label": "Population Trend",    "value": "Decreasing — 80%+ global collapse since 1980s",           "trend": "down"   },
+    { "label": "Habitat Quality",     "value": "Degraded — coastal nursery estuaries under heavy pressure", "trend": "down" },
+    { "label": "Prey Availability",   "value": "Declining in key feeding regions",                         "trend": "down"   },
+    { "label": "Fishing Pressure",    "value": "Critical — fin trade and surface-school bycatch",          "trend": "down"   },
+    { "label": "Protection Coverage", "value": "Partial — CITES Appendix II; some national bans on finning", "trend": "stable",
+      "links": [
+        { "label": "CITES Listing", "url": "https://cites.org/eng/app/appendices.php" },
+        { "label": "IUCN Red List", "url": "https://www.iucnredlist.org/species/39612/2918872" },
+        { "label": "Shark Trust",   "url": "https://www.sharktrust.org" }
+      ]
+    }
+  ],
+  "threats": [
+    { "name": "Shark Fin Trade",    "severity": "critical", "description": "The scalloped hammerhead's distinctive fins are among the most prized in the trade. Demand has driven an 80%+ population collapse, with targeted finning the primary driver of decline." },
+    { "name": "Bycatch",            "severity": "critical", "description": "Caught incidentally in tuna and swordfish longline fisheries at extremely high rates. Schools near the surface make them especially vulnerable during daytime aggregations." },
+    { "name": "Coastal Habitat Loss", "severity": "high",  "description": "Pups and juveniles rely on shallow estuaries and coastal bays as nursery habitat. Urban development, mangrove loss, and pollution degrade these critical areas." },
+    { "name": "Climate Change",     "severity": "medium",   "description": "Warming seas compress preferred temperature bands and shift prey distributions, putting additional pressure on already fragmented populations." }
+  ],
+  "actionItems": [
+    { "title": "Refuse Shark Fin Products", "description": "Scalloped hammerhead fins are among the most traded in the global fin trade. Refusing to buy or consume shark fin soup and related products directly reduces demand driving their decline.", "link": null },
+    { "title": "Urge Stronger CITES Enforcement", "description": "The scalloped hammerhead is listed on CITES Appendix II, but trade continues illegally. Contact your government representatives to push for stronger enforcement and expanded trade restrictions.", "link": "https://cites.org/eng/app/appendices.php" },
+    { "title": "Support Hammerhead Conservation Research", "description": "Donate to organizations like the Shark Trust and Save Our Seas Foundation that fund population research and advocate for stronger protections for this critically endangered species.", "link": "https://www.sharktrust.org" },
+    { "title": "Choose Sustainable Seafood", "description": "Bycatch in tuna and swordfish fisheries is the second major driver of decline. Use the Monterey Bay Aquarium Seafood Watch to avoid seafood caught with methods that incidentally kill hammerheads.", "link": "https://www.seafoodwatch.org" },
+    { "title": "Protect Coastal Nursery Habitats", "description": "Support organizations and policies that protect mangroves, estuaries, and coastal bays — the nursery areas juvenile hammerheads depend on. Coastal habitat loss is an underappreciated threat to recovery.", "link": null }
+  ]
+}

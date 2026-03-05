@@ -1,0 +1,101 @@
+{
+  "id": "bull-shark",
+  "lastUpdated": "2024-10-28",
+  "emoji": "🦈",
+  "commonName": "Bull Shark",
+  "scientificName": "Carcharhinus leucas",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum":  "Chordata",
+    "class":   "Chondrichthyes",
+    "order":   "Carcharhiniformes",
+    "family":  "Carcharhinidae",
+    "genus":   "Carcharhinus",
+    "species": "C. leucas"
+  },
+  "statusLabel": "Near Threatened",
+  "lifePercent": 72,
+  "habitatTypes": ["coastal", "freshwater"],
+  "dietType": "carnivore",
+  "geographicRegions": ["tropical"],
+  "tags": ["solitary", "bycatch"],
+  "photos": ["projects/shark-populations/images/bull_shark/bull_shark1.png"],
+  "funFact": "Bull sharks can survive in both salt and fresh water, and have been found more than 2,500 miles up the Amazon River — far from any ocean.",
+  "description": "Bull sharks are among the most adaptable sharks on Earth, capable of osmoregulating between salt and fresh water. This brings them into frequent contact with humans in rivers and shallow coastal bays. They are considered one of the most dangerous sharks, not because they target people, but because of this habitat overlap.",
+  "habitat": "Tropical and subtropical coastal waters, river mouths, estuaries, and freshwater river systems worldwide",
+  "diet": "Fish, rays, sea turtles, dolphins, birds, and other sharks",
+  "size": "Up to 3.4 m (11 ft); females larger",
+  "vitalSigns": [
+    { "label": "Estimated Population",   "value": "Unknown — no reliable global estimate; declining in many regions",                                  "glance": true },
+    { "label": "Lifespan",               "value": "~16–25 years",                                                                                       "glance": true },
+    { "label": "Max Length",             "value": "3.4 m (11 ft); females larger",          "metric": "3.4 m",          "imperial": "11 ft",               "glance": true },
+    { "label": "Max Weight",             "value": "~316 kg (~697 lbs)",                      "metric": "~316 kg",        "imperial": "~697 lbs",            "glance": true },
+    { "label": "Reproductive Rate",      "value": "1–13 pups per litter; 10–11 month gestation; biennial cycle" },
+    { "label": "Age at Maturity",        "value": "~6–8 years (males); ~10 years (females)" },
+    { "label": "Top Speed",              "value": "~40 km/h (~25 mph) in bursts",            "metric": "~40 km/h",       "imperial": "~25 mph",             "glance": true },
+    { "label": "Ecological Role",        "value": "Apex Predator",                                                                                      "glance": true },
+    { "label": "Diet",                   "value": "Fish, rays, sea turtles, dolphins, birds, and other sharks" },
+    { "label": "Population Growth Rate", "value": "Low — biennial reproduction limits recovery speed" },
+    { "label": "Key Adaptations",        "value": "Unique osmoregulation via kidneys and rectal gland; can survive in freshwater for years — the only large shark to do so" }
+  ],
+  "habitatImage": "projects/shark-populations/images/bull_shark/bull_shark_habitat.png",
+  "statusHistory": [
+    { "year": 1985, "status": "Data Deficient" },
+    { "year": 2009, "status": "Near Threatened" }
+  ],
+  "populationTrend": [
+    { "year": 1985, "value": 2000000 },
+    { "year": 1993, "value": 1750000 },
+    { "year": 2000, "value": 1500000 },
+    { "year": 2008, "value": 1250000 },
+    { "year": 2015, "value": 1080000 },
+    { "year": 2022, "value": 950000 }
+  ],
+  "populationTrendMeta": {
+    "confidence": "rough",
+    "note": "No direct census exists. Scale derived from exploitation reasoning: bull sharks are heavily fished across tropical coasts and rivers; a population of only ~100k could not sustain observed catch pressure without collapsing. The Near Threatened (not Endangered) IUCN status implies a population in the low millions. Values show ~52% decline since the 1980s, consistent with the NT/approaching-Vulnerable threshold."
+  },
+  "preyDeclineRegions": [
+    { "name": "SE Asia",           "severity": "critical", "note": "Riverine and coastal prey severely depleted by artisanal and commercial overfishing" },
+    { "name": "Africa (W. Coast)", "severity": "high",     "note": "Estuarine fish and ray stocks depleted by artisanal overfishing" },
+    { "name": "Gulf of Mexico",    "severity": "high",     "note": "Coastal fish and ray populations under heavy longline and net pressure" },
+    { "name": "Caribbean",         "severity": "medium",   "note": "Reef fish and coastal prey declining from overfishing" },
+    { "name": "S. America",        "severity": "medium",   "note": "Freshwater fish stocks depleted by overfishing and riverine habitat loss" },
+    { "name": "Australia",         "severity": "low",      "note": "Coastal prey under moderate pressure; some managed fisheries" }
+  ],
+  "fishingPressureRegions": [
+    { "name": "SE Asia",           "severity": "critical", "note": "Heavy targeted fishing for meat and fins; dense artisanal gillnet networks in river mouths" },
+    { "name": "Africa (W. Coast)", "severity": "high",     "note": "Gillnet and longline bycatch in coastal and estuarine fisheries" },
+    { "name": "Gulf of Mexico",    "severity": "high",     "note": "Coastal gillnet bycatch; targeted fishing near river mouths" },
+    { "name": "S. America",        "severity": "medium",   "note": "River-based fishing pressure; some targeted take for local markets" },
+    { "name": "Caribbean",         "severity": "medium",   "note": "Coastal bycatch; some targeted fishing in less regulated waters" },
+    { "name": "Australia",         "severity": "low",      "note": "Shark nets and drum lines; bycatch in managed coastal fisheries" }
+  ],
+  "healthMetrics": [
+    { "label": "IUCN Status",         "value": "Near Threatened",                                         "trend": "down"   },
+    { "label": "Population Trend",    "value": "Decreasing — declining across coastal and riverine ranges", "trend": "down"  },
+    { "label": "Habitat Quality",     "value": "Degraded — estuarine nurseries impacted by dams, runoff, and development", "trend": "down" },
+    { "label": "Prey Availability",   "value": "Moderate — generalist diet provides some resilience",      "trend": null     },
+    { "label": "Fishing Pressure",    "value": "High — targeted for meat and fins; heavy coastal bycatch", "trend": "down"   },
+    { "label": "Protection Coverage", "value": "Minimal — limited dedicated protections; some CITES coverage", "trend": "stable",
+      "links": [
+        { "label": "CITES Listing", "url": "https://cites.org/eng/app/appendices.php" },
+        { "label": "IUCN Red List", "url": "https://www.iucnredlist.org/species/39372/10187913" },
+        { "label": "Shark Trust",   "url": "https://www.sharktrust.org" }
+      ]
+    }
+  ],
+  "threats": [
+    { "name": "Targeted Fishing",       "severity": "high",   "description": "Heavily fished for meat, fins, and liver oil in tropical and subtropical markets. Shallow coastal and riverine habitat makes them easy to intercept with nets and longlines." },
+    { "name": "Freshwater Habitat Loss", "severity": "high",  "description": "Dams block river access to nursery areas, while agricultural runoff and urban pollution degrade water quality throughout their freshwater range. Bull sharks depend on low-salinity estuaries to give birth." },
+    { "name": "Water Quality Degradation", "severity": "medium", "description": "Chemical pollutants and heavy metals accumulate in coastal and riverine systems where bull sharks forage and pup, affecting juvenile survival and reproductive success." },
+    { "name": "Bycatch",               "severity": "medium",  "description": "Incidentally caught in coastal gillnets and longlines targeting other species. Coastal development that concentrates fishing effort near river mouths compounds this pressure." }
+  ],
+  "actionItems": [
+    { "title": "Advocate for River and Estuarine Habitat Protection", "description": "Bull sharks need low-salinity estuaries and river systems to give birth and raise pups. Support policies that limit dam construction, reduce agricultural runoff, and protect mangrove and estuarine ecosystems.", "link": null },
+    { "title": "Support Shark Finning Bans and Enforcement", "description": "Bull shark fins are commercially valuable and targeted across the tropics. Support national and international legislation banning the shark fin trade and pushing for genuine enforcement in SE Asia and West Africa.", "link": null },
+    { "title": "Advocate for Clean Water Legislation", "description": "Chemical pollutants and heavy metals accumulate in coastal and riverine systems where bull sharks live and pup. Support clean water policy and corporate accountability for industrial discharge into coastal waterways.", "link": null },
+    { "title": "Choose Sustainable Seafood", "description": "Coastal gillnet and longline bycatch is a significant source of bull shark mortality. Use the Monterey Bay Aquarium Seafood Watch guide to avoid seafood caught with methods that incidentally kill bull sharks.", "link": "https://www.seafoodwatch.org" },
+    { "title": "Challenge Fear-Based Narratives", "description": "Bull sharks' reputation as uniquely dangerous is largely a function of habitat overlap with humans, not inherent aggression. Sharing science-based information about bull shark ecology builds public support for their conservation.", "link": null }
+  ]
+}

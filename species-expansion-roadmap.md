@@ -124,7 +124,7 @@ What stays manual (automation can't populate these):
 - Anything IUCN doesn't have structured data for
 
 **Checklist:**
-- [ ] Migrate the 5 existing species from `data.js` → individual `.json` files + `config.json`
+- [x] Migrate the 5 existing species from `data.js` → individual `.json` files + `config.json`
 - [ ] Write `build-data.js` and verify the generated `data.js` is identical to the current hand-authored one
 - [ ] Write `generate-stubs.js` with IUCN API field mapping
 - [ ] Test stub generation on a known species and QA the output against `data-schema.md`

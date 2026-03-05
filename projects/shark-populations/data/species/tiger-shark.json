@@ -1,0 +1,101 @@
+{
+  "id": "tiger-shark",
+  "lastUpdated": "2025-02-14",
+  "emoji": "🦈",
+  "commonName": "Tiger Shark",
+  "scientificName": "Galeocerdo cuvier",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum":  "Chordata",
+    "class":   "Chondrichthyes",
+    "order":   "Carcharhiniformes",
+    "family":  "Carcharhinidae",
+    "genus":   "Galeocerdo",
+    "species": "G. cuvier"
+  },
+  "statusLabel": "Near Threatened",
+  "lifePercent": 68,
+  "habitatTypes": ["ocean", "reef"],
+  "dietType": "omnivore",
+  "geographicRegions": ["tropical", "temperate"],
+  "tags": ["solitary", "nocturnal", "finning"],
+  "photos": ["projects/shark-populations/images/tiger_shark/tiger_shark1.png"],
+  "funFact": "Tiger sharks have serrated, cockscomb-shaped teeth that can cut through sea turtle shells — one of the only predators capable of cracking that armor.",
+  "description": "Tiger sharks are apex predators and critically important for maintaining the health of seagrass meadows and coral reef ecosystems. By preying on sea turtles, they prevent overgrazing of seagrass beds. They are notably indiscriminate feeders — their stomachs have been found to contain license plates, tires, and boat parts.",
+  "habitat": "Tropical and subtropical waters worldwide; coastal, reef, and open ocean environments",
+  "diet": "Sea turtles, fish, marine mammals, seabirds, rays, and almost any other prey item",
+  "size": "Up to 5.5 m (18 ft)",
+  "vitalSigns": [
+    { "label": "Estimated Population",   "value": "Unknown — no reliable global estimate; declining",                                                   "glance": true },
+    { "label": "Lifespan",               "value": "~27 years",                                                                                          "glance": true },
+    { "label": "Max Length",             "value": "5.5 m (18 ft); females larger",          "metric": "5.5 m",          "imperial": "18 ft",               "glance": true },
+    { "label": "Max Weight",             "value": "~635 kg (~1,400 lbs)",                    "metric": "~635 kg",        "imperial": "~1,400 lbs",          "glance": true },
+    { "label": "Reproductive Rate",      "value": "10–82 pups per litter (avg ~30–35); ~14–16 month gestation" },
+    { "label": "Age at Maturity",        "value": "~7–8 years" },
+    { "label": "Top Speed",              "value": "~32 km/h (~20 mph) in bursts",            "metric": "~32 km/h",       "imperial": "~20 mph",             "glance": true },
+    { "label": "Ecological Role",        "value": "Apex Predator / Ecosystem Engineer",                                                                 "glance": true },
+    { "label": "Diet",                   "value": "Sea turtles, fish, marine mammals, seabirds, rays — one of the least selective feeders of any shark" },
+    { "label": "Population Growth Rate", "value": "Low — declining across Indo-Pacific and Atlantic" },
+    { "label": "Key Senses",             "value": "Highly sensitive Ampullae of Lorenzini and lateral line; olfactory lobes among largest relative to brain size of any shark" }
+  ],
+  "habitatImage": "projects/shark-populations/images/tiger_shark/tiger_shark_habitat.png",
+  "statusHistory": [
+    { "year": 1985, "status": "Data Deficient" },
+    { "year": 2009, "status": "Near Threatened" }
+  ],
+  "populationTrend": [
+    { "year": 1985, "value": 3500000 },
+    { "year": 1993, "value": 3100000 },
+    { "year": 2000, "value": 2700000 },
+    { "year": 2008, "value": 2300000 },
+    { "year": 2015, "value": 2000000 },
+    { "year": 2022, "value": 1750000 }
+  ],
+  "populationTrendMeta": {
+    "confidence": "rough",
+    "note": "No direct census exists. Scale derived from exploitation reasoning: tiger shark r ≈ 0.07/yr implies a maximum sustainable harvest of ~3.5% of population. Estimated annual removal of 100–300k individuals implies a minimum population of ~3–8M. The Near Threatened (not Endangered) IUCN status corroborates a large but declining population. Values show ~50% decline since the 1980s, consistent with NT-bordering-Vulnerable status."
+  },
+  "preyDeclineRegions": [
+    { "name": "Coral Triangle",  "severity": "high",     "note": "Sea turtle and reef fish prey severely depleted by overfishing and habitat loss" },
+    { "name": "Caribbean",       "severity": "high",     "note": "Sea turtle populations reduced; reef fish stocks declining" },
+    { "name": "Indo-Pacific",    "severity": "high",     "note": "Marine mammal and sea turtle prey under broad commercial pressure" },
+    { "name": "Gulf of Mexico",  "severity": "medium",   "note": "Prey species under fishing pressure; some seagrass habitat loss" },
+    { "name": "Hawaii",          "severity": "medium",   "note": "Sea turtle recovery ongoing but fragile; some prey competition" },
+    { "name": "S. Atlantic",     "severity": "low",      "note": "Broader prey base more stable in open pelagic waters" }
+  ],
+  "fishingPressureRegions": [
+    { "name": "Indo-Pacific",    "severity": "critical", "note": "Finning operations widespread; heavy longline and gillnet bycatch across ocean basins" },
+    { "name": "Australia",       "severity": "critical", "note": "Government drum line and shark net programs kill hundreds annually" },
+    { "name": "Hawaii",          "severity": "high",     "note": "State-sanctioned culling operations; targeted fishing and longline bycatch" },
+    { "name": "Coral Triangle",  "severity": "high",     "note": "Finning and bycatch in tuna and billfish longline fisheries" },
+    { "name": "Caribbean",       "severity": "medium",   "note": "Some targeted fishing for fins and meat; pelagic longline bycatch" },
+    { "name": "Gulf of Mexico",  "severity": "medium",   "note": "Longline bycatch in pelagic fisheries; some directed fishing" }
+  ],
+  "healthMetrics": [
+    { "label": "IUCN Status",         "value": "Near Threatened",                                         "trend": "stable" },
+    { "label": "Population Trend",    "value": "Decreasing — culling programs and fishing reducing populations", "trend": "down" },
+    { "label": "Habitat Quality",     "value": "Moderate — wide-ranging behavior buffers localized reef and coastal loss", "trend": null },
+    { "label": "Prey Availability",   "value": "Declining in reef and coastal zones; broad diet provides resilience", "trend": "down" },
+    { "label": "Fishing Pressure",    "value": "High — targeted finning, bycatch, and lethal culling programs", "trend": "down" },
+    { "label": "Protection Coverage", "value": "Minimal — few targeted protections; CITES Appendix II",    "trend": "stable",
+      "links": [
+        { "label": "CITES Listing", "url": "https://cites.org/eng/app/appendices.php" },
+        { "label": "IUCN Red List", "url": "https://www.iucnredlist.org/species/39378/2913541" },
+        { "label": "Shark Trust",   "url": "https://www.sharktrust.org" }
+      ]
+    }
+  ],
+  "threats": [
+    { "name": "Targeted Fishing",       "severity": "high",   "description": "Fins are among the most valuable in the shark fin trade, and liver oil is used in cosmetics and supplements. Demand drives directed fishing across the Indo-Pacific and Atlantic." },
+    { "name": "Bycatch",               "severity": "high",   "description": "Frequently caught incidentally in pelagic longlines, gillnets, and drum lines targeting tuna and billfish. Wide-ranging movements across ocean basins increase exposure to diverse fisheries." },
+    { "name": "Lethal Culling Programs", "severity": "high",  "description": "Government-sanctioned drum line and shark net programs in Australia and Hawaii kill hundreds of tiger sharks annually to reduce perceived risk to swimmers, with limited evidence of effectiveness." },
+    { "name": "Habitat Pressures",     "severity": "low",    "description": "Coastal development and reef degradation reduce prey availability in nearshore habitats, but wide-ranging oceanic behavior provides some buffer against localized habitat loss." }
+  ],
+  "actionItems": [
+    { "title": "Oppose Lethal Shark Mitigation Programs", "description": "Government drum line and shark net programs in Australia and Hawaii kill hundreds of tiger sharks annually with limited evidence of effectiveness. Advocate for SMART drumlines, drones, and other non-lethal alternatives that protect both swimmers and sharks.", "link": null },
+    { "title": "Oppose Shark Finning and the Fin Trade", "description": "Tiger shark fins are highly valued globally. Refusing to buy or consume shark fin products and supporting fin ban legislation reduces the financial incentive driving targeted fishing of this species.", "link": null },
+    { "title": "Support Shark Conservation Organizations", "description": "Donate to or follow the work of Shark Trust, Save Our Seas Foundation, and Ocean Conservancy — groups that fund research, advocate against culling programs, and push for stronger international protections.", "link": "https://www.sharktrust.org" },
+    { "title": "Protect Sea Turtle Populations", "description": "Tiger sharks regulate sea turtle populations, which in turn protect seagrass meadows critical to coastal ocean health. Supporting sea turtle conservation — nesting beach protections, bycatch reduction — keeps this ecosystem intact.", "link": null },
+    { "title": "Choose Sustainable Seafood", "description": "Tiger sharks are frequently caught as bycatch in pelagic longlines targeting tuna and billfish. Use the Monterey Bay Aquarium Seafood Watch to choose seafood caught with lower bycatch rates.", "link": "https://www.seafoodwatch.org" }
+  ]
+}
