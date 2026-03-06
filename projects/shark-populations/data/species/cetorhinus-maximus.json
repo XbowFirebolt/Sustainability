@@ -15,23 +15,57 @@
   },
   "statusLabel": "Endangered",
   "lifePercent": 38,
-  "habitatTypes": [
-    "ocean",
-    "coastal",
-    "pelagic"
-  ],
+  "habitatTypes": ["ocean", "coastal", "pelagic"],
   "dietType": "filter-feeder",
-  "geographicRegions": [
-    "temperate",
-    "global"
-  ],
-  "tags": [
-    "migratory",
-    "solitary",
-    "keystone",
-    "bycatch"
-  ],
+  "geographicRegions": ["temperate", "global"],
+  "tags": ["migratory", "solitary", "keystone", "bycatch"],
   "description": "The basking shark is the world's second-largest fish, reaching up to 12 m (40 ft), and feeds exclusively by passive filter-feeding on zooplankton as it swims slowly with its enormous mouth agape. Found in cold to warm temperate seas worldwide, it undertakes long seasonal migrations following plankton blooms. Despite its massive size, it is harmless to humans.",
   "funFact": "A basking shark's mouth can open over 1 m (3.3 ft) wide, and it filters approximately 2,000 tonnes of seawater per hour to collect tiny zooplankton — it must keep swimming continuously to maintain the flow of water through its gill rakers.",
-  "habitat": "Cold to warm temperate coastal and oceanic waters worldwide. Often seen near the surface in coastal areas during summer plankton blooms; suspected to overwinter in deep offshore waters. Most commonly observed in the North Atlantic and North Pacific."
+  "habitat": "Cold to warm temperate coastal and oceanic waters worldwide. Often seen near the surface in coastal areas during summer plankton blooms; suspected to overwinter in deep offshore waters. Most commonly observed in the North Atlantic and North Pacific.",
+  "diet": "Feeds exclusively on zooplankton — primarily copepods, fish eggs, small crustaceans, and invertebrate larvae — by passive ram filter-feeding. Makes no active pursuit of prey; its enormous gill rakers strain plankton from the water as it swims open-mouthed.",
+  "size": "Typically 6–9 m (20–30 ft); max reliably recorded ~12 m (39 ft). The second-largest fish in the ocean, after the whale shark.",
+  "vitalSigns": [
+    { "label": "Estimated Population",   "value": "Unknown — no reliable global estimate",                                 "glance": true },
+    { "label": "Lifespan",               "value": "Estimated up to 50 years",                                             "glance": true },
+    { "label": "Max Length",             "value": "~12 m (39 ft)",              "metric": "~12 m",    "imperial": "~39 ft",  "glance": true },
+    { "label": "Max Weight",             "value": "~4,000–5,000 kg (~8,800–11,000 lbs)", "metric": "~4,000–5,000 kg", "imperial": "~8,800–11,000 lbs", "glance": true },
+    { "label": "Reproductive Rate",      "value": "~6 pups per litter; estimated 2.6–3.5 year gestation (one of the longest of any vertebrate)" },
+    { "label": "Age at Maturity",        "value": "Estimated 12–20 years (females toward the upper end)" },
+    { "label": "Top Speed",              "value": "~5 km/h (~3 mph) while filter-feeding", "metric": "~5 km/h", "imperial": "~3 mph",            "glance": true },
+    { "label": "Ecological Role",        "value": "Filter Feeder / Keystone Species",                                                            "glance": true },
+    { "label": "Diet",                   "value": "Zooplankton, copepods, fish eggs, and small crustaceans" },
+    { "label": "Population Growth Rate", "value": "Extremely low — very long gestation and small litters" },
+    { "label": "Key Adaptations",        "value": "Gill rakers filter ~2,000 tonnes of water/hour; massive oil-rich liver provides buoyancy; mouth gape exceeds 1 m wide" }
+  ],
+  "threats": [
+    { "name": "Historical Targeted Hunting", "severity": "high",     "description": "Heavily hunted through the mid-20th century for liver oil (used in lubricants, cosmetics, and vitamins), fins, and fishmeal. Fisheries in British Columbia, Norway, and Ireland collapsed by the 1970s–80s." },
+    { "name": "Bycatch",                     "severity": "high",     "description": "Slow-moving surface behavior makes basking sharks vulnerable to entanglement in pelagic trawls, gill nets, and set gear. High bycatch mortality has been documented throughout the North Atlantic." },
+    { "name": "Slow Recovery",               "severity": "high",     "description": "Extremely low reproductive rate — with one of the longest gestations of any shark and small litter sizes — means depleted populations recover on a timescale of decades, not years." },
+    { "name": "Vessel Strikes",              "severity": "medium",   "description": "Extended time spent at the surface filter-feeding makes basking sharks vulnerable to boat collisions. Ship strikes are a documented cause of mortality in coastal shipping lanes." },
+    { "name": "Climate Change",              "severity": "medium",   "description": "Dependent on zooplankton blooms in cold, nutrient-rich waters. Ocean warming and acidification threaten plankton productivity and may reduce food availability in core habitats." }
+  ],
+  "actionItems": [
+    { "title": "Report Basking Shark Sightings",         "description": "Contribute to citizen science by reporting sightings to the Basking Shark Scotland or local Wildlife Trust databases. Sighting records are essential for tracking population recovery and movement.", "link": null },
+    { "title": "Support Marine Protected Areas",         "description": "Advocate for MPAs in key aggregation sites such as the Hebrides, Irish Sea, and Bay of Biscay where basking sharks congregate seasonally and are most vulnerable to disturbance and bycatch.", "link": null },
+    { "title": "Reduce Bycatch in Pelagic Fisheries",    "description": "Support policies requiring gear modifications and observer coverage in pelagic fisheries operating in basking shark habitat. Encourage fishing industry representatives to adopt voluntary best practices.", "link": null },
+    { "title": "Fund Basking Shark Research",            "description": "Support the Shark Trust's basking shark project and organizations using satellite tags to identify migration routes and critical habitat areas needing legal protection.", "link": "https://www.sharktrust.org" }
+  ],
+  "healthMetrics": [
+    { "label": "IUCN Status",         "value": "Endangered",                                                         "trend": "stable" },
+    { "label": "Population Trend",    "value": "Decreasing — historical fisheries caused severe depletion; recovery slow","trend": "down" },
+    { "label": "Habitat Quality",     "value": "Declining — climate-driven reduction in plankton blooms in core habitats","trend": "down" },
+    { "label": "Prey Availability",   "value": "Uncertain — zooplankton abundance variable; projected decline with warming","trend": "down"},
+    { "label": "Fishing Pressure",    "value": "Moderate — targeted fisheries mostly ended; bycatch and vessel strikes persist","trend": "up"},
+    { "label": "Protection Coverage", "value": "Partial — CITES Appendix II; protected in UK, US, EU; enforcement variable","trend": "up",
+      "links": [
+        { "label": "CITES Listing",  "url": "https://cites.org/eng/app/appendices.php" },
+        { "label": "IUCN Red List",  "url": "https://www.iucnredlist.org/species/4293/214397499" },
+        { "label": "Shark Trust",    "url": "https://www.sharktrust.org" }
+      ]
+    }
+  ],
+  "statusHistory": [
+    { "year": 2005, "status": "Vulnerable" },
+    { "year": 2019, "status": "Endangered" }
+  ]
 }

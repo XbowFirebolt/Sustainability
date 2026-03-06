@@ -25,8 +25,8 @@ Not all 500+ species need the same depth. Define three tiers so every species ca
 | Tier | What's included | Target count |
 |---|---|---|
 | **Stub** | id, commonName, scientificName, statusLabel, lifePercent, habitatTypes, dietType, geographicRegions, tags, description, funFact | 500+ |
-| **Standard** | Stub + vitalSigns, threats, actionItems, diet, habitat, size | 50–100 priority species |
-| **Full** | Standard + photos, physicalScaleImage, habitatImage, populationTrend, preyDeclineRegions, fishingPressureRegions, healthMetrics | 10–20 flagship species |
+| **Standard** | Stub + vitalSigns, threats, actionItems, diet, habitat, size, healthMetrics | 50–100 priority species |
+| **Full** | Standard + photos, physicalScaleImage, habitatImage, populationTrend, preyDeclineRegions, fishingPressureRegions | 10–20 flagship species |
 
 A stub species renders a complete, valid card in the grid and opens a working modal — it just shows an "Incomplete Data" badge (already implemented) for tabs that have no content yet.
 

@@ -15,23 +15,56 @@
   },
   "statusLabel": "Endangered",
   "lifePercent": 35,
-  "habitatTypes": [
-    "ocean",
-    "pelagic"
-  ],
+  "habitatTypes": ["ocean", "pelagic"],
   "dietType": "apex-predator",
-  "geographicRegions": [
-    "tropical",
-    "temperate",
-    "global"
-  ],
-  "tags": [
-    "migratory",
-    "solitary",
-    "bycatch",
-    "finning"
-  ],
+  "geographicRegions": ["tropical", "temperate", "global"],
+  "tags": ["migratory", "solitary", "bycatch", "finning"],
   "description": "The shortfin mako is the world's fastest shark, capable of sustained speeds and spectacular leaps out of the water when hooked or pursuing prey. Found in open ocean worldwide in tropical and temperate seas, it is a highly migratory apex predator. Despite its speed and power, it has suffered steep population declines from bycatch and targeted fishing for its meat and fins.",
   "funFact": "The shortfin mako can reach burst speeds of up to 45 mph (72 km/h) and has been recorded leaping over 6 m (20 ft) into the air — making it not only the fastest shark but one of the most acrobatic fish in the ocean.",
-  "habitat": "Open ocean in tropical and temperate seas worldwide, from the surface to depths of at least 500 m. A highly pelagic species that rarely enters inshore waters; prefers surface temperatures of 17–22°C but can range into cooler regions."
+  "habitat": "Open ocean in tropical and temperate seas worldwide, from the surface to depths of at least 500 m. A highly pelagic species that rarely enters inshore waters; prefers surface temperatures of 17–22°C but can range into cooler regions.",
+  "diet": "An aggressive apex predator feeding primarily on fast-moving bony fish — especially bluefish, swordfish, and tuna — as well as squid and other sharks. Its speed and needle-like teeth are specifically adapted for seizing slippery, high-velocity prey.",
+  "size": "Typically 1.8–3.2 m (6–10.5 ft); max confirmed ~4.45 m (14.6 ft). Females grow significantly larger than males.",
+  "vitalSigns": [
+    { "label": "Estimated Population",   "value": "~1.5 million (2019, highly uncertain)",                                "glance": true },
+    { "label": "Lifespan",               "value": "Up to 32 years",                                                       "glance": true },
+    { "label": "Max Length",             "value": "~4.45 m (14.6 ft)",          "metric": "~4.45 m", "imperial": "~14.6 ft", "glance": true },
+    { "label": "Max Weight",             "value": "~570 kg (~1,260 lbs)",        "metric": "~570 kg", "imperial": "~1,260 lbs", "glance": true },
+    { "label": "Reproductive Rate",      "value": "4–25 pups per litter; ~18-month gestation" },
+    { "label": "Age at Maturity",        "value": "7–9 years (males), 18–21 years (females)" },
+    { "label": "Top Speed",              "value": "~72 km/h (~45 mph) in bursts", "metric": "~72 km/h", "imperial": "~45 mph", "glance": true },
+    { "label": "Ecological Role",        "value": "Apex Predator",                                                         "glance": true },
+    { "label": "Diet",                   "value": "Fast-moving bony fish (bluefish, swordfish, tuna), squid, and other sharks" },
+    { "label": "Population Growth Rate", "value": "Very low — females don't mature until ~18–21 years of age" },
+    { "label": "Key Adaptations",        "value": "Regional endothermy (warm-bloodedness); crescent-shaped lunate tail for efficient high-speed propulsion; counter-current heat exchange in muscles" }
+  ],
+  "threats": [
+    { "name": "Bycatch",                       "severity": "critical", "description": "The leading cause of mortality. Makos are among the most commonly caught sharks in Atlantic and Pacific pelagic longline fisheries targeting tuna and swordfish. Vast quantities have been removed from ocean basins since the 1950s." },
+    { "name": "Targeted Fishing",              "severity": "high",     "description": "Actively targeted for its meat (sometimes sold as 'swordfish' or 'flake' in markets) and fins. ICCAT imposed a no-retention measure for North Atlantic mako in 2019, but compliance and enforcement remain inconsistent." },
+    { "name": "Extremely Late Female Maturity","severity": "high",     "description": "Female shortfin makos don't reproduce until around 18–21 years old — one of the latest maturation ages of any shark species. This makes recovery from overfishing extraordinarily slow." },
+    { "name": "Climate Change",                "severity": "medium",   "description": "Shifts in prey distributions and increasing sea surface temperatures alter migration patterns and compress the thermal range available to a species adapted to specific temperature bands." }
+  ],
+  "actionItems": [
+    { "title": "Support North Atlantic No-Retention Rules", "description": "Advocate for full compliance with ICCAT's mako no-retention measures in the North Atlantic, and for similar protections to be extended to all ocean basins.", "link": null },
+    { "title": "Choose Sustainable Seafood",               "description": "Avoid purchasing fish labeled generically as 'shark steak' or 'flake'. Use the Seafood Watch guide to identify sustainably caught alternatives to shark meat.", "link": "https://www.seafoodwatch.org" },
+    { "title": "Support Mako Research and Tagging",        "description": "Donate to organizations funding longline observer programs and satellite tagging research that tracks mako migrations and measures fishing mortality rates.", "link": "https://www.sharktrust.org" },
+    { "title": "Advocate for CITES Appendix II Enforcement","description": "Shortfin makos are listed on CITES Appendix II. Support stronger trade documentation requirements and enforcement to stop unreported landings and illegal fin trading.", "link": "https://cites.org" }
+  ],
+  "healthMetrics": [
+    { "label": "IUCN Status",         "value": "Endangered",                                                         "trend": "stable" },
+    { "label": "Population Trend",    "value": "Decreasing — North Atlantic population severely overfished",          "trend": "down"   },
+    { "label": "Habitat Quality",     "value": "Moderate — open ocean less directly impacted; prey distributions shifting","trend": "down" },
+    { "label": "Prey Availability",   "value": "Declining — bluefish, swordfish, and tuna under heavy fishing pressure","trend": "down"  },
+    { "label": "Fishing Pressure",    "value": "Critical — among the most common bycatch shark in pelagic longlines globally","trend": "down"},
+    { "label": "Protection Coverage", "value": "Partial — CITES Appendix II; North Atlantic no-retention (ICCAT 2019); Pacific/Indian Ocean unprotected","trend": "up",
+      "links": [
+        { "label": "CITES Listing",  "url": "https://cites.org/eng/app/appendices.php" },
+        { "label": "IUCN Red List",  "url": "https://www.iucnredlist.org/species/42005/3351001" },
+        { "label": "Shark Trust",    "url": "https://www.sharktrust.org" }
+      ]
+    }
+  ],
+  "statusHistory": [
+    { "year": 2007, "status": "Near Threatened" },
+    { "year": 2019, "status": "Endangered" }
+  ]
 }

@@ -72,6 +72,7 @@ Fills the Overview tab in the modal with meaningful content. Include these for t
 | `threats` | Threat[] | no | Threat list shown in the Threats tab. See below. |
 | `actionItems` | ActionItem[] | no | Calls to action shown in the Take Action tab. See below. |
 | `statusHistory` | StatusEntry[] | no | Chronological IUCN status history. Shown as a timeline. See below. |
+| `healthMetrics` | HealthMetric[] | no | Summary metrics shown in the Health tab (IUCN status, population trend, habitat quality, etc.). See below. |
 | `photos` | string[] | no | Array of relative paths to species photos. First photo is used as the hero image. If empty or omitted, falls back to `silhouetteFallback`. |
 
 #### `Taxonomy`
@@ -150,7 +151,6 @@ Unlocks the Population, Habitat, and Pressure maps tabs. Include these for the 1
 | `populationTrendMeta` | TrendMeta | no | Confidence and source note displayed below the chart. |
 | `preyDeclineRegions` | Region[] | no | Per-region prey availability data for the pressure map. See below. |
 | `fishingPressureRegions` | Region[] | no | Per-region fishing pressure data for the pressure map. |
-| `healthMetrics` | HealthMetric[] | no | Summary metrics shown in the Health tab. See below. |
 | `physicalScaleImage` | string | no | Relative path to a size-comparison illustration. |
 | `habitatImage` | string | no | Relative path to a habitat range map image. |
 | `habitatStats` | HabitatStat[] | no | Key habitat stats shown alongside the habitat image. |
@@ -224,8 +224,8 @@ Same shape as `VitalSign` minus `glance`. Common labels: `"Global Range"`, `"Dep
 | Tier | Minimum fields | Unlocks |
 |---|---|---|
 | **Stub** | `id`, `commonName`, `scientificName`, `statusLabel`, `lifePercent`, `habitatTypes`, `dietType`, `geographicRegions`, `tags`, `description`, `funFact`, `emoji` | Grid card + modal shell with "Incomplete Data" badges |
-| **Standard** | Stub + `vitalSigns`, `threats`, `actionItems`, `statusHistory`, `habitat`, `diet`, `size` | Overview, Vitals, Threats, Take Action tabs |
-| **Full** | Standard + `photos`, `physicalScaleImage`, `habitatImage`, `habitatStats`, `populationTrend`, `populationTrendMeta`, `preyDeclineRegions`, `fishingPressureRegions`, `healthMetrics` | Population chart, Habitat map, Pressure map, Health metrics |
+| **Standard** | Stub + `vitalSigns`, `threats`, `actionItems`, `statusHistory`, `habitat`, `diet`, `size`, `healthMetrics` | Overview, Vitals, Threats, Take Action, Health tabs |
+| **Full** | Standard + `photos`, `physicalScaleImage`, `habitatImage`, `habitatStats`, `populationTrend`, `populationTrendMeta`, `preyDeclineRegions`, `fishingPressureRegions` | Population chart, Habitat map, Pressure map |
 
 ---
 

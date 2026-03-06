@@ -15,23 +15,57 @@
   },
   "statusLabel": "Critically Endangered",
   "lifePercent": 12,
-  "habitatTypes": [
-    "ocean",
-    "coastal"
-  ],
+  "habitatTypes": ["ocean", "coastal"],
   "dietType": "apex-predator",
-  "geographicRegions": [
-    "tropical",
-    "temperate"
-  ],
-  "tags": [
-    "migratory",
-    "solitary",
-    "keystone",
-    "finning",
-    "bycatch"
-  ],
+  "geographicRegions": ["tropical", "temperate"],
+  "tags": ["migratory", "solitary", "keystone", "finning", "bycatch"],
   "description": "The great hammerhead is the largest of the hammerhead sharks, reaching up to 6.1 m (20 ft), and identified by its nearly straight-edged, wide cephalofoil. It inhabits tropical and warm temperate coastal and offshore waters worldwide. As an apex predator, it plays a critical role in reef and coastal ecosystems, but it is heavily targeted by the fin trade — its large fins are among the most valuable on the market.",
   "funFact": "The great hammerhead's distinctive flat, wide head acts like a living metal detector — it sweeps it across the seafloor to detect the faint electrical fields of buried stingrays hiding in the sand, then pins them down with its head before biting.",
-  "habitat": "Coastal and offshore waters in tropical and warm temperate seas worldwide. Found over continental and insular shelves, coral reefs, and in the open ocean. Undertakes long seasonal migrations and is known to aggregate at specific reef sites."
+  "habitat": "Coastal and offshore waters in tropical and warm temperate seas worldwide. Found over continental and insular shelves, coral reefs, and in the open ocean. Undertakes long seasonal migrations and is known to aggregate at specific reef sites.",
+  "diet": "Stingrays are the preferred prey — the hammerhead uses its wide cephalofoil to electromagnetically detect rays buried in sand, then pins them to the seafloor before biting. Also eats bony fish, squid, octopus, crustaceans, and other sharks.",
+  "size": "Typically 3.5–4.5 m (11.5–14.8 ft); max confirmed 6.1 m (20 ft). Females are generally larger than males.",
+  "vitalSigns": [
+    { "label": "Estimated Population",   "value": "Unknown — critically depleted globally",                               "glance": true },
+    { "label": "Lifespan",               "value": "Up to 44 years",                                                       "glance": true },
+    { "label": "Max Length",             "value": "6.1 m (20 ft)",              "metric": "6.1 m",    "imperial": "20 ft",   "glance": true },
+    { "label": "Max Weight",             "value": "~580 kg (~1,280 lbs)",        "metric": "~580 kg",  "imperial": "~1,280 lbs", "glance": true },
+    { "label": "Reproductive Rate",      "value": "6–50 pups per litter (avg ~20); ~11-month gestation" },
+    { "label": "Age at Maturity",        "value": "~9–10 years (males); up to ~15 years (females)" },
+    { "label": "Top Speed",              "value": "~25 km/h (~15 mph) estimated", "metric": "~25 km/h", "imperial": "~15 mph",   "glance": true },
+    { "label": "Ecological Role",        "value": "Apex Predator",                                                                           "glance": true },
+    { "label": "Diet",                   "value": "Stingrays, bony fish, squid, crustaceans, and other sharks" },
+    { "label": "Population Growth Rate", "value": "Very low — long generation time and late maturity" },
+    { "label": "Key Adaptations",        "value": "Wide cephalofoil densely packed with electroreceptors for detecting buried prey; broad head provides lift and enhanced maneuverability" }
+  ],
+  "threats": [
+    { "name": "Shark Fin Trade",  "severity": "critical", "description": "The great hammerhead's large, high-quality fins are among the most valuable in the shark fin trade, making it a prized target. Its fins command premium prices and are identifiable by shape, making enforcement of bans difficult." },
+    { "name": "Bycatch",          "severity": "critical", "description": "Frequently caught in pelagic and coastal longlines, gillnets, and trawls. High post-release mortality due to physiological stress means even released individuals rarely survive." },
+    { "name": "Slow Reproduction","severity": "high",     "description": "Long lifespan and late maturity mean the population cannot rebound quickly from fishing pressure. Even modest harvest levels can drive ongoing decline." },
+    { "name": "Habitat Loss",     "severity": "medium",   "description": "Coastal development, coral reef degradation, and pollution reduce the quality of critical coastal and reef habitats used for hunting and pupping." },
+    { "name": "Climate Change",   "severity": "medium",   "description": "Warming oceans and coral bleaching threaten reef ecosystems central to hammerhead foraging. Range shifts into previously cooler waters may increase encounters with fishing gear." }
+  ],
+  "actionItems": [
+    { "title": "Oppose the Shark Fin Trade",      "description": "Refuse shark fin products and advocate for comprehensive fin bans. Great hammerhead fins are among the most traded — consumer demand is a primary driver of targeting.", "link": null },
+    { "title": "Support CITES Enforcement",       "description": "The great hammerhead is listed on CITES Appendix II, requiring trade permits. Advocate for stronger enforcement and report suspected illegal fin shipments to wildlife authorities.", "link": "https://cites.org" },
+    { "title": "Protect Coastal Reef Habitats",   "description": "Support marine protected areas covering coral reefs and coastal zones. Healthy reef ecosystems are critical hunting and pupping grounds for great hammerheads.", "link": null },
+    { "title": "Fund Hammerhead Research",        "description": "Support organizations like Save Our Seas Foundation and Shark Trust that fund tagging studies to track hammerhead migrations and assess population status.", "link": "https://saveourseas.com" }
+  ],
+  "healthMetrics": [
+    { "label": "IUCN Status",         "value": "Critically Endangered",                                              "trend": "stable" },
+    { "label": "Population Trend",    "value": "Decreasing — global population severely depleted by fin trade",      "trend": "down"   },
+    { "label": "Habitat Quality",     "value": "Degraded — coral bleaching and coastal development reduce key habitat","trend": "down"  },
+    { "label": "Prey Availability",   "value": "Declining — stingray and reef fish populations reduced by overfishing","trend": "down"  },
+    { "label": "Fishing Pressure",    "value": "Critical — targeted for high-value fins; heavy bycatch in longlines", "trend": "down"   },
+    { "label": "Protection Coverage", "value": "Partial — CITES Appendix II; some national bans; high-seas gaps remain","trend": "up",
+      "links": [
+        { "label": "CITES Listing",  "url": "https://cites.org/eng/app/appendices.php" },
+        { "label": "IUCN Red List",  "url": "https://www.iucnredlist.org/species/2920499/2920502" },
+        { "label": "Save Our Seas",  "url": "https://saveourseas.com" }
+      ]
+    }
+  ],
+  "statusHistory": [
+    { "year": 2007, "status": "Endangered" },
+    { "year": 2019, "status": "Critically Endangered" }
+  ]
 }

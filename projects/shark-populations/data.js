@@ -1550,7 +1550,7 @@ window.WIKI_DATA = {
     },
     {
       "id": "carcharhinus-longimanus",
-      "lastUpdated": "2026-03-05",
+      "lastUpdated": "2026-03-06",
       "emoji": "🦈",
       "commonName": "Oceanic Whitetip Shark",
       "scientificName": "Carcharhinus longimanus",
@@ -1577,11 +1577,176 @@ window.WIKI_DATA = {
       "tags": [
         "solitary",
         "keystone",
-        "bycatch"
+        "bycatch",
+        "finning"
       ],
       "description": "The oceanic whitetip shark (Carcharhinus longimanus) is a large requiem shark inhabiting the pelagic zone of tropical and warm temperate seas. It has a stocky body and iconic elongated rounded fins, with white tips. The species is typically solitary, though they may gather in large numbers at food concentrations.",
       "funFact": "Once considered one of the most abundant large ocean animals on Earth, the Oceanic Whitetip Shark has suffered a population collapse estimated at over 98% in parts of the Atlantic since the 1950s — one of the most dramatic declines of any large marine predator ever recorded.",
-      "habitat": "Found worldwide between 45°N and 43°S latitude in deep, open ocean. Prefers water temperatures above 20°C (68°F) but can range into waters as cool as 15°C (59°F). A truly pelagic shark, it rarely approaches coastlines or shallow areas."
+      "habitat": "Found worldwide between 45°N and 43°S latitude in deep, open ocean. Prefers water temperatures above 20°C (68°F) but can range into waters as cool as 15°C (59°F). A truly pelagic shark, it rarely approaches coastlines or shallow areas.",
+      "diet": "An opportunistic apex predator feeding primarily on bony fish, cephalopods (squid and octopus), and occasionally sea turtles, seabirds, and marine mammals. Known to follow pods of pilot whales and schools of tuna across the open ocean.",
+      "size": "Typically 1.8–2.9 m (6–9.5 ft); max recorded 3.9 m (12.8 ft). Females are larger than males.",
+      "vitalSigns": [
+        {
+          "label": "Estimated Population",
+          "value": "Severely depleted — no reliable global estimate",
+          "glance": true
+        },
+        {
+          "label": "Lifespan",
+          "value": "Up to 22 years",
+          "glance": true
+        },
+        {
+          "label": "Max Length",
+          "value": "3.9 m (12.8 ft)",
+          "metric": "3.9 m",
+          "imperial": "12.8 ft",
+          "glance": true
+        },
+        {
+          "label": "Max Weight",
+          "value": "~170 kg (~375 lbs)",
+          "metric": "~170 kg",
+          "imperial": "~375 lbs",
+          "glance": true
+        },
+        {
+          "label": "Reproductive Rate",
+          "value": "1–14 pups per litter; ~12-month gestation"
+        },
+        {
+          "label": "Age at Maturity",
+          "value": "~6–7 years (males), 6–9 years (females)"
+        },
+        {
+          "label": "Top Speed",
+          "value": "~35 km/h (~22 mph) estimated",
+          "metric": "~35 km/h",
+          "imperial": "~22 mph",
+          "glance": true
+        },
+        {
+          "label": "Ecological Role",
+          "value": "Apex Predator",
+          "glance": true
+        },
+        {
+          "label": "Diet",
+          "value": "Bony fish, squid, sea turtles, seabirds, marine mammals"
+        },
+        {
+          "label": "Population Growth Rate",
+          "value": "Very low — late maturity and small litter sizes"
+        },
+        {
+          "label": "Key Adaptations",
+          "value": "Highly attuned olfaction; broadly rounded pectoral fins optimized for open-ocean cruising; often followed by pilot fish associations"
+        }
+      ],
+      "threats": [
+        {
+          "name": "Bycatch",
+          "severity": "critical",
+          "description": "The primary driver of decline. Caught in enormous numbers in pelagic longlines targeting tuna and swordfish. Once the most common bycatch shark in these fisheries, it is now rarely encountered."
+        },
+        {
+          "name": "Shark Fin Trade",
+          "severity": "high",
+          "description": "Heavily targeted for the fin trade due to its large, elongated pectoral fins. Finning at sea was common before international restrictions, but illegal finning continues in unmonitored high-seas fisheries."
+        },
+        {
+          "name": "Inadequate Fisheries Management",
+          "severity": "high",
+          "description": "Despite CITES Appendix II listing and catch limits in some RFMOs, enforcement is weak and illegal, unreported, and unregulated (IUU) fishing remains widespread across pelagic waters."
+        },
+        {
+          "name": "Climate Change",
+          "severity": "medium",
+          "description": "Warming oceans and shifts in tuna distributions alter prey availability and may push the species into higher-pressure fishing zones closer to port fisheries."
+        }
+      ],
+      "actionItems": [
+        {
+          "title": "Support Pelagic Shark Protection",
+          "description": "Advocate for stronger RFMO catch limits and better enforcement of CITES Appendix II protections for oceanic whitetips across international waters.",
+          "link": null
+        },
+        {
+          "title": "Choose Sustainable Seafood",
+          "description": "Use the Monterey Bay Aquarium Seafood Watch guide to avoid tuna and swordfish from fisheries with high bycatch rates where oceanic whitetips are common.",
+          "link": "https://www.seafoodwatch.org"
+        },
+        {
+          "title": "Refuse Shark Fin Products",
+          "description": "Avoid purchasing or consuming shark fin soup and products, and support businesses that have pledged to remove them from their menus.",
+          "link": null
+        },
+        {
+          "title": "Donate to Open-Ocean Conservation",
+          "description": "Support organizations like the Shark Trust and Save Our Seas Foundation that fund research and advocacy for pelagic shark species.",
+          "link": "https://www.sharktrust.org"
+        }
+      ],
+      "healthMetrics": [
+        {
+          "label": "IUCN Status",
+          "value": "Critically Endangered",
+          "trend": "stable"
+        },
+        {
+          "label": "Population Trend",
+          "value": "Decreasing — >98% collapse in parts of the Atlantic since 1950s",
+          "trend": "down"
+        },
+        {
+          "label": "Habitat Quality",
+          "value": "Declining — warming oceans and prey loss in pelagic zones",
+          "trend": "down"
+        },
+        {
+          "label": "Prey Availability",
+          "value": "Declining — tuna and billfish heavily depleted by commercial fleets",
+          "trend": "down"
+        },
+        {
+          "label": "Fishing Pressure",
+          "value": "Critical — pelagic longlines cover all tropical/subtropical oceans",
+          "trend": "down"
+        },
+        {
+          "label": "Protection Coverage",
+          "value": "Limited — CITES Appendix II; RFMO catch limits poorly enforced on high seas",
+          "trend": "stable",
+          "links": [
+            {
+              "label": "CITES Listing",
+              "url": "https://cites.org/eng/app/appendices.php"
+            },
+            {
+              "label": "IUCN Red List",
+              "url": "https://www.iucnredlist.org/species/39374/2911645"
+            },
+            {
+              "label": "Shark Trust",
+              "url": "https://www.sharktrust.org"
+            }
+          ]
+        }
+      ],
+      "statusHistory": [
+        {
+          "year": 2007,
+          "status": "Vulnerable"
+        },
+        {
+          "year": 2015,
+          "status": "Vulnerable"
+        },
+        {
+          "year": 2019,
+          "status": "Critically Endangered"
+        }
+      ]
     },
     {
       "id": "glyphis-gangeticus",
@@ -2088,7 +2253,167 @@ window.WIKI_DATA = {
       ],
       "description": "The shortfin mako is the world's fastest shark, capable of sustained speeds and spectacular leaps out of the water when hooked or pursuing prey. Found in open ocean worldwide in tropical and temperate seas, it is a highly migratory apex predator. Despite its speed and power, it has suffered steep population declines from bycatch and targeted fishing for its meat and fins.",
       "funFact": "The shortfin mako can reach burst speeds of up to 45 mph (72 km/h) and has been recorded leaping over 6 m (20 ft) into the air — making it not only the fastest shark but one of the most acrobatic fish in the ocean.",
-      "habitat": "Open ocean in tropical and temperate seas worldwide, from the surface to depths of at least 500 m. A highly pelagic species that rarely enters inshore waters; prefers surface temperatures of 17–22°C but can range into cooler regions."
+      "habitat": "Open ocean in tropical and temperate seas worldwide, from the surface to depths of at least 500 m. A highly pelagic species that rarely enters inshore waters; prefers surface temperatures of 17–22°C but can range into cooler regions.",
+      "diet": "An aggressive apex predator feeding primarily on fast-moving bony fish — especially bluefish, swordfish, and tuna — as well as squid and other sharks. Its speed and needle-like teeth are specifically adapted for seizing slippery, high-velocity prey.",
+      "size": "Typically 1.8–3.2 m (6–10.5 ft); max confirmed ~4.45 m (14.6 ft). Females grow significantly larger than males.",
+      "vitalSigns": [
+        {
+          "label": "Estimated Population",
+          "value": "~1.5 million (2019, highly uncertain)",
+          "glance": true
+        },
+        {
+          "label": "Lifespan",
+          "value": "Up to 32 years",
+          "glance": true
+        },
+        {
+          "label": "Max Length",
+          "value": "~4.45 m (14.6 ft)",
+          "metric": "~4.45 m",
+          "imperial": "~14.6 ft",
+          "glance": true
+        },
+        {
+          "label": "Max Weight",
+          "value": "~570 kg (~1,260 lbs)",
+          "metric": "~570 kg",
+          "imperial": "~1,260 lbs",
+          "glance": true
+        },
+        {
+          "label": "Reproductive Rate",
+          "value": "4–25 pups per litter; ~18-month gestation"
+        },
+        {
+          "label": "Age at Maturity",
+          "value": "7–9 years (males), 18–21 years (females)"
+        },
+        {
+          "label": "Top Speed",
+          "value": "~72 km/h (~45 mph) in bursts",
+          "metric": "~72 km/h",
+          "imperial": "~45 mph",
+          "glance": true
+        },
+        {
+          "label": "Ecological Role",
+          "value": "Apex Predator",
+          "glance": true
+        },
+        {
+          "label": "Diet",
+          "value": "Fast-moving bony fish (bluefish, swordfish, tuna), squid, and other sharks"
+        },
+        {
+          "label": "Population Growth Rate",
+          "value": "Very low — females don't mature until ~18–21 years of age"
+        },
+        {
+          "label": "Key Adaptations",
+          "value": "Regional endothermy (warm-bloodedness); crescent-shaped lunate tail for efficient high-speed propulsion; counter-current heat exchange in muscles"
+        }
+      ],
+      "threats": [
+        {
+          "name": "Bycatch",
+          "severity": "critical",
+          "description": "The leading cause of mortality. Makos are among the most commonly caught sharks in Atlantic and Pacific pelagic longline fisheries targeting tuna and swordfish. Vast quantities have been removed from ocean basins since the 1950s."
+        },
+        {
+          "name": "Targeted Fishing",
+          "severity": "high",
+          "description": "Actively targeted for its meat (sometimes sold as 'swordfish' or 'flake' in markets) and fins. ICCAT imposed a no-retention measure for North Atlantic mako in 2019, but compliance and enforcement remain inconsistent."
+        },
+        {
+          "name": "Extremely Late Female Maturity",
+          "severity": "high",
+          "description": "Female shortfin makos don't reproduce until around 18–21 years old — one of the latest maturation ages of any shark species. This makes recovery from overfishing extraordinarily slow."
+        },
+        {
+          "name": "Climate Change",
+          "severity": "medium",
+          "description": "Shifts in prey distributions and increasing sea surface temperatures alter migration patterns and compress the thermal range available to a species adapted to specific temperature bands."
+        }
+      ],
+      "actionItems": [
+        {
+          "title": "Support North Atlantic No-Retention Rules",
+          "description": "Advocate for full compliance with ICCAT's mako no-retention measures in the North Atlantic, and for similar protections to be extended to all ocean basins.",
+          "link": null
+        },
+        {
+          "title": "Choose Sustainable Seafood",
+          "description": "Avoid purchasing fish labeled generically as 'shark steak' or 'flake'. Use the Seafood Watch guide to identify sustainably caught alternatives to shark meat.",
+          "link": "https://www.seafoodwatch.org"
+        },
+        {
+          "title": "Support Mako Research and Tagging",
+          "description": "Donate to organizations funding longline observer programs and satellite tagging research that tracks mako migrations and measures fishing mortality rates.",
+          "link": "https://www.sharktrust.org"
+        },
+        {
+          "title": "Advocate for CITES Appendix II Enforcement",
+          "description": "Shortfin makos are listed on CITES Appendix II. Support stronger trade documentation requirements and enforcement to stop unreported landings and illegal fin trading.",
+          "link": "https://cites.org"
+        }
+      ],
+      "healthMetrics": [
+        {
+          "label": "IUCN Status",
+          "value": "Endangered",
+          "trend": "stable"
+        },
+        {
+          "label": "Population Trend",
+          "value": "Decreasing — North Atlantic population severely overfished",
+          "trend": "down"
+        },
+        {
+          "label": "Habitat Quality",
+          "value": "Moderate — open ocean less directly impacted; prey distributions shifting",
+          "trend": "down"
+        },
+        {
+          "label": "Prey Availability",
+          "value": "Declining — bluefish, swordfish, and tuna under heavy fishing pressure",
+          "trend": "down"
+        },
+        {
+          "label": "Fishing Pressure",
+          "value": "Critical — among the most common bycatch shark in pelagic longlines globally",
+          "trend": "down"
+        },
+        {
+          "label": "Protection Coverage",
+          "value": "Partial — CITES Appendix II; North Atlantic no-retention (ICCAT 2019); Pacific/Indian Ocean unprotected",
+          "trend": "up",
+          "links": [
+            {
+              "label": "CITES Listing",
+              "url": "https://cites.org/eng/app/appendices.php"
+            },
+            {
+              "label": "IUCN Red List",
+              "url": "https://www.iucnredlist.org/species/42005/3351001"
+            },
+            {
+              "label": "Shark Trust",
+              "url": "https://www.sharktrust.org"
+            }
+          ]
+        }
+      ],
+      "statusHistory": [
+        {
+          "year": 2007,
+          "status": "Near Threatened"
+        },
+        {
+          "year": 2019,
+          "status": "Endangered"
+        }
+      ]
     },
     {
       "id": "isurus-paucus",
@@ -2161,7 +2486,172 @@ window.WIKI_DATA = {
       ],
       "description": "The great hammerhead is the largest of the hammerhead sharks, reaching up to 6.1 m (20 ft), and identified by its nearly straight-edged, wide cephalofoil. It inhabits tropical and warm temperate coastal and offshore waters worldwide. As an apex predator, it plays a critical role in reef and coastal ecosystems, but it is heavily targeted by the fin trade — its large fins are among the most valuable on the market.",
       "funFact": "The great hammerhead's distinctive flat, wide head acts like a living metal detector — it sweeps it across the seafloor to detect the faint electrical fields of buried stingrays hiding in the sand, then pins them down with its head before biting.",
-      "habitat": "Coastal and offshore waters in tropical and warm temperate seas worldwide. Found over continental and insular shelves, coral reefs, and in the open ocean. Undertakes long seasonal migrations and is known to aggregate at specific reef sites."
+      "habitat": "Coastal and offshore waters in tropical and warm temperate seas worldwide. Found over continental and insular shelves, coral reefs, and in the open ocean. Undertakes long seasonal migrations and is known to aggregate at specific reef sites.",
+      "diet": "Stingrays are the preferred prey — the hammerhead uses its wide cephalofoil to electromagnetically detect rays buried in sand, then pins them to the seafloor before biting. Also eats bony fish, squid, octopus, crustaceans, and other sharks.",
+      "size": "Typically 3.5–4.5 m (11.5–14.8 ft); max confirmed 6.1 m (20 ft). Females are generally larger than males.",
+      "vitalSigns": [
+        {
+          "label": "Estimated Population",
+          "value": "Unknown — critically depleted globally",
+          "glance": true
+        },
+        {
+          "label": "Lifespan",
+          "value": "Up to 44 years",
+          "glance": true
+        },
+        {
+          "label": "Max Length",
+          "value": "6.1 m (20 ft)",
+          "metric": "6.1 m",
+          "imperial": "20 ft",
+          "glance": true
+        },
+        {
+          "label": "Max Weight",
+          "value": "~580 kg (~1,280 lbs)",
+          "metric": "~580 kg",
+          "imperial": "~1,280 lbs",
+          "glance": true
+        },
+        {
+          "label": "Reproductive Rate",
+          "value": "6–50 pups per litter (avg ~20); ~11-month gestation"
+        },
+        {
+          "label": "Age at Maturity",
+          "value": "~9–10 years (males); up to ~15 years (females)"
+        },
+        {
+          "label": "Top Speed",
+          "value": "~25 km/h (~15 mph) estimated",
+          "metric": "~25 km/h",
+          "imperial": "~15 mph",
+          "glance": true
+        },
+        {
+          "label": "Ecological Role",
+          "value": "Apex Predator",
+          "glance": true
+        },
+        {
+          "label": "Diet",
+          "value": "Stingrays, bony fish, squid, crustaceans, and other sharks"
+        },
+        {
+          "label": "Population Growth Rate",
+          "value": "Very low — long generation time and late maturity"
+        },
+        {
+          "label": "Key Adaptations",
+          "value": "Wide cephalofoil densely packed with electroreceptors for detecting buried prey; broad head provides lift and enhanced maneuverability"
+        }
+      ],
+      "threats": [
+        {
+          "name": "Shark Fin Trade",
+          "severity": "critical",
+          "description": "The great hammerhead's large, high-quality fins are among the most valuable in the shark fin trade, making it a prized target. Its fins command premium prices and are identifiable by shape, making enforcement of bans difficult."
+        },
+        {
+          "name": "Bycatch",
+          "severity": "critical",
+          "description": "Frequently caught in pelagic and coastal longlines, gillnets, and trawls. High post-release mortality due to physiological stress means even released individuals rarely survive."
+        },
+        {
+          "name": "Slow Reproduction",
+          "severity": "high",
+          "description": "Long lifespan and late maturity mean the population cannot rebound quickly from fishing pressure. Even modest harvest levels can drive ongoing decline."
+        },
+        {
+          "name": "Habitat Loss",
+          "severity": "medium",
+          "description": "Coastal development, coral reef degradation, and pollution reduce the quality of critical coastal and reef habitats used for hunting and pupping."
+        },
+        {
+          "name": "Climate Change",
+          "severity": "medium",
+          "description": "Warming oceans and coral bleaching threaten reef ecosystems central to hammerhead foraging. Range shifts into previously cooler waters may increase encounters with fishing gear."
+        }
+      ],
+      "actionItems": [
+        {
+          "title": "Oppose the Shark Fin Trade",
+          "description": "Refuse shark fin products and advocate for comprehensive fin bans. Great hammerhead fins are among the most traded — consumer demand is a primary driver of targeting.",
+          "link": null
+        },
+        {
+          "title": "Support CITES Enforcement",
+          "description": "The great hammerhead is listed on CITES Appendix II, requiring trade permits. Advocate for stronger enforcement and report suspected illegal fin shipments to wildlife authorities.",
+          "link": "https://cites.org"
+        },
+        {
+          "title": "Protect Coastal Reef Habitats",
+          "description": "Support marine protected areas covering coral reefs and coastal zones. Healthy reef ecosystems are critical hunting and pupping grounds for great hammerheads.",
+          "link": null
+        },
+        {
+          "title": "Fund Hammerhead Research",
+          "description": "Support organizations like Save Our Seas Foundation and Shark Trust that fund tagging studies to track hammerhead migrations and assess population status.",
+          "link": "https://saveourseas.com"
+        }
+      ],
+      "healthMetrics": [
+        {
+          "label": "IUCN Status",
+          "value": "Critically Endangered",
+          "trend": "stable"
+        },
+        {
+          "label": "Population Trend",
+          "value": "Decreasing — global population severely depleted by fin trade",
+          "trend": "down"
+        },
+        {
+          "label": "Habitat Quality",
+          "value": "Degraded — coral bleaching and coastal development reduce key habitat",
+          "trend": "down"
+        },
+        {
+          "label": "Prey Availability",
+          "value": "Declining — stingray and reef fish populations reduced by overfishing",
+          "trend": "down"
+        },
+        {
+          "label": "Fishing Pressure",
+          "value": "Critical — targeted for high-value fins; heavy bycatch in longlines",
+          "trend": "down"
+        },
+        {
+          "label": "Protection Coverage",
+          "value": "Partial — CITES Appendix II; some national bans; high-seas gaps remain",
+          "trend": "up",
+          "links": [
+            {
+              "label": "CITES Listing",
+              "url": "https://cites.org/eng/app/appendices.php"
+            },
+            {
+              "label": "IUCN Red List",
+              "url": "https://www.iucnredlist.org/species/2920499/2920502"
+            },
+            {
+              "label": "Save Our Seas",
+              "url": "https://saveourseas.com"
+            }
+          ]
+        }
+      ],
+      "statusHistory": [
+        {
+          "year": 2007,
+          "status": "Endangered"
+        },
+        {
+          "year": 2019,
+          "status": "Critically Endangered"
+        }
+      ]
     },
     {
       "id": "sphyrna-zygaena",
@@ -2234,7 +2724,172 @@ window.WIKI_DATA = {
       ],
       "description": "The basking shark is the world's second-largest fish, reaching up to 12 m (40 ft), and feeds exclusively by passive filter-feeding on zooplankton as it swims slowly with its enormous mouth agape. Found in cold to warm temperate seas worldwide, it undertakes long seasonal migrations following plankton blooms. Despite its massive size, it is harmless to humans.",
       "funFact": "A basking shark's mouth can open over 1 m (3.3 ft) wide, and it filters approximately 2,000 tonnes of seawater per hour to collect tiny zooplankton — it must keep swimming continuously to maintain the flow of water through its gill rakers.",
-      "habitat": "Cold to warm temperate coastal and oceanic waters worldwide. Often seen near the surface in coastal areas during summer plankton blooms; suspected to overwinter in deep offshore waters. Most commonly observed in the North Atlantic and North Pacific."
+      "habitat": "Cold to warm temperate coastal and oceanic waters worldwide. Often seen near the surface in coastal areas during summer plankton blooms; suspected to overwinter in deep offshore waters. Most commonly observed in the North Atlantic and North Pacific.",
+      "diet": "Feeds exclusively on zooplankton — primarily copepods, fish eggs, small crustaceans, and invertebrate larvae — by passive ram filter-feeding. Makes no active pursuit of prey; its enormous gill rakers strain plankton from the water as it swims open-mouthed.",
+      "size": "Typically 6–9 m (20–30 ft); max reliably recorded ~12 m (39 ft). The second-largest fish in the ocean, after the whale shark.",
+      "vitalSigns": [
+        {
+          "label": "Estimated Population",
+          "value": "Unknown — no reliable global estimate",
+          "glance": true
+        },
+        {
+          "label": "Lifespan",
+          "value": "Estimated up to 50 years",
+          "glance": true
+        },
+        {
+          "label": "Max Length",
+          "value": "~12 m (39 ft)",
+          "metric": "~12 m",
+          "imperial": "~39 ft",
+          "glance": true
+        },
+        {
+          "label": "Max Weight",
+          "value": "~4,000–5,000 kg (~8,800–11,000 lbs)",
+          "metric": "~4,000–5,000 kg",
+          "imperial": "~8,800–11,000 lbs",
+          "glance": true
+        },
+        {
+          "label": "Reproductive Rate",
+          "value": "~6 pups per litter; estimated 2.6–3.5 year gestation (one of the longest of any vertebrate)"
+        },
+        {
+          "label": "Age at Maturity",
+          "value": "Estimated 12–20 years (females toward the upper end)"
+        },
+        {
+          "label": "Top Speed",
+          "value": "~5 km/h (~3 mph) while filter-feeding",
+          "metric": "~5 km/h",
+          "imperial": "~3 mph",
+          "glance": true
+        },
+        {
+          "label": "Ecological Role",
+          "value": "Filter Feeder / Keystone Species",
+          "glance": true
+        },
+        {
+          "label": "Diet",
+          "value": "Zooplankton, copepods, fish eggs, and small crustaceans"
+        },
+        {
+          "label": "Population Growth Rate",
+          "value": "Extremely low — very long gestation and small litters"
+        },
+        {
+          "label": "Key Adaptations",
+          "value": "Gill rakers filter ~2,000 tonnes of water/hour; massive oil-rich liver provides buoyancy; mouth gape exceeds 1 m wide"
+        }
+      ],
+      "threats": [
+        {
+          "name": "Historical Targeted Hunting",
+          "severity": "high",
+          "description": "Heavily hunted through the mid-20th century for liver oil (used in lubricants, cosmetics, and vitamins), fins, and fishmeal. Fisheries in British Columbia, Norway, and Ireland collapsed by the 1970s–80s."
+        },
+        {
+          "name": "Bycatch",
+          "severity": "high",
+          "description": "Slow-moving surface behavior makes basking sharks vulnerable to entanglement in pelagic trawls, gill nets, and set gear. High bycatch mortality has been documented throughout the North Atlantic."
+        },
+        {
+          "name": "Slow Recovery",
+          "severity": "high",
+          "description": "Extremely low reproductive rate — with one of the longest gestations of any shark and small litter sizes — means depleted populations recover on a timescale of decades, not years."
+        },
+        {
+          "name": "Vessel Strikes",
+          "severity": "medium",
+          "description": "Extended time spent at the surface filter-feeding makes basking sharks vulnerable to boat collisions. Ship strikes are a documented cause of mortality in coastal shipping lanes."
+        },
+        {
+          "name": "Climate Change",
+          "severity": "medium",
+          "description": "Dependent on zooplankton blooms in cold, nutrient-rich waters. Ocean warming and acidification threaten plankton productivity and may reduce food availability in core habitats."
+        }
+      ],
+      "actionItems": [
+        {
+          "title": "Report Basking Shark Sightings",
+          "description": "Contribute to citizen science by reporting sightings to the Basking Shark Scotland or local Wildlife Trust databases. Sighting records are essential for tracking population recovery and movement.",
+          "link": null
+        },
+        {
+          "title": "Support Marine Protected Areas",
+          "description": "Advocate for MPAs in key aggregation sites such as the Hebrides, Irish Sea, and Bay of Biscay where basking sharks congregate seasonally and are most vulnerable to disturbance and bycatch.",
+          "link": null
+        },
+        {
+          "title": "Reduce Bycatch in Pelagic Fisheries",
+          "description": "Support policies requiring gear modifications and observer coverage in pelagic fisheries operating in basking shark habitat. Encourage fishing industry representatives to adopt voluntary best practices.",
+          "link": null
+        },
+        {
+          "title": "Fund Basking Shark Research",
+          "description": "Support the Shark Trust's basking shark project and organizations using satellite tags to identify migration routes and critical habitat areas needing legal protection.",
+          "link": "https://www.sharktrust.org"
+        }
+      ],
+      "healthMetrics": [
+        {
+          "label": "IUCN Status",
+          "value": "Endangered",
+          "trend": "stable"
+        },
+        {
+          "label": "Population Trend",
+          "value": "Decreasing — historical fisheries caused severe depletion; recovery slow",
+          "trend": "down"
+        },
+        {
+          "label": "Habitat Quality",
+          "value": "Declining — climate-driven reduction in plankton blooms in core habitats",
+          "trend": "down"
+        },
+        {
+          "label": "Prey Availability",
+          "value": "Uncertain — zooplankton abundance variable; projected decline with warming",
+          "trend": "down"
+        },
+        {
+          "label": "Fishing Pressure",
+          "value": "Moderate — targeted fisheries mostly ended; bycatch and vessel strikes persist",
+          "trend": "up"
+        },
+        {
+          "label": "Protection Coverage",
+          "value": "Partial — CITES Appendix II; protected in UK, US, EU; enforcement variable",
+          "trend": "up",
+          "links": [
+            {
+              "label": "CITES Listing",
+              "url": "https://cites.org/eng/app/appendices.php"
+            },
+            {
+              "label": "IUCN Red List",
+              "url": "https://www.iucnredlist.org/species/4293/214397499"
+            },
+            {
+              "label": "Shark Trust",
+              "url": "https://www.sharktrust.org"
+            }
+          ]
+        }
+      ],
+      "statusHistory": [
+        {
+          "year": 2005,
+          "status": "Vulnerable"
+        },
+        {
+          "year": 2019,
+          "status": "Endangered"
+        }
+      ]
     },
     {
       "id": "ginglymostoma-cirratum",
@@ -2585,8 +3240,173 @@ window.WIKI_DATA = {
         "finning"
       ],
       "description": "The porbeagle is a large, cold-water shark in the family Lamnidae, closely related to the great white and mako sharks. Found in cold and temperate waters of the North and South Atlantic and the Southern Ocean, it is one of the few sharks capable of maintaining body temperature above ambient water temperature. Porbeagles were once heavily targeted for meat and fins, causing steep population declines in the North Atlantic.",
-      "funFact": "Like great whites and makos, the porbeagle is warm-blooded — it can maintain its body temperature 7–10°C above surrounding cold water, giving it a significant speed and metabolic advantage when hunting in frigid, high-latitude seas.",
-      "habitat": "Cold to temperate oceanic and coastal waters. Found in the North Atlantic from Norway to the Mediterranean, and in the Southern Hemisphere around southern South America, South Africa, and Australia. Occupies depths from the surface to over 700 m."
+      "funFact": "Like great whites and makos, the porbeagle is warm-blooded — it can maintain its body temperature 8–10°C above surrounding cold water, giving it a significant speed and metabolic advantage when hunting in frigid, high-latitude seas.",
+      "habitat": "Cold to temperate oceanic and coastal waters. Found in the North Atlantic from Norway to the Mediterranean, and in the Southern Hemisphere around southern South America, South Africa, and Australia. Occupies depths from the surface to over 700 m.",
+      "diet": "Feeds primarily on schooling bony fish — particularly mackerel, herring, and sand lance — as well as squid and octopus. Uses its warm-bloodedness to hunt actively and efficiently in cold water where most other large predators are metabolically limited.",
+      "size": "Typically 1.5–2.5 m (5–8 ft); max confirmed ~3.5 m (11.5 ft). Females are larger than males.",
+      "vitalSigns": [
+        {
+          "label": "Estimated Population",
+          "value": "Unknown — significantly depleted in the North Atlantic",
+          "glance": true
+        },
+        {
+          "label": "Lifespan",
+          "value": "Up to 46 years",
+          "glance": true
+        },
+        {
+          "label": "Max Length",
+          "value": "~3.5 m (11.5 ft)",
+          "metric": "~3.5 m",
+          "imperial": "~11.5 ft",
+          "glance": true
+        },
+        {
+          "label": "Max Weight",
+          "value": "~230 kg (~500 lbs)",
+          "metric": "~230 kg",
+          "imperial": "~500 lbs",
+          "glance": true
+        },
+        {
+          "label": "Reproductive Rate",
+          "value": "1–5 pups per litter (typically 3–4); ~8–9 month gestation"
+        },
+        {
+          "label": "Age at Maturity",
+          "value": "6–11 years (males), 12–18 years (females)"
+        },
+        {
+          "label": "Top Speed",
+          "value": "~43 km/h (~27 mph) estimated",
+          "metric": "~43 km/h",
+          "imperial": "~27 mph",
+          "glance": true
+        },
+        {
+          "label": "Ecological Role",
+          "value": "Apex Predator",
+          "glance": true
+        },
+        {
+          "label": "Diet",
+          "value": "Mackerel, herring, sand lance, squid, and octopus"
+        },
+        {
+          "label": "Population Growth Rate",
+          "value": "Low — North Atlantic populations showing early signs of recovery under protection"
+        },
+        {
+          "label": "Key Adaptations",
+          "value": "Counter-current heat exchange (endothermy) maintains body temperature 8–10°C above ambient seawater; specialized for cold-water, high-latitude hunting"
+        }
+      ],
+      "threats": [
+        {
+          "name": "Targeted Commercial Fishing",
+          "severity": "critical",
+          "description": "Historically the target of intense directed fisheries in the North Atlantic — Norwegian, Danish, and UK fleets — primarily for high-quality meat sold in European markets. Northeast Atlantic populations collapsed by the 1960s–70s."
+        },
+        {
+          "name": "Bycatch",
+          "severity": "high",
+          "description": "Caught as bycatch in pelagic longlines, bottom trawls, and gillnets throughout its range. High-grading and discarding obscure true mortality in official landing statistics."
+        },
+        {
+          "name": "Finning",
+          "severity": "high",
+          "description": "Fins are valued in the shark fin trade. Despite EU finning bans, enforcement gaps allow some illegal finning to continue, particularly in high-seas fisheries outside jurisdictional reach."
+        },
+        {
+          "name": "Slow Reproductive Rate",
+          "severity": "medium",
+          "description": "Small litters and multi-year maturity timelines limit how quickly populations can rebound. Even under reduced fishing pressure, recovery to historical levels takes decades."
+        },
+        {
+          "name": "Climate Change",
+          "severity": "medium",
+          "description": "A cold-water specialist that depends on productive high-latitude fisheries. Ocean warming may shift prey distributions poleward, compressing available habitat and reducing prey density."
+        }
+      ],
+      "actionItems": [
+        {
+          "title": "Support Northeast Atlantic Recovery",
+          "description": "The Northeast Atlantic porbeagle population has shown early signs of recovery under EU protection. Advocate for continued fishing prohibitions and oppose any proposals to reopen directed fisheries.",
+          "link": null
+        },
+        {
+          "title": "Avoid Shark Meat Products",
+          "description": "Porbeagle is sold under names like 'flake', 'dogfish', or 'rock salmon' in European fish markets. Use sustainable seafood guides to identify and avoid purchasing shark species.",
+          "link": "https://www.seafoodwatch.org"
+        },
+        {
+          "title": "Support CITES Trade Controls",
+          "description": "The porbeagle is listed on CITES Appendix II. Advocate for rigorous enforcement of trade documentation requirements to prevent unreported imports and exports of porbeagle products.",
+          "link": "https://cites.org"
+        },
+        {
+          "title": "Donate to Shark Conservation",
+          "description": "Support the Shark Trust and similar organizations that monitor porbeagle bycatch, advocate for RFMO protections, and fund research into population status across the Southern Hemisphere.",
+          "link": "https://www.sharktrust.org"
+        }
+      ],
+      "healthMetrics": [
+        {
+          "label": "IUCN Status",
+          "value": "Vulnerable (globally); Critically Endangered in Northeast Atlantic",
+          "trend": "up"
+        },
+        {
+          "label": "Population Trend",
+          "value": "Recovering in Northeast Atlantic; depleted elsewhere",
+          "trend": "up"
+        },
+        {
+          "label": "Habitat Quality",
+          "value": "Moderate — cold-water habitats intact but shifting poleward with warming",
+          "trend": "down"
+        },
+        {
+          "label": "Prey Availability",
+          "value": "Declining — mackerel and herring stocks under heavy pressure in North Atlantic",
+          "trend": "down"
+        },
+        {
+          "label": "Fishing Pressure",
+          "value": "High — bycatch continues globally; directed fisheries in some regions",
+          "trend": "stable"
+        },
+        {
+          "label": "Protection Coverage",
+          "value": "Partial — CITES Appendix II; EU directed fishery ban; North Atlantic recovery underway",
+          "trend": "up",
+          "links": [
+            {
+              "label": "CITES Listing",
+              "url": "https://cites.org/eng/app/appendices.php"
+            },
+            {
+              "label": "IUCN Red List",
+              "url": "https://www.iucnredlist.org/species/11200/3261697"
+            },
+            {
+              "label": "Shark Trust",
+              "url": "https://www.sharktrust.org"
+            }
+          ]
+        }
+      ],
+      "statusHistory": [
+        {
+          "year": 2007,
+          "status": "Vulnerable"
+        },
+        {
+          "year": 2019,
+          "status": "Vulnerable"
+        }
+      ]
     },
     {
       "id": "alopias-vulpinus",
