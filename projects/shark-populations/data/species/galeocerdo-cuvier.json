@@ -39,6 +39,10 @@
     { "label": "Key Senses",             "value": "Highly sensitive Ampullae of Lorenzini and lateral line; olfactory lobes among largest relative to brain size of any shark" }
   ],
   "habitatImage": "projects/shark-populations/images/tiger_shark/tiger_shark_habitat.png",
+  "habitatStats": [
+    { "label": "Global Range", "value": "Tropical and temperate seas worldwide; coastal reefs, open ocean, and river mouths" },
+    { "label": "Depth Range",  "value": "Surface to ~350 m (1,148 ft); frequently patrols shallow coastal and reef areas at night", "metric": "Surface to ~350 m", "imperial": "Surface to ~1,148 ft" }
+  ],
   "statusHistory": [
     { "year": 1985, "status": "Data Deficient" },
     { "year": 2009, "status": "Near Threatened" }

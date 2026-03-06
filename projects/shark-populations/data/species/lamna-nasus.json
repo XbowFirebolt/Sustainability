@@ -25,47 +25,70 @@
   "diet": "Feeds primarily on schooling bony fish — particularly mackerel, herring, and sand lance — as well as squid and octopus. Uses its warm-bloodedness to hunt actively and efficiently in cold water where most other large predators are metabolically limited.",
   "size": "Typically 1.5–2.5 m (5–8 ft); max confirmed ~3.5 m (11.5 ft). Females are larger than males.",
   "vitalSigns": [
-    { "label": "Estimated Population",   "value": "Unknown — significantly depleted in the North Atlantic",               "glance": true },
-    { "label": "Lifespan",               "value": "Up to 46 years",                                                       "glance": true },
-    { "label": "Max Length",             "value": "~3.5 m (11.5 ft)",           "metric": "~3.5 m",  "imperial": "~11.5 ft","glance": true },
+    { "label": "Estimated Population",   "value": "Unknown — significantly depleted in the North Atlantic",                "glance": true },
+    { "label": "Lifespan",               "value": "Up to 46 years",                                                        "glance": true },
+    { "label": "Max Length",             "value": "~3.5 m (11.5 ft)",           "metric": "~3.5 m",  "imperial": "~11.5 ft", "glance": true },
     { "label": "Max Weight",             "value": "~230 kg (~500 lbs)",          "metric": "~230 kg", "imperial": "~500 lbs",  "glance": true },
     { "label": "Reproductive Rate",      "value": "1–5 pups per litter (typically 3–4); ~8–9 month gestation" },
     { "label": "Age at Maturity",        "value": "6–11 years (males), 12–18 years (females)" },
-    { "label": "Top Speed",              "value": "~43 km/h (~27 mph) estimated", "metric": "~43 km/h", "imperial": "~27 mph",   "glance": true },
-    { "label": "Ecological Role",        "value": "Apex Predator",                                                                           "glance": true },
+    { "label": "Top Speed",              "value": "~43 km/h (~27 mph) estimated", "metric": "~43 km/h", "imperial": "~27 mph", "glance": true },
+    { "label": "Ecological Role",        "value": "Apex Predator",                                                          "glance": true },
     { "label": "Diet",                   "value": "Mackerel, herring, sand lance, squid, and octopus" },
     { "label": "Population Growth Rate", "value": "Low — North Atlantic populations showing early signs of recovery under protection" },
     { "label": "Key Adaptations",        "value": "Counter-current heat exchange (endothermy) maintains body temperature 8–10°C above ambient seawater; specialized for cold-water, high-latitude hunting" }
   ],
+  "habitatStats": [
+    { "label": "Global Range", "value": "Cold to temperate North and South Atlantic, southern Indian Ocean, and Southern Ocean" },
+    { "label": "Depth Range",  "value": "Surface to ~700 m (2,297 ft); most active in upper 200 m", "metric": "Surface to ~700 m", "imperial": "Surface to ~2,297 ft" }
+  ],
   "threats": [
-    { "name": "Targeted Commercial Fishing","severity": "critical", "description": "Historically the target of intense directed fisheries in the North Atlantic — Norwegian, Danish, and UK fleets — primarily for high-quality meat sold in European markets. Northeast Atlantic populations collapsed by the 1960s–70s." },
-    { "name": "Bycatch",                   "severity": "high",     "description": "Caught as bycatch in pelagic longlines, bottom trawls, and gillnets throughout its range. High-grading and discarding obscure true mortality in official landing statistics." },
-    { "name": "Finning",                   "severity": "high",     "description": "Fins are valued in the shark fin trade. Despite EU finning bans, enforcement gaps allow some illegal finning to continue, particularly in high-seas fisheries outside jurisdictional reach." },
-    { "name": "Slow Reproductive Rate",    "severity": "medium",   "description": "Small litters and multi-year maturity timelines limit how quickly populations can rebound. Even under reduced fishing pressure, recovery to historical levels takes decades." },
-    { "name": "Climate Change",            "severity": "medium",   "description": "A cold-water specialist that depends on productive high-latitude fisheries. Ocean warming may shift prey distributions poleward, compressing available habitat and reducing prey density." }
+    { "name": "Targeted Commercial Fishing", "severity": "critical", "description": "Historically the target of intense directed fisheries in the North Atlantic — Norwegian, Danish, and UK fleets — primarily for high-quality meat sold in European markets. Northeast Atlantic populations collapsed by the 1960s–70s." },
+    { "name": "Bycatch",                     "severity": "high",     "description": "Caught as bycatch in pelagic longlines, bottom trawls, and gillnets throughout its range. High-grading and discarding obscure true mortality in official landing statistics." },
+    { "name": "Finning",                     "severity": "high",     "description": "Fins are valued in the shark fin trade. Despite EU finning bans, enforcement gaps allow some illegal finning to continue, particularly in high-seas fisheries outside jurisdictional reach." },
+    { "name": "Slow Reproductive Rate",      "severity": "medium",   "description": "Small litters and multi-year maturity timelines limit how quickly populations can rebound. Even under reduced fishing pressure, recovery to historical levels takes decades." },
+    { "name": "Climate Change",              "severity": "medium",   "description": "A cold-water specialist that depends on productive high-latitude fisheries. Ocean warming may shift prey distributions poleward, compressing available habitat and reducing prey density." }
   ],
   "actionItems": [
-    { "title": "Support Northeast Atlantic Recovery",   "description": "The Northeast Atlantic porbeagle population has shown early signs of recovery under EU protection. Advocate for continued fishing prohibitions and oppose any proposals to reopen directed fisheries.", "link": null },
-    { "title": "Avoid Shark Meat Products",             "description": "Porbeagle is sold under names like 'flake', 'dogfish', or 'rock salmon' in European fish markets. Use sustainable seafood guides to identify and avoid purchasing shark species.", "link": "https://www.seafoodwatch.org" },
-    { "title": "Support CITES Trade Controls",          "description": "The porbeagle is listed on CITES Appendix II. Advocate for rigorous enforcement of trade documentation requirements to prevent unreported imports and exports of porbeagle products.", "link": "https://cites.org" },
-    { "title": "Donate to Shark Conservation",          "description": "Support the Shark Trust and similar organizations that monitor porbeagle bycatch, advocate for RFMO protections, and fund research into population status across the Southern Hemisphere.", "link": "https://www.sharktrust.org" }
+    { "title": "Support Northeast Atlantic Recovery",  "description": "The Northeast Atlantic porbeagle population has shown early signs of recovery under EU protection. Advocate for continued fishing prohibitions and oppose any proposals to reopen directed fisheries.", "link": null },
+    { "title": "Avoid Shark Meat Products",            "description": "Porbeagle is sold under names like 'flake', 'dogfish', or 'rock salmon' in European fish markets. Use sustainable seafood guides to identify and avoid purchasing shark species.", "link": "https://www.seafoodwatch.org" },
+    { "title": "Support CITES Trade Controls",         "description": "The porbeagle is listed on CITES Appendix II. Advocate for rigorous enforcement of trade documentation requirements to prevent unreported imports and exports of porbeagle products.", "link": "https://cites.org" },
+    { "title": "Donate to Shark Conservation",         "description": "Support the Shark Trust and similar organizations that monitor porbeagle bycatch, advocate for RFMO protections, and fund research into population status across the Southern Hemisphere.", "link": "https://www.sharktrust.org" }
   ],
   "healthMetrics": [
     { "label": "IUCN Status",         "value": "Vulnerable (globally); Critically Endangered in Northeast Atlantic", "trend": "up"     },
     { "label": "Population Trend",    "value": "Recovering in Northeast Atlantic; depleted elsewhere",               "trend": "up"     },
-    { "label": "Habitat Quality",     "value": "Moderate — cold-water habitats intact but shifting poleward with warming","trend": "down"},
-    { "label": "Prey Availability",   "value": "Declining — mackerel and herring stocks under heavy pressure in North Atlantic","trend": "down"},
-    { "label": "Fishing Pressure",    "value": "High — bycatch continues globally; directed fisheries in some regions","trend": "stable"},
-    { "label": "Protection Coverage", "value": "Partial — CITES Appendix II; EU directed fishery ban; North Atlantic recovery underway","trend": "up",
+    { "label": "Habitat Quality",     "value": "Moderate — cold-water habitats intact but shifting poleward with warming", "trend": "down" },
+    { "label": "Prey Availability",   "value": "Declining — mackerel and herring stocks under heavy pressure in North Atlantic", "trend": "down" },
+    { "label": "Fishing Pressure",    "value": "High — bycatch continues globally; directed fisheries in some regions", "trend": "stable" },
+    { "label": "Protection Coverage", "value": "Partial — CITES Appendix II; EU directed fishery ban; North Atlantic recovery underway", "trend": "up",
       "links": [
-        { "label": "CITES Listing",  "url": "https://cites.org/eng/app/appendices.php" },
-        { "label": "IUCN Red List",  "url": "https://www.iucnredlist.org/species/11200/3261697" },
-        { "label": "Shark Trust",    "url": "https://www.sharktrust.org" }
+        { "label": "CITES Listing", "url": "https://cites.org/eng/app/appendices.php" },
+        { "label": "IUCN Red List", "url": "https://www.iucnredlist.org/species/11200/3261697" },
+        { "label": "Shark Trust",   "url": "https://www.sharktrust.org" }
       ]
     }
   ],
   "statusHistory": [
     { "year": 2007, "status": "Vulnerable" },
     { "year": 2019, "status": "Vulnerable" }
+  ],
+  "populationTrend": [],
+  "populationTrendMeta": {
+    "confidence": "data-deficient",
+    "note": "No reliable global population estimate exists. The Northeast Atlantic population collapsed under directed fishing in the mid-20th century and has shown signs of recovery since EU protection was enacted. Southern Hemisphere populations have never been formally assessed."
+  },
+  "preyDeclineRegions": [
+    { "name": "N. Atlantic",    "severity": "high",   "note": "Atlantic mackerel and herring — the porbeagle's primary prey — are under heavy commercial fishing pressure throughout the North Atlantic, with some stocks approaching overfished status." },
+    { "name": "Mediterranean",  "severity": "high",   "note": "Mackerel and other schooling fish severely depleted in the Mediterranean by generations of intensive fishing; porbeagles are rare in this basin." },
+    { "name": "S. Atlantic",    "severity": "medium", "note": "Patagonian prey stocks under increasing pressure from distant-water fleets targeting squid and finfish around South America." },
+    { "name": "N. Pacific",     "severity": "medium", "note": "Pacific mackerel and herring stocks depleted in some regions; porbeagle distribution in the North Pacific is limited compared to the Atlantic." },
+    { "name": "Southern Ocean", "severity": "low",    "note": "Prey availability relatively higher in productive cold-water upwelling zones; Southern Hemisphere populations face lower prey depletion than the North Atlantic." }
+  ],
+  "fishingPressureRegions": [
+    { "name": "N. Atlantic",    "severity": "high",   "note": "Historically the target of directed fisheries by Norwegian, Danish, and UK fleets; EU directed fishery ban since 2010 has allowed some recovery but bycatch in pelagic longlines continues." },
+    { "name": "Mediterranean",  "severity": "high",   "note": "Incidental catch in longlines and trawls; poor observer coverage; no Mediterranean-specific porbeagle protections beyond the CITES Appendix II listing." },
+    { "name": "S. Atlantic",    "severity": "medium", "note": "Increasing pelagic longline effort from distant-water fleets; limited monitoring and no southern population assessments to guide management." },
+    { "name": "Southern Ocean", "severity": "medium", "note": "Some bycatch in toothfish and southern bluefin tuna longlines; cold water limits fishing intensity but observer coverage is sparse." },
+    { "name": "N. Pacific",     "severity": "low",    "note": "Porbeagles are less abundant in the North Pacific; some incidental catch in longlines and gillnets but lower overall fishing pressure on this population." }
   ]
 }

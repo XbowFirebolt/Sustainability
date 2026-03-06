@@ -25,47 +25,70 @@
   "diet": "Stingrays are the preferred prey — the hammerhead uses its wide cephalofoil to electromagnetically detect rays buried in sand, then pins them to the seafloor before biting. Also eats bony fish, squid, octopus, crustaceans, and other sharks.",
   "size": "Typically 3.5–4.5 m (11.5–14.8 ft); max confirmed 6.1 m (20 ft). Females are generally larger than males.",
   "vitalSigns": [
-    { "label": "Estimated Population",   "value": "Unknown — critically depleted globally",                               "glance": true },
-    { "label": "Lifespan",               "value": "Up to 44 years",                                                       "glance": true },
-    { "label": "Max Length",             "value": "6.1 m (20 ft)",              "metric": "6.1 m",    "imperial": "20 ft",   "glance": true },
+    { "label": "Estimated Population",   "value": "Unknown — critically depleted globally",                                  "glance": true },
+    { "label": "Lifespan",               "value": "Up to 44 years",                                                          "glance": true },
+    { "label": "Max Length",             "value": "6.1 m (20 ft)",              "metric": "6.1 m",    "imperial": "20 ft",    "glance": true },
     { "label": "Max Weight",             "value": "~580 kg (~1,280 lbs)",        "metric": "~580 kg",  "imperial": "~1,280 lbs", "glance": true },
     { "label": "Reproductive Rate",      "value": "6–50 pups per litter (avg ~20); ~11-month gestation" },
     { "label": "Age at Maturity",        "value": "~9–10 years (males); up to ~15 years (females)" },
-    { "label": "Top Speed",              "value": "~25 km/h (~15 mph) estimated", "metric": "~25 km/h", "imperial": "~15 mph",   "glance": true },
-    { "label": "Ecological Role",        "value": "Apex Predator",                                                                           "glance": true },
+    { "label": "Top Speed",              "value": "~25 km/h (~15 mph) estimated", "metric": "~25 km/h", "imperial": "~15 mph", "glance": true },
+    { "label": "Ecological Role",        "value": "Apex Predator",                                                            "glance": true },
     { "label": "Diet",                   "value": "Stingrays, bony fish, squid, crustaceans, and other sharks" },
     { "label": "Population Growth Rate", "value": "Very low — long generation time and late maturity" },
     { "label": "Key Adaptations",        "value": "Wide cephalofoil densely packed with electroreceptors for detecting buried prey; broad head provides lift and enhanced maneuverability" }
   ],
+  "habitatStats": [
+    { "label": "Global Range", "value": "Tropical and warm temperate seas worldwide; coastal zones, coral reefs, and adjacent open ocean" },
+    { "label": "Depth Range",  "value": "Surface to ~300 m (984 ft); primarily found in coastal and epipelagic waters", "metric": "Surface to ~300 m", "imperial": "Surface to ~984 ft" }
+  ],
   "threats": [
-    { "name": "Shark Fin Trade",  "severity": "critical", "description": "The great hammerhead's large, high-quality fins are among the most valuable in the shark fin trade, making it a prized target. Its fins command premium prices and are identifiable by shape, making enforcement of bans difficult." },
-    { "name": "Bycatch",          "severity": "critical", "description": "Frequently caught in pelagic and coastal longlines, gillnets, and trawls. High post-release mortality due to physiological stress means even released individuals rarely survive." },
-    { "name": "Slow Reproduction","severity": "high",     "description": "Long lifespan and late maturity mean the population cannot rebound quickly from fishing pressure. Even modest harvest levels can drive ongoing decline." },
-    { "name": "Habitat Loss",     "severity": "medium",   "description": "Coastal development, coral reef degradation, and pollution reduce the quality of critical coastal and reef habitats used for hunting and pupping." },
-    { "name": "Climate Change",   "severity": "medium",   "description": "Warming oceans and coral bleaching threaten reef ecosystems central to hammerhead foraging. Range shifts into previously cooler waters may increase encounters with fishing gear." }
+    { "name": "Shark Fin Trade",   "severity": "critical", "description": "The great hammerhead's large, high-quality fins are among the most valuable in the shark fin trade, making it a prized target. Its fins command premium prices and are identifiable by shape, making enforcement of bans difficult." },
+    { "name": "Bycatch",           "severity": "critical", "description": "Frequently caught in pelagic and coastal longlines, gillnets, and trawls. High post-release mortality due to physiological stress means even released individuals rarely survive." },
+    { "name": "Slow Reproduction", "severity": "high",     "description": "Long lifespan and late maturity mean the population cannot rebound quickly from fishing pressure. Even modest harvest levels can drive ongoing decline." },
+    { "name": "Habitat Loss",      "severity": "medium",   "description": "Coastal development, coral reef degradation, and pollution reduce the quality of critical coastal and reef habitats used for hunting and pupping." },
+    { "name": "Climate Change",    "severity": "medium",   "description": "Warming oceans and coral bleaching threaten reef ecosystems central to hammerhead foraging. Range shifts into previously cooler waters may increase encounters with fishing gear." }
   ],
   "actionItems": [
-    { "title": "Oppose the Shark Fin Trade",      "description": "Refuse shark fin products and advocate for comprehensive fin bans. Great hammerhead fins are among the most traded — consumer demand is a primary driver of targeting.", "link": null },
-    { "title": "Support CITES Enforcement",       "description": "The great hammerhead is listed on CITES Appendix II, requiring trade permits. Advocate for stronger enforcement and report suspected illegal fin shipments to wildlife authorities.", "link": "https://cites.org" },
-    { "title": "Protect Coastal Reef Habitats",   "description": "Support marine protected areas covering coral reefs and coastal zones. Healthy reef ecosystems are critical hunting and pupping grounds for great hammerheads.", "link": null },
-    { "title": "Fund Hammerhead Research",        "description": "Support organizations like Save Our Seas Foundation and Shark Trust that fund tagging studies to track hammerhead migrations and assess population status.", "link": "https://saveourseas.com" }
+    { "title": "Oppose the Shark Fin Trade",     "description": "Refuse shark fin products and advocate for comprehensive fin bans. Great hammerhead fins are among the most traded — consumer demand is a primary driver of targeting.", "link": null },
+    { "title": "Support CITES Enforcement",      "description": "The great hammerhead is listed on CITES Appendix II, requiring trade permits. Advocate for stronger enforcement and report suspected illegal fin shipments to wildlife authorities.", "link": "https://cites.org" },
+    { "title": "Protect Coastal Reef Habitats",  "description": "Support marine protected areas covering coral reefs and coastal zones. Healthy reef ecosystems are critical hunting and pupping grounds for great hammerheads.", "link": null },
+    { "title": "Fund Hammerhead Research",       "description": "Support organizations like Save Our Seas Foundation and Shark Trust that fund tagging studies to track hammerhead migrations and assess population status.", "link": "https://saveourseas.com" }
   ],
   "healthMetrics": [
-    { "label": "IUCN Status",         "value": "Critically Endangered",                                              "trend": "stable" },
-    { "label": "Population Trend",    "value": "Decreasing — global population severely depleted by fin trade",      "trend": "down"   },
-    { "label": "Habitat Quality",     "value": "Degraded — coral bleaching and coastal development reduce key habitat","trend": "down"  },
-    { "label": "Prey Availability",   "value": "Declining — stingray and reef fish populations reduced by overfishing","trend": "down"  },
-    { "label": "Fishing Pressure",    "value": "Critical — targeted for high-value fins; heavy bycatch in longlines", "trend": "down"   },
-    { "label": "Protection Coverage", "value": "Partial — CITES Appendix II; some national bans; high-seas gaps remain","trend": "up",
+    { "label": "IUCN Status",         "value": "Critically Endangered",                                               "trend": "stable" },
+    { "label": "Population Trend",    "value": "Decreasing — global population severely depleted by fin trade",        "trend": "down"   },
+    { "label": "Habitat Quality",     "value": "Degraded — coral bleaching and coastal development reduce key habitat", "trend": "down"   },
+    { "label": "Prey Availability",   "value": "Declining — stingray and reef fish populations reduced by overfishing", "trend": "down"   },
+    { "label": "Fishing Pressure",    "value": "Critical — targeted for high-value fins; heavy bycatch in longlines",   "trend": "down"   },
+    { "label": "Protection Coverage", "value": "Partial — CITES Appendix II; some national bans; high-seas gaps remain", "trend": "up",
       "links": [
-        { "label": "CITES Listing",  "url": "https://cites.org/eng/app/appendices.php" },
-        { "label": "IUCN Red List",  "url": "https://www.iucnredlist.org/species/2920499/2920502" },
-        { "label": "Save Our Seas",  "url": "https://saveourseas.com" }
+        { "label": "CITES Listing", "url": "https://cites.org/eng/app/appendices.php" },
+        { "label": "IUCN Red List", "url": "https://www.iucnredlist.org/species/2920499/2920502" },
+        { "label": "Save Our Seas", "url": "https://saveourseas.com" }
       ]
     }
   ],
   "statusHistory": [
     { "year": 2007, "status": "Endangered" },
     { "year": 2019, "status": "Critically Endangered" }
+  ],
+  "populationTrend": [],
+  "populationTrendMeta": {
+    "confidence": "data-deficient",
+    "note": "No reliable global population estimate exists. The IUCN notes that hammerhead sharks have declined by >50% across most of their range over three generations (~34 years), with some regional populations suspected to have declined by 80–90%. Data quality is insufficient for a global quantitative trend."
+  },
+  "preyDeclineRegions": [
+    { "name": "Indo-Pacific",      "severity": "critical", "note": "Stingray and batoid populations severely reduced by coastal fishing pressure across Southeast Asia, Oceania, and the Indian Ocean — the hammerhead's primary prey base." },
+    { "name": "Tropical Atlantic", "severity": "high",     "note": "Coastal stingray and reef fish populations declining under fishing pressure throughout the Caribbean, Gulf of Mexico, and tropical Atlantic coast." },
+    { "name": "Mediterranean",     "severity": "high",     "note": "Prey species severely depleted by intensive fishing; historically rare and now virtually absent from much of the Mediterranean basin." },
+    { "name": "Caribbean",         "severity": "high",     "note": "Coral reef degradation from bleaching, fishing, and coastal development has reduced reef fish diversity and stingray abundance in key foraging habitat." },
+    { "name": "S. Atlantic",       "severity": "medium",   "note": "Some viable prey populations remain in less-heavily fished offshore areas but coastal fishing pressure is increasing throughout the region." }
+  ],
+  "fishingPressureRegions": [
+    { "name": "Indo-Pacific",      "severity": "critical", "note": "Heavy pelagic and coastal longline effort across the Indo-Pacific; great hammerhead fins command premium prices among the highest of any shark in the fin trade." },
+    { "name": "Tropical Atlantic", "severity": "critical", "note": "Targeted for high-value fins throughout the tropical Atlantic; bycatch in pelagic longlines is high and post-release survival is extremely low." },
+    { "name": "Caribbean",         "severity": "high",     "note": "Some directed targeting in poorly regulated coastal fisheries; bycatch in artisanal and commercial gear common across island nations." },
+    { "name": "Mediterranean",     "severity": "high",     "note": "Incidental catch in longlines and drift nets; minimal observer coverage; historically fished and now extremely rare in most of the basin." },
+    { "name": "S. Atlantic",       "severity": "high",     "note": "Distant-water pelagic fleets operating in open ocean; high-seas enforcement near-absent; great hammerheads encountered as bycatch in offshore zones." }
   ]
 }

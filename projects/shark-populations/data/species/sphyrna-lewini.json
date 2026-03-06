@@ -39,6 +39,10 @@
     { "label": "Key Senses",             "value": "Cephalofoil provides 360° vertical vision and enhanced electroreception via expanded Ampullae of Lorenzini" }
   ],
   "habitatImage": "projects/shark-populations/images/scalloped_hammerhead/scalloped_hammerhead_habitat.png",
+  "habitatStats": [
+    { "label": "Global Range", "value": "Tropical and warm temperate seas worldwide; coastal zones, estuaries, and semi-oceanic waters" },
+    { "label": "Depth Range",  "value": "Surface to ~1,000 m (3,280 ft); primarily in the upper 25 m of coastal and offshore waters", "metric": "Surface to ~1,000 m", "imperial": "Surface to ~3,280 ft" }
+  ],
   "statusHistory": [
     { "year": 1970, "status": "Not Evaluated" },
     { "year": 1996, "status": "Vulnerable" },

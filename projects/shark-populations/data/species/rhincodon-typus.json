@@ -39,6 +39,10 @@
     { "label": "Key Adaptations",        "value": "Unique spot/stripe pattern used for individual ID; ram filtration through dermal denticle-lined gill rakers" }
   ],
   "habitatImage": "projects/shark-populations/images/whale_shark/whale_shark_habitat.png",
+  "habitatStats": [
+    { "label": "Global Range", "value": "Tropical and warm temperate seas worldwide; open ocean and productive coastal upwelling zones" },
+    { "label": "Depth Range",  "value": "Surface to ~1,928 m (6,325 ft); most feeding activity in upper 200 m", "metric": "Surface to ~1,928 m", "imperial": "Surface to ~6,325 ft" }
+  ],
   "statusHistory": [
     { "year": 1970, "status": "Not Evaluated" },
     { "year": 2000, "status": "Vulnerable" },

@@ -39,6 +39,10 @@
     { "label": "Key Adaptations",        "value": "Unique osmoregulation via kidneys and rectal gland; can survive in freshwater for years — the only large shark to do so" }
   ],
   "habitatImage": "projects/shark-populations/images/bull_shark/bull_shark_habitat.png",
+  "habitatStats": [
+    { "label": "Global Range", "value": "Tropical and subtropical coastal seas worldwide; uniquely penetrates rivers and freshwater lakes far inland" },
+    { "label": "Depth Range",  "value": "Surface to ~150 m (492 ft); typically found in shallow coastal, estuarine, and riverine systems", "metric": "Surface to ~150 m", "imperial": "Surface to ~492 ft" }
+  ],
   "statusHistory": [
     { "year": 1985, "status": "Data Deficient" },
     { "year": 2009, "status": "Near Threatened" }

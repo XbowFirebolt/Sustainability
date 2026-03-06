@@ -37,29 +37,33 @@
     { "label": "Population Growth Rate", "value": "Very low — late maturity and small litter sizes" },
     { "label": "Key Adaptations",        "value": "Highly attuned olfaction; broadly rounded pectoral fins optimized for open-ocean cruising; often followed by pilot fish associations" }
   ],
+  "habitatStats": [
+    { "label": "Global Range", "value": "Worldwide in tropical and warm temperate open ocean, 45°N to 43°S" },
+    { "label": "Depth Range",  "value": "Surface to ~1,082 m (3,550 ft); primarily epipelagic", "metric": "Surface to ~1,082 m", "imperial": "Surface to ~3,550 ft" }
+  ],
   "threats": [
-    { "name": "Bycatch",                        "severity": "critical", "description": "The primary driver of decline. Caught in enormous numbers in pelagic longlines targeting tuna and swordfish. Once the most common bycatch shark in these fisheries, it is now rarely encountered." },
-    { "name": "Shark Fin Trade",                "severity": "high",     "description": "Heavily targeted for the fin trade due to its large, elongated pectoral fins. Finning at sea was common before international restrictions, but illegal finning continues in unmonitored high-seas fisheries." },
-    { "name": "Inadequate Fisheries Management","severity": "high",     "description": "Despite CITES Appendix II listing and catch limits in some RFMOs, enforcement is weak and illegal, unreported, and unregulated (IUU) fishing remains widespread across pelagic waters." },
-    { "name": "Climate Change",                 "severity": "medium",   "description": "Warming oceans and shifts in tuna distributions alter prey availability and may push the species into higher-pressure fishing zones closer to port fisheries." }
+    { "name": "Bycatch",                         "severity": "critical", "description": "The primary driver of decline. Caught in enormous numbers in pelagic longlines targeting tuna and swordfish. Once the most common bycatch shark in these fisheries, it is now rarely encountered." },
+    { "name": "Shark Fin Trade",                 "severity": "high",     "description": "Heavily targeted for the fin trade due to its large, elongated pectoral fins. Finning at sea was common before international restrictions, but illegal finning continues in unmonitored high-seas fisheries." },
+    { "name": "Inadequate Fisheries Management", "severity": "high",     "description": "Despite CITES Appendix II listing and catch limits in some RFMOs, enforcement is weak and illegal, unreported, and unregulated (IUU) fishing remains widespread across pelagic waters." },
+    { "name": "Climate Change",                  "severity": "medium",   "description": "Warming oceans and shifts in tuna distributions alter prey availability and may push the species into higher-pressure fishing zones closer to port fisheries." }
   ],
   "actionItems": [
-    { "title": "Support Pelagic Shark Protection",   "description": "Advocate for stronger RFMO catch limits and better enforcement of CITES Appendix II protections for oceanic whitetips across international waters.", "link": null },
-    { "title": "Choose Sustainable Seafood",         "description": "Use the Monterey Bay Aquarium Seafood Watch guide to avoid tuna and swordfish from fisheries with high bycatch rates where oceanic whitetips are common.", "link": "https://www.seafoodwatch.org" },
-    { "title": "Refuse Shark Fin Products",          "description": "Avoid purchasing or consuming shark fin soup and products, and support businesses that have pledged to remove them from their menus.", "link": null },
-    { "title": "Donate to Open-Ocean Conservation",  "description": "Support organizations like the Shark Trust and Save Our Seas Foundation that fund research and advocacy for pelagic shark species.", "link": "https://www.sharktrust.org" }
+    { "title": "Support Pelagic Shark Protection",  "description": "Advocate for stronger RFMO catch limits and better enforcement of CITES Appendix II protections for oceanic whitetips across international waters.", "link": null },
+    { "title": "Choose Sustainable Seafood",        "description": "Use the Monterey Bay Aquarium Seafood Watch guide to avoid tuna and swordfish from fisheries with high bycatch rates where oceanic whitetips are common.", "link": "https://www.seafoodwatch.org" },
+    { "title": "Refuse Shark Fin Products",         "description": "Avoid purchasing or consuming shark fin soup and products, and support businesses that have pledged to remove them from their menus.", "link": null },
+    { "title": "Donate to Open-Ocean Conservation", "description": "Support organizations like the Shark Trust and Save Our Seas Foundation that fund research and advocacy for pelagic shark species.", "link": "https://www.sharktrust.org" }
   ],
   "healthMetrics": [
-    { "label": "IUCN Status",         "value": "Critically Endangered",                                          "trend": "stable" },
-    { "label": "Population Trend",    "value": "Decreasing — >98% collapse in parts of the Atlantic since 1950s","trend": "down"   },
-    { "label": "Habitat Quality",     "value": "Declining — warming oceans and prey loss in pelagic zones",      "trend": "down"   },
-    { "label": "Prey Availability",   "value": "Declining — tuna and billfish heavily depleted by commercial fleets","trend": "down" },
-    { "label": "Fishing Pressure",    "value": "Critical — pelagic longlines cover all tropical/subtropical oceans","trend": "down"  },
-    { "label": "Protection Coverage", "value": "Limited — CITES Appendix II; RFMO catch limits poorly enforced on high seas","trend": "stable",
+    { "label": "IUCN Status",         "value": "Critically Endangered",                                           "trend": "stable" },
+    { "label": "Population Trend",    "value": "Decreasing — >98% collapse in parts of the Atlantic since 1950s", "trend": "down"   },
+    { "label": "Habitat Quality",     "value": "Declining — warming oceans and prey loss in pelagic zones",       "trend": "down"   },
+    { "label": "Prey Availability",   "value": "Declining — tuna and billfish heavily depleted by commercial fleets", "trend": "down" },
+    { "label": "Fishing Pressure",    "value": "Critical — pelagic longlines cover all tropical/subtropical oceans",  "trend": "down"  },
+    { "label": "Protection Coverage", "value": "Limited — CITES Appendix II; RFMO catch limits poorly enforced on high seas", "trend": "stable",
       "links": [
-        { "label": "CITES Listing",  "url": "https://cites.org/eng/app/appendices.php" },
-        { "label": "IUCN Red List",  "url": "https://www.iucnredlist.org/species/39374/2911645" },
-        { "label": "Shark Trust",    "url": "https://www.sharktrust.org" }
+        { "label": "CITES Listing", "url": "https://cites.org/eng/app/appendices.php" },
+        { "label": "IUCN Red List", "url": "https://www.iucnredlist.org/species/39374/2911645" },
+        { "label": "Shark Trust",   "url": "https://www.sharktrust.org" }
       ]
     }
   ],
@@ -67,5 +71,26 @@
     { "year": 2007, "status": "Vulnerable" },
     { "year": 2015, "status": "Vulnerable" },
     { "year": 2019, "status": "Critically Endangered" }
+  ],
+  "populationTrend": [],
+  "populationTrendMeta": {
+    "confidence": "data-deficient",
+    "note": "No reliable global population estimate exists. Longline survey data documented a >71% decline in the NW Atlantic from 1992–2000, and subsequent assessments have estimated >98% depletion in parts of the Gulf of Mexico and Atlantic since the 1950s. Data quality is insufficient for a global quantitative trend."
+  },
+  "preyDeclineRegions": [
+    { "name": "N. Atlantic",    "severity": "critical", "note": "Industrial longline fleets have heavily depleted tuna and swordfish — core oceanic whitetip prey — across the entire North Atlantic since the 1950s." },
+    { "name": "Gulf of Mexico", "severity": "critical", "note": "Once the most common large shark in the Gulf; now rarely encountered. Collapse of tuna and billfish stocks mirrors the >98% documented decline in whitetip abundance." },
+    { "name": "Mediterranean",  "severity": "high",     "note": "Bluefin tuna near collapse; squid and billfish severely depleted by generations of intensive pelagic fishing." },
+    { "name": "Indo-Pacific",   "severity": "high",     "note": "Pelagic tuna stocks under heavy longline and purse seine pressure; prey availability declining across tropical Indian and Pacific oceans." },
+    { "name": "S. Atlantic",    "severity": "medium",   "note": "Distant-water fleets expanding into open ocean; tuna and squid stocks under increasing pressure but still more abundant than the N. Atlantic." },
+    { "name": "N. Pacific",     "severity": "medium",   "note": "Albacore and skipjack tuna heavily fished; some regional stocks recovering under WCPFC management but overall prey base reduced." }
+  ],
+  "fishingPressureRegions": [
+    { "name": "N. Atlantic",    "severity": "critical", "note": "Dense pelagic longline fleet targeting swordfish and tuna; oceanic whitetips among the most severely impacted bycatch species historically." },
+    { "name": "Gulf of Mexico", "severity": "critical", "note": "Epicenter of the documented >98% population collapse; high longline effort with poor observer coverage continues today." },
+    { "name": "Mediterranean",  "severity": "high",     "note": "Dense longline and drift net fleets; illegal fishing common; near-zero observer coverage in much of the basin." },
+    { "name": "Indo-Pacific",   "severity": "high",     "note": "Heavy industrial longline and purse seine effort with limited monitoring; CITES Appendix II listings poorly enforced on the high seas." },
+    { "name": "S. Atlantic",    "severity": "high",     "note": "Distant-water fleets from Asia and Europe expanding into southern pelagic zones; limited enforcement capacity." },
+    { "name": "N. Pacific",     "severity": "medium",   "note": "WCPFC longline fleets active in tropical Pacific; observer coverage improving but still insufficient across the full range." }
   ]
 }

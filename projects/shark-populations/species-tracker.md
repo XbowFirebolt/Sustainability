@@ -3,9 +3,9 @@
 Tracks every species in the wiki: current tier, IUCN status, and what still needs doing.
 
 **Tier definitions:**
-- **Full** — photos, vitalSigns, populationTrend, preyDeclineRegions, fishingPressureRegions, healthMetrics, threats, actionItems
-- **Standard** — vitalSigns, threats, actionItems, diet, habitat, size
-- **Stub** — id, commonName, scientificName, statusLabel, lifePercent, habitatTypes, dietType, geographicRegions, tags, description, funFact
+- **Full** — Standard + `photos` present (plus optional `physicalScaleImage`, `habitatImage`)
+- **Standard** — all data fields: `vitalSigns`, `threats`, `actionItems`, `statusHistory`, `healthMetrics`, `habitat`, `diet`, `size`, `habitatStats`, `populationTrend`, `populationTrendMeta`, `preyDeclineRegions`, `fishingPressureRegions`; unknown/empty values are valid
+- **Stub** — `id`, `commonName`, `scientificName`, `statusLabel`, `lifePercent`, `habitatTypes`, `dietType`, `geographicRegions`, `tags`, `description`, `funFact`
 
 ---
 
@@ -13,12 +13,12 @@ Tracks every species in the wiki: current tier, IUCN status, and what still need
 
 | Species | Scientific Name | IUCN Status | Tier | Notes |
 |---|---|---|---|---|
-| Great White Shark | *Carcharodon carcharias* | Vulnerable | Full | Flagship; only species with physicalScaleImage |
-| Scalloped Hammerhead | *Sphyrna lewini* | Critically Endangered | Standard | Missing physicalScaleImage |
-| Whale Shark | *Rhincodon typus* | Endangered | Standard | Missing physicalScaleImage |
-| Bull Shark | *Carcharhinus leucas* | Near Threatened | Standard | Missing physicalScaleImage |
-| Tiger Shark | *Galeocerdo cuvier* | Near Threatened | Standard | Missing physicalScaleImage |
-| Oceanic Whitetip Shark | *Carcharhinus longimanus* | Critically Endangered | Stub | Phase 3 Batch 1 |
+| Great White Shark | *Carcharodon carcharias* | Vulnerable | Full ✓ | Complete — all images present |
+| Scalloped Hammerhead | *Sphyrna lewini* | Critically Endangered | Full (partial) | Missing physicalScaleImage |
+| Whale Shark | *Rhincodon typus* | Endangered | Full (partial) | Missing physicalScaleImage |
+| Bull Shark | *Carcharhinus leucas* | Near Threatened | Full (partial) | Missing physicalScaleImage |
+| Tiger Shark | *Galeocerdo cuvier* | Near Threatened | Full (partial) | Missing physicalScaleImage |
+| Oceanic Whitetip Shark | *Carcharhinus longimanus* | Critically Endangered | Standard | |
 | Pondicherry Shark | *Carcharhinus hemiodon* | Critically Endangered | Stub | Phase 3 Batch 1 |
 | Daggernose Shark | *Isogomphodon oxyrhynchus* | Critically Endangered | Stub | Phase 3 Batch 1 |
 | Smoothtooth Blacktip Shark | *Carcharhinus leiodon* | Critically Endangered | Stub | Phase 3 Batch 1 |
@@ -33,11 +33,11 @@ Tracks every species in the wiki: current tier, IUCN status, and what still need
 | Borneo River Shark | *Glyphis fowlerae* | Critically Endangered | Stub | Phase 3 Batch 1 |
 | Whitefin Topeshark | *Hypogaleus hyugaensis* | Critically Endangered | Stub | Phase 3 Batch 1 |
 | Natal Shyshark | *Haploblepharus kistnasamyi* | Critically Endangered | Stub | Phase 3 Batch 1 |
-| Shortfin Mako | *Isurus oxyrinchus* | Endangered | Stub | Phase 3 Batch 2 |
+| Shortfin Mako | *Isurus oxyrinchus* | Endangered | Standard | |
 | Longfin Mako | *Isurus paucus* | Endangered | Stub | Phase 3 Batch 2 |
-| Great Hammerhead | *Sphyrna mokarran* | Critically Endangered | Stub | Phase 3 Batch 2 |
+| Great Hammerhead | *Sphyrna mokarran* | Critically Endangered | Standard | |
 | Smooth Hammerhead | *Sphyrna zygaena* | Vulnerable | Stub | Phase 3 Batch 2 |
-| Basking Shark | *Cetorhinus maximus* | Endangered | Stub | Phase 3 Batch 2 |
+| Basking Shark | *Cetorhinus maximus* | Endangered | Standard | |
 | Nurse Shark | *Ginglymostoma cirratum* | Vulnerable | Stub | Phase 3 Batch 2 |
 | Lemon Shark | *Negaprion brevirostris* | Vulnerable | Stub | Phase 3 Batch 2 |
 | Blue Shark | *Prionace glauca* | Near Threatened | Stub | Phase 3 Batch 2 |
@@ -47,7 +47,7 @@ Tracks every species in the wiki: current tier, IUCN status, and what still need
 | Sandbar Shark | *Carcharhinus plumbeus* | Vulnerable | Stub | Phase 3 Batch 2 |
 | Dusky Shark | *Carcharhinus obscurus* | Endangered | Stub | Phase 3 Batch 2 |
 | Silky Shark | *Carcharhinus falciformis* | Vulnerable | Stub | Phase 3 Batch 2 |
-| Porbeagle | *Lamna nasus* | Vulnerable | Stub | Phase 3 Batch 2 |
+| Porbeagle | *Lamna nasus* | Vulnerable | Standard | |
 | Common Thresher | *Alopias vulpinus* | Vulnerable | Stub | Phase 3 Batch 2 |
 | Pelagic Thresher | *Alopias pelagicus* | Endangered | Stub | Phase 3 Batch 2 |
 | Bigeye Thresher | *Alopias superciliosus* | Vulnerable | Stub | Phase 3 Batch 2 |
@@ -156,9 +156,9 @@ Species that have been added as stubs and are candidates for Standard tier promo
 
 | Tier | Count |
 |---|---|
-| Full | 1 |
-| Standard | 4 |
-| Stub | 50 |
+| Full | 5 |
+| Standard | 5 |
+| Stub | 45 |
 | **Total** | **55** |
 
 *Update manually after each batch commit.*

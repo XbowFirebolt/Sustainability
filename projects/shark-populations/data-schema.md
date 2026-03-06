@@ -59,7 +59,7 @@ These are the minimum fields needed to render a valid grid card and open a worki
 
 ### Standard Tier
 
-Fills the Overview tab in the modal with meaningful content. Include these for the ~50–100 priority species.
+Fills all data tabs in the modal. A species can be Standard tier with unknown or missing values (e.g. empty `populationTrend`, `"Unknown"` estimates) — the UI handles these gracefully. Standard tier ends before photos are added.
 
 | Field | Type | Required | Notes |
 |---|---|---|---|
@@ -73,7 +73,11 @@ Fills the Overview tab in the modal with meaningful content. Include these for t
 | `actionItems` | ActionItem[] | no | Calls to action shown in the Take Action tab. See below. |
 | `statusHistory` | StatusEntry[] | no | Chronological IUCN status history. Shown as a timeline. See below. |
 | `healthMetrics` | HealthMetric[] | no | Summary metrics shown in the Health tab (IUCN status, population trend, habitat quality, etc.). See below. |
-| `photos` | string[] | no | Array of relative paths to species photos. First photo is used as the hero image. If empty or omitted, falls back to `silhouetteFallback`. |
+| `habitatStats` | HabitatStat[] | no | Key habitat stats shown alongside the habitat image. See below. |
+| `populationTrend` | TrendPoint[] | no | Time-series data for the population chart. Use `[]` when data is insufficient — the chart renders a "Data Insufficient" state. See below. |
+| `populationTrendMeta` | TrendMeta | no | Confidence and source note displayed below the chart. See below. |
+| `preyDeclineRegions` | Region[] | no | Per-region prey availability data for the pressure map. See below. |
+| `fishingPressureRegions` | Region[] | no | Per-region fishing pressure data for the pressure map. See below. |
 
 #### `Taxonomy`
 
@@ -139,22 +143,6 @@ Common `label` values used across species: `"Estimated Population"`, `"Lifespan"
 
 Ordered chronologically (ascending year). `status` uses the same values as `statusLabel`.
 
----
-
-### Full Tier
-
-Unlocks the Population, Habitat, and Pressure maps tabs. Include these for the 10–20 flagship species.
-
-| Field | Type | Required | Notes |
-|---|---|---|---|
-| `populationTrend` | TrendPoint[] | no | Time-series data for the population chart. See below. |
-| `populationTrendMeta` | TrendMeta | no | Confidence and source note displayed below the chart. |
-| `preyDeclineRegions` | Region[] | no | Per-region prey availability data for the pressure map. See below. |
-| `fishingPressureRegions` | Region[] | no | Per-region fishing pressure data for the pressure map. |
-| `physicalScaleImage` | string | no | Relative path to a size-comparison illustration. |
-| `habitatImage` | string | no | Relative path to a habitat range map image. |
-| `habitatStats` | HabitatStat[] | no | Key habitat stats shown alongside the habitat image. |
-
 #### `TrendPoint`
 
 ```js
@@ -219,13 +207,25 @@ Same shape as `VitalSign` minus `glance`. Common labels: `"Global Range"`, `"Dep
 
 ---
 
+### Full Tier
+
+A species reaches Full tier when photos are present. All data fields from Standard tier should already be populated (with unknown/empty values where data doesn't exist). Full tier adds the photo and image assets.
+
+| Field | Type | Required | Notes |
+|---|---|---|---|
+| `photos` | string[] | no | Array of relative paths to species photos. First photo is used as the hero image. If omitted, falls back to `silhouetteFallback`. |
+| `physicalScaleImage` | string | no | Relative path to a size-comparison illustration. |
+| `habitatImage` | string | no | Relative path to a habitat range map image. |
+
+---
+
 ## Tier Summary
 
 | Tier | Minimum fields | Unlocks |
 |---|---|---|
 | **Stub** | `id`, `commonName`, `scientificName`, `statusLabel`, `lifePercent`, `habitatTypes`, `dietType`, `geographicRegions`, `tags`, `description`, `funFact`, `emoji` | Grid card + modal shell with "Incomplete Data" badges |
-| **Standard** | Stub + `vitalSigns`, `threats`, `actionItems`, `statusHistory`, `habitat`, `diet`, `size`, `healthMetrics` | Overview, Vitals, Threats, Take Action, Health tabs |
-| **Full** | Standard + `photos`, `physicalScaleImage`, `habitatImage`, `habitatStats`, `populationTrend`, `populationTrendMeta`, `preyDeclineRegions`, `fishingPressureRegions` | Population chart, Habitat map, Pressure map |
+| **Standard** | Stub + `vitalSigns`, `threats`, `actionItems`, `statusHistory`, `habitat`, `diet`, `size`, `healthMetrics`, `habitatStats`, `populationTrend`, `populationTrendMeta`, `preyDeclineRegions`, `fishingPressureRegions` | All data tabs; unknown values render gracefully |
+| **Full** | Standard + `photos` (and optionally `physicalScaleImage`, `habitatImage`) | Hero photo, photo gallery, size illustration, habitat map |
 
 ---
 
