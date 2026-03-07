@@ -9,13 +9,12 @@ Check off items as they're completed. Add notes inline as needed.
 
 ### Content & Data
 
-- [ ] Add real photos for all species (currently only Great White has one)
-- [ ] Complete Vital Signs tab data for all species (size, weight, lifespan, diet, habitat stats)
-- [ ] Add physical scale images for all species (like white_shark_size.png)
-- [ ] Add habitat distribution map images for all species
-- [ ] Add population trend chart data for all species (currently only Great White has this)
+- [ ] Add real photos for all species (first 5 species have photos; ~35 stubs still need photos)
+- [ ] Complete Vital Signs tab data for all species (size, weight, lifespan, diet, habitat stats) — 5 Full + 5 Standard done; ~30 stubs still need this
+- [ ] Add physical scale images for all species (like white_shark_size.png) — only Great White has one; 4 species have habitat maps but not size images
+- [ ] Add habitat distribution map images for all species (5 of 40 done — white shark, scalloped hammerhead, whale shark, bull shark, tiger shark)
+- [ ] Add population trend chart data for all species (10 of 40 species have this so far)
 - [ ] Add prey decline + fishing pressure regional data for all species
-- [ ] Add more shark species beyond the current 5 (there are 500+ shark species)
 - [x] Add taxonomy info per species (Family, Order, Class) to Vital Signs
 - [ ] Add geographic range description as a data field
 - [x] Add conservation status history (e.g., "Was Near Threatened in 2000, now Vulnerable")
@@ -56,11 +55,9 @@ Check off items as they're completed. Add notes inline as needed.
 ### Architecture / Code Quality
 
 - [ ] **Support multiple wiki datasets per project** — allow a project to have sub-categories (e.g., "Sharks" + "Rays" in the same project)
-- [ ] **Extract data.js schema documentation** — add a `data-schema.md` or comments in data.js explaining every field so new species are easy to add correctly
 - [ ] **Add a second project's wiki** — implement a second `projects/<id>/data.js` for another sustainability project to validate the generic wiki architecture works beyond sharks
 - [ ] **Unit tests for core functions** — test `renderWikiGrid`, `openSpeciesModal`, sorting/filtering logic independently
 - [ ] **JSDoc type annotations** — add `@typedef` comments for the WIKI_DATA schema (items, vitalSigns, threats, etc.) so editors can provide autocomplete when editing data.js
-- [ ] **Data completeness audit script** — a small browser-console or Node script that checks every species in WIKI_DATA.items and reports which fields are missing/empty
 - [ ] **Offline / PWA support** — add a service worker to cache wiki assets so the page works offline
 
 ---
@@ -77,6 +74,9 @@ Check off items as they're completed. Add notes inline as needed.
 
 ## Completed
 
+- [x] Add more shark species beyond the original 5 — 40 species across Full, Standard, and Stub tiers (Phase 3 Batches 1–3)
+- [x] **Extract data.js schema documentation** — `data-schema.md` added documenting every field
+- [x] **Data completeness audit script** — `scripts/check-completeness.js` added
 - [x] Add a `tags` array per species (e.g., `["pelagic", "apex predator", "reef"]`) to enable richer tag-based filtering
 - [x] **Tab state persistence during nav** — when clicking Prev/Next, remember which tab was active instead of resetting to Vital Signs
 - [x] **"Show Favorites Only" toggle** — quick button to filter grid to starred species only, separate from sort
@@ -126,7 +126,8 @@ Check off items as they're completed. Add notes inline as needed.
 
 ## Notes
 
-- Only **Great White Shark** currently has complete data — all other 4 species need significant data work
+- **5 Full tier** species (Great White, Scalloped Hammerhead, Whale Shark, Bull Shark, Tiger Shark — all have photos + full data); **5 Standard tier** (Oceanic Whitetip, Shortfin Mako, Great Hammerhead, Basking Shark, Porbeagle — full data, no photos); **~30 Stub tier** species need data work
+- **40 species** currently in data.js (Phase 3 batches 1–3 complete); species-tracker.md is the authoritative list
 - The architecture is already generic; a second project wiki can be added with just a new `data.js`
 - Deep linking (`?species=carcharodon-carcharias`) works with a fade-in animation fallback (morph requires a visible source card in the viewport)
 - Modal morphing animation only works when the source card is visible in the viewport at open time
