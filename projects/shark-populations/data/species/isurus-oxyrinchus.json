@@ -54,12 +54,12 @@
     { "title": "Advocate for CITES Appendix II Enforcement", "description": "Shortfin makos are listed on CITES Appendix II. Support stronger trade documentation requirements and enforcement to stop unreported landings and illegal fin trading.", "link": "https://cites.org" }
   ],
   "healthMetrics": [
-    { "label": "IUCN Status",         "value": "Endangered",                                                             "trend": "stable" },
-    { "label": "Population Trend",    "value": "Decreasing — North Atlantic population severely overfished",              "trend": "down"   },
-    { "label": "Habitat Quality",     "value": "Moderate — open ocean less directly impacted; prey distributions shifting", "trend": "down"  },
-    { "label": "Prey Availability",   "value": "Declining — bluefish, swordfish, and tuna under heavy fishing pressure",   "trend": "down"   },
-    { "label": "Fishing Pressure",    "value": "Critical — among the most common bycatch shark in pelagic longlines globally", "trend": "down" },
-    { "label": "Protection Coverage", "value": "Partial — CITES Appendix II; North Atlantic no-retention (ICCAT 2019); Pacific/Indian Ocean unprotected", "trend": "up",
+    { "label": "IUCN Status",         "value": "Endangered",                                        "trend": "stable" },
+    { "label": "Population Trend",    "value": "Decreasing — North Atlantic severely overfished",    "trend": "down"   },
+    { "label": "Habitat Quality",     "value": "Moderate — prey distributions shifting",             "trend": "down"   },
+    { "label": "Prey Availability",   "value": "Declining — swordfish and tuna heavily fished",      "trend": "down"   },
+    { "label": "Fishing Pressure",    "value": "Critical — top bycatch species in pelagic longlines", "trend": "down"  },
+    { "label": "Protection Coverage", "value": "Partial — CITES II; N. Atlantic no-retention (ICCAT 2019)", "trend": "up",
       "links": [
         { "label": "CITES Listing", "url": "https://cites.org/eng/app/appendices.php" },
         { "label": "IUCN Red List", "url": "https://www.iucnredlist.org/species/42005/3351001" },
@@ -68,6 +68,7 @@
     }
   ],
   "statusHistory": [
+    { "year": 1970, "status": "Not Evaluated" },
     { "year": 2007, "status": "Near Threatened" },
     { "year": 2019, "status": "Endangered" }
   ],
@@ -81,22 +82,22 @@
   ],
   "populationTrendMeta": {
     "confidence": "estimated",
-    "note": "Global estimate of ~1.5 million derived from ICCAT 2019 North Atlantic stock assessment extrapolated globally. The figure is highly uncertain. Historical values are modeled from fishing mortality rates and are not based on direct population counts."
+    "note": "Derived from ICCAT's 2019 North Atlantic stock assessment, extrapolated globally. Historical values are modeled from fishing mortality rates; all figures carry high uncertainty."
   },
   "preyDeclineRegions": [
-    { "name": "N. Atlantic",    "severity": "critical", "note": "Bluefish, swordfish, and Atlantic bluefin tuna — core mako prey — have been heavily overfished for decades; prey biomass in the mako's primary range is severely reduced." },
-    { "name": "Mediterranean",  "severity": "critical", "note": "Atlantic bluefin tuna near collapse; swordfish heavily depleted; the Mediterranean supports some of the highest fishing pressure of any sea on Earth." },
-    { "name": "N. Pacific",     "severity": "high",     "note": "Albacore and bigeye tuna under intense fishing pressure from industrial longline fleets; prey abundance declining across the subtropical Pacific." },
-    { "name": "Indo-Pacific",   "severity": "high",     "note": "Pelagic fish stocks declining across the tropical Indian and western Pacific from heavy longline and purse seine effort." },
-    { "name": "S. Atlantic",    "severity": "medium",   "note": "Swordfish and tuna under moderate pressure; some recovery in managed areas but overall prey base declining under expanding distant-water fleet effort." },
-    { "name": "Southern Ocean", "severity": "low",      "note": "Prey availability relatively higher in cooler, less-fished waters; makos found at the northern fringes of the Southern Ocean." }
+    { "name": "N. Atlantic",    "severity": "critical", "note": "Bluefish, swordfish, and bluefin tuna heavily overfished" },
+    { "name": "Mediterranean",  "severity": "critical", "note": "Bluefin near collapse; swordfish severely depleted" },
+    { "name": "N. Pacific",     "severity": "high",     "note": "Albacore and bigeye tuna under intense longline pressure" },
+    { "name": "Indo-Pacific",   "severity": "high",     "note": "Pelagic fish stocks declining across the Indian and W. Pacific" },
+    { "name": "S. Atlantic",    "severity": "medium",   "note": "Swordfish and tuna under moderate and growing pressure" },
+    { "name": "Southern Ocean", "severity": "low",      "note": "Prey relatively abundant; makos at range fringe" }
   ],
   "fishingPressureRegions": [
-    { "name": "N. Atlantic",    "severity": "critical", "note": "ICCAT no-retention measure adopted in 2019 but compliance inconsistent; decades of overfishing have severely depleted this population." },
-    { "name": "Mediterranean",  "severity": "critical", "note": "Dense longline fleets with poor observer coverage; mako fins highly valued and illegal landings widespread; virtually no effective management in place." },
-    { "name": "Indo-Pacific",   "severity": "high",     "note": "Heavy longline effort across tropical and subtropical Pacific and Indian Ocean with limited observer coverage; no basin-wide mako protections." },
-    { "name": "N. Pacific",     "severity": "high",     "note": "California Current and tropical Pacific longlines target tuna and swordfish; makos are among the most commonly caught pelagic sharks as bycatch." },
-    { "name": "S. Atlantic",    "severity": "high",     "note": "Expanding distant-water fleet effort from multiple nations; limited monitoring and no South Atlantic-specific mako protections in place." },
-    { "name": "Southern Ocean", "severity": "medium",   "note": "Reduced commercial pressure in colder waters; some incidental catch in toothfish and tuna longlines at the northern boundary of the Southern Ocean." }
+    { "name": "N. Atlantic",    "severity": "critical", "note": "ICCAT no-retention (2019); decades of prior overfishing" },
+    { "name": "Mediterranean",  "severity": "critical", "note": "Dense longlines; illegal landings widespread; no enforcement" },
+    { "name": "Indo-Pacific",   "severity": "high",     "note": "Heavy longline effort; no basin-wide mako protections" },
+    { "name": "N. Pacific",     "severity": "high",     "note": "California Current and tropical longlines; common bycatch" },
+    { "name": "S. Atlantic",    "severity": "high",     "note": "Expanding distant-water fleets; no S. Atlantic protections" },
+    { "name": "Southern Ocean", "severity": "medium",   "note": "Some bycatch in toothfish longlines; reduced pressure" }
   ]
 }

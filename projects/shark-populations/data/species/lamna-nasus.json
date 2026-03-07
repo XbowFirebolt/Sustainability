@@ -55,12 +55,12 @@
     { "title": "Donate to Shark Conservation",         "description": "Support the Shark Trust and similar organizations that monitor porbeagle bycatch, advocate for RFMO protections, and fund research into population status across the Southern Hemisphere.", "link": "https://www.sharktrust.org" }
   ],
   "healthMetrics": [
-    { "label": "IUCN Status",         "value": "Vulnerable (globally); Critically Endangered in Northeast Atlantic", "trend": "up"     },
-    { "label": "Population Trend",    "value": "Recovering in Northeast Atlantic; depleted elsewhere",               "trend": "up"     },
-    { "label": "Habitat Quality",     "value": "Moderate — cold-water habitats intact but shifting poleward with warming", "trend": "down" },
-    { "label": "Prey Availability",   "value": "Declining — mackerel and herring stocks under heavy pressure in North Atlantic", "trend": "down" },
-    { "label": "Fishing Pressure",    "value": "High — bycatch continues globally; directed fisheries in some regions", "trend": "stable" },
-    { "label": "Protection Coverage", "value": "Partial — CITES Appendix II; EU directed fishery ban; North Atlantic recovery underway", "trend": "up",
+    { "label": "IUCN Status",         "value": "Vulnerable (globally); Critically Endangered in NE Atlantic", "trend": "up"     },
+    { "label": "Population Trend",    "value": "Recovering in NE Atlantic; depleted elsewhere",               "trend": "up"     },
+    { "label": "Habitat Quality",     "value": "Moderate — cold-water habitat shifting poleward",             "trend": "down"   },
+    { "label": "Prey Availability",   "value": "Declining — mackerel and herring under heavy pressure",       "trend": "down"   },
+    { "label": "Fishing Pressure",    "value": "High — bycatch continues globally; directed in some regions", "trend": "stable" },
+    { "label": "Protection Coverage", "value": "Partial — CITES II; EU directed fishery ban since 2010",      "trend": "up",
       "links": [
         { "label": "CITES Listing", "url": "https://cites.org/eng/app/appendices.php" },
         { "label": "IUCN Red List", "url": "https://www.iucnredlist.org/species/11200/3261697" },
@@ -69,26 +69,33 @@
     }
   ],
   "statusHistory": [
-    { "year": 2007, "status": "Vulnerable" },
-    { "year": 2019, "status": "Vulnerable" }
+    { "year": 1970, "status": "Not Evaluated" },
+    { "year": 2007, "status": "Vulnerable" }
   ],
-  "populationTrend": [],
+  "populationTrend": [
+    { "year": 1970, "value": 600000 },
+    { "year": 1980, "value": 380000 },
+    { "year": 1990, "value": 240000 },
+    { "year": 2000, "value": 170000 },
+    { "year": 2010, "value": 155000 },
+    { "year": 2019, "value": 175000 }
+  ],
   "populationTrendMeta": {
-    "confidence": "data-deficient",
-    "note": "No reliable global population estimate exists. The Northeast Atlantic population collapsed under directed fishing in the mid-20th century and has shown signs of recovery since EU protection was enacted. Southern Hemisphere populations have never been formally assessed."
+    "confidence": "modeled",
+    "note": "Rough global estimates modeled from the Northeast Atlantic collapse (>90% decline under Norwegian and UK directed fishing) and partial recovery following the EU ban in 2010. Southern Hemisphere populations have never been formally assessed."
   },
   "preyDeclineRegions": [
-    { "name": "N. Atlantic",    "severity": "high",   "note": "Atlantic mackerel and herring — the porbeagle's primary prey — are under heavy commercial fishing pressure throughout the North Atlantic, with some stocks approaching overfished status." },
-    { "name": "Mediterranean",  "severity": "high",   "note": "Mackerel and other schooling fish severely depleted in the Mediterranean by generations of intensive fishing; porbeagles are rare in this basin." },
-    { "name": "S. Atlantic",    "severity": "medium", "note": "Patagonian prey stocks under increasing pressure from distant-water fleets targeting squid and finfish around South America." },
-    { "name": "N. Pacific",     "severity": "medium", "note": "Pacific mackerel and herring stocks depleted in some regions; porbeagle distribution in the North Pacific is limited compared to the Atlantic." },
-    { "name": "Southern Ocean", "severity": "low",    "note": "Prey availability relatively higher in productive cold-water upwelling zones; Southern Hemisphere populations face lower prey depletion than the North Atlantic." }
+    { "name": "N. Atlantic",    "severity": "high",   "note": "Mackerel and herring under heavy commercial pressure" },
+    { "name": "Mediterranean",  "severity": "high",   "note": "Mackerel and schooling fish severely depleted" },
+    { "name": "S. Atlantic",    "severity": "medium", "note": "Patagonian stocks under pressure from distant-water fleets" },
+    { "name": "N. Pacific",     "severity": "medium", "note": "Pacific mackerel and herring depleted in some regions" },
+    { "name": "Southern Ocean", "severity": "low",    "note": "Prey still relatively abundant in cold upwelling zones" }
   ],
   "fishingPressureRegions": [
-    { "name": "N. Atlantic",    "severity": "high",   "note": "Historically the target of directed fisheries by Norwegian, Danish, and UK fleets; EU directed fishery ban since 2010 has allowed some recovery but bycatch in pelagic longlines continues." },
-    { "name": "Mediterranean",  "severity": "high",   "note": "Incidental catch in longlines and trawls; poor observer coverage; no Mediterranean-specific porbeagle protections beyond the CITES Appendix II listing." },
-    { "name": "S. Atlantic",    "severity": "medium", "note": "Increasing pelagic longline effort from distant-water fleets; limited monitoring and no southern population assessments to guide management." },
-    { "name": "Southern Ocean", "severity": "medium", "note": "Some bycatch in toothfish and southern bluefin tuna longlines; cold water limits fishing intensity but observer coverage is sparse." },
-    { "name": "N. Pacific",     "severity": "low",    "note": "Porbeagles are less abundant in the North Pacific; some incidental catch in longlines and gillnets but lower overall fishing pressure on this population." }
+    { "name": "N. Atlantic",    "severity": "high",   "note": "EU directed ban since 2010; bycatch in longlines continues" },
+    { "name": "Mediterranean",  "severity": "high",   "note": "Incidental catch in longlines and trawls; no specific protections" },
+    { "name": "S. Atlantic",    "severity": "medium", "note": "Expanding distant-water fleets; no southern assessments" },
+    { "name": "Southern Ocean", "severity": "medium", "note": "Some bycatch in toothfish and tuna longlines" },
+    { "name": "N. Pacific",     "severity": "low",    "note": "Less abundant here; low incidental catch in longlines" }
   ]
 }

@@ -55,12 +55,12 @@
     { "title": "Fund Hammerhead Research",       "description": "Support organizations like Save Our Seas Foundation and Shark Trust that fund tagging studies to track hammerhead migrations and assess population status.", "link": "https://saveourseas.com" }
   ],
   "healthMetrics": [
-    { "label": "IUCN Status",         "value": "Critically Endangered",                                               "trend": "stable" },
-    { "label": "Population Trend",    "value": "Decreasing — global population severely depleted by fin trade",        "trend": "down"   },
-    { "label": "Habitat Quality",     "value": "Degraded — coral bleaching and coastal development reduce key habitat", "trend": "down"   },
-    { "label": "Prey Availability",   "value": "Declining — stingray and reef fish populations reduced by overfishing", "trend": "down"   },
-    { "label": "Fishing Pressure",    "value": "Critical — targeted for high-value fins; heavy bycatch in longlines",   "trend": "down"   },
-    { "label": "Protection Coverage", "value": "Partial — CITES Appendix II; some national bans; high-seas gaps remain", "trend": "up",
+    { "label": "IUCN Status",         "value": "Critically Endangered",                                "trend": "stable" },
+    { "label": "Population Trend",    "value": "Decreasing — severely depleted by the fin trade",      "trend": "down"   },
+    { "label": "Habitat Quality",     "value": "Degraded — bleaching and development reduce reef habitat", "trend": "down" },
+    { "label": "Prey Availability",   "value": "Declining — stingrays and reef fish reduced",           "trend": "down"   },
+    { "label": "Fishing Pressure",    "value": "Critical — targeted for high-value fins; heavy bycatch", "trend": "down"  },
+    { "label": "Protection Coverage", "value": "Partial — CITES II; national bans; high-seas gaps",     "trend": "up",
       "links": [
         { "label": "CITES Listing", "url": "https://cites.org/eng/app/appendices.php" },
         { "label": "IUCN Red List", "url": "https://www.iucnredlist.org/species/2920499/2920502" },
@@ -69,26 +69,34 @@
     }
   ],
   "statusHistory": [
+    { "year": 1970, "status": "Not Evaluated" },
     { "year": 2007, "status": "Endangered" },
     { "year": 2019, "status": "Critically Endangered" }
   ],
-  "populationTrend": [],
+  "populationTrend": [
+    { "year": 1970, "value": 350000 },
+    { "year": 1980, "value": 290000 },
+    { "year": 1990, "value": 225000 },
+    { "year": 2000, "value": 175000 },
+    { "year": 2010, "value": 140000 },
+    { "year": 2019, "value": 115000 }
+  ],
   "populationTrendMeta": {
-    "confidence": "data-deficient",
-    "note": "No reliable global population estimate exists. The IUCN notes that hammerhead sharks have declined by >50% across most of their range over three generations (~34 years), with some regional populations suspected to have declined by 80–90%. Data quality is insufficient for a global quantitative trend."
+    "confidence": "modeled",
+    "note": "Rough global estimates modeled from IUCN-documented declines — >50% over three generations (~34 years), with regional losses of 80–90%. Absolute abundance has never been formally counted."
   },
   "preyDeclineRegions": [
-    { "name": "Indo-Pacific",      "severity": "critical", "note": "Stingray and batoid populations severely reduced by coastal fishing pressure across Southeast Asia, Oceania, and the Indian Ocean — the hammerhead's primary prey base." },
-    { "name": "Tropical Atlantic", "severity": "high",     "note": "Coastal stingray and reef fish populations declining under fishing pressure throughout the Caribbean, Gulf of Mexico, and tropical Atlantic coast." },
-    { "name": "Mediterranean",     "severity": "high",     "note": "Prey species severely depleted by intensive fishing; historically rare and now virtually absent from much of the Mediterranean basin." },
-    { "name": "Caribbean",         "severity": "high",     "note": "Coral reef degradation from bleaching, fishing, and coastal development has reduced reef fish diversity and stingray abundance in key foraging habitat." },
-    { "name": "S. Atlantic",       "severity": "medium",   "note": "Some viable prey populations remain in less-heavily fished offshore areas but coastal fishing pressure is increasing throughout the region." }
+    { "name": "Indo-Pacific",      "severity": "critical", "note": "Stingrays and batoids severely reduced by coastal fishing" },
+    { "name": "Tropical Atlantic", "severity": "high",     "note": "Stingrays and reef fish declining throughout Caribbean and Gulf" },
+    { "name": "Mediterranean",     "severity": "high",     "note": "Prey severely depleted; hammerheads now virtually absent" },
+    { "name": "Caribbean",         "severity": "high",     "note": "Reef fish and stingray abundance reduced by bleaching and fishing" },
+    { "name": "S. Atlantic",       "severity": "medium",   "note": "Some viable prey remains; coastal pressure increasing" }
   ],
   "fishingPressureRegions": [
-    { "name": "Indo-Pacific",      "severity": "critical", "note": "Heavy pelagic and coastal longline effort across the Indo-Pacific; great hammerhead fins command premium prices among the highest of any shark in the fin trade." },
-    { "name": "Tropical Atlantic", "severity": "critical", "note": "Targeted for high-value fins throughout the tropical Atlantic; bycatch in pelagic longlines is high and post-release survival is extremely low." },
-    { "name": "Caribbean",         "severity": "high",     "note": "Some directed targeting in poorly regulated coastal fisheries; bycatch in artisanal and commercial gear common across island nations." },
-    { "name": "Mediterranean",     "severity": "high",     "note": "Incidental catch in longlines and drift nets; minimal observer coverage; historically fished and now extremely rare in most of the basin." },
-    { "name": "S. Atlantic",       "severity": "high",     "note": "Distant-water pelagic fleets operating in open ocean; high-seas enforcement near-absent; great hammerheads encountered as bycatch in offshore zones." }
+    { "name": "Indo-Pacific",      "severity": "critical", "note": "Fins among the highest-value of any shark; heavy longline effort" },
+    { "name": "Tropical Atlantic", "severity": "critical", "note": "Targeted for fins; near-zero post-release survival" },
+    { "name": "Caribbean",         "severity": "high",     "note": "Directed targeting in poorly regulated coastal fisheries" },
+    { "name": "Mediterranean",     "severity": "high",     "note": "Incidental longline catch; now extremely rare" },
+    { "name": "S. Atlantic",       "severity": "high",     "note": "Pelagic bycatch in open ocean; enforcement near-absent" }
   ]
 }

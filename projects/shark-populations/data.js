@@ -441,6 +441,18 @@ window.WIKI_DATA = {
         }
       ],
       "habitatImage": "projects/shark-populations/images/scalloped_hammerhead/scalloped_hammerhead_habitat.png",
+      "habitatStats": [
+        {
+          "label": "Global Range",
+          "value": "Tropical and warm temperate seas worldwide; coastal zones, estuaries, and semi-oceanic waters"
+        },
+        {
+          "label": "Depth Range",
+          "value": "Surface to ~1,000 m (3,280 ft); primarily in the upper 25 m of coastal and offshore waters",
+          "metric": "Surface to ~1,000 m",
+          "imperial": "Surface to ~3,280 ft"
+        }
+      ],
       "statusHistory": [
         {
           "year": 1970,
@@ -745,6 +757,18 @@ window.WIKI_DATA = {
         }
       ],
       "habitatImage": "projects/shark-populations/images/whale_shark/whale_shark_habitat.png",
+      "habitatStats": [
+        {
+          "label": "Global Range",
+          "value": "Tropical and warm temperate seas worldwide; open ocean and productive coastal upwelling zones"
+        },
+        {
+          "label": "Depth Range",
+          "value": "Surface to ~1,928 m (6,325 ft); most feeding activity in upper 200 m",
+          "metric": "Surface to ~1,928 m",
+          "imperial": "Surface to ~6,325 ft"
+        }
+      ],
       "statusHistory": [
         {
           "year": 1970,
@@ -1050,6 +1074,18 @@ window.WIKI_DATA = {
         }
       ],
       "habitatImage": "projects/shark-populations/images/bull_shark/bull_shark_habitat.png",
+      "habitatStats": [
+        {
+          "label": "Global Range",
+          "value": "Tropical and subtropical coastal seas worldwide; uniquely penetrates rivers and freshwater lakes far inland"
+        },
+        {
+          "label": "Depth Range",
+          "value": "Surface to ~150 m (492 ft); typically found in shallow coastal, estuarine, and riverine systems",
+          "metric": "Surface to ~150 m",
+          "imperial": "Surface to ~492 ft"
+        }
+      ],
       "statusHistory": [
         {
           "year": 1985,
@@ -1348,6 +1384,18 @@ window.WIKI_DATA = {
         }
       ],
       "habitatImage": "projects/shark-populations/images/tiger_shark/tiger_shark_habitat.png",
+      "habitatStats": [
+        {
+          "label": "Global Range",
+          "value": "Tropical and temperate seas worldwide; coastal reefs, open ocean, and river mouths"
+        },
+        {
+          "label": "Depth Range",
+          "value": "Surface to ~350 m (1,148 ft); frequently patrols shallow coastal and reef areas at night",
+          "metric": "Surface to ~350 m",
+          "imperial": "Surface to ~1,148 ft"
+        }
+      ],
       "statusHistory": [
         {
           "year": 1985,
@@ -1643,6 +1691,18 @@ window.WIKI_DATA = {
           "value": "Highly attuned olfaction; broadly rounded pectoral fins optimized for open-ocean cruising; often followed by pilot fish associations"
         }
       ],
+      "habitatStats": [
+        {
+          "label": "Global Range",
+          "value": "Worldwide in tropical and warm temperate open ocean, 45°N to 43°S"
+        },
+        {
+          "label": "Depth Range",
+          "value": "Surface to ~1,082 m (3,550 ft); primarily epipelagic",
+          "metric": "Surface to ~1,082 m",
+          "imperial": "Surface to ~3,550 ft"
+        }
+      ],
       "threats": [
         {
           "name": "Bycatch",
@@ -1695,27 +1755,27 @@ window.WIKI_DATA = {
         },
         {
           "label": "Population Trend",
-          "value": "Decreasing — >98% collapse in parts of the Atlantic since 1950s",
+          "value": "Decreasing — >98% Atlantic collapse since the 1950s",
           "trend": "down"
         },
         {
           "label": "Habitat Quality",
-          "value": "Declining — warming oceans and prey loss in pelagic zones",
+          "value": "Declining — prey loss and warming in pelagic zones",
           "trend": "down"
         },
         {
           "label": "Prey Availability",
-          "value": "Declining — tuna and billfish heavily depleted by commercial fleets",
+          "value": "Declining — tuna and billfish heavily depleted",
           "trend": "down"
         },
         {
           "label": "Fishing Pressure",
-          "value": "Critical — pelagic longlines cover all tropical/subtropical oceans",
+          "value": "Critical — pelagic longlines span the tropics",
           "trend": "down"
         },
         {
           "label": "Protection Coverage",
-          "value": "Limited — CITES Appendix II; RFMO catch limits poorly enforced on high seas",
+          "value": "Limited — CITES II; RFMO limits poorly enforced",
           "trend": "stable",
           "links": [
             {
@@ -1735,16 +1795,110 @@ window.WIKI_DATA = {
       ],
       "statusHistory": [
         {
-          "year": 2007,
-          "status": "Vulnerable"
+          "year": 1970,
+          "status": "Not Evaluated"
         },
         {
-          "year": 2015,
+          "year": 2007,
           "status": "Vulnerable"
         },
         {
           "year": 2019,
           "status": "Critically Endangered"
+        }
+      ],
+      "populationTrend": [
+        {
+          "year": 1970,
+          "value": 2500000
+        },
+        {
+          "year": 1980,
+          "value": 1500000
+        },
+        {
+          "year": 1990,
+          "value": 700000
+        },
+        {
+          "year": 2000,
+          "value": 300000
+        },
+        {
+          "year": 2010,
+          "value": 180000
+        },
+        {
+          "year": 2020,
+          "value": 130000
+        }
+      ],
+      "populationTrendMeta": {
+        "confidence": "modeled",
+        "note": "Rough global estimates modeled from documented regional declines, including >98% depletion in the Gulf of Mexico and Atlantic since the 1950s. Historical abundance may have reached into the millions; absolute global counts have never been conducted."
+      },
+      "preyDeclineRegions": [
+        {
+          "name": "N. Atlantic",
+          "severity": "critical",
+          "note": "Tuna and swordfish heavily depleted since the 1950s"
+        },
+        {
+          "name": "Gulf of Mexico",
+          "severity": "critical",
+          "note": "Tuna and billfish collapsed; whitetips nearly gone"
+        },
+        {
+          "name": "Mediterranean",
+          "severity": "high",
+          "note": "Bluefin near collapse; squid and billfish depleted"
+        },
+        {
+          "name": "Indo-Pacific",
+          "severity": "high",
+          "note": "Pelagic tuna under heavy longline and purse seine pressure"
+        },
+        {
+          "name": "S. Atlantic",
+          "severity": "medium",
+          "note": "Tuna and squid under rising distant-water fleet pressure"
+        },
+        {
+          "name": "N. Pacific",
+          "severity": "medium",
+          "note": "Albacore and skipjack heavily fished; partial recovery underway"
+        }
+      ],
+      "fishingPressureRegions": [
+        {
+          "name": "N. Atlantic",
+          "severity": "critical",
+          "note": "Dense pelagic longlines; severe historic and ongoing bycatch"
+        },
+        {
+          "name": "Gulf of Mexico",
+          "severity": "critical",
+          "note": "Epicenter of >98% collapse; poor observer coverage"
+        },
+        {
+          "name": "Mediterranean",
+          "severity": "high",
+          "note": "Dense longlines and drift nets; minimal enforcement"
+        },
+        {
+          "name": "Indo-Pacific",
+          "severity": "high",
+          "note": "Heavy longline effort; CITES poorly enforced offshore"
+        },
+        {
+          "name": "S. Atlantic",
+          "severity": "high",
+          "note": "Expanding distant-water fleets; limited enforcement"
+        },
+        {
+          "name": "N. Pacific",
+          "severity": "medium",
+          "note": "WCPFC longlines active; observer coverage improving"
         }
       ]
     },
@@ -2314,6 +2468,18 @@ window.WIKI_DATA = {
           "value": "Regional endothermy (warm-bloodedness); crescent-shaped lunate tail for efficient high-speed propulsion; counter-current heat exchange in muscles"
         }
       ],
+      "habitatStats": [
+        {
+          "label": "Global Range",
+          "value": "Open ocean worldwide in tropical and temperate seas, typically between 50°N and 50°S"
+        },
+        {
+          "label": "Depth Range",
+          "value": "Surface to ~500 m (1,640 ft); performs vertical migrations into deeper, cooler water",
+          "metric": "Surface to ~500 m",
+          "imperial": "Surface to ~1,640 ft"
+        }
+      ],
       "threats": [
         {
           "name": "Bycatch",
@@ -2366,27 +2532,27 @@ window.WIKI_DATA = {
         },
         {
           "label": "Population Trend",
-          "value": "Decreasing — North Atlantic population severely overfished",
+          "value": "Decreasing — North Atlantic severely overfished",
           "trend": "down"
         },
         {
           "label": "Habitat Quality",
-          "value": "Moderate — open ocean less directly impacted; prey distributions shifting",
+          "value": "Moderate — prey distributions shifting",
           "trend": "down"
         },
         {
           "label": "Prey Availability",
-          "value": "Declining — bluefish, swordfish, and tuna under heavy fishing pressure",
+          "value": "Declining — swordfish and tuna heavily fished",
           "trend": "down"
         },
         {
           "label": "Fishing Pressure",
-          "value": "Critical — among the most common bycatch shark in pelagic longlines globally",
+          "value": "Critical — top bycatch species in pelagic longlines",
           "trend": "down"
         },
         {
           "label": "Protection Coverage",
-          "value": "Partial — CITES Appendix II; North Atlantic no-retention (ICCAT 2019); Pacific/Indian Ocean unprotected",
+          "value": "Partial — CITES II; N. Atlantic no-retention (ICCAT 2019)",
           "trend": "up",
           "links": [
             {
@@ -2406,12 +2572,110 @@ window.WIKI_DATA = {
       ],
       "statusHistory": [
         {
+          "year": 1970,
+          "status": "Not Evaluated"
+        },
+        {
           "year": 2007,
           "status": "Near Threatened"
         },
         {
           "year": 2019,
           "status": "Endangered"
+        }
+      ],
+      "populationTrend": [
+        {
+          "year": 1970,
+          "value": 5000000
+        },
+        {
+          "year": 1980,
+          "value": 4200000
+        },
+        {
+          "year": 1990,
+          "value": 3500000
+        },
+        {
+          "year": 2000,
+          "value": 2800000
+        },
+        {
+          "year": 2010,
+          "value": 2000000
+        },
+        {
+          "year": 2019,
+          "value": 1500000
+        }
+      ],
+      "populationTrendMeta": {
+        "confidence": "estimated",
+        "note": "Derived from ICCAT's 2019 North Atlantic stock assessment, extrapolated globally. Historical values are modeled from fishing mortality rates; all figures carry high uncertainty."
+      },
+      "preyDeclineRegions": [
+        {
+          "name": "N. Atlantic",
+          "severity": "critical",
+          "note": "Bluefish, swordfish, and bluefin tuna heavily overfished"
+        },
+        {
+          "name": "Mediterranean",
+          "severity": "critical",
+          "note": "Bluefin near collapse; swordfish severely depleted"
+        },
+        {
+          "name": "N. Pacific",
+          "severity": "high",
+          "note": "Albacore and bigeye tuna under intense longline pressure"
+        },
+        {
+          "name": "Indo-Pacific",
+          "severity": "high",
+          "note": "Pelagic fish stocks declining across the Indian and W. Pacific"
+        },
+        {
+          "name": "S. Atlantic",
+          "severity": "medium",
+          "note": "Swordfish and tuna under moderate and growing pressure"
+        },
+        {
+          "name": "Southern Ocean",
+          "severity": "low",
+          "note": "Prey relatively abundant; makos at range fringe"
+        }
+      ],
+      "fishingPressureRegions": [
+        {
+          "name": "N. Atlantic",
+          "severity": "critical",
+          "note": "ICCAT no-retention (2019); decades of prior overfishing"
+        },
+        {
+          "name": "Mediterranean",
+          "severity": "critical",
+          "note": "Dense longlines; illegal landings widespread; no enforcement"
+        },
+        {
+          "name": "Indo-Pacific",
+          "severity": "high",
+          "note": "Heavy longline effort; no basin-wide mako protections"
+        },
+        {
+          "name": "N. Pacific",
+          "severity": "high",
+          "note": "California Current and tropical longlines; common bycatch"
+        },
+        {
+          "name": "S. Atlantic",
+          "severity": "high",
+          "note": "Expanding distant-water fleets; no S. Atlantic protections"
+        },
+        {
+          "name": "Southern Ocean",
+          "severity": "medium",
+          "note": "Some bycatch in toothfish longlines; reduced pressure"
         }
       ]
     },
@@ -2547,6 +2811,18 @@ window.WIKI_DATA = {
           "value": "Wide cephalofoil densely packed with electroreceptors for detecting buried prey; broad head provides lift and enhanced maneuverability"
         }
       ],
+      "habitatStats": [
+        {
+          "label": "Global Range",
+          "value": "Tropical and warm temperate seas worldwide; coastal zones, coral reefs, and adjacent open ocean"
+        },
+        {
+          "label": "Depth Range",
+          "value": "Surface to ~300 m (984 ft); primarily found in coastal and epipelagic waters",
+          "metric": "Surface to ~300 m",
+          "imperial": "Surface to ~984 ft"
+        }
+      ],
       "threats": [
         {
           "name": "Shark Fin Trade",
@@ -2604,27 +2880,27 @@ window.WIKI_DATA = {
         },
         {
           "label": "Population Trend",
-          "value": "Decreasing — global population severely depleted by fin trade",
+          "value": "Decreasing — severely depleted by the fin trade",
           "trend": "down"
         },
         {
           "label": "Habitat Quality",
-          "value": "Degraded — coral bleaching and coastal development reduce key habitat",
+          "value": "Degraded — bleaching and development reduce reef habitat",
           "trend": "down"
         },
         {
           "label": "Prey Availability",
-          "value": "Declining — stingray and reef fish populations reduced by overfishing",
+          "value": "Declining — stingrays and reef fish reduced",
           "trend": "down"
         },
         {
           "label": "Fishing Pressure",
-          "value": "Critical — targeted for high-value fins; heavy bycatch in longlines",
+          "value": "Critical — targeted for high-value fins; heavy bycatch",
           "trend": "down"
         },
         {
           "label": "Protection Coverage",
-          "value": "Partial — CITES Appendix II; some national bans; high-seas gaps remain",
+          "value": "Partial — CITES II; national bans; high-seas gaps",
           "trend": "up",
           "links": [
             {
@@ -2644,12 +2920,100 @@ window.WIKI_DATA = {
       ],
       "statusHistory": [
         {
+          "year": 1970,
+          "status": "Not Evaluated"
+        },
+        {
           "year": 2007,
           "status": "Endangered"
         },
         {
           "year": 2019,
           "status": "Critically Endangered"
+        }
+      ],
+      "populationTrend": [
+        {
+          "year": 1970,
+          "value": 350000
+        },
+        {
+          "year": 1980,
+          "value": 290000
+        },
+        {
+          "year": 1990,
+          "value": 225000
+        },
+        {
+          "year": 2000,
+          "value": 175000
+        },
+        {
+          "year": 2010,
+          "value": 140000
+        },
+        {
+          "year": 2019,
+          "value": 115000
+        }
+      ],
+      "populationTrendMeta": {
+        "confidence": "modeled",
+        "note": "Rough global estimates modeled from IUCN-documented declines — >50% over three generations (~34 years), with regional losses of 80–90%. Absolute abundance has never been formally counted."
+      },
+      "preyDeclineRegions": [
+        {
+          "name": "Indo-Pacific",
+          "severity": "critical",
+          "note": "Stingrays and batoids severely reduced by coastal fishing"
+        },
+        {
+          "name": "Tropical Atlantic",
+          "severity": "high",
+          "note": "Stingrays and reef fish declining throughout Caribbean and Gulf"
+        },
+        {
+          "name": "Mediterranean",
+          "severity": "high",
+          "note": "Prey severely depleted; hammerheads now virtually absent"
+        },
+        {
+          "name": "Caribbean",
+          "severity": "high",
+          "note": "Reef fish and stingray abundance reduced by bleaching and fishing"
+        },
+        {
+          "name": "S. Atlantic",
+          "severity": "medium",
+          "note": "Some viable prey remains; coastal pressure increasing"
+        }
+      ],
+      "fishingPressureRegions": [
+        {
+          "name": "Indo-Pacific",
+          "severity": "critical",
+          "note": "Fins among the highest-value of any shark; heavy longline effort"
+        },
+        {
+          "name": "Tropical Atlantic",
+          "severity": "critical",
+          "note": "Targeted for fins; near-zero post-release survival"
+        },
+        {
+          "name": "Caribbean",
+          "severity": "high",
+          "note": "Directed targeting in poorly regulated coastal fisheries"
+        },
+        {
+          "name": "Mediterranean",
+          "severity": "high",
+          "note": "Incidental longline catch; now extremely rare"
+        },
+        {
+          "name": "S. Atlantic",
+          "severity": "high",
+          "note": "Pelagic bycatch in open ocean; enforcement near-absent"
         }
       ]
     },
@@ -2785,6 +3149,18 @@ window.WIKI_DATA = {
           "value": "Gill rakers filter ~2,000 tonnes of water/hour; massive oil-rich liver provides buoyancy; mouth gape exceeds 1 m wide"
         }
       ],
+      "habitatStats": [
+        {
+          "label": "Global Range",
+          "value": "Cold to warm temperate seas worldwide; aggregations most common in the N. Atlantic and N. Pacific"
+        },
+        {
+          "label": "Depth Range",
+          "value": "Surface to ~1,264 m (4,150 ft); primarily epipelagic during feeding season",
+          "metric": "Surface to ~1,264 m",
+          "imperial": "Surface to ~4,150 ft"
+        }
+      ],
       "threats": [
         {
           "name": "Historical Targeted Hunting",
@@ -2842,27 +3218,27 @@ window.WIKI_DATA = {
         },
         {
           "label": "Population Trend",
-          "value": "Decreasing — historical fisheries caused severe depletion; recovery slow",
+          "value": "Decreasing — directed fisheries caused severe depletion",
           "trend": "down"
         },
         {
           "label": "Habitat Quality",
-          "value": "Declining — climate-driven reduction in plankton blooms in core habitats",
+          "value": "Declining — warming reduces plankton blooms",
           "trend": "down"
         },
         {
           "label": "Prey Availability",
-          "value": "Uncertain — zooplankton abundance variable; projected decline with warming",
+          "value": "Uncertain — zooplankton projected to decline with warming",
           "trend": "down"
         },
         {
           "label": "Fishing Pressure",
-          "value": "Moderate — targeted fisheries mostly ended; bycatch and vessel strikes persist",
+          "value": "Moderate — directed fishing ended; bycatch and strikes persist",
           "trend": "up"
         },
         {
           "label": "Protection Coverage",
-          "value": "Partial — CITES Appendix II; protected in UK, US, EU; enforcement variable",
+          "value": "Partial — CITES II; protected in UK, US, EU",
           "trend": "up",
           "links": [
             {
@@ -2882,12 +3258,100 @@ window.WIKI_DATA = {
       ],
       "statusHistory": [
         {
+          "year": 1970,
+          "status": "Not Evaluated"
+        },
+        {
           "year": 2005,
           "status": "Vulnerable"
         },
         {
           "year": 2019,
           "status": "Endangered"
+        }
+      ],
+      "populationTrend": [
+        {
+          "year": 1970,
+          "value": 300000
+        },
+        {
+          "year": 1980,
+          "value": 200000
+        },
+        {
+          "year": 1990,
+          "value": 150000
+        },
+        {
+          "year": 2000,
+          "value": 140000
+        },
+        {
+          "year": 2010,
+          "value": 137000
+        },
+        {
+          "year": 2019,
+          "value": 142000
+        }
+      ],
+      "populationTrendMeta": {
+        "confidence": "modeled",
+        "note": "Rough global estimates modeled from documented regional fishery collapses in Norway, British Columbia, Ireland, and Scotland (1960s–1980s). Global baseline abundance has never been formally quantified."
+      },
+      "preyDeclineRegions": [
+        {
+          "name": "N. Atlantic",
+          "severity": "high",
+          "note": "Copepods and zooplankton declining with ocean warming"
+        },
+        {
+          "name": "Mediterranean",
+          "severity": "high",
+          "note": "Plankton productivity reduced; key aggregation sites abandoned"
+        },
+        {
+          "name": "N. Pacific",
+          "severity": "medium",
+          "note": "Seasonal productivity declining; California Current weakening"
+        },
+        {
+          "name": "S. Atlantic",
+          "severity": "low",
+          "note": "Upwelling systems still productive; lower warming pressure"
+        },
+        {
+          "name": "Southern Ocean",
+          "severity": "low",
+          "note": "Cold, nutrient-rich waters; zooplankton still abundant"
+        }
+      ],
+      "fishingPressureRegions": [
+        {
+          "name": "N. Atlantic",
+          "severity": "high",
+          "note": "Directed fishing ended; bycatch and vessel strikes persist"
+        },
+        {
+          "name": "Mediterranean",
+          "severity": "medium",
+          "note": "Bycatch in pelagic trawls; vessel strikes near shipping lanes"
+        },
+        {
+          "name": "N. Pacific",
+          "severity": "medium",
+          "note": "Bycatch in salmon gillnets and squid drift nets"
+        },
+        {
+          "name": "S. Atlantic",
+          "severity": "low",
+          "note": "Some incidental catch in pelagic trawls"
+        },
+        {
+          "name": "Southern Ocean",
+          "severity": "low",
+          "note": "Marginal bycatch in toothfish longlines; low intensity"
         }
       ]
     },
@@ -3302,6 +3766,18 @@ window.WIKI_DATA = {
           "value": "Counter-current heat exchange (endothermy) maintains body temperature 8–10°C above ambient seawater; specialized for cold-water, high-latitude hunting"
         }
       ],
+      "habitatStats": [
+        {
+          "label": "Global Range",
+          "value": "Cold to temperate North and South Atlantic, southern Indian Ocean, and Southern Ocean"
+        },
+        {
+          "label": "Depth Range",
+          "value": "Surface to ~700 m (2,297 ft); most active in upper 200 m",
+          "metric": "Surface to ~700 m",
+          "imperial": "Surface to ~2,297 ft"
+        }
+      ],
       "threats": [
         {
           "name": "Targeted Commercial Fishing",
@@ -3354,32 +3830,32 @@ window.WIKI_DATA = {
       "healthMetrics": [
         {
           "label": "IUCN Status",
-          "value": "Vulnerable (globally); Critically Endangered in Northeast Atlantic",
+          "value": "Vulnerable (globally); Critically Endangered in NE Atlantic",
           "trend": "up"
         },
         {
           "label": "Population Trend",
-          "value": "Recovering in Northeast Atlantic; depleted elsewhere",
+          "value": "Recovering in NE Atlantic; depleted elsewhere",
           "trend": "up"
         },
         {
           "label": "Habitat Quality",
-          "value": "Moderate — cold-water habitats intact but shifting poleward with warming",
+          "value": "Moderate — cold-water habitat shifting poleward",
           "trend": "down"
         },
         {
           "label": "Prey Availability",
-          "value": "Declining — mackerel and herring stocks under heavy pressure in North Atlantic",
+          "value": "Declining — mackerel and herring under heavy pressure",
           "trend": "down"
         },
         {
           "label": "Fishing Pressure",
-          "value": "High — bycatch continues globally; directed fisheries in some regions",
+          "value": "High — bycatch continues globally; directed in some regions",
           "trend": "stable"
         },
         {
           "label": "Protection Coverage",
-          "value": "Partial — CITES Appendix II; EU directed fishery ban; North Atlantic recovery underway",
+          "value": "Partial — CITES II; EU directed fishery ban since 2010",
           "trend": "up",
           "links": [
             {
@@ -3399,12 +3875,96 @@ window.WIKI_DATA = {
       ],
       "statusHistory": [
         {
+          "year": 1970,
+          "status": "Not Evaluated"
+        },
+        {
           "year": 2007,
           "status": "Vulnerable"
+        }
+      ],
+      "populationTrend": [
+        {
+          "year": 1970,
+          "value": 600000
+        },
+        {
+          "year": 1980,
+          "value": 380000
+        },
+        {
+          "year": 1990,
+          "value": 240000
+        },
+        {
+          "year": 2000,
+          "value": 170000
+        },
+        {
+          "year": 2010,
+          "value": 155000
         },
         {
           "year": 2019,
-          "status": "Vulnerable"
+          "value": 175000
+        }
+      ],
+      "populationTrendMeta": {
+        "confidence": "modeled",
+        "note": "Rough global estimates modeled from the Northeast Atlantic collapse (>90% decline under Norwegian and UK directed fishing) and partial recovery following the EU ban in 2010. Southern Hemisphere populations have never been formally assessed."
+      },
+      "preyDeclineRegions": [
+        {
+          "name": "N. Atlantic",
+          "severity": "high",
+          "note": "Mackerel and herring under heavy commercial pressure"
+        },
+        {
+          "name": "Mediterranean",
+          "severity": "high",
+          "note": "Mackerel and schooling fish severely depleted"
+        },
+        {
+          "name": "S. Atlantic",
+          "severity": "medium",
+          "note": "Patagonian stocks under pressure from distant-water fleets"
+        },
+        {
+          "name": "N. Pacific",
+          "severity": "medium",
+          "note": "Pacific mackerel and herring depleted in some regions"
+        },
+        {
+          "name": "Southern Ocean",
+          "severity": "low",
+          "note": "Prey still relatively abundant in cold upwelling zones"
+        }
+      ],
+      "fishingPressureRegions": [
+        {
+          "name": "N. Atlantic",
+          "severity": "high",
+          "note": "EU directed ban since 2010; bycatch in longlines continues"
+        },
+        {
+          "name": "Mediterranean",
+          "severity": "high",
+          "note": "Incidental catch in longlines and trawls; no specific protections"
+        },
+        {
+          "name": "S. Atlantic",
+          "severity": "medium",
+          "note": "Expanding distant-water fleets; no southern assessments"
+        },
+        {
+          "name": "Southern Ocean",
+          "severity": "medium",
+          "note": "Some bycatch in toothfish and tuna longlines"
+        },
+        {
+          "name": "N. Pacific",
+          "severity": "low",
+          "note": "Less abundant here; low incidental catch in longlines"
         }
       ]
     },

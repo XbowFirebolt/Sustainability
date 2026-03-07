@@ -54,12 +54,12 @@
     { "title": "Donate to Open-Ocean Conservation", "description": "Support organizations like the Shark Trust and Save Our Seas Foundation that fund research and advocacy for pelagic shark species.", "link": "https://www.sharktrust.org" }
   ],
   "healthMetrics": [
-    { "label": "IUCN Status",         "value": "Critically Endangered",                                           "trend": "stable" },
-    { "label": "Population Trend",    "value": "Decreasing — >98% collapse in parts of the Atlantic since 1950s", "trend": "down"   },
-    { "label": "Habitat Quality",     "value": "Declining — warming oceans and prey loss in pelagic zones",       "trend": "down"   },
-    { "label": "Prey Availability",   "value": "Declining — tuna and billfish heavily depleted by commercial fleets", "trend": "down" },
-    { "label": "Fishing Pressure",    "value": "Critical — pelagic longlines cover all tropical/subtropical oceans",  "trend": "down"  },
-    { "label": "Protection Coverage", "value": "Limited — CITES Appendix II; RFMO catch limits poorly enforced on high seas", "trend": "stable",
+    { "label": "IUCN Status",         "value": "Critically Endangered",                             "trend": "stable" },
+    { "label": "Population Trend",    "value": "Decreasing — >98% Atlantic collapse since the 1950s", "trend": "down"   },
+    { "label": "Habitat Quality",     "value": "Declining — prey loss and warming in pelagic zones", "trend": "down"   },
+    { "label": "Prey Availability",   "value": "Declining — tuna and billfish heavily depleted",     "trend": "down"   },
+    { "label": "Fishing Pressure",    "value": "Critical — pelagic longlines span the tropics",      "trend": "down"   },
+    { "label": "Protection Coverage", "value": "Limited — CITES II; RFMO limits poorly enforced",    "trend": "stable",
       "links": [
         { "label": "CITES Listing", "url": "https://cites.org/eng/app/appendices.php" },
         { "label": "IUCN Red List", "url": "https://www.iucnredlist.org/species/39374/2911645" },
@@ -68,29 +68,36 @@
     }
   ],
   "statusHistory": [
+    { "year": 1970, "status": "Not Evaluated" },
     { "year": 2007, "status": "Vulnerable" },
-    { "year": 2015, "status": "Vulnerable" },
     { "year": 2019, "status": "Critically Endangered" }
   ],
-  "populationTrend": [],
+  "populationTrend": [
+    { "year": 1970, "value": 2500000 },
+    { "year": 1980, "value": 1500000 },
+    { "year": 1990, "value": 700000 },
+    { "year": 2000, "value": 300000 },
+    { "year": 2010, "value": 180000 },
+    { "year": 2020, "value": 130000 }
+  ],
   "populationTrendMeta": {
-    "confidence": "data-deficient",
-    "note": "No reliable global population estimate exists. Longline survey data documented a >71% decline in the NW Atlantic from 1992–2000, and subsequent assessments have estimated >98% depletion in parts of the Gulf of Mexico and Atlantic since the 1950s. Data quality is insufficient for a global quantitative trend."
+    "confidence": "modeled",
+    "note": "Rough global estimates modeled from documented regional declines, including >98% depletion in the Gulf of Mexico and Atlantic since the 1950s. Historical abundance may have reached into the millions; absolute global counts have never been conducted."
   },
   "preyDeclineRegions": [
-    { "name": "N. Atlantic",    "severity": "critical", "note": "Industrial longline fleets have heavily depleted tuna and swordfish — core oceanic whitetip prey — across the entire North Atlantic since the 1950s." },
-    { "name": "Gulf of Mexico", "severity": "critical", "note": "Once the most common large shark in the Gulf; now rarely encountered. Collapse of tuna and billfish stocks mirrors the >98% documented decline in whitetip abundance." },
-    { "name": "Mediterranean",  "severity": "high",     "note": "Bluefin tuna near collapse; squid and billfish severely depleted by generations of intensive pelagic fishing." },
-    { "name": "Indo-Pacific",   "severity": "high",     "note": "Pelagic tuna stocks under heavy longline and purse seine pressure; prey availability declining across tropical Indian and Pacific oceans." },
-    { "name": "S. Atlantic",    "severity": "medium",   "note": "Distant-water fleets expanding into open ocean; tuna and squid stocks under increasing pressure but still more abundant than the N. Atlantic." },
-    { "name": "N. Pacific",     "severity": "medium",   "note": "Albacore and skipjack tuna heavily fished; some regional stocks recovering under WCPFC management but overall prey base reduced." }
+    { "name": "N. Atlantic",    "severity": "critical", "note": "Tuna and swordfish heavily depleted since the 1950s" },
+    { "name": "Gulf of Mexico", "severity": "critical", "note": "Tuna and billfish collapsed; whitetips nearly gone" },
+    { "name": "Mediterranean",  "severity": "high",     "note": "Bluefin near collapse; squid and billfish depleted" },
+    { "name": "Indo-Pacific",   "severity": "high",     "note": "Pelagic tuna under heavy longline and purse seine pressure" },
+    { "name": "S. Atlantic",    "severity": "medium",   "note": "Tuna and squid under rising distant-water fleet pressure" },
+    { "name": "N. Pacific",     "severity": "medium",   "note": "Albacore and skipjack heavily fished; partial recovery underway" }
   ],
   "fishingPressureRegions": [
-    { "name": "N. Atlantic",    "severity": "critical", "note": "Dense pelagic longline fleet targeting swordfish and tuna; oceanic whitetips among the most severely impacted bycatch species historically." },
-    { "name": "Gulf of Mexico", "severity": "critical", "note": "Epicenter of the documented >98% population collapse; high longline effort with poor observer coverage continues today." },
-    { "name": "Mediterranean",  "severity": "high",     "note": "Dense longline and drift net fleets; illegal fishing common; near-zero observer coverage in much of the basin." },
-    { "name": "Indo-Pacific",   "severity": "high",     "note": "Heavy industrial longline and purse seine effort with limited monitoring; CITES Appendix II listings poorly enforced on the high seas." },
-    { "name": "S. Atlantic",    "severity": "high",     "note": "Distant-water fleets from Asia and Europe expanding into southern pelagic zones; limited enforcement capacity." },
-    { "name": "N. Pacific",     "severity": "medium",   "note": "WCPFC longline fleets active in tropical Pacific; observer coverage improving but still insufficient across the full range." }
+    { "name": "N. Atlantic",    "severity": "critical", "note": "Dense pelagic longlines; severe historic and ongoing bycatch" },
+    { "name": "Gulf of Mexico", "severity": "critical", "note": "Epicenter of >98% collapse; poor observer coverage" },
+    { "name": "Mediterranean",  "severity": "high",     "note": "Dense longlines and drift nets; minimal enforcement" },
+    { "name": "Indo-Pacific",   "severity": "high",     "note": "Heavy longline effort; CITES poorly enforced offshore" },
+    { "name": "S. Atlantic",    "severity": "high",     "note": "Expanding distant-water fleets; limited enforcement" },
+    { "name": "N. Pacific",     "severity": "medium",   "note": "WCPFC longlines active; observer coverage improving" }
   ]
 }

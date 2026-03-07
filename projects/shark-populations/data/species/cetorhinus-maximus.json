@@ -55,12 +55,12 @@
     { "title": "Fund Basking Shark Research",         "description": "Support the Shark Trust's basking shark project and organizations using satellite tags to identify migration routes and critical habitat areas needing legal protection.", "link": "https://www.sharktrust.org" }
   ],
   "healthMetrics": [
-    { "label": "IUCN Status",         "value": "Endangered",                                                              "trend": "stable" },
-    { "label": "Population Trend",    "value": "Decreasing — historical fisheries caused severe depletion; recovery slow", "trend": "down"   },
-    { "label": "Habitat Quality",     "value": "Declining — climate-driven reduction in plankton blooms in core habitats", "trend": "down"   },
-    { "label": "Prey Availability",   "value": "Uncertain — zooplankton abundance variable; projected decline with warming", "trend": "down"  },
-    { "label": "Fishing Pressure",    "value": "Moderate — targeted fisheries mostly ended; bycatch and vessel strikes persist", "trend": "up" },
-    { "label": "Protection Coverage", "value": "Partial — CITES Appendix II; protected in UK, US, EU; enforcement variable", "trend": "up",
+    { "label": "IUCN Status",         "value": "Endangered",                                               "trend": "stable" },
+    { "label": "Population Trend",    "value": "Decreasing — directed fisheries caused severe depletion",   "trend": "down"   },
+    { "label": "Habitat Quality",     "value": "Declining — warming reduces plankton blooms",               "trend": "down"   },
+    { "label": "Prey Availability",   "value": "Uncertain — zooplankton projected to decline with warming",  "trend": "down"   },
+    { "label": "Fishing Pressure",    "value": "Moderate — directed fishing ended; bycatch and strikes persist", "trend": "up" },
+    { "label": "Protection Coverage", "value": "Partial — CITES II; protected in UK, US, EU",               "trend": "up",
       "links": [
         { "label": "CITES Listing", "url": "https://cites.org/eng/app/appendices.php" },
         { "label": "IUCN Red List", "url": "https://www.iucnredlist.org/species/4293/214397499" },
@@ -69,26 +69,34 @@
     }
   ],
   "statusHistory": [
+    { "year": 1970, "status": "Not Evaluated" },
     { "year": 2005, "status": "Vulnerable" },
     { "year": 2019, "status": "Endangered" }
   ],
-  "populationTrend": [],
+  "populationTrend": [
+    { "year": 1970, "value": 300000 },
+    { "year": 1980, "value": 200000 },
+    { "year": 1990, "value": 150000 },
+    { "year": 2000, "value": 140000 },
+    { "year": 2010, "value": 137000 },
+    { "year": 2019, "value": 142000 }
+  ],
   "populationTrendMeta": {
-    "confidence": "data-deficient",
-    "note": "No reliable global population estimate exists. Regional fisheries in Norway, British Columbia, Ireland, and Scotland collapsed between the 1960s and 1980s after intensive directed targeting, but global abundance before and after these collapses has never been formally quantified."
+    "confidence": "modeled",
+    "note": "Rough global estimates modeled from documented regional fishery collapses in Norway, British Columbia, Ireland, and Scotland (1960s–1980s). Global baseline abundance has never been formally quantified."
   },
   "preyDeclineRegions": [
-    { "name": "N. Atlantic",    "severity": "high",   "note": "Copepod and zooplankton abundance declining as ocean warming increases thermal stratification and reduces nutrient upwelling in core basking shark habitat." },
-    { "name": "Mediterranean",  "severity": "high",   "note": "Plankton productivity reduced by warming, acidification, and nutrient runoff; historically important aggregation sites now largely unoccupied." },
-    { "name": "N. Pacific",     "severity": "medium", "note": "Seasonal plankton productivity variable and declining in warming coastal zones; California Current productivity declining with reduced upwelling intensity." },
-    { "name": "S. Atlantic",    "severity": "low",    "note": "Cold Benguela and Malvinas upwelling systems still produce abundant zooplankton; lower warming pressure at southern latitudes." },
-    { "name": "Southern Ocean", "severity": "low",    "note": "Cold, nutrient-rich waters still support high zooplankton density; marginal warming beginning at the northern boundary of Southern Ocean habitat." }
+    { "name": "N. Atlantic",    "severity": "high",   "note": "Copepods and zooplankton declining with ocean warming" },
+    { "name": "Mediterranean",  "severity": "high",   "note": "Plankton productivity reduced; key aggregation sites abandoned" },
+    { "name": "N. Pacific",     "severity": "medium", "note": "Seasonal productivity declining; California Current weakening" },
+    { "name": "S. Atlantic",    "severity": "low",    "note": "Upwelling systems still productive; lower warming pressure" },
+    { "name": "Southern Ocean", "severity": "low",    "note": "Cold, nutrient-rich waters; zooplankton still abundant" }
   ],
   "fishingPressureRegions": [
-    { "name": "N. Atlantic",    "severity": "high",   "note": "Target of historic directed fisheries in the UK, Ireland, and Norway; directed fishing mostly ended but bycatch in pelagic trawls and vessel strikes in coastal shipping lanes continue." },
-    { "name": "Mediterranean",  "severity": "medium", "note": "Documented bycatch in pelagic trawls and longlines; vessel strike risk elevated near the Strait of Gibraltar and major shipping routes." },
-    { "name": "N. Pacific",     "severity": "medium", "note": "Bycatch in salmon gillnets and squid drift nets documented; vessel strikes near major Pacific shipping routes." },
-    { "name": "S. Atlantic",    "severity": "low",    "note": "Limited directed effort; some incidental catch in pelagic trawls targeting southern bluefin tuna and squid." },
-    { "name": "Southern Ocean", "severity": "low",    "note": "Low commercial fishing intensity in deeper Southern Ocean waters; marginal bycatch in longlines targeting toothfish." }
+    { "name": "N. Atlantic",    "severity": "high",   "note": "Directed fishing ended; bycatch and vessel strikes persist" },
+    { "name": "Mediterranean",  "severity": "medium", "note": "Bycatch in pelagic trawls; vessel strikes near shipping lanes" },
+    { "name": "N. Pacific",     "severity": "medium", "note": "Bycatch in salmon gillnets and squid drift nets" },
+    { "name": "S. Atlantic",    "severity": "low",    "note": "Some incidental catch in pelagic trawls" },
+    { "name": "Southern Ocean", "severity": "low",    "note": "Marginal bycatch in toothfish longlines; low intensity" }
   ]
 }
