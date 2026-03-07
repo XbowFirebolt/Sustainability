@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tier Comparison — Great White Shark</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --primary:       #2d6a2d;
+  --bg:            #f4f8f4;
+  --text:          #1a2e1a;
+  --muted:         #5a8a5a;
+  --dim:           #4a6a4a;
+  --border:        #e8f0e8;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  font-family: var(--font);
+  background: #e4ece4;
+  color: var(--text);
+  padding: 2rem 1.5rem 3rem;
+  min-width: 900px;
+}
+
+/* ── Page header ── */
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.page-header h1 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.3rem;
+}
+.page-header p {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+/* ── Three-column layout ── */
+.tiers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.tier-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tier-label-wrap {
+  text-align: center;
+}
+
+.tier-badge {
+  display: inline-block;
+  padding: 0.2rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+.tier-badge.stub     { background: #fef3e2; color: #b45309; border: 1px solid #fde68a; }
+.tier-badge.standard { background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; }
+.tier-badge.full     { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; }
+
+.tier-desc {
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.45;
+  margin-top: 0.4rem;
+}
+
+/* ══════════════════════════════
+   GRID CARD
+══════════════════════════════ */
+.species-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.09);
+}
+
+.species-card-image {
+  height: 180px;
+  position: relative;
+  background: #ccdacc center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.species-card-emoji {
+  font-size: 4rem;
+  line-height: 1;
+  opacity: 0.65;
+}
+
+.card-star {
+  position: absolute;
+  top: 9px; right: 10px;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.85);
+  border: none;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.card-photo-badge {
+  position: absolute;
+  bottom: 9px; left: 10px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 0.63rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.card-incomplete-icon {
+  position: absolute;
+  bottom: 9px; right: 10px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 50%;
+  width: 26px; height: 26px;
+  font-size: 0.78rem;
+  color: #c8900a;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700;
+}
+
+.card-body {
+  padding: 0.9rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.card-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.card-sci {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--muted);
+  margin-top: -0.25rem;
+}
+
+/* Ring */
+.card-ring-wrap { display: flex; align-items: center; gap: 0.6rem; margin: 0.1rem 0; }
+
+.ring-track { fill: none; stroke: #e8f0e8; stroke-width: 4; }
+.ring-fill  {
+  fill: none;
+  stroke: #b0a010;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 131.95;
+  stroke-dashoffset: 59.4; /* 131.95 × (1 − 0.55) */
+  transform: rotate(-90deg);
+  transform-origin: 24px 24px;
+}
+.ring-txt {
+  font-size: 9px; font-weight: 700;
+  fill: var(--text);
+  text-anchor: middle; dominant-baseline: central;
+}
+
+.ring-meta { display: flex; flex-direction: column; gap: 0.1rem; }
+.ring-status { font-size: 0.82rem; font-weight: 600; color: #b0a010; }
+.ring-sub    { font-size: 0.67rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
+
+.card-desc {
+  font-size: 0.71rem;
+  color: var(--dim);
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-badges { display: flex; flex-wrap: wrap; gap: 0.28rem; }
+.card-badge  { font-size: 0.62rem; font-weight: 600; padding: 2px 8px; border-radius: 20px; }
+.badge-ocean    { background: rgba(24,90,168,0.1);  color: #185aa8; }
+.badge-coastal  { background: rgba(18,118,96,0.1);  color: #136050; }
+.badge-apex     { background: rgba(80,20,100,0.1);  color: #501460; }
+
+/* ══════════════════════════════
+   MODAL PREVIEW
+══════════════════════════════ */
+.modal-preview {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.13);
+}
+
+.modal-hero {
+  height: 160px;
+  background: #b8ccb8 center/cover no-repeat;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3.5rem;
+}
+
+/* Sticky header */
+.modal-head {
+  background: var(--primary);
+  padding: 0.75rem 1rem 0;
+}
+.modal-head-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.55rem;
+}
+.modal-name { font-size: 1.08rem; font-weight: 700; color: #f4f8f4; line-height: 1.2; }
+.modal-sci  { font-size: 0.8rem; font-style: italic; color: rgba(244,248,244,0.65); margin-top: 0.1rem; }
+
+.modal-incomplete-badge {
+  display: inline-block;
+  font-size: 0.67rem; font-weight: 600;
+  color: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 3px;
+  padding: 1px 7px;
+  margin-top: 0.3rem;
+}
+
+.modal-head-btns { display: flex; gap: 0.3rem; }
+.modal-btn {
+  width: 27px; height: 27px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.28);
+  background: transparent; color: rgba(255,255,255,0.8);
+  font-size: 0.82rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* Tabs */
+.modal-tabs { display: flex; border-top: 1px solid rgba(255,255,255,0.15); }
+.modal-tab {
+  flex: 1; padding: 0.5rem 0.2rem;
+  text-align: center;
+  font-size: 0.68rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.5);
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.modal-tab.active { color: #f4f8f4; border-bottom-color: #f4f8f4; }
+.modal-tab.dim    { color: rgba(255,255,255,0.22); }
+
+/* Tab content */
+.modal-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.modal-desc {
+  font-size: 0.8rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* Status bar */
+.status-bar { display: flex; align-items: center; gap: 0.5rem; }
+.status-pill {
+  font-size: 0.68rem; font-weight: 700;
+  padding: 2px 9px; border-radius: 20px;
+  background: #fefce8; color: #a16207;
+  border: 1px solid #fde68a;
+  white-space: nowrap;
+}
+.status-track {
+  flex: 1; height: 6px; background: var(--border);
+  border-radius: 3px; overflow: hidden;
+}
+.status-fill { height: 100%; width: 55%; background: #b0a010; border-radius: 3px; }
+.status-pct  { font-size: 0.7rem; font-weight: 600; color: var(--muted); min-width: 2.2rem; text-align: right; }
+
+/* Fun fact */
+.fun-fact {
+  background: rgba(45,106,45,0.06);
+  border-left: 3px solid var(--primary);
+  padding: 0.55rem 0.7rem;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.75rem; font-style: italic;
+  color: var(--dim); line-height: 1.4;
+}
+
+/* Info strip */
+.info-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.45rem; }
+.info-item  { background: var(--bg); border-radius: 6px; padding: 0.45rem 0.55rem; }
+.info-label {
+  font-size: 0.6rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--muted); margin-bottom: 0.2rem;
+}
+.info-val { font-size: 0.7rem; color: var(--text); line-height: 1.3; }
+
+/* 6 glance stat tiles */
+.glance-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.45rem; }
+.glance-tile { background: var(--bg); border-radius: 6px; padding: 0.55rem 0.6rem 0.5rem; }
+.glance-label {
+  font-size: 0.58rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--muted); margin-bottom: 0.2rem;
+}
+.glance-val { font-size: 0.76rem; font-weight: 600; color: var(--text); line-height: 1.2; }
+
+/* Missing data placeholder */
+.missing-block {
+  background: #fef9ec;
+  border: 1px dashed #fcd34d;
+  border-radius: 6px;
+  padding: 0.7rem;
+  font-size: 0.74rem;
+  color: #92400e;
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* ── Diff table ── */
+.diff-section {
+  max-width: 1160px;
+  margin: 2.5rem auto 0;
+}
+.diff-section h2 {
+  font-size: 0.72rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.07em;
+  color: var(--muted); margin-bottom: 0.7rem;
+}
+.diff-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.79rem;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+}
+.diff-table th {
+  background: var(--primary);
+  color: #f4f8f4;
+  padding: 0.55rem 1rem;
+  text-align: left;
+  font-size: 0.72rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.05em;
+}
+.diff-table td {
+  padding: 0.55rem 1rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+  color: var(--dim);
+}
+.diff-table tr:last-child td { border-bottom: none; }
+.diff-table td:first-child { font-weight: 600; color: var(--text); width: 30%; }
+.yes  { color: #15803d; font-weight: 600; }
+.no   { color: #b0b8b0; }
+.warn { color: #b45309; font-weight: 500; }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Tier Comparison — Great White Shark</h1>
+  <p>What each tier looks like in the grid card and modal overview</p>
+</div>
+
+<div class="tiers">
+
+  <!-- ══ STUB ══ -->
+  <div class="tier-col">
+    <div class="tier-label-wrap">
+      <span class="tier-badge stub">Stub</span>
+      <div class="tier-desc">12 identity fields only.<br>Data tabs empty — Incomplete Data shown.</div>
+    </div>
+
+    <!-- Card -->
+    <div class="species-card">
+      <div class="species-card-image">
+        <span class="species-card-emoji">🦈</span>
+        <button class="card-star">☆</button>
+        <div class="card-incomplete-icon" title="Missing data">⚠</div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">Great White Shark</div>
+        <div class="card-sci">Carcharodon carcharias</div>
+        <div class="card-ring-wrap">
+          <svg viewBox="0 0 48 48" width="48" height="48">
+            <circle class="ring-track" cx="24" cy="24" r="21"/>
+            <circle class="ring-fill"  cx="24" cy="24" r="21"/>
+            <text class="ring-txt" x="24" y="24">55%</text>
+          </svg>
+          <div class="ring-meta">
+            <div class="ring-status">Vulnerable</div>
+            <div class="ring-sub">Status</div>
+          </div>
+        </div>
+        <div class="card-desc">The great white shark is the world's largest predatory fish, found in cool coastal and offshore waters across the globe.</div>
+        <div class="card-badges">
+          <span class="card-badge badge-ocean">🌊 Ocean</span>
+          <span class="card-badge badge-coastal">🏖 Coastal</span>
+          <span class="card-badge badge-apex">⬆ Apex Predator</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal preview -->
+    <div class="modal-preview">
+      <div class="modal-hero">🦈</div>
+      <div class="modal-head">
+        <div class="modal-head-row">
+          <div>
+            <div class="modal-name">Great White Shark</div>
+            <div class="modal-sci">Carcharodon carcharias</div>
+            <div class="modal-incomplete-badge">⚠ Incomplete data</div>
+          </div>
+          <div class="modal-head-btns">
+            <button class="modal-btn">☆</button>
+            <button class="modal-btn">×</button>
+          </div>
+        </div>
+        <div class="modal-tabs">
+          <div class="modal-tab active">Overview</div>
+          <div class="modal-tab dim">Threats</div>
+          <div class="modal-tab dim">Health</div>
+          <div class="modal-tab dim">Vitals</div>
+          <div class="modal-tab dim">Actions</div>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-desc">The great white shark is the world's largest predatory fish, found in cool coastal and offshore waters across the globe.</div>
+        <div class="status-bar">
+          <span class="status-pill">Vulnerable</span>
+          <div class="status-track"><div class="status-fill"></div></div>
+          <span class="status-pct">55%</span>
+        </div>
+        <div class="missing-block">⚠ Vital signs, health metrics, threats, and action items have not been populated yet.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ STANDARD ══ -->
+  <div class="tier-col">
+    <div class="tier-label-wrap">
+      <span class="tier-badge standard">Standard</span>
+      <div class="tier-desc">All data fields present. No photos<br>(or photo set not yet complete).</div>
+    </div>
+
+    <!-- Card -->
+    <div class="species-card">
+      <div class="species-card-image">
+        <span class="species-card-emoji">🦈</span>
+        <button class="card-star">☆</button>
+        <!-- no incomplete icon, no photo badge -->
+      </div>
+      <div class="card-body">
+        <div class="card-name">Great White Shark</div>
+        <div class="card-sci">Carcharodon carcharias</div>
+        <div class="card-ring-wrap">
+          <svg viewBox="0 0 48 48" width="48" height="48">
+            <circle class="ring-track" cx="24" cy="24" r="21"/>
+            <circle class="ring-fill"  cx="24" cy="24" r="21"/>
+            <text class="ring-txt" x="24" y="24">55%</text>
+          </svg>
+          <div class="ring-meta">
+            <div class="ring-status">Vulnerable</div>
+            <div class="ring-sub">Status</div>
+          </div>
+        </div>
+        <div class="card-desc">The great white shark is the world's largest predatory fish, found in cool coastal and offshore waters across the globe.</div>
+        <div class="card-badges">
+          <span class="card-badge badge-ocean">🌊 Ocean</span>
+          <span class="card-badge badge-coastal">🏖 Coastal</span>
+          <span class="card-badge badge-apex">⬆ Apex Predator</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal preview -->
+    <div class="modal-preview">
+      <div class="modal-hero">🦈</div>
+      <div class="modal-head">
+        <div class="modal-head-row">
+          <div>
+            <div class="modal-name">Great White Shark</div>
+            <div class="modal-sci">Carcharodon carcharias</div>
+            <!-- no incomplete badge -->
+          </div>
+          <div class="modal-head-btns">
+            <button class="modal-btn">☆</button>
+            <button class="modal-btn">×</button>
+          </div>
+        </div>
+        <div class="modal-tabs">
+          <div class="modal-tab active">Overview</div>
+          <div class="modal-tab">Threats</div>
+          <div class="modal-tab">Health</div>
+          <div class="modal-tab">Vitals</div>
+          <div class="modal-tab">Actions</div>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-desc">The great white shark is the world's largest predatory fish, found in cool coastal and offshore waters across the globe.</div>
+        <div class="status-bar">
+          <span class="status-pill">Vulnerable</span>
+          <div class="status-track"><div class="status-fill"></div></div>
+          <span class="status-pct">55%</span>
+        </div>
+        <div class="fun-fact">"Great white sharks can detect a single drop of blood diluted across 25 gallons of water, and sense the faint electrical fields produced by beating hearts."</div>
+        <div class="info-strip">
+          <div class="info-item">
+            <div class="info-label">Habitat</div>
+            <div class="info-val">Cool coastal &amp; offshore waters globally</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Diet</div>
+            <div class="info-val">Seals, sea lions, dolphins, large fish</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Size</div>
+            <div class="info-val">Up to 6.4 m (20.9 ft) confirmed</div>
+          </div>
+        </div>
+        <div class="glance-grid">
+          <div class="glance-tile">
+            <div class="glance-label">Population</div>
+            <div class="glance-val">~3,500 adults</div>
+          </div>
+          <div class="glance-tile">
+            <div class="glance-label">Lifespan</div>
+            <div class="glance-val">70+ years</div>
+          </div>
+          <div class="glance-tile">
+            <div class="glance-label">Max Length</div>
+            <div class="glance-val">6.4 m confirmed</div>
+          </div>
+          <div class="glance-tile">
+            <div class="glance-label">Max Weight</div>
+            <div class="glance-val">~2,000 kg</div>
+          </div>
+          <div class="glance-tile">
+            <div class="glance-label">Top Speed</div>
+            <div class="glance-val">~56 km/h</div>
+          </div>
+          <div class="glance-tile">
+            <div class="glance-label">Ecological Role</div>
+            <div class="glance-val">Apex Predator</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ FULL ══ -->
+  <div class="tier-col">
+    <div class="tier-label-wrap">
+      <span class="tier-badge full">Full</span>
+      <div class="tier-desc">All data + complete photo set.<br>Hero image, gallery &amp; range map unlocked.</div>
+    </div>
+
+    <!-- Card -->
+    <div class="species-card">
+      <div class="species-card-image" style="background-image: url('images/white_shark/white_shark1.png');">
+        <button class="card-star">☆</button>
+        <div class="card-photo-badge">⊞ 2 photos</div>
+        <!-- no incomplete icon -->
+      </div>
+      <div class="card-body">
+        <div class="card-name">Great White Shark</div>
+        <div class="card-sci">Carcharodon carcharias</div>
+        <div class="card-ring-wrap">
+          <svg viewBox="0 0 48 48" width="48" height="48">
+            <circle class="ring-track" cx="24" cy="24" r="21"/>
+            <circle class="ring-fill"  cx="24" cy="24" r="21"/>
+            <text class="ring-txt" x="24" y="24">55%</text>
+          </svg>
+          <div class="ring-meta">
+            <div class="ring-status">Vulnerable</div>
+            <div class="ring-sub">Status</div>
+          </div>
+        </div>
+        <div class="card-desc">The great white shark is the world's largest predatory fish, found in cool coastal and offshore waters across the globe.</div>
+        <div class="card-badges">
+          <span class="card-badge badge-ocean">🌊 Ocean</span>
+          <span class="card-badge badge-coastal">🏖 Coastal</span>
+          <span class="card-badge badge-apex">⬆ Apex Predator</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal preview -->
+    <div class="modal-preview">
+      <div class="modal-hero" style="background-image: url('images/white_shark/white_shark1.png'); background-size: cover; background-position: center;"></div>
+      <div class="modal-head">
+        <div class="modal-head-row">
+          <div>
+            <div class="modal-name">Great White Shark</div>
+            <div class="modal-sci">Carcharodon carcharias</div>
+            <!-- no incomplete badge -->
+          </div>
+          <div class="modal-head-btns">
+            <button class="modal-btn">☆</button>
+            <button class="modal-btn">×</button>
+          </div>
+        </div>
+        <div class="modal-tabs">
+          <div class="modal-tab active">Overview</div>
+          <div class="modal-tab">Threats</div>
+          <div class="modal-tab">Health</div>
+          <div class="modal-tab">Vitals</div>
+          <div class="modal-tab">Actions</div>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-desc">The great white shark is the world's largest predatory fish, found in cool coastal and offshore waters across the globe.</div>
+        <div class="status-bar">
+          <span class="status-pill">Vulnerable</span>
+          <div class="status-track"><div class="status-fill"></div></div>
+          <span class="status-pct">55%</span>
+        </div>
+        <div class="fun-fact">"Great white sharks can detect a single drop of blood diluted across 25 gallons of water, and sense the faint electrical fields produced by beating hearts."</div>
+        <div class="info-strip">
+          <div class="info-item">
+            <div class="info-label">Habitat</div>
+            <div class="info-val">Cool coastal &amp; offshore waters globally</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Diet</div>
+            <div class="info-val">Seals, sea lions, dolphins, large fish</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">Size</div>
+            <div class="info-val">Up to 6.4 m (20.9 ft) confirmed</div>
+          </div>
+        </div>
+        <div class="glance-grid">
+          <div class="glance-tile">
+            <div class="glance-label">Population</div>
+            <div class="glance-val">~3,500 adults</div>
+          </div>
+          <div class="glance-tile">
+            <div class="glance-label">Lifespan</div>
+            <div class="glance-val">70+ years</div>
+          </div>
+          <div class="glance-tile">
+            <div class="glance-label">Max Length</div>
+            <div class="glance-val">6.4 m confirmed</div>
+          </div>
+          <div class="glance-tile">
+            <div class="glance-label">Max Weight</div>
+            <div class="glance-val">~2,000 kg</div>
+          </div>
+          <div class="glance-tile">
+            <div class="glance-label">Top Speed</div>
+            <div class="glance-val">~56 km/h</div>
+          </div>
+          <div class="glance-tile">
+            <div class="glance-label">Ecological Role</div>
+            <div class="glance-val">Apex Predator</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /.tiers -->
+
+<!-- ── Diff table ── -->
+<div class="diff-section">
+  <h2>What changes between tiers</h2>
+  <table class="diff-table">
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Stub</th>
+        <th>Standard</th>
+        <th>Full</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Grid card renders</td>
+        <td class="yes">✓ Yes</td>
+        <td class="yes">✓ Yes</td>
+        <td class="yes">✓ Yes</td>
+      </tr>
+      <tr>
+        <td>⚠ Incomplete icon on card</td>
+        <td class="warn">Shown</td>
+        <td class="no">—</td>
+        <td class="no">—</td>
+      </tr>
+      <tr>
+        <td>Photo in card image area</td>
+        <td class="no">Emoji fallback</td>
+        <td class="no">Emoji fallback</td>
+        <td class="yes">✓ Species photo</td>
+      </tr>
+      <tr>
+        <td>Photo count badge on card</td>
+        <td class="no">—</td>
+        <td class="no">—</td>
+        <td class="yes">✓ ⊞ 2 photos</td>
+      </tr>
+      <tr>
+        <td>Modal hero image</td>
+        <td class="no">Emoji</td>
+        <td class="no">Emoji</td>
+        <td class="yes">✓ Species photo</td>
+      </tr>
+      <tr>
+        <td>"Incomplete data" badge in modal</td>
+        <td class="warn">Shown</td>
+        <td class="no">—</td>
+        <td class="no">—</td>
+      </tr>
+      <tr>
+        <td>Non-overview tabs active</td>
+        <td class="warn">Dimmed</td>
+        <td class="yes">✓ All active</td>
+        <td class="yes">✓ All active</td>
+      </tr>
+      <tr>
+        <td>Fun fact callout</td>
+        <td class="no">—</td>
+        <td class="yes">✓ Shown</td>
+        <td class="yes">✓ Shown</td>
+      </tr>
+      <tr>
+        <td>Habitat / Diet / Size strip</td>
+        <td class="no">—</td>
+        <td class="yes">✓ Shown</td>
+        <td class="yes">✓ Shown</td>
+      </tr>
+      <tr>
+        <td>6 at-a-glance stat tiles</td>
+        <td class="no">—</td>
+        <td class="yes">✓ Shown</td>
+        <td class="yes">✓ Shown</td>
+      </tr>
+      <tr>
+        <td>Size comparison illustration</td>
+        <td class="no">—</td>
+        <td class="no">—</td>
+        <td class="yes">✓ If available</td>
+      </tr>
+      <tr>
+        <td>Habitat range map</td>
+        <td class="no">—</td>
+        <td class="no">—</td>
+        <td class="yes">✓ If available</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

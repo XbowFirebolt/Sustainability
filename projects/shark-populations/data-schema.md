@@ -32,7 +32,9 @@ window.WIKI_DATA = {
 
 ## Species Entry (`items[]`)
 
-Every object in `items` represents one species. Fields are divided into **Stub**, **Standard**, and **Full** tiers. Every species must have all Stub fields; Standard and Full fields are optional but unlock richer UI tabs.
+Every object in `items` represents one species. Fields are divided into **Stub**, **Standard**, and **Full** tiers based on how complete the entry is.
+
+**Core authoring rule: all data fields are always present.** If a value is unknown or unavailable, write `"Unknown"` (for strings) or `[]` (for empty arrays like `populationTrend`) rather than omitting the field. The only exception is image paths (`photos`, `physicalScaleImage`, `habitatImage`) — omit those entirely when no image exists.
 
 ---
 
@@ -59,25 +61,25 @@ These are the minimum fields needed to render a valid grid card and open a worki
 
 ### Standard Tier
 
-Fills all data tabs in the modal. A species can be Standard tier with unknown or missing values (e.g. empty `populationTrend`, `"Unknown"` estimates) — the UI handles these gracefully. Standard tier ends before photos are added.
+Fills all data tabs in the modal. Every Standard-tier species must include **all** of the following fields. If a specific value is unknown, use `"Unknown"` for string fields, `[]` for array fields, or `"data-deficient"` for confidence fields — the UI handles these gracefully. Standard tier does not include photos.
 
-| Field | Type | Required | Notes |
+| Field | Type | Unknown fallback | Notes |
 |---|---|---|---|
-| `lastUpdated` | string | no | ISO 8601 date (`"YYYY-MM-DD"`). Shown in the modal footer. |
-| `taxonomy` | Taxonomy | no | Full taxonomic classification. See below. |
-| `habitat` | string | no | 1–2 sentence habitat description. Shown in overview tab. |
-| `diet` | string | no | 1–2 sentence diet description. Shown in overview tab. |
-| `size` | string | no | Size summary string. Shown in overview tab. |
-| `vitalSigns` | VitalSign[] | no | Key stats shown in the Vitals tab. See below. |
-| `threats` | Threat[] | no | Threat list shown in the Threats tab. See below. |
-| `actionItems` | ActionItem[] | no | Calls to action shown in the Take Action tab. See below. |
-| `statusHistory` | StatusEntry[] | no | Chronological IUCN status history. Shown as a timeline. See below. |
-| `healthMetrics` | HealthMetric[] | no | Summary metrics shown in the Health tab (IUCN status, population trend, habitat quality, etc.). See below. |
-| `habitatStats` | HabitatStat[] | no | Key habitat stats shown alongside the habitat image. See below. |
-| `populationTrend` | TrendPoint[] | no | Time-series data for the population chart. Use `[]` when data is insufficient — the chart renders a "Data Insufficient" state. See below. |
-| `populationTrendMeta` | TrendMeta | no | Confidence and source note displayed below the chart. See below. |
-| `preyDeclineRegions` | Region[] | no | Per-region prey availability data for the pressure map. See below. |
-| `fishingPressureRegions` | Region[] | no | Per-region fishing pressure data for the pressure map. See below. |
+| `lastUpdated` | string | omit if unknown | ISO 8601 date (`"YYYY-MM-DD"`). Shown in the modal footer. |
+| `taxonomy` | Taxonomy | all fields `"Unknown"` | Full taxonomic classification. See below. |
+| `habitat` | string | `"Unknown"` | 1–2 sentence habitat description. Shown in overview tab. |
+| `diet` | string | `"Unknown"` | 1–2 sentence diet description. Shown in overview tab. |
+| `size` | string | `"Unknown"` | Size summary string. Shown in overview tab. |
+| `vitalSigns` | VitalSign[] | all 6 glance entries with `"Unknown"` values | Key stats shown in the Vitals tab. See below. |
+| `threats` | Threat[] | `[]` | Threat list shown in the Threats tab. |
+| `actionItems` | ActionItem[] | `[]` | Calls to action shown in the Take Action tab. |
+| `statusHistory` | StatusEntry[] | `[{ year: currentYear, status: statusLabel }]` | Chronological IUCN status history. Shown as a timeline. |
+| `healthMetrics` | HealthMetric[] | all 6 canonical entries with `"Unknown"` / `trend: null` | Summary metrics shown in the Health tab. See below. |
+| `habitatStats` | HabitatStat[] | entries with `"Unknown"` values | Key habitat stats shown alongside the habitat image. See below. |
+| `populationTrend` | TrendPoint[] | `[]` — chart renders "Data Insufficient" state | Time-series data for the population chart. See below. |
+| `populationTrendMeta` | TrendMeta | `{ confidence: "data-deficient", note: "..." }` | Confidence and source note displayed below the chart. See below. |
+| `preyDeclineRegions` | Region[] | `[]` | Per-region prey availability data for the pressure map. See below. |
+| `fishingPressureRegions` | Region[] | `[]` | Per-region fishing pressure data for the pressure map. See below. |
 
 #### `Taxonomy`
 
@@ -93,7 +95,7 @@ taxonomy: {
 }
 ```
 
-All fields are strings. All 7 ranks must be present if `taxonomy` is included at all.
+All 7 rank fields are required whenever `taxonomy` is present. Use `"Unknown"` for any rank that cannot be determined.
 
 #### `VitalSign`
 
@@ -109,7 +111,20 @@ All fields are strings. All 7 ranks must be present if `taxonomy` is included at
 | `imperial` | string | Optional imperial-only version shown when unit toggle is set to imperial |
 | `glance` | boolean | If `true`, this stat appears in the at-a-glance summary row in the modal header |
 
-Common `label` values used across species: `"Estimated Population"`, `"Lifespan"`, `"Max Length"`, `"Max Weight"`, `"Reproductive Rate"`, `"Age at Maturity"`, `"Top Speed"`, `"Ecological Role"`, `"Diet"`, `"Population Growth Rate"`, `"Key Senses"` / `"Key Adaptations"`.
+**At-a-glance stats (overview row):** Exactly **6** `vitalSigns` entries must have `glance: true`. These 6 are displayed as the key stat tiles in the species overview. Use this canonical set in this order:
+
+| # | Label | Example value |
+|---|---|---|
+| 1 | `"Estimated Population"` | `"~3,500 adults"` |
+| 2 | `"Lifespan"` | `"70+ years"` |
+| 3 | `"Max Length"` | `"6.4 m (20.9 ft) confirmed"` |
+| 4 | `"Max Weight"` | `"~2,000 kg (~4,400 lbs)"` |
+| 5 | `"Top Speed"` | `"~56 km/h (~35 mph) in bursts"` |
+| 6 | `"Ecological Role"` | `"Apex Predator"` |
+
+If a value is truly unknown, use `"Unknown"` — do not omit the entry or set `glance: false` to drop it. Provide `metric` and `imperial` variants on any stat that has distinct unit forms (length, weight, speed, depth).
+
+Additional (non-glance) `vitalSigns` entries document supplemental facts in the Vitals tab. Common labels: `"Reproductive Rate"`, `"Age at Maturity"`, `"Diet"`, `"Population Growth Rate"`, `"Key Senses"` / `"Key Adaptations"`.
 
 #### `Threat`
 
@@ -174,7 +189,22 @@ Used for both `preyDeclineRegions` and `fishingPressureRegions`:
 |---|---|---|
 | `name` | string | Named ocean region, e.g. `"Indo-Pacific"`, `"Mediterranean"`, `"N. Atlantic"` |
 | `severity` | string | One of: `"critical"`, `"high"`, `"medium"`, `"low"` |
-| `note` | string | 1–2 sentence explanation |
+| `note` | string | 1–2 sentence explanation of the specific pressure in that region |
+
+**How regional pressure data is rendered:** Both arrays power a pressure map UI. Each entry becomes a color-coded card labeled with the region name. A small legend above the map explains the four severity levels:
+
+| Severity | Meaning (prey decline) | Meaning (fishing pressure) |
+|---|---|---|
+| `"critical"` | Prey stocks collapsed or near-absent | Dense active fleets; minimal or no enforcement |
+| `"high"` | Significant prey depletion | Heavy incidental bycatch or targeted fishing |
+| `"medium"` | Moderate prey reduction | Moderate pressure; some mitigation in place |
+| `"low"` | Prey populations relatively stable | Low commercial activity or well-enforced protections |
+
+**Authoring notes:**
+- Include only regions where the species' range actually overlaps — omit regions where the species does not occur.
+- Aim for 4–6 entries per array so the map isn't sparse or cluttered. Fewer entries are fine for species with limited ranges.
+- The `note` should be factual and specific, e.g. `"Bluefin tuna collapse; ~97% fish biomass lost"` rather than generic phrases like `"some pressure exists"`.
+- Common region name tokens: `"N. Atlantic"`, `"S. Atlantic"`, `"N. Pacific"`, `"S. Pacific"`, `"Indo-Pacific"`, `"Mediterranean"`, `"Indian Ocean"`, `"S. Africa"`, `"Australia"`, `"Arctic"`, `"Caribbean"`.
 
 #### `HealthMetric`
 
@@ -184,10 +214,23 @@ Used for both `preyDeclineRegions` and `fishingPressureRegions`:
 
 | Field | Type | Notes |
 |---|---|---|
-| `label` | string | Metric name. Common values: `"IUCN Status"`, `"Population Trend"`, `"Habitat Quality"`, `"Prey Availability"`, `"Fishing Pressure"`, `"Protection Coverage"` |
-| `value` | string | Current state description |
-| `trend` | string \| null | One of: `"up"`, `"down"`, `"stable"`, or `null` (no trend indicator) |
-| `links` | Link[] | Optional array of reference links rendered as chips. See `Link` below. |
+| `label` | string | Metric name — use the canonical labels below |
+| `value` | string | 1–2 sentence plain-English description of the current state |
+| `trend` | string \| null | One of: `"up"`, `"down"`, `"stable"`, or `null` (no trend indicator). Rendered as an arrow icon next to the metric card. |
+| `links` | Link[] | Optional array of reference links rendered as chips below the metric. See `Link` below. |
+
+**Canonical set:** Every Standard-tier species must include exactly **6** `healthMetrics` entries with these labels, in this order:
+
+| # | Label | `trend` guidance | Notes |
+|---|---|---|---|
+| 1 | `"IUCN Status"` | `"stable"` / `"down"` / `"up"` | Value is the IUCN status word plus a brief qualifier, e.g. `"Vulnerable — listed since 1996"`. Trend reflects direction of change across recent assessments. |
+| 2 | `"Population Trend"` | `"down"` / `"stable"` / `"up"` | Value describes the trajectory in plain English, e.g. `"Decreasing"` or `"Stable but critically low"`. |
+| 3 | `"Habitat Quality"` | `null` / `"down"` | Value describes current habitat condition and key stressors, e.g. `"Moderate — coastal zones under pressure"`. Use `null` trend when data is insufficient to assign a direction. |
+| 4 | `"Prey Availability"` | `"down"` / `"stable"` | Value summarizes prey status across the range, e.g. `"Declining in key regions"`. |
+| 5 | `"Fishing Pressure"` | `"down"` / `"stable"` | Value names the dominant pressure type, e.g. `"High — bycatch and targeted poaching"`. Use `"down"` when pressure is worsening (i.e. bad for the species). |
+| 6 | `"Protection Coverage"` | `"stable"` / `"up"` | Value names specific protections in effect, e.g. `"Partial — CITES Appendix II, some EEZs"`. Add `links` chips here to point to CITES, IUCN, or relevant conservation bodies. |
+
+If data for a metric is unavailable, still include the entry with `value: "Unknown"` and `trend: null`.
 
 #### `Link`
 
@@ -209,23 +252,29 @@ Same shape as `VitalSign` minus `glance`. Common labels: `"Global Range"`, `"Dep
 
 ### Full Tier
 
-A species reaches Full tier when photos are present. All data fields from Standard tier should already be populated (with unknown/empty values where data doesn't exist). Full tier adds the photo and image assets.
+A species reaches Full tier when its **complete** photo set is present. All Standard data fields must already be populated before a species is considered Full tier.
 
-| Field | Type | Required | Notes |
-|---|---|---|---|
-| `photos` | string[] | no | Array of relative paths to species photos. First photo is used as the hero image. If omitted, falls back to `silhouetteFallback`. |
-| `physicalScaleImage` | string | no | Relative path to a size-comparison illustration. |
-| `habitatImage` | string | no | Relative path to a habitat range map image. |
+**Partial photos = Standard tier.** If some but not all photos have been sourced, keep the species at Standard and omit the `photos` field entirely until the full set is ready. A single photo in the gallery is not enough to call it Full.
+
+Image fields are the **only** fields in the entire schema that should be omitted when unavailable — do not write `"Unknown"` or an empty string for them; simply leave the field out of the entry.
+
+| Field | Type | Notes |
+|---|---|---|
+| `photos` | string[] | Array of relative paths to species photos. First photo is used as the hero image. **Include only when the complete intended photo set is ready.** Omit entirely otherwise — the UI falls back to `silhouetteFallback`. |
+| `physicalScaleImage` | string | Relative path to a size-comparison illustration. Omit if unavailable. |
+| `habitatImage` | string | Relative path to a habitat range map image. Omit if unavailable. |
 
 ---
 
 ## Tier Summary
 
-| Tier | Minimum fields | Unlocks |
+| Tier | What it has | Unlocks |
 |---|---|---|
-| **Stub** | `id`, `commonName`, `scientificName`, `statusLabel`, `lifePercent`, `habitatTypes`, `dietType`, `geographicRegions`, `tags`, `description`, `funFact`, `emoji` | Grid card + modal shell with "Incomplete Data" badges |
-| **Standard** | Stub + `vitalSigns`, `threats`, `actionItems`, `statusHistory`, `habitat`, `diet`, `size`, `healthMetrics`, `habitatStats`, `populationTrend`, `populationTrendMeta`, `preyDeclineRegions`, `fishingPressureRegions` | All data tabs; unknown values render gracefully |
-| **Full** | Standard + `photos` (and optionally `physicalScaleImage`, `habitatImage`) | Hero photo, photo gallery, size illustration, habitat map |
+| **Stub** | Core identity fields only (`id`, `commonName`, `scientificName`, `statusLabel`, `lifePercent`, `habitatTypes`, `dietType`, `geographicRegions`, `tags`, `description`, `funFact`, `emoji`) | Grid card + modal shell with "Incomplete Data" badges |
+| **Standard** | All Stub fields + all data fields (with `"Unknown"` / `[]` fallbacks where needed). No images. | All data tabs fully rendered; unknown values display gracefully |
+| **Full** | All Standard fields + `photos`. Optionally `physicalScaleImage` and/or `habitatImage` if available. | Hero photo, photo gallery, size illustration, habitat map |
+
+**The key distinction:** Stub → Standard is about populating all the data fields. Standard → Full is solely about adding a complete photo set. Images are the only fields that are ever truly absent from an entry. A species with partial photos is still Standard.
 
 ---
 
