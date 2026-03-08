@@ -26,7 +26,7 @@ Check off items as they're completed. Add notes inline as needed.
 ### Functionality
 
 - [ ] **Species comparison view** — select 2–3 species and see a side-by-side stat comparison table
-- [ ] **Pagination or infinite scroll** — for projects with many species, virtualize the grid so it doesn't render 500+ DOM nodes at once
+- [x] **Pagination or infinite scroll** — for projects with many species, virtualize the grid so it doesn't render 500+ DOM nodes at once
 - [ ] **Export favorites** — download favorited species data as CSV or JSON for offline reference
 
 ### Visuals & UI Polish

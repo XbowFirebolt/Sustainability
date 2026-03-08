@@ -1668,6 +1668,11 @@ let manageFavoritesMode = false;
 let manageFavoritesSelected = new Set();
 let filterPanelOpen = false;
 
+const PAGE_SIZE = 24;
+let _renderQueue = [];
+let _renderOffset = 0;
+let _renderMeta = { q: "", favIds: [] };
+
 const SEVERITY_SCORE = { critical: 4, high: 3, medium: 2, low: 1 };
 
 function getThreatSeverityScore(species) {
@@ -2180,6 +2185,74 @@ function matchesTabContent(s, q) {
   return null;
 }
 
+function createSeverityHeader(severity, count) {
+  const header = document.createElement("div");
+  header.className = `wiki-severity-header wiki-severity-header--${severity || "none"}`;
+  const label = document.createElement("span");
+  label.className = "wiki-severity-header-label";
+  label.textContent = `${(severity || "No Threats").toUpperCase()} (${count})`;
+  const rule = document.createElement("span");
+  rule.className = "wiki-severity-header-rule";
+  header.appendChild(label);
+  header.appendChild(rule);
+  return header;
+}
+
+function buildRenderQueue(sorted) {
+  const queue = [];
+  if (wikiViewMode === "list") {
+    queue.push({ type: "list-header" });
+  }
+  if (sortMode === "threat-desc") {
+    const severityGroups = [
+      { severity: "critical", score: 4 },
+      { severity: "high",     score: 3 },
+      { severity: "medium",   score: 2 },
+      { severity: "low",      score: 1 },
+      { severity: null,       score: 0 },
+    ];
+    severityGroups.forEach(({ severity, score }) => {
+      const group = sorted.filter((s) => getThreatSeverityScore(s) === score);
+      if (group.length === 0) return;
+      queue.push({ type: "severity-header", severity, count: group.length });
+      group.forEach((species) => queue.push({ type: "card", species }));
+    });
+  } else {
+    sorted.forEach((species) => queue.push({ type: "card", species }));
+  }
+  return queue;
+}
+
+function renderNextPage() {
+  const grid = document.getElementById("wiki-grid");
+  const sentinel = document.getElementById("wiki-page-sentinel");
+  if (!sentinel) return;
+  const { q, favIds } = _renderMeta;
+  const newCards = [];
+  let cardsRendered = 0;
+  while (_renderOffset < _renderQueue.length && cardsRendered < PAGE_SIZE) {
+    const item = _renderQueue[_renderOffset++];
+    let el;
+    if (item.type === "list-header") {
+      el = createListHeader();
+    } else if (item.type === "severity-header") {
+      el = createSeverityHeader(item.severity, item.count);
+    } else {
+      el = wikiViewMode === "list"
+        ? createListRow(item.species, q, favIds)
+        : createSpeciesCard(item.species, q, favIds);
+      cardsRendered++;
+      newCards.push(el);
+    }
+    grid.insertBefore(el, sentinel);
+  }
+  newCards.forEach((el) => window._wikiLifeObserver && window._wikiLifeObserver.observe(el));
+  if (_renderOffset >= _renderQueue.length) {
+    sentinel.remove();
+    if (window._wikiSentinelObserver) window._wikiSentinelObserver.disconnect();
+  }
+}
+
 function renderWikiGrid(query) {
   const grid = document.getElementById("wiki-grid");
   const q = query ? query.trim().toLowerCase() : "";
@@ -2291,51 +2364,7 @@ function renderWikiGrid(query) {
     return;
   }
 
-  if (wikiViewMode === "list") {
-    grid.appendChild(createListHeader());
-  }
-
-  if (sortMode === "threat-desc") {
-    const severityGroups = [
-      { severity: "critical", score: 4 },
-      { severity: "high",     score: 3 },
-      { severity: "medium",   score: 2 },
-      { severity: "low",      score: 1 },
-      { severity: null,       score: 0 },
-    ];
-    severityGroups.forEach(({ severity, score }) => {
-      const group = sorted.filter((s) => getThreatSeverityScore(s) === score);
-      if (group.length === 0) return;
-
-      const header = document.createElement("div");
-      header.className = `wiki-severity-header wiki-severity-header--${severity || "none"}`;
-
-      const label = document.createElement("span");
-      label.className = "wiki-severity-header-label";
-      label.textContent = `${(severity || "No Threats").toUpperCase()} (${group.length})`;
-
-      const rule = document.createElement("span");
-      rule.className = "wiki-severity-header-rule";
-
-      header.appendChild(label);
-      header.appendChild(rule);
-      grid.appendChild(header);
-
-      group.forEach((species) => {
-        grid.appendChild(wikiViewMode === "list"
-          ? createListRow(species, q, favIds)
-          : createSpeciesCard(species, q, favIds));
-      });
-    });
-  } else {
-    sorted.forEach((species) => {
-      grid.appendChild(wikiViewMode === "list"
-        ? createListRow(species, q, favIds)
-        : createSpeciesCard(species, q, favIds));
-    });
-  }
-
-  // Animate health indicators from 0 to their value as items enter the viewport
+  // Set up life animation observer (cards are observed as each page is appended)
   if (window._wikiLifeObserver) window._wikiLifeObserver.disconnect();
   window._wikiLifeObserver = new IntersectionObserver((entries) => {
     const visible = entries
@@ -2383,7 +2412,27 @@ function renderWikiGrid(query) {
       window._wikiLifeObserver.unobserve(entry.target);
     });
   }, { threshold: 0.15 });
-  grid.querySelectorAll(".species-card, .list-row").forEach((el) => window._wikiLifeObserver.observe(el));
+
+  // Build render queue and paginate via sentinel
+  if (window._wikiSentinelObserver) window._wikiSentinelObserver.disconnect();
+  _renderMeta = { q, favIds };
+  _renderQueue = buildRenderQueue(sorted);
+  _renderOffset = 0;
+
+  const sentinel = document.createElement("div");
+  sentinel.id = "wiki-page-sentinel";
+  grid.appendChild(sentinel);
+
+  renderNextPage();
+
+  const activeSentinel = document.getElementById("wiki-page-sentinel");
+  if (activeSentinel) {
+    window._wikiSentinelObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) renderNextPage();
+    }, { rootMargin: "300px" });
+    window._wikiSentinelObserver.observe(activeSentinel);
+  }
+
   updateClearFiltersVisibility();
   updateFavoritesToggleText();
 }

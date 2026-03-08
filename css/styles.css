@@ -1340,6 +1340,13 @@ body.no-map {
 .wiki-view-btn.active { background: white; color: var(--color-primary); box-shadow: 0 1px 4px rgba(0,0,0,0.10); }
 .wiki-view-btn svg { width: 14px; height: 14px; }
 
+/* Infinite scroll sentinel */
+#wiki-page-sentinel {
+  grid-column: 1 / -1;
+  height: 1px;
+  pointer-events: none;
+}
+
 /* Threat severity section headers (threat-desc sort) */
 .wiki-severity-header {
   grid-column: 1 / -1;
