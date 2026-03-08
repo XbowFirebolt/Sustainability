@@ -1,6 +1,6 @@
 {
   "id": "carcharhinus-amblyrhynchos",
-  "lastUpdated": "2026-03-06",
+  "lastUpdated": "2026-03-09",
   "emoji": "🦈",
   "commonName": "Grey Reef Shark",
   "scientificName": "Carcharhinus amblyrhynchos",
@@ -28,7 +28,126 @@
     "keystone",
     "bycatch"
   ],
+  "photos": [
+    "projects/shark-populations/images/grey_reef_shark/grey_reef_shark.png"
+  ],
   "description": "The grey reef shark is a medium-sized requiem shark found throughout the Indo-Pacific coral reef system. It is one of the most common reef sharks in its range and plays an important role in reef ecology as a mesopredator. Grey reef sharks are known for a distinctive threat display — arching the back, dropping pectoral fins, and swimming in an exaggerated rolling motion to warn off perceived threats.",
   "funFact": "The grey reef shark performs one of the most distinctive threat displays in the animal kingdom: when feeling cornered, it arches its back, drops its pectoral fins, and swims in an exaggerated rolling pattern — a clear visual warning that it may attack if the threat persists.",
-  "habitat": "Coral reef environments throughout the Indo-Pacific, from the Red Sea and East Africa across to Easter Island. Found in clear, reef-associated waters from the surface to 274 m, most commonly in the upper 60 m along reef drop-offs and passages with strong currents."
+  "habitat": "Coral reef environments throughout the Indo-Pacific, from the Red Sea and East Africa across to Easter Island. Found in clear, reef-associated waters from the surface to 274 m, most commonly in the upper 60 m along reef drop-offs and passages with strong currents.",
+  "diet": "Primarily reef fish (wrasse, surgeonfish, grouper, and snapper), supplemented by cephalopods (squid and octopus) and crustaceans. A fast, agile hunter that often forages in groups and exploits reef structure to trap prey against hard surfaces.",
+  "size": "Typically 1.4–1.9 m (4.6–6.2 ft); max recorded ~2.6 m (8.5 ft). Females are slightly larger than males.",
+  "vitalSigns": [
+    { "label": "Estimated Population",   "value": "No reliable global estimate; suspected decline exceeding 50% over three generations",             "glance": true },
+    { "label": "Lifespan",               "value": "Up to ~25 years",                                                                                   "glance": true },
+    { "label": "Max Length",             "value": "~2.6 m (8.5 ft)",             "metric": "~2.6 m",   "imperial": "~8.5 ft",                          "glance": true },
+    { "label": "Max Weight",             "value": "~33.7 kg (~74 lbs)",           "metric": "~33.7 kg", "imperial": "~74 lbs",                          "glance": true },
+    { "label": "Top Speed",              "value": "~25–35 km/h estimated",        "metric": "~25–35 km/h", "imperial": "~15–22 mph",                    "glance": true },
+    { "label": "Ecological Role",        "value": "Mesopredator / Keystone Reef Predator",                                                             "glance": true },
+    { "label": "Reproductive Rate",      "value": "1–6 pups per litter (typically 3–4); ~9–14 month gestation; often biennial" },
+    { "label": "Age at Maturity",        "value": "~6–7 years (males); ~7–9 years (females)" },
+    { "label": "Diet",                   "value": "Reef fish, squid, octopus, and crustaceans" },
+    { "label": "Population Growth Rate", "value": "Very low — late maturity, small litters, and long gestation make recovery from overfishing slow" },
+    { "label": "Key Adaptations",        "value": "Distinctive threat display (arched back, dropped pectorals, exaggerated roll) deters predators and competitors; highly site-faithful with well-defined home ranges; strong current preference allows access to oxygen-rich reef passages" }
+  ],
+  "habitatStats": [
+    { "label": "Global Range",  "value": "Tropical Indo-Pacific; from the Red Sea and East Africa eastward to the Tuamotu Archipelago and Easter Island" },
+    { "label": "Depth Range",   "value": "Surface to ~274 m (900 ft); most common in the upper 60 m along reef edges and drop-offs", "metric": "Surface to ~274 m", "imperial": "Surface to ~900 ft" }
+  ],
+  "statusHistory": [
+    { "year": 2003, "status": "Near Threatened" },
+    { "year": 2015, "status": "Vulnerable" },
+    { "year": 2020, "status": "Endangered" }
+  ],
+  "populationTrend": [
+    { "year": 1980, "value": 100 },
+    { "year": 1990, "value": 82 },
+    { "year": 2000, "value": 63 },
+    { "year": 2010, "value": 47 },
+    { "year": 2020, "value": 35 }
+  ],
+  "populationTrendMeta": {
+    "confidence": "estimated",
+    "note": "No direct global population census exists for grey reef sharks. Values are a relative index (100 = 1980 baseline) modeled from IUCN assessment data, reef survey abundance trends, and regional catch records. The IUCN 2020 assessment found sufficient evidence of declines exceeding 50% over three generations (~28 years) to warrant Endangered status. Long-term reef monitoring surveys — including Palmyra Atoll and sites across the Indo-Pacific — document severe local depletions, with some populations reduced by 80–90% from historical baselines. Absolute values are illustrative; trend direction (strongly decreasing) is well-supported."
+  },
+  "preyDeclineRegions": [
+    { "name": "Southeast Asia",       "severity": "high",   "note": "Reef fish stocks heavily depleted by blast fishing, cyanide fishing, and overexploitation across Indonesia, the Philippines, and the Coral Triangle" },
+    { "name": "Indian Ocean",         "severity": "medium", "note": "Coastal reef fish populations declining due to artisanal and commercial overfishing across the Maldives, Sri Lanka, and East Africa" },
+    { "name": "Red Sea / Arabian Sea","severity": "medium", "note": "Repeated mass coral bleaching events have degraded reef ecosystems and reduced the reef fish communities grey reef sharks depend on" },
+    { "name": "Pacific Islands",      "severity": "medium", "note": "Growing subsistence and commercial fishing pressure on reef ecosystems reducing availability of key prey species across Micronesia and Polynesia" }
+  ],
+  "fishingPressureRegions": [
+    { "name": "Southeast Asia",       "severity": "critical", "note": "Indonesia and the Philippines are among the world's largest shark-fishing nations; grey reef sharks are targeted for fins, meat, and liver oil in local and export markets" },
+    { "name": "Indian Ocean",         "severity": "high",     "note": "Directed fishing and bycatch in gillnet and longline fisheries across the Maldives, Sri Lanka, and East African coastal waters" },
+    { "name": "Red Sea / Arabian Sea","severity": "high",     "note": "Significant directed catch for local consumption and fin trade; limited monitoring and management of reef shark fisheries across the region" },
+    { "name": "Pacific Islands",      "severity": "medium",   "note": "Subsistence and small-scale commercial fishing in reef environments; some island nations have established shark sanctuaries but enforcement varies" },
+    { "name": "Australia",            "severity": "low",      "note": "Bycatch in commercial net and trawl fisheries in northern waters; generally better-managed due to stronger federal and state protections" }
+  ],
+  "threats": [
+    {
+      "name": "Overfishing",
+      "severity": "critical",
+      "description": "Grey reef sharks are directly targeted across Southeast Asia and the Indian Ocean for their fins, meat, and liver oil. Their strong site fidelity — individuals patrol the same reef passages and drop-offs year after year — makes them easy to locate and harvest repeatedly, leaving little opportunity for populations to recover once depleted. In many parts of the Indo-Pacific, reef surveys that once recorded abundant grey reef sharks now find none at all."
+    },
+    {
+      "name": "Habitat Loss",
+      "severity": "high",
+      "description": "Grey reef sharks are intimately tied to healthy coral reef ecosystems. Climate-driven coral bleaching, destructive fishing practices such as blast fishing, and coastal development are degrading and eliminating the reef structures they depend on for foraging, resting, and pupping. As reef systems deteriorate, grey reef shark populations contract with them — local abundance tracks coral health closely at monitored sites across the Indo-Pacific."
+    },
+    {
+      "name": "Bycatch",
+      "severity": "high",
+      "description": "Gillnets, longlines, and fish traps set in and around reef environments catch grey reef sharks incidentally at high rates across their range. Their preference for reef edges, passes, and drop-offs puts them directly in the path of gear targeting reef fish and pelagic species. Bycatch from these fisheries is difficult to monitor and is likely substantially underreported, particularly in artisanal fisheries across the Indo-Pacific."
+    },
+    {
+      "name": "Shark Fin Trade",
+      "severity": "high",
+      "description": "The grey reef shark's fins enter the international shark fin trade primarily through Southeast Asian markets. Their widespread distribution and former abundance made them among the most commonly fin-traded reef shark species. CITES Appendix II listing (2016) requires documented sustainable trade, but compliance at local fishery and export levels remains inconsistent across much of the range."
+    },
+    {
+      "name": "Climate Change",
+      "severity": "medium",
+      "description": "Rising sea surface temperatures are driving increasingly frequent and severe mass coral bleaching events that fundamentally restructure reef ecosystems. Loss of coral cover reduces structural complexity, prey availability, and suitable pupping habitat for grey reef sharks. More extreme temperature anomalies projected through the century are likely to accelerate reef degradation faster than recovery can occur in most areas."
+    }
+  ],
+  "actionItems": [
+    {
+      "title": "Support Coral Reef Conservation",
+      "description": "Grey reef shark survival depends directly on healthy coral reef ecosystems. Support organizations working on reef restoration, bleaching monitoring, and local stressor reduction — including water pollution abatement and enforcement of bans on destructive fishing practices that compound climate-driven reef degradation.",
+      "link": "https://www.reefcheck.org"
+    },
+    {
+      "title": "Support Marine Protected Areas in the Indo-Pacific",
+      "description": "Well-enforced marine protected areas — especially no-take zones covering reef passes and drop-offs — can serve as refuges where grey reef shark populations stabilize and recover. Advocate for the expansion and adequate resourcing of MPAs across the Indo-Pacific, and support Pacific island shark sanctuaries as models for regional adoption.",
+      "link": null
+    },
+    {
+      "title": "Reduce Demand for Shark Fin Products",
+      "description": "Grey reef shark fins enter the international fin trade primarily through Southeast Asian markets. Reducing consumer demand for shark fin soup and related products directly reduces fishing pressure on this and other reef shark species. Support campaigns and legislation targeting the fin trade in key consumer markets, including China, Hong Kong, and Southeast Asian port cities.",
+      "link": null
+    },
+    {
+      "title": "Advocate for Stronger CITES Enforcement",
+      "description": "Grey reef sharks have been on CITES Appendix II since 2016, requiring that trade be documented as sustainable and legal. Support organizations working to improve compliance and monitoring at source fisheries and export ports across Southeast Asia and the Indian Ocean, where enforcement remains inconsistent.",
+      "link": "https://cites.org/eng/app/appendices.php"
+    },
+    {
+      "title": "Oppose Destructive Reef Fishing Practices",
+      "description": "Blast fishing and cyanide fishing devastate reef habitats that grey reef sharks depend on for food and shelter. Advocate for stronger enforcement of bans on these practices, particularly across Indonesia, the Philippines, and the broader Coral Triangle, and support local fishing community transitions to non-destructive gear alternatives.",
+      "link": null
+    }
+  ],
+  "healthMetrics": [
+    { "label": "IUCN Status",         "value": "Endangered — uplisted from Vulnerable in 2020; suspected population decline exceeding 50% over three generations (~28 years)", "trend": "down" },
+    { "label": "Population Trend",    "value": "Strongly decreasing — severe local depletions documented across the Indo-Pacific; some monitored sites show 80–90% declines from historical baselines", "trend": "down" },
+    { "label": "Habitat Quality",     "value": "Declining — coral reef degradation from bleaching, blast fishing, and development directly reduces available habitat", "trend": "down" },
+    { "label": "Prey Availability",   "value": "Declining in key regions due to overfishing and reef degradation reducing reef fish biomass across much of the Indo-Pacific", "trend": "down" },
+    { "label": "Fishing Pressure",    "value": "High to Critical in Southeast Asia and the Indian Ocean; both directed targeting and bycatch are significant contributors to decline", "trend": "down" },
+    { "label": "Protection Coverage", "value": "Partial — CITES Appendix II (2016) adds trade documentation requirements; some Pacific island shark sanctuaries provide local protection; enforcement remains inconsistent across most of the range", "trend": "stable",
+      "links": [
+        { "label": "IUCN Red List", "url": "https://www.iucnredlist.org/species/39365/2918609" },
+        { "label": "CITES",         "url": "https://cites.org/eng/app/appendices.php" },
+        { "label": "Reef Check",    "url": "https://www.reefcheck.org" }
+      ]
+    }
+  ]
 }

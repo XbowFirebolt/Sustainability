@@ -43,7 +43,7 @@ Tracks every species in the wiki: current tier, IUCN status, and what still need
 | Blue Shark | *Prionace glauca* | Near Threatened | Full (partial) | Missing physicalScaleImage |
 | Blacktip Reef Shark | *Carcharhinus melanopterus* | Vulnerable | Full (partial) | Missing physicalScaleImage |
 | Whitetip Reef Shark | *Triaenodon obesus* | Vulnerable | Stub | Phase 3 Batch 2 |
-| Grey Reef Shark | *Carcharhinus amblyrhynchos* | Endangered | Stub | Phase 3 Batch 2 |
+| Grey Reef Shark | *Carcharhinus amblyrhynchos* | Endangered | Full (partial) | Missing physicalScaleImage |
 | Sandbar Shark | *Carcharhinus plumbeus* | Vulnerable | Stub | Phase 3 Batch 2 |
 | Dusky Shark | *Carcharhinus obscurus* | Endangered | Stub | Phase 3 Batch 2 |
 | Silky Shark | *Carcharhinus falciformis* | Vulnerable | Stub | Phase 3 Batch 2 |
@@ -156,9 +156,9 @@ Species that have been added as stubs and are candidates for Standard tier promo
 
 | Tier | Count |
 |---|---|
-| Full | 9 |
+| Full | 10 |
 | Standard | 5 |
-| Stub | 41 |
+| Stub | 40 |
 | **Total** | **55** |
 
 *Update manually after each batch commit.*
