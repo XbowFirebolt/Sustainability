@@ -1629,6 +1629,9 @@ window.WIKI_DATA = {
         "bycatch",
         "finning"
       ],
+      "photos": [
+        "projects/shark-populations/images/oceanic_whitetip_shark.png"
+      ],
       "description": "The oceanic whitetip shark (Carcharhinus longimanus) is a large requiem shark inhabiting the pelagic zone of tropical and warm temperate seas. It has a stocky body and iconic elongated rounded fins, with white tips. The species is typically solitary, though they may gather in large numbers at food concentrations.",
       "funFact": "Once considered one of the most abundant large ocean animals on Earth, the Oceanic Whitetip Shark has suffered a population collapse estimated at over 98% in parts of the Atlantic since the 1950s — one of the most dramatic declines of any large marine predator ever recorded.",
       "habitat": "Found worldwide between 45°N and 43°S latitude in deep, open ocean. Prefers water temperatures above 20°C (68°F) but can range into waters as cool as 15°C (59°F). A truly pelagic shark, it rarely approaches coastlines or shallow areas.",
@@ -2406,6 +2409,9 @@ window.WIKI_DATA = {
         "bycatch",
         "finning"
       ],
+      "photos": [
+        "projects/shark-populations/images/shortfin_mako.png"
+      ],
       "description": "The shortfin mako is the world's fastest shark, capable of sustained speeds and spectacular leaps out of the water when hooked or pursuing prey. Found in open ocean worldwide in tropical and temperate seas, it is a highly migratory apex predator. Despite its speed and power, it has suffered steep population declines from bycatch and targeted fishing for its meat and fins.",
       "funFact": "The shortfin mako can reach burst speeds of up to 45 mph (72 km/h) and has been recorded leaping over 6 m (20 ft) into the air — making it not only the fastest shark but one of the most acrobatic fish in the ocean.",
       "habitat": "Open ocean in tropical and temperate seas worldwide, from the surface to depths of at least 500 m. A highly pelagic species that rarely enters inshore waters; prefers surface temperatures of 17–22°C but can range into cooler regions.",
@@ -2749,6 +2755,9 @@ window.WIKI_DATA = {
         "finning",
         "bycatch"
       ],
+      "photos": [
+        "projects/shark-populations/images/great_hammerhead.png"
+      ],
       "description": "The great hammerhead is the largest of the hammerhead sharks, reaching up to 6.1 m (20 ft), and identified by its nearly straight-edged, wide cephalofoil. It inhabits tropical and warm temperate coastal and offshore waters worldwide. As an apex predator, it plays a critical role in reef and coastal ecosystems, but it is heavily targeted by the fin trade — its large fins are among the most valuable on the market.",
       "funFact": "The great hammerhead's distinctive flat, wide head acts like a living metal detector — it sweeps it across the seafloor to detect the faint electrical fields of buried stingrays hiding in the sand, then pins them down with its head before biting.",
       "habitat": "Coastal and offshore waters in tropical and warm temperate seas worldwide. Found over continental and insular shelves, coral reefs, and in the open ocean. Undertakes long seasonal migrations and is known to aggregate at specific reef sites.",
@@ -3086,6 +3095,9 @@ window.WIKI_DATA = {
         "solitary",
         "keystone",
         "bycatch"
+      ],
+      "photos": [
+        "projects/shark-populations/images/basking_shark.png"
       ],
       "description": "The basking shark is the world's second-largest fish, reaching up to 12 m (40 ft), and feeds exclusively by passive filter-feeding on zooplankton as it swims slowly with its enormous mouth agape. Found in cold to warm temperate seas worldwide, it undertakes long seasonal migrations following plankton blooms. Despite its massive size, it is harmless to humans.",
       "funFact": "A basking shark's mouth can open over 1 m (3.3 ft) wide, and it filters approximately 2,000 tonnes of seawater per hour to collect tiny zooplankton — it must keep swimming continuously to maintain the flow of water through its gill rakers.",
@@ -3703,6 +3715,9 @@ window.WIKI_DATA = {
         "solitary",
         "bycatch",
         "finning"
+      ],
+      "photos": [
+        "projects/shark-populations/images/porbeagle.png"
       ],
       "description": "The porbeagle is a large, cold-water shark in the family Lamnidae, closely related to the great white and mako sharks. Found in cold and temperate waters of the North and South Atlantic and the Southern Ocean, it is one of the few sharks capable of maintaining body temperature above ambient water temperature. Porbeagles were once heavily targeted for meat and fins, causing steep population declines in the North Atlantic.",
       "funFact": "Like great whites and makos, the porbeagle is warm-blooded — it can maintain its body temperature 8–10°C above surrounding cold water, giving it a significant speed and metabolic advantage when hunting in frigid, high-latitude seas.",
