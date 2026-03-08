@@ -36,6 +36,7 @@ const output =
   '// GENERATED FILE — do not edit by hand.\n' +
   '// Edit data/config.json or data/species/<id>.json, then run:\n' +
   '//   node scripts/build-data.js\n' +
+  '/** @type {import(\'./types.js\').WikiData} */\n' +
   'window.WIKI_DATA = ' + JSON.stringify(wikiData, null, 2) + ';\n';
 
 fs.writeFileSync(outputPath, output, 'utf8');

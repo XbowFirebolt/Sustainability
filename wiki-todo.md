@@ -57,7 +57,7 @@ Check off items as they're completed. Add notes inline as needed.
 - [ ] **Support multiple wiki datasets per project** — allow a project to have sub-categories (e.g., "Sharks" + "Rays" in the same project)
 - [ ] **Add a second project's wiki** — implement a second `projects/<id>/data.js` for another sustainability project to validate the generic wiki architecture works beyond sharks
 - [ ] **Unit tests for core functions** — test `renderWikiGrid`, `openSpeciesModal`, sorting/filtering logic independently
-- [ ] **JSDoc type annotations** — add `@typedef` comments for the WIKI_DATA schema (items, vitalSigns, threats, etc.) so editors can provide autocomplete when editing data.js
+- [x] **JSDoc type annotations** — add `@typedef` comments for the WIKI_DATA schema (items, vitalSigns, threats, etc.) so editors can provide autocomplete when editing data.js
 - [ ] **Offline / PWA support** — add a service worker to cache wiki assets so the page works offline
 
 ---

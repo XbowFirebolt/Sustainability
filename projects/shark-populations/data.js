@@ -1,6 +1,7 @@
 // GENERATED FILE — do not edit by hand.
 // Edit data/config.json or data/species/<id>.json, then run:
 //   node scripts/build-data.js
+/** @type {import('./types.js').WikiData} */
 window.WIKI_DATA = {
   "projectId": "shark-populations",
   "favoritesKey": "wiki_favorites_shark-populations",
