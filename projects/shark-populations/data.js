@@ -1630,7 +1630,7 @@ window.WIKI_DATA = {
         "finning"
       ],
       "photos": [
-        "projects/shark-populations/images/oceanic_whitetip_shark.png"
+        "projects/shark-populations/images/oceanic_whitetip_shark/oceanic_whitetip_shark1.png"
       ],
       "description": "The oceanic whitetip shark (Carcharhinus longimanus) is a large requiem shark inhabiting the pelagic zone of tropical and warm temperate seas. It has a stocky body and iconic elongated rounded fins, with white tips. The species is typically solitary, though they may gather in large numbers at food concentrations.",
       "funFact": "Once considered one of the most abundant large ocean animals on Earth, the Oceanic Whitetip Shark has suffered a population collapse estimated at over 98% in parts of the Atlantic since the 1950s — one of the most dramatic declines of any large marine predator ever recorded.",
@@ -2410,7 +2410,7 @@ window.WIKI_DATA = {
         "finning"
       ],
       "photos": [
-        "projects/shark-populations/images/shortfin_mako.png"
+        "projects/shark-populations/images/shortfin_mako/shortfin_mako1.png"
       ],
       "description": "The shortfin mako is the world's fastest shark, capable of sustained speeds and spectacular leaps out of the water when hooked or pursuing prey. Found in open ocean worldwide in tropical and temperate seas, it is a highly migratory apex predator. Despite its speed and power, it has suffered steep population declines from bycatch and targeted fishing for its meat and fins.",
       "funFact": "The shortfin mako can reach burst speeds of up to 45 mph (72 km/h) and has been recorded leaping over 6 m (20 ft) into the air — making it not only the fastest shark but one of the most acrobatic fish in the ocean.",
@@ -2756,7 +2756,7 @@ window.WIKI_DATA = {
         "bycatch"
       ],
       "photos": [
-        "projects/shark-populations/images/great_hammerhead.png"
+        "projects/shark-populations/images/great_hammerhead/great_hammerhead1.png"
       ],
       "description": "The great hammerhead is the largest of the hammerhead sharks, reaching up to 6.1 m (20 ft), and identified by its nearly straight-edged, wide cephalofoil. It inhabits tropical and warm temperate coastal and offshore waters worldwide. As an apex predator, it plays a critical role in reef and coastal ecosystems, but it is heavily targeted by the fin trade — its large fins are among the most valuable on the market.",
       "funFact": "The great hammerhead's distinctive flat, wide head acts like a living metal detector — it sweeps it across the seafloor to detect the faint electrical fields of buried stingrays hiding in the sand, then pins them down with its head before biting.",
@@ -3097,7 +3097,7 @@ window.WIKI_DATA = {
         "bycatch"
       ],
       "photos": [
-        "projects/shark-populations/images/basking_shark.png"
+        "projects/shark-populations/images/basking_shark/basking_shark1.png"
       ],
       "description": "The basking shark is the world's second-largest fish, reaching up to 12 m (40 ft), and feeds exclusively by passive filter-feeding on zooplankton as it swims slowly with its enormous mouth agape. Found in cold to warm temperate seas worldwide, it undertakes long seasonal migrations following plankton blooms. Despite its massive size, it is harmless to humans.",
       "funFact": "A basking shark's mouth can open over 1 m (3.3 ft) wide, and it filters approximately 2,000 tonnes of seawater per hour to collect tiny zooplankton — it must keep swimming continuously to maintain the flow of water through its gill rakers.",
@@ -3404,7 +3404,7 @@ window.WIKI_DATA = {
     },
     {
       "id": "negaprion-brevirostris",
-      "lastUpdated": "2026-03-06",
+      "lastUpdated": "2026-03-08",
       "emoji": "🦈",
       "commonName": "Lemon Shark",
       "scientificName": "Negaprion brevirostris",
@@ -3433,13 +3433,278 @@ window.WIKI_DATA = {
         "keystone",
         "bycatch"
       ],
+      "photos": [
+        "projects/shark-populations/images/lemon_shark/lemon_shark1.png"
+      ],
       "description": "The lemon shark is a large, stocky shark found in shallow subtropical and tropical coastal waters of the Atlantic and Pacific. Named for its yellowish-brown coloration, it inhabits mangroves, estuaries, and coral reefs, often resting on the seafloor. Lemon sharks are among the more social of all shark species and have been extensively studied in long-term behavioral and ecological research.",
       "funFact": "Young lemon sharks return to the same nursery habitat — the exact mangrove or estuary where they were born — year after year for the first several years of their lives, demonstrating a remarkable site fidelity rarely documented in sharks.",
-      "habitat": "Shallow coastal waters including coral reefs, mangrove estuaries, and sandy flats in subtropical and tropical regions of the western Atlantic and eastern Pacific. Rarely found below 92 m; strongly associated with inshore nursery habitats."
+      "habitat": "Shallow coastal waters including coral reefs, mangrove estuaries, and sandy flats in subtropical and tropical regions of the western Atlantic and eastern Pacific. Rarely found below 92 m; strongly associated with inshore nursery habitats.",
+      "diet": "Primarily bony fish and rays, supplemented by seabirds, crustaceans, and cephalopods. Lemon sharks are opportunistic hunters that use electroreception and acute smell to locate prey in turbid, shallow-water environments.",
+      "size": "Up to 3.4 m (11 ft); females typically larger than males",
+      "vitalSigns": [
+        {
+          "label": "Estimated Population",
+          "value": "Unknown — no reliable global estimate; declining across Atlantic and Pacific ranges",
+          "glance": true
+        },
+        {
+          "label": "Lifespan",
+          "value": "~25–30 years",
+          "glance": true
+        },
+        {
+          "label": "Max Length",
+          "value": "3.4 m (11 ft); females larger",
+          "metric": "3.4 m",
+          "imperial": "11 ft",
+          "glance": true
+        },
+        {
+          "label": "Max Weight",
+          "value": "~183 kg (~400 lbs)",
+          "metric": "~183 kg",
+          "imperial": "~400 lbs",
+          "glance": true
+        },
+        {
+          "label": "Top Speed",
+          "value": "~30 km/h (~19 mph) in bursts",
+          "metric": "~30 km/h",
+          "imperial": "~19 mph",
+          "glance": true
+        },
+        {
+          "label": "Ecological Role",
+          "value": "Apex Predator",
+          "glance": true
+        },
+        {
+          "label": "Reproductive Rate",
+          "value": "4–17 pups per litter; ~10–12 month gestation; biennial cycle"
+        },
+        {
+          "label": "Age at Maturity",
+          "value": "~7 years (males); ~12 years (females)"
+        },
+        {
+          "label": "Diet",
+          "value": "Bony fish, rays, seabirds, crustaceans, and cephalopods"
+        },
+        {
+          "label": "Population Growth Rate",
+          "value": "Very low — late maturity and biennial reproduction severely limit recovery potential"
+        },
+        {
+          "label": "Key Adaptations",
+          "value": "Broad, flattened head with closely spaced nostrils enhances chemoreception; yellowish countershading provides camouflage over sandy and mangrove substrates"
+        }
+      ],
+      "habitatStats": [
+        {
+          "label": "Global Range",
+          "value": "Western Atlantic from New Jersey to southern Brazil; eastern Pacific from Baja California to Ecuador; also West Africa"
+        },
+        {
+          "label": "Depth Range",
+          "value": "Surface to ~92 m (300 ft); primarily occupies water shallower than 30 m",
+          "metric": "Surface to ~92 m",
+          "imperial": "Surface to ~300 ft"
+        }
+      ],
+      "statusHistory": [
+        {
+          "year": 1994,
+          "status": "Near Threatened"
+        },
+        {
+          "year": 2020,
+          "status": "Vulnerable"
+        }
+      ],
+      "populationTrend": [
+        {
+          "year": 1980,
+          "value": 1500000
+        },
+        {
+          "year": 1990,
+          "value": 1300000
+        },
+        {
+          "year": 2000,
+          "value": 1100000
+        },
+        {
+          "year": 2010,
+          "value": 900000
+        },
+        {
+          "year": 2020,
+          "value": 720000
+        }
+      ],
+      "populationTrendMeta": {
+        "confidence": "estimated",
+        "note": "No direct global census exists. Values estimated from habitat loss rates, bycatch data, and IUCN assessment modeling. The 2020 uplisting from Near Threatened to Vulnerable reflects documented declines consistent with ~30–49% population reduction over three generations (~60 years). Figures shown are illustrative of trend direction and magnitude."
+      },
+      "preyDeclineRegions": [
+        {
+          "name": "Caribbean",
+          "severity": "high",
+          "note": "Reef fish and coastal prey significantly depleted by decades of overfishing across the region"
+        },
+        {
+          "name": "W. Atlantic",
+          "severity": "high",
+          "note": "Coastal fish stocks along the US eastern seaboard and Gulf of Mexico under sustained fishing pressure"
+        },
+        {
+          "name": "W. Africa",
+          "severity": "high",
+          "note": "Artisanal and industrial overfishing has severely reduced coastal fish communities in lemon shark habitat"
+        },
+        {
+          "name": "S. America",
+          "severity": "medium",
+          "note": "Coastal prey populations reduced by artisanal fisheries in estuarine and reef zones"
+        },
+        {
+          "name": "E. Pacific",
+          "severity": "medium",
+          "note": "Baja California and Gulf of California prey stocks under moderate commercial fishing pressure"
+        }
+      ],
+      "fishingPressureRegions": [
+        {
+          "name": "W. Africa",
+          "severity": "critical",
+          "note": "Heavily targeted for fins and meat; limited regulatory oversight and widespread illegal, unreported, and unregulated fishing"
+        },
+        {
+          "name": "Caribbean",
+          "severity": "high",
+          "note": "Bycatch in longlines and gillnets; some targeted fishing in less-regulated island nations"
+        },
+        {
+          "name": "W. Atlantic",
+          "severity": "high",
+          "note": "Gillnet and longline bycatch in coastal fisheries; historically targeted for sport fishing in the US"
+        },
+        {
+          "name": "S. America",
+          "severity": "high",
+          "note": "Targeted for fins in international trade; bycatch in coastal shrimp trawls"
+        },
+        {
+          "name": "E. Pacific",
+          "severity": "medium",
+          "note": "Moderate bycatch pressure; some directed fishing in Mexico and Central America"
+        }
+      ],
+      "healthMetrics": [
+        {
+          "label": "IUCN Status",
+          "value": "Vulnerable — uplisted from Near Threatened in 2020",
+          "trend": "down"
+        },
+        {
+          "label": "Population Trend",
+          "value": "Decreasing — estimated >30% decline over three generations",
+          "trend": "down"
+        },
+        {
+          "label": "Habitat Quality",
+          "value": "Declining — mangrove nurseries and coastal reef habitat degraded by development and pollution",
+          "trend": "down"
+        },
+        {
+          "label": "Prey Availability",
+          "value": "Declining in key regions, particularly the Caribbean and West Africa",
+          "trend": "down"
+        },
+        {
+          "label": "Fishing Pressure",
+          "value": "High — bycatch and fin trade across Atlantic and Pacific ranges",
+          "trend": "down"
+        },
+        {
+          "label": "Protection Coverage",
+          "value": "Partial — protected in US waters; limited protections elsewhere; no CITES listing",
+          "trend": "stable",
+          "links": [
+            {
+              "label": "IUCN Red List",
+              "url": "https://www.iucnredlist.org/species/39380/117498583"
+            },
+            {
+              "label": "Shark Trust",
+              "url": "https://www.sharktrust.org"
+            },
+            {
+              "label": "Bimini Shark Lab",
+              "url": "https://biminisharklab.com"
+            }
+          ]
+        }
+      ],
+      "threats": [
+        {
+          "name": "Habitat Loss",
+          "severity": "high",
+          "description": "Lemon sharks depend on mangrove estuaries as nursery habitats for their young. Coastal development, deforestation, and aquaculture have destroyed or degraded mangroves across much of their range, reducing recruitment and juvenile survival."
+        },
+        {
+          "name": "Bycatch",
+          "severity": "high",
+          "description": "Lemon sharks are frequently caught incidentally in coastal gillnets, longlines, and trawls targeting other species. Their preference for shallow coastal habitats puts them directly in the path of inshore fishing operations."
+        },
+        {
+          "name": "Shark Fin Trade",
+          "severity": "high",
+          "description": "Lemon shark fins are commercially valuable and actively targeted in West Africa and Latin America for export to Asian fin markets. Finning — cutting off fins and discarding the body at sea — remains a significant mortality source outside protected waters."
+        },
+        {
+          "name": "Coastal Development",
+          "severity": "medium",
+          "description": "Urban and resort development along tropical coastlines degrades water quality, increases boat traffic, and reduces the availability of the shallow sandy and mangrove habitats lemon sharks depend on for foraging and pupping."
+        },
+        {
+          "name": "Climate Change",
+          "severity": "medium",
+          "description": "Rising sea temperatures and ocean acidification threaten the reef and mangrove ecosystems lemon sharks rely on. Changes in coastal current patterns may also affect prey distribution and nursery habitat suitability across their range."
+        }
+      ],
+      "actionItems": [
+        {
+          "title": "Protect Mangrove Nursery Habitats",
+          "description": "Mangroves are essential nurseries where juvenile lemon sharks spend their first years. Support organizations and policies that prevent coastal development in mangrove zones and fund mangrove restoration projects in the Caribbean, West Africa, and Latin America.",
+          "link": null
+        },
+        {
+          "title": "Support the Shark Fin Trade Ban",
+          "description": "Lemon shark fins are targeted across the Atlantic and eastern Pacific. Advocate for and support national bans on the shark fin trade, and encourage retailers and restaurants to commit to shark-fin-free supply chains.",
+          "link": null
+        },
+        {
+          "title": "Choose Sustainably Caught Seafood",
+          "description": "Coastal gillnets and longlines that catch lemon sharks as bycatch also supply many commercial fisheries. Use the Monterey Bay Aquarium Seafood Watch guide to avoid seafood caught with methods that incidentally kill coastal sharks.",
+          "link": "https://www.seafoodwatch.org"
+        },
+        {
+          "title": "Support Long-Term Shark Research",
+          "description": "The Bimini Biological Field Station has studied lemon sharks for decades, providing critical population data used in IUCN assessments. Supporting field research programs helps build the scientific case for stronger protections.",
+          "link": "https://biminisharklab.com"
+        },
+        {
+          "title": "Advocate for Stronger CITES Protections",
+          "description": "Lemon sharks are not currently listed under CITES, leaving the international fin trade largely unregulated. Contact your representatives and support conservation organizations pushing for lemon shark inclusion in CITES Appendix II.",
+          "link": null
+        }
+      ]
     },
     {
       "id": "prionace-glauca",
-      "lastUpdated": "2026-03-06",
+      "lastUpdated": "2026-03-08",
       "emoji": "🦈",
       "commonName": "Blue Shark",
       "scientificName": "Prionace glauca",
@@ -3470,9 +3735,278 @@ window.WIKI_DATA = {
         "bycatch",
         "finning"
       ],
+      "photos": [
+        "projects/shark-populations/images/blue_shark.png"
+      ],
       "description": "The blue shark is one of the most wide-ranging and abundant large shark species, distributed across all temperate and tropical oceans. Instantly recognizable by its electric blue coloration and slender, streamlined build, it is highly migratory and known to cross entire ocean basins. Blue sharks are among the most heavily fished sharks globally, primarily as bycatch in longline and trawl fisheries.",
       "funFact": "Blue sharks are record-breaking ocean travelers — individuals have been tracked migrating over 9,200 km (5,700 miles) across the Atlantic, following circular current patterns to exploit prey across entire ocean basins.",
-      "habitat": "Open ocean in temperate and tropical seas worldwide, from the surface to depths exceeding 350 m. Typically inhabits the epipelagic and mesopelagic zones, preferring cooler temperate surface waters; performs vertical migrations in tropical regions."
+      "habitat": "Open ocean in temperate and tropical seas worldwide, from the surface to depths exceeding 350 m. Typically inhabits the epipelagic and mesopelagic zones, preferring cooler temperate surface waters; performs vertical migrations in tropical regions.",
+      "diet": "Primarily squid and small bony fish, supplemented by cuttlefish, crustaceans, and occasionally seabirds or carrion. Blue sharks are opportunistic hunters capable of consuming large amounts of prey in a single feeding event.",
+      "size": "Up to 3.8 m (12.5 ft); females typically larger than males",
+      "vitalSigns": [
+        {
+          "label": "Estimated Population",
+          "value": "No reliable global estimate; likely tens of millions but declining across key ocean basins",
+          "glance": true
+        },
+        {
+          "label": "Lifespan",
+          "value": "~16–20 years",
+          "glance": true
+        },
+        {
+          "label": "Max Length",
+          "value": "3.8 m (12.5 ft); females typically larger",
+          "metric": "3.8 m",
+          "imperial": "12.5 ft",
+          "glance": true
+        },
+        {
+          "label": "Max Weight",
+          "value": "~204 kg (~450 lbs)",
+          "metric": "~204 kg",
+          "imperial": "~450 lbs",
+          "glance": true
+        },
+        {
+          "label": "Top Speed",
+          "value": "~40 km/h (~25 mph)",
+          "metric": "~40 km/h",
+          "imperial": "~25 mph",
+          "glance": true
+        },
+        {
+          "label": "Ecological Role",
+          "value": "Apex Predator / Mesopredator",
+          "glance": true
+        },
+        {
+          "label": "Reproductive Rate",
+          "value": "25–50 pups per litter; ~9–12 month gestation; annual to biennial cycle"
+        },
+        {
+          "label": "Age at Maturity",
+          "value": "~5–6 years (males); ~5–7 years (females)"
+        },
+        {
+          "label": "Diet",
+          "value": "Squid, bony fish, cuttlefish, crustaceans, and opportunistic carrion"
+        },
+        {
+          "label": "Population Growth Rate",
+          "value": "Moderate — relatively high fecundity compared to most sharks, but total mortality from fishing vastly exceeds natural recovery capacity"
+        },
+        {
+          "label": "Key Adaptations",
+          "value": "Counter-shaded blue coloration provides pelagic camouflage; slender fusiform body enables long-distance cruising; large pectoral fins allow efficient gliding in open-ocean currents"
+        }
+      ],
+      "habitatStats": [
+        {
+          "label": "Global Range",
+          "value": "All temperate and tropical oceans; circumglobal in open ocean from the surface to >350 m; occasionally enters coastal waters"
+        },
+        {
+          "label": "Depth Range",
+          "value": "Surface to >350 m (1,150 ft); primarily in the epipelagic zone (0–200 m)",
+          "metric": "Surface to >350 m",
+          "imperial": "Surface to >1,150 ft"
+        }
+      ],
+      "statusHistory": [
+        {
+          "year": 2000,
+          "status": "Near Threatened"
+        },
+        {
+          "year": 2009,
+          "status": "Near Threatened"
+        },
+        {
+          "year": 2020,
+          "status": "Near Threatened"
+        }
+      ],
+      "populationTrend": [
+        {
+          "year": 1980,
+          "value": 80000000
+        },
+        {
+          "year": 1990,
+          "value": 68000000
+        },
+        {
+          "year": 2000,
+          "value": 55000000
+        },
+        {
+          "year": 2010,
+          "value": 43000000
+        },
+        {
+          "year": 2020,
+          "value": 35000000
+        }
+      ],
+      "populationTrendMeta": {
+        "confidence": "estimated",
+        "note": "No direct global population census exists for blue sharks. Values are modeled estimates based on IUCN catch data analysis, longline CPUE trends, and observer program data from Atlantic and Pacific tuna fisheries. Catch records suggest an estimated 10–20 million blue sharks are taken annually as bycatch. Trend direction (decreasing) is well-supported; absolute values are illustrative."
+      },
+      "preyDeclineRegions": [
+        {
+          "name": "N. Atlantic",
+          "severity": "high",
+          "note": "Squid and small pelagic fish stocks reduced by intensive commercial fishing across the North Atlantic"
+        },
+        {
+          "name": "Mediterranean",
+          "severity": "high",
+          "note": "Prey populations severely depleted by decades of unregulated overfishing in a semi-enclosed sea"
+        },
+        {
+          "name": "N. Pacific",
+          "severity": "medium",
+          "note": "Squid and forage fish stocks under increasing pressure from large-scale commercial squid fisheries"
+        },
+        {
+          "name": "S. Atlantic",
+          "severity": "medium",
+          "note": "Industrial fisheries targeting tuna and associated bycatch species have reduced prey availability"
+        },
+        {
+          "name": "Indian Ocean",
+          "severity": "medium",
+          "note": "Growing fishing effort for tunas and squid affecting prey base across tropical and temperate zones"
+        }
+      ],
+      "fishingPressureRegions": [
+        {
+          "name": "N. Atlantic",
+          "severity": "critical",
+          "note": "Estimated tens of millions caught annually as bycatch in pelagic longline fisheries targeting tuna and swordfish; the highest-volume shark bycatch fishery in the world"
+        },
+        {
+          "name": "Mediterranean",
+          "severity": "critical",
+          "note": "Historical declines of over 96% documented; one of the most severely affected blue shark populations globally"
+        },
+        {
+          "name": "N. Pacific",
+          "severity": "high",
+          "note": "Large-scale longline and driftnet fisheries operate throughout prime blue shark range; minimal bycatch management"
+        },
+        {
+          "name": "S. Atlantic",
+          "severity": "high",
+          "note": "Directed and incidental catch by vessels targeting tuna and billfish; significant fin trade pressure"
+        },
+        {
+          "name": "Indian Ocean",
+          "severity": "high",
+          "note": "Rapid expansion of longline fishing fleets with limited observer coverage and bycatch reporting"
+        }
+      ],
+      "healthMetrics": [
+        {
+          "label": "IUCN Status",
+          "value": "Near Threatened — maintained since 2000; at risk of uplisting if fishing pressure continues",
+          "trend": "down"
+        },
+        {
+          "label": "Population Trend",
+          "value": "Decreasing — estimated 50–80% decline in some regional populations (Mediterranean: >96%)",
+          "trend": "down"
+        },
+        {
+          "label": "Habitat Quality",
+          "value": "Relatively stable — open ocean habitat less directly threatened than coastal zones",
+          "trend": "stable"
+        },
+        {
+          "label": "Prey Availability",
+          "value": "Declining in key regions due to intensive squid and forage fish harvesting",
+          "trend": "down"
+        },
+        {
+          "label": "Fishing Pressure",
+          "value": "Critical — estimated 10–20 million caught annually; the largest shark bycatch volume globally",
+          "trend": "down"
+        },
+        {
+          "label": "Protection Coverage",
+          "value": "Partial — CITES Appendix II (2023) adds trade controls; fins-attached rules in some nations; enforcement remains weak",
+          "trend": "stable",
+          "links": [
+            {
+              "label": "IUCN Red List",
+              "url": "https://www.iucnredlist.org/species/39381/2915850"
+            },
+            {
+              "label": "CITES",
+              "url": "https://cites.org/eng/app/appendices.php"
+            },
+            {
+              "label": "Shark Trust",
+              "url": "https://www.sharktrust.org"
+            }
+          ]
+        }
+      ],
+      "threats": [
+        {
+          "name": "Bycatch",
+          "severity": "critical",
+          "description": "Blue sharks are the most commonly caught shark species in pelagic longline fisheries worldwide. Vessels targeting tuna, swordfish, and billfish incidentally catch an estimated 10–20 million blue sharks per year across the Atlantic, Pacific, and Indian Oceans. Despite their comparatively high fecundity, total fishing mortality far exceeds the species' capacity for natural recovery."
+        },
+        {
+          "name": "Shark Fin Trade",
+          "severity": "high",
+          "description": "Blue shark fins are among the most traded in the global shark fin market. Because most catches are incidental, fins are often removed and retained while carcasses are discarded at sea — a practice known as finning. Their large fins and global abundance have historically made blue sharks a primary target of the fin trade."
+        },
+        {
+          "name": "Directed Fishing",
+          "severity": "high",
+          "description": "In some regions, blue sharks are specifically targeted for their fins, liver oil (squalene), and meat. Mediterranean and North Atlantic fisheries have historically combined directed fishing with high bycatch volumes, contributing to regional population declines exceeding 96% in the Mediterranean."
+        },
+        {
+          "name": "Prey Depletion",
+          "severity": "medium",
+          "description": "Industrial fishing for squid and small pelagic fish — the blue shark's primary prey — is reducing food availability across key migration routes and foraging areas. Competition with commercial squid fleets is a growing concern particularly in the North Pacific and South Atlantic."
+        },
+        {
+          "name": "Climate Change",
+          "severity": "medium",
+          "description": "Warming ocean temperatures are shifting the distribution and abundance of squid and forage fish prey. As sea surface temperatures rise, blue sharks may be forced to alter migration routes and feeding grounds, increasing energetic costs and reducing access to historically productive foraging zones."
+        }
+      ],
+      "actionItems": [
+        {
+          "title": "Support Bycatch Reduction Policies",
+          "description": "Blue sharks are the most common bycatch shark in the world. Advocate for mandatory bycatch reporting, observer coverage on longline vessels, and adoption of shark-excluder devices in tuna and swordfish fisheries. Support international fisheries management bodies like ICCAT and WCPFC in setting meaningful blue shark catch limits.",
+          "link": null
+        },
+        {
+          "title": "Choose Sustainably Certified Seafood",
+          "description": "Tuna and swordfish longlines are the leading source of blue shark bycatch. Using the Monterey Bay Aquarium Seafood Watch guide to select certified-sustainable alternatives helps reduce demand for fisheries with high shark bycatch rates.",
+          "link": "https://www.seafoodwatch.org"
+        },
+        {
+          "title": "Oppose the Shark Fin Trade",
+          "description": "Blue shark fins are among the most traded shark products globally. Support national and regional bans on shark fin sales and imports, and encourage retailers and restaurants to remove shark fin from their menus and supply chains.",
+          "link": null
+        },
+        {
+          "title": "Advocate for Stronger CITES Enforcement",
+          "description": "Blue sharks were listed on CITES Appendix II in 2023, requiring documentation that trade is sustainable and legal. Support organizations working to ensure these trade controls are actually enforced at ports and customs checkpoints worldwide.",
+          "link": "https://cites.org/eng/app/appendices.php"
+        },
+        {
+          "title": "Fund Open-Ocean Shark Research",
+          "description": "Blue sharks are globally distributed but remain under-monitored. Population assessments rely heavily on catch data from fisheries with variable reporting quality. Supporting tagging programs, observer deployments, and population modeling improves the scientific basis for future protections.",
+          "link": null
+        }
+      ]
     },
     {
       "id": "carcharhinus-melanopterus",
@@ -3717,7 +4251,7 @@ window.WIKI_DATA = {
         "finning"
       ],
       "photos": [
-        "projects/shark-populations/images/porbeagle.png"
+        "projects/shark-populations/images/porbeagle/porbeagle1.png"
       ],
       "description": "The porbeagle is a large, cold-water shark in the family Lamnidae, closely related to the great white and mako sharks. Found in cold and temperate waters of the North and South Atlantic and the Southern Ocean, it is one of the few sharks capable of maintaining body temperature above ambient water temperature. Porbeagles were once heavily targeted for meat and fins, causing steep population declines in the North Atlantic.",
       "funFact": "Like great whites and makos, the porbeagle is warm-blooded — it can maintain its body temperature 8–10°C above surrounding cold water, giving it a significant speed and metabolic advantage when hunting in frigid, high-latitude seas.",

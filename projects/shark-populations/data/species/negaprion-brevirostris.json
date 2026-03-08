@@ -1,6 +1,6 @@
 {
   "id": "negaprion-brevirostris",
-  "lastUpdated": "2026-03-06",
+  "lastUpdated": "2026-03-08",
   "emoji": "🦈",
   "commonName": "Lemon Shark",
   "scientificName": "Negaprion brevirostris",
@@ -29,7 +29,84 @@
     "keystone",
     "bycatch"
   ],
+  "photos": ["projects/shark-populations/images/lemon_shark/lemon_shark1.png"],
   "description": "The lemon shark is a large, stocky shark found in shallow subtropical and tropical coastal waters of the Atlantic and Pacific. Named for its yellowish-brown coloration, it inhabits mangroves, estuaries, and coral reefs, often resting on the seafloor. Lemon sharks are among the more social of all shark species and have been extensively studied in long-term behavioral and ecological research.",
   "funFact": "Young lemon sharks return to the same nursery habitat — the exact mangrove or estuary where they were born — year after year for the first several years of their lives, demonstrating a remarkable site fidelity rarely documented in sharks.",
-  "habitat": "Shallow coastal waters including coral reefs, mangrove estuaries, and sandy flats in subtropical and tropical regions of the western Atlantic and eastern Pacific. Rarely found below 92 m; strongly associated with inshore nursery habitats."
+  "habitat": "Shallow coastal waters including coral reefs, mangrove estuaries, and sandy flats in subtropical and tropical regions of the western Atlantic and eastern Pacific. Rarely found below 92 m; strongly associated with inshore nursery habitats.",
+  "diet": "Primarily bony fish and rays, supplemented by seabirds, crustaceans, and cephalopods. Lemon sharks are opportunistic hunters that use electroreception and acute smell to locate prey in turbid, shallow-water environments.",
+  "size": "Up to 3.4 m (11 ft); females typically larger than males",
+  "vitalSigns": [
+    { "label": "Estimated Population",   "value": "Unknown — no reliable global estimate; declining across Atlantic and Pacific ranges",                          "glance": true },
+    { "label": "Lifespan",               "value": "~25–30 years",                                                                                                  "glance": true },
+    { "label": "Max Length",             "value": "3.4 m (11 ft); females larger",        "metric": "3.4 m",        "imperial": "11 ft",                            "glance": true },
+    { "label": "Max Weight",             "value": "~183 kg (~400 lbs)",                   "metric": "~183 kg",      "imperial": "~400 lbs",                         "glance": true },
+    { "label": "Top Speed",              "value": "~30 km/h (~19 mph) in bursts",         "metric": "~30 km/h",     "imperial": "~19 mph",                          "glance": true },
+    { "label": "Ecological Role",        "value": "Apex Predator",                                                                                                  "glance": true },
+    { "label": "Reproductive Rate",      "value": "4–17 pups per litter; ~10–12 month gestation; biennial cycle" },
+    { "label": "Age at Maturity",        "value": "~7 years (males); ~12 years (females)" },
+    { "label": "Diet",                   "value": "Bony fish, rays, seabirds, crustaceans, and cephalopods" },
+    { "label": "Population Growth Rate", "value": "Very low — late maturity and biennial reproduction severely limit recovery potential" },
+    { "label": "Key Adaptations",        "value": "Broad, flattened head with closely spaced nostrils enhances chemoreception; yellowish countershading provides camouflage over sandy and mangrove substrates" }
+  ],
+  "habitatStats": [
+    { "label": "Global Range", "value": "Western Atlantic from New Jersey to southern Brazil; eastern Pacific from Baja California to Ecuador; also West Africa" },
+    { "label": "Depth Range",  "value": "Surface to ~92 m (300 ft); primarily occupies water shallower than 30 m", "metric": "Surface to ~92 m", "imperial": "Surface to ~300 ft" }
+  ],
+  "statusHistory": [
+    { "year": 1994, "status": "Near Threatened" },
+    { "year": 2020, "status": "Vulnerable" }
+  ],
+  "populationTrend": [
+    { "year": 1980, "value": 1500000 },
+    { "year": 1990, "value": 1300000 },
+    { "year": 2000, "value": 1100000 },
+    { "year": 2010, "value": 900000 },
+    { "year": 2020, "value": 720000 }
+  ],
+  "populationTrendMeta": {
+    "confidence": "estimated",
+    "note": "No direct global census exists. Values estimated from habitat loss rates, bycatch data, and IUCN assessment modeling. The 2020 uplisting from Near Threatened to Vulnerable reflects documented declines consistent with ~30–49% population reduction over three generations (~60 years). Figures shown are illustrative of trend direction and magnitude."
+  },
+  "preyDeclineRegions": [
+    { "name": "Caribbean",   "severity": "high",     "note": "Reef fish and coastal prey significantly depleted by decades of overfishing across the region" },
+    { "name": "W. Atlantic", "severity": "high",     "note": "Coastal fish stocks along the US eastern seaboard and Gulf of Mexico under sustained fishing pressure" },
+    { "name": "W. Africa",   "severity": "high",     "note": "Artisanal and industrial overfishing has severely reduced coastal fish communities in lemon shark habitat" },
+    { "name": "S. America",  "severity": "medium",   "note": "Coastal prey populations reduced by artisanal fisheries in estuarine and reef zones" },
+    { "name": "E. Pacific",  "severity": "medium",   "note": "Baja California and Gulf of California prey stocks under moderate commercial fishing pressure" }
+  ],
+  "fishingPressureRegions": [
+    { "name": "W. Africa",   "severity": "critical", "note": "Heavily targeted for fins and meat; limited regulatory oversight and widespread illegal, unreported, and unregulated fishing" },
+    { "name": "Caribbean",   "severity": "high",     "note": "Bycatch in longlines and gillnets; some targeted fishing in less-regulated island nations" },
+    { "name": "W. Atlantic", "severity": "high",     "note": "Gillnet and longline bycatch in coastal fisheries; historically targeted for sport fishing in the US" },
+    { "name": "S. America",  "severity": "high",     "note": "Targeted for fins in international trade; bycatch in coastal shrimp trawls" },
+    { "name": "E. Pacific",  "severity": "medium",   "note": "Moderate bycatch pressure; some directed fishing in Mexico and Central America" }
+  ],
+  "healthMetrics": [
+    { "label": "IUCN Status",         "value": "Vulnerable — uplisted from Near Threatened in 2020",                             "trend": "down"   },
+    { "label": "Population Trend",    "value": "Decreasing — estimated >30% decline over three generations",                     "trend": "down"   },
+    { "label": "Habitat Quality",     "value": "Declining — mangrove nurseries and coastal reef habitat degraded by development and pollution", "trend": "down" },
+    { "label": "Prey Availability",   "value": "Declining in key regions, particularly the Caribbean and West Africa",            "trend": "down"   },
+    { "label": "Fishing Pressure",    "value": "High — bycatch and fin trade across Atlantic and Pacific ranges",                 "trend": "down"   },
+    { "label": "Protection Coverage", "value": "Partial — protected in US waters; limited protections elsewhere; no CITES listing", "trend": "stable",
+      "links": [
+        { "label": "IUCN Red List",  "url": "https://www.iucnredlist.org/species/39380/117498583" },
+        { "label": "Shark Trust",    "url": "https://www.sharktrust.org" },
+        { "label": "Bimini Shark Lab", "url": "https://biminisharklab.com" }
+      ]
+    }
+  ],
+  "threats": [
+    { "name": "Habitat Loss",        "severity": "high",     "description": "Lemon sharks depend on mangrove estuaries as nursery habitats for their young. Coastal development, deforestation, and aquaculture have destroyed or degraded mangroves across much of their range, reducing recruitment and juvenile survival." },
+    { "name": "Bycatch",             "severity": "high",     "description": "Lemon sharks are frequently caught incidentally in coastal gillnets, longlines, and trawls targeting other species. Their preference for shallow coastal habitats puts them directly in the path of inshore fishing operations." },
+    { "name": "Shark Fin Trade",     "severity": "high",     "description": "Lemon shark fins are commercially valuable and actively targeted in West Africa and Latin America for export to Asian fin markets. Finning — cutting off fins and discarding the body at sea — remains a significant mortality source outside protected waters." },
+    { "name": "Coastal Development", "severity": "medium",   "description": "Urban and resort development along tropical coastlines degrades water quality, increases boat traffic, and reduces the availability of the shallow sandy and mangrove habitats lemon sharks depend on for foraging and pupping." },
+    { "name": "Climate Change",      "severity": "medium",   "description": "Rising sea temperatures and ocean acidification threaten the reef and mangrove ecosystems lemon sharks rely on. Changes in coastal current patterns may also affect prey distribution and nursery habitat suitability across their range." }
+  ],
+  "actionItems": [
+    { "title": "Protect Mangrove Nursery Habitats", "description": "Mangroves are essential nurseries where juvenile lemon sharks spend their first years. Support organizations and policies that prevent coastal development in mangrove zones and fund mangrove restoration projects in the Caribbean, West Africa, and Latin America.", "link": null },
+    { "title": "Support the Shark Fin Trade Ban", "description": "Lemon shark fins are targeted across the Atlantic and eastern Pacific. Advocate for and support national bans on the shark fin trade, and encourage retailers and restaurants to commit to shark-fin-free supply chains.", "link": null },
+    { "title": "Choose Sustainably Caught Seafood", "description": "Coastal gillnets and longlines that catch lemon sharks as bycatch also supply many commercial fisheries. Use the Monterey Bay Aquarium Seafood Watch guide to avoid seafood caught with methods that incidentally kill coastal sharks.", "link": "https://www.seafoodwatch.org" },
+    { "title": "Support Long-Term Shark Research", "description": "The Bimini Biological Field Station has studied lemon sharks for decades, providing critical population data used in IUCN assessments. Supporting field research programs helps build the scientific case for stronger protections.", "link": "https://biminisharklab.com" },
+    { "title": "Advocate for Stronger CITES Protections", "description": "Lemon sharks are not currently listed under CITES, leaving the international fin trade largely unregulated. Contact your representatives and support conservation organizations pushing for lemon shark inclusion in CITES Appendix II.", "link": null }
+  ]
 }

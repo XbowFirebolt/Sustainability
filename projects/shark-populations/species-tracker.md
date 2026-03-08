@@ -39,8 +39,8 @@ Tracks every species in the wiki: current tier, IUCN status, and what still need
 | Smooth Hammerhead | *Sphyrna zygaena* | Vulnerable | Stub | Phase 3 Batch 2 |
 | Basking Shark | *Cetorhinus maximus* | Endangered | Standard | |
 | Nurse Shark | *Ginglymostoma cirratum* | Vulnerable | Stub | Phase 3 Batch 2 |
-| Lemon Shark | *Negaprion brevirostris* | Vulnerable | Stub | Phase 3 Batch 2 |
-| Blue Shark | *Prionace glauca* | Near Threatened | Stub | Phase 3 Batch 2 |
+| Lemon Shark | *Negaprion brevirostris* | Vulnerable | Standard | |
+| Blue Shark | *Prionace glauca* | Near Threatened | Standard | |
 | Blacktip Reef Shark | *Carcharhinus melanopterus* | Vulnerable | Stub | Phase 3 Batch 2 |
 | Whitetip Reef Shark | *Triaenodon obesus* | Vulnerable | Stub | Phase 3 Batch 2 |
 | Grey Reef Shark | *Carcharhinus amblyrhynchos* | Endangered | Stub | Phase 3 Batch 2 |
@@ -157,8 +157,8 @@ Species that have been added as stubs and are candidates for Standard tier promo
 | Tier | Count |
 |---|---|
 | Full | 5 |
-| Standard | 5 |
-| Stub | 45 |
+| Standard | 7 |
+| Stub | 43 |
 | **Total** | **55** |
 
 *Update manually after each batch commit.*

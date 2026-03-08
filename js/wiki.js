@@ -1661,6 +1661,7 @@ let activeHabitatFilters = new Set();
 let activeDietFilters    = new Set();
 let activeRegionFilters  = new Set();
 let activeTagFilters     = new Set();
+let activePhotoFilters   = new Set();
 let sortMode = "default";
 let wikiViewMode = localStorage.getItem("wiki-view-mode") || "grid";
 let showFavoritesOnly = false;
@@ -2290,6 +2291,10 @@ function renderWikiGrid(query) {
     );
   }
 
+  if (activePhotoFilters.has("has-photos")) {
+    filtered = filtered.filter((s) => s.photos && s.photos.length > 0);
+  }
+
   if (showFavoritesOnly || manageFavoritesMode) {
     filtered = filtered.filter((s) => favIds.includes(s.id));
   }
@@ -2333,7 +2338,7 @@ function renderWikiGrid(query) {
   focusedCardIndex = -1;
 
   if (sorted.length === 0) {
-    const hasActiveFilters = activeStatusFilters.size > 0 || activeHabitatFilters.size > 0 || activeDietFilters.size > 0 || activeRegionFilters.size > 0 || activeTagFilters.size > 0 || showFavoritesOnly || q !== "";
+    const hasActiveFilters = activeStatusFilters.size > 0 || activeHabitatFilters.size > 0 || activeDietFilters.size > 0 || activeRegionFilters.size > 0 || activeTagFilters.size > 0 || activePhotoFilters.size > 0 || showFavoritesOnly || q !== "";
     const empty = document.createElement("div");
     empty.className = "wiki-empty-state";
 
@@ -2637,6 +2642,7 @@ function updateClearFiltersVisibility() {
     activeDietFilters.size > 0 ||
     activeRegionFilters.size > 0 ||
     activeTagFilters.size > 0 ||
+    activePhotoFilters.size > 0 ||
     sortMode !== "default" ||
     showFavoritesOnly;
   document.getElementById("wiki-clear-filters").hidden = !hasFilters;
@@ -2667,6 +2673,9 @@ function syncUrlFromState() {
   if (activeTagFilters.size > 0) url.searchParams.set("tag", [...activeTagFilters].join(","));
   else url.searchParams.delete("tag");
 
+  if (activePhotoFilters.size > 0) url.searchParams.set("photos", [...activePhotoFilters].join(","));
+  else url.searchParams.delete("photos");
+
   if (showFavoritesOnly) url.searchParams.set("fav", "1");
   else url.searchParams.delete("fav");
 
@@ -2681,6 +2690,7 @@ document.getElementById("wiki-clear-filters").addEventListener("click", () => {
   activeDietFilters.clear();
   activeRegionFilters.clear();
   activeTagFilters.clear();
+  activePhotoFilters.clear();
   sortMode = "default";
   showFavoritesOnly = false;
   document.getElementById("wiki-sort").value = "default";
@@ -2815,7 +2825,7 @@ document.addEventListener("keydown", (e) => {
 function updateFilterBtnState() {
   const btn = document.getElementById("wiki-filter-btn");
   if (!btn) return;
-  const count = activeStatusFilters.size + activeHabitatFilters.size + activeDietFilters.size + activeRegionFilters.size + activeTagFilters.size;
+  const count = activeStatusFilters.size + activeHabitatFilters.size + activeDietFilters.size + activeRegionFilters.size + activeTagFilters.size + activePhotoFilters.size;
   btn.classList.toggle("active", count > 0);
   const arrow = filterPanelOpen ? "▴" : "▾";
   btn.textContent = count > 0 ? `Filter (${count}) ${arrow}` : `Filter ${arrow}`;
@@ -2912,6 +2922,14 @@ function renderFilterPanel() {
   makeGroup("Tags", Object.keys(TAG_BADGE)
     .filter((k) => WIKI_DATA.items.some((s) => (s.tags || []).includes(k)))
     .map((k) => makeFilterChip(k, `${TAG_BADGE[k].icon} ${TAG_BADGE[k].label}`, TAG_BADGE[k].color, TAG_BADGE[k].bg, activeTagFilters)));
+
+  // Photos group
+  const photoCount = WIKI_DATA.items.filter((s) => s.photos && s.photos.length > 0).length;
+  if (photoCount > 0) {
+    makeGroup("Photos", [
+      makeFilterChip("has-photos", "📷 Has Photos", "#2d5f8a", "rgba(45,95,138,0.12)", activePhotoFilters, photoCount),
+    ]);
+  }
 }
 
 document.getElementById("wiki-filter-btn").addEventListener("click", () => {
@@ -3030,6 +3048,9 @@ function renderGlanceBar(items) {
 
   const tag = params.get("tag");
   if (tag) tag.split(",").forEach((v) => { if (v.trim()) activeTagFilters.add(v.trim()); });
+
+  const photos = params.get("photos");
+  if (photos) photos.split(",").forEach((v) => { if (v.trim()) activePhotoFilters.add(v.trim()); });
 
   if (params.get("fav") === "1") {
     showFavoritesOnly = true;

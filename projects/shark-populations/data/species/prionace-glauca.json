@@ -1,6 +1,6 @@
 {
   "id": "prionace-glauca",
-  "lastUpdated": "2026-03-06",
+  "lastUpdated": "2026-03-08",
   "emoji": "🦈",
   "commonName": "Blue Shark",
   "scientificName": "Prionace glauca",
@@ -31,7 +31,85 @@
     "bycatch",
     "finning"
   ],
+  "photos": ["projects/shark-populations/images/blue_shark.png"],
   "description": "The blue shark is one of the most wide-ranging and abundant large shark species, distributed across all temperate and tropical oceans. Instantly recognizable by its electric blue coloration and slender, streamlined build, it is highly migratory and known to cross entire ocean basins. Blue sharks are among the most heavily fished sharks globally, primarily as bycatch in longline and trawl fisheries.",
   "funFact": "Blue sharks are record-breaking ocean travelers — individuals have been tracked migrating over 9,200 km (5,700 miles) across the Atlantic, following circular current patterns to exploit prey across entire ocean basins.",
-  "habitat": "Open ocean in temperate and tropical seas worldwide, from the surface to depths exceeding 350 m. Typically inhabits the epipelagic and mesopelagic zones, preferring cooler temperate surface waters; performs vertical migrations in tropical regions."
+  "habitat": "Open ocean in temperate and tropical seas worldwide, from the surface to depths exceeding 350 m. Typically inhabits the epipelagic and mesopelagic zones, preferring cooler temperate surface waters; performs vertical migrations in tropical regions.",
+  "diet": "Primarily squid and small bony fish, supplemented by cuttlefish, crustaceans, and occasionally seabirds or carrion. Blue sharks are opportunistic hunters capable of consuming large amounts of prey in a single feeding event.",
+  "size": "Up to 3.8 m (12.5 ft); females typically larger than males",
+  "vitalSigns": [
+    { "label": "Estimated Population",   "value": "No reliable global estimate; likely tens of millions but declining across key ocean basins",                                           "glance": true },
+    { "label": "Lifespan",               "value": "~16–20 years",                                                                                                                         "glance": true },
+    { "label": "Max Length",             "value": "3.8 m (12.5 ft); females typically larger",  "metric": "3.8 m",     "imperial": "12.5 ft",                                             "glance": true },
+    { "label": "Max Weight",             "value": "~204 kg (~450 lbs)",                          "metric": "~204 kg",   "imperial": "~450 lbs",                                            "glance": true },
+    { "label": "Top Speed",              "value": "~40 km/h (~25 mph)",                          "metric": "~40 km/h",  "imperial": "~25 mph",                                             "glance": true },
+    { "label": "Ecological Role",        "value": "Apex Predator / Mesopredator",                                                                                                         "glance": true },
+    { "label": "Reproductive Rate",      "value": "25–50 pups per litter; ~9–12 month gestation; annual to biennial cycle" },
+    { "label": "Age at Maturity",        "value": "~5–6 years (males); ~5–7 years (females)" },
+    { "label": "Diet",                   "value": "Squid, bony fish, cuttlefish, crustaceans, and opportunistic carrion" },
+    { "label": "Population Growth Rate", "value": "Moderate — relatively high fecundity compared to most sharks, but total mortality from fishing vastly exceeds natural recovery capacity" },
+    { "label": "Key Adaptations",        "value": "Counter-shaded blue coloration provides pelagic camouflage; slender fusiform body enables long-distance cruising; large pectoral fins allow efficient gliding in open-ocean currents" }
+  ],
+  "habitatStats": [
+    { "label": "Global Range", "value": "All temperate and tropical oceans; circumglobal in open ocean from the surface to >350 m; occasionally enters coastal waters" },
+    { "label": "Depth Range",  "value": "Surface to >350 m (1,150 ft); primarily in the epipelagic zone (0–200 m)", "metric": "Surface to >350 m", "imperial": "Surface to >1,150 ft" }
+  ],
+  "statusHistory": [
+    { "year": 2000, "status": "Near Threatened" },
+    { "year": 2009, "status": "Near Threatened" },
+    { "year": 2020, "status": "Near Threatened" }
+  ],
+  "populationTrend": [
+    { "year": 1980, "value": 80000000 },
+    { "year": 1990, "value": 68000000 },
+    { "year": 2000, "value": 55000000 },
+    { "year": 2010, "value": 43000000 },
+    { "year": 2020, "value": 35000000 }
+  ],
+  "populationTrendMeta": {
+    "confidence": "estimated",
+    "note": "No direct global population census exists for blue sharks. Values are modeled estimates based on IUCN catch data analysis, longline CPUE trends, and observer program data from Atlantic and Pacific tuna fisheries. Catch records suggest an estimated 10–20 million blue sharks are taken annually as bycatch. Trend direction (decreasing) is well-supported; absolute values are illustrative."
+  },
+  "preyDeclineRegions": [
+    { "name": "N. Atlantic",    "severity": "high",   "note": "Squid and small pelagic fish stocks reduced by intensive commercial fishing across the North Atlantic" },
+    { "name": "Mediterranean",  "severity": "high",   "note": "Prey populations severely depleted by decades of unregulated overfishing in a semi-enclosed sea" },
+    { "name": "N. Pacific",     "severity": "medium", "note": "Squid and forage fish stocks under increasing pressure from large-scale commercial squid fisheries" },
+    { "name": "S. Atlantic",    "severity": "medium", "note": "Industrial fisheries targeting tuna and associated bycatch species have reduced prey availability" },
+    { "name": "Indian Ocean",   "severity": "medium", "note": "Growing fishing effort for tunas and squid affecting prey base across tropical and temperate zones" }
+  ],
+  "fishingPressureRegions": [
+    { "name": "N. Atlantic",    "severity": "critical", "note": "Estimated tens of millions caught annually as bycatch in pelagic longline fisheries targeting tuna and swordfish; the highest-volume shark bycatch fishery in the world" },
+    { "name": "Mediterranean",  "severity": "critical", "note": "Historical declines of over 96% documented; one of the most severely affected blue shark populations globally" },
+    { "name": "N. Pacific",     "severity": "high",     "note": "Large-scale longline and driftnet fisheries operate throughout prime blue shark range; minimal bycatch management" },
+    { "name": "S. Atlantic",    "severity": "high",     "note": "Directed and incidental catch by vessels targeting tuna and billfish; significant fin trade pressure" },
+    { "name": "Indian Ocean",   "severity": "high",     "note": "Rapid expansion of longline fishing fleets with limited observer coverage and bycatch reporting" }
+  ],
+  "healthMetrics": [
+    { "label": "IUCN Status",         "value": "Near Threatened — maintained since 2000; at risk of uplisting if fishing pressure continues",                                   "trend": "down"   },
+    { "label": "Population Trend",    "value": "Decreasing — estimated 50–80% decline in some regional populations (Mediterranean: >96%)",                                      "trend": "down"   },
+    { "label": "Habitat Quality",     "value": "Relatively stable — open ocean habitat less directly threatened than coastal zones",                                             "trend": "stable" },
+    { "label": "Prey Availability",   "value": "Declining in key regions due to intensive squid and forage fish harvesting",                                                     "trend": "down"   },
+    { "label": "Fishing Pressure",    "value": "Critical — estimated 10–20 million caught annually; the largest shark bycatch volume globally",                                 "trend": "down"   },
+    { "label": "Protection Coverage", "value": "Partial — CITES Appendix II (2023) adds trade controls; fins-attached rules in some nations; enforcement remains weak",         "trend": "stable",
+      "links": [
+        { "label": "IUCN Red List", "url": "https://www.iucnredlist.org/species/39381/2915850" },
+        { "label": "CITES",         "url": "https://cites.org/eng/app/appendices.php" },
+        { "label": "Shark Trust",   "url": "https://www.sharktrust.org" }
+      ]
+    }
+  ],
+  "threats": [
+    { "name": "Bycatch",          "severity": "critical", "description": "Blue sharks are the most commonly caught shark species in pelagic longline fisheries worldwide. Vessels targeting tuna, swordfish, and billfish incidentally catch an estimated 10–20 million blue sharks per year across the Atlantic, Pacific, and Indian Oceans. Despite their comparatively high fecundity, total fishing mortality far exceeds the species' capacity for natural recovery." },
+    { "name": "Shark Fin Trade",  "severity": "high",     "description": "Blue shark fins are among the most traded in the global shark fin market. Because most catches are incidental, fins are often removed and retained while carcasses are discarded at sea — a practice known as finning. Their large fins and global abundance have historically made blue sharks a primary target of the fin trade." },
+    { "name": "Directed Fishing", "severity": "high",     "description": "In some regions, blue sharks are specifically targeted for their fins, liver oil (squalene), and meat. Mediterranean and North Atlantic fisheries have historically combined directed fishing with high bycatch volumes, contributing to regional population declines exceeding 96% in the Mediterranean." },
+    { "name": "Prey Depletion",   "severity": "medium",   "description": "Industrial fishing for squid and small pelagic fish — the blue shark's primary prey — is reducing food availability across key migration routes and foraging areas. Competition with commercial squid fleets is a growing concern particularly in the North Pacific and South Atlantic." },
+    { "name": "Climate Change",   "severity": "medium",   "description": "Warming ocean temperatures are shifting the distribution and abundance of squid and forage fish prey. As sea surface temperatures rise, blue sharks may be forced to alter migration routes and feeding grounds, increasing energetic costs and reducing access to historically productive foraging zones." }
+  ],
+  "actionItems": [
+    { "title": "Support Bycatch Reduction Policies",        "description": "Blue sharks are the most common bycatch shark in the world. Advocate for mandatory bycatch reporting, observer coverage on longline vessels, and adoption of shark-excluder devices in tuna and swordfish fisheries. Support international fisheries management bodies like ICCAT and WCPFC in setting meaningful blue shark catch limits.", "link": null },
+    { "title": "Choose Sustainably Certified Seafood",      "description": "Tuna and swordfish longlines are the leading source of blue shark bycatch. Using the Monterey Bay Aquarium Seafood Watch guide to select certified-sustainable alternatives helps reduce demand for fisheries with high shark bycatch rates.", "link": "https://www.seafoodwatch.org" },
+    { "title": "Oppose the Shark Fin Trade",                "description": "Blue shark fins are among the most traded shark products globally. Support national and regional bans on shark fin sales and imports, and encourage retailers and restaurants to remove shark fin from their menus and supply chains.", "link": null },
+    { "title": "Advocate for Stronger CITES Enforcement",   "description": "Blue sharks were listed on CITES Appendix II in 2023, requiring documentation that trade is sustainable and legal. Support organizations working to ensure these trade controls are actually enforced at ports and customs checkpoints worldwide.", "link": "https://cites.org/eng/app/appendices.php" },
+    { "title": "Fund Open-Ocean Shark Research",            "description": "Blue sharks are globally distributed but remain under-monitored. Population assessments rely heavily on catch data from fisheries with variable reporting quality. Supporting tagging programs, observer deployments, and population modeling improves the scientific basis for future protections.", "link": null }
+  ]
 }
