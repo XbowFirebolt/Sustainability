@@ -41,7 +41,7 @@ Tracks every species in the wiki: current tier, IUCN status, and what still need
 | Nurse Shark | *Ginglymostoma cirratum* | Vulnerable | Stub | Phase 3 Batch 2 |
 | Lemon Shark | *Negaprion brevirostris* | Vulnerable | Standard | |
 | Blue Shark | *Prionace glauca* | Near Threatened | Standard | |
-| Blacktip Reef Shark | *Carcharhinus melanopterus* | Vulnerable | Stub | Phase 3 Batch 2 |
+| Blacktip Reef Shark | *Carcharhinus melanopterus* | Vulnerable | Full (partial) | Missing physicalScaleImage |
 | Whitetip Reef Shark | *Triaenodon obesus* | Vulnerable | Stub | Phase 3 Batch 2 |
 | Grey Reef Shark | *Carcharhinus amblyrhynchos* | Endangered | Stub | Phase 3 Batch 2 |
 | Sandbar Shark | *Carcharhinus plumbeus* | Vulnerable | Stub | Phase 3 Batch 2 |
@@ -156,9 +156,9 @@ Species that have been added as stubs and are candidates for Standard tier promo
 
 | Tier | Count |
 |---|---|
-| Full | 5 |
+| Full | 6 |
 | Standard | 7 |
-| Stub | 43 |
+| Stub | 42 |
 | **Total** | **55** |
 
 *Update manually after each batch commit.*

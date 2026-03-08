@@ -4010,7 +4010,7 @@ window.WIKI_DATA = {
     },
     {
       "id": "carcharhinus-melanopterus",
-      "lastUpdated": "2026-03-06",
+      "lastUpdated": "2026-03-09",
       "emoji": "🦈",
       "commonName": "Blacktip Reef Shark",
       "scientificName": "Carcharhinus melanopterus",
@@ -4038,9 +4038,273 @@ window.WIKI_DATA = {
         "keystone",
         "bycatch"
       ],
+      "photos": [
+        "projects/shark-populations/images/blacktip_reef_shark/blacktip_reef_shark1.png"
+      ],
       "description": "The blacktip reef shark is one of the most recognizable sharks of tropical coral reefs, distinguished by the prominent black tips on all its fins. It inhabits shallow coastal waters throughout the Indo-Pacific, frequently patrolling reef edges and sandy flats. Blacktip reef sharks are an important part of reef ecosystems and are among the most commonly encountered sharks by snorkelers and divers.",
       "funFact": "Blacktip reef sharks often patrol in water so shallow their dorsal fins slice above the surface — they are regularly found hunting reef fish in water less than 30 cm (1 foot) deep along reef edges and in tidal flats.",
-      "habitat": "Shallow inshore waters over coral reefs, sandy flats, and lagoons throughout the Indo-Pacific, from the Red Sea and East Africa to Hawaii and the eastern Pacific. Commonly found in less than 1 m of water; rarely ventures below 75 m."
+      "habitat": "Shallow inshore waters over coral reefs, sandy flats, and lagoons throughout the Indo-Pacific, from the Red Sea and East Africa to Hawaii and the eastern Pacific. Commonly found in less than 1 m of water; rarely ventures below 75 m.",
+      "diet": "Primarily small reef fish (mullet, grouper, snapper, goatfish), supplemented by squid, octopus, and crustaceans. An opportunistic hunter that uses high-speed bursts and pack-style herding to trap schools of fish against the reef surface.",
+      "size": "Up to 1.8 m (6 ft); females typically larger than males",
+      "vitalSigns": [
+        {
+          "label": "Estimated Population",
+          "value": "No reliable global estimate; populations declining across much of the Indo-Pacific range",
+          "glance": true
+        },
+        {
+          "label": "Lifespan",
+          "value": "~13–15 years",
+          "glance": true
+        },
+        {
+          "label": "Max Length",
+          "value": "Up to 1.8 m (6 ft); females typically larger than males",
+          "metric": "1.8 m",
+          "imperial": "6 ft",
+          "glance": true
+        },
+        {
+          "label": "Max Weight",
+          "value": "~13.6 kg (~30 lbs)",
+          "metric": "~13.6 kg",
+          "imperial": "~30 lbs",
+          "glance": true
+        },
+        {
+          "label": "Top Speed",
+          "value": "~25 km/h (~15 mph) in short bursts",
+          "metric": "~25 km/h",
+          "imperial": "~15 mph",
+          "glance": true
+        },
+        {
+          "label": "Ecological Role",
+          "value": "Mesopredator / Keystone Reef Predator",
+          "glance": true
+        },
+        {
+          "label": "Reproductive Rate",
+          "value": "2–5 pups per litter (typically 4); ~10–11 month gestation; biennial breeding cycle"
+        },
+        {
+          "label": "Age at Maturity",
+          "value": "~4–5 years (males); ~6–7 years (females)"
+        },
+        {
+          "label": "Diet",
+          "value": "Small reef fish, squid, octopus, and crustaceans"
+        },
+        {
+          "label": "Population Growth Rate",
+          "value": "Low — biennial reproduction and small litter sizes make recovery from overfishing extremely slow"
+        },
+        {
+          "label": "Key Adaptations",
+          "value": "Black-tipped fins provide visual identification and potential schooling coordination; extremely shallow-water tolerance allows exploitation of tidal flats inaccessible to larger predators; highly site-faithful with small home ranges centered on specific reef patches"
+        }
+      ],
+      "habitatStats": [
+        {
+          "label": "Global Range",
+          "value": "Tropical Indo-Pacific; from the Red Sea and East Africa eastward to Hawaii, the Tuamotu Archipelago, and the eastern Pacific coast of Central America"
+        },
+        {
+          "label": "Depth Range",
+          "value": "Surface to ~75 m (246 ft); most active in water shallower than 30 m; regularly forages in less than 1 m",
+          "metric": "Surface to ~75 m",
+          "imperial": "Surface to ~246 ft"
+        }
+      ],
+      "statusHistory": [
+        {
+          "year": 2003,
+          "status": "Near Threatened"
+        },
+        {
+          "year": 2009,
+          "status": "Near Threatened"
+        },
+        {
+          "year": 2020,
+          "status": "Vulnerable"
+        }
+      ],
+      "populationTrend": [
+        {
+          "year": 1980,
+          "value": 100
+        },
+        {
+          "year": 1990,
+          "value": 88
+        },
+        {
+          "year": 2000,
+          "value": 74
+        },
+        {
+          "year": 2010,
+          "value": 60
+        },
+        {
+          "year": 2020,
+          "value": 48
+        }
+      ],
+      "populationTrendMeta": {
+        "confidence": "estimated",
+        "note": "No direct global population census exists for blacktip reef sharks. Values are a relative index (100 = 1980 baseline) modeled from IUCN assessment data, reef survey abundance trends, and regional catch records. The IUCN 2020 assessment notes suspected declines of at least 30% over three generations (~23 years) across the Indo-Pacific range. Absolute values are illustrative; trend direction (decreasing) is well-supported by survey and catch evidence."
+      },
+      "preyDeclineRegions": [
+        {
+          "name": "Southeast Asia",
+          "severity": "high",
+          "note": "Reef fish stocks heavily depleted by blast fishing, poison fishing, and overexploitation across Indonesia, the Philippines, and the Coral Triangle"
+        },
+        {
+          "name": "Indian Ocean",
+          "severity": "medium",
+          "note": "Coastal reef fish populations declining due to artisanal and commercial overfishing across the Maldives, Sri Lanka, and East Africa"
+        },
+        {
+          "name": "Red Sea / Arabian Sea",
+          "severity": "medium",
+          "note": "Repeated mass coral bleaching events have degraded reef ecosystems and reduced reef fish communities that blacktip reef sharks depend on for prey"
+        },
+        {
+          "name": "Pacific Islands",
+          "severity": "medium",
+          "note": "Growing subsistence and commercial fishing pressure on reef ecosystems reducing availability of key prey species"
+        }
+      ],
+      "fishingPressureRegions": [
+        {
+          "name": "Southeast Asia",
+          "severity": "critical",
+          "note": "Indonesia and the Philippines are among the world's largest shark fishing nations; blacktip reef sharks are heavily targeted for fins, meat, and liver oil in local and export markets"
+        },
+        {
+          "name": "Indian Ocean",
+          "severity": "high",
+          "note": "Directed fishing and bycatch in gillnet and longline fisheries operating across the Maldives, Sri Lanka, and East African coastal waters"
+        },
+        {
+          "name": "Red Sea / Arabian Sea",
+          "severity": "high",
+          "note": "Significant directed catch for local consumption and fin trade; limited monitoring and management of reef shark fisheries across the region"
+        },
+        {
+          "name": "Pacific Islands",
+          "severity": "medium",
+          "note": "Subsistence and small-scale commercial fishing in reef environments; some island nations have established shark sanctuaries but enforcement varies"
+        },
+        {
+          "name": "Australia",
+          "severity": "low",
+          "note": "Bycatch in commercial prawn trawl and net fisheries in northern waters; generally better-managed than elsewhere in the range due to stronger federal and state protections"
+        }
+      ],
+      "healthMetrics": [
+        {
+          "label": "IUCN Status",
+          "value": "Vulnerable — uplisted from Near Threatened in 2020; suspected population decline of ≥30% over three generations",
+          "trend": "down"
+        },
+        {
+          "label": "Population Trend",
+          "value": "Decreasing — documented declines across much of the Indo-Pacific, with severe depletion in heavily fished regions",
+          "trend": "down"
+        },
+        {
+          "label": "Habitat Quality",
+          "value": "Declining — coral reef degradation from bleaching events, pollution, and destructive fishing practices directly reduces available habitat",
+          "trend": "down"
+        },
+        {
+          "label": "Prey Availability",
+          "value": "Declining in key regions due to overfishing and reef degradation reducing reef fish biomass",
+          "trend": "down"
+        },
+        {
+          "label": "Fishing Pressure",
+          "value": "High to Critical in Southeast Asia and the Indian Ocean; directed fishing and bycatch both significant",
+          "trend": "down"
+        },
+        {
+          "label": "Protection Coverage",
+          "value": "Partial — some Pacific island nations have established shark sanctuaries; CITES Appendix II listing (2016) adds trade documentation requirements; enforcement remains inconsistent",
+          "trend": "stable",
+          "links": [
+            {
+              "label": "IUCN Red List",
+              "url": "https://www.iucnredlist.org/species/39375/2917626"
+            },
+            {
+              "label": "CITES",
+              "url": "https://cites.org/eng/app/appendices.php"
+            },
+            {
+              "label": "Reef Check",
+              "url": "https://www.reefcheck.org"
+            }
+          ]
+        }
+      ],
+      "threats": [
+        {
+          "name": "Overfishing",
+          "severity": "critical",
+          "description": "Blacktip reef sharks are directly targeted across Southeast Asia and the Indian Ocean for their fins, meat, and liver oil. In countries like Indonesia and the Philippines — two of the world's largest shark-fishing nations — they are among the most commonly landed reef shark species. Their shallow-water habitat and site fidelity (individuals return to the same reef patches year after year) make them especially easy to locate and harvest repeatedly, leaving little opportunity for population recovery."
+        },
+        {
+          "name": "Habitat Loss",
+          "severity": "high",
+          "description": "Blacktip reef sharks are intimately tied to healthy coral reef ecosystems. Coral bleaching driven by climate change, combined with physical destruction from blast fishing, anchor damage, and coastal development, is degrading and eliminating the shallow reef habitats they depend on for feeding, pupping, and shelter. As reef systems decline, blacktip reef shark abundance declines with them."
+        },
+        {
+          "name": "Bycatch",
+          "severity": "high",
+          "description": "Gillnets and longlines set in shallow coastal waters for reef fish and other target species frequently entangle blacktip reef sharks. Their preference for shallow reef edges and tidal flats puts them squarely in the path of artisanal and commercial gear. Because they are caught in waters close to shore, bycatch rates are difficult to monitor and are likely underreported across much of their range."
+        },
+        {
+          "name": "Shark Fin Trade",
+          "severity": "high",
+          "description": "The blacktip reef shark's moderate-sized fins are traded in the international shark fin market, particularly through Southeast Asian ports. Their abundance and accessibility historically made them one of the most commonly fin-traded reef shark species. CITES Appendix II listing since 2016 requires trade documentation, but enforcement at the local fishery level remains inconsistent."
+        },
+        {
+          "name": "Climate Change",
+          "severity": "medium",
+          "description": "Rising sea surface temperatures are driving mass coral bleaching events that are fundamentally altering reef ecosystems. As coral cover declines, reef fish communities shift and contract, reducing the prey base and structural complexity that blacktip reef sharks rely on. More frequent extreme temperature events are likely to accelerate reef degradation faster than recovery can occur."
+        }
+      ],
+      "actionItems": [
+        {
+          "title": "Support Coral Reef Conservation",
+          "description": "The blacktip reef shark's survival depends directly on healthy coral reef ecosystems. Support organizations working on reef restoration, bleaching response, and reduction of local stressors like water pollution and destructive fishing that compound climate impacts on reef habitats.",
+          "link": "https://www.reefcheck.org"
+        },
+        {
+          "title": "Oppose Destructive Reef Fishing Practices",
+          "description": "Blast fishing and cyanide fishing devastate reef habitats that blacktip reef sharks depend on. Advocate for stronger enforcement of bans on these practices, particularly in Southeast Asia and the Coral Triangle, and support local fishing communities in transitioning to non-destructive alternatives.",
+          "link": null
+        },
+        {
+          "title": "Support Marine Protected Areas in the Indo-Pacific",
+          "description": "Well-enforced marine protected areas — especially no-take zones covering shallow reef habitats — can provide refuges where blacktip reef shark populations recover. Advocate for expansion and adequate resourcing of MPAs across the Indo-Pacific, and support Pacific island shark sanctuaries as models for broader adoption.",
+          "link": null
+        },
+        {
+          "title": "Reduce Demand for Shark Fin Products",
+          "description": "Blacktip reef shark fins enter the international shark fin trade primarily through Southeast Asian markets. Reducing consumer demand for shark fin soup and related products directly reduces fishing pressure on this species. Support campaigns and legislation targeting the fin trade in key consumer markets.",
+          "link": null
+        },
+        {
+          "title": "Advocate for Stronger CITES Enforcement",
+          "description": "Blacktip reef sharks have been on CITES Appendix II since 2016, requiring that trade be documented as sustainable and legal. Support organizations working to improve compliance and monitoring at source fisheries and export ports across Southeast Asia and the Indian Ocean.",
+          "link": "https://cites.org/eng/app/appendices.php"
+        }
+      ]
     },
     {
       "id": "triaenodon-obesus",
