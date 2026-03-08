@@ -3370,7 +3370,7 @@ window.WIKI_DATA = {
     },
     {
       "id": "ginglymostoma-cirratum",
-      "lastUpdated": "2026-03-06",
+      "lastUpdated": "2026-03-09",
       "emoji": "🦈",
       "commonName": "Nurse Shark",
       "scientificName": "Ginglymostoma cirratum",
@@ -3398,9 +3398,262 @@ window.WIKI_DATA = {
         "solitary",
         "bycatch"
       ],
+      "photos": [
+        "projects/shark-populations/images/nurse_shark/nurse_shark1.png"
+      ],
       "description": "The nurse shark is a slow-moving, bottom-dwelling shark found in shallow tropical and subtropical waters of the Atlantic and eastern Pacific. Primarily nocturnal, it rests motionless on the seafloor during the day — sometimes in groups stacked on top of one another beneath ledges. Nurse sharks use a powerful suction-feeding method, drawing prey from crevices with a vacuum-like bite.",
       "funFact": "Nurse sharks can breathe while remaining completely still — unlike most sharks that rely on forward motion to ram water over their gills, nurse sharks actively use buccal pumping to move water over their gills, allowing them to rest motionless on the seafloor for hours.",
-      "habitat": "Shallow coastal waters, coral reefs, seagrass beds, and sandy flats in tropical and subtropical zones of the eastern Pacific and western Atlantic. Typically found at depths from intertidal to 130 m, resting on or near the substrate."
+      "habitat": "Shallow coastal waters, coral reefs, seagrass beds, and sandy flats in tropical and subtropical zones of the eastern Pacific and western Atlantic. Typically found at depths from intertidal to 130 m, resting on or near the substrate.",
+      "diet": "Primarily bottom-dwelling invertebrates including spiny lobsters, crabs, sea urchins, squid, and octopus, supplemented by small bony fish and stingrays. Nurse sharks use a distinctive suction-feeding technique — creating a vacuum with their muscular mouth and pharynx to extract prey from crevices and rubble.",
+      "size": "Typically 2.1–3.0 m (6.9–9.8 ft); females slightly larger than males; occasional individuals reported up to 4.3 m",
+      "vitalSigns": [
+        {
+          "label": "Estimated Population",
+          "value": "Unknown — no reliable global census; inferred declining across western Atlantic and eastern Pacific ranges",
+          "glance": true
+        },
+        {
+          "label": "Lifespan",
+          "value": "25+ years",
+          "glance": true
+        },
+        {
+          "label": "Max Length",
+          "value": "~3.0 m (9.8 ft) typical; up to ~4.3 m reported",
+          "metric": "~3.0 m typical",
+          "imperial": "~9.8 ft typical",
+          "glance": true
+        },
+        {
+          "label": "Max Weight",
+          "value": "~110 kg (~243 lbs)",
+          "metric": "~110 kg",
+          "imperial": "~243 lbs",
+          "glance": true
+        },
+        {
+          "label": "Top Speed",
+          "value": "Unknown — one of the slowest sharks; slow-cruising benthic species with no documented burst speed",
+          "glance": true
+        },
+        {
+          "label": "Ecological Role",
+          "value": "Mesopredator",
+          "glance": true
+        },
+        {
+          "label": "Reproductive Rate",
+          "value": "20–30 pups per litter; ~6-month gestation; biennial cycle"
+        },
+        {
+          "label": "Age at Maturity",
+          "value": "~15–18 years (males); ~15–20 years (females)"
+        },
+        {
+          "label": "Diet",
+          "value": "Spiny lobsters, crabs, sea urchins, squid, octopus, and small fish; suction-feeder"
+        },
+        {
+          "label": "Population Growth Rate",
+          "value": "Very low — late maturity and biennial reproduction limit recovery capacity"
+        },
+        {
+          "label": "Key Adaptations",
+          "value": "Paired nasal barbels sense prey chemically; buccal pumping enables gill ventilation at rest; dorsoventrally flattened body suits benthic ambush lifestyle"
+        }
+      ],
+      "habitatStats": [
+        {
+          "label": "Global Range",
+          "value": "Western Atlantic from Rhode Island (USA) south to southern Brazil, including the Caribbean and Gulf of Mexico; eastern Pacific from Baja California (Mexico) to Peru"
+        },
+        {
+          "label": "Depth Range",
+          "value": "Intertidal to ~130 m (430 ft); most commonly found shallower than 12 m on reef flats and sandy patches",
+          "metric": "Intertidal to ~130 m",
+          "imperial": "Intertidal to ~430 ft"
+        }
+      ],
+      "statusHistory": [
+        {
+          "year": 2006,
+          "status": "Data Deficient"
+        },
+        {
+          "year": 2020,
+          "status": "Vulnerable"
+        }
+      ],
+      "populationTrend": [
+        {
+          "year": 1980,
+          "value": 700000
+        },
+        {
+          "year": 1990,
+          "value": 620000
+        },
+        {
+          "year": 2000,
+          "value": 540000
+        },
+        {
+          "year": 2010,
+          "value": 460000
+        },
+        {
+          "year": 2020,
+          "value": 390000
+        }
+      ],
+      "populationTrendMeta": {
+        "confidence": "estimated",
+        "note": "No direct global census exists for nurse sharks. Values are illustrative estimates derived from IUCN assessment modeling, habitat loss rates, and regional bycatch studies. The 2020 uplisting from Data Deficient to Vulnerable reflects documented declines in the western Atlantic driven by coastal habitat degradation and fisheries pressure. Figures indicate trend direction and approximate magnitude, not verified counts."
+      },
+      "preyDeclineRegions": [
+        {
+          "name": "Caribbean",
+          "severity": "high",
+          "note": "Spiny lobster and reef fish populations severely depleted by decades of overfishing throughout the Caribbean basin, reducing prey availability in core nurse shark habitat"
+        },
+        {
+          "name": "W. Atlantic",
+          "severity": "medium",
+          "note": "Coastal invertebrate and small fish communities under sustained fishing pressure along the US eastern seaboard, Gulf of Mexico, and Brazilian coast"
+        },
+        {
+          "name": "E. Pacific",
+          "severity": "medium",
+          "note": "Coastal benthic prey reduced by artisanal and commercial fisheries in Baja California, Gulf of California, and Pacific Central American waters"
+        },
+        {
+          "name": "S. America",
+          "severity": "medium",
+          "note": "Artisanal fishing pressure on coastal invertebrate communities in estuarine and reef zones along the northern and northeastern Brazilian coast"
+        }
+      ],
+      "fishingPressureRegions": [
+        {
+          "name": "Caribbean",
+          "severity": "high",
+          "note": "Targeted and incidentally caught in coastal gillnets, fish traps, and longlines; fin and meat trade present in several island nations with limited shark protections"
+        },
+        {
+          "name": "W. Atlantic",
+          "severity": "high",
+          "note": "Bycatch in shrimp trawls and coastal gillnets; historically targeted in Florida and the Gulf of Mexico for skin, meat, and liver oil"
+        },
+        {
+          "name": "S. America",
+          "severity": "high",
+          "note": "Targeted for fins in international trade and taken as bycatch in coastal trawl fisheries along Brazil and the Guianas"
+        },
+        {
+          "name": "E. Pacific",
+          "severity": "medium",
+          "note": "Moderate bycatch pressure in coastal net fisheries; some directed fishing in Mexico and Central America for local consumption"
+        }
+      ],
+      "healthMetrics": [
+        {
+          "label": "IUCN Status",
+          "value": "Vulnerable — uplisted from Data Deficient in 2020, reflecting newly confirmed declines across western Atlantic and eastern Pacific populations",
+          "trend": "down"
+        },
+        {
+          "label": "Population Trend",
+          "value": "Decreasing — estimated sustained decline driven by habitat loss, bycatch, and targeted fishing over multiple decades",
+          "trend": "down"
+        },
+        {
+          "label": "Habitat Quality",
+          "value": "Declining — coral reef degradation, mangrove loss, and seagrass bed destruction are reducing the shallow coastal habitats nurse sharks depend on",
+          "trend": "down"
+        },
+        {
+          "label": "Prey Availability",
+          "value": "Declining in key regions, particularly the Caribbean and western Atlantic, where invertebrate prey stocks have been heavily depleted",
+          "trend": "down"
+        },
+        {
+          "label": "Fishing Pressure",
+          "value": "High — bycatch in coastal trawls and gillnets across the range; directly targeted in several regions for meat, fins, and liver oil",
+          "trend": "down"
+        },
+        {
+          "label": "Protection Coverage",
+          "value": "Partial — protected in US Atlantic waters and some Caribbean MPAs; no CITES listing; largely unprotected across eastern Pacific and Brazilian range",
+          "trend": "stable",
+          "links": [
+            {
+              "label": "IUCN Red List",
+              "url": "https://www.iucnredlist.org/species/39333/2900116"
+            },
+            {
+              "label": "Shark Trust",
+              "url": "https://www.sharktrust.org"
+            },
+            {
+              "label": "Oceana",
+              "url": "https://oceana.org"
+            }
+          ]
+        }
+      ],
+      "threats": [
+        {
+          "name": "Bycatch",
+          "severity": "high",
+          "description": "Nurse sharks are frequently caught incidentally in coastal shrimp trawls, gillnets, and longlines across the western Atlantic and eastern Pacific. Their preference for shallow coastal habitats overlaps directly with the most heavily fished inshore zones, exposing them to sustained incidental mortality."
+        },
+        {
+          "name": "Habitat Loss",
+          "severity": "high",
+          "description": "Nurse sharks depend on healthy coral reefs, seagrass meadows, and mangrove systems as foraging and resting grounds. Coastal development, agricultural runoff, and climate-driven coral bleaching are degrading these habitats across much of their range, reducing prey availability and suitable refugia."
+        },
+        {
+          "name": "Targeted Fishing",
+          "severity": "medium",
+          "description": "Nurse sharks are intentionally caught in parts of the Caribbean, Central America, and Brazil for their meat, fins, skin (used for leather), and liver oil. Limited regulatory oversight in many of these areas allows directed fishing to continue largely unchecked."
+        },
+        {
+          "name": "Climate Change",
+          "severity": "medium",
+          "description": "Rising sea temperatures and ocean acidification are bleaching and killing coral reefs and degrading seagrass beds — the core habitats nurse sharks occupy for foraging and shelter. Warmer waters may also disrupt the reproductive cycles and prey communities nurse sharks depend on."
+        },
+        {
+          "name": "Tourism Disturbance",
+          "severity": "low",
+          "description": "Nurse sharks are a popular target for divers and snorkelers, and are sometimes handled or harassed at dive sites throughout the Caribbean. Repeated disturbance disrupts rest cycles and can cause chronic stress, particularly for site-faithful individuals."
+        }
+      ],
+      "actionItems": [
+        {
+          "title": "Support Marine Protected Areas in the Caribbean",
+          "description": "Many of the reefs and coastal flats nurse sharks depend on fall outside existing protected zones. Support organizations and policies that expand no-take MPAs in the Caribbean and western Atlantic where nurse shark populations are most under pressure.",
+          "link": null
+        },
+        {
+          "title": "Advocate for CITES Trade Protections",
+          "description": "Nurse sharks are not listed under CITES, leaving the international fin and meat trade unregulated. Contact your representatives and support conservation organizations working to add nurse sharks to CITES Appendix II to require export permits and trade monitoring.",
+          "link": null
+        },
+        {
+          "title": "Choose Sustainably Caught Seafood",
+          "description": "Coastal shrimp trawls and gillnets that kill nurse sharks as bycatch also supply many commercial seafood markets. Use the Monterey Bay Aquarium Seafood Watch guide to choose seafood harvested with low bycatch impact methods.",
+          "link": "https://www.seafoodwatch.org"
+        },
+        {
+          "title": "Support Coral Reef Restoration",
+          "description": "Healthy coral reefs are essential to nurse shark survival. Support reef restoration programs in the Caribbean and tropical Atlantic, and reduce your carbon footprint to slow the ocean warming that drives bleaching events.",
+          "link": null
+        },
+        {
+          "title": "Practice Responsible Shark Diving",
+          "description": "If you dive or snorkel in nurse shark habitat, observe from a distance and never touch or ride the sharks. Choose dive operators certified by responsible marine tourism programs that enforce no-contact wildlife guidelines.",
+          "link": null
+        }
+      ]
     },
     {
       "id": "negaprion-brevirostris",
@@ -3736,7 +3989,7 @@ window.WIKI_DATA = {
         "finning"
       ],
       "photos": [
-        "projects/shark-populations/images/blue_shark.png"
+        "projects/shark-populations/images/blue_shark/blue_shark1.png"
       ],
       "description": "The blue shark is one of the most wide-ranging and abundant large shark species, distributed across all temperate and tropical oceans. Instantly recognizable by its electric blue coloration and slender, streamlined build, it is highly migratory and known to cross entire ocean basins. Blue sharks are among the most heavily fished sharks globally, primarily as bycatch in longline and trawl fisheries.",
       "funFact": "Blue sharks are record-breaking ocean travelers — individuals have been tracked migrating over 9,200 km (5,700 miles) across the Atlantic, following circular current patterns to exploit prey across entire ocean basins.",
