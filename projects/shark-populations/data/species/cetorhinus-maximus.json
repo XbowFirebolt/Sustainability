@@ -26,7 +26,7 @@
   "diet": "Feeds exclusively on zooplankton — primarily copepods, fish eggs, small crustaceans, and invertebrate larvae — by passive ram filter-feeding. Makes no active pursuit of prey; its enormous gill rakers strain plankton from the water as it swims open-mouthed.",
   "size": "Typically 6–9 m (20–30 ft); max reliably recorded ~12 m (39 ft). The second-largest fish in the ocean, after the whale shark.",
   "vitalSigns": [
-    { "label": "Estimated Population",   "value": "Unknown — no reliable global estimate",                                  "glance": true },
+    { "label": "Estimated Population",   "value": "Unknown",                                  "glance": true },
     { "label": "Lifespan",               "value": "Estimated up to 50 years",                                               "glance": true },
     { "label": "Max Length",             "value": "~12 m (39 ft)",              "metric": "~12 m",    "imperial": "~39 ft",  "glance": true },
     { "label": "Max Weight",             "value": "~4,000–5,000 kg (~8,800–11,000 lbs)", "metric": "~4,000–5,000 kg", "imperial": "~8,800–11,000 lbs", "glance": true },

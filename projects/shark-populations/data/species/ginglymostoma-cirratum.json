@@ -35,11 +35,11 @@
   "diet": "Primarily bottom-dwelling invertebrates including spiny lobsters, crabs, sea urchins, squid, and octopus, supplemented by small bony fish and stingrays. Nurse sharks use a distinctive suction-feeding technique — creating a vacuum with their muscular mouth and pharynx to extract prey from crevices and rubble.",
   "size": "Typically 2.1–3.0 m (6.9–9.8 ft); females slightly larger than males; occasional individuals reported up to 4.3 m",
   "vitalSigns": [
-    { "label": "Estimated Population",   "value": "Unknown — no reliable global census; inferred declining across western Atlantic and eastern Pacific ranges",                                    "glance": true },
+    { "label": "Estimated Population",   "value": "Unknown",                                    "glance": true },
     { "label": "Lifespan",               "value": "25+ years",                                                                                                                                "glance": true },
     { "label": "Max Length",             "value": "~3.0 m (9.8 ft) typical; up to ~4.3 m reported",   "metric": "~3.0 m typical",   "imperial": "~9.8 ft typical",                             "glance": true },
     { "label": "Max Weight",             "value": "~110 kg (~243 lbs)",                                 "metric": "~110 kg",          "imperial": "~243 lbs",                                    "glance": true },
-    { "label": "Top Speed",              "value": "Unknown — one of the slowest sharks; slow-cruising benthic species with no documented burst speed",                                         "glance": true },
+    { "label": "Top Speed",              "value": "Unknown",                                         "glance": true },
     { "label": "Ecological Role",        "value": "Mesopredator",                                                                                                                               "glance": true },
     { "label": "Reproductive Rate",      "value": "20–30 pups per litter; ~6-month gestation; biennial cycle" },
     { "label": "Age at Maturity",        "value": "~15–18 years (males); ~15–20 years (females)" },

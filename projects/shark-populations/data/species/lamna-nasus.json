@@ -26,7 +26,7 @@
   "diet": "Feeds primarily on schooling bony fish — particularly mackerel, herring, and sand lance — as well as squid and octopus. Uses its warm-bloodedness to hunt actively and efficiently in cold water where most other large predators are metabolically limited.",
   "size": "Typically 1.5–2.5 m (5–8 ft); max confirmed ~3.5 m (11.5 ft). Females are larger than males.",
   "vitalSigns": [
-    { "label": "Estimated Population",   "value": "Unknown — significantly depleted in the North Atlantic",                "glance": true },
+    { "label": "Estimated Population",   "value": "Unknown",                "glance": true },
     { "label": "Lifespan",               "value": "Up to 46 years",                                                        "glance": true },
     { "label": "Max Length",             "value": "~3.5 m (11.5 ft)",           "metric": "~3.5 m",  "imperial": "~11.5 ft", "glance": true },
     { "label": "Max Weight",             "value": "~230 kg (~500 lbs)",          "metric": "~230 kg", "imperial": "~500 lbs",  "glance": true },

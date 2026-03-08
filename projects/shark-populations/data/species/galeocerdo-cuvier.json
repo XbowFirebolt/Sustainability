@@ -26,7 +26,7 @@
   "diet": "Sea turtles, fish, marine mammals, seabirds, rays, and almost any other prey item",
   "size": "Up to 5.5 m (18 ft)",
   "vitalSigns": [
-    { "label": "Estimated Population",   "value": "Unknown — no reliable global estimate; declining",                                                   "glance": true },
+    { "label": "Estimated Population",   "value": "Unknown",                                                   "glance": true },
     { "label": "Lifespan",               "value": "~27 years",                                                                                          "glance": true },
     { "label": "Max Length",             "value": "5.5 m (18 ft); females larger",          "metric": "5.5 m",          "imperial": "18 ft",               "glance": true },
     { "label": "Max Weight",             "value": "~635 kg (~1,400 lbs)",                    "metric": "~635 kg",        "imperial": "~1,400 lbs",          "glance": true },

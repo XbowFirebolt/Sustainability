@@ -26,7 +26,7 @@
   "diet": "Stingrays are the preferred prey — the hammerhead uses its wide cephalofoil to electromagnetically detect rays buried in sand, then pins them to the seafloor before biting. Also eats bony fish, squid, octopus, crustaceans, and other sharks.",
   "size": "Typically 3.5–4.5 m (11.5–14.8 ft); max confirmed 6.1 m (20 ft). Females are generally larger than males.",
   "vitalSigns": [
-    { "label": "Estimated Population",   "value": "Unknown — critically depleted globally",                                  "glance": true },
+    { "label": "Estimated Population",   "value": "Unknown",                                  "glance": true },
     { "label": "Lifespan",               "value": "Up to 44 years",                                                          "glance": true },
     { "label": "Max Length",             "value": "6.1 m (20 ft)",              "metric": "6.1 m",    "imperial": "20 ft",    "glance": true },
     { "label": "Max Weight",             "value": "~580 kg (~1,280 lbs)",        "metric": "~580 kg",  "imperial": "~1,280 lbs", "glance": true },

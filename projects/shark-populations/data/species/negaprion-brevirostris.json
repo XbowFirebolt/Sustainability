@@ -36,7 +36,7 @@
   "diet": "Primarily bony fish and rays, supplemented by seabirds, crustaceans, and cephalopods. Lemon sharks are opportunistic hunters that use electroreception and acute smell to locate prey in turbid, shallow-water environments.",
   "size": "Up to 3.4 m (11 ft); females typically larger than males",
   "vitalSigns": [
-    { "label": "Estimated Population",   "value": "Unknown — no reliable global estimate; declining across Atlantic and Pacific ranges",                          "glance": true },
+    { "label": "Estimated Population",   "value": "Unknown",                          "glance": true },
     { "label": "Lifespan",               "value": "~25–30 years",                                                                                                  "glance": true },
     { "label": "Max Length",             "value": "3.4 m (11 ft); females larger",        "metric": "3.4 m",        "imperial": "11 ft",                            "glance": true },
     { "label": "Max Weight",             "value": "~183 kg (~400 lbs)",                   "metric": "~183 kg",      "imperial": "~400 lbs",                         "glance": true },

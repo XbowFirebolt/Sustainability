@@ -26,7 +26,7 @@
   "diet": "Fish, rays, sea turtles, dolphins, birds, and other sharks",
   "size": "Up to 3.4 m (11 ft); females larger",
   "vitalSigns": [
-    { "label": "Estimated Population",   "value": "Unknown — no reliable global estimate; declining in many regions",                                  "glance": true },
+    { "label": "Estimated Population",   "value": "Unknown",                                  "glance": true },
     { "label": "Lifespan",               "value": "~16–25 years",                                                                                       "glance": true },
     { "label": "Max Length",             "value": "3.4 m (11 ft); females larger",          "metric": "3.4 m",          "imperial": "11 ft",               "glance": true },
     { "label": "Max Weight",             "value": "~316 kg (~697 lbs)",                      "metric": "~316 kg",        "imperial": "~697 lbs",            "glance": true },
