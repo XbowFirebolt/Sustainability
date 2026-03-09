@@ -1,6 +1,6 @@
 {
   "id": "chlamydoselachus-anguineus",
-  "lastUpdated": "2026-03-06",
+  "lastUpdated": "2026-03-10",
   "emoji": "🦈",
   "commonName": "Frilled Shark",
   "scientificName": "Chlamydoselachus anguineus",
@@ -29,7 +29,85 @@
     "ancient",
     "solitary"
   ],
+  "photos": [
+    "projects/shark-populations/images/frilled_shark/frilled_shark.png"
+  ],
   "description": "The frilled shark is one of the oldest living shark lineages on Earth, often called a 'living fossil' for its primitive anatomy that has changed little in millions of years. Its long, eel-like body, frilly gill slits (six pairs rather than the typical five), and rows of small trident-shaped teeth give it an unmistakably archaic appearance. It hunts in deep water using ambush tactics, likely bending its flexible body to lunge at prey.",
   "funFact": "The frilled shark may have the longest gestation period of any vertebrate — estimated at approximately 3.5 years — though because live specimens are so rarely observed, this figure is extrapolated from growth rate data rather than direct observation, leaving the mystery of deep-sea birth largely unwitnessed by science.",
-  "habitat": "Deep, outer continental shelves and slopes worldwide, typically at depths of 120–1,570 m. Scattered records come from the Atlantic (Norway, west Africa), Pacific (Japan, Australia, New Zealand), and Indian Ocean. Rarely encountered alive at the surface."
+  "habitat": "Deep, outer continental shelves and slopes worldwide, typically at depths of 120–1,570 m. Scattered records come from the Atlantic (Norway, west Africa), Pacific (Japan, Australia, New Zealand), and Indian Ocean. Rarely encountered alive at the surface.",
+  "diet": "Primarily cephalopods — squid and octopus — along with bony fish and smaller sharks. Its long jaws and numerous small, trident-shaped teeth are well-suited to seizing soft-bodied prey, and its highly distensible stomach can accommodate prey nearly half its own body length.",
+  "size": "Females reach up to ~2 m (6.6 ft); males are smaller, typically ~1.5 m (4.9 ft). Slender and eel-like in body form.",
+  "vitalSigns": [
+    { "label": "Estimated Population",   "value": "Unknown — rarely observed alive",                                             "glance": true },
+    { "label": "Lifespan",               "value": "Unknown; likely 25+ years based on slow growth rate",                        "glance": true },
+    { "label": "Max Length",             "value": "~2 m (6.6 ft) females",           "metric": "~2 m",          "imperial": "~6.6 ft",            "glance": true },
+    { "label": "Max Weight",             "value": "~15 kg (~33 lbs) estimated",       "metric": "~15 kg",        "imperial": "~33 lbs",            "glance": true },
+    { "label": "Reproductive Rate",      "value": "2–15 pups per litter; gestation estimated at ~3.5 years" },
+    { "label": "Age at Maturity",        "value": "Unknown" },
+    { "label": "Top Speed",              "value": "Unknown — likely slow; ambush predator with brief lunging strikes",                "glance": true },
+    { "label": "Ecological Role",        "value": "Deep-sea mesopredator",                                                      "glance": true },
+    { "label": "Diet",                   "value": "Cephalopods, bony fish, smaller sharks" },
+    { "label": "Population Growth Rate", "value": "Very low — among the slowest reproductive rates of any shark" },
+    { "label": "Key Senses",             "value": "Lateral line system highly developed for detecting pressure changes in total darkness" }
+  ],
+  "habitatStats": [
+    { "label": "Global Range", "value": "Scattered records across Atlantic, Pacific, and Indian Oceans in temperate and subtropical waters" },
+    { "label": "Depth Range",  "value": "120–1,570 m (390–5,150 ft)", "metric": "120–1,570 m", "imperial": "390–5,150 ft" }
+  ],
+  "statusHistory": [
+    { "year": 2000, "status": "Not Evaluated" },
+    { "year": 2016, "status": "Least Concern" }
+  ],
+  "populationTrend": [
+    { "year": 1980, "value": 100 },
+    { "year": 1990, "value": 97 },
+    { "year": 2000, "value": 94 },
+    { "year": 2010, "value": 91 },
+    { "year": 2020, "value": 88 }
+  ],
+  "populationTrendMeta": {
+    "confidence": "very low",
+    "note": "No reliable population estimates exist. The values shown are illustrative of a slow, uncertain decline inferred from increasing deep-sea fishing effort and occasional bycatch records. The species' extreme depth and rarity make direct population assessment effectively impossible with current methods."
+  },
+  "preyDeclineRegions": [
+    { "name": "N. Pacific",    "severity": "medium",   "note": "Deep-water squid and mesopelagic fish stocks under pressure from expanding midwater fisheries" },
+    { "name": "N. Atlantic",   "severity": "medium",   "note": "Deep-sea fish stocks reduced by historical bottom trawling on seamounts and slopes" },
+    { "name": "Australia",     "severity": "low",      "note": "Deep-water cephalopod stocks relatively intact; limited targeted fishing" },
+    { "name": "Mediterranean", "severity": "low",      "note": "Some deep-water trawling pressure but frilled shark habitat largely below commercial range" },
+    { "name": "S. Atlantic",   "severity": "low",      "note": "Open-ocean deep waters largely unfished; prey availability considered stable" }
+  ],
+  "fishingPressureRegions": [
+    { "name": "N. Pacific",    "severity": "medium",   "note": "Occasionally caught as bycatch in deep-set longlines and trawls targeting orange roughy and grenadier" },
+    { "name": "N. Atlantic",   "severity": "medium",   "note": "Incidental captures in deep demersal trawls; historically discarded unreported" },
+    { "name": "Australia",     "severity": "low",      "note": "Rare bycatch in southern deep-sea trawl fisheries; occasional scientific captures" },
+    { "name": "Mediterranean", "severity": "low",      "note": "Very rare; recorded in deep trawls off southern Europe" },
+    { "name": "S. Atlantic",   "severity": "low",      "note": "Minimal commercial fishing at relevant depths" }
+  ],
+  "healthMetrics": [
+    { "label": "IUCN Status",          "value": "Least Concern",                                                      "trend": "stable" },
+    { "label": "Population Trend",     "value": "Unknown — likely stable to slowly declining",                         "trend": "down"   },
+    { "label": "Habitat Quality",      "value": "Generally intact — deep-sea habitat largely undisturbed",             "trend": "stable" },
+    { "label": "Prey Availability",    "value": "Likely stable, though deep mesopelagic fisheries are expanding",      "trend": "stable" },
+    { "label": "Fishing Pressure",     "value": "Low direct pressure; incidental bycatch risk increasing",             "trend": "down"   },
+    { "label": "Protection Coverage",  "value": "Minimal — no targeted protections; benefits from depth as a refuge",  "trend": "stable",
+      "links": [
+        { "label": "IUCN Red List",     "url": "https://www.iucnredlist.org/species/4544/10913207" },
+        { "label": "Deep Sea Conservation Coalition", "url": "https://www.savethehighseas.org" }
+      ]
+    }
+  ],
+  "threats": [
+    { "name": "Deep-sea Bycatch",         "severity": "medium",  "description": "Caught incidentally in deep-set longlines and bottom trawls targeting other deep-sea fish. As commercial fishing pushes into deeper waters, encounter rates are expected to increase." },
+    { "name": "Slow Reproduction",        "severity": "medium",  "description": "With an estimated 3.5-year gestation and small litter sizes, the frilled shark cannot recover quickly from any increase in mortality. Even modest bycatch pressure could cause long-term decline." },
+    { "name": "Deep-sea Habitat Damage",  "severity": "low",     "description": "Bottom trawling on continental slopes can damage the seafloor habitats frilled sharks use for resting and hunting, though direct overlap with current trawl effort is limited." },
+    { "name": "Climate Change",           "severity": "low",     "description": "Ocean deoxygenation and deep-water warming may compress suitable habitat and shift the distribution of prey species, though effects at frilled shark depths remain poorly understood." },
+    { "name": "Data Deficiency",          "severity": "medium",  "description": "The near-total absence of population data means threats cannot be assessed accurately. Conservation failures due to monitoring gaps are a real risk — by the time decline is detected, recovery may be far harder." }
+  ],
+  "actionItems": [
+    { "title": "Support Deep-Sea Fishing Reform", "description": "Advocate for extending no-take zones and gear restrictions to deeper water. The High Seas Treaty, once ratified, would protect significant portions of frilled shark habitat beyond national jurisdiction.", "link": "https://www.savethehighseas.org" },
+    { "title": "Push for Deep-Sea Bycatch Reporting", "description": "Urge fisheries management bodies to require mandatory reporting of all deep-sea bycatch, including elasmobranchs. Current data gaps make effective management impossible.", "link": null },
+    { "title": "Fund Deep-Sea Research", "description": "Support institutions conducting ROV surveys and tagging programs in deep-sea environments. Basic biology — population size, age structure, reproductive cycles — remains unknown for the frilled shark.", "link": null },
+    { "title": "Oppose Unregulated Bottom Trawling", "description": "Contact your government representatives to support international bans on unregulated bottom trawling in deep international waters, which destroys habitat for countless deep-sea species.", "link": null },
+    { "title": "Raise Awareness", "description": "The frilled shark is one of the least-known and most distinctive sharks alive. Sharing accurate, science-based information about deep-sea biodiversity builds public support for protecting habitats we rarely see.", "link": null }
+  ]
 }

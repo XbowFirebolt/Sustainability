@@ -55,7 +55,7 @@ Tracks every species in the wiki: current tier, IUCN status, and what still need
 | Tasselled Wobbegong | *Eucrossorhinus dasypogon* | Least Concern | Stub | Phase 3 Batch 2 |
 | Greenland Shark | *Somniosus microcephalus* | Least Concern | Full (partial) | Missing physicalScaleImage |
 | Pacific Sleeper Shark | *Somniosus pacificus* | Least Concern | Stub | Phase 3 Batch 3 |
-| Frilled Shark | *Chlamydoselachus anguineus* | Least Concern | Stub | Phase 3 Batch 3 |
+| Frilled Shark | *Chlamydoselachus anguineus* | Least Concern | Full (partial) | Missing physicalScaleImage |
 | Broadnose Sevengill Shark | *Notorynchus cepedianus* | Data Deficient | Stub | Phase 3 Batch 3 |
 | Bluntnose Sixgill Shark | *Hexanchus griseus* | Least Concern | Stub | Phase 3 Batch 3 |
 | Horn Shark | *Heterodontus francisci* | Least Concern | Stub | Phase 3 Batch 3 |
@@ -156,9 +156,9 @@ Species that have been added as stubs and are candidates for Standard tier promo
 
 | Tier | Count |
 |---|---|
-| Full | 29 |
+| Full | 30 |
 | Standard | 0 |
-| Stub | 26 |
+| Stub | 25 |
 | **Total** | **55** |
 
 *Update manually after each batch commit.*
