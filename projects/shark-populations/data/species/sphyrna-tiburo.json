@@ -1,0 +1,25 @@
+{
+  "id": "sphyrna-tiburo",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Bonnethead Shark",
+  "scientificName": "Sphyrna tiburo",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Sphyrnidae",
+    "genus": "Sphyrna",
+    "species": "S. tiburo"
+  },
+  "statusLabel": "Endangered",
+  "lifePercent": 35,
+  "habitatTypes": ["coastal", "tropical"],
+  "dietType": "omnivore",
+  "geographicRegions": ["tropical"],
+  "tags": ["schooling", "bycatch", "migratory"],
+  "description": "The bonnethead is the smallest hammerhead shark, reaching only about 1.5 m, and the only one with a distinctly shovel-shaped — rather than hammer-shaped — head. It is found in shallow, warm coastal waters of the Americas and is often seen in large schools over seagrass beds and sandy flats. Remarkably, the bonnethead is the only shark species confirmed to be omnivorous: it intentionally consumes and digests significant quantities of seagrass, making it unique among all known sharks.",
+  "funFact": "Bonnethead sharks digest seagrass with measurable efficiency — lab studies found they can break down up to 56% of the organic matter in seagrass using specialized gut enzymes, making them the world's first confirmed omnivorous sharks and potentially important seagrass ecosystem engineers.",
+  "habitat": "Shallow coastal waters, bays, estuaries, and seagrass beds throughout the Gulf of Mexico, U.S. East Coast, and Caribbean south to Brazil. Also found from southern California to Ecuador in the eastern Pacific. Typically in water less than 12 m deep; rarely exceeds 25 m."
+}

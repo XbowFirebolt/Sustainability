@@ -1,0 +1,25 @@
+{
+  "id": "rhizoprionodon-acutus",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Milk Shark",
+  "scientificName": "Rhizoprionodon acutus",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Carcharhinidae",
+    "genus": "Rhizoprionodon",
+    "species": "R. acutus"
+  },
+  "statusLabel": "Near Threatened",
+  "lifePercent": 63,
+  "habitatTypes": ["coastal", "tropical"],
+  "dietType": "carnivore",
+  "geographicRegions": ["tropical", "global"],
+  "tags": ["bycatch", "migratory"],
+  "description": "The milk shark is one of the most common and widespread small sharks of the tropical Indo-Pacific and West Africa, found in shallow coastal and estuarine waters from the Mediterranean to Australia. Small and slender, it rarely exceeds 1.1 m and feeds on small fish, squid, and crustaceans. Its name comes from a belief in parts of India and West Africa that consuming its flesh increases lactation in nursing mothers — a folk claim with no scientific basis, but one that has historically driven targeted catches.",
+  "funFact": "The milk shark has one of the fastest maturation rates of any shark in the Indo-Pacific — females can reach sexual maturity in as little as 14 months, giving it a reproductive resilience comparable to some bony fish, which has so far buffered it against the severe declines seen in slower-maturing coastal sharks.",
+  "habitat": "Shallow coastal and estuarine waters across the tropical Indo-Pacific, from the Mediterranean and West Africa east to Australia and the western Pacific. Depth range 0–200 m; most common inshore in water less than 50 m over sandy and muddy bottoms."
+}

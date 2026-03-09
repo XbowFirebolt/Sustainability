@@ -1,0 +1,25 @@
+{
+  "id": "cephaloscyllium-ventriosum",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Swell Shark",
+  "scientificName": "Cephaloscyllium ventriosum",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Scyliorhinidae",
+    "genus": "Cephaloscyllium",
+    "species": "C. ventriosum"
+  },
+  "statusLabel": "Least Concern",
+  "lifePercent": 78,
+  "habitatTypes": ["coastal", "temperate"],
+  "dietType": "carnivore",
+  "geographicRegions": ["temperate"],
+  "tags": ["solitary", "nocturnal"],
+  "description": "The swell shark is a small, blotchy-patterned catshark found in kelp forests and rocky reefs along the Pacific coast of the Americas. When threatened, it can swallow large quantities of water to inflate its stomach to more than double its normal girth — wedging itself into rock crevices and becoming extremely difficult for predators to extract. Remarkably, it is also biofluorescent, emitting a vivid green-yellow glow under blue light that is invisible to human eyes but likely visible to other swell sharks.",
+  "funFact": "Swell sharks absorb a green-blue light wavelength and re-emit it as vivid yellow-green biofluorescence — a secret visual channel invisible to most ocean predators but potentially used for species recognition and communication between swell sharks, which have visual pigments tuned to detect it.",
+  "habitat": "Rocky reefs and kelp forests along the eastern Pacific coast from Monterey Bay, California to southern Mexico and Chile. Depth range 0–457 m; most common at 5–37 m. Nocturnal and cryptic, resting in crevices and caves during the day."
+}

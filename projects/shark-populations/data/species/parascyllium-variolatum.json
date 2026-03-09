@@ -1,0 +1,25 @@
+{
+  "id": "parascyllium-variolatum",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Necklace Carpetshark",
+  "scientificName": "Parascyllium variolatum",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Orectolobiformes",
+    "family": "Parascylliidae",
+    "genus": "Parascyllium",
+    "species": "P. variolatum"
+  },
+  "statusLabel": "Least Concern",
+  "lifePercent": 78,
+  "habitatTypes": ["coastal", "temperate"],
+  "dietType": "carnivore",
+  "geographicRegions": ["temperate"],
+  "tags": ["solitary", "nocturnal"],
+  "description": "The necklace carpetshark is one of Australia's most beautifully patterned sharks — a small, slender species decorated with a series of bold dark collar-like bands ('necklaces') and white spots scattered across its brownish body. Endemic to southern Australia, it inhabits kelp forests, seagrass beds, and rocky reefs at moderate depths. A nocturnal hunter of small fish, crustaceans, and cephalopods, it is rarely encountered by divers due to its preference for hiding in reef crevices during the day.",
+  "funFact": "Each necklace carpetshark individual has a unique arrangement of spots within its dark collar bands — researchers have used photographic identification of these patterns as a non-invasive method to track individuals over time without the need for tagging.",
+  "habitat": "Rocky and sandy reefs, seagrass beds, and kelp forests exclusively along the southern coast of Australia, from central New South Wales to southwestern Western Australia, including Tasmania. Depth range 0–180 m; most common at 15–100 m."
+}

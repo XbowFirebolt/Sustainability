@@ -1,0 +1,25 @@
+{
+  "id": "sphyrna-corona",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Scalloped Bonnethead",
+  "scientificName": "Sphyrna corona",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Sphyrnidae",
+    "genus": "Sphyrna",
+    "species": "S. corona"
+  },
+  "statusLabel": "Critically Endangered",
+  "lifePercent": 15,
+  "habitatTypes": ["coastal", "tropical"],
+  "dietType": "carnivore",
+  "geographicRegions": ["tropical"],
+  "tags": ["solitary", "bycatch", "overfished"],
+  "description": "The scalloped bonnethead is the rarest hammerhead shark and one of the least-known elasmobranchs in the eastern Pacific. Similar to the bonnethead in overall shape, it is distinguished by a slight median notch on the front of its shovel-shaped head. Found only in a narrow coastal strip from Mexico to Peru, it has been devastated by intensive artisanal and industrial fisheries and is now Critically Endangered with a rapidly contracting range.",
+  "funFact": "Despite being one of the most endangered hammerheads in the world, the scalloped bonnethead has received very little research attention — fewer than a handful of dedicated studies have been published on its biology, reproduction, or behavior, making it one of the most poorly understood Critically Endangered sharks.",
+  "habitat": "Shallow coastal and estuarine waters in a restricted range along the eastern Pacific coast, from the Gulf of California in Mexico south to Peru. Typically found in warm, shallow inshore waters less than 30 m deep over sandy and muddy bottoms."
+}

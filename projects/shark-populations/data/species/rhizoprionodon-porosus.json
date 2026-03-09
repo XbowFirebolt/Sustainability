@@ -1,0 +1,25 @@
+{
+  "id": "rhizoprionodon-porosus",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Caribbean Sharpnose Shark",
+  "scientificName": "Rhizoprionodon porosus",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Carcharhinidae",
+    "genus": "Rhizoprionodon",
+    "species": "R. porosus"
+  },
+  "statusLabel": "Near Threatened",
+  "lifePercent": 63,
+  "habitatTypes": ["coastal", "tropical"],
+  "dietType": "carnivore",
+  "geographicRegions": ["tropical"],
+  "tags": ["bycatch", "schooling", "migratory"],
+  "description": "The Caribbean sharpnose shark is one of the most abundant small sharks in coastal and estuarine waters from the Gulf of Mexico to southern Brazil, where it is among the species most frequently landed by artisanal fisheries. Small and slender with a pointed snout, it is a fast-growing, early-maturing species that feeds on small fish, squid, and crustaceans in shallow, warm waters. Despite its resilience compared to larger sharks, growing fishing pressure and bycatch have begun to impact populations across its range.",
+  "funFact": "Caribbean sharpnose sharks are among the fastest-growing sharks in the western Atlantic — juveniles can add several centimeters per month in their first year, reaching sexual maturity in under two years, a pace that allows populations to respond to fishing pressure more quickly than almost any other Caribbean shark species.",
+  "habitat": "Shallow coastal and estuarine waters of the western Atlantic, from the northern Gulf of Mexico through the Caribbean Sea south to Uruguay. Typically found in water less than 30 m over sandy and muddy bottoms; common around river mouths and in turbid inshore bays."
+}

@@ -1,0 +1,25 @@
+{
+  "id": "poroderma-africanum",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Pyjama Shark",
+  "scientificName": "Poroderma africanum",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Scyliorhinidae",
+    "genus": "Poroderma",
+    "species": "P. africanum"
+  },
+  "statusLabel": "Least Concern",
+  "lifePercent": 78,
+  "habitatTypes": ["coastal", "temperate"],
+  "dietType": "carnivore",
+  "geographicRegions": ["temperate"],
+  "tags": ["solitary", "nocturnal"],
+  "description": "The pyjama shark — named for its unmistakable pattern of bold black longitudinal stripes on a pale background — is a small, bottom-dwelling catshark endemic to the coastal waters of South Africa. Reaching about 1.07 m, it is a nocturnal hunter of cephalopods, crustaceans, and small fish in kelp forests and rocky reefs. It is one of only a few sharks known to actively cooperate when hunting, with groups sometimes working together to herd and corner prey.",
+  "funFact": "Pyjama sharks have been observed hunting cooperatively — groups will spread out to encircle a school of fish or cephalopods, then coordinate their approach to trap prey against the reef, a behavior so rarely documented in sharks that researchers consider it evidence of unexpectedly sophisticated social hunting strategies in cartilaginous fish.",
+  "habitat": "Rocky reefs, kelp forests, sandy and rocky intertidal zones exclusively along the South African coast, from Cape Point in the west to approximately East London in the east. Depth range 0–100 m. Closely associated with the cold Benguela Current upwelling system."
+}

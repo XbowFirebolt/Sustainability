@@ -1,0 +1,25 @@
+{
+  "id": "hexanchus-nakamurai",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Bigeye Sixgill Shark",
+  "scientificName": "Hexanchus nakamurai",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Hexanchiformes",
+    "family": "Hexanchidae",
+    "genus": "Hexanchus",
+    "species": "H. nakamurai"
+  },
+  "statusLabel": "Near Threatened",
+  "lifePercent": 63,
+  "habitatTypes": ["deep-sea", "ocean"],
+  "dietType": "apex-predator",
+  "geographicRegions": ["global", "tropical"],
+  "tags": ["solitary", "bycatch"],
+  "description": "The bigeye sixgill shark is a smaller relative of the bluntnose sixgill shark, distinguished by its noticeably larger eyes and more slender build. Like all sixgills, it bears six gill slits rather than the five found on nearly all modern sharks — a primitive character retained from ancient ancestors. Found in the deep sea of all major tropical and subtropical oceans, it is an apex predator in its depth zone, hunting fish, squid, and crustaceans. Its large eyes are an adaptation to the near-total darkness of the mesopelagic and bathypelagic zones.",
+  "funFact": "Bigeye sixgill sharks have a comb-like lower jaw with six rows of large, serrated teeth on each side — a dentition virtually unchanged from sharks fossilized over 200 million years ago, making this species a living window into the jaw mechanics of Mesozoic-era sharks.",
+  "habitat": "Deep oceanic waters of the tropical and subtropical Atlantic, Indian Ocean, and Pacific. Depth range 0–621 m; most common at 90–400 m. Occasionally makes excursions to shallow water at night during vertical migrations."
+}

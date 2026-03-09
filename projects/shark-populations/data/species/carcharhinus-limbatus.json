@@ -1,0 +1,25 @@
+{
+  "id": "carcharhinus-limbatus",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Blacktip Shark",
+  "scientificName": "Carcharhinus limbatus",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Carcharhinidae",
+    "genus": "Carcharhinus",
+    "species": "C. limbatus"
+  },
+  "statusLabel": "Near Threatened",
+  "lifePercent": 63,
+  "habitatTypes": ["coastal", "tropical"],
+  "dietType": "apex-predator",
+  "geographicRegions": ["global", "tropical"],
+  "tags": ["schooling", "migratory", "bycatch", "finning"],
+  "description": "The blacktip shark is one of the most abundant and recognizable coastal sharks in warm seas worldwide, identified by the black-tipped fins that give it its name. It is a fast, active hunter that often pursues schools of small fish into the surf zone, leaping entirely out of the water and spinning up to three times on re-entry — a behavior linked to its high-speed hunting technique. Large aggregations of thousands of blacktips are a famous annual spectacle off southeastern Florida.",
+  "funFact": "When blacktip sharks launch themselves through baitfish schools, their momentum carries them clear of the surface — they spin up to three complete rotations in the air before splashing back down, a maneuver researchers believe is driven purely by speed rather than intentional acrobatics.",
+  "habitat": "Warm coastal and estuarine waters worldwide, from just beyond the surf zone to offshore banks at depths of 0–64 m. Undertakes large-scale seasonal migrations; Florida's east coast sees aggregations of thousands each winter. Also uses river mouths and mangrove nursery habitat as juveniles."
+}

@@ -1,0 +1,25 @@
+{
+  "id": "centrophorus-granulosus",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Gulper Shark",
+  "scientificName": "Centrophorus granulosus",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Squaliformes",
+    "family": "Centrophoridae",
+    "genus": "Centrophorus",
+    "species": "C. granulosus"
+  },
+  "statusLabel": "Endangered",
+  "lifePercent": 35,
+  "habitatTypes": ["deep-sea", "ocean"],
+  "dietType": "carnivore",
+  "geographicRegions": ["global", "temperate"],
+  "tags": ["solitary", "bycatch", "slow-reproducing"],
+  "description": "The gulper shark is a medium-sized, grey deepwater shark of continental slopes and seamounts in the Atlantic, Mediterranean, and Indo-Pacific. Named for its large, gape-like mouth and enormous, reflective green eyes adapted to near-total darkness, it feeds on fish, squid, and crustaceans at depths of 100–2,400 m. Its liver can comprise up to 25% of its body weight and is rich in squalene — this made it a major target of deep-sea fisheries that caused severe depletion across much of its range.",
+  "funFact": "The gulper shark's squalene-rich liver once made it one of the most intensively fished deep-sea sharks in the world — yet it reproduces so slowly (gestation estimated at 1–2 years, single pup litters) that even modest fishing pressure causes populations to collapse over decades with essentially no capacity for recovery.",
+  "habitat": "Continental slopes and seamounts in the Atlantic (from Iceland and the British Isles to South Africa), Mediterranean, and parts of the Indo-Pacific including the Indian Ocean and western Pacific. Depth range 100–2,400 m; most commonly caught at 300–1,000 m."
+}

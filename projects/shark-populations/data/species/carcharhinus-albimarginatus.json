@@ -1,0 +1,25 @@
+{
+  "id": "carcharhinus-albimarginatus",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Silvertip Shark",
+  "scientificName": "Carcharhinus albimarginatus",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Carcharhinidae",
+    "genus": "Carcharhinus",
+    "species": "C. albimarginatus"
+  },
+  "statusLabel": "Vulnerable",
+  "lifePercent": 50,
+  "habitatTypes": ["reef", "ocean", "tropical"],
+  "dietType": "apex-predator",
+  "geographicRegions": ["tropical"],
+  "tags": ["solitary", "finning", "bycatch"],
+  "description": "The silvertip shark is an imposing, large requiem shark of tropical coral reefs and oceanic islands, instantly recognizable by the bright white tips and trailing edges on all its fins. Reaching up to 3 m, it is an apex predator that tends to dominate other reef sharks at feeding sites. It is found throughout the tropical Indo-Pacific and is commonly encountered by divers around remote island groups, seamounts, and the outer edges of coral reef systems.",
+  "funFact": "Silvertip sharks are highly territorial around dive sites and feeding aggregations — they are one of the few shark species known to actively displace and out-compete other requiem sharks, including grey reef and whitetip reef sharks, through direct behavioral dominance rather than size alone.",
+  "habitat": "Outer reef slopes, reef passes, open ocean around oceanic islands, and seamounts throughout the tropical Indo-Pacific, from the Red Sea and East Africa to Hawaii and the Tuamotu Archipelago. Typically found at 0–800 m but most common at reef depths of 5–30 m."
+}

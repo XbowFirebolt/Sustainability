@@ -1,0 +1,25 @@
+{
+  "id": "echinorhinus-brucus",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Bramble Shark",
+  "scientificName": "Echinorhinus brucus",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Squaliformes",
+    "family": "Echinorhinidae",
+    "genus": "Echinorhinus",
+    "species": "E. brucus"
+  },
+  "statusLabel": "Near Threatened",
+  "lifePercent": 63,
+  "habitatTypes": ["deep-sea", "ocean"],
+  "dietType": "apex-predator",
+  "geographicRegions": ["global", "temperate"],
+  "tags": ["solitary", "bycatch"],
+  "description": "The bramble shark is a large, sluggish deepwater shark covered in irregular, scattered thorn-like denticles that give it a distinctively spiny, bramble-covered appearance unlike any other shark. Reaching up to 3 m, it is found sporadically on continental shelves and slopes of all major oceans but is rarely encountered. A slow-moving ambush predator, it feeds on other elasmobranchs, bony fish, and crustaceans. Its scattered global records make population assessment extremely difficult.",
+  "funFact": "The bramble shark's scattered, spike-like skin denticles are structurally different from those of any other shark family — each large spine has a multi-rooted base and sits in a pit in the skin rather than being overlaid in uniform rows, suggesting they evolved independently as armor or sensory structures.",
+  "habitat": "Continental shelves and slopes of the Atlantic (from the British Isles and Mediterranean to South Africa), Indian Ocean, and Pacific. Depth range 0–900 m; most records from 200–700 m on soft and rocky substrates. A globally scattered, infrequently observed species."
+}

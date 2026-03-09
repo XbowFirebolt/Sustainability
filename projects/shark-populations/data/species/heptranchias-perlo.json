@@ -1,0 +1,25 @@
+{
+  "id": "heptranchias-perlo",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Sharpnose Sevengill Shark",
+  "scientificName": "Heptranchias perlo",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Hexanchiformes",
+    "family": "Hexanchidae",
+    "genus": "Heptranchias",
+    "species": "H. perlo"
+  },
+  "statusLabel": "Near Threatened",
+  "lifePercent": 63,
+  "habitatTypes": ["deep-sea", "ocean"],
+  "dietType": "apex-predator",
+  "geographicRegions": ["global", "temperate"],
+  "tags": ["solitary", "bycatch"],
+  "description": "The sharpnose sevengill shark is a slender, primitive shark bearing seven gill slits on each side — a feature shared only with its hexanchiform relatives (the sixgills and the broadnose sevengill). One of the oldest shark lineages alive today, it retains a single dorsal fin set far back on the body, a body plan largely unchanged for hundreds of millions of years. It is found in deep water on continental shelves worldwide and is occasionally caught as bycatch in deep-sea fisheries.",
+  "funFact": "The sharpnose sevengill shark's seven gill slits place it in one of the most ancient shark orders — Hexanchiformes diverged from all other modern sharks over 200 million years ago, making these species closer to the ancestral shark body plan than the vast majority of living sharks.",
+  "habitat": "Deep continental shelves and slopes worldwide in temperate and tropical seas, including the Atlantic, Mediterranean, Indian Ocean, and Pacific. Depth range 0–1,000 m; most common at 100–600 m. Occasionally enters shallower water but rarely seen near the surface."
+}

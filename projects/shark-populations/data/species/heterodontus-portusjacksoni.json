@@ -1,0 +1,25 @@
+{
+  "id": "heterodontus-portusjacksoni",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Port Jackson Shark",
+  "scientificName": "Heterodontus portusjacksoni",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Heterodontiformes",
+    "family": "Heterodontidae",
+    "genus": "Heterodontus",
+    "species": "H. portusjacksoni"
+  },
+  "statusLabel": "Least Concern",
+  "lifePercent": 78,
+  "habitatTypes": ["coastal", "temperate"],
+  "dietType": "carnivore",
+  "geographicRegions": ["temperate"],
+  "tags": ["solitary", "migratory"],
+  "description": "The Port Jackson shark is one of Australia's most distinctive and beloved sharks, recognizable by the bold harness-like dark stripe running across its face and down its sides, a blunt pig-like snout, and prominent spine in front of each dorsal fin. It is a slow-moving, nocturnal bottom-dweller found along southern Australia's coasts, where it feeds on sea urchins, mollusks, and crustaceans using specialized crushing teeth at the back of its jaws. Adults undertake remarkable annual migrations of up to 850 km.",
+  "funFact": "Port Jackson sharks lay eggs in distinctive corkscrew-shaped egg cases — and females actively pick them up in their mouths and wedge them into rock crevices to prevent them washing away, a level of post-egg-laying care that is extraordinarily rare among sharks.",
+  "habitat": "Rocky reefs, seagrass beds, sandy flats, and estuaries along the southern Australian coast from Queensland to Western Australia, including Tasmania. Depth range 0–275 m; most common at 0–100 m. Aggregates in caves and sheltered reef areas during the day."
+}

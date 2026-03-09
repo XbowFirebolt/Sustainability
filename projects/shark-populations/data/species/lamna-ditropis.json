@@ -1,0 +1,25 @@
+{
+  "id": "lamna-ditropis",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Salmon Shark",
+  "scientificName": "Lamna ditropis",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Lamniformes",
+    "family": "Lamnidae",
+    "genus": "Lamna",
+    "species": "L. ditropis"
+  },
+  "statusLabel": "Least Concern",
+  "lifePercent": 75,
+  "habitatTypes": ["ocean", "pelagic", "temperate"],
+  "dietType": "apex-predator",
+  "geographicRegions": ["temperate"],
+  "tags": ["migratory", "solitary"],
+  "description": "The salmon shark is a powerful, stocky apex predator of the North Pacific, closely related to the white shark, porbeagle, and shortfin mako. It is one of only a handful of fish capable of true endothermy — maintaining its body temperature up to 20°C above the surrounding water — which allows it to thrive in near-freezing sub-Arctic seas where it follows Pacific salmon on their seasonal migrations. Large aggregations form in Alaskan waters during summer to exploit salmon runs.",
+  "funFact": "Salmon sharks can maintain their core body temperature at around 26°C even when swimming through water just 2°C cold — a thermal differential of nearly 24°C, the greatest of any known fish, achieved through a specialized heat-exchange system called the rete mirabile that recycles metabolic heat in the circulatory system.",
+  "habitat": "Cold to warm temperate oceanic and coastal waters throughout the North Pacific, from Japan and the Sea of Okhotsk to the Bering Sea and Gulf of Alaska, south to Baja California and the Sea of Japan. Depth range 0–668 m; undertakes large-scale seasonal migrations following Pacific salmon."
+}

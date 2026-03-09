@@ -1,0 +1,25 @@
+{
+  "id": "rhizoprionodon-longurio",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Pacific Sharpnose Shark",
+  "scientificName": "Rhizoprionodon longurio",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Carcharhinidae",
+    "genus": "Rhizoprionodon",
+    "species": "R. longurio"
+  },
+  "statusLabel": "Near Threatened",
+  "lifePercent": 63,
+  "habitatTypes": ["coastal", "tropical"],
+  "dietType": "carnivore",
+  "geographicRegions": ["tropical"],
+  "tags": ["bycatch", "migratory"],
+  "description": "The Pacific sharpnose shark is a small, slender coastal species of the eastern Pacific, closely related to the Atlantic sharpnose shark and filling a similar ecological niche in tropical and subtropical inshore habitats from California to Peru. It is one of the most commonly caught sharks in artisanal fisheries along the Pacific coasts of Mexico, Central America, and northern South America, where it is targeted for its meat, fins, and liver oil.",
+  "funFact": "Pacific sharpnose sharks have one of the highest rates of intersexuality recorded in any shark species — a small but consistent proportion of individuals studied in Mexican Pacific fisheries showed both male and female reproductive organs, a phenomenon researchers are still working to understand in terms of its causes and ecological significance.",
+  "habitat": "Warm, shallow coastal and estuarine waters of the eastern Pacific, from the Gulf of California and Baja California south to Ecuador and northern Peru. Depth range 0–27 m; most common in water less than 15 m over sandy and muddy inshore substrates."
+}

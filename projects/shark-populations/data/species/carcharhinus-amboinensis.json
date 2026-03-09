@@ -1,0 +1,25 @@
+{
+  "id": "carcharhinus-amboinensis",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Pigeye Shark",
+  "scientificName": "Carcharhinus amboinensis",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Carcharhinidae",
+    "genus": "Carcharhinus",
+    "species": "C. amboinensis"
+  },
+  "statusLabel": "Vulnerable",
+  "lifePercent": 50,
+  "habitatTypes": ["coastal", "tropical"],
+  "dietType": "apex-predator",
+  "geographicRegions": ["tropical"],
+  "tags": ["solitary", "bycatch", "finning"],
+  "description": "The pigeye shark is a large, stocky coastal shark of the Indo-Pacific that is frequently confused with the bull shark due to its similar build, habitat, and grey coloration — it can be distinguished by its smaller eyes, broader snout, and slightly different fin proportions. It inhabits murky coastal and estuarine waters and is considered potentially dangerous to humans. Poorly studied relative to its bull shark lookalike, its population status across much of its range remains uncertain.",
+  "funFact": "The pigeye shark is so morphologically similar to the bull shark that historical records of bull shark attacks and encounters in the Indo-Pacific may include a significant but unknown proportion of pigeye sharks — a case of mistaken identity that has complicated both safety and conservation efforts for both species.",
+  "habitat": "Shallow turbid coastal and estuarine waters of the Indo-Pacific, from the Red Sea and East Africa to southern Japan and northern Australia. Depth range 0–100 m; most common inshore in harbors, bays, and river mouths. Often found near the bottom in murky water."
+}

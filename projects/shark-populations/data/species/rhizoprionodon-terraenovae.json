@@ -1,0 +1,25 @@
+{
+  "id": "rhizoprionodon-terraenovae",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Atlantic Sharpnose Shark",
+  "scientificName": "Rhizoprionodon terraenovae",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Carcharhinidae",
+    "genus": "Rhizoprionodon",
+    "species": "R. terraenovae"
+  },
+  "statusLabel": "Least Concern",
+  "lifePercent": 75,
+  "habitatTypes": ["coastal"],
+  "dietType": "carnivore",
+  "geographicRegions": ["temperate"],
+  "tags": ["migratory", "bycatch", "schooling"],
+  "description": "The Atlantic sharpnose shark is one of the most abundant small sharks in United States coastal waters, found from the Gulf of Mexico to New England. Slim and bronze-grey with a distinctively pointed snout, it rarely exceeds 1.1 m and matures quickly by shark standards. It is a highly migratory species that moves offshore in winter and back inshore in summer, and is among the most common species caught in both commercial and recreational fisheries along the U.S. Atlantic seaboard.",
+  "funFact": "Atlantic sharpnose sharks mature faster and live shorter lives than almost any other requiem shark — females can reproduce at just 2–3 years old, a rapid life history that makes the species far more resilient to fishing pressure than larger, slower-maturing relatives.",
+  "habitat": "Shallow coastal and estuarine waters along the western North Atlantic from New Brunswick, Canada to the Yucatán Peninsula of Mexico and throughout the Gulf of Mexico. Typically in water less than 10 m deep inshore, but migrates offshore to depths of 280 m in winter."
+}

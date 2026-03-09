@@ -1,0 +1,25 @@
+{
+  "id": "carcharhinus-galapagensis",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Galapagos Shark",
+  "scientificName": "Carcharhinus galapagensis",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Carcharhinidae",
+    "genus": "Carcharhinus",
+    "species": "C. galapagensis"
+  },
+  "statusLabel": "Least Concern",
+  "lifePercent": 72,
+  "habitatTypes": ["reef", "ocean", "tropical"],
+  "dietType": "apex-predator",
+  "geographicRegions": ["tropical", "global"],
+  "tags": ["solitary", "keystone", "bycatch"],
+  "description": "The Galapagos shark is a large, robust reef shark found around isolated oceanic islands and seamounts in warm, clear waters throughout the tropics. Despite its name, it is not restricted to the Galapagos Islands — it ranges across all major tropical oceans. It is a dominant apex predator in island ecosystems, where it plays a key role in maintaining reef fish community structure. Large individuals can be bold and inquisitive, and the species has been implicated in a small number of unprovoked bites.",
+  "funFact": "At Wolf Island in the Galapagos, Galapagos sharks have been documented attacking and eating marine iguanas that enter the water — making them one of the few shark species known to regularly prey on a terrestrial reptile.",
+  "habitat": "Clear, warm oceanic waters around isolated islands, seamounts, and atolls throughout the tropical Atlantic, Pacific, and Indian Oceans. Typically found at reef depths of 1–180 m; most common at 25–50 m around island slopes and drop-offs. Rarely found far from island or seamount habitat."
+}

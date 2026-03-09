@@ -1,0 +1,25 @@
+{
+  "id": "squatina-californica",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Pacific Angel Shark",
+  "scientificName": "Squatina californica",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Squatiniformes",
+    "family": "Squatinidae",
+    "genus": "Squatina",
+    "species": "S. californica"
+  },
+  "statusLabel": "Near Threatened",
+  "lifePercent": 63,
+  "habitatTypes": ["coastal", "temperate"],
+  "dietType": "carnivore",
+  "geographicRegions": ["temperate"],
+  "tags": ["solitary", "bycatch"],
+  "description": "The Pacific angel shark is a flattened, ray-like shark that buries itself in sand and mud on the seafloor, with only its eyes and spiracles exposed. Despite resembling a ray, it is a true shark — and a remarkably effective ambush predator, lunging forward to engulf fish and crustaceans in a strike lasting less than 100 milliseconds. Once commercially fished to very low numbers in California waters, it now benefits from protections but faces ongoing pressure from bycatch and habitat degradation.",
+  "funFact": "The Pacific angel shark's ambush strike is one of the fastest movements recorded in any shark: from completely motionless to fully engulfed prey in under 100 milliseconds — faster than a human eye can track, and accomplished by rapidly expanding the jaws and cranium to create a powerful suction.",
+  "habitat": "Sandy and muddy seafloors along the Pacific coast of North America from southern Alaska to the Gulf of California. Depth range 0–200 m; most common at 3–46 m. Rests buried in soft sediment near rocky reefs and kelp forest edges, and is most active at dusk and night."
+}

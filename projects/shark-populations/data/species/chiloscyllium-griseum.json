@@ -1,0 +1,25 @@
+{
+  "id": "chiloscyllium-griseum",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Grey Bambooshark",
+  "scientificName": "Chiloscyllium griseum",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Orectolobiformes",
+    "family": "Hemiscylliidae",
+    "genus": "Chiloscyllium",
+    "species": "C. griseum"
+  },
+  "statusLabel": "Near Threatened",
+  "lifePercent": 63,
+  "habitatTypes": ["reef", "coastal", "tropical"],
+  "dietType": "carnivore",
+  "geographicRegions": ["tropical"],
+  "tags": ["solitary", "nocturnal", "bycatch"],
+  "description": "The grey bambooshark is a small, plain-coloured carpetshark of the tropical Indo-Pacific that is among the most abundant inshore sharks across much of its range, yet faces growing pressure from artisanal fisheries and coral reef degradation. Adults are uniform greyish-brown; juveniles bear faint saddle markings that fade with age. It crawls along the reef using its muscular paired fins, hunting crustaceans and small fish in crevices at night.",
+  "funFact": "Grey bamboosharks are capable of brief excursions across exposed reef flats during low tide, using their stiff pectoral and pelvic fins in a proto-walking motion to move between pools — the same basic limb-movement pattern that ancient sharks may have used before the fish-to-tetrapod transition some 375 million years ago.",
+  "habitat": "Coral reefs, rocky substrates, mangrove edges, and tidal flats throughout the tropical Indo-Pacific, from the Persian Gulf and Pakistan east to southern Japan and northern Australia. Depth range 0–80 m; most common in very shallow water at 0–15 m."
+}

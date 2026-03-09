@@ -1,0 +1,25 @@
+{
+  "id": "squatina-japonica",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Japanese Angel Shark",
+  "scientificName": "Squatina japonica",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Squatiniformes",
+    "family": "Squatinidae",
+    "genus": "Squatina",
+    "species": "S. japonica"
+  },
+  "statusLabel": "Critically Endangered",
+  "lifePercent": 15,
+  "habitatTypes": ["coastal", "temperate"],
+  "dietType": "carnivore",
+  "geographicRegions": ["temperate"],
+  "tags": ["solitary", "bycatch", "overfished"],
+  "description": "The Japanese angel shark is a large, flat-bodied shark of the northwestern Pacific that resembles a ray from above — a shape evolved for burying into seafloor sediment and ambushing prey. It was once common along the sandy and muddy coasts of Japan, Korea, and China, but decades of intensive bottom trawling and targeted fishing have reduced it to critically low numbers throughout its range. It is considered one of the most threatened angel sharks in Asia.",
+  "funFact": "Japanese angel sharks were once so abundant along the Japanese coast that they supported a dedicated traditional fishery dating back hundreds of years — their severely toothed skin was used as a natural sandpaper called 'same-kawa' to finish sword handles and lacquerware, a cultural use that continued until populations collapsed.",
+  "habitat": "Sandy and muddy seafloors along continental shelves of the northwestern Pacific, including Japan, Korea, China, and the Philippines. Depth range 0–300 m; most common at 50–150 m. Rests buried in soft substrate with only eyes and spiracles exposed."
+}

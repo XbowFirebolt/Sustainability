@@ -1,0 +1,25 @@
+{
+  "id": "etmopterus-spinax",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Velvet Belly Lanternshark",
+  "scientificName": "Etmopterus spinax",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Squaliformes",
+    "family": "Etmopteridae",
+    "genus": "Etmopterus",
+    "species": "E. spinax"
+  },
+  "statusLabel": "Least Concern",
+  "lifePercent": 78,
+  "habitatTypes": ["deep-sea", "ocean"],
+  "dietType": "carnivore",
+  "geographicRegions": ["temperate"],
+  "tags": ["solitary", "bycatch"],
+  "description": "The velvet belly lanternshark is a small deep-sea shark of the Northeast Atlantic and Mediterranean, named for the velvety black undersurface that contrasts with its grey-brown back. It produces bioluminescent light from thousands of photophores along its flanks and belly — a form of counter-illumination that masks its silhouette from predators looking upward from below. At only about 45–60 cm, it is among the most numerous deep-sea sharks in its range.",
+  "funFact": "The velvet belly lanternshark controls its bioluminescent glow with remarkable precision — experiments showed it adjusts the intensity of its belly light in real time to match the ambient downwelling light, effectively erasing its shadow to become invisible to predators hunting from below.",
+  "habitat": "Continental slopes and deep shelf waters of the Northeast Atlantic, from Iceland and Norway south to West Africa, and throughout the Mediterranean. Depth range 70–2,490 m; most common at 200–500 m. Undertakes vertical migrations toward shallower water at night to follow prey."
+}

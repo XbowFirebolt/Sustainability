@@ -1,0 +1,25 @@
+{
+  "id": "carcharhinus-brevipinna",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Spinner Shark",
+  "scientificName": "Carcharhinus brevipinna",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Carcharhinidae",
+    "genus": "Carcharhinus",
+    "species": "C. brevipinna"
+  },
+  "statusLabel": "Near Threatened",
+  "lifePercent": 63,
+  "habitatTypes": ["coastal", "tropical"],
+  "dietType": "apex-predator",
+  "geographicRegions": ["global", "tropical"],
+  "tags": ["schooling", "migratory", "bycatch"],
+  "description": "The spinner shark is a slender, fast-moving species named for its spectacular hunting behavior: it charges vertically through baitfish schools from below, snapping rapidly as it goes, and the momentum carries it spinning into the air above the surface. Similar in appearance to the blacktip shark, it is distinguished by black fin tips extending onto the anal fin and a more pointed snout. It forms large seasonal aggregations in coastal waters and is an important species for both commercial and recreational fisheries.",
+  "funFact": "A spinner shark's aerial spin is not a display — it is the direct result of corkscrewing upward through a baitball at full speed with its jaws open. The rotation begins underwater and simply continues through the surface, making it one of the most kinetically efficient hunting strategies of any shark.",
+  "habitat": "Warm coastal shelf waters worldwide at depths of 0–75 m; prefers turbid inshore habitats, bays, and the edges of continental shelves. Undertakes seasonal coastal migrations and forms large feeding aggregations. Juveniles use estuaries and mangrove edges as nursery habitat."
+}

@@ -1,0 +1,25 @@
+{
+  "id": "carcharhinus-perezi",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Caribbean Reef Shark",
+  "scientificName": "Carcharhinus perezi",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Carcharhinidae",
+    "genus": "Carcharhinus",
+    "species": "C. perezi"
+  },
+  "statusLabel": "Endangered",
+  "lifePercent": 35,
+  "habitatTypes": ["coastal", "reef", "tropical"],
+  "dietType": "apex-predator",
+  "geographicRegions": ["tropical"],
+  "tags": ["solitary", "keystone", "bycatch", "finning"],
+  "description": "The Caribbean reef shark is the most common shark on coral reefs throughout the western Atlantic and Caribbean Sea, where it plays a critical role as an apex predator. Stocky and grey-brown, it typically cruises just above the reef at depths of 1–30 m, targeting fish, rays, and cephalopods. It is a popular species for shark dive tourism, and prolonged feeding dives have significantly habituated individuals to human presence at many sites.",
+  "funFact": "Caribbean reef sharks sometimes enter a trance-like state called tonic immobility when inverted — a phenomenon dive operators have exploited for decades, though researchers now caution this stress response may have lasting physiological effects on the animals.",
+  "habitat": "Coral reefs, reef walls, and adjacent open water throughout the Caribbean Sea and western Atlantic, from Florida and the Bahamas south to Brazil. Most common at 1–30 m depth, though recorded to 378 m."
+}

@@ -1,0 +1,25 @@
+{
+  "id": "carcharhinus-brachyurus",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Bronze Whaler",
+  "scientificName": "Carcharhinus brachyurus",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Carcharhinidae",
+    "genus": "Carcharhinus",
+    "species": "C. brachyurus"
+  },
+  "statusLabel": "Near Threatened",
+  "lifePercent": 63,
+  "habitatTypes": ["coastal", "ocean", "temperate"],
+  "dietType": "apex-predator",
+  "geographicRegions": ["temperate", "global"],
+  "tags": ["migratory", "schooling", "bycatch", "finning"],
+  "description": "The bronze whaler — also called the copper shark — is a large, powerful requiem shark of temperate and subtropical coastal waters, named for the distinctive bronze or olive tint on its back. It is famous as the primary shark species involved in South Africa's annual sardine run, where hundreds gather to herd and feed on the massive baitball migrations along the KwaZulu-Natal coast. It is also one of the shark species most frequently implicated in unprovoked bites in South Africa and Australia.",
+  "funFact": "During the South African sardine run, bronze whalers, common dolphins, and Cape gannets coordinate their attacks on the same baitball simultaneously — not through any mutual cooperation, but because each species independently converges on the confusion created by the others, producing one of the ocean's most spectacular multi-species feeding events.",
+  "habitat": "Temperate and subtropical coastal waters worldwide, including southern Australia, New Zealand, South Africa, the Mediterranean, and both coasts of the Americas. Prefers depths of 0–100 m along continental shelves. Undertakes seasonal migrations following prey."
+}

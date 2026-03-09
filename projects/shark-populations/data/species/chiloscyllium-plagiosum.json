@@ -1,0 +1,25 @@
+{
+  "id": "chiloscyllium-plagiosum",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Whitespotted Bambooshark",
+  "scientificName": "Chiloscyllium plagiosum",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Orectolobiformes",
+    "family": "Hemiscylliidae",
+    "genus": "Chiloscyllium",
+    "species": "C. plagiosum"
+  },
+  "statusLabel": "Near Threatened",
+  "lifePercent": 63,
+  "habitatTypes": ["reef", "coastal", "tropical"],
+  "dietType": "carnivore",
+  "geographicRegions": ["tropical"],
+  "tags": ["solitary", "nocturnal", "bycatch"],
+  "description": "The whitespotted bambooshark is a small, slender carpetshark of the tropical Indo-Pacific, patterned with bold dark bands and white spots that make it one of the most visually distinctive of the bamboo sharks. It reaches about 95 cm and is a nocturnal hunter of small fish, crustaceans, and mollusks on coral reefs and sandy flats. Like its brownbanded relative, it is popular in public aquariums and is also a subject of landmark genetic research — a female in captivity has produced pups via parthenogenesis without any contact with a male.",
+  "funFact": "A captive whitespotted bambooshark in a US aquarium produced viable eggs via parthenogenesis — reproduction without fertilization — despite having had no contact with a male shark for six years, confirming that some sharks can switch to asexual reproduction when isolated from mates.",
+  "habitat": "Coral reefs, rocky reefs, and sandy and rubble-covered seafloors in the tropical Indo-Pacific, from India and Sri Lanka to Japan, the Philippines, and Indonesia. Depth range 0–85 m; most common in shallow inshore areas from the intertidal zone to 30 m."
+}

@@ -1,0 +1,25 @@
+{
+  "id": "eusphyra-blochii",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Winghead Shark",
+  "scientificName": "Eusphyra blochii",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Sphyrnidae",
+    "genus": "Eusphyra",
+    "species": "E. blochii"
+  },
+  "statusLabel": "Endangered",
+  "lifePercent": 35,
+  "habitatTypes": ["coastal", "tropical"],
+  "dietType": "carnivore",
+  "geographicRegions": ["tropical"],
+  "tags": ["solitary", "bycatch", "finning"],
+  "description": "The winghead shark has the most extreme head shape of any living shark — its cephalofoil (hammer-shaped head) spans nearly half its total body length, giving the animal an almost comical winged silhouette. Found in shallow coastal waters of the Indo-Pacific, it is a small species reaching about 1.9 m. The enormous head width is thought to maximize electroreceptor spread, giving it exceptional ability to detect prey buried in soft sediments. It is heavily targeted by coastal fisheries throughout its range.",
+  "funFact": "The winghead shark's cephalofoil can span up to 50% of its total body length — the largest head-to-body ratio of any hammerhead shark — packing in more ampullae of Lorenzini per unit area than any other species, which may allow it to detect the faint electrical fields of prey hidden beneath the seafloor.",
+  "habitat": "Shallow coastal and inshore waters of the tropical Indo-Pacific, from the Persian Gulf and Pakistan east to New Guinea and northern Australia. Typically found in turbid, warm bays and estuaries at depths of 0–40 m. Often captured in artisanal coastal fisheries."
+}

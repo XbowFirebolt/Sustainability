@@ -1,0 +1,25 @@
+{
+  "id": "scyliorhinus-canicula",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Small-spotted Catshark",
+  "scientificName": "Scyliorhinus canicula",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Scyliorhinidae",
+    "genus": "Scyliorhinus",
+    "species": "S. canicula"
+  },
+  "statusLabel": "Least Concern",
+  "lifePercent": 80,
+  "habitatTypes": ["coastal", "temperate"],
+  "dietType": "carnivore",
+  "geographicRegions": ["temperate"],
+  "tags": ["solitary", "bycatch"],
+  "description": "The small-spotted catshark is the most common shark in British and Irish waters, and one of the most abundant sharks in the Northeast Atlantic and Mediterranean. Slender and sandy-brown with small dark spots, it is a nocturnal bottom-dweller that hunts crustaceans, mollusks, and small fish along sandy and gravelly seabeds. It is widely used as a model species in marine biology laboratories and has historically been sold in British fish-and-chip shops under the name 'rock salmon' or 'rock eel.'",
+  "funFact": "The small-spotted catshark was one of the first animals in which scientists recorded REM-like sleep states — observations showed periodic body twitches, eye movements, and altered skin coloration patterns during rest, suggesting a form of active dreaming may occur in sharks.",
+  "habitat": "Sandy and gravelly seabeds, rocky reefs, and seagrass beds throughout the Northeast Atlantic from Norway to Senegal, and throughout the Mediterranean and Black Sea. Depth range 0–400 m; most common at 10–110 m. Often found resting on the seabed during the day."
+}

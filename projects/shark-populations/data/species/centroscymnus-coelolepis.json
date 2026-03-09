@@ -1,0 +1,25 @@
+{
+  "id": "centroscymnus-coelolepis",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Portuguese Dogfish",
+  "scientificName": "Centroscymnus coelolepis",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Squaliformes",
+    "family": "Somniosidae",
+    "genus": "Centroscymnus",
+    "species": "C. coelolepis"
+  },
+  "statusLabel": "Near Threatened",
+  "lifePercent": 63,
+  "habitatTypes": ["deep-sea", "ocean"],
+  "dietType": "apex-predator",
+  "geographicRegions": ["global", "temperate"],
+  "tags": ["solitary", "bycatch", "slow-reproducing"],
+  "description": "The Portuguese dogfish is a deep-sea squaliform shark that holds the record for the deepest-living shark ever reliably recorded, having been caught at depths exceeding 3,700 m. Despite this extreme depth capability, it is most common at 300–2,700 m on continental slopes worldwide. It is a small but tenacious predator of fish, squid, and crustaceans, and was once heavily targeted in the Northeast Atlantic for its squalene-rich liver oil used in cosmetics and industrial lubricants.",
+  "funFact": "The Portuguese dogfish was caught at a depth of 3,675 m in the Northeast Atlantic — the greatest confirmed depth for any shark — a record that underscores how little we understand about deep-sea chondrichthyans, since most shark research concentrates on depths accessible to scuba divers.",
+  "habitat": "Deep continental slopes and abyssal margins of all major ocean basins, from the Northeast Atlantic and Mediterranean to the Pacific. Depth range 270–3,675 m; most common at 400–2,000 m on soft substrates. One of the deepest-recorded sharks in the world."
+}

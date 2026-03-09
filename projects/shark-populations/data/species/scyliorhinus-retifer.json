@@ -1,0 +1,25 @@
+{
+  "id": "scyliorhinus-retifer",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Chain Catshark",
+  "scientificName": "Scyliorhinus retifer",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Scyliorhinidae",
+    "genus": "Scyliorhinus",
+    "species": "S. retifer"
+  },
+  "statusLabel": "Least Concern",
+  "lifePercent": 80,
+  "habitatTypes": ["deep-sea", "coastal", "temperate"],
+  "dietType": "carnivore",
+  "geographicRegions": ["temperate"],
+  "tags": ["solitary", "nocturnal"],
+  "description": "The chain catshark is a small, deep-water shark of the western North Atlantic, best known for its striking chain-link pattern and its dramatic biofluorescence. Under normal light its dark brown pattern of interconnected ovals is striking; under blue light it glows with an intense green fluorescence that is invisible to most deep-sea predators but clearly visible to other chain catsharks. It is one of the first shark species in which biofluorescence was documented and studied in detail.",
+  "funFact": "Chain catsharks are one of the only shark species in which males and females glow differently from one another using biofluorescence — each sex emits a distinct fluorescent pattern, suggesting the glow may function as a private visual communication channel in the darkness of the deep sea.",
+  "habitat": "Outer continental shelf and upper slope waters of the western North Atlantic, from Nova Scotia south to Nicaragua and into the Gulf of Mexico. Depth range 73–550 m; most common at 150–400 m on soft sediment and rocky bottom habitats."
+}

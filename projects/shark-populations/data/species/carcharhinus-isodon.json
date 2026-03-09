@@ -1,0 +1,25 @@
+{
+  "id": "carcharhinus-isodon",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Finetooth Shark",
+  "scientificName": "Carcharhinus isodon",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Carcharhinidae",
+    "genus": "Carcharhinus",
+    "species": "C. isodon"
+  },
+  "statusLabel": "Near Threatened",
+  "lifePercent": 63,
+  "habitatTypes": ["coastal"],
+  "dietType": "apex-predator",
+  "geographicRegions": ["temperate"],
+  "tags": ["schooling", "migratory", "bycatch"],
+  "description": "The finetooth shark is a slender, swift coastal species common along the Atlantic and Gulf coasts of North America, named for its small, finely serrated teeth. It forms large seasonal aggregations in nearshore waters and estuaries from spring through autumn, feeding heavily on menhaden and other schooling fish before migrating offshore in winter. Though not well known to the general public, it is one of the most frequently encountered sharks by recreational anglers along the southeastern U.S. coast.",
+  "funFact": "Finetooth sharks follow menhaden schools so predictably along the U.S. East Coast that commercial fishers use the presence of finetooth shark aggregations as a reliable indicator of where large menhaden schools are — the shark's behavior essentially maps the prey's location.",
+  "habitat": "Shallow nearshore and estuarine waters of the western North Atlantic, from New York south through the Gulf of Mexico to Brazil. Most abundant from the Carolinas to Florida. Depth range 0–20 m; undertakes seasonal north-south migrations along the U.S. Atlantic coast."
+}

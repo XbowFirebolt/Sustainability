@@ -1,0 +1,25 @@
+{
+  "id": "mustelus-mustelus",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Smoothhound",
+  "scientificName": "Mustelus mustelus",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Triakidae",
+    "genus": "Mustelus",
+    "species": "M. mustelus"
+  },
+  "statusLabel": "Endangered",
+  "lifePercent": 35,
+  "habitatTypes": ["coastal", "temperate"],
+  "dietType": "carnivore",
+  "geographicRegions": ["temperate"],
+  "tags": ["solitary", "bycatch", "migratory"],
+  "description": "The smoothhound is a slender, grey houndshark found in coastal and shelf waters of the Northeast Atlantic and Mediterranean, where it was once among the most common inshore sharks. Its name comes from its smooth, flat crushing teeth — suited to cracking crustacean shells rather than cutting fish. Despite once being extremely abundant, it has been heavily depleted by coastal fisheries across the Mediterranean and is now classified as Endangered in its most intensively fished regions.",
+  "funFact": "Smoothhounds have a remarkable sensitivity to temperature changes — they can detect temperature shifts of as little as 0.03°C, which they use to track the thermal gradients above sandy and muddy seafloors where their crustacean prey is most densely concentrated.",
+  "habitat": "Sandy and muddy inshore and shelf waters of the Northeast Atlantic from the British Isles south to South Africa, and throughout the Mediterranean and Black Sea. Depth range 0–350 m; most common at 5–50 m on soft seafloors near coastlines."
+}

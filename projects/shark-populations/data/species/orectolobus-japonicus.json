@@ -1,0 +1,25 @@
+{
+  "id": "orectolobus-japonicus",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Japanese Wobbegong",
+  "scientificName": "Orectolobus japonicus",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Orectolobiformes",
+    "family": "Orectolobidae",
+    "genus": "Orectolobus",
+    "species": "O. japonicus"
+  },
+  "statusLabel": "Near Threatened",
+  "lifePercent": 63,
+  "habitatTypes": ["reef", "coastal", "tropical"],
+  "dietType": "carnivore",
+  "geographicRegions": ["tropical"],
+  "tags": ["solitary", "nocturnal", "bycatch"],
+  "description": "The Japanese wobbegong is a flattened, ornately patterned carpet shark found on rocky reefs and coral areas of the northwestern Pacific, from Japan and Korea south to the Philippines and Taiwan. Like other wobbegongs, it is a masterful ambush predator that rests motionless on the seafloor, using its intricate mottled pattern and dermal lobes to blend perfectly into reef substrate before striking at passing fish. It is occasionally caught as bycatch and is also used in traditional Japanese cuisine.",
+  "funFact": "Japanese wobbegongs have been documented using their tail as a lure — slowly waving the tip back and forth above the seafloor to attract curious fish close enough to strike, a behavior known as caudal luring that was long believed to be exclusive to anglerfishes and a few other bony fish.",
+  "habitat": "Rocky and coral reefs, rubble zones, and seagrass beds in the northwestern Pacific, from southern Japan, Korea, and the East China Sea south to the Philippines and Indonesia. Depth range 0–200 m; most common in shallow reef habitat at 1–30 m."
+}

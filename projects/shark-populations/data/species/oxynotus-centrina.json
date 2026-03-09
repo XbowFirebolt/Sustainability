@@ -1,0 +1,25 @@
+{
+  "id": "oxynotus-centrina",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Angular Roughshark",
+  "scientificName": "Oxynotus centrina",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Squaliformes",
+    "family": "Oxynotidae",
+    "genus": "Oxynotus",
+    "species": "O. centrina"
+  },
+  "statusLabel": "Vulnerable",
+  "lifePercent": 50,
+  "habitatTypes": ["deep-sea", "coastal", "temperate"],
+  "dietType": "carnivore",
+  "geographicRegions": ["temperate"],
+  "tags": ["solitary", "bycatch"],
+  "description": "The angular roughshark is one of the most bizarre-looking sharks in the ocean — a small, laterally compressed deepwater species with a hunched, pig-like profile, large sail-like dorsal fins set far forward on its back, and a rough skin covered in thorn-like denticles. Found on the continental shelf and upper slope of the Northeast Atlantic and Mediterranean, it feeds on polychaete worms and small invertebrates on soft seabeds. Its unusual shape makes it instantly distinguishable from any other shark.",
+  "funFact": "The angular roughshark's laterally flattened body is so extreme that it can tilt up almost vertically and hover nearly motionless in the water column while foraging — a posture no other shark species is known to adopt — which researchers believe helps it probe soft sediments from above while remaining stable.",
+  "habitat": "Sandy and muddy continental shelf and upper slope of the Northeast Atlantic from Norway and the British Isles south to Senegal, and throughout the Mediterranean. Depth range 40–660 m; most commonly caught at 100–300 m as bycatch in bottom trawl fisheries."
+}

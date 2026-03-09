@@ -1,0 +1,25 @@
+{
+  "id": "negaprion-acutidens",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Sicklefin Lemon Shark",
+  "scientificName": "Negaprion acutidens",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Carcharhinidae",
+    "genus": "Negaprion",
+    "species": "N. acutidens"
+  },
+  "statusLabel": "Vulnerable",
+  "lifePercent": 50,
+  "habitatTypes": ["reef", "coastal", "tropical"],
+  "dietType": "apex-predator",
+  "geographicRegions": ["tropical"],
+  "tags": ["solitary", "bycatch", "finning", "slow-reproducing"],
+  "description": "The sicklefin lemon shark is the Indo-Pacific counterpart of the Atlantic lemon shark, named for its distinctively curved, sickle-shaped fins and yellowish-brown coloration. Found in shallow coastal waters, mangroves, and coral reefs from the Red Sea to the central Pacific, it is a large predator reaching up to 3.8 m. Like its Atlantic relative, it uses mangrove lagoons as essential nursery habitat — making mangrove deforestation one of the most significant threats to its reproductive success.",
+  "funFact": "Sicklefin lemon sharks give birth in the same lagoon and mangrove nursery areas year after year, and remarkably, the female pups born at a site often return to give birth at that exact location when they reach maturity years later — a site fidelity passed across generations that makes habitat loss especially devastating.",
+  "habitat": "Shallow coastal and lagoonal waters of the tropical Indo-Pacific, from the Red Sea and East Africa to southern Japan, Micronesia, and French Polynesia. Uses mangrove estuaries as critical nursery habitat. Depth range 0–92 m; most common in shallow water less than 20 m."
+}

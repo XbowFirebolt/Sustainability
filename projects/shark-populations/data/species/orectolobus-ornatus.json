@@ -1,0 +1,25 @@
+{
+  "id": "orectolobus-ornatus",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Ornate Wobbegong",
+  "scientificName": "Orectolobus ornatus",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Orectolobiformes",
+    "family": "Orectolobidae",
+    "genus": "Orectolobus",
+    "species": "O. ornatus"
+  },
+  "statusLabel": "Near Threatened",
+  "lifePercent": 63,
+  "habitatTypes": ["reef", "coastal", "tropical"],
+  "dietType": "carnivore",
+  "geographicRegions": ["tropical"],
+  "tags": ["solitary", "nocturnal"],
+  "description": "The ornate wobbegong is one of the most visually striking sharks in the ocean — a flattened, bottom-dwelling carpet shark covered in an intricate mosaic of brownish mottled patterns and fringed with elaborate dermal lobes along its jaw and sides that provide near-perfect camouflage against reef substrate. Found on coral reefs and rocky areas of eastern Australia, it is a formidable ambush predator that lunges at fish and octopuses that venture too close. Its bite is powerful and it is responsible for a number of unprovoked bites on divers who unknowingly stepped on or disturbed a resting individual.",
+  "funFact": "Ornate wobbegongs have been photographed swallowing other sharks whole — including bamboo sharks nearly as long as themselves — a feat made possible by their highly distensible jaws, which can expand to take prey far exceeding the width of their resting head profile.",
+  "habitat": "Coral reefs, rocky reefs, and rubble zones off the coast of Queensland and New South Wales, Australia. Typically rests in caves, ledges, and on reef flat substrate at depths of 0–100 m; most common at 1–20 m. Highly sedentary; individuals often occupy the same resting site for years."
+}

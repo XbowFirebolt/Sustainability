@@ -1,0 +1,25 @@
+{
+  "id": "squalus-blainvillei",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Longnose Spurdog",
+  "scientificName": "Squalus blainvillei",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Squaliformes",
+    "family": "Squalidae",
+    "genus": "Squalus",
+    "species": "S. blainvillei"
+  },
+  "statusLabel": "Vulnerable",
+  "lifePercent": 50,
+  "habitatTypes": ["coastal", "deep-sea", "temperate"],
+  "dietType": "carnivore",
+  "geographicRegions": ["temperate"],
+  "tags": ["bycatch", "schooling"],
+  "description": "The longnose spurdog is a small, elongated dogfish shark of the Mediterranean and eastern Atlantic, closely related to the spiny dogfish but with a more slender body and proportionally longer snout. Like other spurdogs, it has a venomous spine in front of each dorsal fin — a defensive adaptation used against predators and incautious fishers. It forms large, sex-segregated schools and undertakes seasonal migrations, and is heavily caught as bycatch in bottom trawl and longline fisheries throughout its range.",
+  "funFact": "The longnose spurdog's dorsal spines are coated with a mild venom produced by glands at the base — not lethal to humans, but capable of causing significant localized pain and inflammation, making it one of the few sharks in the Mediterranean that can actively injure a handler even after being hauled aboard.",
+  "habitat": "Continental shelf and upper slope waters of the Mediterranean Sea and eastern Atlantic, from the British Isles south to Senegal. Depth range 0–900 m; most common at 50–400 m on sandy and muddy substrates. Forms sex-segregated schools that undertake seasonal inshore-offshore movements."
+}

@@ -1,0 +1,25 @@
+{
+  "id": "triakis-scyllium",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Banded Houndshark",
+  "scientificName": "Triakis scyllium",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Triakidae",
+    "genus": "Triakis",
+    "species": "T. scyllium"
+  },
+  "statusLabel": "Near Threatened",
+  "lifePercent": 63,
+  "habitatTypes": ["coastal", "temperate"],
+  "dietType": "carnivore",
+  "geographicRegions": ["temperate"],
+  "tags": ["schooling", "bycatch"],
+  "description": "The banded houndshark is a slender, attractively patterned species found in coastal and shallow shelf waters of the northwestern Pacific, particularly around Japan, Korea, and China. Juveniles bear striking dark saddle bands and spots that fade with age, leaving adults with a plainer grey-brown coloration. It forms schools and is a common species in Japanese coastal waters, frequently encountered by divers and fishers alike. It feeds primarily on fish, crustaceans, and cephalopods in reef and sandy-bottom habitats.",
+  "funFact": "Banded houndsharks are one of the most common shark species in large public aquariums in Japan and East Asia — they adapt well to captivity, tolerate handling for veterinary checks, and have been successfully bred in aquariums, providing behavioral and reproductive data rarely available for coastal sharks.",
+  "habitat": "Rocky and sandy coastal waters, bays, and continental shelf of the northwestern Pacific, from the Yellow Sea and East China Sea through Japan and Korea to the Sea of Japan. Depth range 0–100 m; most common in shallow coastal waters at 0–50 m."
+}

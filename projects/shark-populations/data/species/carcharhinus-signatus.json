@@ -1,0 +1,25 @@
+{
+  "id": "carcharhinus-signatus",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Night Shark",
+  "scientificName": "Carcharhinus signatus",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Carcharhinidae",
+    "genus": "Carcharhinus",
+    "species": "C. signatus"
+  },
+  "statusLabel": "Vulnerable",
+  "lifePercent": 50,
+  "habitatTypes": ["ocean", "deep-sea"],
+  "dietType": "apex-predator",
+  "geographicRegions": ["tropical"],
+  "tags": ["migratory", "bycatch", "finning"],
+  "description": "The night shark is a sleek, deepwater requiem shark of the western Atlantic, recognizable by its large, luminous green eyes — an adaptation for hunting in dim light. It spends the day in deeper water (200–600 m) and migrates toward the surface at night to feed on squid and small fish, making it a prominent component of pelagic longline bycatch. It is closely related to the silky shark and is identified by its distinctive large eyes and relatively slender build.",
+  "funFact": "The night shark has the largest eyes relative to head size of any Atlantic requiem shark — those bright green eyes are packed with rod photoreceptors for low-light sensitivity rather than color-detecting cones, giving it exceptional night vision in the near-total darkness of the deep mesopelagic zone.",
+  "habitat": "Oceanic and deep-shelf waters of the tropical and subtropical western Atlantic, from the Gulf of Mexico and Caribbean south to Argentina. Depth range 0–600 m; migrates to surface and upper mesopelagic zone at night, retreating to deeper water during daylight hours."
+}

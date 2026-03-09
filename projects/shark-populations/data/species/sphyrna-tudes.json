@@ -1,0 +1,25 @@
+{
+  "id": "sphyrna-tudes",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Smalleye Hammerhead",
+  "scientificName": "Sphyrna tudes",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Sphyrnidae",
+    "genus": "Sphyrna",
+    "species": "S. tudes"
+  },
+  "statusLabel": "Critically Endangered",
+  "lifePercent": 15,
+  "habitatTypes": ["coastal", "tropical"],
+  "dietType": "carnivore",
+  "geographicRegions": ["tropical"],
+  "tags": ["solitary", "bycatch", "finning", "slow-reproducing"],
+  "description": "The smalleye hammerhead is a small, poorly understood hammerhead found in shallow, turbid coastal and estuarine waters along the Atlantic coast of South America. One of the least-studied hammerhead species, it is named for its disproportionately small eyes relative to its broad head. It has declined precipitously from intensive coastal fishing, bycatch, and finning pressure throughout its limited range, and is now considered Critically Endangered.",
+  "funFact": "Female smalleye hammerheads accumulate pink or orange pigments from their crustacean prey and pass them directly to their embryos through the placenta, causing unborn pups to develop a vivid pink or yellowish color — a dietary pigment transfer unique among known sharks.",
+  "habitat": "Shallow turbid estuaries, bays, and coastal waters along the Atlantic coast of South America from Trinidad south to Uruguay, with highest densities in northern Brazil and Venezuela. Typically found in very shallow water (0–40 m) over muddy and sandy bottoms."
+}

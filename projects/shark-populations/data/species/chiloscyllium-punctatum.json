@@ -1,0 +1,25 @@
+{
+  "id": "chiloscyllium-punctatum",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Brownbanded Bamboo Shark",
+  "scientificName": "Chiloscyllium punctatum",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Orectolobiformes",
+    "family": "Hemiscylliidae",
+    "genus": "Chiloscyllium",
+    "species": "C. punctatum"
+  },
+  "statusLabel": "Near Threatened",
+  "lifePercent": 63,
+  "habitatTypes": ["reef", "coastal", "tropical"],
+  "dietType": "carnivore",
+  "geographicRegions": ["tropical"],
+  "tags": ["solitary", "nocturnal", "bycatch"],
+  "description": "The brownbanded bamboo shark is a small, slender reef shark of the tropical Indo-Pacific that is one of the most familiar shark species in public aquariums worldwide, owing to its manageable size (max ~1.05 m), docile nature, and hardiness in captivity. Juveniles are distinctively banded with alternating brown and white stripes; adults fade to uniform greyish-brown. It crawls along the seafloor using its pectoral and pelvic fins and is capable of surviving out of water for up to 12 hours, allowing it to exploit tidal pools.",
+  "funFact": "Brownbanded bamboo shark eggs can enter a state of suspended development when oxygen levels in the water drop — slowing their metabolism and embryo movement by up to 90%, then resuming normal development when conditions improve, a survival strategy unique to a handful of egg-laying shark species.",
+  "habitat": "Shallow coral reefs, rocky substrates, tide pools, and intertidal zones throughout the tropical Indo-Pacific from India and Sri Lanka to Japan, the Philippines, and northern Australia. Depth range 0–85 m; most common in very shallow water. Often found wedged in reef crevices."
+}

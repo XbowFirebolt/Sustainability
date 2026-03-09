@@ -1,0 +1,25 @@
+{
+  "id": "nebrius-ferrugineus",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Tawny Nurse Shark",
+  "scientificName": "Nebrius ferrugineus",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Orectolobiformes",
+    "family": "Ginglymostomatidae",
+    "genus": "Nebrius",
+    "species": "N. ferrugineus"
+  },
+  "statusLabel": "Vulnerable",
+  "lifePercent": 50,
+  "habitatTypes": ["reef", "coastal", "tropical"],
+  "dietType": "carnivore",
+  "geographicRegions": ["tropical"],
+  "tags": ["solitary", "bycatch", "nocturnal"],
+  "description": "The tawny nurse shark is the Indo-Pacific counterpart of the Atlantic nurse shark — a large, slow-moving, bottom-dwelling species that rests in caves and under reef ledges during the day and hunts at night. Reaching up to 3.2 m, it uses powerful suction to extract octopuses, crabs, sea urchins, and sleeping reef fish from crevices. It is commonly encountered by divers piled in dense daytime resting groups, and is generally docile unless provoked.",
+  "funFact": "Tawny nurse sharks can produce an extraordinarily powerful suction force through their small mouth, capable of ripping a fish from a tight reef crevice in an instant — researchers measuring this suction found it was among the strongest recorded for any shark relative to body size.",
+  "habitat": "Coral reefs, rocky reefs, lagoons, and sandy flats throughout the tropical Indo-Pacific, from the Red Sea and East Africa to French Polynesia and southern Japan. Depth range 0–70 m; most common on shallow reef flats and lagoon areas."
+}

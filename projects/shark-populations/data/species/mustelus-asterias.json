@@ -1,0 +1,25 @@
+{
+  "id": "mustelus-asterias",
+  "lastUpdated": "2026-03-09",
+  "emoji": "🦈",
+  "commonName": "Starry Smoothhound",
+  "scientificName": "Mustelus asterias",
+  "taxonomy": {
+    "kingdom": "Animalia",
+    "phylum": "Chordata",
+    "class": "Chondrichthyes",
+    "order": "Carcharhiniformes",
+    "family": "Triakidae",
+    "genus": "Mustelus",
+    "species": "M. asterias"
+  },
+  "statusLabel": "Near Threatened",
+  "lifePercent": 63,
+  "habitatTypes": ["coastal", "temperate"],
+  "dietType": "carnivore",
+  "geographicRegions": ["temperate"],
+  "tags": ["solitary", "bycatch", "migratory"],
+  "description": "The starry smoothhound is a slender, white-spotted houndshark of the Northeast Atlantic, closely related to the smoothhound but distinctively marked with small white spots across its grey-brown back and flanks. Common in coastal and shelf waters from the British Isles to West Africa and into the Mediterranean, it feeds primarily on crustaceans, using flat crushing teeth. It is caught in substantial numbers as bycatch and is sold commercially in some European markets.",
+  "funFact": "Starry smoothhounds are able to detect and locate buried crabs and shrimps in complete darkness using only the electrical fields produced by the prey's muscle contractions — a form of remote sensing so sensitive it can pinpoint prey hidden beneath several centimeters of sand.",
+  "habitat": "Sandy and gravelly seabeds along the continental shelf of the Northeast Atlantic from the Shetland Islands and southern North Sea south to the Canary Islands and Mauritania, with a separate population in the Mediterranean. Depth range 0–100 m; most common at 5–50 m."
+}
