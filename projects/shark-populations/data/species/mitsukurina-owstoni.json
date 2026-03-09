@@ -1,6 +1,6 @@
 {
   "id": "mitsukurina-owstoni",
-  "lastUpdated": "2026-03-06",
+  "lastUpdated": "2026-03-09",
   "emoji": "🦈",
   "commonName": "Goblin Shark",
   "scientificName": "Mitsukurina owstoni",
@@ -14,7 +14,7 @@
     "species": "M. owstoni"
   },
   "statusLabel": "Least Concern",
-  "lifePercent": 85,
+  "lifePercent": 80,
   "habitatTypes": [
     "ocean",
     "deep-sea"
@@ -29,7 +29,75 @@
     "ancient",
     "solitary"
   ],
+  "photos": ["projects/shark-populations/images/goblin_shark/goblin_shark.png"],
   "description": "The goblin shark is the sole living species of the family Mitsukurinidae and is one of the most distinctive-looking sharks on Earth. Its elongated, flattened snout is lined with electroreceptors (ampullae of Lorenzini) that detect prey in the lightless deep, and its jaw can project rapidly forward to engulf prey — a feeding strategy unique among living sharks. Soft-bodied and flabby, it is adapted for the low-energy environment of the deep sea and is rarely encountered by humans.",
   "funFact": "The goblin shark's jaws can project forward at up to 3.1 m/s, extending roughly 9% of its body length in a fraction of a second — one of the fastest jaw-protrusion events recorded in any shark, allowing it to snatch prey without needing to lunge its entire sluggish body.",
-  "habitat": "Deep outer continental shelves, submarine canyons, and seamounts worldwide, typically at depths of 270–1,300 m. Most specimens have been caught in the Pacific (particularly around Japan) and the Atlantic, with occasional records from the Indian Ocean."
+  "habitat": "Deep outer continental shelves, submarine canyons, and seamounts worldwide, typically at depths of 270–1,300 m. Most specimens have been caught in the Pacific (particularly around Japan) and the Atlantic, with occasional records from the Indian Ocean.",
+  "diet": "Deep-sea teleost fish, squid, octopus, and crustaceans (particularly isopods and decapods). The highly protrusible jaws and prominent ampullae of Lorenzini suggest a sit-and-ambush strategy in near-total darkness, detecting the bioelectric fields of prey rather than hunting by sight.",
+  "size": "Typically 3–4 m (9.8–13 ft) for adults; max confirmed ~6.2 m (20 ft). Females likely grow larger than males, as in many shark species. The body is notably soft and flabby compared to other lamniform sharks.",
+  "vitalSigns": [
+    { "label": "Estimated Population",   "value": "Unknown — deep-sea habitat makes population assessment extremely difficult; data deficient globally",              "glance": true },
+    { "label": "Lifespan",               "value": "Unknown — deep-sea longevity rarely documented; likely decades",                                                   "glance": true },
+    { "label": "Max Length",             "value": "~6.2 m (20 ft) confirmed",         "metric": "~6.2 m",    "imperial": "~20 ft",                                  "glance": true },
+    { "label": "Max Weight",             "value": "~210 kg (~460 lbs) estimated",      "metric": "~210 kg",   "imperial": "~460 lbs",                                "glance": true },
+    { "label": "Top Speed",              "value": "~5 km/h (~3 mph) estimated; slow cruiser adapted for deep-sea energy conservation", "metric": "~5 km/h", "imperial": "~3 mph", "glance": true },
+    { "label": "Ecological Role",        "value": "Mesopredator / apex predator of the deep mesopelagic zone",                                                        "glance": true },
+    { "label": "Reproductive Rate",      "value": "Unknown — no egg cases or nursery areas confirmed; presumed ovoviviparous with small litters" },
+    { "label": "Age at Maturity",        "value": "Unknown" },
+    { "label": "Diet",                   "value": "Deep-sea fish, squid, octopus, and crustaceans; detected via bioelectric sensing in near-total darkness" },
+    { "label": "Key Adaptations",        "value": "Highly protrusible slingshot jaws; elongated rostrum dense with ampullae of Lorenzini; translucent pink skin from superficial blood vessels; soft, low-density body for neutral buoyancy without an oil-filled liver" }
+  ],
+  "habitatStats": [
+    { "label": "Depth Range",    "value": "270–1,300 m (885–4,265 ft); most specimens caught at 270–960 m", "metric": "270–1,300 m", "imperial": "885–4,265 ft" },
+    { "label": "Global Range",   "value": "Worldwide in temperate and tropical deep-water environments; confirmed in the Pacific (Japan, Australia, NZ), Atlantic (Gulf of Mexico, South Africa, France), and Indian Ocean" }
+  ],
+  "threats": [
+    { "name": "Deepwater Trawl Bycatch",    "severity": "medium",  "description": "Occasionally caught as bycatch in deepwater bottom trawls and longlines targeting commercially valuable species. Most recorded specimens entered science through accidental capture. The true rate of bycatch mortality is unknown but likely low given the very limited overlap between goblin shark depth ranges and targeted fisheries." },
+    { "name": "Deep-Sea Mining",            "severity": "medium",  "description": "Emerging commercial interest in polymetallic nodules and seafloor massive sulfide deposits on the outer shelf and slope directly overlaps with goblin shark habitat. The long-term disturbance of benthic prey communities and physical destruction of substrate pose an unquantified but real threat to this and all deep-sea species." },
+    { "name": "Data Deficiency",            "severity": "medium",  "description": "So little is known about goblin shark biology — reproduction, longevity, population size, or prey ecology — that effective management is essentially impossible. The IUCN Least Concern listing reflects lack of evidence of decline, not evidence of health. A significant population crash could go undetected for decades." },
+    { "name": "Deep-Sea Pollution",         "severity": "low",     "description": "Persistent organic pollutants (PCBs, flame retardants, microplastics) accumulate in deep-sea food webs. Goblin sharks feeding on mesopelagic squid and fish are exposed to bioaccumulated contaminants. No direct studies have measured tissue burdens in this species." }
+  ],
+  "actionItems": [
+    { "title": "Support a Deep-Sea Mining Moratorium",      "description": "Deep-sea mining threatens some of the least-disturbed ecosystems on Earth, including goblin shark habitat. Organizations like the Deep Sea Conservation Coalition advocate for a moratorium on mining in international waters until comprehensive environmental impact assessments are complete.", "link": null },
+    { "title": "Fund Deep-Sea Research Programs",           "description": "The goblin shark is so poorly studied that basic biological facts remain unknown. Supporting institutions that deploy remotely operated vehicles (ROVs) and conduct deep-sea tagging studies directly contributes to the scientific foundation needed to protect this species.", "link": null },
+    { "title": "Advocate for Deepwater Trawl Restrictions", "description": "Deepwater bottom trawling is ecologically destructive and is the primary way goblin sharks enter human hands. Urging fishing regulators to restrict trawling below 800 m — as the EU has done in some areas — protects both the shark and the fragile deep-sea ecosystems it depends on.", "link": null }
+  ],
+  "healthMetrics": [
+    { "label": "IUCN Status",         "value": "Least Concern (2020) — but effectively data deficient; no evidence of decline is not evidence of stability", "trend": "stable" },
+    { "label": "Population Trend",    "value": "Unknown — no population surveys have ever been conducted; trend inferred as stable by IUCN based on absence of data",  "trend": "stable" },
+    { "label": "Habitat Quality",     "value": "Moderate — deep-sea shelf and slope habitat largely intact but threatened by emerging deep-sea mining operations",        "trend": "down"   },
+    { "label": "Prey Availability",   "value": "Largely unknown — deep mesopelagic prey base is understudied; indirect impacts from overfishing of squid and deep fish possible", "trend": "stable" },
+    { "label": "Fishing Pressure",    "value": "Low — no directed fishery exists; accidental bycatch in deepwater trawls at unknown but likely small scale",             "trend": "stable" },
+    { "label": "Protection Coverage", "value": "Minimal — no species-specific protections exist; covered by general fisheries bycatch regulations in some jurisdictions", "trend": "stable",
+      "links": [
+        { "label": "IUCN Red List",             "url": "https://www.iucnredlist.org/species/44565/10005244" },
+        { "label": "Deep Sea Conservation Coalition", "url": "https://www.savethehighseas.org" }
+      ]
+    }
+  ],
+  "statusHistory": [
+    { "year": 1990, "status": "Not Evaluated" },
+    { "year": 2000, "status": "Data Deficient" },
+    { "year": 2005, "status": "Least Concern" }
+  ],
+  "populationTrend": [
+    { "year": 1990, "value": 40000 },
+    { "year": 2000, "value": 38000 },
+    { "year": 2010, "value": 37000 },
+    { "year": 2020, "value": 36000 }
+  ],
+  "populationTrendMeta": {
+    "confidence": "modeled",
+    "note": "No population surveys have ever been conducted for this species. Numbers are entirely speculative order-of-magnitude placeholders derived from rough habitat area estimates and the assumption of low but stable abundance — consistent with the IUCN Least Concern assessment. Actual population size is genuinely unknown."
+  },
+  "preyDeclineRegions": [
+    { "name": "NW Pacific",      "severity": "medium", "note": "Deep-sea squid and mesopelagic fish subjected to increasing commercial pressure; indirect impacts on goblin shark prey availability in the area where most specimens are recorded (around Japan)" },
+    { "name": "N. Atlantic",     "severity": "low",    "note": "Deepwater squid and fish moderately fished; goblin shark encounters rare; prey dynamics poorly documented" },
+    { "name": "Indian Ocean",    "severity": "low",    "note": "Minimal documentation of goblin shark occurrence; deep prey communities understudied" }
+  ],
+  "fishingPressureRegions": [
+    { "name": "NW Pacific",      "severity": "low",    "note": "Occasional bycatch in Japanese deepwater trawl and longline fisheries; most formally documented specimens originate here; no directed fishery" },
+    { "name": "N. Atlantic",     "severity": "low",    "note": "Rare bycatch in deepwater trawl operations; specimens occasionally recovered from the Gulf of Mexico and the Portuguese and French coasts" },
+    { "name": "Southern Ocean",  "severity": "low",    "note": "Very limited documented interaction; some bycatch possible in Patagonian toothfish longline operations on deep seamounts" }
+  ]
 }

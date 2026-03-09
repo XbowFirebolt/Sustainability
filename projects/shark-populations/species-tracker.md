@@ -63,7 +63,7 @@ Tracks every species in the wiki: current tier, IUCN status, and what still need
 | Cookiecutter Shark | *Isistius brasiliensis* | Least Concern | Stub | Phase 3 Batch 3 |
 | Epaulette Shark | *Hemiscyllium ocellatum* | Least Concern | Stub | Phase 3 Batch 3 |
 | Spotted Wobbegong | *Orectolobus maculatus* | Least Concern | Stub | Phase 3 Batch 3 |
-| Goblin Shark | *Mitsukurina owstoni* | Least Concern | Stub | Phase 3 Batch 3 |
+| Goblin Shark | *Mitsukurina owstoni* | Least Concern | Full (partial) | Missing physicalScaleImage |
 | Megamouth Shark | *Megachasma pelagios* | Least Concern | Stub | Phase 3 Batch 3 |
 | Sand Tiger Shark | *Carcharias taurus* | Vulnerable | Full (partial) | Missing physicalScaleImage |
 | Smalltooth Sand Tiger | *Odontaspis ferox* | Vulnerable | Stub | Phase 3 Batch 3 |
@@ -156,9 +156,9 @@ Species that have been added as stubs and are candidates for Standard tier promo
 
 | Tier | Count |
 |---|---|
-| Full | 27 |
+| Full | 28 |
 | Standard | 0 |
-| Stub | 28 |
+| Stub | 27 |
 | **Total** | **55** |
 
 *Update manually after each batch commit.*
