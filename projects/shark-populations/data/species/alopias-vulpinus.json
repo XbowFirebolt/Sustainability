@@ -81,8 +81,8 @@
     }
   ],
   "statusHistory": [
-    { "year": 2007, "status": "Vulnerable" },
-    { "year": 2018, "status": "Vulnerable" }
+    { "year": 1975, "status": "Not Evaluated" },
+    { "year": 2007, "status": "Vulnerable" }
   ],
   "populationTrend": [
     { "year": 1975, "value": 800000 },

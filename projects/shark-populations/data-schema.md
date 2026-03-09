@@ -158,6 +158,27 @@ Additional (non-glance) `vitalSigns` entries document supplemental facts in the 
 
 Ordered chronologically (ascending year). `status` uses the same values as `statusLabel`.
 
+> **Required for population chart timeline:** The status history legend below the population trend chart only renders when `statusHistory` contains **2 or more distinct status values**. If a species was only ever assessed at one status (e.g. always "Vulnerable"), the legend is silently omitted.
+>
+> **Rule 1 — Pre-assessment entry:** Any species with `populationTrend` data that predates the first IUCN assessment **must** include a leading `"Not Evaluated"` entry anchored to the first year of the trend data. Example:
+> ```json
+> "statusHistory": [
+>   { "year": 1975, "status": "Not Evaluated" },
+>   { "year": 2007, "status": "Vulnerable" }
+> ]
+> ```
+>
+> **Rule 2 — No consecutive duplicates:** Do **not** repeat the same status across multiple entries. Reassessments that result in no status change should be collapsed — keep only the first year the status was assigned. The legend displays a single continuous range per status (e.g. `Vulnerable (2007–present)`), so duplicate entries just fragment the label without adding information. ✗ Wrong:
+> ```json
+> { "year": 1996, "status": "Vulnerable" },
+> { "year": 2009, "status": "Vulnerable" },
+> { "year": 2022, "status": "Vulnerable" }
+> ```
+> ✓ Correct:
+> ```json
+> { "year": 1996, "status": "Vulnerable" }
+> ```
+
 #### `TrendPoint`
 
 ```js

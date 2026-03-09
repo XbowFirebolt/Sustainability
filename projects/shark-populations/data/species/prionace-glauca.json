@@ -55,9 +55,8 @@
     { "label": "Depth Range",  "value": "Surface to >350 m (1,150 ft); primarily in the epipelagic zone (0–200 m)", "metric": "Surface to >350 m", "imperial": "Surface to >1,150 ft" }
   ],
   "statusHistory": [
-    { "year": 2000, "status": "Near Threatened" },
-    { "year": 2009, "status": "Near Threatened" },
-    { "year": 2020, "status": "Near Threatened" }
+    { "year": 1980, "status": "Not Evaluated" },
+    { "year": 2000, "status": "Near Threatened" }
   ],
   "populationTrend": [
     { "year": 1980, "value": 80000000 },

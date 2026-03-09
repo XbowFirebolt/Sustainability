@@ -4068,15 +4068,11 @@ window.WIKI_DATA = {
       ],
       "statusHistory": [
         {
+          "year": 1980,
+          "status": "Not Evaluated"
+        },
+        {
           "year": 2000,
-          "status": "Near Threatened"
-        },
-        {
-          "year": 2009,
-          "status": "Near Threatened"
-        },
-        {
-          "year": 2020,
           "status": "Near Threatened"
         }
       ],
@@ -4372,10 +4368,6 @@ window.WIKI_DATA = {
       "statusHistory": [
         {
           "year": 2003,
-          "status": "Near Threatened"
-        },
-        {
-          "year": 2009,
           "status": "Near Threatened"
         },
         {
@@ -5988,11 +5980,11 @@ window.WIKI_DATA = {
       ],
       "statusHistory": [
         {
-          "year": 2007,
-          "status": "Vulnerable"
+          "year": 1975,
+          "status": "Not Evaluated"
         },
         {
-          "year": 2018,
+          "year": 2007,
           "status": "Vulnerable"
         }
       ],
@@ -6540,15 +6532,11 @@ window.WIKI_DATA = {
       ],
       "statusHistory": [
         {
+          "year": 1970,
+          "status": "Not Evaluated"
+        },
+        {
           "year": 1996,
-          "status": "Vulnerable"
-        },
-        {
-          "year": 2009,
-          "status": "Vulnerable"
-        },
-        {
-          "year": 2022,
           "status": "Vulnerable"
         }
       ],
