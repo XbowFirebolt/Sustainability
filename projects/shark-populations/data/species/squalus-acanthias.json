@@ -1,6 +1,6 @@
 {
   "id": "squalus-acanthias",
-  "lastUpdated": "2026-03-06",
+  "lastUpdated": "2026-03-09",
   "emoji": "🦈",
   "commonName": "Spiny Dogfish",
   "scientificName": "Squalus acanthias",
@@ -15,22 +15,86 @@
   },
   "statusLabel": "Vulnerable",
   "lifePercent": 55,
-  "habitatTypes": [
-    "coastal",
-    "ocean"
-  ],
+  "habitatTypes": ["coastal", "ocean"],
   "dietType": "carnivore",
-  "geographicRegions": [
-    "temperate",
-    "global"
-  ],
-  "tags": [
-    "schooling",
-    "migratory",
-    "bycatch",
-    "overfished"
-  ],
+  "geographicRegions": ["temperate", "global"],
+  "tags": ["schooling", "migratory", "bycatch", "overfished"],
+  "photos": ["projects/shark-populations/images/spiny_dogfish/spiny_dogfish.png"],
   "description": "The spiny dogfish is one of the most abundant and well-studied sharks in the world, yet remains Vulnerable globally due to heavy exploitation and its very slow reproductive rate. Named for the sharp spines in front of each dorsal fin (used defensively), it travels in large, often sex-segregated schools and undertakes long seasonal migrations. It has been a major commercial target, particularly in Europe where it is sold as 'rock salmon' or 'huss' for fish and chips, and has been heavily overfished in the northeast Atlantic.",
   "funFact": "The spiny dogfish has a gestation period of approximately 22–24 months — one of the longest documented among sharks and far longer than most other vertebrates — meaning a female produces a new litter only every other year at best, which makes population recovery from overfishing extremely slow.",
-  "habitat": "Temperate coastal and shelf waters worldwide, from surface to depths of 900 m. Strongly prefers water temperatures of 6–13°C and undertakes seasonal north-south and inshore-offshore migrations following preferred temperature bands. Found in both the Atlantic and Pacific."
+  "habitat": "Temperate coastal and shelf waters worldwide, from the surface to depths of ~900 m (2,950 ft). Strongly prefers water temperatures of 6–13°C (43–55°F) and follows preferred temperature bands in long-distance seasonal migrations between inshore and offshore, and north–south across latitudes. Found in both the North Atlantic and North Pacific; absent from tropical seas.",
+  "diet": "Opportunistic predator of schooling fish (herring, mackerel, sand lance, and capelin), squid, octopus, crustaceans, and jellyfish. Hunting in coordinated schools, they can overwhelm dense bait balls and are known to damage fishing gear by consuming caught fish.",
+  "size": "Typically 0.8–1.2 m (2.6–3.9 ft); max confirmed ~1.6 m (5.2 ft). Females grow larger than males.",
+  "vitalSigns": [
+    { "label": "Estimated Population",   "value": "Unknown — no reliable global count; NE Atlantic stock severely depleted",                          "glance": true },
+    { "label": "Lifespan",               "value": "Up to 70+ years",                                                                                    "glance": true },
+    { "label": "Max Length",             "value": "1.6 m (5.2 ft)",              "metric": "1.6 m",     "imperial": "5.2 ft",                            "glance": true },
+    { "label": "Max Weight",             "value": "~9.1 kg (~20 lbs)",           "metric": "~9.1 kg",   "imperial": "~20 lbs",                           "glance": true },
+    { "label": "Top Speed",              "value": "~8 km/h (~5 mph) estimated",  "metric": "~8 km/h",   "imperial": "~5 mph",                            "glance": true },
+    { "label": "Ecological Role",        "value": "Mesopredator",                                                                                        "glance": true },
+    { "label": "Reproductive Rate",      "value": "2–11 pups per litter (avg ~6); 22–24 month gestation; biennial cycle" },
+    { "label": "Age at Maturity",        "value": "~10–12 years (males); ~18–21 years (females)" },
+    { "label": "Diet",                   "value": "Small schooling fish, squid, octopus, crustaceans, and jellyfish" },
+    { "label": "Population Growth Rate", "value": "Very low — among the slowest of any shark; 70–100 year recovery timeline from overfishing" },
+    { "label": "Key Adaptations",        "value": "Venomous spines in front of each dorsal fin for defense; sex-segregated schooling concentrates foraging and seasonal migration efficiency" }
+  ],
+  "habitatStats": [
+    { "label": "Global Range", "value": "Temperate coastal and shelf waters of the N. Atlantic, N. Pacific, S. Atlantic, and Southern Ocean; absent from tropical seas" },
+    { "label": "Depth Range",  "value": "Surface to ~900 m (2,950 ft); primarily found in shelf and upper slope waters at 10–200 m", "metric": "Surface to ~900 m", "imperial": "Surface to ~2,950 ft" }
+  ],
+  "threats": [
+    { "name": "Commercial Overfishing",  "severity": "critical", "description": "The NE Atlantic stock collapsed by over 95% due to targeted European fisheries. Sold as 'rock salmon' or 'huss' in UK fish-and-chip shops, the species was heavily harvested until catches became economically unviable. EU catch limits were only imposed in 2010 — decades too late." },
+    { "name": "Bycatch",                 "severity": "high",     "description": "Caught in enormous quantities in bottom trawls, longlines, and gillnets targeting other commercial species. Even when discarded, post-release survival can be low for specimens held at depth." },
+    { "name": "Slow Reproduction",       "severity": "high",     "description": "With a 22–24 month gestation and females not maturing until 18–21 years, spiny dogfish cannot rebound from sustained fishing pressure. Population recovery following overexploitation is measured in generations — 70 to 100 years." },
+    { "name": "Squalene Extraction",     "severity": "medium",   "description": "The liver contains high concentrations of squalene, a compound used in cosmetics, pharmaceuticals, and some vaccine adjuvants. Historically a significant driver of targeting; synthetic and plant-based alternatives exist but are not universally adopted." },
+    { "name": "Climate Change",          "severity": "medium",   "description": "Warming seas compress the preferred cold-water temperature band, pushing the species poleward. Reduced habitat availability and shifts in prey distribution add pressure on already depleted populations." }
+  ],
+  "actionItems": [
+    { "title": "Avoid Rock Salmon and Huss",          "description": "In the UK and Ireland, spiny dogfish is sold as 'rock salmon,' 'huss,' or 'flake' in fish and chips. Asking what fish you're buying and avoiding dogfish directly reduces demand from the historically most destructive fishery.", "link": null },
+    { "title": "Choose Squalene-Free Cosmetics",      "description": "Check ingredient labels on moisturizers, lipsticks, sunscreens, and serums for 'squalene' or 'squalane.' Choose brands certified to use only plant-derived or synthetic sources. Demand from cosmetics is an often-overlooked driver of shark mortality.", "link": null },
+    { "title": "Support Strong EU Catch Limits",      "description": "Advocate for science-based EU total allowable catch (TAC) limits that allow the NE Atlantic population to recover. The stock remains severely depleted and requires decades of protection before fishing at any meaningful level is sustainable.", "link": "https://ec.europa.eu/fisheries" },
+    { "title": "Use Sustainable Seafood Guides",      "description": "Use the Monterey Bay Aquarium Seafood Watch or Marine Stewardship Council database to verify that any dogfish you buy comes from well-managed, non-collapsed stocks — primarily NW Atlantic.", "link": "https://www.seafoodwatch.org" }
+  ],
+  "healthMetrics": [
+    { "label": "IUCN Status",         "value": "Vulnerable — globally assessed since 2006; NE Atlantic subpopulation functionally collapsed",           "trend": "stable" },
+    { "label": "Population Trend",    "value": "Decreasing — NE Atlantic >95% collapse; global decline ongoing despite some NW Atlantic stability",    "trend": "down"   },
+    { "label": "Habitat Quality",     "value": "Moderate — cold temperate shelf habitat largely intact but shrinking as warming oceans push range poleward", "trend": "down" },
+    { "label": "Prey Availability",   "value": "Declining — herring, sand lance, and squid under heavy commercial pressure across the North Atlantic",  "trend": "down"   },
+    { "label": "Fishing Pressure",    "value": "High — targeted commercially for meat, fins, and squalene; heavy bycatch in bottom trawl fisheries",    "trend": "stable" },
+    { "label": "Protection Coverage", "value": "Partial — EU TAC since 2010; CITES Appendix II; some national closures; recovery projections are decades-long", "trend": "up",
+      "links": [
+        { "label": "CITES Listing",   "url": "https://cites.org/eng/app/appendices.php" },
+        { "label": "IUCN Red List",   "url": "https://www.iucnredlist.org/species/39326/2903238" },
+        { "label": "Shark Trust",     "url": "https://www.sharktrust.org" }
+      ]
+    }
+  ],
+  "statusHistory": [
+    { "year": 1970, "status": "Not Evaluated" },
+    { "year": 2006, "status": "Vulnerable" }
+  ],
+  "populationTrend": [
+    { "year": 1970, "value": 3800000 },
+    { "year": 1980, "value": 3100000 },
+    { "year": 1990, "value": 2300000 },
+    { "year": 2000, "value": 1600000 },
+    { "year": 2010, "value": 1200000 },
+    { "year": 2020, "value": 950000 }
+  ],
+  "populationTrendMeta": {
+    "confidence": "modeled",
+    "note": "Rough global estimates modeled from documented regional trends. The NE Atlantic stock collapsed by over 95% from peak levels and remains severely depleted. The NW Atlantic population is more stable but also declining. No global census has been conducted; figures represent an order-of-magnitude approximation derived from IUCN assessments and regional stock surveys."
+  },
+  "preyDeclineRegions": [
+    { "name": "NE Atlantic",    "severity": "critical", "note": "Herring, sand lance, and mackerel populations heavily fished; prey base severely reduced alongside the dogfish stock itself" },
+    { "name": "Mediterranean",  "severity": "high",     "note": "Coastal fish stocks broadly depleted; dogfish range now restricted and prey increasingly scarce" },
+    { "name": "N. Atlantic",    "severity": "high",     "note": "Atlantic herring and sand lance under sustained commercial pressure; some recovery in protected areas" },
+    { "name": "N. Pacific",     "severity": "medium",   "note": "Herring and squid under significant fishing pressure; population-level effects on dogfish prey less documented" }
+  ],
+  "fishingPressureRegions": [
+    { "name": "NE Atlantic",    "severity": "critical", "note": "Historic targeted commercial fishery; stock collapsed >95%; EU TAC implemented in 2010 but stock has not recovered" },
+    { "name": "Mediterranean",  "severity": "high",     "note": "Targeted in gillnets and bottom trawls; minimal stock-specific regulation or enforcement" },
+    { "name": "N. Atlantic",    "severity": "high",     "note": "Bycatch in bottom trawl fisheries; some directed fishing persists; NW Atlantic populations relatively more stable" },
+    { "name": "N. Pacific",     "severity": "medium",   "note": "Modest directed fishery and bycatch; Pacific stocks better monitored but still under pressure" }
+  ]
 }

@@ -18,7 +18,7 @@ Tracks every species in the wiki: current tier, IUCN status, and what still need
 | Whale Shark | *Rhincodon typus* | Endangered | Full (partial) | Missing physicalScaleImage |
 | Bull Shark | *Carcharhinus leucas* | Near Threatened | Full (partial) | Missing physicalScaleImage |
 | Tiger Shark | *Galeocerdo cuvier* | Near Threatened | Full (partial) | Missing physicalScaleImage |
-| Oceanic Whitetip Shark | *Carcharhinus longimanus* | Critically Endangered | Standard | |
+| Oceanic Whitetip Shark | *Carcharhinus longimanus* | Critically Endangered | Full (partial) | Missing physicalScaleImage |
 | Pondicherry Shark | *Carcharhinus hemiodon* | Critically Endangered | Stub | Phase 3 Batch 1 |
 | Daggernose Shark | *Isogomphodon oxyrhynchus* | Critically Endangered | Stub | Phase 3 Batch 1 |
 | Smoothtooth Blacktip Shark | *Carcharhinus leiodon* | Critically Endangered | Stub | Phase 3 Batch 1 |
@@ -33,11 +33,11 @@ Tracks every species in the wiki: current tier, IUCN status, and what still need
 | Borneo River Shark | *Glyphis fowlerae* | Critically Endangered | Stub | Phase 3 Batch 1 |
 | Whitefin Topeshark | *Hypogaleus hyugaensis* | Critically Endangered | Stub | Phase 3 Batch 1 |
 | Natal Shyshark | *Haploblepharus kistnasamyi* | Critically Endangered | Stub | Phase 3 Batch 1 |
-| Shortfin Mako | *Isurus oxyrinchus* | Endangered | Standard | |
+| Shortfin Mako | *Isurus oxyrinchus* | Endangered | Full (partial) | Missing physicalScaleImage |
 | Longfin Mako | *Isurus paucus* | Endangered | Full (partial) | Missing physicalScaleImage |
-| Great Hammerhead | *Sphyrna mokarran* | Critically Endangered | Standard | |
+| Great Hammerhead | *Sphyrna mokarran* | Critically Endangered | Full (partial) | Missing physicalScaleImage |
 | Smooth Hammerhead | *Sphyrna zygaena* | Vulnerable | Full (partial) | Missing physicalScaleImage |
-| Basking Shark | *Cetorhinus maximus* | Endangered | Standard | |
+| Basking Shark | *Cetorhinus maximus* | Endangered | Full (partial) | Missing physicalScaleImage |
 | Nurse Shark | *Ginglymostoma cirratum* | Vulnerable | Full (partial) | Missing physicalScaleImage |
 | Lemon Shark | *Negaprion brevirostris* | Vulnerable | Full (partial) | Missing physicalScaleImage |
 | Blue Shark | *Prionace glauca* | Near Threatened | Full (partial) | Missing physicalScaleImage |
@@ -47,7 +47,7 @@ Tracks every species in the wiki: current tier, IUCN status, and what still need
 | Sandbar Shark | *Carcharhinus plumbeus* | Vulnerable | Stub | Phase 3 Batch 2 |
 | Dusky Shark | *Carcharhinus obscurus* | Endangered | Full (partial) | Missing physicalScaleImage |
 | Silky Shark | *Carcharhinus falciformis* | Vulnerable | Full (partial) | Missing physicalScaleImage |
-| Porbeagle | *Lamna nasus* | Vulnerable | Standard | |
+| Porbeagle | *Lamna nasus* | Vulnerable | Full (partial) | Missing physicalScaleImage |
 | Common Thresher | *Alopias vulpinus* | Vulnerable | Full (partial) | Missing physicalScaleImage |
 | Pelagic Thresher | *Alopias pelagicus* | Endangered | Stub | Phase 3 Batch 2 |
 | Bigeye Thresher | *Alopias superciliosus* | Vulnerable | Stub | Phase 3 Batch 2 |
@@ -59,7 +59,7 @@ Tracks every species in the wiki: current tier, IUCN status, and what still need
 | Broadnose Sevengill Shark | *Notorynchus cepedianus* | Data Deficient | Stub | Phase 3 Batch 3 |
 | Bluntnose Sixgill Shark | *Hexanchus griseus* | Least Concern | Stub | Phase 3 Batch 3 |
 | Horn Shark | *Heterodontus francisci* | Least Concern | Stub | Phase 3 Batch 3 |
-| Spiny Dogfish | *Squalus acanthias* | Vulnerable | Stub | Phase 3 Batch 3 |
+| Spiny Dogfish | *Squalus acanthias* | Vulnerable | Full (partial) | Missing physicalScaleImage |
 | Cookiecutter Shark | *Isistius brasiliensis* | Least Concern | Stub | Phase 3 Batch 3 |
 | Epaulette Shark | *Hemiscyllium ocellatum* | Least Concern | Stub | Phase 3 Batch 3 |
 | Spotted Wobbegong | *Orectolobus maculatus* | Least Concern | Stub | Phase 3 Batch 3 |
@@ -156,9 +156,9 @@ Species that have been added as stubs and are candidates for Standard tier promo
 
 | Tier | Count |
 |---|---|
-| Full | 20 |
-| Standard | 5 |
-| Stub | 30 |
+| Full | 27 |
+| Standard | 0 |
+| Stub | 28 |
 | **Total** | **55** |
 
 *Update manually after each batch commit.*
