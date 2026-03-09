@@ -2688,7 +2688,7 @@ window.WIKI_DATA = {
     },
     {
       "id": "isurus-paucus",
-      "lastUpdated": "2026-03-06",
+      "lastUpdated": "2026-03-09",
       "emoji": "🦈",
       "commonName": "Longfin Mako",
       "scientificName": "Isurus paucus",
@@ -2718,9 +2718,277 @@ window.WIKI_DATA = {
         "solitary",
         "bycatch"
       ],
+      "photos": [
+        "projects/shark-populations/images/longfin_mako/longfin_mako.png"
+      ],
       "description": "The longfin mako is a large, fast-swimming pelagic shark closely related to the shortfin mako but distinguished by its broader, longer pectoral fins and larger eyes. It inhabits tropical and warm temperate oceanic waters globally and is far less studied than its relative. Like the shortfin mako, it faces serious pressure from bycatch and targeted fishing.",
       "funFact": "The longfin mako remains one of the least-studied large shark species — so elusive in the open ocean that a live specimen was not scientifically documented until 1966, despite the species being formally described decades earlier.",
-      "habitat": "Oceanic and epipelagic waters in tropical and warm temperate seas worldwide. Tends to remain in deeper waters than the shortfin mako, typically found near the surface to depths of 220 m, often along continental shelf edges and around oceanic islands."
+      "habitat": "Oceanic and epipelagic waters in tropical and warm temperate seas worldwide. Tends to remain in deeper waters than the shortfin mako, typically found near the surface to depths of 220 m, often along continental shelf edges and around oceanic islands.",
+      "diet": "An apex predator feeding on fast-moving bony fish — particularly tuna, billfish, and flying fish — as well as squid and cephalopods. Its larger pectoral fins and bigger eyes compared to the shortfin mako may be adaptations for slower, more deliberate hunting in deeper, darker waters.",
+      "size": "Typically 2.0–3.5 m (6.6–11.5 ft); max confirmed 4.3 m (14 ft). Large specimens can exceed 200 kg, with the largest reaching ~500 kg (1,100 lbs). Females grow significantly larger than males.",
+      "vitalSigns": [
+        {
+          "label": "Estimated Population",
+          "value": "Unknown — far rarer than shortfin mako; no global estimate exists",
+          "glance": true
+        },
+        {
+          "label": "Lifespan",
+          "value": "Unknown — likely similar to shortfin mako at up to ~30 years",
+          "glance": true
+        },
+        {
+          "label": "Max Length",
+          "value": "~4.3 m (14 ft) estimated",
+          "metric": "~4.3 m",
+          "imperial": "~14 ft",
+          "glance": true
+        },
+        {
+          "label": "Max Weight",
+          "value": "~500 kg (~1,100 lbs)",
+          "metric": "~500 kg",
+          "imperial": "~1,100 lbs",
+          "glance": true
+        },
+        {
+          "label": "Reproductive Rate",
+          "value": "2–8 pups per litter estimated; gestation likely ~15–18 months; long inter-birth intervals"
+        },
+        {
+          "label": "Age at Maturity",
+          "value": "Unknown — likely similar to shortfin mako; females possibly ~18+ years"
+        },
+        {
+          "label": "Top Speed",
+          "value": "~50 km/h (~31 mph) estimated — slower than shortfin mako",
+          "metric": "~50 km/h",
+          "imperial": "~31 mph",
+          "glance": true
+        },
+        {
+          "label": "Ecological Role",
+          "value": "Apex Predator",
+          "glance": true
+        },
+        {
+          "label": "Diet",
+          "value": "Tuna, billfish, flying fish, squid"
+        },
+        {
+          "label": "Population Growth Rate",
+          "value": "Very low — presumed similar to shortfin mako, with very late female maturity severely limiting recovery"
+        },
+        {
+          "label": "Key Adaptations",
+          "value": "Enlarged pectoral fins for stability in slower deep-water cruising; larger eyes adapted for dimmer pelagic environments; regional endothermy shared with all lamnid sharks"
+        }
+      ],
+      "habitatStats": [
+        {
+          "label": "Global Range",
+          "value": "Tropical and warm temperate oceanic waters worldwide; Atlantic, Pacific, and Indian Oceans"
+        },
+        {
+          "label": "Depth Range",
+          "value": "Surface to ~220 m (720 ft); spends more time at depth than the shortfin mako",
+          "metric": "Surface to ~220 m",
+          "imperial": "Surface to ~720 ft"
+        }
+      ],
+      "threats": [
+        {
+          "name": "Bycatch",
+          "severity": "critical",
+          "description": "The dominant threat. Regularly caught on longlines targeting tuna and swordfish throughout the Pacific, Atlantic, and Indian Oceans. Low observer coverage means true longfin mako mortality is almost certainly severely underreported."
+        },
+        {
+          "name": "Data Deficiency",
+          "severity": "high",
+          "description": "The longfin mako's rarity and deep-water habits mean its population size, stock structure, and true level of fishing mortality are almost entirely unknown — making effective conservation and management virtually impossible."
+        },
+        {
+          "name": "Targeted Fishing",
+          "severity": "high",
+          "description": "Fins and meat are traded internationally. Misidentification as shortfin mako in landings and trade records obscures the actual scale of longfin mako harvest."
+        },
+        {
+          "name": "Extremely Late Female Maturity",
+          "severity": "high",
+          "description": "Like the shortfin mako, female longfin makos likely mature very late (possibly 18+ years), resulting in extremely low population growth rates and slow recovery from any level of fishing mortality."
+        },
+        {
+          "name": "Climate Change",
+          "severity": "medium",
+          "description": "Warming and deoxygenation of deep pelagic waters may compress the thermal and oxygen habitat available to a species that depends on specific oceanic conditions for hunting and thermoregulation."
+        }
+      ],
+      "actionItems": [
+        {
+          "title": "Extend Mako No-Retention Rules",
+          "description": "ICCAT's 2019 North Atlantic no-retention measure for makos covers both species but is inconsistently enforced and doesn't extend to other ocean basins. Advocate for global no-retention rules at ICCAT, WCPFC, and IOTC.",
+          "link": null
+        },
+        {
+          "title": "Support Improved Species ID in Trade",
+          "description": "Longfin mako fins and meat are routinely misidentified as shortfin mako in markets and landings data, masking true mortality. Support genetic identification programs and stricter species-level trade reporting.",
+          "link": null
+        },
+        {
+          "title": "Advocate for CITES Appendix II Enforcement",
+          "description": "Longfin makos are listed on CITES Appendix II alongside the shortfin mako. Push for rigorous trade documentation and enforcement to prevent unreported exports from regions with high bycatch rates.",
+          "link": "https://cites.org"
+        },
+        {
+          "title": "Fund Pelagic Research",
+          "description": "Donate to organizations that fund satellite tagging and observer programs in deep pelagic fisheries — the only way to understand longfin mako population status, migration, and fishing mortality.",
+          "link": "https://www.sharktrust.org"
+        }
+      ],
+      "healthMetrics": [
+        {
+          "label": "IUCN Status",
+          "value": "Endangered (listed 2019)",
+          "trend": "down"
+        },
+        {
+          "label": "Population Trend",
+          "value": "Decreasing — no region shows signs of recovery",
+          "trend": "down"
+        },
+        {
+          "label": "Habitat Quality",
+          "value": "Moderate — deep pelagic habitat largely intact but warming",
+          "trend": "down"
+        },
+        {
+          "label": "Prey Availability",
+          "value": "Declining — tuna and billfish under heavy longline pressure globally",
+          "trend": "down"
+        },
+        {
+          "label": "Fishing Pressure",
+          "value": "Critical — high bycatch mortality; severely under-monitored",
+          "trend": "down"
+        },
+        {
+          "label": "Protection Coverage",
+          "value": "Partial — CITES II; N. Atlantic no-retention (ICCAT 2019); no other basin protections",
+          "trend": "up",
+          "links": [
+            {
+              "label": "CITES Listing",
+              "url": "https://cites.org/eng/app/appendices.php"
+            },
+            {
+              "label": "IUCN Red List",
+              "url": "https://www.iucnredlist.org/species/42006/2949072"
+            },
+            {
+              "label": "Shark Trust",
+              "url": "https://www.sharktrust.org"
+            }
+          ]
+        }
+      ],
+      "statusHistory": [
+        {
+          "year": 2000,
+          "status": "Not Evaluated"
+        },
+        {
+          "year": 2007,
+          "status": "Vulnerable"
+        },
+        {
+          "year": 2019,
+          "status": "Endangered"
+        }
+      ],
+      "populationTrend": [
+        {
+          "year": 1970,
+          "value": 500000
+        },
+        {
+          "year": 1980,
+          "value": 400000
+        },
+        {
+          "year": 1990,
+          "value": 300000
+        },
+        {
+          "year": 2000,
+          "value": 220000
+        },
+        {
+          "year": 2010,
+          "value": 160000
+        },
+        {
+          "year": 2019,
+          "value": 120000
+        }
+      ],
+      "populationTrendMeta": {
+        "confidence": "modeled",
+        "note": "Highly speculative estimates modeled from shortfin mako population trends, adjusted downward to reflect the longfin's far greater rarity. No stock assessment for this species exists. All figures carry very high uncertainty."
+      },
+      "preyDeclineRegions": [
+        {
+          "name": "N. Atlantic",
+          "severity": "critical",
+          "note": "Swordfish, tuna, and billfish heavily overfished throughout"
+        },
+        {
+          "name": "Mediterranean",
+          "severity": "critical",
+          "note": "Bluefin tuna near collapse; swordfish severely depleted"
+        },
+        {
+          "name": "Indo-Pacific",
+          "severity": "high",
+          "note": "Tuna and billfish under intense longline pressure"
+        },
+        {
+          "name": "N. Pacific",
+          "severity": "high",
+          "note": "Albacore and bigeye tuna overfished in key areas"
+        },
+        {
+          "name": "S. Atlantic",
+          "severity": "medium",
+          "note": "Swordfish and tuna under moderate and growing pressure"
+        }
+      ],
+      "fishingPressureRegions": [
+        {
+          "name": "N. Atlantic",
+          "severity": "critical",
+          "note": "ICCAT no-retention (2019); decades of prior bycatch mortality"
+        },
+        {
+          "name": "Mediterranean",
+          "severity": "critical",
+          "note": "Dense longline effort; species misidentification rampant; no enforcement"
+        },
+        {
+          "name": "Indo-Pacific",
+          "severity": "high",
+          "note": "Extensive longline fisheries; no basin-wide mako protections"
+        },
+        {
+          "name": "N. Pacific",
+          "severity": "high",
+          "note": "Common bycatch in Pacific tuna longlines; low observer coverage"
+        },
+        {
+          "name": "S. Atlantic",
+          "severity": "high",
+          "note": "Expanding distant-water fleets with no longfin-specific protections"
+        }
+      ]
     },
     {
       "id": "sphyrna-mokarran",
@@ -3029,7 +3297,7 @@ window.WIKI_DATA = {
     },
     {
       "id": "sphyrna-zygaena",
-      "lastUpdated": "2026-03-06",
+      "lastUpdated": "2026-03-09",
       "emoji": "🦈",
       "commonName": "Smooth Hammerhead",
       "scientificName": "Sphyrna zygaena",
@@ -3059,9 +3327,273 @@ window.WIKI_DATA = {
         "bycatch",
         "finning"
       ],
+      "photos": [
+        "projects/shark-populations/images/smooth_hammerhead/smooth_hammerhead.png"
+      ],
       "description": "The smooth hammerhead is one of the larger hammerhead sharks, named for its smooth-edged, evenly curved cephalofoil that lacks the central indentation found in other hammerheads. It ranges widely across temperate and tropical seas and is one of the more commonly encountered hammerhead species. Young sharks are often found in large schools in inshore waters.",
       "funFact": "Unlike most hammerhead species that prefer warm tropical waters, the smooth hammerhead is one of the most cold-tolerant hammerheads, venturing into waters as cool as 8°C (46°F) — and newborn pups are frequently found in temperate estuaries and bays far from the tropics.",
-      "habitat": "Coastal and offshore waters in tropical and temperate seas worldwide, often in shallower inshore areas, estuaries, and bays. More tolerant of cooler waters than other hammerhead species; found from the surface to at least 200 m depth."
+      "habitat": "Coastal and offshore waters in tropical and temperate seas worldwide, often in shallower inshore areas, estuaries, and bays. More tolerant of cooler waters than other hammerhead species; found from the surface to at least 200 m depth.",
+      "diet": "An opportunistic apex predator feeding primarily on bony fish, squid, octopus, and smaller sharks and rays. Like other hammerheads, uses its wide cephalofoil to detect the electrical fields of buried stingrays and flatfish hiding in sediment.",
+      "size": "Typically 2.5–3.5 m (8.2–11.5 ft); max confirmed ~4.0 m (13.1 ft). Females grow larger than males.",
+      "vitalSigns": [
+        {
+          "label": "Estimated Population",
+          "value": "Unknown — significantly depleted in all heavily fished regions",
+          "glance": true
+        },
+        {
+          "label": "Lifespan",
+          "value": "Up to ~25–30 years",
+          "glance": true
+        },
+        {
+          "label": "Max Length",
+          "value": "~4.0 m (13.1 ft)",
+          "metric": "~4.0 m",
+          "imperial": "~13.1 ft",
+          "glance": true
+        },
+        {
+          "label": "Max Weight",
+          "value": "~400 kg (~880 lbs)",
+          "metric": "~400 kg",
+          "imperial": "~880 lbs",
+          "glance": true
+        },
+        {
+          "label": "Reproductive Rate",
+          "value": "20–50 pups per litter; ~10–11 month gestation; breeds every 2 years"
+        },
+        {
+          "label": "Age at Maturity",
+          "value": "~9–10 years (males), ~12 years (females)"
+        },
+        {
+          "label": "Top Speed",
+          "value": "~35 km/h (~22 mph) estimated",
+          "metric": "~35 km/h",
+          "imperial": "~22 mph",
+          "glance": true
+        },
+        {
+          "label": "Ecological Role",
+          "value": "Apex Predator",
+          "glance": true
+        },
+        {
+          "label": "Diet",
+          "value": "Bony fish, squid, octopus, stingrays, smaller sharks"
+        },
+        {
+          "label": "Population Growth Rate",
+          "value": "Low — late maturity and biennial reproduction limit recovery from fishing pressure"
+        },
+        {
+          "label": "Key Adaptations",
+          "value": "Smooth-edged cephalofoil packed with electroreceptors for detecting buried prey; cold-tolerance allows exploitation of temperate nursery habitats unavailable to other hammerhead species"
+        }
+      ],
+      "habitatStats": [
+        {
+          "label": "Global Range",
+          "value": "Tropical and temperate coastal and offshore waters worldwide — Atlantic, Pacific, Indian Ocean, and Mediterranean; one of the widest-ranging hammerhead species"
+        },
+        {
+          "label": "Depth Range",
+          "value": "Surface to ~200 m (656 ft); juveniles frequently in shallow inshore and estuarine habitats",
+          "metric": "Surface to ~200 m",
+          "imperial": "Surface to ~656 ft"
+        }
+      ],
+      "threats": [
+        {
+          "name": "Shark Fin Trade",
+          "severity": "critical",
+          "description": "Smooth hammerhead fins are large and highly valuable in the international fin trade. Hammerhead fins are among the most traded globally, and smooth hammerheads are frequently landed alongside scalloped and great hammerheads with minimal species-level distinction."
+        },
+        {
+          "name": "Bycatch",
+          "severity": "high",
+          "description": "Routinely caught in pelagic and coastal longlines, drift gillnets, and trawls throughout its range. Schooling behavior in young sharks makes entire juvenile cohorts vulnerable to a single net deployment."
+        },
+        {
+          "name": "Misidentification in Trade",
+          "severity": "high",
+          "description": "Smooth hammerhead fins and meat are regularly misidentified as scalloped hammerhead or simply 'hammerhead' in landings and trade records, making it nearly impossible to assess true harvest levels for this species specifically."
+        },
+        {
+          "name": "Slow Reproduction",
+          "severity": "medium",
+          "description": "Female maturity at ~12 years and biennial breeding mean populations cannot quickly compensate for fishing mortality. Juvenile schooling aggregations are particularly attractive to fishers, removing large numbers before individuals can reproduce."
+        },
+        {
+          "name": "Climate Change",
+          "severity": "medium",
+          "description": "As one of the more cold-tolerant hammerheads, warming seas may alter the distribution of inshore nursery grounds. Shifts in temperate prey availability could affect juvenile survival in key nursery areas."
+        }
+      ],
+      "actionItems": [
+        {
+          "title": "Oppose Hammerhead Fin Trade",
+          "description": "Smooth hammerhead fins are among the most commonly traded globally. Refuse shark fin products, advocate for fin trade bans, and support market campaigns to reduce demand in key consuming nations.",
+          "link": null
+        },
+        {
+          "title": "Support CITES Appendix II Enforcement",
+          "description": "All three large hammerhead species are listed on CITES Appendix II. Push for stricter species-level identification in landings and exports — the current lumping of 'hammerhead' masks the true scale of smooth hammerhead harvest.",
+          "link": "https://cites.org"
+        },
+        {
+          "title": "Protect Juvenile Aggregation Sites",
+          "description": "Smooth hammerhead juveniles school in predictable inshore areas, making them highly vulnerable. Advocate for seasonal or permanent closures of known schooling and nursery sites to prevent targeted juvenile harvest.",
+          "link": null
+        },
+        {
+          "title": "Fund Hammerhead Research",
+          "description": "Support organizations like the Save Our Seas Foundation and Shark Trust that fund tagging and population studies — essential given how poorly the smooth hammerhead's global status is understood relative to its congeners.",
+          "link": "https://saveourseas.com"
+        }
+      ],
+      "healthMetrics": [
+        {
+          "label": "IUCN Status",
+          "value": "Vulnerable (listed 2007, maintained 2019)",
+          "trend": "stable"
+        },
+        {
+          "label": "Population Trend",
+          "value": "Decreasing — depleted across all heavily fished regions",
+          "trend": "down"
+        },
+        {
+          "label": "Habitat Quality",
+          "value": "Moderate — inshore nursery habitat under development and pollution pressure",
+          "trend": "down"
+        },
+        {
+          "label": "Prey Availability",
+          "value": "Declining — coastal and pelagic prey fish heavily fished across its range",
+          "trend": "down"
+        },
+        {
+          "label": "Fishing Pressure",
+          "value": "High — targeted for fins; juvenile schools especially vulnerable",
+          "trend": "stable"
+        },
+        {
+          "label": "Protection Coverage",
+          "value": "Partial — CITES II alongside other hammerheads; few species-specific measures",
+          "trend": "up",
+          "links": [
+            {
+              "label": "CITES Listing",
+              "url": "https://cites.org/eng/app/appendices.php"
+            },
+            {
+              "label": "IUCN Red List",
+              "url": "https://www.iucnredlist.org/species/39387/2921839"
+            },
+            {
+              "label": "Save Our Seas",
+              "url": "https://saveourseas.com"
+            }
+          ]
+        }
+      ],
+      "statusHistory": [
+        {
+          "year": 1970,
+          "status": "Not Evaluated"
+        },
+        {
+          "year": 2007,
+          "status": "Vulnerable"
+        }
+      ],
+      "populationTrend": [
+        {
+          "year": 1970,
+          "value": 900000
+        },
+        {
+          "year": 1980,
+          "value": 720000
+        },
+        {
+          "year": 1990,
+          "value": 540000
+        },
+        {
+          "year": 2000,
+          "value": 390000
+        },
+        {
+          "year": 2010,
+          "value": 310000
+        },
+        {
+          "year": 2019,
+          "value": 260000
+        }
+      ],
+      "populationTrendMeta": {
+        "confidence": "modeled",
+        "note": "Rough global estimates modeled from IUCN-documented declines of ~50% over three generations across the Atlantic and Indo-Pacific. The smooth hammerhead is more abundant than the great or scalloped hammerhead but no stock assessment exists. All figures carry high uncertainty."
+      },
+      "preyDeclineRegions": [
+        {
+          "name": "Mediterranean",
+          "severity": "critical",
+          "note": "Coastal fish and stingray prey severely depleted; smooth hammerheads now rare"
+        },
+        {
+          "name": "NE Atlantic",
+          "severity": "high",
+          "note": "Schooling fish and benthic prey under intense commercial fishing pressure"
+        },
+        {
+          "name": "Indo-Pacific",
+          "severity": "high",
+          "note": "Reef fish and rays declining across tropical and subtropical coastal zones"
+        },
+        {
+          "name": "Tropical Atlantic",
+          "severity": "high",
+          "note": "Caribbean and Gulf coastal prey fish significantly reduced"
+        },
+        {
+          "name": "Australasia",
+          "severity": "medium",
+          "note": "Moderate pressure on coastal fish; some stocks managed"
+        }
+      ],
+      "fishingPressureRegions": [
+        {
+          "name": "Mediterranean",
+          "severity": "critical",
+          "note": "Targeted in artisanal and industrial fisheries; fins traded; no protections"
+        },
+        {
+          "name": "Indo-Pacific",
+          "severity": "critical",
+          "note": "Fins highly valued; schooling juveniles regularly netted in large numbers"
+        },
+        {
+          "name": "Tropical Atlantic",
+          "severity": "high",
+          "note": "Targeted and bycatch; species frequently lumped with other hammerheads in records"
+        },
+        {
+          "name": "NE Atlantic",
+          "severity": "high",
+          "note": "Bycatch in longlines and trawls; CITES II applies but enforcement inconsistent"
+        },
+        {
+          "name": "Australasia",
+          "severity": "medium",
+          "note": "Some bycatch in coastal nets; targeted in some artisanal fisheries"
+        }
+      ]
     },
     {
       "id": "cetorhinus-maximus",
@@ -5161,7 +5693,7 @@ window.WIKI_DATA = {
     },
     {
       "id": "carcharhinus-obscurus",
-      "lastUpdated": "2026-03-06",
+      "lastUpdated": "2026-03-09",
       "emoji": "🦈",
       "commonName": "Dusky Shark",
       "scientificName": "Carcharhinus obscurus",
@@ -5192,9 +5724,277 @@ window.WIKI_DATA = {
         "bycatch",
         "finning"
       ],
+      "photos": [
+        "projects/shark-populations/images/dusky_shark/dusky_shark.png"
+      ],
       "description": "The dusky shark is a large, wide-ranging requiem shark found in tropical and warm temperate waters worldwide. It undertakes extensive coastal migrations and is one of the slowest-maturing and slowest-reproducing of all large sharks, making populations especially vulnerable to fishing pressure. Despite protections in some regions, populations have declined by over 80% in parts of its range.",
       "funFact": "Dusky sharks have one of the slowest life cycles of any shark — females don't reach maturity until age 20, have a 22–24 month gestation period, and reproduce only every 3 years — meaning populations can take decades to recover from even modest depletion.",
-      "habitat": "Coastal and offshore waters in tropical and warm temperate regions worldwide. Found from inshore bays and estuaries to the open ocean at depths of 0–400 m. Undertakes pronounced north-south seasonal migrations along coastlines."
+      "habitat": "Coastal and offshore waters in tropical and warm temperate regions worldwide. Found from inshore bays and estuaries to the open ocean at depths of 0–400 m. Undertakes pronounced north-south seasonal migrations along coastlines.",
+      "diet": "A highly opportunistic predator feeding on a wide variety of bony fish, smaller sharks and rays, squid, octopus, and crustaceans. Uses its broadly curved jaw and serrated teeth to take large prey items, and is known to follow prey schools on seasonal migrations.",
+      "size": "Typically 2.5–3.2 m (8.2–10.5 ft); max confirmed ~4.2 m (13.8 ft). Females grow larger than males.",
+      "vitalSigns": [
+        {
+          "label": "Estimated Population",
+          "value": "Unknown — severely depleted; NW Atlantic population estimated at <10% of historical levels",
+          "glance": true
+        },
+        {
+          "label": "Lifespan",
+          "value": "Up to ~50 years",
+          "glance": true
+        },
+        {
+          "label": "Max Length",
+          "value": "~4.2 m (13.8 ft)",
+          "metric": "~4.2 m",
+          "imperial": "~13.8 ft",
+          "glance": true
+        },
+        {
+          "label": "Max Weight",
+          "value": "~347 kg (~765 lbs)",
+          "metric": "~347 kg",
+          "imperial": "~765 lbs",
+          "glance": true
+        },
+        {
+          "label": "Reproductive Rate",
+          "value": "3–14 pups per litter (avg. ~6–10); 22–24 month gestation; breeds every 3 years"
+        },
+        {
+          "label": "Age at Maturity",
+          "value": "~17–19 years (males), ~20 years (females)"
+        },
+        {
+          "label": "Top Speed",
+          "value": "~40 km/h (~25 mph) estimated",
+          "metric": "~40 km/h",
+          "imperial": "~25 mph",
+          "glance": true
+        },
+        {
+          "label": "Ecological Role",
+          "value": "Apex Predator",
+          "glance": true
+        },
+        {
+          "label": "Diet",
+          "value": "Bony fish, smaller sharks and rays, squid, octopus, crustaceans"
+        },
+        {
+          "label": "Population Growth Rate",
+          "value": "Extremely low — the combination of 20-year maturity, triennial breeding, and long gestation gives one of the lowest intrinsic growth rates of any shark"
+        },
+        {
+          "label": "Key Adaptations",
+          "value": "Long-distance coastal migration (up to 3,200 km recorded); broad diet generalism allows exploitation of diverse prey assemblages across habitats"
+        }
+      ],
+      "habitatStats": [
+        {
+          "label": "Global Range",
+          "value": "Tropical and warm temperate coastal and offshore waters worldwide — Atlantic, Indian, and Pacific Oceans; absent from the central Pacific"
+        },
+        {
+          "label": "Depth Range",
+          "value": "0–400 m (0–1,312 ft); most common in coastal shelf waters to 200 m",
+          "metric": "0–400 m",
+          "imperial": "0–1,312 ft"
+        }
+      ],
+      "threats": [
+        {
+          "name": "Overfishing",
+          "severity": "critical",
+          "description": "Heavily targeted in directed US Atlantic fisheries from the 1960s through the 1990s, leading to a population collapse estimated at 70–80% in the Northwest Atlantic. US restrictions imposed in 2000 have not produced measurable recovery due to the species' extremely slow reproductive rate."
+        },
+        {
+          "name": "Bycatch",
+          "severity": "critical",
+          "description": "Among the most commonly caught large sharks in pelagic longlines and coastal gillnets globally. High juvenile bycatch in inshore nursery habitats is especially damaging given the species' slow maturation timeline."
+        },
+        {
+          "name": "Finning",
+          "severity": "high",
+          "description": "Dusky shark fins are highly valued in the international fin trade, with large individuals producing particularly prized fins. Finning continues in regions without robust enforcement."
+        },
+        {
+          "name": "Extremely Slow Reproduction",
+          "severity": "high",
+          "description": "With maturity at ~20 years, a 2-year gestation, and triennial breeding cycles, the dusky shark has one of the lowest population growth rates of any shark — making even low levels of ongoing mortality unsustainable."
+        },
+        {
+          "name": "Nursery Habitat Loss",
+          "severity": "medium",
+          "description": "Juveniles rely on shallow coastal and estuarine nursery areas that are subject to development, pollution, and habitat degradation. Disruption of nursery grounds compounds the effects of direct fishing mortality."
+        }
+      ],
+      "actionItems": [
+        {
+          "title": "Support US Atlantic Recovery Measures",
+          "description": "The Northwest Atlantic dusky shark population has been under a no-retention rule since 2000 yet shows little sign of recovery. Advocate for continued protection and stronger bycatch mitigation requirements in longline fisheries that incidentally catch dusky sharks.",
+          "link": null
+        },
+        {
+          "title": "Protect Coastal Nursery Habitat",
+          "description": "Dusky shark juveniles depend on specific shallow coastal and estuarine nursery grounds. Support marine spatial planning and coastal development restrictions that preserve these critical areas.",
+          "link": null
+        },
+        {
+          "title": "Advocate for CITES Appendix II Enforcement",
+          "description": "Dusky sharks are listed on CITES Appendix II. Push for stricter species-level identification and trade documentation to prevent fins from being exported under misidentified labels.",
+          "link": "https://cites.org"
+        },
+        {
+          "title": "Donate to Shark Conservation",
+          "description": "Support the Shark Trust and IUCN SSG programs that monitor dusky shark bycatch, fund tagging research tracking migration and nursery use, and advocate for binding international catch limits.",
+          "link": "https://www.sharktrust.org"
+        }
+      ],
+      "healthMetrics": [
+        {
+          "label": "IUCN Status",
+          "value": "Endangered (listed 2020)",
+          "trend": "down"
+        },
+        {
+          "label": "Population Trend",
+          "value": "Decreasing — NW Atlantic at <10% historical levels; no recovery observed",
+          "trend": "down"
+        },
+        {
+          "label": "Habitat Quality",
+          "value": "Moderate — open-ocean range intact; coastal nursery habitat degrading",
+          "trend": "down"
+        },
+        {
+          "label": "Prey Availability",
+          "value": "Declining — coastal and pelagic fish stocks heavily exploited across its range",
+          "trend": "down"
+        },
+        {
+          "label": "Fishing Pressure",
+          "value": "High — no-retention in US Atlantic; bycatch and targeting continues globally",
+          "trend": "stable"
+        },
+        {
+          "label": "Protection Coverage",
+          "value": "Limited — US no-retention since 2000; CITES II; no global binding measures",
+          "trend": "up",
+          "links": [
+            {
+              "label": "CITES Listing",
+              "url": "https://cites.org/eng/app/appendices.php"
+            },
+            {
+              "label": "IUCN Red List",
+              "url": "https://www.iucnredlist.org/species/3852/2876384"
+            },
+            {
+              "label": "Shark Trust",
+              "url": "https://www.sharktrust.org"
+            }
+          ]
+        }
+      ],
+      "statusHistory": [
+        {
+          "year": 1994,
+          "status": "Not Evaluated"
+        },
+        {
+          "year": 2006,
+          "status": "Vulnerable"
+        },
+        {
+          "year": 2020,
+          "status": "Endangered"
+        }
+      ],
+      "populationTrend": [
+        {
+          "year": 1970,
+          "value": 1800000
+        },
+        {
+          "year": 1980,
+          "value": 1200000
+        },
+        {
+          "year": 1990,
+          "value": 700000
+        },
+        {
+          "year": 2000,
+          "value": 450000
+        },
+        {
+          "year": 2010,
+          "value": 360000
+        },
+        {
+          "year": 2020,
+          "value": 310000
+        }
+      ],
+      "populationTrendMeta": {
+        "confidence": "modeled",
+        "note": "Rough global estimates modeled from documented NW Atlantic collapse (70–80% decline by 2000) and extrapolated to other ocean basins where assessments are absent. No global population census exists. Figures carry high uncertainty."
+      },
+      "preyDeclineRegions": [
+        {
+          "name": "NW Atlantic",
+          "severity": "high",
+          "note": "Coastal fish stocks heavily fished; prey assemblage significantly altered"
+        },
+        {
+          "name": "Mediterranean",
+          "severity": "high",
+          "note": "Coastal and pelagic prey species severely depleted by trawling and longlining"
+        },
+        {
+          "name": "Indo-Pacific",
+          "severity": "high",
+          "note": "Reef and pelagic fish stocks under intense pressure across the region"
+        },
+        {
+          "name": "W. Africa",
+          "severity": "high",
+          "note": "Artisanal and industrial fisheries have heavily depleted coastal prey fish"
+        },
+        {
+          "name": "Australasia",
+          "severity": "medium",
+          "note": "Moderate fishing pressure; some key prey stocks managed"
+        }
+      ],
+      "fishingPressureRegions": [
+        {
+          "name": "NW Atlantic",
+          "severity": "high",
+          "note": "No-retention rule since 2000; high bycatch in tuna and swordfish longlines continues"
+        },
+        {
+          "name": "Mediterranean",
+          "severity": "critical",
+          "note": "Targeted and bycatch mortality; no species-specific protections"
+        },
+        {
+          "name": "W. Africa",
+          "severity": "critical",
+          "note": "Targeted by artisanal and industrial fleets for fins and meat; minimal oversight"
+        },
+        {
+          "name": "Indo-Pacific",
+          "severity": "high",
+          "note": "Heavy coastal and pelagic fishing effort; dusky sharks common bycatch"
+        },
+        {
+          "name": "Australasia",
+          "severity": "medium",
+          "note": "Some managed fisheries; bycatch in longlines and gillnets ongoing"
+        }
+      ]
     },
     {
       "id": "carcharhinus-falciformis",
@@ -6136,7 +6936,7 @@ window.WIKI_DATA = {
     },
     {
       "id": "stegostoma-tigrinum",
-      "lastUpdated": "2026-03-06",
+      "lastUpdated": "2026-03-09",
       "emoji": "🦈",
       "commonName": "Zebra Shark",
       "scientificName": "Stegostoma tigrinum",
@@ -6163,9 +6963,273 @@ window.WIKI_DATA = {
         "solitary",
         "bycatch"
       ],
+      "photos": [
+        "projects/shark-populations/images/zebra_shark/zebra_shark.png"
+      ],
       "description": "The zebra shark is a distinctive, slow-moving species found on coral reefs and sandy seafloors of the tropical Indo-Pacific. Adults are covered in small dark spots on a pale background, though juveniles bear striking black-and-white stripes — giving the species its common name. It is primarily nocturnal, hunting mollusks, crustaceans, and small fish by probing crevices with its flexible body.",
       "funFact": "Juvenile zebra sharks are born with bold black-and-white stripes that gradually break up into the adult's spotted pattern over their first few years — making young and adult animals look so different they were once formally described as separate species.",
-      "habitat": "Shallow coral reefs, sandy flats, and rocky seafloors in tropical Indo-Pacific waters from the Red Sea and East Africa to Japan and Australia. Typically found at depths of 0–62 m, often resting motionless on the bottom during the day in areas with strong currents."
+      "habitat": "Shallow coral reefs, sandy flats, and rocky seafloors in tropical Indo-Pacific waters from the Red Sea and East Africa to Japan and Australia. Typically found at depths of 0–62 m, often resting motionless on the bottom during the day in areas with strong currents.",
+      "diet": "A specialized benthic predator feeding primarily on mollusks, crustaceans, small bony fish, and sea snakes. Uses its flexible, elongated body to squeeze into reef crevices and extract prey, and its strong, pavement-like teeth to crush hard-shelled invertebrates.",
+      "size": "Typically 1.5–2.5 m (4.9–8.2 ft); max confirmed ~3.5 m (11.5 ft) including the long caudal fin. Males and females are similar in size.",
+      "vitalSigns": [
+        {
+          "label": "Estimated Population",
+          "value": "Unknown — severely depleted in large portions of its Indo-Pacific range",
+          "glance": true
+        },
+        {
+          "label": "Lifespan",
+          "value": "Up to ~25–30 years",
+          "glance": true
+        },
+        {
+          "label": "Max Length",
+          "value": "~3.5 m (11.5 ft) including tail",
+          "metric": "~3.5 m",
+          "imperial": "~11.5 ft",
+          "glance": true
+        },
+        {
+          "label": "Max Weight",
+          "value": "~20 kg (~44 lbs)",
+          "metric": "~20 kg",
+          "imperial": "~44 lbs",
+          "glance": true
+        },
+        {
+          "label": "Reproductive Rate",
+          "value": "Up to 4 eggs per clutch (oviparous); multiple clutches per year possible; eggs hatch after ~170 days"
+        },
+        {
+          "label": "Age at Maturity",
+          "value": "~5–8 years"
+        },
+        {
+          "label": "Top Speed",
+          "value": "~5 km/h (~3 mph) — slow-moving benthic species",
+          "metric": "~5 km/h",
+          "imperial": "~3 mph",
+          "glance": true
+        },
+        {
+          "label": "Ecological Role",
+          "value": "Mesopredator — benthic reef specialist",
+          "glance": true
+        },
+        {
+          "label": "Diet",
+          "value": "Mollusks, crustaceans, small bony fish, sea snakes"
+        },
+        {
+          "label": "Population Growth Rate",
+          "value": "Low to moderate — egg-laying reproduction and earlier maturity give slightly better recovery potential than viviparous species, but habitat dependency limits resilience"
+        },
+        {
+          "label": "Key Adaptations",
+          "value": "Highly flexible body for navigating reef crevices; pavement-like crushing teeth for hard-shelled prey; can pump water over gills while resting motionless on the seafloor"
+        }
+      ],
+      "habitatStats": [
+        {
+          "label": "Global Range",
+          "value": "Tropical Indo-Pacific — Red Sea, East Africa, South Asia, Southeast Asia, northern Australia, and Japan; associated with coral reefs and sandy coastal habitats"
+        },
+        {
+          "label": "Depth Range",
+          "value": "0–62 m (0–203 ft); most common in shallow reef zones under 30 m",
+          "metric": "0–62 m",
+          "imperial": "0–203 ft"
+        }
+      ],
+      "threats": [
+        {
+          "name": "Coral Reef Degradation",
+          "severity": "critical",
+          "description": "Entirely dependent on coral reef and sandy reef-flat habitats throughout its range. Bleaching events, destructive fishing, and coastal development have severely degraded reefs across Southeast Asia, South Asia, and the Red Sea — directly eliminating habitat and prey."
+        },
+        {
+          "name": "Overfishing and Bycatch",
+          "severity": "critical",
+          "description": "Heavily targeted by artisanal and commercial fisheries across Southeast Asia for meat and fins. Also caught in large numbers as bycatch in coastal trawls, gillnets, and hook-and-line fisheries. Bottom trawling in particular is devastating in shallow reef habitats where this species lives."
+        },
+        {
+          "name": "Aquarium Trade",
+          "severity": "medium",
+          "description": "Its striking appearance makes the zebra shark popular in the global aquarium trade. Wild collection for display, particularly of juveniles, adds additional pressure on already-depleted reef populations in parts of its range."
+        },
+        {
+          "name": "Habitat Specificity",
+          "severity": "medium",
+          "description": "Unlike wide-ranging pelagic sharks, the zebra shark is tied to specific shallow reef systems. This makes populations highly fragmented and unable to recolonize degraded reefs from elsewhere once locally extirpated."
+        },
+        {
+          "name": "Climate Change",
+          "severity": "medium",
+          "description": "Coral bleaching driven by ocean warming directly destroys the reef habitat zebra sharks depend on. Projected losses of coral reef cover in the Indo-Pacific under current warming scenarios pose a severe long-term threat to the species."
+        }
+      ],
+      "actionItems": [
+        {
+          "title": "Support Coral Reef Marine Protected Areas",
+          "description": "Zebra sharks depend entirely on healthy coral reefs. Advocate for the expansion and enforcement of MPAs covering reef habitats across Southeast Asia, the Red Sea, and Australia — the core of this species' range.",
+          "link": null
+        },
+        {
+          "title": "End Destructive Bottom Trawling",
+          "description": "Bottom trawling in shallow reef zones is one of the most destructive forces for zebra shark habitat and population. Support campaigns and policy efforts to ban trawling in reef and coastal habitats within the species' Indo-Pacific range.",
+          "link": null
+        },
+        {
+          "title": "Choose Reef-Friendly Aquarium Products",
+          "description": "If purchasing marine aquarium animals or products, verify they are captive-bred rather than wild-caught. Zebra sharks are bred in captivity — captive-bred specimens reduce pressure on wild reef populations.",
+          "link": null
+        },
+        {
+          "title": "Support the IUCN SSG and Reef Programs",
+          "description": "Donate to organizations funding reef shark monitoring and conservation programs across Southeast Asia — the region where zebra shark declines have been most severe and where data is most urgently needed.",
+          "link": "https://www.iucnssg.org"
+        }
+      ],
+      "healthMetrics": [
+        {
+          "label": "IUCN Status",
+          "value": "Endangered (uplisted from Vulnerable in 2016)",
+          "trend": "down"
+        },
+        {
+          "label": "Population Trend",
+          "value": "Decreasing — severely depleted in Southeast Asia and South Asia",
+          "trend": "down"
+        },
+        {
+          "label": "Habitat Quality",
+          "value": "Poor and declining — coral reefs degrading across the Indo-Pacific",
+          "trend": "down"
+        },
+        {
+          "label": "Prey Availability",
+          "value": "Declining — reef invertebrate and fish communities degraded by bleaching and fishing",
+          "trend": "down"
+        },
+        {
+          "label": "Fishing Pressure",
+          "value": "High — targeted and bycatch in coastal fisheries; bottom trawling devastating reefs",
+          "trend": "stable"
+        },
+        {
+          "label": "Protection Coverage",
+          "value": "Limited — some national protections; spotty MPA coverage; no CITES listing",
+          "trend": "stable",
+          "links": [
+            {
+              "label": "IUCN Red List",
+              "url": "https://www.iucnredlist.org/species/41878/68607409"
+            },
+            {
+              "label": "IUCN SSG",
+              "url": "https://www.iucnssg.org"
+            }
+          ]
+        }
+      ],
+      "statusHistory": [
+        {
+          "year": 1970,
+          "status": "Not Evaluated"
+        },
+        {
+          "year": 2007,
+          "status": "Vulnerable"
+        },
+        {
+          "year": 2016,
+          "status": "Endangered"
+        }
+      ],
+      "populationTrend": [
+        {
+          "year": 1970,
+          "value": 700000
+        },
+        {
+          "year": 1980,
+          "value": 580000
+        },
+        {
+          "year": 1990,
+          "value": 440000
+        },
+        {
+          "year": 2000,
+          "value": 310000
+        },
+        {
+          "year": 2010,
+          "value": 220000
+        },
+        {
+          "year": 2016,
+          "value": 170000
+        }
+      ],
+      "populationTrendMeta": {
+        "confidence": "modeled",
+        "note": "Rough global estimates modeled from IUCN-documented decline of >50% over three generations, driven primarily by reef degradation and fishing pressure in Southeast Asia. No formal stock assessment exists. Figures carry high uncertainty."
+      },
+      "preyDeclineRegions": [
+        {
+          "name": "SE Asia",
+          "severity": "critical",
+          "note": "Reef invertebrates and fish severely depleted by blast fishing, trawling, and bleaching"
+        },
+        {
+          "name": "South Asia",
+          "severity": "high",
+          "note": "Coastal reef systems heavily degraded; mollusks and crustaceans overharvested"
+        },
+        {
+          "name": "Red Sea",
+          "severity": "high",
+          "note": "Coral bleaching and coastal development reducing reef prey availability"
+        },
+        {
+          "name": "Australia",
+          "severity": "medium",
+          "note": "GBR bleaching events reducing reef complexity and benthic prey abundance"
+        },
+        {
+          "name": "East Africa",
+          "severity": "medium",
+          "note": "Artisanal fishing pressure on reef invertebrates; some areas well-managed"
+        }
+      ],
+      "fishingPressureRegions": [
+        {
+          "name": "SE Asia",
+          "severity": "critical",
+          "note": "Targeted for meat and fins; blast fishing destroys reef habitat and kills sharks directly"
+        },
+        {
+          "name": "South Asia",
+          "severity": "critical",
+          "note": "Caught in coastal trawls and gillnets; minimal species-specific protections"
+        },
+        {
+          "name": "Red Sea",
+          "severity": "high",
+          "note": "Artisanal and commercial fishing pressure; no zebra shark-specific restrictions"
+        },
+        {
+          "name": "East Africa",
+          "severity": "medium",
+          "note": "Targeted in some artisanal fisheries; patchy MPA coverage provides limited refuge"
+        },
+        {
+          "name": "Australia",
+          "severity": "low",
+          "note": "Protected in Australian waters; strong MPA network provides meaningful refuge"
+        }
+      ]
     },
     {
       "id": "eucrossorhinus-dasypogon",
@@ -6236,7 +7300,7 @@ window.WIKI_DATA = {
     },
     {
       "id": "galeorhinus-galeus",
-      "lastUpdated": "2026-03-06",
+      "lastUpdated": "2026-03-09",
       "emoji": "🦈",
       "commonName": "Tope Shark",
       "scientificName": "Galeorhinus galeus",
@@ -6265,9 +7329,273 @@ window.WIKI_DATA = {
         "bycatch",
         "overfished"
       ],
+      "photos": [
+        "projects/shark-populations/images/tope_shark/tope_shark.png"
+      ],
       "description": "The tope shark (also called school shark, soupfin shark, or snapper shark) is a slender, migratory houndshark found in temperate coastal waters worldwide. Once heavily targeted for its liver oil (rich in vitamin A before synthetic production), it continues to be heavily exploited for its fins and meat and is subject to significant bycatch pressure. Its slow reproductive rate — late maturity, low litter sizes, and long gestation — makes recovery from overfishing extremely slow, and populations in many regions have declined by over 80%.",
       "funFact": "Before synthetic vitamin A became available in the 1950s, tope sharks were intensively hunted for their enormous livers — which can make up 25% of their body weight and contain exceptionally high concentrations of vitamin A — causing population crashes in California, Australia, and New Zealand within just a few decades of commercial fishing.",
-      "habitat": "Temperate coastal and continental shelf waters worldwide, including the Mediterranean, northeast and southwest Atlantic, eastern Pacific, and southern hemisphere. Typically found at depths of 0–550 m, undertaking extensive seasonal migrations between nursery grounds and adult foraging areas."
+      "habitat": "Temperate coastal and continental shelf waters worldwide, including the Mediterranean, northeast and southwest Atlantic, eastern Pacific, and southern hemisphere. Typically found at depths of 0–550 m, undertaking extensive seasonal migrations between nursery grounds and adult foraging areas.",
+      "diet": "Feeds primarily on small bony fish such as anchovies, mackerel, and flatfish, as well as squid, octopus, and crustaceans. Uses its highly mobile upper jaw and strong cutting teeth to handle slippery, fast-moving prey near the seafloor and in midwater.",
+      "size": "Typically 1.5–1.75 m (4.9–5.7 ft); max confirmed ~1.95 m (6.4 ft). Females are larger than males.",
+      "vitalSigns": [
+        {
+          "label": "Estimated Population",
+          "value": "Unknown — severely depleted across most of range",
+          "glance": true
+        },
+        {
+          "label": "Lifespan",
+          "value": "Up to ~55 years",
+          "glance": true
+        },
+        {
+          "label": "Max Length",
+          "value": "~1.95 m (6.4 ft)",
+          "metric": "~1.95 m",
+          "imperial": "~6.4 ft",
+          "glance": true
+        },
+        {
+          "label": "Max Weight",
+          "value": "~45 kg (~99 lbs)",
+          "metric": "~45 kg",
+          "imperial": "~99 lbs",
+          "glance": true
+        },
+        {
+          "label": "Reproductive Rate",
+          "value": "6–52 pups per litter (avg. ~20–35); ~12-month gestation; typically breeds every 2 years"
+        },
+        {
+          "label": "Age at Maturity",
+          "value": "6–13 years (males), 9–16 years (females)"
+        },
+        {
+          "label": "Top Speed",
+          "value": "~35 km/h (~22 mph) estimated",
+          "metric": "~35 km/h",
+          "imperial": "~22 mph",
+          "glance": true
+        },
+        {
+          "label": "Ecological Role",
+          "value": "Mesopredator",
+          "glance": true
+        },
+        {
+          "label": "Diet",
+          "value": "Small bony fish, squid, octopus, crustaceans"
+        },
+        {
+          "label": "Population Growth Rate",
+          "value": "Very low — late maturity and biennial breeding cycle make recovery from overfishing extremely slow"
+        },
+        {
+          "label": "Key Adaptations",
+          "value": "Highly mobile upper jaw (cranial kinesis) for handling prey; capable of long-distance trans-oceanic migrations tracked up to 3,000 km"
+        }
+      ],
+      "habitatStats": [
+        {
+          "label": "Global Range",
+          "value": "Temperate coastal and shelf waters worldwide — NE and SW Atlantic, Mediterranean, NE and SE Pacific, Indian Ocean, and Australasia"
+        },
+        {
+          "label": "Depth Range",
+          "value": "0–550 m (0–1,804 ft); typically 0–200 m in coastal shelf areas",
+          "metric": "0–550 m",
+          "imperial": "0–1,804 ft"
+        }
+      ],
+      "threats": [
+        {
+          "name": "Overfishing",
+          "severity": "critical",
+          "description": "Historically targeted in directed fisheries for meat, fins, and liver oil across the North Atlantic, Mediterranean, eastern Pacific, and Australasia. Populations collapsed by 70–90% in California and New Zealand within decades of commercial exploitation."
+        },
+        {
+          "name": "Bycatch",
+          "severity": "high",
+          "description": "Caught incidentally in demersal trawls, longlines, and gillnets throughout its range. High discard rates and poor reporting in many regions mean true mortality is substantially higher than official landing statistics suggest."
+        },
+        {
+          "name": "Finning",
+          "severity": "high",
+          "description": "Fins are traded internationally. Despite CITES Appendix II listing, enforcement is inconsistent in key fishing regions, and fins are routinely misidentified or unreported in trade records."
+        },
+        {
+          "name": "Slow Reproductive Rate",
+          "severity": "high",
+          "description": "Late sexual maturity (up to 16 years for females), small litter sizes relative to other sharks, and a biennial breeding cycle severely limit the population's ability to recover. Even under reduced pressure, rebuilding takes multiple decades."
+        },
+        {
+          "name": "Climate Change",
+          "severity": "medium",
+          "description": "A temperate-water specialist, the tope shark is sensitive to warming seas that compress suitable coastal habitat and alter the distribution and abundance of its prey."
+        }
+      ],
+      "actionItems": [
+        {
+          "title": "Support CITES Appendix II Enforcement",
+          "description": "The tope shark is listed on CITES Appendix II, requiring trade documentation. Advocate for rigorous enforcement of import/export permits and for upgrading protections where populations are most critically depleted.",
+          "link": "https://cites.org"
+        },
+        {
+          "title": "Back Regional Fishing Restrictions",
+          "description": "Push for binding catch limits, zero-retention rules, and bycatch mitigation measures in Mediterranean and Atlantic fisheries — the regions where tope shark populations are most severely depleted.",
+          "link": null
+        },
+        {
+          "title": "Avoid Shark Products",
+          "description": "Tope shark is sold under names like 'school shark', 'flake', 'snapper', and 'vitamin shark' in various markets. Use sustainable seafood guides to identify and avoid purchasing shark species.",
+          "link": "https://www.seafoodwatch.org"
+        },
+        {
+          "title": "Donate to Shark Conservation",
+          "description": "Support the Shark Trust and IUCN Shark Specialist Group, which monitor tope shark populations, advocate for RFMO protections, and fund tagging research to understand migration routes and stock boundaries.",
+          "link": "https://www.sharktrust.org"
+        }
+      ],
+      "healthMetrics": [
+        {
+          "label": "IUCN Status",
+          "value": "Critically Endangered (uplisted from Vulnerable in 2020)",
+          "trend": "down"
+        },
+        {
+          "label": "Population Trend",
+          "value": "Declining globally; no regional populations currently recovering",
+          "trend": "down"
+        },
+        {
+          "label": "Habitat Quality",
+          "value": "Moderate — temperate shelf habitat largely intact but warming",
+          "trend": "down"
+        },
+        {
+          "label": "Prey Availability",
+          "value": "Declining — coastal fish stocks heavily exploited across its range",
+          "trend": "down"
+        },
+        {
+          "label": "Fishing Pressure",
+          "value": "High — targeted and bycatch mortality continues in most regions",
+          "trend": "stable"
+        },
+        {
+          "label": "Protection Coverage",
+          "value": "Limited — CITES Appendix II; some national protections; no global catch cap",
+          "trend": "up",
+          "links": [
+            {
+              "label": "CITES Listing",
+              "url": "https://cites.org/eng/app/appendices.php"
+            },
+            {
+              "label": "IUCN Red List",
+              "url": "https://www.iucnredlist.org/species/39352/2907336"
+            },
+            {
+              "label": "Shark Trust",
+              "url": "https://www.sharktrust.org"
+            }
+          ]
+        }
+      ],
+      "statusHistory": [
+        {
+          "year": 1994,
+          "status": "Vulnerable"
+        },
+        {
+          "year": 2020,
+          "status": "Critically Endangered"
+        }
+      ],
+      "populationTrend": [
+        {
+          "year": 1970,
+          "value": 1400000
+        },
+        {
+          "year": 1980,
+          "value": 850000
+        },
+        {
+          "year": 1990,
+          "value": 500000
+        },
+        {
+          "year": 2000,
+          "value": 320000
+        },
+        {
+          "year": 2010,
+          "value": 240000
+        },
+        {
+          "year": 2020,
+          "value": 190000
+        }
+      ],
+      "populationTrendMeta": {
+        "confidence": "modeled",
+        "note": "Rough global estimates modeled from documented regional collapses in California (>70% decline by 1940s–50s), New Zealand (>80% decline mid-20th century), and the Northeast Atlantic. No reliable global census exists. Southern hemisphere populations have been minimally assessed."
+      },
+      "preyDeclineRegions": [
+        {
+          "name": "Mediterranean",
+          "severity": "high",
+          "note": "Coastal fish stocks — anchovies, sardines, flatfish — severely depleted by commercial trawling"
+        },
+        {
+          "name": "NE Atlantic",
+          "severity": "high",
+          "note": "Key demersal prey species under intense pressure from industrial trawl fleets"
+        },
+        {
+          "name": "SE Pacific",
+          "severity": "medium",
+          "note": "Anchovy and sardine stocks fluctuate significantly; some overfished"
+        },
+        {
+          "name": "Australasia",
+          "severity": "medium",
+          "note": "Coastal prey fish under moderate fishing pressure; some recovery noted"
+        },
+        {
+          "name": "SW Atlantic",
+          "severity": "medium",
+          "note": "Patagonian shelf prey stocks under pressure from expanding distant-water fleets"
+        }
+      ],
+      "fishingPressureRegions": [
+        {
+          "name": "Mediterranean",
+          "severity": "critical",
+          "note": "Highest pressure globally; no directed prohibition; ongoing trawl bycatch mortality"
+        },
+        {
+          "name": "NE Atlantic",
+          "severity": "high",
+          "note": "EU zero-retention rule applies; bycatch and non-compliance continue"
+        },
+        {
+          "name": "SW Atlantic",
+          "severity": "high",
+          "note": "Targeted and bycatch in expanding distant-water fisheries; minimal oversight"
+        },
+        {
+          "name": "Australasia",
+          "severity": "medium",
+          "note": "Managed fisheries in Australia and NZ; quota controls in place but populations remain depleted"
+        },
+        {
+          "name": "NE Pacific",
+          "severity": "medium",
+          "note": "California population historically collapsed; lower fishing pressure now but no recovery observed"
+        }
+      ]
     },
     {
       "id": "hemiscyllium-ocellatum",

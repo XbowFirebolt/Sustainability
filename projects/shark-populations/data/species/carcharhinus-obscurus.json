@@ -1,6 +1,6 @@
 {
   "id": "carcharhinus-obscurus",
-  "lastUpdated": "2026-03-06",
+  "lastUpdated": "2026-03-09",
   "emoji": "🦈",
   "commonName": "Dusky Shark",
   "scientificName": "Carcharhinus obscurus",
@@ -31,7 +31,87 @@
     "bycatch",
     "finning"
   ],
+  "photos": [
+    "projects/shark-populations/images/dusky_shark/dusky_shark.png"
+  ],
   "description": "The dusky shark is a large, wide-ranging requiem shark found in tropical and warm temperate waters worldwide. It undertakes extensive coastal migrations and is one of the slowest-maturing and slowest-reproducing of all large sharks, making populations especially vulnerable to fishing pressure. Despite protections in some regions, populations have declined by over 80% in parts of its range.",
   "funFact": "Dusky sharks have one of the slowest life cycles of any shark — females don't reach maturity until age 20, have a 22–24 month gestation period, and reproduce only every 3 years — meaning populations can take decades to recover from even modest depletion.",
-  "habitat": "Coastal and offshore waters in tropical and warm temperate regions worldwide. Found from inshore bays and estuaries to the open ocean at depths of 0–400 m. Undertakes pronounced north-south seasonal migrations along coastlines."
+  "habitat": "Coastal and offshore waters in tropical and warm temperate regions worldwide. Found from inshore bays and estuaries to the open ocean at depths of 0–400 m. Undertakes pronounced north-south seasonal migrations along coastlines.",
+  "diet": "A highly opportunistic predator feeding on a wide variety of bony fish, smaller sharks and rays, squid, octopus, and crustaceans. Uses its broadly curved jaw and serrated teeth to take large prey items, and is known to follow prey schools on seasonal migrations.",
+  "size": "Typically 2.5–3.2 m (8.2–10.5 ft); max confirmed ~4.2 m (13.8 ft). Females grow larger than males.",
+  "vitalSigns": [
+    { "label": "Estimated Population",   "value": "Unknown — severely depleted; NW Atlantic population estimated at <10% of historical levels", "glance": true },
+    { "label": "Lifespan",               "value": "Up to ~50 years",                                                                               "glance": true },
+    { "label": "Max Length",             "value": "~4.2 m (13.8 ft)",           "metric": "~4.2 m",  "imperial": "~13.8 ft", "glance": true },
+    { "label": "Max Weight",             "value": "~347 kg (~765 lbs)",         "metric": "~347 kg", "imperial": "~765 lbs", "glance": true },
+    { "label": "Reproductive Rate",      "value": "3–14 pups per litter (avg. ~6–10); 22–24 month gestation; breeds every 3 years" },
+    { "label": "Age at Maturity",        "value": "~17–19 years (males), ~20 years (females)" },
+    { "label": "Top Speed",              "value": "~40 km/h (~25 mph) estimated",          "metric": "~40 km/h",  "imperial": "~25 mph",  "glance": true },
+    { "label": "Ecological Role",        "value": "Apex Predator",                                                                                  "glance": true },
+    { "label": "Diet",                   "value": "Bony fish, smaller sharks and rays, squid, octopus, crustaceans" },
+    { "label": "Population Growth Rate", "value": "Extremely low — the combination of 20-year maturity, triennial breeding, and long gestation gives one of the lowest intrinsic growth rates of any shark" },
+    { "label": "Key Adaptations",        "value": "Long-distance coastal migration (up to 3,200 km recorded); broad diet generalism allows exploitation of diverse prey assemblages across habitats" }
+  ],
+  "habitatStats": [
+    { "label": "Global Range", "value": "Tropical and warm temperate coastal and offshore waters worldwide — Atlantic, Indian, and Pacific Oceans; absent from the central Pacific" },
+    { "label": "Depth Range",  "value": "0–400 m (0–1,312 ft); most common in coastal shelf waters to 200 m", "metric": "0–400 m", "imperial": "0–1,312 ft" }
+  ],
+  "threats": [
+    { "name": "Overfishing",            "severity": "critical", "description": "Heavily targeted in directed US Atlantic fisheries from the 1960s through the 1990s, leading to a population collapse estimated at 70–80% in the Northwest Atlantic. US restrictions imposed in 2000 have not produced measurable recovery due to the species' extremely slow reproductive rate." },
+    { "name": "Bycatch",                "severity": "critical", "description": "Among the most commonly caught large sharks in pelagic longlines and coastal gillnets globally. High juvenile bycatch in inshore nursery habitats is especially damaging given the species' slow maturation timeline." },
+    { "name": "Finning",                "severity": "high",     "description": "Dusky shark fins are highly valued in the international fin trade, with large individuals producing particularly prized fins. Finning continues in regions without robust enforcement." },
+    { "name": "Extremely Slow Reproduction", "severity": "high", "description": "With maturity at ~20 years, a 2-year gestation, and triennial breeding cycles, the dusky shark has one of the lowest population growth rates of any shark — making even low levels of ongoing mortality unsustainable." },
+    { "name": "Nursery Habitat Loss",   "severity": "medium",   "description": "Juveniles rely on shallow coastal and estuarine nursery areas that are subject to development, pollution, and habitat degradation. Disruption of nursery grounds compounds the effects of direct fishing mortality." }
+  ],
+  "actionItems": [
+    { "title": "Support US Atlantic Recovery Measures",   "description": "The Northwest Atlantic dusky shark population has been under a no-retention rule since 2000 yet shows little sign of recovery. Advocate for continued protection and stronger bycatch mitigation requirements in longline fisheries that incidentally catch dusky sharks.", "link": null },
+    { "title": "Protect Coastal Nursery Habitat",         "description": "Dusky shark juveniles depend on specific shallow coastal and estuarine nursery grounds. Support marine spatial planning and coastal development restrictions that preserve these critical areas.", "link": null },
+    { "title": "Advocate for CITES Appendix II Enforcement", "description": "Dusky sharks are listed on CITES Appendix II. Push for stricter species-level identification and trade documentation to prevent fins from being exported under misidentified labels.", "link": "https://cites.org" },
+    { "title": "Donate to Shark Conservation",            "description": "Support the Shark Trust and IUCN SSG programs that monitor dusky shark bycatch, fund tagging research tracking migration and nursery use, and advocate for binding international catch limits.", "link": "https://www.sharktrust.org" }
+  ],
+  "healthMetrics": [
+    { "label": "IUCN Status",         "value": "Endangered (listed 2020)",                                                             "trend": "down"   },
+    { "label": "Population Trend",    "value": "Decreasing — NW Atlantic at <10% historical levels; no recovery observed",            "trend": "down"   },
+    { "label": "Habitat Quality",     "value": "Moderate — open-ocean range intact; coastal nursery habitat degrading",               "trend": "down"   },
+    { "label": "Prey Availability",   "value": "Declining — coastal and pelagic fish stocks heavily exploited across its range",      "trend": "down"   },
+    { "label": "Fishing Pressure",    "value": "High — no-retention in US Atlantic; bycatch and targeting continues globally",        "trend": "stable" },
+    { "label": "Protection Coverage", "value": "Limited — US no-retention since 2000; CITES II; no global binding measures",         "trend": "up",
+      "links": [
+        { "label": "CITES Listing", "url": "https://cites.org/eng/app/appendices.php" },
+        { "label": "IUCN Red List", "url": "https://www.iucnredlist.org/species/3852/2876384" },
+        { "label": "Shark Trust",   "url": "https://www.sharktrust.org" }
+      ]
+    }
+  ],
+  "statusHistory": [
+    { "year": 1994, "status": "Not Evaluated" },
+    { "year": 2006, "status": "Vulnerable" },
+    { "year": 2020, "status": "Endangered" }
+  ],
+  "populationTrend": [
+    { "year": 1970, "value": 1800000 },
+    { "year": 1980, "value": 1200000 },
+    { "year": 1990, "value": 700000 },
+    { "year": 2000, "value": 450000 },
+    { "year": 2010, "value": 360000 },
+    { "year": 2020, "value": 310000 }
+  ],
+  "populationTrendMeta": {
+    "confidence": "modeled",
+    "note": "Rough global estimates modeled from documented NW Atlantic collapse (70–80% decline by 2000) and extrapolated to other ocean basins where assessments are absent. No global population census exists. Figures carry high uncertainty."
+  },
+  "preyDeclineRegions": [
+    { "name": "NW Atlantic",    "severity": "high",   "note": "Coastal fish stocks heavily fished; prey assemblage significantly altered" },
+    { "name": "Mediterranean",  "severity": "high",   "note": "Coastal and pelagic prey species severely depleted by trawling and longlining" },
+    { "name": "Indo-Pacific",   "severity": "high",   "note": "Reef and pelagic fish stocks under intense pressure across the region" },
+    { "name": "W. Africa",      "severity": "high",   "note": "Artisanal and industrial fisheries have heavily depleted coastal prey fish" },
+    { "name": "Australasia",    "severity": "medium", "note": "Moderate fishing pressure; some key prey stocks managed" }
+  ],
+  "fishingPressureRegions": [
+    { "name": "NW Atlantic",    "severity": "high",     "note": "No-retention rule since 2000; high bycatch in tuna and swordfish longlines continues" },
+    { "name": "Mediterranean",  "severity": "critical", "note": "Targeted and bycatch mortality; no species-specific protections" },
+    { "name": "W. Africa",      "severity": "critical", "note": "Targeted by artisanal and industrial fleets for fins and meat; minimal oversight" },
+    { "name": "Indo-Pacific",   "severity": "high",     "note": "Heavy coastal and pelagic fishing effort; dusky sharks common bycatch" },
+    { "name": "Australasia",    "severity": "medium",   "note": "Some managed fisheries; bycatch in longlines and gillnets ongoing" }
+  ]
 }

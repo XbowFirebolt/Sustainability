@@ -1,6 +1,6 @@
 {
   "id": "isurus-paucus",
-  "lastUpdated": "2026-03-06",
+  "lastUpdated": "2026-03-09",
   "emoji": "🦈",
   "commonName": "Longfin Mako",
   "scientificName": "Isurus paucus",
@@ -30,7 +30,87 @@
     "solitary",
     "bycatch"
   ],
+  "photos": [
+    "projects/shark-populations/images/longfin_mako/longfin_mako.png"
+  ],
   "description": "The longfin mako is a large, fast-swimming pelagic shark closely related to the shortfin mako but distinguished by its broader, longer pectoral fins and larger eyes. It inhabits tropical and warm temperate oceanic waters globally and is far less studied than its relative. Like the shortfin mako, it faces serious pressure from bycatch and targeted fishing.",
   "funFact": "The longfin mako remains one of the least-studied large shark species — so elusive in the open ocean that a live specimen was not scientifically documented until 1966, despite the species being formally described decades earlier.",
-  "habitat": "Oceanic and epipelagic waters in tropical and warm temperate seas worldwide. Tends to remain in deeper waters than the shortfin mako, typically found near the surface to depths of 220 m, often along continental shelf edges and around oceanic islands."
+  "habitat": "Oceanic and epipelagic waters in tropical and warm temperate seas worldwide. Tends to remain in deeper waters than the shortfin mako, typically found near the surface to depths of 220 m, often along continental shelf edges and around oceanic islands.",
+  "diet": "An apex predator feeding on fast-moving bony fish — particularly tuna, billfish, and flying fish — as well as squid and cephalopods. Its larger pectoral fins and bigger eyes compared to the shortfin mako may be adaptations for slower, more deliberate hunting in deeper, darker waters.",
+  "size": "Typically 2.0–3.5 m (6.6–11.5 ft); max confirmed 4.3 m (14 ft). Large specimens can exceed 200 kg, with the largest reaching ~500 kg (1,100 lbs). Females grow significantly larger than males.",
+  "vitalSigns": [
+    { "label": "Estimated Population",   "value": "Unknown — far rarer than shortfin mako; no global estimate exists",                                             "glance": true },
+    { "label": "Lifespan",               "value": "Unknown — likely similar to shortfin mako at up to ~30 years",                                                   "glance": true },
+    { "label": "Max Length",             "value": "~4.3 m (14 ft) estimated",     "metric": "~4.3 m",  "imperial": "~14 ft",   "glance": true },
+    { "label": "Max Weight",             "value": "~500 kg (~1,100 lbs)",        "metric": "~500 kg", "imperial": "~1,100 lbs", "glance": true },
+    { "label": "Reproductive Rate",      "value": "2–8 pups per litter estimated; gestation likely ~15–18 months; long inter-birth intervals" },
+    { "label": "Age at Maturity",        "value": "Unknown — likely similar to shortfin mako; females possibly ~18+ years" },
+    { "label": "Top Speed",              "value": "~50 km/h (~31 mph) estimated — slower than shortfin mako", "metric": "~50 km/h", "imperial": "~31 mph", "glance": true },
+    { "label": "Ecological Role",        "value": "Apex Predator",                                                                                                    "glance": true },
+    { "label": "Diet",                   "value": "Tuna, billfish, flying fish, squid" },
+    { "label": "Population Growth Rate", "value": "Very low — presumed similar to shortfin mako, with very late female maturity severely limiting recovery" },
+    { "label": "Key Adaptations",        "value": "Enlarged pectoral fins for stability in slower deep-water cruising; larger eyes adapted for dimmer pelagic environments; regional endothermy shared with all lamnid sharks" }
+  ],
+  "habitatStats": [
+    { "label": "Global Range", "value": "Tropical and warm temperate oceanic waters worldwide; Atlantic, Pacific, and Indian Oceans" },
+    { "label": "Depth Range",  "value": "Surface to ~220 m (720 ft); spends more time at depth than the shortfin mako", "metric": "Surface to ~220 m", "imperial": "Surface to ~720 ft" }
+  ],
+  "threats": [
+    { "name": "Bycatch",                        "severity": "critical", "description": "The dominant threat. Regularly caught on longlines targeting tuna and swordfish throughout the Pacific, Atlantic, and Indian Oceans. Low observer coverage means true longfin mako mortality is almost certainly severely underreported." },
+    { "name": "Data Deficiency",                "severity": "high",     "description": "The longfin mako's rarity and deep-water habits mean its population size, stock structure, and true level of fishing mortality are almost entirely unknown — making effective conservation and management virtually impossible." },
+    { "name": "Targeted Fishing",               "severity": "high",     "description": "Fins and meat are traded internationally. Misidentification as shortfin mako in landings and trade records obscures the actual scale of longfin mako harvest." },
+    { "name": "Extremely Late Female Maturity", "severity": "high",     "description": "Like the shortfin mako, female longfin makos likely mature very late (possibly 18+ years), resulting in extremely low population growth rates and slow recovery from any level of fishing mortality." },
+    { "name": "Climate Change",                 "severity": "medium",   "description": "Warming and deoxygenation of deep pelagic waters may compress the thermal and oxygen habitat available to a species that depends on specific oceanic conditions for hunting and thermoregulation." }
+  ],
+  "actionItems": [
+    { "title": "Extend Mako No-Retention Rules",       "description": "ICCAT's 2019 North Atlantic no-retention measure for makos covers both species but is inconsistently enforced and doesn't extend to other ocean basins. Advocate for global no-retention rules at ICCAT, WCPFC, and IOTC.", "link": null },
+    { "title": "Support Improved Species ID in Trade", "description": "Longfin mako fins and meat are routinely misidentified as shortfin mako in markets and landings data, masking true mortality. Support genetic identification programs and stricter species-level trade reporting.", "link": null },
+    { "title": "Advocate for CITES Appendix II Enforcement", "description": "Longfin makos are listed on CITES Appendix II alongside the shortfin mako. Push for rigorous trade documentation and enforcement to prevent unreported exports from regions with high bycatch rates.", "link": "https://cites.org" },
+    { "title": "Fund Pelagic Research",                "description": "Donate to organizations that fund satellite tagging and observer programs in deep pelagic fisheries — the only way to understand longfin mako population status, migration, and fishing mortality.", "link": "https://www.sharktrust.org" }
+  ],
+  "healthMetrics": [
+    { "label": "IUCN Status",         "value": "Endangered (listed 2019)",                                              "trend": "down"   },
+    { "label": "Population Trend",    "value": "Decreasing — no region shows signs of recovery",                        "trend": "down"   },
+    { "label": "Habitat Quality",     "value": "Moderate — deep pelagic habitat largely intact but warming",            "trend": "down"   },
+    { "label": "Prey Availability",   "value": "Declining — tuna and billfish under heavy longline pressure globally",  "trend": "down"   },
+    { "label": "Fishing Pressure",    "value": "Critical — high bycatch mortality; severely under-monitored",           "trend": "down"   },
+    { "label": "Protection Coverage", "value": "Partial — CITES II; N. Atlantic no-retention (ICCAT 2019); no other basin protections", "trend": "up",
+      "links": [
+        { "label": "CITES Listing", "url": "https://cites.org/eng/app/appendices.php" },
+        { "label": "IUCN Red List", "url": "https://www.iucnredlist.org/species/42006/2949072" },
+        { "label": "Shark Trust",   "url": "https://www.sharktrust.org" }
+      ]
+    }
+  ],
+  "statusHistory": [
+    { "year": 2000, "status": "Not Evaluated" },
+    { "year": 2007, "status": "Vulnerable" },
+    { "year": 2019, "status": "Endangered" }
+  ],
+  "populationTrend": [
+    { "year": 1970, "value": 500000 },
+    { "year": 1980, "value": 400000 },
+    { "year": 1990, "value": 300000 },
+    { "year": 2000, "value": 220000 },
+    { "year": 2010, "value": 160000 },
+    { "year": 2019, "value": 120000 }
+  ],
+  "populationTrendMeta": {
+    "confidence": "modeled",
+    "note": "Highly speculative estimates modeled from shortfin mako population trends, adjusted downward to reflect the longfin's far greater rarity. No stock assessment for this species exists. All figures carry very high uncertainty."
+  },
+  "preyDeclineRegions": [
+    { "name": "N. Atlantic",    "severity": "critical", "note": "Swordfish, tuna, and billfish heavily overfished throughout" },
+    { "name": "Mediterranean",  "severity": "critical", "note": "Bluefin tuna near collapse; swordfish severely depleted" },
+    { "name": "Indo-Pacific",   "severity": "high",     "note": "Tuna and billfish under intense longline pressure" },
+    { "name": "N. Pacific",     "severity": "high",     "note": "Albacore and bigeye tuna overfished in key areas" },
+    { "name": "S. Atlantic",    "severity": "medium",   "note": "Swordfish and tuna under moderate and growing pressure" }
+  ],
+  "fishingPressureRegions": [
+    { "name": "N. Atlantic",    "severity": "critical", "note": "ICCAT no-retention (2019); decades of prior bycatch mortality" },
+    { "name": "Mediterranean",  "severity": "critical", "note": "Dense longline effort; species misidentification rampant; no enforcement" },
+    { "name": "Indo-Pacific",   "severity": "high",     "note": "Extensive longline fisheries; no basin-wide mako protections" },
+    { "name": "N. Pacific",     "severity": "high",     "note": "Common bycatch in Pacific tuna longlines; low observer coverage" },
+    { "name": "S. Atlantic",    "severity": "high",     "note": "Expanding distant-water fleets with no longfin-specific protections" }
+  ]
 }

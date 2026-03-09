@@ -1,6 +1,6 @@
 {
   "id": "stegostoma-tigrinum",
-  "lastUpdated": "2026-03-06",
+  "lastUpdated": "2026-03-09",
   "emoji": "🦈",
   "commonName": "Zebra Shark",
   "scientificName": "Stegostoma tigrinum",
@@ -27,7 +27,86 @@
     "solitary",
     "bycatch"
   ],
+  "photos": [
+    "projects/shark-populations/images/zebra_shark/zebra_shark.png"
+  ],
   "description": "The zebra shark is a distinctive, slow-moving species found on coral reefs and sandy seafloors of the tropical Indo-Pacific. Adults are covered in small dark spots on a pale background, though juveniles bear striking black-and-white stripes — giving the species its common name. It is primarily nocturnal, hunting mollusks, crustaceans, and small fish by probing crevices with its flexible body.",
   "funFact": "Juvenile zebra sharks are born with bold black-and-white stripes that gradually break up into the adult's spotted pattern over their first few years — making young and adult animals look so different they were once formally described as separate species.",
-  "habitat": "Shallow coral reefs, sandy flats, and rocky seafloors in tropical Indo-Pacific waters from the Red Sea and East Africa to Japan and Australia. Typically found at depths of 0–62 m, often resting motionless on the bottom during the day in areas with strong currents."
+  "habitat": "Shallow coral reefs, sandy flats, and rocky seafloors in tropical Indo-Pacific waters from the Red Sea and East Africa to Japan and Australia. Typically found at depths of 0–62 m, often resting motionless on the bottom during the day in areas with strong currents.",
+  "diet": "A specialized benthic predator feeding primarily on mollusks, crustaceans, small bony fish, and sea snakes. Uses its flexible, elongated body to squeeze into reef crevices and extract prey, and its strong, pavement-like teeth to crush hard-shelled invertebrates.",
+  "size": "Typically 1.5–2.5 m (4.9–8.2 ft); max confirmed ~3.5 m (11.5 ft) including the long caudal fin. Males and females are similar in size.",
+  "vitalSigns": [
+    { "label": "Estimated Population",   "value": "Unknown — severely depleted in large portions of its Indo-Pacific range",                                         "glance": true },
+    { "label": "Lifespan",               "value": "Up to ~25–30 years",                                                                                              "glance": true },
+    { "label": "Max Length",             "value": "~3.5 m (11.5 ft) including tail", "metric": "~3.5 m", "imperial": "~11.5 ft", "glance": true },
+    { "label": "Max Weight",             "value": "~20 kg (~44 lbs)",                "metric": "~20 kg", "imperial": "~44 lbs",  "glance": true },
+    { "label": "Reproductive Rate",      "value": "Up to 4 eggs per clutch (oviparous); multiple clutches per year possible; eggs hatch after ~170 days" },
+    { "label": "Age at Maturity",        "value": "~5–8 years" },
+    { "label": "Top Speed",              "value": "~5 km/h (~3 mph) — slow-moving benthic species", "metric": "~5 km/h", "imperial": "~3 mph", "glance": true },
+    { "label": "Ecological Role",        "value": "Mesopredator — benthic reef specialist",                                                                           "glance": true },
+    { "label": "Diet",                   "value": "Mollusks, crustaceans, small bony fish, sea snakes" },
+    { "label": "Population Growth Rate", "value": "Low to moderate — egg-laying reproduction and earlier maturity give slightly better recovery potential than viviparous species, but habitat dependency limits resilience" },
+    { "label": "Key Adaptations",        "value": "Highly flexible body for navigating reef crevices; pavement-like crushing teeth for hard-shelled prey; can pump water over gills while resting motionless on the seafloor" }
+  ],
+  "habitatStats": [
+    { "label": "Global Range", "value": "Tropical Indo-Pacific — Red Sea, East Africa, South Asia, Southeast Asia, northern Australia, and Japan; associated with coral reefs and sandy coastal habitats" },
+    { "label": "Depth Range",  "value": "0–62 m (0–203 ft); most common in shallow reef zones under 30 m", "metric": "0–62 m", "imperial": "0–203 ft" }
+  ],
+  "threats": [
+    { "name": "Coral Reef Degradation",  "severity": "critical", "description": "Entirely dependent on coral reef and sandy reef-flat habitats throughout its range. Bleaching events, destructive fishing, and coastal development have severely degraded reefs across Southeast Asia, South Asia, and the Red Sea — directly eliminating habitat and prey." },
+    { "name": "Overfishing and Bycatch", "severity": "critical", "description": "Heavily targeted by artisanal and commercial fisheries across Southeast Asia for meat and fins. Also caught in large numbers as bycatch in coastal trawls, gillnets, and hook-and-line fisheries. Bottom trawling in particular is devastating in shallow reef habitats where this species lives." },
+    { "name": "Aquarium Trade",          "severity": "medium",   "description": "Its striking appearance makes the zebra shark popular in the global aquarium trade. Wild collection for display, particularly of juveniles, adds additional pressure on already-depleted reef populations in parts of its range." },
+    { "name": "Habitat Specificity",     "severity": "medium",   "description": "Unlike wide-ranging pelagic sharks, the zebra shark is tied to specific shallow reef systems. This makes populations highly fragmented and unable to recolonize degraded reefs from elsewhere once locally extirpated." },
+    { "name": "Climate Change",          "severity": "medium",   "description": "Coral bleaching driven by ocean warming directly destroys the reef habitat zebra sharks depend on. Projected losses of coral reef cover in the Indo-Pacific under current warming scenarios pose a severe long-term threat to the species." }
+  ],
+  "actionItems": [
+    { "title": "Support Coral Reef Marine Protected Areas", "description": "Zebra sharks depend entirely on healthy coral reefs. Advocate for the expansion and enforcement of MPAs covering reef habitats across Southeast Asia, the Red Sea, and Australia — the core of this species' range.", "link": null },
+    { "title": "End Destructive Bottom Trawling",           "description": "Bottom trawling in shallow reef zones is one of the most destructive forces for zebra shark habitat and population. Support campaigns and policy efforts to ban trawling in reef and coastal habitats within the species' Indo-Pacific range.", "link": null },
+    { "title": "Choose Reef-Friendly Aquarium Products",    "description": "If purchasing marine aquarium animals or products, verify they are captive-bred rather than wild-caught. Zebra sharks are bred in captivity — captive-bred specimens reduce pressure on wild reef populations.", "link": null },
+    { "title": "Support the IUCN SSG and Reef Programs",    "description": "Donate to organizations funding reef shark monitoring and conservation programs across Southeast Asia — the region where zebra shark declines have been most severe and where data is most urgently needed.", "link": "https://www.iucnssg.org" }
+  ],
+  "healthMetrics": [
+    { "label": "IUCN Status",         "value": "Endangered (uplisted from Vulnerable in 2016)",                                          "trend": "down"   },
+    { "label": "Population Trend",    "value": "Decreasing — severely depleted in Southeast Asia and South Asia",                        "trend": "down"   },
+    { "label": "Habitat Quality",     "value": "Poor and declining — coral reefs degrading across the Indo-Pacific",                     "trend": "down"   },
+    { "label": "Prey Availability",   "value": "Declining — reef invertebrate and fish communities degraded by bleaching and fishing",   "trend": "down"   },
+    { "label": "Fishing Pressure",    "value": "High — targeted and bycatch in coastal fisheries; bottom trawling devastating reefs",    "trend": "stable" },
+    { "label": "Protection Coverage", "value": "Limited — some national protections; spotty MPA coverage; no CITES listing",            "trend": "stable",
+      "links": [
+        { "label": "IUCN Red List",   "url": "https://www.iucnredlist.org/species/41878/68607409" },
+        { "label": "IUCN SSG",        "url": "https://www.iucnssg.org" }
+      ]
+    }
+  ],
+  "statusHistory": [
+    { "year": 1970, "status": "Not Evaluated" },
+    { "year": 2007, "status": "Vulnerable" },
+    { "year": 2016, "status": "Endangered" }
+  ],
+  "populationTrend": [
+    { "year": 1970, "value": 700000 },
+    { "year": 1980, "value": 580000 },
+    { "year": 1990, "value": 440000 },
+    { "year": 2000, "value": 310000 },
+    { "year": 2010, "value": 220000 },
+    { "year": 2016, "value": 170000 }
+  ],
+  "populationTrendMeta": {
+    "confidence": "modeled",
+    "note": "Rough global estimates modeled from IUCN-documented decline of >50% over three generations, driven primarily by reef degradation and fishing pressure in Southeast Asia. No formal stock assessment exists. Figures carry high uncertainty."
+  },
+  "preyDeclineRegions": [
+    { "name": "SE Asia",       "severity": "critical", "note": "Reef invertebrates and fish severely depleted by blast fishing, trawling, and bleaching" },
+    { "name": "South Asia",    "severity": "high",     "note": "Coastal reef systems heavily degraded; mollusks and crustaceans overharvested" },
+    { "name": "Red Sea",       "severity": "high",     "note": "Coral bleaching and coastal development reducing reef prey availability" },
+    { "name": "Australia",     "severity": "medium",   "note": "GBR bleaching events reducing reef complexity and benthic prey abundance" },
+    { "name": "East Africa",   "severity": "medium",   "note": "Artisanal fishing pressure on reef invertebrates; some areas well-managed" }
+  ],
+  "fishingPressureRegions": [
+    { "name": "SE Asia",       "severity": "critical", "note": "Targeted for meat and fins; blast fishing destroys reef habitat and kills sharks directly" },
+    { "name": "South Asia",    "severity": "critical", "note": "Caught in coastal trawls and gillnets; minimal species-specific protections" },
+    { "name": "Red Sea",       "severity": "high",     "note": "Artisanal and commercial fishing pressure; no zebra shark-specific restrictions" },
+    { "name": "East Africa",   "severity": "medium",   "note": "Targeted in some artisanal fisheries; patchy MPA coverage provides limited refuge" },
+    { "name": "Australia",     "severity": "low",      "note": "Protected in Australian waters; strong MPA network provides meaningful refuge" }
+  ]
 }
