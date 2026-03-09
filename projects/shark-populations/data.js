@@ -4561,7 +4561,7 @@ window.WIKI_DATA = {
     },
     {
       "id": "triaenodon-obesus",
-      "lastUpdated": "2026-03-06",
+      "lastUpdated": "2026-03-09",
       "emoji": "🦈",
       "commonName": "Whitetip Reef Shark",
       "scientificName": "Triaenodon obesus",
@@ -4589,9 +4589,250 @@ window.WIKI_DATA = {
         "keystone",
         "bycatch"
       ],
+      "photos": [
+        "projects/shark-populations/images/whitetip_reef_shark/whitetip_reef_shark.png"
+      ],
       "description": "The whitetip reef shark is a slender, medium-sized shark found throughout the Indo-Pacific, easily identified by the distinctive white tips on its dorsal and caudal fins. Unlike most sharks, it can lie motionless on the seafloor and pump water over its gills. It is primarily nocturnal, spending the day resting in caves and under ledges before hunting in groups at night.",
       "funFact": "Whitetip reef sharks hunt in coordinated packs at night, chasing reef fish into crevices and coral formations where multiple sharks simultaneously wedge into gaps to extract hidden prey — a rare form of cooperative hunting behavior for sharks.",
-      "habitat": "Coral reef environments throughout the Indo-Pacific, from East Africa and the Red Sea to the Pacific coast of Central America. Typically found at depths of 8–40 m, closely associated with the reef substrate in clear lagoon and seaward reef habitats."
+      "habitat": "Coral reef environments throughout the Indo-Pacific, from East Africa and the Red Sea to the Pacific coast of Central America. Typically found at depths of 8–40 m, closely associated with the reef substrate in clear lagoon and seaward reef habitats.",
+      "diet": "Opportunistic nocturnal predator feeding on reef fish (wrasses, parrotfish, surgeonfish), octopus, squid, crustaceans, and lobster. Hunts in coordinated groups after dark, flushing prey from crevices and coral heads.",
+      "size": "Typically 1.4–1.7 m (4.6–5.6 ft); maximum recorded 2.1 m (6.9 ft). Females grow slightly larger than males.",
+      "vitalSigns": [
+        {
+          "label": "Estimated Population",
+          "value": "No reliable global estimate — declining across Indo-Pacific range",
+          "glance": true
+        },
+        {
+          "label": "Lifespan",
+          "value": "Up to 25 years",
+          "glance": true
+        },
+        {
+          "label": "Max Length",
+          "value": "2.1 m (6.9 ft)",
+          "metric": "2.1 m",
+          "imperial": "6.9 ft",
+          "glance": true
+        },
+        {
+          "label": "Max Weight",
+          "value": "~18 kg (~40 lbs)",
+          "metric": "~18 kg",
+          "imperial": "~40 lbs",
+          "glance": true
+        },
+        {
+          "label": "Top Speed",
+          "value": "~25 km/h (~15 mph) estimated",
+          "metric": "~25 km/h",
+          "imperial": "~15 mph",
+          "glance": true
+        },
+        {
+          "label": "Ecological Role",
+          "value": "Reef Apex Predator",
+          "glance": true
+        },
+        {
+          "label": "Reproductive Rate",
+          "value": "1–5 pups per litter; ~10–11 month gestation"
+        },
+        {
+          "label": "Age at Maturity",
+          "value": "~5–8 years"
+        },
+        {
+          "label": "Diet",
+          "value": "Reef fish, octopus, squid, crustaceans, lobster"
+        },
+        {
+          "label": "Population Growth Rate",
+          "value": "Slow — low litter sizes and late maturity limit recovery"
+        },
+        {
+          "label": "Key Adaptations",
+          "value": "Can remain stationary on the seafloor by actively pumping water over gills; exceptional low-light vision for nocturnal reef hunting"
+        }
+      ],
+      "habitatStats": [
+        {
+          "label": "Global Range",
+          "value": "Indo-Pacific from East Africa and the Red Sea to the Pacific coast of Central America"
+        },
+        {
+          "label": "Depth Range",
+          "value": "1–40 m (3–130 ft), primarily 8–30 m on reef slopes",
+          "metric": "1–40 m",
+          "imperial": "3–130 ft"
+        }
+      ],
+      "threats": [
+        {
+          "name": "Targeted Fishing",
+          "severity": "high",
+          "description": "Actively hunted across much of Southeast Asia and the Indian Ocean for their fins and meat, both for local consumption and the international fin trade."
+        },
+        {
+          "name": "Coral Reef Degradation",
+          "severity": "high",
+          "description": "Entirely dependent on healthy reef ecosystems for shelter and hunting. Coral bleaching, Crown-of-Thorns starfish outbreaks, and coastal development have reduced reef quality across their range."
+        },
+        {
+          "name": "Bycatch",
+          "severity": "medium",
+          "description": "Caught incidentally in reef gillnets, artisanal longlines, and fish traps targeting other reef species throughout the Indo-Pacific."
+        },
+        {
+          "name": "Climate Change",
+          "severity": "medium",
+          "description": "Warming seas drive repeated coral bleaching events, reducing shelter availability and disrupting prey communities that the species depends on."
+        }
+      ],
+      "actionItems": [
+        {
+          "title": "Support Coral Reef Conservation",
+          "description": "Organizations like the Coral Triangle Initiative and Reef Check work to protect the reef ecosystems that whitetip reef sharks depend on. Donations and advocacy matter.",
+          "link": null
+        },
+        {
+          "title": "Choose Reef-Safe Dive Tourism",
+          "description": "Support dive operators that follow no-touch guidelines and advocate for reef MPAs. Responsible dive tourism creates economic incentives for reef protection over extractive fishing.",
+          "link": null
+        },
+        {
+          "title": "Choose Sustainable Seafood",
+          "description": "Use the Monterey Bay Aquarium Seafood Watch guide to avoid reef fish from unsustainable fisheries in the Indo-Pacific that generate bycatch of reef sharks.",
+          "link": "https://www.seafoodwatch.org"
+        },
+        {
+          "title": "Reduce Your Carbon Footprint",
+          "description": "Coral bleaching driven by ocean warming is one of the biggest threats to reef shark habitat. Supporting climate action protects the reef ecosystems these sharks call home.",
+          "link": null
+        }
+      ],
+      "healthMetrics": [
+        {
+          "label": "IUCN Status",
+          "value": "Vulnerable — uplisted from Near Threatened in 2015; declining trend noted across assessments",
+          "trend": "stable"
+        },
+        {
+          "label": "Population Trend",
+          "value": "Decreasing — documented declines across most of the Indo-Pacific, especially in Southeast Asia",
+          "trend": "down"
+        },
+        {
+          "label": "Habitat Quality",
+          "value": "Declining — coral reef degradation from bleaching, coastal development, and destructive fishing",
+          "trend": "down"
+        },
+        {
+          "label": "Prey Availability",
+          "value": "Declining — reef fish heavily overfished across Southeast Asia and Indian Ocean",
+          "trend": "down"
+        },
+        {
+          "label": "Fishing Pressure",
+          "value": "High — targeted for fins and meat across Southeast Asia; bycatch in reef fisheries widespread",
+          "trend": "down"
+        },
+        {
+          "label": "Protection Coverage",
+          "value": "Limited — CITES Appendix II since 2016; few MPAs adequately enforced in the Indo-Pacific",
+          "trend": "stable",
+          "links": [
+            {
+              "label": "CITES Listing",
+              "url": "https://cites.org/eng/app/appendices.php"
+            },
+            {
+              "label": "IUCN Red List",
+              "url": "https://www.iucnredlist.org/species/39379/2915776"
+            },
+            {
+              "label": "Reef Check",
+              "url": "https://www.reefcheck.org"
+            }
+          ]
+        }
+      ],
+      "statusHistory": [
+        {
+          "year": 2004,
+          "status": "Near Threatened"
+        },
+        {
+          "year": 2015,
+          "status": "Vulnerable"
+        }
+      ],
+      "populationTrend": [
+        {
+          "year": 1990,
+          "value": 250000
+        },
+        {
+          "year": 2000,
+          "value": 190000
+        },
+        {
+          "year": 2010,
+          "value": 140000
+        },
+        {
+          "year": 2020,
+          "value": 100000
+        }
+      ],
+      "populationTrendMeta": {
+        "confidence": "modeled",
+        "note": "No reliable global population estimate exists. Numbers shown are rough models based on documented regional declines in the Indo-Pacific, particularly in Southeast Asia where reef fish extraction and fin trade are intensive. Actual global totals are unknown."
+      },
+      "preyDeclineRegions": [
+        {
+          "name": "Coral Triangle",
+          "severity": "critical",
+          "note": "Reef fish heavily overfished across Indonesia, Philippines, and Malaysia; destructive practices further reduce prey availability"
+        },
+        {
+          "name": "Indian Ocean",
+          "severity": "high",
+          "note": "Widespread reef overfishing and blast fishing reduce prey communities across East Africa and South Asian reefs"
+        },
+        {
+          "name": "Pacific Islands",
+          "severity": "medium",
+          "note": "Reef fish moderately depleted; some islands recovering under established MPAs"
+        },
+        {
+          "name": "Red Sea",
+          "severity": "medium",
+          "note": "Localized reef degradation and targeted fishing pressure on reef fish communities"
+        }
+      ],
+      "fishingPressureRegions": [
+        {
+          "name": "Coral Triangle",
+          "severity": "critical",
+          "note": "Heavily targeted for fins and meat; destructive fishing methods (blast, cyanide) common on reefs across the region"
+        },
+        {
+          "name": "Indian Ocean",
+          "severity": "high",
+          "note": "Targeted in reef fisheries throughout East Africa and South Asia; minimal enforcement in most areas"
+        },
+        {
+          "name": "Pacific Islands",
+          "severity": "medium",
+          "note": "Bycatch in reef gillnets and longlines; some island nations have established shark sanctuaries"
+        },
+        {
+          "name": "Red Sea",
+          "severity": "medium",
+          "note": "Fin trade and food fisheries active; enforcement patchy along the broader coastline"
+        }
+      ]
     },
     {
       "id": "carcharhinus-amblyrhynchos",
@@ -4965,7 +5206,7 @@ window.WIKI_DATA = {
     },
     {
       "id": "carcharhinus-falciformis",
-      "lastUpdated": "2026-03-06",
+      "lastUpdated": "2026-03-09",
       "emoji": "🦈",
       "commonName": "Silky Shark",
       "scientificName": "Carcharhinus falciformis",
@@ -4996,9 +5237,254 @@ window.WIKI_DATA = {
         "bycatch",
         "finning"
       ],
+      "photos": [
+        "projects/shark-populations/images/silky_shark/silky_shark.png"
+      ],
       "description": "The silky shark is one of the most abundant large sharks in the open ocean, found throughout tropical and warm temperate seas worldwide. Named for its smooth, silky-textured skin, it is a fast-swimming pelagic species often associated with schools of tuna at the surface. Silky sharks are among the most frequently caught sharks in tuna purse-seine fisheries and are heavily impacted by bycatch.",
       "funFact": "Silky sharks follow schools of yellowfin and skipjack tuna across the open ocean, and are trapped so frequently in tuna purse-seine nets that they have become one of the most commonly caught sharks in the global industrial tuna fishery.",
-      "habitat": "Open ocean in tropical and warm temperate seas worldwide. A truly pelagic species found from the surface to depths exceeding 500 m, most commonly near continental shelf edges, oceanic islands, and areas of high productivity associated with tuna aggregations."
+      "habitat": "Open ocean in tropical and warm temperate seas worldwide. A truly pelagic species found from the surface to depths exceeding 500 m, most commonly near continental shelf edges, oceanic islands, and areas of high productivity associated with tuna aggregations.",
+      "diet": "Fast-swimming opportunistic predator feeding primarily on schooling tuna (skipjack, yellowfin), mackerel, flying fish, squid, and octopus. Frequently associated with fish-aggregating devices (FADs) and follows tuna schools across the open ocean.",
+      "size": "Typically 1.8–2.5 m (5.9–8.2 ft); maximum recorded 3.5 m (11.5 ft). Females grow larger than males. Can weigh up to 346 kg (763 lbs) at maximum size.",
+      "vitalSigns": [
+        {
+          "label": "Estimated Population",
+          "value": "No reliable global estimate — historically very abundant; estimated 50–70% decline in heavily fished regions",
+          "glance": true
+        },
+        {
+          "label": "Lifespan",
+          "value": "Up to 23 years",
+          "glance": true
+        },
+        {
+          "label": "Max Length",
+          "value": "3.5 m (11.5 ft)",
+          "metric": "3.5 m",
+          "imperial": "11.5 ft",
+          "glance": true
+        },
+        {
+          "label": "Max Weight",
+          "value": "~346 kg (~763 lbs)",
+          "metric": "~346 kg",
+          "imperial": "~763 lbs",
+          "glance": true
+        },
+        {
+          "label": "Top Speed",
+          "value": "~40 km/h (~25 mph) estimated",
+          "metric": "~40 km/h",
+          "imperial": "~25 mph",
+          "glance": true
+        },
+        {
+          "label": "Ecological Role",
+          "value": "Apex Predator",
+          "glance": true
+        },
+        {
+          "label": "Reproductive Rate",
+          "value": "1–14 pups per litter; ~12 month gestation"
+        },
+        {
+          "label": "Age at Maturity",
+          "value": "~6–10 years"
+        },
+        {
+          "label": "Diet",
+          "value": "Tuna, mackerel, flying fish, squid, octopus"
+        },
+        {
+          "label": "Population Growth Rate",
+          "value": "Moderate — but insufficient to offset current fishing mortality rates in tuna fisheries"
+        },
+        {
+          "label": "Key Adaptations",
+          "value": "Silky, almost scaleless skin texture reduces drag for high-speed pursuit; highly developed lateral line for detecting tuna school movements across the open ocean"
+        }
+      ],
+      "habitatStats": [
+        {
+          "label": "Global Range",
+          "value": "Tropical and warm temperate open ocean worldwide; most abundant in the equatorial Pacific and Indian Ocean"
+        },
+        {
+          "label": "Depth Range",
+          "value": "Surface to 500+ m (1,640+ ft); most commonly 0–50 m near tuna aggregations",
+          "metric": "Surface to 500+ m",
+          "imperial": "Surface to 1,640+ ft"
+        }
+      ],
+      "threats": [
+        {
+          "name": "Tuna Purse-Seine Bycatch",
+          "severity": "critical",
+          "description": "The dominant threat. Silky sharks associate with the same surface tuna schools targeted by industrial purse-seine fleets, making them one of the most commonly caught sharks in the global tuna fishery. Millions have been killed over recent decades."
+        },
+        {
+          "name": "Pelagic Longline Bycatch",
+          "severity": "high",
+          "description": "Caught in large numbers on longlines targeting tuna, swordfish, and billfish across the tropics. Longlines represent a secondary but significant source of mortality in addition to purse-seine capture."
+        },
+        {
+          "name": "Shark Fin Trade",
+          "severity": "high",
+          "description": "Silky shark fins are among the most traded shark fins globally. Finning at sea persists in unmonitored high-seas fisheries despite international restrictions."
+        },
+        {
+          "name": "Inadequate Management",
+          "severity": "medium",
+          "description": "CITES Appendix II listing (2016) and WCPFC catch limits have had limited effect. IUU fishing is widespread across tropical seas, and observer coverage in purse-seine fisheries remains insufficient."
+        }
+      ],
+      "actionItems": [
+        {
+          "title": "Choose Sustainable Tuna",
+          "description": "Select tuna certified by the Marine Stewardship Council or rated Green by Seafood Watch. Pole-and-line and troll-caught tuna have dramatically lower silky shark bycatch than purse-seine or FAD-caught tuna.",
+          "link": "https://www.seafoodwatch.org"
+        },
+        {
+          "title": "Demand Bycatch Transparency",
+          "description": "Contact tuna brands and retailers to ask about bycatch policies and shark-safe sourcing. Consumer pressure has driven some major tuna brands to adopt FAD-free sourcing commitments.",
+          "link": null
+        },
+        {
+          "title": "Refuse Shark Fin Products",
+          "description": "Avoid purchasing shark fin soup and products. Silky shark fins are among the most common in the fin trade, and consumer demand directly drives finning mortality in high-seas fisheries.",
+          "link": null
+        },
+        {
+          "title": "Support Save Our Seas Foundation",
+          "description": "SOSF funds research into silky shark ecology, pelagic bycatch reduction, and policy work on RFMO shark management across the Indo-Pacific and Atlantic.",
+          "link": "https://saveourseas.com"
+        }
+      ],
+      "healthMetrics": [
+        {
+          "label": "IUCN Status",
+          "value": "Vulnerable — uplisted from Near Threatened in 2014; decline driven by tuna fishery bycatch",
+          "trend": "stable"
+        },
+        {
+          "label": "Population Trend",
+          "value": "Decreasing — estimated 50–70% decline in heavily fished areas of the Indian Ocean and Pacific since the 1980s",
+          "trend": "down"
+        },
+        {
+          "label": "Habitat Quality",
+          "value": "Moderate — pelagic zones largely intact; warming and deoxygenation are altering the depth distribution of prey",
+          "trend": "stable"
+        },
+        {
+          "label": "Prey Availability",
+          "value": "Declining — tuna and squid populations depleted in key regions by intensive commercial fishing",
+          "trend": "down"
+        },
+        {
+          "label": "Fishing Pressure",
+          "value": "Critical — one of the most bycaught sharks on Earth; purse-seine and longline pressure spans the entire tropical ocean",
+          "trend": "down"
+        },
+        {
+          "label": "Protection Coverage",
+          "value": "Partial — CITES Appendix II since 2016; WCPFC limits in place but inconsistently enforced; observer coverage inadequate",
+          "trend": "stable",
+          "links": [
+            {
+              "label": "CITES Listing",
+              "url": "https://cites.org/eng/app/appendices.php"
+            },
+            {
+              "label": "IUCN Red List",
+              "url": "https://www.iucnredlist.org/species/39372/2911327"
+            },
+            {
+              "label": "Save Our Seas",
+              "url": "https://saveourseas.com"
+            }
+          ]
+        }
+      ],
+      "statusHistory": [
+        {
+          "year": 2007,
+          "status": "Near Threatened"
+        },
+        {
+          "year": 2014,
+          "status": "Vulnerable"
+        }
+      ],
+      "populationTrend": [
+        {
+          "year": 1980,
+          "value": 5000000
+        },
+        {
+          "year": 1990,
+          "value": 3500000
+        },
+        {
+          "year": 2000,
+          "value": 2200000
+        },
+        {
+          "year": 2010,
+          "value": 1400000
+        },
+        {
+          "year": 2020,
+          "value": 900000
+        }
+      ],
+      "populationTrendMeta": {
+        "confidence": "modeled",
+        "note": "No reliable global population count exists. Silky sharks were historically among the most abundant large sharks in tropical waters. Observer data from tuna fisheries documents 50–70% CPUE declines in the Indian Ocean and Pacific since the 1980s. Absolute numbers shown are highly speculative estimates derived from those proportional declines."
+      },
+      "preyDeclineRegions": [
+        {
+          "name": "Tropical Atlantic",
+          "severity": "critical",
+          "note": "Yellowfin and bigeye tuna severely depleted by decades of intensive longline and purse-seine fishing; squid availability limited"
+        },
+        {
+          "name": "Indian Ocean",
+          "severity": "high",
+          "note": "Tuna stocks under heavy pressure from distant-water fleets; skipjack moderately stable but yellowfin declining"
+        },
+        {
+          "name": "Tropical Pacific",
+          "severity": "high",
+          "note": "Skipjack relatively abundant but yellowfin heavily fished; squid and flying fish depleted in high-effort zones"
+        },
+        {
+          "name": "Caribbean",
+          "severity": "medium",
+          "note": "Moderate prey depletion; some reef fish and squid available but smaller pelagic fish populations reduced"
+        }
+      ],
+      "fishingPressureRegions": [
+        {
+          "name": "Tropical Atlantic",
+          "severity": "critical",
+          "note": "Dense purse-seine and longline activity; IUU fishing widespread; silky shark among the top bycatch species"
+        },
+        {
+          "name": "Indian Ocean",
+          "severity": "high",
+          "note": "Extensive longline and purse-seine effort; limited observer coverage; fin trade active across the region"
+        },
+        {
+          "name": "Tropical Pacific",
+          "severity": "critical",
+          "note": "Largest tuna purse-seine fishery in the world; silky shark is the dominant shark bycatch species in FAD fishing operations"
+        },
+        {
+          "name": "Caribbean",
+          "severity": "medium",
+          "note": "Moderate longline presence; some national protections; lower pressure than open-ocean tropical zones"
+        }
+      ]
     },
     {
       "id": "lamna-nasus",
@@ -5301,7 +5787,7 @@ window.WIKI_DATA = {
     },
     {
       "id": "alopias-vulpinus",
-      "lastUpdated": "2026-03-06",
+      "lastUpdated": "2026-03-09",
       "emoji": "🦈",
       "commonName": "Common Thresher",
       "scientificName": "Alopias vulpinus",
@@ -5332,9 +5818,258 @@ window.WIKI_DATA = {
         "bycatch",
         "finning"
       ],
+      "photos": [
+        "projects/shark-populations/images/common_thresher/common_thresher.png"
+      ],
       "description": "The common thresher is the largest of the three thresher shark species, distinguished by its extraordinarily long upper tail fin lobe that can equal half or more of its total body length. Found in temperate and tropical oceans worldwide, it uses its powerful tail to herd and stun schooling prey fish. Thresher sharks are prized for their meat and fins and are heavily affected by longline bycatch.",
       "funFact": "The common thresher uses its massive scythe-like tail as a weapon — it has been documented performing rapid, spinning tail-slap strikes that stun or kill multiple fish simultaneously, a hunting technique unique among sharks.",
-      "habitat": "Temperate and tropical oceanic and coastal waters worldwide, primarily pelagic but occasionally approaching shore. Found from the surface to at least 550 m depth. More common in temperate regions than in tropical ones."
+      "habitat": "Temperate and tropical oceanic and coastal waters worldwide, primarily pelagic but occasionally approaching shore. Found from the surface to at least 550 m depth. More common in temperate regions than in tropical ones.",
+      "diet": "Specializes in schooling fish including herring, bluefish, mackerel, anchovies, and squid. Uses its elongated tail to circle, herd, and stun prey before consuming them. Documented performing spinning tail-slap strikes that incapacitate multiple fish simultaneously.",
+      "size": "Typically 3.0–5.0 m (9.8–16.4 ft) total length including tail; tail fin can comprise roughly half the total length. Maximum confirmed 6.1 m (20 ft). Can weigh up to 348 kg (767 lbs).",
+      "vitalSigns": [
+        {
+          "label": "Estimated Population",
+          "value": "No reliable global estimate — 30–49% decline over three generations in studied populations",
+          "glance": true
+        },
+        {
+          "label": "Lifespan",
+          "value": "Up to 50 years",
+          "glance": true
+        },
+        {
+          "label": "Max Length",
+          "value": "6.1 m (20 ft) total",
+          "metric": "6.1 m",
+          "imperial": "20 ft",
+          "glance": true
+        },
+        {
+          "label": "Max Weight",
+          "value": "~348 kg (~767 lbs)",
+          "metric": "~348 kg",
+          "imperial": "~767 lbs",
+          "glance": true
+        },
+        {
+          "label": "Top Speed",
+          "value": "~50 km/h (~31 mph) estimated during prey strike",
+          "metric": "~50 km/h",
+          "imperial": "~31 mph",
+          "glance": true
+        },
+        {
+          "label": "Ecological Role",
+          "value": "Apex Predator",
+          "glance": true
+        },
+        {
+          "label": "Reproductive Rate",
+          "value": "2–7 pups per litter; ~9 month gestation; adelphophagy (intrauterine nourishment by unfertilized eggs)"
+        },
+        {
+          "label": "Age at Maturity",
+          "value": "~8–13 years; females mature later than males"
+        },
+        {
+          "label": "Diet",
+          "value": "Herring, mackerel, bluefish, anchovies, squid, schooling fish"
+        },
+        {
+          "label": "Population Growth Rate",
+          "value": "Low — late maturity, long gestation, and modest litter sizes limit recovery rate"
+        },
+        {
+          "label": "Key Adaptations",
+          "value": "Elongated caudal fin (upper lobe equals ~half body length) used to herd and stun prey; endothermy (warm-blooded muscles) for high-speed pursuit in cold water"
+        }
+      ],
+      "habitatStats": [
+        {
+          "label": "Global Range",
+          "value": "Temperate and tropical oceans worldwide; more common in temperate zones; rare in equatorial tropics"
+        },
+        {
+          "label": "Depth Range",
+          "value": "Surface to 550 m (1,800 ft); most commonly 0–150 m",
+          "metric": "Surface to 550 m",
+          "imperial": "Surface to 1,800 ft"
+        }
+      ],
+      "threats": [
+        {
+          "name": "Pelagic Longline Bycatch",
+          "severity": "critical",
+          "description": "Among the most frequently caught sharks in global longline fisheries targeting tuna and swordfish. Their near-surface cruising behavior places them squarely in the path of commercial pelagic gear."
+        },
+        {
+          "name": "Shark Fin Trade",
+          "severity": "high",
+          "description": "Prized for their large pectoral fins in the international fin trade. Finning at sea continues in poorly monitored high-seas fisheries despite CITES Appendix II protections."
+        },
+        {
+          "name": "Targeted Fishing",
+          "severity": "high",
+          "description": "Actively sought for their meat, fins, and liver oil in parts of the Mediterranean, Indian Ocean, and Pacific. Their predictable schooling behavior makes them vulnerable to targeted net fisheries."
+        },
+        {
+          "name": "Inadequate Management",
+          "severity": "medium",
+          "description": "CITES Appendix II listing (2016) has not been uniformly translated into catch limits or enforcement across international waters. RFMO coverage is inconsistent, and IUU fishing remains widespread."
+        }
+      ],
+      "actionItems": [
+        {
+          "title": "Choose Sustainable Seafood",
+          "description": "Use the Monterey Bay Aquarium Seafood Watch guide to avoid tuna and swordfish from pelagic longline fisheries with high thresher shark bycatch rates.",
+          "link": "https://www.seafoodwatch.org"
+        },
+        {
+          "title": "Support CITES Appendix II Enforcement",
+          "description": "Advocate for governments to implement and enforce CITES trade restrictions on thresher shark products, which were added in 2016 but remain poorly enforced in many countries.",
+          "link": null
+        },
+        {
+          "title": "Avoid Shark Products",
+          "description": "Refuse shark fin, shark liver oil, and other shark-derived products. Consumer demand in Asia and globally fuels the directed fin fishery that compounds bycatch mortality.",
+          "link": null
+        },
+        {
+          "title": "Support Shark Research Funding",
+          "description": "Organizations like the Shark Trust and Save Our Seas Foundation fund the longline observer programs and stock assessments needed to build effective thresher shark management.",
+          "link": "https://www.sharktrust.org"
+        }
+      ],
+      "healthMetrics": [
+        {
+          "label": "IUCN Status",
+          "value": "Vulnerable — listed since 2007; N. Pacific population experiencing documented decline of ~30–50%",
+          "trend": "stable"
+        },
+        {
+          "label": "Population Trend",
+          "value": "Decreasing — notable CPUE declines in N. Pacific longline observer data and Mediterranean catch records",
+          "trend": "down"
+        },
+        {
+          "label": "Habitat Quality",
+          "value": "Moderate — open ocean and coastal pelagic zones largely intact; some warming-driven shifts in prey distribution",
+          "trend": "stable"
+        },
+        {
+          "label": "Prey Availability",
+          "value": "Declining — herring, mackerel, and squid heavily depleted in key fishing zones",
+          "trend": "down"
+        },
+        {
+          "label": "Fishing Pressure",
+          "value": "Critical — among highest longline bycatch rates of any pelagic shark; Mediterranean driftnet pressure also significant",
+          "trend": "down"
+        },
+        {
+          "label": "Protection Coverage",
+          "value": "Limited — CITES Appendix II since 2016; RFMOs inconsistent; finning bans incomplete and poorly enforced offshore",
+          "trend": "stable",
+          "links": [
+            {
+              "label": "CITES Listing",
+              "url": "https://cites.org/eng/app/appendices.php"
+            },
+            {
+              "label": "IUCN Red List",
+              "url": "https://www.iucnredlist.org/species/39339/2916951"
+            },
+            {
+              "label": "Shark Trust",
+              "url": "https://www.sharktrust.org"
+            }
+          ]
+        }
+      ],
+      "statusHistory": [
+        {
+          "year": 2007,
+          "status": "Vulnerable"
+        },
+        {
+          "year": 2018,
+          "status": "Vulnerable"
+        }
+      ],
+      "populationTrend": [
+        {
+          "year": 1975,
+          "value": 800000
+        },
+        {
+          "year": 1985,
+          "value": 600000
+        },
+        {
+          "year": 1995,
+          "value": 400000
+        },
+        {
+          "year": 2005,
+          "value": 260000
+        },
+        {
+          "year": 2015,
+          "value": 175000
+        },
+        {
+          "year": 2023,
+          "value": 135000
+        }
+      ],
+      "populationTrendMeta": {
+        "confidence": "modeled",
+        "note": "No reliable global population estimate exists. Trends modeled from documented CPUE declines in longline observer data, particularly the N. Pacific (~30–50%) and Mediterranean. IUCN cites a 30–49% decline over three generations. Absolute numbers are highly speculative."
+      },
+      "preyDeclineRegions": [
+        {
+          "name": "N. Pacific",
+          "severity": "high",
+          "note": "Pacific herring, mackerel, and squid under heavy commercial and industrial fishing pressure"
+        },
+        {
+          "name": "Mediterranean",
+          "severity": "critical",
+          "note": "Anchovy, sardine, and squid severely depleted by decades of intensive inshore and offshore fishing"
+        },
+        {
+          "name": "N. Atlantic",
+          "severity": "medium",
+          "note": "Herring and bluefish moderately depleted; some recovering under management in the NE Atlantic"
+        },
+        {
+          "name": "Indo-Pacific",
+          "severity": "medium",
+          "note": "Schooling prey fish under moderate pressure in key tuna fishing zones across the region"
+        }
+      ],
+      "fishingPressureRegions": [
+        {
+          "name": "N. Pacific",
+          "severity": "high",
+          "note": "Dense longline fleets targeting albacore and swordfish; high thresher bycatch rates documented in observer data"
+        },
+        {
+          "name": "Mediterranean",
+          "severity": "critical",
+          "note": "Longlines and driftnets both active; near-absence in historical aggregation areas; minimal dedicated enforcement"
+        },
+        {
+          "name": "N. Atlantic",
+          "severity": "medium",
+          "note": "Longline fleets active; improving RFMO oversight in the NE Atlantic under ICCAT"
+        },
+        {
+          "name": "Indo-Pacific",
+          "severity": "medium",
+          "note": "Extensive longline effort for tuna and swordfish; targeted in some local fisheries for fins and meat"
+        }
+      ]
     },
     {
       "id": "alopias-pelagicus",
@@ -5610,7 +6345,7 @@ window.WIKI_DATA = {
     },
     {
       "id": "carcharias-taurus",
-      "lastUpdated": "2026-03-06",
+      "lastUpdated": "2026-03-09",
       "emoji": "🦈",
       "commonName": "Sand Tiger Shark",
       "scientificName": "Carcharias taurus",
@@ -5639,9 +6374,270 @@ window.WIKI_DATA = {
         "slow-reproducing",
         "overfished"
       ],
+      "photos": [
+        "projects/shark-populations/images/sand_tiger_shark/sand_tiger_shark.png"
+      ],
       "description": "The sand tiger shark's rows of protruding, ragged teeth give it a ferocious appearance, yet it is one of the most docile sharks toward humans. It is the only shark known to gulp air at the surface and hold it in its stomach to achieve near-neutral buoyancy — allowing it to hover motionless in the water column. Found in warm and temperate coastal waters worldwide, it is a slow-reproducing species with a highly unusual embryonic development: pups cannibalize each other in the womb, and only two survive to birth (one per uterus).",
       "funFact": "Sand tiger shark embryos engage in intrauterine cannibalism — the first embryo to develop a functional jaw actively hunts and consumes its siblings in the womb. Only one pup per uterus survives, emerging as an already-experienced predator about 1 m long at birth.",
-      "habitat": "Warm temperate to tropical coastal waters worldwide, typically found near the seafloor in surf zones, shallow bays, rocky reefs, and around offshore islands. Depth range extends from the intertidal zone to at least 191 m. Also commonly found in aquariums due to their docility."
+      "habitat": "Warm temperate to tropical coastal waters worldwide, typically found near the seafloor in surf zones, shallow bays, rocky reefs, and around offshore islands. Depth range extends from the intertidal zone to at least 191 m. Also commonly found in aquariums due to their docility.",
+      "diet": "Feeds mainly on bony fish (eels, snappers, flatfish, bluefish), squid, and crustaceans. Uses near-neutral buoyancy to hover motionless before ambushing prey. Will consume small sharks and rays when opportunity arises.",
+      "size": "Typically 2.0–2.5 m (6.6–8.2 ft); maximum recorded 3.2 m (10.5 ft). Females grow slightly larger than males.",
+      "vitalSigns": [
+        {
+          "label": "Estimated Population",
+          "value": "Severely depleted in most regions — no reliable global estimate; Eastern Australia estimated ~1,500–2,000 adults",
+          "glance": true
+        },
+        {
+          "label": "Lifespan",
+          "value": "Up to 40 years",
+          "glance": true
+        },
+        {
+          "label": "Max Length",
+          "value": "3.2 m (10.5 ft)",
+          "metric": "3.2 m",
+          "imperial": "10.5 ft",
+          "glance": true
+        },
+        {
+          "label": "Max Weight",
+          "value": "~159 kg (~350 lbs)",
+          "metric": "~159 kg",
+          "imperial": "~350 lbs",
+          "glance": true
+        },
+        {
+          "label": "Top Speed",
+          "value": "~35 km/h (~22 mph) estimated",
+          "metric": "~35 km/h",
+          "imperial": "~22 mph",
+          "glance": true
+        },
+        {
+          "label": "Ecological Role",
+          "value": "Apex Predator",
+          "glance": true
+        },
+        {
+          "label": "Reproductive Rate",
+          "value": "1 pup per uterus (2 per litter); ~9–12 month gestation — lowest reproductive rate of any shark"
+        },
+        {
+          "label": "Age at Maturity",
+          "value": "6–7 years (males), 9–10 years (females)"
+        },
+        {
+          "label": "Diet",
+          "value": "Bony fish, squid, rays, small sharks, crustaceans"
+        },
+        {
+          "label": "Population Growth Rate",
+          "value": "Extremely slow — produces only 2 pups every 2 years; recovery from depletion may take decades"
+        },
+        {
+          "label": "Key Adaptations",
+          "value": "Gulps air at the surface to fill stomach and achieve neutral buoyancy; the only shark species known to use this mechanism for hovering motionless in the water column"
+        }
+      ],
+      "habitatStats": [
+        {
+          "label": "Global Range",
+          "value": "Warm temperate and tropical coastal waters worldwide; notably absent from the eastern Pacific Ocean"
+        },
+        {
+          "label": "Depth Range",
+          "value": "Intertidal zone to 191 m (627 ft); most common at 0–25 m on rocky reefs and sandy flats",
+          "metric": "0–191 m",
+          "imperial": "0–627 ft"
+        }
+      ],
+      "threats": [
+        {
+          "name": "Historical Directed Fishing",
+          "severity": "critical",
+          "description": "Hunted extensively across its range through the 1980s for food, liver oil, and sport. Eastern Australian populations were decimated — estimated at fewer than 1,500 adults before receiving protection in 1984."
+        },
+        {
+          "name": "Beach Meshing Programs",
+          "severity": "high",
+          "description": "Shark nets deployed along Australian and South African coastlines to protect swimmers kill significant numbers annually. In New South Wales alone, hundreds have been caught over the past three decades."
+        },
+        {
+          "name": "Bycatch",
+          "severity": "high",
+          "description": "Caught in gillnets, longlines, and fish traps throughout their range. Low reproductive rate means even modest ongoing mortality prevents population recovery."
+        },
+        {
+          "name": "Habitat Degradation",
+          "severity": "medium",
+          "description": "Estuarine and near-shore nursery habitats are affected by coastal development, runoff, and pollution, reducing the sheltered areas where juveniles grow."
+        }
+      ],
+      "actionItems": [
+        {
+          "title": "Oppose Shark Culling Programs",
+          "description": "Beach meshing programs along Australian and South African coastlines kill sand tigers regularly. Contact local representatives and support shark-safe alternatives like drumlines with escape mechanisms and personal deterrents.",
+          "link": null
+        },
+        {
+          "title": "Support Marine Protected Areas",
+          "description": "Advocate for well-enforced MPAs around key sand tiger aggregation sites, including the reefs of eastern Australia and the US Atlantic coast where populations are slowly recovering.",
+          "link": null
+        },
+        {
+          "title": "Report Strandings and Sightings",
+          "description": "In Australia and South Africa, reporting sand tiger strandings and sightings to wildlife authorities provides critical data for population monitoring programs.",
+          "link": null
+        },
+        {
+          "title": "Donate to Shark Trust",
+          "description": "The Shark Trust funds research and advocacy for vulnerable shark species worldwide, including ongoing work on sand tiger population recovery.",
+          "link": "https://www.sharktrust.org"
+        }
+      ],
+      "healthMetrics": [
+        {
+          "label": "IUCN Status",
+          "value": "Vulnerable — listed since 1996; Eastern Australian population classified Critically Endangered separately",
+          "trend": "stable"
+        },
+        {
+          "label": "Population Trend",
+          "value": "Decreasing globally — Eastern Australia down >95% before protections; US Atlantic recovering slowly from depletion",
+          "trend": "down"
+        },
+        {
+          "label": "Habitat Quality",
+          "value": "Moderate — rocky reefs and shoals largely intact in key regions; coastal nursery habitats degraded in some areas",
+          "trend": "stable"
+        },
+        {
+          "label": "Prey Availability",
+          "value": "Moderate — schooling fish and reef prey remain available across most of range; some localized depletion",
+          "trend": "stable"
+        },
+        {
+          "label": "Fishing Pressure",
+          "value": "High — beach nets ongoing in Australia and South Africa; bycatch in gillnets and longlines; improving in some regions",
+          "trend": "stable"
+        },
+        {
+          "label": "Protection Coverage",
+          "value": "Partial — protected in US, Australia, South Africa, and Mediterranean; unprotected or poorly managed in remaining range",
+          "trend": "stable",
+          "links": [
+            {
+              "label": "IUCN Red List",
+              "url": "https://www.iucnredlist.org/species/3854/2876633"
+            },
+            {
+              "label": "Shark Trust",
+              "url": "https://www.sharktrust.org"
+            }
+          ]
+        }
+      ],
+      "statusHistory": [
+        {
+          "year": 1996,
+          "status": "Vulnerable"
+        },
+        {
+          "year": 2009,
+          "status": "Vulnerable"
+        },
+        {
+          "year": 2022,
+          "status": "Vulnerable"
+        }
+      ],
+      "populationTrend": [
+        {
+          "year": 1970,
+          "value": 100000
+        },
+        {
+          "year": 1980,
+          "value": 70000
+        },
+        {
+          "year": 1984,
+          "value": 58000,
+          "label": "Protected in Eastern Australia"
+        },
+        {
+          "year": 1990,
+          "value": 40000
+        },
+        {
+          "year": 1997,
+          "value": 30000,
+          "label": "IUCN: Vulnerable; US federal protection"
+        },
+        {
+          "year": 2009,
+          "value": 19000,
+          "label": "IUCN: Vulnerable (reassessed)"
+        },
+        {
+          "year": 2020,
+          "value": 15000
+        },
+        {
+          "year": 2022,
+          "value": 14500,
+          "label": "IUCN: Vulnerable (reassessed)"
+        }
+      ],
+      "populationTrendMeta": {
+        "confidence": "modeled",
+        "note": "No reliable global population estimate exists. Eastern Australia's population was estimated at fewer than 1,500 adults by the early 1980s, driving full protection. Global figures are loosely modeled from documented regional declines and slow recovery rates. Actual totals are unknown."
+      },
+      "preyDeclineRegions": [
+        {
+          "name": "Eastern Australia",
+          "severity": "high",
+          "note": "Historical prey depletion in heavily fished coastal zones; some recovery under fisheries management"
+        },
+        {
+          "name": "US Atlantic Coast",
+          "severity": "medium",
+          "note": "Schooling fish moderately depleted in historical nursery areas; partial recovery ongoing"
+        },
+        {
+          "name": "Mediterranean",
+          "severity": "high",
+          "note": "Coastal fish and cephalopods heavily depleted by intensive inshore fisheries"
+        },
+        {
+          "name": "S. Africa",
+          "severity": "medium",
+          "note": "Localized prey depletion near major population centers; some managed fisheries in place"
+        }
+      ],
+      "fishingPressureRegions": [
+        {
+          "name": "Eastern Australia",
+          "severity": "critical",
+          "note": "Beach meshing programs kill sand tigers annually; historically decimated by directed hunting; now protected but recovery is slow"
+        },
+        {
+          "name": "US Atlantic Coast",
+          "severity": "high",
+          "note": "Bycatch in gillnets and bottom trawls; beach nets at some locations; improving since 1997 federal protection"
+        },
+        {
+          "name": "Mediterranean",
+          "severity": "high",
+          "note": "Historically targeted; ongoing bycatch in longlines and trawls; minimal dedicated protections"
+        },
+        {
+          "name": "S. Africa",
+          "severity": "medium",
+          "note": "Protected species but shark nets along KwaZulu-Natal coast continue to catch individuals; monitoring in place"
+        }
+      ]
     },
     {
       "id": "heterodontus-francisci",
@@ -5820,7 +6816,7 @@ window.WIKI_DATA = {
     },
     {
       "id": "somniosus-microcephalus",
-      "lastUpdated": "2026-03-06",
+      "lastUpdated": "2026-03-09",
       "emoji": "🦈",
       "commonName": "Greenland Shark",
       "scientificName": "Somniosus microcephalus",
@@ -5849,9 +6845,248 @@ window.WIKI_DATA = {
         "long-lived",
         "slow-growing"
       ],
+      "photos": [
+        "projects/shark-populations/images/greenland_shark/greenland_shark.png"
+      ],
       "description": "The Greenland shark is one of the largest living shark species and the world's longest-lived vertebrate, with individuals estimated to reach over 400 years of age. It inhabits the cold, deep waters of the North Atlantic and Arctic Ocean, moving slowly through near-freezing water and feeding on fish, marine mammals, and carrion. Its flesh is toxic when fresh due to high concentrations of trimethylamine oxide, but is eaten as a traditional Icelandic delicacy called hákarl after months of fermentation.",
       "funFact": "Greenland sharks grow only about 1 cm per year, reach sexual maturity around age 150, and the oldest individuals studied were estimated to be approximately 400 years old — meaning some alive today were born before the Mayflower reached America.",
-      "habitat": "Cold, deep waters of the North Atlantic and Arctic Ocean, typically at depths of 200–2,200 m. They are most common in waters between -1°C and 10°C and are one of the few shark species that can survive under Arctic sea ice year-round."
+      "habitat": "Cold, deep waters of the North Atlantic and Arctic Ocean, typically at depths of 200–2,200 m. They are most common in waters between -1°C and 10°C and are one of the few shark species that can survive under Arctic sea ice year-round.",
+      "diet": "Opportunistic apex predator and scavenger consuming cold-water fish (Greenland halibut, cod, char), seals, porpoises, and carrion. Has been found with remains of polar bears, reindeer, horses, and entire caribou carcasses — consistent with major scavenging of animals that fall through ice.",
+      "size": "Typically 2.4–4.8 m (8–16 ft); maximum recorded 7.3 m (24 ft). Females grow larger than males. Growth rate estimated at ~1 cm per year.",
+      "vitalSigns": [
+        {
+          "label": "Estimated Population",
+          "value": "Unknown — no reliable global estimate; range suggests possibly hundreds of thousands",
+          "glance": true
+        },
+        {
+          "label": "Lifespan",
+          "value": "272–512+ years (estimated median ~392 years)",
+          "glance": true
+        },
+        {
+          "label": "Max Length",
+          "value": "7.3 m (24 ft)",
+          "metric": "7.3 m",
+          "imperial": "24 ft",
+          "glance": true
+        },
+        {
+          "label": "Max Weight",
+          "value": "~1,000 kg (~2,200 lbs)",
+          "metric": "~1,000 kg",
+          "imperial": "~2,200 lbs",
+          "glance": true
+        },
+        {
+          "label": "Top Speed",
+          "value": "~1.6 km/h (~1 mph) cruising",
+          "metric": "~1.6 km/h",
+          "imperial": "~1 mph",
+          "glance": true
+        },
+        {
+          "label": "Ecological Role",
+          "value": "Apex Predator",
+          "glance": true
+        },
+        {
+          "label": "Reproductive Rate",
+          "value": "Unknown; likely very few pups — extreme life history suggests very low fecundity"
+        },
+        {
+          "label": "Age at Maturity",
+          "value": "~150 years (estimated) — latest maturity of any known vertebrate"
+        },
+        {
+          "label": "Diet",
+          "value": "Halibut, cod, seals, porpoises, carrion, and terrestrial animals fallen through ice"
+        },
+        {
+          "label": "Population Growth Rate",
+          "value": "Extremely slow — maturing over a century means recovery from depletion would take generations"
+        },
+        {
+          "label": "Key Adaptations",
+          "value": "Trimethylamine oxide (TMAO) in tissues acts as antifreeze and pressure buffer at depth; highly specialized olfactory system for detecting carrion under ice"
+        }
+      ],
+      "habitatStats": [
+        {
+          "label": "Global Range",
+          "value": "North Atlantic and Arctic Ocean; Iceland, Greenland, Canada, Norway, and Svalbard"
+        },
+        {
+          "label": "Depth Range",
+          "value": "Surface to ~2,200 m (7,200 ft); most common at 200–600 m in warmer months",
+          "metric": "Surface to ~2,200 m",
+          "imperial": "Surface to ~7,200 ft"
+        }
+      ],
+      "threats": [
+        {
+          "name": "Bycatch",
+          "severity": "high",
+          "description": "Caught in bottom trawls and longlines targeting Greenland halibut, cod, and other demersal species throughout the North Atlantic and Arctic. Discard rates are high but poorly tracked."
+        },
+        {
+          "name": "Climate Change",
+          "severity": "high",
+          "description": "Rapid Arctic warming threatens the cold, deep-water habitats this species depends on. Sea ice loss disrupts prey availability and may expose the species to new fishing pressures."
+        },
+        {
+          "name": "Pollution",
+          "severity": "medium",
+          "description": "As a long-lived apex predator, Greenland sharks bioaccumulate persistent pollutants including PCBs, heavy metals, and mercury at some of the highest levels recorded in any marine species."
+        },
+        {
+          "name": "Historical Hunting",
+          "severity": "medium",
+          "description": "Heavily exploited in the 19th and early 20th centuries for their liver oil, used as machinery lubricant. Industrial harvest peaked in the 1950s before collapsing due to stock depletion."
+        }
+      ],
+      "actionItems": [
+        {
+          "title": "Support Arctic Ocean Protection",
+          "description": "Advocate for expanded Marine Protected Areas in the Arctic, where Greenland shark habitat is most concentrated and climate impacts are accelerating fastest.",
+          "link": null
+        },
+        {
+          "title": "Choose Sustainable Deep-Sea Seafood",
+          "description": "Avoid deep-sea bottom-trawled fish from the North Atlantic, where Greenland sharks are most commonly caught as bycatch. Use the Monterey Bay Seafood Watch guide for guidance.",
+          "link": "https://www.seafoodwatch.org"
+        },
+        {
+          "title": "Support Climate Action",
+          "description": "Arctic warming is one of the most direct threats to Greenland shark habitat. Supporting climate policy and reducing personal emissions helps protect the cold-water environments they depend on.",
+          "link": null
+        },
+        {
+          "title": "Fund Greenland Shark Research",
+          "description": "Very little is known about this species' population size, reproduction, or ecology. Organizations like the Greenland Shark and Elasmobranch Education and Research Group (GEERG) need support.",
+          "link": null
+        }
+      ],
+      "healthMetrics": [
+        {
+          "label": "IUCN Status",
+          "value": "Least Concern — reassessed from Near Threatened in 2020; limited data may understate localized threats",
+          "trend": "up"
+        },
+        {
+          "label": "Population Trend",
+          "value": "Unknown — insufficient data; possible partial recovery from historical liver-oil hunting",
+          "trend": "stable"
+        },
+        {
+          "label": "Habitat Quality",
+          "value": "Declining — Arctic warming threatens cold-water habitat; sea ice loss accelerating",
+          "trend": "down"
+        },
+        {
+          "label": "Prey Availability",
+          "value": "Moderate — cold-water fish and marine mammals remain available; some prey species under pressure",
+          "trend": "stable"
+        },
+        {
+          "label": "Fishing Pressure",
+          "value": "Moderate — bycatch in Arctic and North Atlantic demersal fisheries; some traditional harvest continues",
+          "trend": "stable"
+        },
+        {
+          "label": "Protection Coverage",
+          "value": "Minimal — no targeted protections; Least Concern status may obscure regional vulnerabilities",
+          "trend": "stable",
+          "links": [
+            {
+              "label": "IUCN Red List",
+              "url": "https://www.iucnredlist.org/species/60213/3099544"
+            },
+            {
+              "label": "GEERG Research",
+              "url": "http://www.geerg.ca"
+            }
+          ]
+        }
+      ],
+      "statusHistory": [
+        {
+          "year": 2006,
+          "status": "Near Threatened"
+        },
+        {
+          "year": 2020,
+          "status": "Least Concern"
+        }
+      ],
+      "populationTrend": [
+        {
+          "year": 1900,
+          "value": 200000
+        },
+        {
+          "year": 1920,
+          "value": 180000
+        },
+        {
+          "year": 1940,
+          "value": 140000
+        },
+        {
+          "year": 1960,
+          "value": 110000
+        },
+        {
+          "year": 1980,
+          "value": 120000
+        },
+        {
+          "year": 2000,
+          "value": 132000
+        },
+        {
+          "year": 2020,
+          "value": 145000
+        }
+      ],
+      "populationTrendMeta": {
+        "confidence": "modeled",
+        "note": "No reliable population estimates exist for any time period. Numbers are loosely modeled from historical hunting records: the Norwegian and Icelandic liver-oil fisheries harvested an estimated 20,000–30,000 sharks per year at peak (1930s–50s) before collapsing. Given extreme longevity (~400 years) and near-century maturity, population impacts accumulate slowly and recovery is equally slow. The IUCN uplisting from Near Threatened (2006) to Least Concern (2020) suggests no acute collapse, but data gaps are severe. All values are highly speculative."
+      },
+      "preyDeclineRegions": [
+        {
+          "name": "Arctic",
+          "severity": "low",
+          "note": "Marine mammals and cold-water fish remain relatively available; some polar prey populations under pressure from warming-driven habitat shifts"
+        },
+        {
+          "name": "N. Atlantic",
+          "severity": "medium",
+          "note": "Commercial fish species (halibut, cod) moderately to heavily depleted in shared habitat areas through decades of industrial fishing"
+        },
+        {
+          "name": "Iceland",
+          "severity": "low",
+          "note": "Managed fisheries maintain moderate prey availability; cod and halibut stocks partly recovering under quota systems"
+        }
+      ],
+      "fishingPressureRegions": [
+        {
+          "name": "Arctic / Greenland",
+          "severity": "medium",
+          "note": "Bycatch in Greenlandic bottom trawl and longline fisheries; some traditional harvest of Greenland sharks for hákarl production"
+        },
+        {
+          "name": "N. Atlantic",
+          "severity": "medium",
+          "note": "Bycatch in deep-sea trawls targeting Greenland halibut and other demersal species; discard rates poorly monitored"
+        },
+        {
+          "name": "Iceland / Norway",
+          "severity": "low",
+          "note": "Occasional bycatch; traditional hákarl harvest at small commercial scale; better-regulated fisheries than elsewhere in range"
+        }
+      ]
     },
     {
       "id": "somniosus-pacificus",
@@ -6712,7 +7947,7 @@ window.WIKI_DATA = {
         "nocturnal"
       ],
       "description": "The chain catshark is a small, deep-water shark of the western North Atlantic, best known for its striking chain-link pattern and its dramatic biofluorescence. Under normal light its dark brown pattern of interconnected ovals is striking; under blue light it glows with an intense green fluorescence that is invisible to most deep-sea predators but clearly visible to other chain catsharks. It is one of the first shark species in which biofluorescence was documented and studied in detail.",
-      "funFact": "Chain catsharks are one of only two sexes that glow differently from one another using biofluorescence — males and females emit distinct fluorescent patterns, suggesting the glow may function as a private visual communication channel between individuals in the darkness of the deep sea.",
+      "funFact": "Chain catsharks are one of the only shark species in which males and females glow differently from one another using biofluorescence — each sex emits a distinct fluorescent pattern, suggesting the glow may function as a private visual communication channel in the darkness of the deep sea.",
       "habitat": "Outer continental shelf and upper slope waters of the western North Atlantic, from Nova Scotia south to Nicaragua and into the Gulf of Mexico. Depth range 73–550 m; most common at 150–400 m on soft sediment and rocky bottom habitats."
     },
     {

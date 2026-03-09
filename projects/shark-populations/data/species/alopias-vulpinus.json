@@ -1,6 +1,6 @@
 {
   "id": "alopias-vulpinus",
-  "lastUpdated": "2026-03-06",
+  "lastUpdated": "2026-03-09",
   "emoji": "🦈",
   "commonName": "Common Thresher",
   "scientificName": "Alopias vulpinus",
@@ -31,7 +31,81 @@
     "bycatch",
     "finning"
   ],
+  "photos": ["projects/shark-populations/images/common_thresher/common_thresher.png"],
   "description": "The common thresher is the largest of the three thresher shark species, distinguished by its extraordinarily long upper tail fin lobe that can equal half or more of its total body length. Found in temperate and tropical oceans worldwide, it uses its powerful tail to herd and stun schooling prey fish. Thresher sharks are prized for their meat and fins and are heavily affected by longline bycatch.",
   "funFact": "The common thresher uses its massive scythe-like tail as a weapon — it has been documented performing rapid, spinning tail-slap strikes that stun or kill multiple fish simultaneously, a hunting technique unique among sharks.",
-  "habitat": "Temperate and tropical oceanic and coastal waters worldwide, primarily pelagic but occasionally approaching shore. Found from the surface to at least 550 m depth. More common in temperate regions than in tropical ones."
+  "habitat": "Temperate and tropical oceanic and coastal waters worldwide, primarily pelagic but occasionally approaching shore. Found from the surface to at least 550 m depth. More common in temperate regions than in tropical ones.",
+  "diet": "Specializes in schooling fish including herring, bluefish, mackerel, anchovies, and squid. Uses its elongated tail to circle, herd, and stun prey before consuming them. Documented performing spinning tail-slap strikes that incapacitate multiple fish simultaneously.",
+  "size": "Typically 3.0–5.0 m (9.8–16.4 ft) total length including tail; tail fin can comprise roughly half the total length. Maximum confirmed 6.1 m (20 ft). Can weigh up to 348 kg (767 lbs).",
+  "vitalSigns": [
+    { "label": "Estimated Population",   "value": "No reliable global estimate — 30–49% decline over three generations in studied populations",              "glance": true },
+    { "label": "Lifespan",               "value": "Up to 50 years",                                                                                          "glance": true },
+    { "label": "Max Length",             "value": "6.1 m (20 ft) total",          "metric": "6.1 m",    "imperial": "20 ft",                                "glance": true },
+    { "label": "Max Weight",             "value": "~348 kg (~767 lbs)",           "metric": "~348 kg",  "imperial": "~767 lbs",                             "glance": true },
+    { "label": "Top Speed",              "value": "~50 km/h (~31 mph) estimated during prey strike", "metric": "~50 km/h", "imperial": "~31 mph",           "glance": true },
+    { "label": "Ecological Role",        "value": "Apex Predator",                                                                                            "glance": true },
+    { "label": "Reproductive Rate",      "value": "2–7 pups per litter; ~9 month gestation; adelphophagy (intrauterine nourishment by unfertilized eggs)" },
+    { "label": "Age at Maturity",        "value": "~8–13 years; females mature later than males" },
+    { "label": "Diet",                   "value": "Herring, mackerel, bluefish, anchovies, squid, schooling fish" },
+    { "label": "Population Growth Rate", "value": "Low — late maturity, long gestation, and modest litter sizes limit recovery rate" },
+    { "label": "Key Adaptations",        "value": "Elongated caudal fin (upper lobe equals ~half body length) used to herd and stun prey; endothermy (warm-blooded muscles) for high-speed pursuit in cold water" }
+  ],
+  "habitatStats": [
+    { "label": "Global Range", "value": "Temperate and tropical oceans worldwide; more common in temperate zones; rare in equatorial tropics" },
+    { "label": "Depth Range",  "value": "Surface to 550 m (1,800 ft); most commonly 0–150 m", "metric": "Surface to 550 m", "imperial": "Surface to 1,800 ft" }
+  ],
+  "threats": [
+    { "name": "Pelagic Longline Bycatch", "severity": "critical", "description": "Among the most frequently caught sharks in global longline fisheries targeting tuna and swordfish. Their near-surface cruising behavior places them squarely in the path of commercial pelagic gear." },
+    { "name": "Shark Fin Trade",          "severity": "high",     "description": "Prized for their large pectoral fins in the international fin trade. Finning at sea continues in poorly monitored high-seas fisheries despite CITES Appendix II protections." },
+    { "name": "Targeted Fishing",         "severity": "high",     "description": "Actively sought for their meat, fins, and liver oil in parts of the Mediterranean, Indian Ocean, and Pacific. Their predictable schooling behavior makes them vulnerable to targeted net fisheries." },
+    { "name": "Inadequate Management",    "severity": "medium",   "description": "CITES Appendix II listing (2016) has not been uniformly translated into catch limits or enforcement across international waters. RFMO coverage is inconsistent, and IUU fishing remains widespread." }
+  ],
+  "actionItems": [
+    { "title": "Choose Sustainable Seafood",          "description": "Use the Monterey Bay Aquarium Seafood Watch guide to avoid tuna and swordfish from pelagic longline fisheries with high thresher shark bycatch rates.", "link": "https://www.seafoodwatch.org" },
+    { "title": "Support CITES Appendix II Enforcement", "description": "Advocate for governments to implement and enforce CITES trade restrictions on thresher shark products, which were added in 2016 but remain poorly enforced in many countries.", "link": null },
+    { "title": "Avoid Shark Products",                "description": "Refuse shark fin, shark liver oil, and other shark-derived products. Consumer demand in Asia and globally fuels the directed fin fishery that compounds bycatch mortality.", "link": null },
+    { "title": "Support Shark Research Funding",      "description": "Organizations like the Shark Trust and Save Our Seas Foundation fund the longline observer programs and stock assessments needed to build effective thresher shark management.", "link": "https://www.sharktrust.org" }
+  ],
+  "healthMetrics": [
+    { "label": "IUCN Status",         "value": "Vulnerable — listed since 2007; N. Pacific population experiencing documented decline of ~30–50%",                      "trend": "stable" },
+    { "label": "Population Trend",    "value": "Decreasing — notable CPUE declines in N. Pacific longline observer data and Mediterranean catch records",               "trend": "down"   },
+    { "label": "Habitat Quality",     "value": "Moderate — open ocean and coastal pelagic zones largely intact; some warming-driven shifts in prey distribution",        "trend": "stable" },
+    { "label": "Prey Availability",   "value": "Declining — herring, mackerel, and squid heavily depleted in key fishing zones",                                         "trend": "down"   },
+    { "label": "Fishing Pressure",    "value": "Critical — among highest longline bycatch rates of any pelagic shark; Mediterranean driftnet pressure also significant", "trend": "down"   },
+    { "label": "Protection Coverage", "value": "Limited — CITES Appendix II since 2016; RFMOs inconsistent; finning bans incomplete and poorly enforced offshore",      "trend": "stable",
+      "links": [
+        { "label": "CITES Listing",   "url": "https://cites.org/eng/app/appendices.php" },
+        { "label": "IUCN Red List",   "url": "https://www.iucnredlist.org/species/39339/2916951" },
+        { "label": "Shark Trust",     "url": "https://www.sharktrust.org" }
+      ]
+    }
+  ],
+  "statusHistory": [
+    { "year": 2007, "status": "Vulnerable" },
+    { "year": 2018, "status": "Vulnerable" }
+  ],
+  "populationTrend": [
+    { "year": 1975, "value": 800000 },
+    { "year": 1985, "value": 600000 },
+    { "year": 1995, "value": 400000 },
+    { "year": 2005, "value": 260000 },
+    { "year": 2015, "value": 175000 },
+    { "year": 2023, "value": 135000 }
+  ],
+  "populationTrendMeta": {
+    "confidence": "modeled",
+    "note": "No reliable global population estimate exists. Trends modeled from documented CPUE declines in longline observer data, particularly the N. Pacific (~30–50%) and Mediterranean. IUCN cites a 30–49% decline over three generations. Absolute numbers are highly speculative."
+  },
+  "preyDeclineRegions": [
+    { "name": "N. Pacific",     "severity": "high",     "note": "Pacific herring, mackerel, and squid under heavy commercial and industrial fishing pressure" },
+    { "name": "Mediterranean",  "severity": "critical", "note": "Anchovy, sardine, and squid severely depleted by decades of intensive inshore and offshore fishing" },
+    { "name": "N. Atlantic",    "severity": "medium",   "note": "Herring and bluefish moderately depleted; some recovering under management in the NE Atlantic" },
+    { "name": "Indo-Pacific",   "severity": "medium",   "note": "Schooling prey fish under moderate pressure in key tuna fishing zones across the region" }
+  ],
+  "fishingPressureRegions": [
+    { "name": "N. Pacific",     "severity": "high",     "note": "Dense longline fleets targeting albacore and swordfish; high thresher bycatch rates documented in observer data" },
+    { "name": "Mediterranean",  "severity": "critical", "note": "Longlines and driftnets both active; near-absence in historical aggregation areas; minimal dedicated enforcement" },
+    { "name": "N. Atlantic",    "severity": "medium",   "note": "Longline fleets active; improving RFMO oversight in the NE Atlantic under ICCAT" },
+    { "name": "Indo-Pacific",   "severity": "medium",   "note": "Extensive longline effort for tuna and swordfish; targeted in some local fisheries for fins and meat" }
+  ]
 }

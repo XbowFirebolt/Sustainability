@@ -1,6 +1,6 @@
 {
   "id": "somniosus-microcephalus",
-  "lastUpdated": "2026-03-06",
+  "lastUpdated": "2026-03-09",
   "emoji": "🦈",
   "commonName": "Greenland Shark",
   "scientificName": "Somniosus microcephalus",
@@ -29,7 +29,79 @@
     "long-lived",
     "slow-growing"
   ],
+  "photos": ["projects/shark-populations/images/greenland_shark/greenland_shark.png"],
   "description": "The Greenland shark is one of the largest living shark species and the world's longest-lived vertebrate, with individuals estimated to reach over 400 years of age. It inhabits the cold, deep waters of the North Atlantic and Arctic Ocean, moving slowly through near-freezing water and feeding on fish, marine mammals, and carrion. Its flesh is toxic when fresh due to high concentrations of trimethylamine oxide, but is eaten as a traditional Icelandic delicacy called hákarl after months of fermentation.",
   "funFact": "Greenland sharks grow only about 1 cm per year, reach sexual maturity around age 150, and the oldest individuals studied were estimated to be approximately 400 years old — meaning some alive today were born before the Mayflower reached America.",
-  "habitat": "Cold, deep waters of the North Atlantic and Arctic Ocean, typically at depths of 200–2,200 m. They are most common in waters between -1°C and 10°C and are one of the few shark species that can survive under Arctic sea ice year-round."
+  "habitat": "Cold, deep waters of the North Atlantic and Arctic Ocean, typically at depths of 200–2,200 m. They are most common in waters between -1°C and 10°C and are one of the few shark species that can survive under Arctic sea ice year-round.",
+  "diet": "Opportunistic apex predator and scavenger consuming cold-water fish (Greenland halibut, cod, char), seals, porpoises, and carrion. Has been found with remains of polar bears, reindeer, horses, and entire caribou carcasses — consistent with major scavenging of animals that fall through ice.",
+  "size": "Typically 2.4–4.8 m (8–16 ft); maximum recorded 7.3 m (24 ft). Females grow larger than males. Growth rate estimated at ~1 cm per year.",
+  "vitalSigns": [
+    { "label": "Estimated Population",   "value": "Unknown — no reliable global estimate; range suggests possibly hundreds of thousands", "glance": true },
+    { "label": "Lifespan",               "value": "272–512+ years (estimated median ~392 years)",                                         "glance": true },
+    { "label": "Max Length",             "value": "7.3 m (24 ft)",               "metric": "7.3 m",      "imperial": "24 ft",              "glance": true },
+    { "label": "Max Weight",             "value": "~1,000 kg (~2,200 lbs)",      "metric": "~1,000 kg",  "imperial": "~2,200 lbs",         "glance": true },
+    { "label": "Top Speed",              "value": "~1.6 km/h (~1 mph) cruising", "metric": "~1.6 km/h",  "imperial": "~1 mph",             "glance": true },
+    { "label": "Ecological Role",        "value": "Apex Predator",                                                                         "glance": true },
+    { "label": "Reproductive Rate",      "value": "Unknown; likely very few pups — extreme life history suggests very low fecundity" },
+    { "label": "Age at Maturity",        "value": "~150 years (estimated) — latest maturity of any known vertebrate" },
+    { "label": "Diet",                   "value": "Halibut, cod, seals, porpoises, carrion, and terrestrial animals fallen through ice" },
+    { "label": "Population Growth Rate", "value": "Extremely slow — maturing over a century means recovery from depletion would take generations" },
+    { "label": "Key Adaptations",        "value": "Trimethylamine oxide (TMAO) in tissues acts as antifreeze and pressure buffer at depth; highly specialized olfactory system for detecting carrion under ice" }
+  ],
+  "habitatStats": [
+    { "label": "Global Range", "value": "North Atlantic and Arctic Ocean; Iceland, Greenland, Canada, Norway, and Svalbard" },
+    { "label": "Depth Range",  "value": "Surface to ~2,200 m (7,200 ft); most common at 200–600 m in warmer months", "metric": "Surface to ~2,200 m", "imperial": "Surface to ~7,200 ft" }
+  ],
+  "threats": [
+    { "name": "Bycatch",          "severity": "high",   "description": "Caught in bottom trawls and longlines targeting Greenland halibut, cod, and other demersal species throughout the North Atlantic and Arctic. Discard rates are high but poorly tracked." },
+    { "name": "Climate Change",   "severity": "high",   "description": "Rapid Arctic warming threatens the cold, deep-water habitats this species depends on. Sea ice loss disrupts prey availability and may expose the species to new fishing pressures." },
+    { "name": "Pollution",        "severity": "medium", "description": "As a long-lived apex predator, Greenland sharks bioaccumulate persistent pollutants including PCBs, heavy metals, and mercury at some of the highest levels recorded in any marine species." },
+    { "name": "Historical Hunting", "severity": "medium", "description": "Heavily exploited in the 19th and early 20th centuries for their liver oil, used as machinery lubricant. Industrial harvest peaked in the 1950s before collapsing due to stock depletion." }
+  ],
+  "actionItems": [
+    { "title": "Support Arctic Ocean Protection",    "description": "Advocate for expanded Marine Protected Areas in the Arctic, where Greenland shark habitat is most concentrated and climate impacts are accelerating fastest.", "link": null },
+    { "title": "Choose Sustainable Deep-Sea Seafood", "description": "Avoid deep-sea bottom-trawled fish from the North Atlantic, where Greenland sharks are most commonly caught as bycatch. Use the Monterey Bay Seafood Watch guide for guidance.", "link": "https://www.seafoodwatch.org" },
+    { "title": "Support Climate Action",             "description": "Arctic warming is one of the most direct threats to Greenland shark habitat. Supporting climate policy and reducing personal emissions helps protect the cold-water environments they depend on.", "link": null },
+    { "title": "Fund Greenland Shark Research",      "description": "Very little is known about this species' population size, reproduction, or ecology. Organizations like the Greenland Shark and Elasmobranch Education and Research Group (GEERG) need support.", "link": null }
+  ],
+  "healthMetrics": [
+    { "label": "IUCN Status",         "value": "Least Concern — reassessed from Near Threatened in 2020; limited data may understate localized threats",  "trend": "up"     },
+    { "label": "Population Trend",    "value": "Unknown — insufficient data; possible partial recovery from historical liver-oil hunting",                   "trend": "stable" },
+    { "label": "Habitat Quality",     "value": "Declining — Arctic warming threatens cold-water habitat; sea ice loss accelerating",                         "trend": "down"   },
+    { "label": "Prey Availability",   "value": "Moderate — cold-water fish and marine mammals remain available; some prey species under pressure",           "trend": "stable" },
+    { "label": "Fishing Pressure",    "value": "Moderate — bycatch in Arctic and North Atlantic demersal fisheries; some traditional harvest continues",     "trend": "stable" },
+    { "label": "Protection Coverage", "value": "Minimal — no targeted protections; Least Concern status may obscure regional vulnerabilities",               "trend": "stable",
+      "links": [
+        { "label": "IUCN Red List",   "url": "https://www.iucnredlist.org/species/60213/3099544" },
+        { "label": "GEERG Research",  "url": "http://www.geerg.ca" }
+      ]
+    }
+  ],
+  "statusHistory": [
+    { "year": 2006, "status": "Near Threatened" },
+    { "year": 2020, "status": "Least Concern" }
+  ],
+  "populationTrend": [
+    { "year": 1900, "value": 200000 },
+    { "year": 1920, "value": 180000 },
+    { "year": 1940, "value": 140000 },
+    { "year": 1960, "value": 110000 },
+    { "year": 1980, "value": 120000 },
+    { "year": 2000, "value": 132000 },
+    { "year": 2020, "value": 145000 }
+  ],
+  "populationTrendMeta": {
+    "confidence": "modeled",
+    "note": "No reliable population estimates exist for any time period. Numbers are loosely modeled from historical hunting records: the Norwegian and Icelandic liver-oil fisheries harvested an estimated 20,000–30,000 sharks per year at peak (1930s–50s) before collapsing. Given extreme longevity (~400 years) and near-century maturity, population impacts accumulate slowly and recovery is equally slow. The IUCN uplisting from Near Threatened (2006) to Least Concern (2020) suggests no acute collapse, but data gaps are severe. All values are highly speculative."
+  },
+  "preyDeclineRegions": [
+    { "name": "Arctic",      "severity": "low",    "note": "Marine mammals and cold-water fish remain relatively available; some polar prey populations under pressure from warming-driven habitat shifts" },
+    { "name": "N. Atlantic", "severity": "medium", "note": "Commercial fish species (halibut, cod) moderately to heavily depleted in shared habitat areas through decades of industrial fishing" },
+    { "name": "Iceland",     "severity": "low",    "note": "Managed fisheries maintain moderate prey availability; cod and halibut stocks partly recovering under quota systems" }
+  ],
+  "fishingPressureRegions": [
+    { "name": "Arctic / Greenland", "severity": "medium", "note": "Bycatch in Greenlandic bottom trawl and longline fisheries; some traditional harvest of Greenland sharks for hákarl production" },
+    { "name": "N. Atlantic",        "severity": "medium", "note": "Bycatch in deep-sea trawls targeting Greenland halibut and other demersal species; discard rates poorly monitored" },
+    { "name": "Iceland / Norway",   "severity": "low",    "note": "Occasional bycatch; traditional hákarl harvest at small commercial scale; better-regulated fisheries than elsewhere in range" }
+  ]
 }

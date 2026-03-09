@@ -1,6 +1,6 @@
 {
   "id": "carcharhinus-falciformis",
-  "lastUpdated": "2026-03-06",
+  "lastUpdated": "2026-03-09",
   "emoji": "🦈",
   "commonName": "Silky Shark",
   "scientificName": "Carcharhinus falciformis",
@@ -31,7 +31,80 @@
     "bycatch",
     "finning"
   ],
+  "photos": ["projects/shark-populations/images/silky_shark/silky_shark.png"],
   "description": "The silky shark is one of the most abundant large sharks in the open ocean, found throughout tropical and warm temperate seas worldwide. Named for its smooth, silky-textured skin, it is a fast-swimming pelagic species often associated with schools of tuna at the surface. Silky sharks are among the most frequently caught sharks in tuna purse-seine fisheries and are heavily impacted by bycatch.",
   "funFact": "Silky sharks follow schools of yellowfin and skipjack tuna across the open ocean, and are trapped so frequently in tuna purse-seine nets that they have become one of the most commonly caught sharks in the global industrial tuna fishery.",
-  "habitat": "Open ocean in tropical and warm temperate seas worldwide. A truly pelagic species found from the surface to depths exceeding 500 m, most commonly near continental shelf edges, oceanic islands, and areas of high productivity associated with tuna aggregations."
+  "habitat": "Open ocean in tropical and warm temperate seas worldwide. A truly pelagic species found from the surface to depths exceeding 500 m, most commonly near continental shelf edges, oceanic islands, and areas of high productivity associated with tuna aggregations.",
+  "diet": "Fast-swimming opportunistic predator feeding primarily on schooling tuna (skipjack, yellowfin), mackerel, flying fish, squid, and octopus. Frequently associated with fish-aggregating devices (FADs) and follows tuna schools across the open ocean.",
+  "size": "Typically 1.8–2.5 m (5.9–8.2 ft); maximum recorded 3.5 m (11.5 ft). Females grow larger than males. Can weigh up to 346 kg (763 lbs) at maximum size.",
+  "vitalSigns": [
+    { "label": "Estimated Population",   "value": "No reliable global estimate — historically very abundant; estimated 50–70% decline in heavily fished regions", "glance": true },
+    { "label": "Lifespan",               "value": "Up to 23 years",                                                                                              "glance": true },
+    { "label": "Max Length",             "value": "3.5 m (11.5 ft)",              "metric": "3.5 m",    "imperial": "11.5 ft",                                  "glance": true },
+    { "label": "Max Weight",             "value": "~346 kg (~763 lbs)",           "metric": "~346 kg",  "imperial": "~763 lbs",                                 "glance": true },
+    { "label": "Top Speed",              "value": "~40 km/h (~25 mph) estimated", "metric": "~40 km/h", "imperial": "~25 mph",                                  "glance": true },
+    { "label": "Ecological Role",        "value": "Apex Predator",                                                                                                "glance": true },
+    { "label": "Reproductive Rate",      "value": "1–14 pups per litter; ~12 month gestation" },
+    { "label": "Age at Maturity",        "value": "~6–10 years" },
+    { "label": "Diet",                   "value": "Tuna, mackerel, flying fish, squid, octopus" },
+    { "label": "Population Growth Rate", "value": "Moderate — but insufficient to offset current fishing mortality rates in tuna fisheries" },
+    { "label": "Key Adaptations",        "value": "Silky, almost scaleless skin texture reduces drag for high-speed pursuit; highly developed lateral line for detecting tuna school movements across the open ocean" }
+  ],
+  "habitatStats": [
+    { "label": "Global Range", "value": "Tropical and warm temperate open ocean worldwide; most abundant in the equatorial Pacific and Indian Ocean" },
+    { "label": "Depth Range",  "value": "Surface to 500+ m (1,640+ ft); most commonly 0–50 m near tuna aggregations", "metric": "Surface to 500+ m", "imperial": "Surface to 1,640+ ft" }
+  ],
+  "threats": [
+    { "name": "Tuna Purse-Seine Bycatch",  "severity": "critical", "description": "The dominant threat. Silky sharks associate with the same surface tuna schools targeted by industrial purse-seine fleets, making them one of the most commonly caught sharks in the global tuna fishery. Millions have been killed over recent decades." },
+    { "name": "Pelagic Longline Bycatch",  "severity": "high",     "description": "Caught in large numbers on longlines targeting tuna, swordfish, and billfish across the tropics. Longlines represent a secondary but significant source of mortality in addition to purse-seine capture." },
+    { "name": "Shark Fin Trade",           "severity": "high",     "description": "Silky shark fins are among the most traded shark fins globally. Finning at sea persists in unmonitored high-seas fisheries despite international restrictions." },
+    { "name": "Inadequate Management",     "severity": "medium",   "description": "CITES Appendix II listing (2016) and WCPFC catch limits have had limited effect. IUU fishing is widespread across tropical seas, and observer coverage in purse-seine fisheries remains insufficient." }
+  ],
+  "actionItems": [
+    { "title": "Choose Sustainable Tuna",             "description": "Select tuna certified by the Marine Stewardship Council or rated Green by Seafood Watch. Pole-and-line and troll-caught tuna have dramatically lower silky shark bycatch than purse-seine or FAD-caught tuna.", "link": "https://www.seafoodwatch.org" },
+    { "title": "Demand Bycatch Transparency",         "description": "Contact tuna brands and retailers to ask about bycatch policies and shark-safe sourcing. Consumer pressure has driven some major tuna brands to adopt FAD-free sourcing commitments.", "link": null },
+    { "title": "Refuse Shark Fin Products",           "description": "Avoid purchasing shark fin soup and products. Silky shark fins are among the most common in the fin trade, and consumer demand directly drives finning mortality in high-seas fisheries.", "link": null },
+    { "title": "Support Save Our Seas Foundation",    "description": "SOSF funds research into silky shark ecology, pelagic bycatch reduction, and policy work on RFMO shark management across the Indo-Pacific and Atlantic.", "link": "https://saveourseas.com" }
+  ],
+  "healthMetrics": [
+    { "label": "IUCN Status",         "value": "Vulnerable — uplisted from Near Threatened in 2014; decline driven by tuna fishery bycatch",                              "trend": "stable" },
+    { "label": "Population Trend",    "value": "Decreasing — estimated 50–70% decline in heavily fished areas of the Indian Ocean and Pacific since the 1980s",           "trend": "down"   },
+    { "label": "Habitat Quality",     "value": "Moderate — pelagic zones largely intact; warming and deoxygenation are altering the depth distribution of prey",          "trend": "stable" },
+    { "label": "Prey Availability",   "value": "Declining — tuna and squid populations depleted in key regions by intensive commercial fishing",                          "trend": "down"   },
+    { "label": "Fishing Pressure",    "value": "Critical — one of the most bycaught sharks on Earth; purse-seine and longline pressure spans the entire tropical ocean",  "trend": "down"   },
+    { "label": "Protection Coverage", "value": "Partial — CITES Appendix II since 2016; WCPFC limits in place but inconsistently enforced; observer coverage inadequate", "trend": "stable",
+      "links": [
+        { "label": "CITES Listing",      "url": "https://cites.org/eng/app/appendices.php" },
+        { "label": "IUCN Red List",      "url": "https://www.iucnredlist.org/species/39372/2911327" },
+        { "label": "Save Our Seas",      "url": "https://saveourseas.com" }
+      ]
+    }
+  ],
+  "statusHistory": [
+    { "year": 2007, "status": "Near Threatened" },
+    { "year": 2014, "status": "Vulnerable" }
+  ],
+  "populationTrend": [
+    { "year": 1980, "value": 5000000 },
+    { "year": 1990, "value": 3500000 },
+    { "year": 2000, "value": 2200000 },
+    { "year": 2010, "value": 1400000 },
+    { "year": 2020, "value": 900000 }
+  ],
+  "populationTrendMeta": {
+    "confidence": "modeled",
+    "note": "No reliable global population count exists. Silky sharks were historically among the most abundant large sharks in tropical waters. Observer data from tuna fisheries documents 50–70% CPUE declines in the Indian Ocean and Pacific since the 1980s. Absolute numbers shown are highly speculative estimates derived from those proportional declines."
+  },
+  "preyDeclineRegions": [
+    { "name": "Tropical Atlantic",  "severity": "critical", "note": "Yellowfin and bigeye tuna severely depleted by decades of intensive longline and purse-seine fishing; squid availability limited" },
+    { "name": "Indian Ocean",       "severity": "high",     "note": "Tuna stocks under heavy pressure from distant-water fleets; skipjack moderately stable but yellowfin declining" },
+    { "name": "Tropical Pacific",   "severity": "high",     "note": "Skipjack relatively abundant but yellowfin heavily fished; squid and flying fish depleted in high-effort zones" },
+    { "name": "Caribbean",          "severity": "medium",   "note": "Moderate prey depletion; some reef fish and squid available but smaller pelagic fish populations reduced" }
+  ],
+  "fishingPressureRegions": [
+    { "name": "Tropical Atlantic",  "severity": "critical", "note": "Dense purse-seine and longline activity; IUU fishing widespread; silky shark among the top bycatch species" },
+    { "name": "Indian Ocean",       "severity": "high",     "note": "Extensive longline and purse-seine effort; limited observer coverage; fin trade active across the region" },
+    { "name": "Tropical Pacific",   "severity": "critical", "note": "Largest tuna purse-seine fishery in the world; silky shark is the dominant shark bycatch species in FAD fishing operations" },
+    { "name": "Caribbean",          "severity": "medium",   "note": "Moderate longline presence; some national protections; lower pressure than open-ocean tropical zones" }
+  ]
 }

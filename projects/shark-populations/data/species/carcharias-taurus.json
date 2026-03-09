@@ -1,6 +1,6 @@
 {
   "id": "carcharias-taurus",
-  "lastUpdated": "2026-03-06",
+  "lastUpdated": "2026-03-09",
   "emoji": "🦈",
   "commonName": "Sand Tiger Shark",
   "scientificName": "Carcharias taurus",
@@ -29,7 +29,83 @@
     "slow-reproducing",
     "overfished"
   ],
+  "photos": ["projects/shark-populations/images/sand_tiger_shark/sand_tiger_shark.png"],
   "description": "The sand tiger shark's rows of protruding, ragged teeth give it a ferocious appearance, yet it is one of the most docile sharks toward humans. It is the only shark known to gulp air at the surface and hold it in its stomach to achieve near-neutral buoyancy — allowing it to hover motionless in the water column. Found in warm and temperate coastal waters worldwide, it is a slow-reproducing species with a highly unusual embryonic development: pups cannibalize each other in the womb, and only two survive to birth (one per uterus).",
   "funFact": "Sand tiger shark embryos engage in intrauterine cannibalism — the first embryo to develop a functional jaw actively hunts and consumes its siblings in the womb. Only one pup per uterus survives, emerging as an already-experienced predator about 1 m long at birth.",
-  "habitat": "Warm temperate to tropical coastal waters worldwide, typically found near the seafloor in surf zones, shallow bays, rocky reefs, and around offshore islands. Depth range extends from the intertidal zone to at least 191 m. Also commonly found in aquariums due to their docility."
+  "habitat": "Warm temperate to tropical coastal waters worldwide, typically found near the seafloor in surf zones, shallow bays, rocky reefs, and around offshore islands. Depth range extends from the intertidal zone to at least 191 m. Also commonly found in aquariums due to their docility.",
+  "diet": "Feeds mainly on bony fish (eels, snappers, flatfish, bluefish), squid, and crustaceans. Uses near-neutral buoyancy to hover motionless before ambushing prey. Will consume small sharks and rays when opportunity arises.",
+  "size": "Typically 2.0–2.5 m (6.6–8.2 ft); maximum recorded 3.2 m (10.5 ft). Females grow slightly larger than males.",
+  "vitalSigns": [
+    { "label": "Estimated Population",   "value": "Severely depleted in most regions — no reliable global estimate; Eastern Australia estimated ~1,500–2,000 adults", "glance": true },
+    { "label": "Lifespan",               "value": "Up to 40 years",                                                                                                   "glance": true },
+    { "label": "Max Length",             "value": "3.2 m (10.5 ft)",             "metric": "3.2 m",    "imperial": "10.5 ft",                                         "glance": true },
+    { "label": "Max Weight",             "value": "~159 kg (~350 lbs)",          "metric": "~159 kg",  "imperial": "~350 lbs",                                        "glance": true },
+    { "label": "Top Speed",              "value": "~35 km/h (~22 mph) estimated", "metric": "~35 km/h", "imperial": "~22 mph",                                        "glance": true },
+    { "label": "Ecological Role",        "value": "Apex Predator",                                                                                                     "glance": true },
+    { "label": "Reproductive Rate",      "value": "1 pup per uterus (2 per litter); ~9–12 month gestation — lowest reproductive rate of any shark" },
+    { "label": "Age at Maturity",        "value": "6–7 years (males), 9–10 years (females)" },
+    { "label": "Diet",                   "value": "Bony fish, squid, rays, small sharks, crustaceans" },
+    { "label": "Population Growth Rate", "value": "Extremely slow — produces only 2 pups every 2 years; recovery from depletion may take decades" },
+    { "label": "Key Adaptations",        "value": "Gulps air at the surface to fill stomach and achieve neutral buoyancy; the only shark species known to use this mechanism for hovering motionless in the water column" }
+  ],
+  "habitatStats": [
+    { "label": "Global Range", "value": "Warm temperate and tropical coastal waters worldwide; notably absent from the eastern Pacific Ocean" },
+    { "label": "Depth Range",  "value": "Intertidal zone to 191 m (627 ft); most common at 0–25 m on rocky reefs and sandy flats", "metric": "0–191 m", "imperial": "0–627 ft" }
+  ],
+  "threats": [
+    { "name": "Historical Directed Fishing",   "severity": "critical", "description": "Hunted extensively across its range through the 1980s for food, liver oil, and sport. Eastern Australian populations were decimated — estimated at fewer than 1,500 adults before receiving protection in 1984." },
+    { "name": "Beach Meshing Programs",        "severity": "high",     "description": "Shark nets deployed along Australian and South African coastlines to protect swimmers kill significant numbers annually. In New South Wales alone, hundreds have been caught over the past three decades." },
+    { "name": "Bycatch",                       "severity": "high",     "description": "Caught in gillnets, longlines, and fish traps throughout their range. Low reproductive rate means even modest ongoing mortality prevents population recovery." },
+    { "name": "Habitat Degradation",           "severity": "medium",   "description": "Estuarine and near-shore nursery habitats are affected by coastal development, runoff, and pollution, reducing the sheltered areas where juveniles grow." }
+  ],
+  "actionItems": [
+    { "title": "Oppose Shark Culling Programs",  "description": "Beach meshing programs along Australian and South African coastlines kill sand tigers regularly. Contact local representatives and support shark-safe alternatives like drumlines with escape mechanisms and personal deterrents.", "link": null },
+    { "title": "Support Marine Protected Areas", "description": "Advocate for well-enforced MPAs around key sand tiger aggregation sites, including the reefs of eastern Australia and the US Atlantic coast where populations are slowly recovering.", "link": null },
+    { "title": "Report Strandings and Sightings", "description": "In Australia and South Africa, reporting sand tiger strandings and sightings to wildlife authorities provides critical data for population monitoring programs.", "link": null },
+    { "title": "Donate to Shark Trust",           "description": "The Shark Trust funds research and advocacy for vulnerable shark species worldwide, including ongoing work on sand tiger population recovery.", "link": "https://www.sharktrust.org" }
+  ],
+  "healthMetrics": [
+    { "label": "IUCN Status",         "value": "Vulnerable — listed since 1996; Eastern Australian population classified Critically Endangered separately",                   "trend": "stable" },
+    { "label": "Population Trend",    "value": "Decreasing globally — Eastern Australia down >95% before protections; US Atlantic recovering slowly from depletion",       "trend": "down"   },
+    { "label": "Habitat Quality",     "value": "Moderate — rocky reefs and shoals largely intact in key regions; coastal nursery habitats degraded in some areas",         "trend": "stable" },
+    { "label": "Prey Availability",   "value": "Moderate — schooling fish and reef prey remain available across most of range; some localized depletion",                  "trend": "stable" },
+    { "label": "Fishing Pressure",    "value": "High — beach nets ongoing in Australia and South Africa; bycatch in gillnets and longlines; improving in some regions",    "trend": "stable" },
+    { "label": "Protection Coverage", "value": "Partial — protected in US, Australia, South Africa, and Mediterranean; unprotected or poorly managed in remaining range", "trend": "stable",
+      "links": [
+        { "label": "IUCN Red List",   "url": "https://www.iucnredlist.org/species/3854/2876633" },
+        { "label": "Shark Trust",     "url": "https://www.sharktrust.org" }
+      ]
+    }
+  ],
+  "statusHistory": [
+    { "year": 1996, "status": "Vulnerable" },
+    { "year": 2009, "status": "Vulnerable" },
+    { "year": 2022, "status": "Vulnerable" }
+  ],
+  "populationTrend": [
+    { "year": 1970, "value": 100000 },
+    { "year": 1980, "value": 70000 },
+    { "year": 1984, "value": 58000, "label": "Protected in Eastern Australia" },
+    { "year": 1990, "value": 40000 },
+    { "year": 1997, "value": 30000, "label": "IUCN: Vulnerable; US federal protection" },
+    { "year": 2009, "value": 19000, "label": "IUCN: Vulnerable (reassessed)" },
+    { "year": 2020, "value": 15000 },
+    { "year": 2022, "value": 14500, "label": "IUCN: Vulnerable (reassessed)" }
+  ],
+  "populationTrendMeta": {
+    "confidence": "modeled",
+    "note": "No reliable global population estimate exists. Eastern Australia's population was estimated at fewer than 1,500 adults by the early 1980s, driving full protection. Global figures are loosely modeled from documented regional declines and slow recovery rates. Actual totals are unknown."
+  },
+  "preyDeclineRegions": [
+    { "name": "Eastern Australia",  "severity": "high",   "note": "Historical prey depletion in heavily fished coastal zones; some recovery under fisheries management" },
+    { "name": "US Atlantic Coast",  "severity": "medium", "note": "Schooling fish moderately depleted in historical nursery areas; partial recovery ongoing" },
+    { "name": "Mediterranean",      "severity": "high",   "note": "Coastal fish and cephalopods heavily depleted by intensive inshore fisheries" },
+    { "name": "S. Africa",          "severity": "medium", "note": "Localized prey depletion near major population centers; some managed fisheries in place" }
+  ],
+  "fishingPressureRegions": [
+    { "name": "Eastern Australia",  "severity": "critical", "note": "Beach meshing programs kill sand tigers annually; historically decimated by directed hunting; now protected but recovery is slow" },
+    { "name": "US Atlantic Coast",  "severity": "high",     "note": "Bycatch in gillnets and bottom trawls; beach nets at some locations; improving since 1997 federal protection" },
+    { "name": "Mediterranean",      "severity": "high",     "note": "Historically targeted; ongoing bycatch in longlines and trawls; minimal dedicated protections" },
+    { "name": "S. Africa",          "severity": "medium",   "note": "Protected species but shark nets along KwaZulu-Natal coast continue to catch individuals; monitoring in place" }
+  ]
 }

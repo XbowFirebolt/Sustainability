@@ -1,6 +1,6 @@
 {
   "id": "triaenodon-obesus",
-  "lastUpdated": "2026-03-06",
+  "lastUpdated": "2026-03-09",
   "emoji": "🦈",
   "commonName": "Whitetip Reef Shark",
   "scientificName": "Triaenodon obesus",
@@ -28,7 +28,79 @@
     "keystone",
     "bycatch"
   ],
+  "photos": ["projects/shark-populations/images/whitetip_reef_shark/whitetip_reef_shark.png"],
   "description": "The whitetip reef shark is a slender, medium-sized shark found throughout the Indo-Pacific, easily identified by the distinctive white tips on its dorsal and caudal fins. Unlike most sharks, it can lie motionless on the seafloor and pump water over its gills. It is primarily nocturnal, spending the day resting in caves and under ledges before hunting in groups at night.",
   "funFact": "Whitetip reef sharks hunt in coordinated packs at night, chasing reef fish into crevices and coral formations where multiple sharks simultaneously wedge into gaps to extract hidden prey — a rare form of cooperative hunting behavior for sharks.",
-  "habitat": "Coral reef environments throughout the Indo-Pacific, from East Africa and the Red Sea to the Pacific coast of Central America. Typically found at depths of 8–40 m, closely associated with the reef substrate in clear lagoon and seaward reef habitats."
+  "habitat": "Coral reef environments throughout the Indo-Pacific, from East Africa and the Red Sea to the Pacific coast of Central America. Typically found at depths of 8–40 m, closely associated with the reef substrate in clear lagoon and seaward reef habitats.",
+  "diet": "Opportunistic nocturnal predator feeding on reef fish (wrasses, parrotfish, surgeonfish), octopus, squid, crustaceans, and lobster. Hunts in coordinated groups after dark, flushing prey from crevices and coral heads.",
+  "size": "Typically 1.4–1.7 m (4.6–5.6 ft); maximum recorded 2.1 m (6.9 ft). Females grow slightly larger than males.",
+  "vitalSigns": [
+    { "label": "Estimated Population",   "value": "No reliable global estimate — declining across Indo-Pacific range",                   "glance": true },
+    { "label": "Lifespan",               "value": "Up to 25 years",                                                                        "glance": true },
+    { "label": "Max Length",             "value": "2.1 m (6.9 ft)",              "metric": "2.1 m",     "imperial": "6.9 ft",               "glance": true },
+    { "label": "Max Weight",             "value": "~18 kg (~40 lbs)",            "metric": "~18 kg",    "imperial": "~40 lbs",              "glance": true },
+    { "label": "Top Speed",              "value": "~25 km/h (~15 mph) estimated", "metric": "~25 km/h", "imperial": "~15 mph",              "glance": true },
+    { "label": "Ecological Role",        "value": "Reef Apex Predator",                                                                     "glance": true },
+    { "label": "Reproductive Rate",      "value": "1–5 pups per litter; ~10–11 month gestation" },
+    { "label": "Age at Maturity",        "value": "~5–8 years" },
+    { "label": "Diet",                   "value": "Reef fish, octopus, squid, crustaceans, lobster" },
+    { "label": "Population Growth Rate", "value": "Slow — low litter sizes and late maturity limit recovery" },
+    { "label": "Key Adaptations",        "value": "Can remain stationary on the seafloor by actively pumping water over gills; exceptional low-light vision for nocturnal reef hunting" }
+  ],
+  "habitatStats": [
+    { "label": "Global Range", "value": "Indo-Pacific from East Africa and the Red Sea to the Pacific coast of Central America" },
+    { "label": "Depth Range",  "value": "1–40 m (3–130 ft), primarily 8–30 m on reef slopes", "metric": "1–40 m", "imperial": "3–130 ft" }
+  ],
+  "threats": [
+    { "name": "Targeted Fishing",         "severity": "high",     "description": "Actively hunted across much of Southeast Asia and the Indian Ocean for their fins and meat, both for local consumption and the international fin trade." },
+    { "name": "Coral Reef Degradation",   "severity": "high",     "description": "Entirely dependent on healthy reef ecosystems for shelter and hunting. Coral bleaching, Crown-of-Thorns starfish outbreaks, and coastal development have reduced reef quality across their range." },
+    { "name": "Bycatch",                  "severity": "medium",   "description": "Caught incidentally in reef gillnets, artisanal longlines, and fish traps targeting other reef species throughout the Indo-Pacific." },
+    { "name": "Climate Change",           "severity": "medium",   "description": "Warming seas drive repeated coral bleaching events, reducing shelter availability and disrupting prey communities that the species depends on." }
+  ],
+  "actionItems": [
+    { "title": "Support Coral Reef Conservation",   "description": "Organizations like the Coral Triangle Initiative and Reef Check work to protect the reef ecosystems that whitetip reef sharks depend on. Donations and advocacy matter.", "link": null },
+    { "title": "Choose Reef-Safe Dive Tourism",     "description": "Support dive operators that follow no-touch guidelines and advocate for reef MPAs. Responsible dive tourism creates economic incentives for reef protection over extractive fishing.", "link": null },
+    { "title": "Choose Sustainable Seafood",        "description": "Use the Monterey Bay Aquarium Seafood Watch guide to avoid reef fish from unsustainable fisheries in the Indo-Pacific that generate bycatch of reef sharks.", "link": "https://www.seafoodwatch.org" },
+    { "title": "Reduce Your Carbon Footprint",      "description": "Coral bleaching driven by ocean warming is one of the biggest threats to reef shark habitat. Supporting climate action protects the reef ecosystems these sharks call home.", "link": null }
+  ],
+  "healthMetrics": [
+    { "label": "IUCN Status",         "value": "Vulnerable — uplisted from Near Threatened in 2015; declining trend noted across assessments",                    "trend": "stable" },
+    { "label": "Population Trend",    "value": "Decreasing — documented declines across most of the Indo-Pacific, especially in Southeast Asia",                  "trend": "down"   },
+    { "label": "Habitat Quality",     "value": "Declining — coral reef degradation from bleaching, coastal development, and destructive fishing",                 "trend": "down"   },
+    { "label": "Prey Availability",   "value": "Declining — reef fish heavily overfished across Southeast Asia and Indian Ocean",                                  "trend": "down"   },
+    { "label": "Fishing Pressure",    "value": "High — targeted for fins and meat across Southeast Asia; bycatch in reef fisheries widespread",                   "trend": "down"   },
+    { "label": "Protection Coverage", "value": "Limited — CITES Appendix II since 2016; few MPAs adequately enforced in the Indo-Pacific",                        "trend": "stable",
+      "links": [
+        { "label": "CITES Listing",   "url": "https://cites.org/eng/app/appendices.php" },
+        { "label": "IUCN Red List",   "url": "https://www.iucnredlist.org/species/39379/2915776" },
+        { "label": "Reef Check",      "url": "https://www.reefcheck.org" }
+      ]
+    }
+  ],
+  "statusHistory": [
+    { "year": 2004, "status": "Near Threatened" },
+    { "year": 2015, "status": "Vulnerable" }
+  ],
+  "populationTrend": [
+    { "year": 1990, "value": 250000 },
+    { "year": 2000, "value": 190000 },
+    { "year": 2010, "value": 140000 },
+    { "year": 2020, "value": 100000 }
+  ],
+  "populationTrendMeta": {
+    "confidence": "modeled",
+    "note": "No reliable global population estimate exists. Numbers shown are rough models based on documented regional declines in the Indo-Pacific, particularly in Southeast Asia where reef fish extraction and fin trade are intensive. Actual global totals are unknown."
+  },
+  "preyDeclineRegions": [
+    { "name": "Coral Triangle",  "severity": "critical", "note": "Reef fish heavily overfished across Indonesia, Philippines, and Malaysia; destructive practices further reduce prey availability" },
+    { "name": "Indian Ocean",    "severity": "high",     "note": "Widespread reef overfishing and blast fishing reduce prey communities across East Africa and South Asian reefs" },
+    { "name": "Pacific Islands", "severity": "medium",   "note": "Reef fish moderately depleted; some islands recovering under established MPAs" },
+    { "name": "Red Sea",         "severity": "medium",   "note": "Localized reef degradation and targeted fishing pressure on reef fish communities" }
+  ],
+  "fishingPressureRegions": [
+    { "name": "Coral Triangle",  "severity": "critical", "note": "Heavily targeted for fins and meat; destructive fishing methods (blast, cyanide) common on reefs across the region" },
+    { "name": "Indian Ocean",    "severity": "high",     "note": "Targeted in reef fisheries throughout East Africa and South Asia; minimal enforcement in most areas" },
+    { "name": "Pacific Islands", "severity": "medium",   "note": "Bycatch in reef gillnets and longlines; some island nations have established shark sanctuaries" },
+    { "name": "Red Sea",         "severity": "medium",   "note": "Fin trade and food fisheries active; enforcement patchy along the broader coastline" }
+  ]
 }

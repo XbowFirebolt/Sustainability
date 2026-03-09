@@ -42,18 +42,18 @@ Tracks every species in the wiki: current tier, IUCN status, and what still need
 | Lemon Shark | *Negaprion brevirostris* | Vulnerable | Full (partial) | Missing physicalScaleImage |
 | Blue Shark | *Prionace glauca* | Near Threatened | Full (partial) | Missing physicalScaleImage |
 | Blacktip Reef Shark | *Carcharhinus melanopterus* | Vulnerable | Full (partial) | Missing physicalScaleImage |
-| Whitetip Reef Shark | *Triaenodon obesus* | Vulnerable | Stub | Phase 3 Batch 2 |
+| Whitetip Reef Shark | *Triaenodon obesus* | Vulnerable | Full (partial) | Missing physicalScaleImage |
 | Grey Reef Shark | *Carcharhinus amblyrhynchos* | Endangered | Full (partial) | Missing physicalScaleImage |
 | Sandbar Shark | *Carcharhinus plumbeus* | Vulnerable | Stub | Phase 3 Batch 2 |
 | Dusky Shark | *Carcharhinus obscurus* | Endangered | Stub | Phase 3 Batch 2 |
-| Silky Shark | *Carcharhinus falciformis* | Vulnerable | Stub | Phase 3 Batch 2 |
+| Silky Shark | *Carcharhinus falciformis* | Vulnerable | Full (partial) | Missing physicalScaleImage |
 | Porbeagle | *Lamna nasus* | Vulnerable | Standard | |
-| Common Thresher | *Alopias vulpinus* | Vulnerable | Stub | Phase 3 Batch 2 |
+| Common Thresher | *Alopias vulpinus* | Vulnerable | Full (partial) | Missing physicalScaleImage |
 | Pelagic Thresher | *Alopias pelagicus* | Endangered | Stub | Phase 3 Batch 2 |
 | Bigeye Thresher | *Alopias superciliosus* | Vulnerable | Stub | Phase 3 Batch 2 |
 | Zebra Shark | *Stegostoma tigrinum* | Endangered | Stub | Phase 3 Batch 2 |
 | Tasselled Wobbegong | *Eucrossorhinus dasypogon* | Least Concern | Stub | Phase 3 Batch 2 |
-| Greenland Shark | *Somniosus microcephalus* | Least Concern | Stub | Phase 3 Batch 3 |
+| Greenland Shark | *Somniosus microcephalus* | Least Concern | Full (partial) | Missing physicalScaleImage |
 | Pacific Sleeper Shark | *Somniosus pacificus* | Least Concern | Stub | Phase 3 Batch 3 |
 | Frilled Shark | *Chlamydoselachus anguineus* | Least Concern | Stub | Phase 3 Batch 3 |
 | Broadnose Sevengill Shark | *Notorynchus cepedianus* | Data Deficient | Stub | Phase 3 Batch 3 |
@@ -65,7 +65,7 @@ Tracks every species in the wiki: current tier, IUCN status, and what still need
 | Spotted Wobbegong | *Orectolobus maculatus* | Least Concern | Stub | Phase 3 Batch 3 |
 | Goblin Shark | *Mitsukurina owstoni* | Least Concern | Stub | Phase 3 Batch 3 |
 | Megamouth Shark | *Megachasma pelagios* | Least Concern | Stub | Phase 3 Batch 3 |
-| Sand Tiger Shark | *Carcharias taurus* | Vulnerable | Stub | Phase 3 Batch 3 |
+| Sand Tiger Shark | *Carcharias taurus* | Vulnerable | Full (partial) | Missing physicalScaleImage |
 | Smalltooth Sand Tiger | *Odontaspis ferox* | Vulnerable | Stub | Phase 3 Batch 3 |
 | Tope Shark | *Galeorhinus galeus* | Critically Endangered | Stub | Phase 3 Batch 3 |
 
@@ -156,9 +156,9 @@ Species that have been added as stubs and are candidates for Standard tier promo
 
 | Tier | Count |
 |---|---|
-| Full | 10 |
+| Full | 15 |
 | Standard | 5 |
-| Stub | 40 |
+| Stub | 35 |
 | **Total** | **55** |
 
 *Update manually after each batch commit.*
