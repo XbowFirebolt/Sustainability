@@ -1,6 +1,6 @@
 {
   "id": "carcharhinus-plumbeus",
-  "lastUpdated": "2026-03-06",
+  "lastUpdated": "2026-03-10",
   "emoji": "🦈",
   "commonName": "Sandbar Shark",
   "scientificName": "Carcharhinus plumbeus",
@@ -26,10 +26,92 @@
   ],
   "tags": [
     "migratory",
-    "solitary",
-    "bycatch"
+    "bycatch",
+    "finning"
   ],
-  "description": "The sandbar shark is one of the largest coastal sharks in the Atlantic and Pacific, recognizable by its proportionally large first dorsal fin and stocky build. It inhabits shallow coastal waters including estuaries, bays, and harbors, and undertakes long seasonal migrations. Sandbar sharks are one of the most commercially important shark species on the US East Coast, targeted for both fins and meat.",
-  "funFact": "The sandbar shark has one of the longest gestation periods of any shark — approximately 12 months — and pups are born in shallow nursery estuaries where they spend their first several years before moving to deeper offshore waters as adults.",
-  "habitat": "Shallow coastal and inshore waters including estuaries, bays, and harbors in tropical and temperate seas worldwide. Commonly found at depths of 20–65 m over sandy or muddy bottoms; may range to 280 m. Uses nearshore estuaries as critical nursery habitats."
+  "photos": ["projects/shark-populations/images/sandbar_shark/sandbar_shark.png"],
+  "description": "The sandbar shark is one of the largest and most abundant coastal sharks in the Atlantic and Pacific, recognizable by its proportionally oversized first dorsal fin and stocky, heavy-bodied build. It inhabits shallow coastal waters including estuaries, bays, and harbors, and undertakes long seasonal migrations between feeding and nursery grounds. Sandbar sharks are one of the most commercially important shark species on the US East Coast, having been heavily targeted for fins, meat, and cartilage for decades.",
+  "funFact": "The sandbar shark has one of the longest gestation periods of any shark — approximately 9–12 months — and pups are born in shallow estuarine nurseries where they spend their first several years of life before moving to deeper offshore waters as adults.",
+  "habitat": "Shallow coastal and inshore waters including estuaries, bays, and harbors in tropical and warm temperate seas worldwide. Typically found at depths of 20–65 m over sandy or muddy bottoms; can range to 280 m offshore. Nearshore estuaries serve as critical nursery habitats for juveniles.",
+  "diet": "Primarily bony fish, rays, cephalopods (squid and octopus), and crustaceans. Feeds opportunistically across a broad range of bottom-dwelling and mid-water prey. Diet shifts with age and season — juveniles in estuaries rely more heavily on small invertebrates and fish.",
+  "size": "Typically 1.5–1.8 m (5–6 ft); maximum ~2.5 m (8.2 ft). Females grow slightly larger than males. A heavy-bodied species for its length, with stocky build and large pectoral fins.",
+  "vitalSigns": [
+    { "label": "Estimated Population",   "value": "~340,000 mature individuals (global modeled estimate; US Atlantic stock partially recovered)",                                  "glance": true },
+    { "label": "Lifespan",               "value": "Up to 30–35 years",                                                                                                          "glance": true },
+    { "label": "Max Length",             "value": "~2.5 m (8.2 ft)",             "metric": "~2.5 m",       "imperial": "~8.2 ft",                                              "glance": true },
+    { "label": "Max Weight",             "value": "~100 kg (~220 lbs)",           "metric": "~100 kg",      "imperial": "~220 lbs",                                             "glance": true },
+    { "label": "Top Speed",              "value": "~16 km/h (~10 mph)",           "metric": "~16 km/h",     "imperial": "~10 mph",                                              "glance": true },
+    { "label": "Ecological Role",        "value": "Mesopredator / Coastal Apex Predator",                                                                                       "glance": true },
+    { "label": "Reproductive Rate",      "value": "Biennial (every 2 years); 1–14 pups per litter (average 8–9)" },
+    { "label": "Age at Maturity",        "value": "13–16 years — one of the longest maturation timelines among coastal sharks, making populations slow to recover" },
+    { "label": "Diet",                   "value": "Bony fish, rays, squid, octopus, and crustaceans; diet composition shifts by age, season, and habitat" },
+    { "label": "Population Growth Rate", "value": "Intrinsic rate of increase estimated at ~2–3% per year under ideal conditions — too slow to recover quickly from heavy exploitation" },
+    { "label": "Key Adaptations",        "value": "Proportionally large first dorsal fin for stability; acute electroreception and lateral line sensing; countershading camouflage for ambush hunting" }
+  ],
+  "habitatStats": [
+    { "label": "Global Range", "value": "Worldwide in tropical and warm temperate seas; largest known populations in the western North Atlantic, Gulf of Mexico, and Indo-Pacific" },
+    { "label": "Depth Range",  "value": "Surface to ~280 m (919 ft); most common at 20–65 m over sandy or muddy substrates", "metric": "Surface to ~280 m", "imperial": "Surface to ~919 ft" }
+  ],
+  "threats": [
+    { "name": "Directed Fishing",    "severity": "high",   "description": "Historically one of the most commercially targeted shark species on the US East Coast, sought for fins, meat, cartilage, and liver oil. Populations were severely depleted by the 1990s. Managed in the US since 1993 but continues to be fished heavily throughout unmanaged parts of its range." },
+    { "name": "Shark Fin Trade",     "severity": "high",   "description": "Sandbar shark fins are among the most valuable in the fin trade, making the species a high-priority target for finning operations in unregulated waters across the Indo-Pacific and Mediterranean. IUU fishing circumvents regional quotas and reporting requirements." },
+    { "name": "Bycatch",             "severity": "high",   "description": "Caught incidentally in longlines, gillnets, and bottom trawls targeting swordfish, tuna, and coastal species. High bycatch mortality is recorded in US Atlantic fisheries; discard rates in international waters are poorly monitored." },
+    { "name": "Slow Reproduction",   "severity": "medium", "description": "Late sexual maturity (13–16 years), biennial breeding, and small litter sizes mean population recovery from overfishing is extremely slow — requiring decades of strict management to restore depleted stocks." },
+    { "name": "Habitat Degradation", "severity": "medium", "description": "Estuarine and coastal nursery habitats are threatened by coastal development, runoff, and pollution. Juvenile sandbar sharks depend on these nearshore areas during the first years of life, making nursery loss a bottleneck for population recovery." }
+  ],
+  "actionItems": [
+    { "title": "Support US Atlantic Shark Management",      "description": "NOAA Fisheries manages sandbar shark quotas under the Atlantic Highly Migratory Species FMP. Supporting stronger science-based catch limits and enforcement helps sustain the partial recovery already underway.", "link": "https://www.fisheries.noaa.gov/atlantic-highly-migratory-species/atlantic-shark-management" },
+    { "title": "Avoid Shark Fin Products",                  "description": "Sandbar shark fins are among the most traded in the global fin market. Declining consumer demand for shark fin soup is one of the most direct levers for reducing pressure on this and other coastal shark species.", "link": null },
+    { "title": "Support Coastal Habitat Protection",        "description": "Estuaries and shallow coastal bays are critical nursery habitats for juvenile sandbar sharks. Supporting organizations that protect and restore coastal wetlands directly benefits this species' long-term recovery.", "link": null },
+    { "title": "Advocate for CITES Appendix II Enforcement", "description": "The sandbar shark is listed under CITES Appendix II, requiring trade documentation. Supporting customs enforcement and traceability programs helps close the gap between regulated and actual trade in sandbar shark products.", "link": "https://cites.org" }
+  ],
+  "healthMetrics": [
+    { "label": "IUCN Status",         "value": "Vulnerable — assessed in 2003 and reconfirmed in 2020; US Atlantic stock showing slow recovery under management, but global population remains well below historical levels", "trend": "stable" },
+    { "label": "Population Trend",    "value": "Partially recovering in managed US Atlantic waters; declining or data-deficient across unmanaged Indo-Pacific and Mediterranean range", "trend": "stable" },
+    { "label": "Habitat Quality",     "value": "Declining — estuarine nursery habitats degraded by coastal development, runoff, and eutrophication; offshore habitat relatively intact", "trend": "down" },
+    { "label": "Prey Availability",   "value": "Moderate — bony fish and ray prey still available in core range, though regional depletion in Mediterranean and parts of Indo-Pacific", "trend": "stable" },
+    { "label": "Fishing Pressure",    "value": "High — despite US management, sandbar sharks face heavy directed fishing and fin trade pressure across unmanaged international range", "trend": "stable",
+      "links": [
+        { "label": "NOAA HMS FMP",   "url": "https://www.fisheries.noaa.gov/atlantic-highly-migratory-species/atlantic-shark-management" }
+      ]
+    },
+    { "label": "Protection Coverage", "value": "Partial — CITES Appendix II (2013); managed under US Atlantic HMS FMP since 1993; limited protections across Indo-Pacific and Mediterranean", "trend": "stable",
+      "links": [
+        { "label": "IUCN Red List",  "url": "https://www.iucnredlist.org/species/3853/2875866" },
+        { "label": "CITES Appendix II", "url": "https://cites.org" }
+      ]
+    }
+  ],
+  "statusHistory": [
+    { "year": 1975, "status": "Not Evaluated" },
+    { "year": 2003, "status": "Vulnerable" }
+  ],
+  "populationTrend": [
+    { "year": 1975, "value": 500000 },
+    { "year": 1980, "value": 420000 },
+    { "year": 1985, "value": 320000 },
+    { "year": 1990, "value": 230000 },
+    { "year": 1995, "value": 180000 },
+    { "year": 2000, "value": 210000 },
+    { "year": 2005, "value": 250000 },
+    { "year": 2010, "value": 290000 },
+    { "year": 2015, "value": 320000 },
+    { "year": 2020, "value": 340000 }
+  ],
+  "populationTrendMeta": {
+    "confidence": "modeled",
+    "note": "No reliable global population estimate exists. Trend values are loosely modeled from US Atlantic stock assessments (NMFS) and IUCN data. The US Atlantic population was estimated at roughly 25–30% of unfished biomass by the mid-1990s; under federal management since 1993, surveys indicate a partial recovery to approximately 40–50% of historical levels by the 2020s. Global population dynamics — particularly across the Indo-Pacific — are largely data-deficient. Numbers shown are highly speculative estimates intended to illustrate the broad trajectory of the US Atlantic stock, which is the best-studied population."
+  },
+  "preyDeclineRegions": [
+    { "name": "N. Atlantic",   "severity": "medium", "note": "Managed US and Canadian Atlantic fisheries maintain moderate prey (bony fish, rays) availability; some key forage species remain depleted from historical overfishing" },
+    { "name": "Mediterranean", "severity": "high",   "note": "Fish prey stocks heavily depleted from decades of industrial trawling and limited enforcement; sandbar shark diet prey (rays, bony fish) significantly reduced" },
+    { "name": "Indo-Pacific",  "severity": "medium", "note": "Variable across the vast range; near-coastal fish populations under pressure from artisanal and industrial fishing, especially in heavily fished Southeast Asian waters" },
+    { "name": "Caribbean",     "severity": "medium", "note": "Coastal fish prey moderately depleted by artisanal fisheries; reef-associated prey species under pressure from regional overfishing" }
+  ],
+  "fishingPressureRegions": [
+    { "name": "N. Atlantic",   "severity": "medium", "note": "Regulated under NOAA's Atlantic HMS FMP since 1993; directed quotas and retention limits in place; bycatch monitoring improving but gaps remain" },
+    { "name": "Mediterranean", "severity": "high",   "note": "Minimal species-specific regulation; caught as bycatch and targeted for fins and meat; IUU fishing prevalent and poorly monitored" },
+    { "name": "Indo-Pacific",  "severity": "high",   "note": "Heavily targeted for the fin trade throughout Southeast Asia; minimal management outside national EEZs; landings largely unmonitored" },
+    { "name": "Caribbean",     "severity": "medium", "note": "Caught in longlines and gillnets targeting other species; some island nations have shark sanctuaries but enforcement is limited" }
+  ]
 }

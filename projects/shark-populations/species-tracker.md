@@ -44,7 +44,7 @@ Tracks every species in the wiki: current tier, IUCN status, and what still need
 | Blacktip Reef Shark | *Carcharhinus melanopterus* | Vulnerable | Full (partial) | Missing physicalScaleImage |
 | Whitetip Reef Shark | *Triaenodon obesus* | Vulnerable | Full (partial) | Missing physicalScaleImage |
 | Grey Reef Shark | *Carcharhinus amblyrhynchos* | Endangered | Full (partial) | Missing physicalScaleImage |
-| Sandbar Shark | *Carcharhinus plumbeus* | Vulnerable | Stub | Phase 3 Batch 2 |
+| Sandbar Shark | *Carcharhinus plumbeus* | Vulnerable | Full (partial) | Missing physicalScaleImage |
 | Dusky Shark | *Carcharhinus obscurus* | Endangered | Full (partial) | Missing physicalScaleImage |
 | Silky Shark | *Carcharhinus falciformis* | Vulnerable | Full (partial) | Missing physicalScaleImage |
 | Porbeagle | *Lamna nasus* | Vulnerable | Full (partial) | Missing physicalScaleImage |
@@ -156,9 +156,9 @@ Species that have been added as stubs and are candidates for Standard tier promo
 
 | Tier | Count |
 |---|---|
-| Full | 28 |
+| Full | 29 |
 | Standard | 0 |
-| Stub | 27 |
+| Stub | 26 |
 | **Total** | **55** |
 
 *Update manually after each batch commit.*
