@@ -1655,6 +1655,14 @@ function renderActionItems(items, q) {
 
 const wikiSearch = document.getElementById("wiki-search");
 
+function debounce(fn, delay) {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn(...args), delay);
+  };
+}
+
 let focusedCardIndex = -1;
 let activeStatusFilters  = new Set();
 let activeHabitatFilters = new Set();
@@ -2494,10 +2502,14 @@ function renderAutocomplete(q) {
   autocompleteList.hidden = false;
 }
 
-wikiSearch.addEventListener("input", () => {
+const debouncedSearchRender = debounce(() => {
   renderWikiGrid(wikiSearch.value);
-  renderAutocomplete(wikiSearch.value);
   syncUrlFromState();
+}, 150);
+
+wikiSearch.addEventListener("input", () => {
+  renderAutocomplete(wikiSearch.value);
+  debouncedSearchRender();
 });
 
 wikiSearch.addEventListener("keydown", (e) => {

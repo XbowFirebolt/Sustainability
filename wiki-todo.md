@@ -89,7 +89,7 @@ Check off items as they're completed. Add notes inline as needed.
 
 ## Performance
 
-- [ ] **Debounce search input** — search re-renders on every keystroke; wrap handler in a ~150ms debounce to reduce unnecessary renders
+- [x] **Debounce search input** — search re-renders on every keystroke; wrap handler in a ~150ms debounce to reduce unnecessary renders
 - [ ] **Cache rendered tab panel HTML** — don't re-build the tab panel DOM on every modal open; cache the result per species ID and reuse it on subsequent opens
 - [ ] **Preload next/previous species image on modal open** — when a modal opens, speculatively preload the adjacent species' photo so Prev/Next nav feels instant
 
