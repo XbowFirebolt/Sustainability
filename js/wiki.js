@@ -323,6 +323,19 @@ function openSpeciesModal(species, cardEl, tabKey = "overview") {
   recordRecentlyViewed(species.id);
   currentModalIndex = currentFilteredSorted.findIndex((s) => s.id === species.id);
   updateModalNavState();
+
+  // Preload adjacent species images for instant prev/next nav
+  if (currentModalIndex >= 0 && currentFilteredSorted.length > 1) {
+    const total = currentFilteredSorted.length;
+    [-1, 1].forEach((offset) => {
+      const adjSpecies = currentFilteredSorted[(currentModalIndex + offset + total) % total];
+      const photo = adjSpecies?.photos?.[0];
+      if (photo) {
+        const img = new Image();
+        img.src = photo;
+      }
+    });
+  }
   activateTab(tabKey);
   const currentQ = wikiSearch.value.trim().toLowerCase();
   renderTabCached("tab-panel-overview", `overview:${species.id}`, () => renderOverview(species));
