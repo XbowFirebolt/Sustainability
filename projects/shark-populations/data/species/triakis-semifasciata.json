@@ -70,8 +70,8 @@
     }
   ],
   "statusHistory": [
-    { "year": 2009, "status": "Least Concern" },
-    { "year": 2020, "status": "Least Concern" }
+    { "year": 1990, "status": "Not Evaluated" },
+    { "year": 2009, "status": "Least Concern" }
   ],
   "populationTrend": [
     { "year": 1990, "value": 320000 },

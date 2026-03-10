@@ -52,9 +52,8 @@
     { "label": "Depth Range",  "value": "Vertical migrator — surface to ~3,500 m; surfaces nocturnally to feed", "metric": "Surface to ~3,500 m", "imperial": "Surface to ~11,480 ft" }
   ],
   "statusHistory": [
-    { "year": 2000, "status": "Least Concern" },
-    { "year": 2009, "status": "Least Concern" },
-    { "year": 2019, "status": "Least Concern" }
+    { "year": 1990, "status": "Not Evaluated" },
+    { "year": 2000, "status": "Least Concern" }
   ],
   "populationTrend": [
     { "year": 1990, "value": 95000 },

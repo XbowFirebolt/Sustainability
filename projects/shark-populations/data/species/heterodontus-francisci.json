@@ -1,6 +1,6 @@
 {
   "id": "heterodontus-francisci",
-  "lastUpdated": "2026-03-06",
+  "lastUpdated": "2026-03-10",
   "emoji": "🦈",
   "commonName": "Horn Shark",
   "scientificName": "Heterodontus francisci",
@@ -27,7 +27,78 @@
     "nocturnal",
     "solitary"
   ],
+  "photos": [
+    "projects/shark-populations/images/horn_shark/horn_shark.png"
+  ],
   "description": "The horn shark is a small, bottom-dwelling shark of the eastern Pacific coast, rarely exceeding 1.2 m (4 ft). It is named for the prominent ridges above its eyes and the stout spines in front of each dorsal fin, which deter predators. Unlike most sharks, horn sharks are slow-moving and highly site-faithful, often resting motionless in rock crevices or kelp beds during the day and actively hunting invertebrates at night. Their flattened molariform rear teeth are specialized for crushing hard-shelled prey.",
   "funFact": "Female horn sharks lay eggs in distinctive corkscrew-shaped egg cases — they then pick up the egg case in their mouth and wedge it into rocky crevices, where the spiral shape anchors it firmly against currents until the pup hatches months later.",
-  "habitat": "Rocky reefs, kelp beds, and sandy channels along the eastern Pacific coast from central California to the Gulf of California, at depths of 2–150 m. Highly philopatric (site-faithful), individuals often return to the same resting crevice each day."
+  "habitat": "Rocky reefs, kelp beds, and sandy channels along the eastern Pacific coast from central California to the Gulf of California, at depths of 2–150 m. Highly philopatric (site-faithful), individuals often return to the same resting crevice each day.",
+  "diet": "Feeds primarily on hard-shelled benthic invertebrates including sea urchins, crabs, shrimp, octopus, and mollusks (snails, clams, chitons). Front teeth grip prey while broad, flat rear molariforms crush shells. Small bony fish are taken opportunistically. Forages actively at night by smell and electroreception.",
+  "size": "Typically 0.6–1.0 m (2–3.3 ft); max recorded ~1.2 m (3.9 ft). Sexes are similar in size.",
+  "vitalSigns": [
+    { "label": "Estimated Population",   "value": "Unknown — considered stable and locally common in suitable rocky reef and kelp habitat along the California coast",                  "glance": true },
+    { "label": "Lifespan",               "value": "Up to ~25 years in the wild",                                                                                                       "glance": true },
+    { "label": "Max Length",             "value": "~1.2 m (3.9 ft)",               "metric": "~1.2 m",   "imperial": "~3.9 ft",  "glance": true },
+    { "label": "Max Weight",             "value": "~10 kg (~22 lbs)",              "metric": "~10 kg",   "imperial": "~22 lbs",  "glance": true },
+    { "label": "Reproductive Rate",      "value": "Lays 2–24 eggs per season (typically in pairs); eggs incubate ~6–9 months; reproduces annually or biennially" },
+    { "label": "Age at Maturity",        "value": "~6–8 years (males), ~11–13 years (females)" },
+    { "label": "Top Speed",              "value": "Very slow — primarily walks on pectoral fins along the seafloor; estimated burst speed ~5–8 km/h", "metric": "~5–8 km/h", "imperial": "~3–5 mph", "glance": true },
+    { "label": "Ecological Role",        "value": "Mesopredator — key regulator of sea urchin and benthic invertebrate populations in rocky reef and kelp forest ecosystems",          "glance": true },
+    { "label": "Diet",                   "value": "Sea urchins, crabs, mollusks, shrimp, octopus, small fish" },
+    { "label": "Population Growth Rate", "value": "Slow — delayed maturity (especially females) and low annual egg output make this species moderately vulnerable to localized depletion" },
+    { "label": "Key Adaptations",        "value": "Differentiated dentition (grip-and-crush); corkscrew egg cases anchored in rock crevices; pectoral fins used for 'walking'; can breathe while stationary by pumping water through spiracles" }
+  ],
+  "habitatStats": [
+    { "label": "Global Range",  "value": "Eastern Pacific coast from Monterey Bay, California (USA) south to the Gulf of California, Mexico" },
+    { "label": "Depth Range",   "value": "2–150 m (7–490 ft); most common at 2–11 m in rocky reef and kelp habitat", "metric": "2–150 m", "imperial": "7–490 ft" }
+  ],
+  "threats": [
+    { "name": "Recreational Fishing & Bycatch", "severity": "low",    "description": "Horn sharks are occasionally caught by recreational fishers targeting rockfish and other reef species. They are not a target species, and California regulations offer some incidental protection. Handling stress and barotrauma from being brought to the surface can be harmful." },
+    { "name": "Habitat Degradation",            "severity": "medium", "description": "Rocky reef and kelp forest habitats along the California coast face pressure from coastal development, sedimentation from urban runoff, and mechanical disturbance from anchors and divers. Loss of crevice shelter sites is particularly damaging for a species that is highly site-faithful." },
+    { "name": "Sea Urchin Overabundance",        "severity": "low",    "description": "In areas where otter populations have declined, sea urchin barrens can replace productive kelp forests — reducing habitat complexity and shelter availability for horn sharks even as urchin prey temporarily increases." },
+    { "name": "Climate Change",                  "severity": "medium", "description": "Ocean warming and acidification threaten the invertebrate prey base (especially mollusks and echinoderms) and may reduce suitable kelp forest habitat. Warming may also push the species' northern range boundary southward over time." }
+  ],
+  "actionItems": [
+    { "title": "Protect Rocky Reef & Kelp Habitat",  "description": "Support California marine protected areas that encompass rocky reef and kelp forest ecosystems — these habitats are the core foraging and shelter environment for horn sharks.", "link": null },
+    { "title": "Practice Responsible Diving",         "description": "Divers who encounter horn sharks resting in crevices should observe without disturbing. Avoid touching or moving the animal, which disrupts its rest cycle and site fidelity.", "link": null },
+    { "title": "Reduce Urban Runoff",                 "description": "Sediment-laden runoff from coastal development smothers the rocky substrate horn sharks depend on. Support stormwater management and coastal buffer zones to keep reef habitats clean.", "link": null },
+    { "title": "Support Sea Otter Conservation",      "description": "Sea otters are key predators of sea urchins and help maintain healthy kelp forests. A robust otter population keeps urchin barrens in check, preserving the complex reef structure horn sharks rely on.", "link": "https://www.montereybayaquarium.org/animals/animals-a-to-z/southern-sea-otter" }
+  ],
+  "healthMetrics": [
+    { "label": "IUCN Status",         "value": "Least Concern (assessed 2017)",                                                                   "trend": "stable" },
+    { "label": "Population Trend",    "value": "Stable — no evidence of significant range-wide decline",                                           "trend": "stable" },
+    { "label": "Habitat Quality",     "value": "Moderate — kelp forests under pressure from warming and urchin barrens in parts of range",         "trend": "down"   },
+    { "label": "Prey Availability",   "value": "Moderate — urchin and mollusk populations variable; some local depletion from fishing and runoff", "trend": "stable" },
+    { "label": "Fishing Pressure",    "value": "Low — not targeted; incidental bycatch is minimal; protected in California MPAs",                  "trend": "stable" },
+    { "label": "Protection Coverage", "value": "Moderate — several California MPAs include core rocky reef habitat; no species-specific protections", "trend": "stable",
+      "links": [
+        { "label": "IUCN Red List",            "url": "https://www.iucnredlist.org/species/41806/68617785" },
+        { "label": "CA Dept of Fish & Wildlife", "url": "https://wildlife.ca.gov/Conservation/Marine/MPAs" }
+      ]
+    }
+  ],
+  "statusHistory": [
+    { "year": 1990, "status": "Not Evaluated" },
+    { "year": 2005, "status": "Least Concern" }
+  ],
+  "populationTrend": [
+    { "year": 1990, "value": 95000 },
+    { "year": 2000, "value": 97000 },
+    { "year": 2010, "value": 98000 },
+    { "year": 2015, "value": 97000 },
+    { "year": 2020, "value": 96000 }
+  ],
+  "populationTrendMeta": {
+    "confidence": "modeled",
+    "note": "No formal population census exists for this species. Figures are illustrative estimates modeled from qualitative IUCN assessments describing the population as stable and locally common. A slight downward nudge in recent years reflects localized kelp forest degradation and habitat pressure, not documented decline. Treat all values as order-of-magnitude estimates only."
+  },
+  "preyDeclineRegions": [
+    { "name": "Northern California Coast", "severity": "medium", "note": "Sea urchin barrens expanding in areas of kelp loss; mollusk and crustacean communities stressed by warming and runoff" },
+    { "name": "Southern California Bight",  "severity": "low",    "note": "Relatively intact invertebrate prey communities in protected MPAs; some localized pressure from urban runoff and dredging" },
+    { "name": "Gulf of California",         "severity": "medium", "note": "Benthic invertebrate communities face artisanal fishing pressure and habitat degradation from coastal development" }
+  ],
+  "fishingPressureRegions": [
+    { "name": "California Coast",   "severity": "low",    "note": "No directed fishery; incidental bycatch in recreational gear is low; several MPAs provide refuge" },
+    { "name": "Gulf of California", "severity": "medium", "note": "Artisanal fisheries operate with less regulatory oversight; some incidental capture in bottom-set gear" }
+  ]
 }
