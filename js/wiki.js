@@ -145,6 +145,7 @@ let suppressHistoryUpdate = false;
 let currentFilteredSorted = [];
 let currentModalIndex = -1;
 let isNavAnimating = false;
+const tabPanelCache = new Map();
 
 // ── Gallery state ───────────────────────────────────────────────
 let galleryPhotos = [];
@@ -323,12 +324,12 @@ function openSpeciesModal(species, cardEl, tabKey = "overview") {
   currentModalIndex = currentFilteredSorted.findIndex((s) => s.id === species.id);
   updateModalNavState();
   activateTab(tabKey);
-  renderOverview(species);
-  renderVitalSigns(species);
-  renderHealthMetrics(species);
   const currentQ = wikiSearch.value.trim().toLowerCase();
-  renderThreats(species.threats, currentQ);
-  renderActionItems(species.actionItems, currentQ);
+  renderTabCached("tab-panel-overview", `overview:${species.id}`, () => renderOverview(species));
+  renderTabCached("tab-panel-vital",    `vital:${species.id}:${unitMode}`, () => renderVitalSigns(species));
+  renderTabCached("tab-panel-health",   `health:${species.id}`, () => renderHealthMetrics(species));
+  renderTabCached("tab-panel-threats",  `threats:${species.id}:${currentQ}`, () => renderThreats(species.threats, currentQ));
+  renderTabCached("tab-panel-actions",  `actions:${species.id}:${currentQ}`, () => renderActionItems(species.actionItems, currentQ));
 
   const modalContent = speciesModal.querySelector(".species-modal");
 
@@ -792,6 +793,24 @@ document.querySelectorAll(".species-tab").forEach((btn) => {
   });
 });
 
+function renderTabCached(panelId, cacheKey, renderFn) {
+  const panel = document.getElementById(panelId);
+  if (tabPanelCache.has(cacheKey)) {
+    panel.innerHTML = tabPanelCache.get(cacheKey);
+    return;
+  }
+  renderFn();
+  tabPanelCache.set(cacheKey, panel.innerHTML);
+}
+
+document.getElementById("tab-panel-vital").addEventListener("click", (e) => {
+  const btn = e.target.closest(".vital-unit-btn");
+  if (!btn || !currentModalSpecies) return;
+  unitMode = btn.dataset.unit;
+  localStorage.setItem("wiki_unit_mode", unitMode);
+  renderTabCached("tab-panel-vital", `vital:${currentModalSpecies.id}:${unitMode}`, () => renderVitalSigns(currentModalSpecies));
+});
+
 // ── Tab content renderers ──────────────────────────────────────
 
 function createSectionBox(icon, title, headerSlot) {
@@ -1050,11 +1069,6 @@ function renderVitalSigns(species) {
       btn.className = "vital-unit-btn" + (unitMode === unit ? " active" : "");
       btn.dataset.unit = unit;
       btn.textContent = unit === "metric" ? "Metric" : "Imperial";
-      btn.addEventListener("click", () => {
-        unitMode = unit;
-        localStorage.setItem("wiki_unit_mode", unit);
-        renderVitalSigns(currentModalSpecies);
-      });
       toggle.appendChild(btn);
     });
 
