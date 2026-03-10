@@ -1,6 +1,6 @@
 {
   "id": "triakis-semifasciata",
-  "lastUpdated": "2026-03-09",
+  "lastUpdated": "2026-03-10",
   "emoji": "🦈",
   "commonName": "Leopard Shark",
   "scientificName": "Triakis semifasciata",
@@ -14,12 +14,83 @@
     "species": "T. semifasciata"
   },
   "statusLabel": "Least Concern",
-  "lifePercent": 78,
+  "lifePercent": 90,
   "habitatTypes": ["coastal", "temperate"],
   "dietType": "carnivore",
   "geographicRegions": ["temperate"],
   "tags": ["schooling", "solitary"],
+  "photos": [
+    "projects/shark-populations/images/leopard_shark/leopard_shark.png"
+  ],
   "description": "The leopard shark is one of the most beautiful and recognizable sharks on the California coast, decorated with bold dark saddle-blotches and spots on a silvery-grey body. It is a bottom-dwelling species found in bays, mudflats, and kelp beds from Oregon to the Gulf of California, often in very shallow water. Docile and slow-moving, it is a popular subject for snorkelers and divers, and large seasonal aggregations of females gather in warm, shallow bays to accelerate gestation using the warmer water.",
   "funFact": "Female leopard sharks deliberately seek out the warmest, shallowest water they can find during summer — sometimes just ankle-deep at the edges of bays — because the elevated water temperature speeds up embryo development by weeks, a behavior called behavioral thermoregulation.",
-  "habitat": "Sandy and muddy bays, estuaries, kelp forests, and rocky reefs along the eastern Pacific coast from Oregon (USA) to Mazatlán, Mexico. Most abundant in California's bays and estuaries. Depth range 0–91 m; commonly seen in 1–4 m during warm months."
+  "habitat": "Sandy and muddy bays, estuaries, kelp forests, and rocky reefs along the eastern Pacific coast from Oregon (USA) to Mazatlán, Mexico. Most abundant in California's bays and estuaries. Depth range 0–91 m; commonly seen in 1–4 m during warm months.",
+  "diet": "Feeds on a wide variety of benthic prey: fat innkeeper worms, clam siphons, crabs, shrimp, small bony fish, fish eggs deposited on substrate, and occasionally octopus. Uses a highly expandable mouth to suck up buried invertebrates and actively hunts fish in kelp beds and at the edge of mudflats.",
+  "size": "Typically 1.2–1.5 m (3.9–4.9 ft); max confirmed ~1.8 m (5.9 ft). Females are slightly larger than males.",
+  "vitalSigns": [
+    { "label": "Estimated Population",   "value": "Unknown — but considered stable and locally abundant along the California coast",                                    "glance": true },
+    { "label": "Lifespan",               "value": "Up to ~30 years",                                                                                                   "glance": true },
+    { "label": "Max Length",             "value": "~1.8 m (5.9 ft)",               "metric": "~1.8 m",   "imperial": "~5.9 ft",  "glance": true },
+    { "label": "Max Weight",             "value": "~18 kg (~40 lbs)",              "metric": "~18 kg",   "imperial": "~40 lbs",  "glance": true },
+    { "label": "Reproductive Rate",      "value": "4–29 pups per litter (avg. ~20); ~10–12 month gestation; breeds annually" },
+    { "label": "Age at Maturity",        "value": "7–13 years (males), 10–15 years (females)" },
+    { "label": "Top Speed",              "value": "~15 km/h (~9 mph) estimated — a slow, benthic cruiser", "metric": "~15 km/h", "imperial": "~9 mph", "glance": true },
+    { "label": "Ecological Role",        "value": "Mesopredator — important regulator of invertebrate and small-fish communities in bay and estuarine habitats",        "glance": true },
+    { "label": "Diet",                   "value": "Benthic invertebrates (worms, clams, crabs, shrimp), small fish, fish eggs, octopus" },
+    { "label": "Population Growth Rate", "value": "Moderate — annual breeding and relatively large litters make this species more resilient than many sharks" },
+    { "label": "Key Adaptations",        "value": "Highly expandable mouth for suction-feeding on buried prey; behavioral thermoregulation (females aggregate in warm shallows to speed embryo development)" }
+  ],
+  "habitatStats": [
+    { "label": "Global Range",  "value": "Eastern Pacific coast from Oregon, USA to Mazatlán, Sinaloa, Mexico, including the Gulf of California" },
+    { "label": "Depth Range",   "value": "0–91 m (0–300 ft); most commonly found in 1–4 m", "metric": "0–91 m", "imperial": "0–300 ft" }
+  ],
+  "threats": [
+    { "name": "Recreational Fishing",  "severity": "low",    "description": "Legally caught by recreational anglers in California with a bag limit. Targeted fishing is largely sustainable given current population levels, but unreported catch and release mortality can add up in heavily used bays." },
+    { "name": "Habitat Degradation",   "severity": "medium", "description": "Estuaries and bays along the California coast face ongoing pressures from coastal development, dredging, urban runoff, and altered sediment flows that degrade the shallow, muddy habitat the leopard shark depends on for foraging and pupping." },
+    { "name": "Water Pollution",        "severity": "medium", "description": "As a resident of near-shore bays, the leopard shark is exposed to agricultural runoff, urban contaminants, and heavy metal accumulation. Mass mortality events have been linked to a brain parasite (Miamiensis avidus) that may be facilitated by warm, low-salinity conditions created by storm-water runoff." },
+    { "name": "Climate Change",         "severity": "low",    "description": "While leopard sharks already behaviorally thermoregulate, prolonged warming could stress coastal prey communities. Freshwater influxes from intensified rainfall may expand conditions favorable to the parasite responsible for rare mass strandings." }
+  ],
+  "actionItems": [
+    { "title": "Protect Estuarine Habitat",          "description": "Support policies and land trusts that preserve and restore California's bays, estuaries, and mudflats — the core habitat for foraging, pupping, and thermoregulation in this species.", "link": null },
+    { "title": "Reduce Urban Runoff",                "description": "Advocate for stormwater management improvements that reduce freshwater and contaminant inputs into coastal bays, which are linked to mass stranding events and long-term prey habitat degradation.", "link": null },
+    { "title": "Follow Recreational Fishing Rules",  "description": "Anglers should observe California bag and size limits and practice careful catch-and-release technique (avoid prolonged air exposure, use wet hands, return quickly to water) to minimize mortality.", "link": "https://wildlife.ca.gov/fishing/ocean/sharks-rays" },
+    { "title": "Support Coastal Water Quality Programs", "description": "Donate to or volunteer with organizations that monitor and improve nearshore water quality in California's bays — healthy water means healthy prey and reduced disease risk for leopard sharks.", "link": null }
+  ],
+  "healthMetrics": [
+    { "label": "IUCN Status",         "value": "Least Concern (stable assessment since 2009)",                                           "trend": "stable" },
+    { "label": "Population Trend",    "value": "Stable — no evidence of significant decline across California range",                     "trend": "stable" },
+    { "label": "Habitat Quality",     "value": "Moderate — bays and estuaries degraded by development and runoff but largely intact",     "trend": "down"   },
+    { "label": "Prey Availability",   "value": "Moderate — benthic invertebrate communities pressured by water quality and development",  "trend": "stable" },
+    { "label": "Fishing Pressure",    "value": "Low to moderate — primarily recreational; managed by California bag limits",              "trend": "stable" },
+    { "label": "Protection Coverage", "value": "Moderate — protected within several California marine protected areas; bag limits in place", "trend": "up",
+      "links": [
+        { "label": "CA Dept of Fish & Wildlife", "url": "https://wildlife.ca.gov/fishing/ocean/sharks-rays" },
+        { "label": "IUCN Red List",              "url": "https://www.iucnredlist.org/species/39387/2915770" }
+      ]
+    }
+  ],
+  "statusHistory": [
+    { "year": 2009, "status": "Least Concern" },
+    { "year": 2020, "status": "Least Concern" }
+  ],
+  "populationTrend": [
+    { "year": 1990, "value": 320000 },
+    { "year": 2000, "value": 335000 },
+    { "year": 2010, "value": 345000 },
+    { "year": 2015, "value": 350000 },
+    { "year": 2020, "value": 355000 }
+  ],
+  "populationTrendMeta": {
+    "confidence": "modeled",
+    "note": "No rigorous global or regional census exists. Estimates modeled from qualitative IUCN assessments describing the population as stable and locally abundant. Small upward trend reflects lack of significant commercial exploitation combined with partial habitat protection. Figures should be treated as illustrative order-of-magnitude estimates only."
+  },
+  "preyDeclineRegions": [
+    { "name": "San Francisco Bay",   "severity": "medium", "note": "Benthic invertebrate communities affected by urbanization, contaminants, and sediment alteration; fat innkeeper worm and clam populations under pressure" },
+    { "name": "Southern California", "severity": "low",    "note": "Relatively intact prey communities in protected bays; some localized pressures from urban runoff" },
+    { "name": "Gulf of California",  "severity": "medium", "note": "Invertebrate prey subject to artisanal fishing pressure and habitat change from coastal development" }
+  ],
+  "fishingPressureRegions": [
+    { "name": "California Coast",   "severity": "low",    "note": "Recreational bag limits enforced; no directed commercial fishery; incidental bycatch in set nets is low" },
+    { "name": "Gulf of California", "severity": "medium", "note": "Artisanal fishing fleets operate without the same bag-limit protections; some directed and incidental catch" }
+  ]
 }

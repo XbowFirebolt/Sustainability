@@ -68,6 +68,7 @@ Tracks every species in the wiki: current tier, IUCN status, and what still need
 | Sand Tiger Shark | *Carcharias taurus* | Vulnerable | Full (partial) | Missing physicalScaleImage |
 | Smalltooth Sand Tiger | *Odontaspis ferox* | Vulnerable | Stub | Phase 3 Batch 3 |
 | Tope Shark | *Galeorhinus galeus* | Critically Endangered | Full (partial) | Missing physicalScaleImage |
+| Leopard Shark | *Triakis semifasciata* | Least Concern | Full (partial) | Missing physicalScaleImage |
 
 ---
 
@@ -156,9 +157,9 @@ Species that have been added as stubs and are candidates for Standard tier promo
 
 | Tier | Count |
 |---|---|
-| Full | 30 |
+| Full | 31 |
 | Standard | 0 |
 | Stub | 25 |
-| **Total** | **55** |
+| **Total** | **56** |
 
 *Update manually after each batch commit.*
