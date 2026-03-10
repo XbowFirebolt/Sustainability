@@ -14,7 +14,7 @@
     "species": "R. typus"
   },
   "statusLabel": "Endangered",
-  "lifePercent": 38,
+  "lifePercent": 27,
   "habitatTypes": ["tropical", "pelagic"],
   "dietType": "filter-feeder",
   "geographicRegions": ["tropical"],

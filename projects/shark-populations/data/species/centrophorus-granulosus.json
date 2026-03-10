@@ -14,7 +14,7 @@
     "species": "C. granulosus"
   },
   "statusLabel": "Endangered",
-  "lifePercent": 35,
+  "lifePercent": 28,
   "habitatTypes": ["deep-sea", "ocean"],
   "dietType": "carnivore",
   "geographicRegions": ["global", "temperate"],

@@ -14,7 +14,7 @@
     "species": "S. californica"
   },
   "statusLabel": "Near Threatened",
-  "lifePercent": 63,
+  "lifePercent": 60,
   "habitatTypes": ["coastal", "temperate"],
   "dietType": "carnivore",
   "geographicRegions": ["temperate"],

@@ -42,7 +42,7 @@ window.WIKI_DATA = {
         "species": "C. carcharias"
       },
       "statusLabel": "Vulnerable",
-      "lifePercent": 55,
+      "lifePercent": 42,
       "habitatTypes": [
         "ocean",
         "coastal"
@@ -359,7 +359,7 @@ window.WIKI_DATA = {
         "species": "S. lewini"
       },
       "statusLabel": "Critically Endangered",
-      "lifePercent": 18,
+      "lifePercent": 15,
       "habitatTypes": [
         "ocean",
         "coastal"
@@ -678,7 +678,7 @@ window.WIKI_DATA = {
         "species": "R. typus"
       },
       "statusLabel": "Endangered",
-      "lifePercent": 38,
+      "lifePercent": 27,
       "habitatTypes": [
         "tropical",
         "pelagic"
@@ -995,7 +995,7 @@ window.WIKI_DATA = {
         "species": "C. leucas"
       },
       "statusLabel": "Near Threatened",
-      "lifePercent": 72,
+      "lifePercent": 63,
       "habitatTypes": [
         "coastal",
         "freshwater"
@@ -1303,7 +1303,7 @@ window.WIKI_DATA = {
         "species": "G. cuvier"
       },
       "statusLabel": "Near Threatened",
-      "lifePercent": 68,
+      "lifePercent": 65,
       "habitatTypes": [
         "ocean",
         "reef"
@@ -1613,7 +1613,7 @@ window.WIKI_DATA = {
         "species": "C. longimanus"
       },
       "statusLabel": "Critically Endangered",
-      "lifePercent": 15,
+      "lifePercent": 14,
       "habitatTypes": [
         "ocean",
         "coastal"
@@ -1922,7 +1922,7 @@ window.WIKI_DATA = {
         "species": "G. gangeticus"
       },
       "statusLabel": "Critically Endangered",
-      "lifePercent": 15,
+      "lifePercent": 4,
       "habitatTypes": [
         "ocean",
         "coastal",
@@ -1958,7 +1958,7 @@ window.WIKI_DATA = {
         "species": "I. oxyrhynchus"
       },
       "statusLabel": "Critically Endangered",
-      "lifePercent": 15,
+      "lifePercent": 6,
       "habitatTypes": [
         "ocean",
         "coastal"
@@ -1992,7 +1992,7 @@ window.WIKI_DATA = {
         "species": "S. squatina"
       },
       "statusLabel": "Critically Endangered",
-      "lifePercent": 15,
+      "lifePercent": 8,
       "habitatTypes": [
         "ocean",
         "coastal"
@@ -2281,7 +2281,7 @@ window.WIKI_DATA = {
         "species": "S. aculeata"
       },
       "statusLabel": "Critically Endangered",
-      "lifePercent": 15,
+      "lifePercent": 7,
       "habitatTypes": [
         "ocean",
         "coastal"
@@ -2314,7 +2314,7 @@ window.WIKI_DATA = {
         "species": "S. oculata"
       },
       "statusLabel": "Critically Endangered",
-      "lifePercent": 15,
+      "lifePercent": 7,
       "habitatTypes": [
         "ocean",
         "coastal"
@@ -2347,7 +2347,7 @@ window.WIKI_DATA = {
         "species": "G. glyphis"
       },
       "statusLabel": "Critically Endangered",
-      "lifePercent": 15,
+      "lifePercent": 5,
       "habitatTypes": [
         "ocean",
         "coastal",
@@ -2381,7 +2381,7 @@ window.WIKI_DATA = {
         "species": "G. garricki"
       },
       "statusLabel": "Critically Endangered",
-      "lifePercent": 15,
+      "lifePercent": 5,
       "habitatTypes": [
         "ocean",
         "coastal",
@@ -2415,7 +2415,7 @@ window.WIKI_DATA = {
         "species": "G. siamensis"
       },
       "statusLabel": "Critically Endangered",
-      "lifePercent": 15,
+      "lifePercent": 3,
       "habitatTypes": [
         "ocean",
         "coastal",
@@ -2449,7 +2449,7 @@ window.WIKI_DATA = {
         "species": "G. fowlerae"
       },
       "statusLabel": "Critically Endangered",
-      "lifePercent": 15,
+      "lifePercent": 5,
       "habitatTypes": [
         "ocean",
         "coastal",
@@ -2483,7 +2483,7 @@ window.WIKI_DATA = {
         "species": "C. hemiodon"
       },
       "statusLabel": "Critically Endangered",
-      "lifePercent": 15,
+      "lifePercent": 4,
       "habitatTypes": [
         "ocean",
         "coastal"
@@ -2516,7 +2516,7 @@ window.WIKI_DATA = {
         "species": "C. leiodon"
       },
       "statusLabel": "Critically Endangered",
-      "lifePercent": 15,
+      "lifePercent": 5,
       "habitatTypes": [
         "ocean",
         "coastal"
@@ -2550,7 +2550,7 @@ window.WIKI_DATA = {
         "species": "M. fasciatus"
       },
       "statusLabel": "Critically Endangered",
-      "lifePercent": 15,
+      "lifePercent": 7,
       "habitatTypes": [
         "ocean",
         "coastal"
@@ -2582,7 +2582,7 @@ window.WIKI_DATA = {
         "species": "H. hyugaensis"
       },
       "statusLabel": "Critically Endangered",
-      "lifePercent": 15,
+      "lifePercent": 8,
       "habitatTypes": [
         "ocean",
         "coastal"
@@ -2614,7 +2614,7 @@ window.WIKI_DATA = {
         "species": "H. kistnasamyi"
       },
       "statusLabel": "Critically Endangered",
-      "lifePercent": 15,
+      "lifePercent": 7,
       "habitatTypes": [
         "ocean",
         "coastal"
@@ -2646,7 +2646,7 @@ window.WIKI_DATA = {
         "species": "I. oxyrinchus"
       },
       "statusLabel": "Endangered",
-      "lifePercent": 35,
+      "lifePercent": 25,
       "habitatTypes": [
         "ocean",
         "pelagic"
@@ -2956,7 +2956,7 @@ window.WIKI_DATA = {
         "species": "I. paucus"
       },
       "statusLabel": "Endangered",
-      "lifePercent": 35,
+      "lifePercent": 24,
       "habitatTypes": [
         "ocean",
         "pelagic",
@@ -3260,7 +3260,7 @@ window.WIKI_DATA = {
         "species": "S. mokarran"
       },
       "statusLabel": "Critically Endangered",
-      "lifePercent": 12,
+      "lifePercent": 10,
       "habitatTypes": [
         "ocean",
         "coastal"
@@ -3565,7 +3565,7 @@ window.WIKI_DATA = {
         "species": "S. zygaena"
       },
       "statusLabel": "Vulnerable",
-      "lifePercent": 55,
+      "lifePercent": 44,
       "habitatTypes": [
         "ocean",
         "coastal"
@@ -3865,7 +3865,7 @@ window.WIKI_DATA = {
         "species": "C. maximus"
       },
       "statusLabel": "Endangered",
-      "lifePercent": 38,
+      "lifePercent": 27,
       "habitatTypes": [
         "ocean",
         "coastal",
@@ -4170,7 +4170,7 @@ window.WIKI_DATA = {
         "species": "G. cirratum"
       },
       "statusLabel": "Vulnerable",
-      "lifePercent": 60,
+      "lifePercent": 50,
       "habitatTypes": [
         "coastal",
         "tropical"
@@ -4457,7 +4457,7 @@ window.WIKI_DATA = {
         "species": "N. brevirostris"
       },
       "statusLabel": "Vulnerable",
-      "lifePercent": 58,
+      "lifePercent": 48,
       "habitatTypes": [
         "coastal",
         "tropical"
@@ -4757,7 +4757,7 @@ window.WIKI_DATA = {
         "species": "P. glauca"
       },
       "statusLabel": "Near Threatened",
-      "lifePercent": 72,
+      "lifePercent": 63,
       "habitatTypes": [
         "ocean",
         "pelagic"
@@ -5059,7 +5059,7 @@ window.WIKI_DATA = {
         "species": "C. melanopterus"
       },
       "statusLabel": "Vulnerable",
-      "lifePercent": 57,
+      "lifePercent": 50,
       "habitatTypes": [
         "coastal",
         "tropical"
@@ -5353,7 +5353,7 @@ window.WIKI_DATA = {
         "species": "T. obesus"
       },
       "statusLabel": "Vulnerable",
-      "lifePercent": 58,
+      "lifePercent": 48,
       "habitatTypes": [
         "coastal",
         "tropical"
@@ -5628,7 +5628,7 @@ window.WIKI_DATA = {
         "species": "C. amblyrhynchos"
       },
       "statusLabel": "Endangered",
-      "lifePercent": 38,
+      "lifePercent": 27,
       "habitatTypes": [
         "coastal",
         "tropical"
@@ -5926,7 +5926,7 @@ window.WIKI_DATA = {
         "species": "C. plumbeus"
       },
       "statusLabel": "Vulnerable",
-      "lifePercent": 55,
+      "lifePercent": 42,
       "habitatTypes": [
         "ocean",
         "coastal"
@@ -6233,7 +6233,7 @@ window.WIKI_DATA = {
         "species": "C. obscurus"
       },
       "statusLabel": "Endangered",
-      "lifePercent": 35,
+      "lifePercent": 27,
       "habitatTypes": [
         "ocean",
         "coastal"
@@ -6538,7 +6538,7 @@ window.WIKI_DATA = {
         "species": "C. falciformis"
       },
       "statusLabel": "Vulnerable",
-      "lifePercent": 57,
+      "lifePercent": 46,
       "habitatTypes": [
         "ocean",
         "pelagic"
@@ -6820,7 +6820,7 @@ window.WIKI_DATA = {
         "species": "L. nasus"
       },
       "statusLabel": "Vulnerable",
-      "lifePercent": 55,
+      "lifePercent": 45,
       "habitatTypes": [
         "ocean",
         "coastal"
@@ -7119,7 +7119,7 @@ window.WIKI_DATA = {
         "species": "A. vulpinus"
       },
       "statusLabel": "Vulnerable",
-      "lifePercent": 55,
+      "lifePercent": 45,
       "habitatTypes": [
         "ocean",
         "pelagic"
@@ -7405,7 +7405,7 @@ window.WIKI_DATA = {
         "species": "A. pelagicus"
       },
       "statusLabel": "Endangered",
-      "lifePercent": 38,
+      "lifePercent": 27,
       "habitatTypes": [
         "ocean",
         "pelagic"
@@ -7698,7 +7698,7 @@ window.WIKI_DATA = {
         "species": "A. superciliosus"
       },
       "statusLabel": "Vulnerable",
-      "lifePercent": 55,
+      "lifePercent": 44,
       "habitatTypes": [
         "ocean",
         "pelagic",
@@ -7735,7 +7735,7 @@ window.WIKI_DATA = {
         "species": "S. tigrinum"
       },
       "statusLabel": "Endangered",
-      "lifePercent": 38,
+      "lifePercent": 27,
       "habitatTypes": [
         "coastal",
         "tropical"
@@ -8032,7 +8032,7 @@ window.WIKI_DATA = {
         "species": "E. dasypogon"
       },
       "statusLabel": "Least Concern",
-      "lifePercent": 88,
+      "lifePercent": 83,
       "habitatTypes": [
         "coastal",
         "tropical"
@@ -8064,7 +8064,7 @@ window.WIKI_DATA = {
         "species": "N. cepedianus"
       },
       "statusLabel": "Data Deficient",
-      "lifePercent": 52,
+      "lifePercent": 45,
       "habitatTypes": [
         "coastal",
         "ocean"
@@ -8099,7 +8099,7 @@ window.WIKI_DATA = {
         "species": "G. galeus"
       },
       "statusLabel": "Critically Endangered",
-      "lifePercent": 10,
+      "lifePercent": 12,
       "habitatTypes": [
         "coastal",
         "ocean"
@@ -8398,7 +8398,7 @@ window.WIKI_DATA = {
         "species": "H. ocellatum"
       },
       "statusLabel": "Least Concern",
-      "lifePercent": 90,
+      "lifePercent": 85,
       "habitatTypes": [
         "coastal"
       ],
@@ -8431,7 +8431,7 @@ window.WIKI_DATA = {
         "species": "O. maculatus"
       },
       "statusLabel": "Least Concern",
-      "lifePercent": 88,
+      "lifePercent": 83,
       "habitatTypes": [
         "coastal"
       ],
@@ -8464,7 +8464,7 @@ window.WIKI_DATA = {
         "species": "C. taurus"
       },
       "statusLabel": "Vulnerable",
-      "lifePercent": 50,
+      "lifePercent": 38,
       "habitatTypes": [
         "coastal",
         "ocean"
@@ -8756,7 +8756,7 @@ window.WIKI_DATA = {
         "species": "H. francisci"
       },
       "statusLabel": "Least Concern",
-      "lifePercent": 88,
+      "lifePercent": 83,
       "habitatTypes": [
         "coastal"
       ],
@@ -9015,7 +9015,7 @@ window.WIKI_DATA = {
         "species": "C. anguineus"
       },
       "statusLabel": "Least Concern",
-      "lifePercent": 87,
+      "lifePercent": 75,
       "habitatTypes": [
         "ocean",
         "deep-sea"
@@ -9309,7 +9309,7 @@ window.WIKI_DATA = {
         "species": "M. owstoni"
       },
       "statusLabel": "Least Concern",
-      "lifePercent": 80,
+      "lifePercent": 75,
       "habitatTypes": [
         "ocean",
         "deep-sea"
@@ -9566,7 +9566,7 @@ window.WIKI_DATA = {
         "species": "M. pelagios"
       },
       "statusLabel": "Least Concern",
-      "lifePercent": 85,
+      "lifePercent": 75,
       "habitatTypes": [
         "ocean",
         "deep-sea"
@@ -9860,7 +9860,7 @@ window.WIKI_DATA = {
         "species": "O. ferox"
       },
       "statusLabel": "Vulnerable",
-      "lifePercent": 52,
+      "lifePercent": 40,
       "habitatTypes": [
         "coastal",
         "ocean",
@@ -9897,7 +9897,7 @@ window.WIKI_DATA = {
         "species": "S. microcephalus"
       },
       "statusLabel": "Least Concern",
-      "lifePercent": 85,
+      "lifePercent": 80,
       "habitatTypes": [
         "ocean",
         "deep-sea"
@@ -10171,7 +10171,7 @@ window.WIKI_DATA = {
         "species": "S. pacificus"
       },
       "statusLabel": "Least Concern",
-      "lifePercent": 85,
+      "lifePercent": 80,
       "habitatTypes": [
         "ocean",
         "deep-sea"
@@ -10206,7 +10206,7 @@ window.WIKI_DATA = {
         "species": "H. griseus"
       },
       "statusLabel": "Least Concern",
-      "lifePercent": 85,
+      "lifePercent": 82,
       "habitatTypes": [
         "ocean",
         "deep-sea"
@@ -10241,7 +10241,7 @@ window.WIKI_DATA = {
         "species": "I. brasiliensis"
       },
       "statusLabel": "Least Concern",
-      "lifePercent": 92,
+      "lifePercent": 88,
       "habitatTypes": [
         "ocean",
         "deep-sea"
@@ -10497,7 +10497,7 @@ window.WIKI_DATA = {
         "species": "S. acanthias"
       },
       "statusLabel": "Vulnerable",
-      "lifePercent": 55,
+      "lifePercent": 40,
       "habitatTypes": [
         "coastal",
         "ocean"
@@ -10787,7 +10787,7 @@ window.WIKI_DATA = {
         "species": "C. perezi"
       },
       "statusLabel": "Endangered",
-      "lifePercent": 35,
+      "lifePercent": 28,
       "habitatTypes": [
         "coastal",
         "reef",
@@ -10894,7 +10894,7 @@ window.WIKI_DATA = {
         "species": "S. tiburo"
       },
       "statusLabel": "Endangered",
-      "lifePercent": 35,
+      "lifePercent": 30,
       "habitatTypes": [
         "coastal",
         "tropical"
@@ -10928,7 +10928,7 @@ window.WIKI_DATA = {
         "species": "T. semifasciata"
       },
       "statusLabel": "Least Concern",
-      "lifePercent": 90,
+      "lifePercent": 87,
       "habitatTypes": [
         "coastal",
         "temperate"
@@ -11187,7 +11187,7 @@ window.WIKI_DATA = {
         "species": "C. albimarginatus"
       },
       "statusLabel": "Vulnerable",
-      "lifePercent": 50,
+      "lifePercent": 43,
       "habitatTypes": [
         "reef",
         "ocean",
@@ -11259,7 +11259,7 @@ window.WIKI_DATA = {
         "species": "C. galapagensis"
       },
       "statusLabel": "Least Concern",
-      "lifePercent": 72,
+      "lifePercent": 75,
       "habitatTypes": [
         "reef",
         "ocean",
@@ -11295,7 +11295,7 @@ window.WIKI_DATA = {
         "species": "N. ferrugineus"
       },
       "statusLabel": "Vulnerable",
-      "lifePercent": 50,
+      "lifePercent": 42,
       "habitatTypes": [
         "reef",
         "coastal",
@@ -11330,7 +11330,7 @@ window.WIKI_DATA = {
         "species": "H. portusjacksoni"
       },
       "statusLabel": "Least Concern",
-      "lifePercent": 78,
+      "lifePercent": 82,
       "habitatTypes": [
         "coastal",
         "temperate"
@@ -11363,7 +11363,7 @@ window.WIKI_DATA = {
         "species": "C. ventriosum"
       },
       "statusLabel": "Least Concern",
-      "lifePercent": 78,
+      "lifePercent": 80,
       "habitatTypes": [
         "coastal",
         "temperate"
@@ -11396,7 +11396,7 @@ window.WIKI_DATA = {
         "species": "S. canicula"
       },
       "statusLabel": "Least Concern",
-      "lifePercent": 80,
+      "lifePercent": 85,
       "habitatTypes": [
         "coastal",
         "temperate"
@@ -11429,7 +11429,7 @@ window.WIKI_DATA = {
         "species": "R. terraenovae"
       },
       "statusLabel": "Least Concern",
-      "lifePercent": 75,
+      "lifePercent": 80,
       "habitatTypes": [
         "coastal"
       ],
@@ -11462,7 +11462,7 @@ window.WIKI_DATA = {
         "species": "S. californica"
       },
       "statusLabel": "Near Threatened",
-      "lifePercent": 63,
+      "lifePercent": 60,
       "habitatTypes": [
         "coastal",
         "temperate"
@@ -11495,7 +11495,7 @@ window.WIKI_DATA = {
         "species": "L. ditropis"
       },
       "statusLabel": "Least Concern",
-      "lifePercent": 75,
+      "lifePercent": 80,
       "habitatTypes": [
         "ocean",
         "pelagic",
@@ -11529,7 +11529,7 @@ window.WIKI_DATA = {
         "species": "E. blochii"
       },
       "statusLabel": "Endangered",
-      "lifePercent": 35,
+      "lifePercent": 28,
       "habitatTypes": [
         "coastal",
         "tropical"
@@ -11563,7 +11563,7 @@ window.WIKI_DATA = {
         "species": "S. tudes"
       },
       "statusLabel": "Critically Endangered",
-      "lifePercent": 15,
+      "lifePercent": 14,
       "habitatTypes": [
         "coastal",
         "tropical"
@@ -11598,7 +11598,7 @@ window.WIKI_DATA = {
         "species": "O. ornatus"
       },
       "statusLabel": "Near Threatened",
-      "lifePercent": 63,
+      "lifePercent": 62,
       "habitatTypes": [
         "reef",
         "coastal",
@@ -11632,7 +11632,7 @@ window.WIKI_DATA = {
         "species": "C. punctatum"
       },
       "statusLabel": "Near Threatened",
-      "lifePercent": 63,
+      "lifePercent": 62,
       "habitatTypes": [
         "reef",
         "coastal",
@@ -11667,7 +11667,7 @@ window.WIKI_DATA = {
         "species": "P. africanum"
       },
       "statusLabel": "Least Concern",
-      "lifePercent": 78,
+      "lifePercent": 80,
       "habitatTypes": [
         "coastal",
         "temperate"
@@ -11734,7 +11734,7 @@ window.WIKI_DATA = {
         "species": "M. mustelus"
       },
       "statusLabel": "Endangered",
-      "lifePercent": 35,
+      "lifePercent": 28,
       "habitatTypes": [
         "coastal",
         "temperate"
@@ -11768,7 +11768,7 @@ window.WIKI_DATA = {
         "species": "E. spinax"
       },
       "statusLabel": "Least Concern",
-      "lifePercent": 78,
+      "lifePercent": 80,
       "habitatTypes": [
         "deep-sea",
         "ocean"
@@ -11801,7 +11801,7 @@ window.WIKI_DATA = {
         "species": "C. signatus"
       },
       "statusLabel": "Vulnerable",
-      "lifePercent": 50,
+      "lifePercent": 43,
       "habitatTypes": [
         "ocean",
         "deep-sea"
@@ -11835,7 +11835,7 @@ window.WIKI_DATA = {
         "species": "C. amboinensis"
       },
       "statusLabel": "Vulnerable",
-      "lifePercent": 50,
+      "lifePercent": 42,
       "habitatTypes": [
         "coastal",
         "tropical"
@@ -11869,7 +11869,7 @@ window.WIKI_DATA = {
         "species": "R. acutus"
       },
       "statusLabel": "Near Threatened",
-      "lifePercent": 63,
+      "lifePercent": 62,
       "habitatTypes": [
         "coastal",
         "tropical"
@@ -11903,7 +11903,7 @@ window.WIKI_DATA = {
         "species": "N. acutidens"
       },
       "statusLabel": "Vulnerable",
-      "lifePercent": 50,
+      "lifePercent": 43,
       "habitatTypes": [
         "reef",
         "coastal",
@@ -11974,7 +11974,7 @@ window.WIKI_DATA = {
         "species": "C. griseum"
       },
       "statusLabel": "Near Threatened",
-      "lifePercent": 63,
+      "lifePercent": 62,
       "habitatTypes": [
         "reef",
         "coastal",
@@ -12043,7 +12043,7 @@ window.WIKI_DATA = {
         "species": "O. centrina"
       },
       "statusLabel": "Vulnerable",
-      "lifePercent": 50,
+      "lifePercent": 40,
       "habitatTypes": [
         "deep-sea",
         "coastal",
@@ -12077,7 +12077,7 @@ window.WIKI_DATA = {
         "species": "E. brucus"
       },
       "statusLabel": "Near Threatened",
-      "lifePercent": 63,
+      "lifePercent": 62,
       "habitatTypes": [
         "deep-sea",
         "ocean"
@@ -12111,7 +12111,7 @@ window.WIKI_DATA = {
         "species": "C. coelolepis"
       },
       "statusLabel": "Near Threatened",
-      "lifePercent": 63,
+      "lifePercent": 62,
       "habitatTypes": [
         "deep-sea",
         "ocean"
@@ -12146,7 +12146,7 @@ window.WIKI_DATA = {
         "species": "C. granulosus"
       },
       "statusLabel": "Endangered",
-      "lifePercent": 35,
+      "lifePercent": 28,
       "habitatTypes": [
         "deep-sea",
         "ocean"
@@ -12181,7 +12181,7 @@ window.WIKI_DATA = {
         "species": "H. perlo"
       },
       "statusLabel": "Near Threatened",
-      "lifePercent": 63,
+      "lifePercent": 62,
       "habitatTypes": [
         "deep-sea",
         "ocean"
@@ -12215,7 +12215,7 @@ window.WIKI_DATA = {
         "species": "H. nakamurai"
       },
       "statusLabel": "Near Threatened",
-      "lifePercent": 63,
+      "lifePercent": 62,
       "habitatTypes": [
         "deep-sea",
         "ocean"
@@ -12249,7 +12249,7 @@ window.WIKI_DATA = {
         "species": "S. japonica"
       },
       "statusLabel": "Critically Endangered",
-      "lifePercent": 15,
+      "lifePercent": 8,
       "habitatTypes": [
         "coastal",
         "temperate"
@@ -12283,7 +12283,7 @@ window.WIKI_DATA = {
         "species": "S. corona"
       },
       "statusLabel": "Critically Endangered",
-      "lifePercent": 15,
+      "lifePercent": 12,
       "habitatTypes": [
         "coastal",
         "tropical"
@@ -12317,7 +12317,7 @@ window.WIKI_DATA = {
         "species": "S. blainvillei"
       },
       "statusLabel": "Vulnerable",
-      "lifePercent": 50,
+      "lifePercent": 42,
       "habitatTypes": [
         "coastal",
         "deep-sea",
@@ -12351,7 +12351,7 @@ window.WIKI_DATA = {
         "species": "P. variolatum"
       },
       "statusLabel": "Least Concern",
-      "lifePercent": 78,
+      "lifePercent": 80,
       "habitatTypes": [
         "coastal",
         "temperate"
@@ -12384,7 +12384,7 @@ window.WIKI_DATA = {
         "species": "R. porosus"
       },
       "statusLabel": "Near Threatened",
-      "lifePercent": 63,
+      "lifePercent": 62,
       "habitatTypes": [
         "coastal",
         "tropical"
@@ -12418,7 +12418,7 @@ window.WIKI_DATA = {
         "species": "C. isodon"
       },
       "statusLabel": "Near Threatened",
-      "lifePercent": 63,
+      "lifePercent": 65,
       "habitatTypes": [
         "coastal"
       ],
@@ -12451,7 +12451,7 @@ window.WIKI_DATA = {
         "species": "R. longurio"
       },
       "statusLabel": "Near Threatened",
-      "lifePercent": 63,
+      "lifePercent": 62,
       "habitatTypes": [
         "coastal",
         "tropical"
@@ -12484,7 +12484,7 @@ window.WIKI_DATA = {
         "species": "T. scyllium"
       },
       "statusLabel": "Near Threatened",
-      "lifePercent": 63,
+      "lifePercent": 62,
       "habitatTypes": [
         "coastal",
         "temperate"
@@ -12517,7 +12517,7 @@ window.WIKI_DATA = {
         "species": "O. japonicus"
       },
       "statusLabel": "Near Threatened",
-      "lifePercent": 63,
+      "lifePercent": 62,
       "habitatTypes": [
         "reef",
         "coastal",

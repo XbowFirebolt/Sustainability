@@ -14,7 +14,7 @@
     "species": "S. mokarran"
   },
   "statusLabel": "Critically Endangered",
-  "lifePercent": 12,
+  "lifePercent": 10,
   "habitatTypes": ["ocean", "coastal"],
   "dietType": "apex-predator",
   "geographicRegions": ["tropical", "temperate"],

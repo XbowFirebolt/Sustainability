@@ -84,36 +84,38 @@ const C = NO_COLOR
 // Wikidata P141 (conservation status) uses inconsistent QIDs across species.
 // We resolve status by English label first (most robust), then QID as fallback.
 //
-// lifePercent heuristics from data-schema.md: CR≈10–25, EN≈30–50, VU≈50–65, NT≈70–80, LC≈85–100
+// lifePercent heuristics from data-schema.md:
+//   LC≈70–95, NT≈55–70, VU≈35–55, EN≈20–35, CR≈3–20, EW≈1–3, Extinct=0
+// Defaults are midpoints; individual species should be tuned based on trend context.
 
 // Label-based map (primary). Covers Wikidata label variations for each category.
 const LABEL_STATUS = {
-  'least concern':         { statusLabel: 'Least Concern',        lifePercent: 90 },
-  'near threatened':       { statusLabel: 'Near Threatened',      lifePercent: 75 },
-  'vulnerable':            { statusLabel: 'Vulnerable',           lifePercent: 55 },
-  'endangered':            { statusLabel: 'Endangered',           lifePercent: 35 },
-  'endangered species':    { statusLabel: 'Endangered',           lifePercent: 35 },
-  'endangered status':     { statusLabel: 'Endangered',           lifePercent: 35 },
-  'critically endangered': { statusLabel: 'Critically Endangered',lifePercent: 15 },
-  'extinct in the wild':   { statusLabel: 'Extinct in the Wild',  lifePercent: 5  },
+  'least concern':         { statusLabel: 'Least Concern',        lifePercent: 82 },
+  'near threatened':       { statusLabel: 'Near Threatened',      lifePercent: 62 },
+  'vulnerable':            { statusLabel: 'Vulnerable',           lifePercent: 45 },
+  'endangered':            { statusLabel: 'Endangered',           lifePercent: 27 },
+  'endangered species':    { statusLabel: 'Endangered',           lifePercent: 27 },
+  'endangered status':     { statusLabel: 'Endangered',           lifePercent: 27 },
+  'critically endangered': { statusLabel: 'Critically Endangered',lifePercent: 10 },
+  'extinct in the wild':   { statusLabel: 'Extinct in the Wild',  lifePercent: 2  },
   'extinct species':       { statusLabel: 'Extinct',              lifePercent: 0  },
   'extinct':               { statusLabel: 'Extinct',              lifePercent: 0  },
-  'data deficient':        { statusLabel: 'Data Deficient',       lifePercent: 50 },
-  'not evaluated':         { statusLabel: 'Not Evaluated',        lifePercent: 50 },
+  'data deficient':        { statusLabel: 'Data Deficient',       lifePercent: 45 },
+  'not evaluated':         { statusLabel: 'Not Evaluated',        lifePercent: 45 },
 };
 
 // QID-based map (fallback). QIDs verified against Wikidata as of 2026-03.
 const WIKIDATA_STATUS = {
-  Q211005:  { statusLabel: 'Least Concern',        lifePercent: 90 },
-  Q719675:  { statusLabel: 'Near Threatened',      lifePercent: 75 },
-  Q278113:  { statusLabel: 'Vulnerable',           lifePercent: 55 },
-  Q11394:   { statusLabel: 'Endangered',           lifePercent: 35 }, // "endangered species"
-  Q96377276:{ statusLabel: 'Endangered',           lifePercent: 35 }, // "Endangered status" (common in WD)
-  Q219127:  { statusLabel: 'Critically Endangered',lifePercent: 15 },
-  Q239509:  { statusLabel: 'Extinct in the Wild',  lifePercent: 5  },
+  Q211005:  { statusLabel: 'Least Concern',        lifePercent: 82 },
+  Q719675:  { statusLabel: 'Near Threatened',      lifePercent: 62 },
+  Q278113:  { statusLabel: 'Vulnerable',           lifePercent: 45 },
+  Q11394:   { statusLabel: 'Endangered',           lifePercent: 27 }, // "endangered species"
+  Q96377276:{ statusLabel: 'Endangered',           lifePercent: 27 }, // "Endangered status" (common in WD)
+  Q219127:  { statusLabel: 'Critically Endangered',lifePercent: 10 },
+  Q239509:  { statusLabel: 'Extinct in the Wild',  lifePercent: 2  },
   Q237350:  { statusLabel: 'Extinct',              lifePercent: 0  }, // "extinct species"
-  Q3245245: { statusLabel: 'Data Deficient',       lifePercent: 50 },
-  Q3350324: { statusLabel: 'Not Evaluated',        lifePercent: 50 },
+  Q3245245: { statusLabel: 'Data Deficient',       lifePercent: 45 },
+  Q3350324: { statusLabel: 'Not Evaluated',        lifePercent: 45 },
 };
 
 // Resolve IUCN status. Label takes precedence over QID to handle Wikidata inconsistencies.

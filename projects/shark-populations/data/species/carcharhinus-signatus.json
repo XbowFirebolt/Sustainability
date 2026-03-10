@@ -14,7 +14,7 @@
     "species": "C. signatus"
   },
   "statusLabel": "Vulnerable",
-  "lifePercent": 50,
+  "lifePercent": 43,
   "habitatTypes": ["ocean", "deep-sea"],
   "dietType": "apex-predator",
   "geographicRegions": ["tropical"],
