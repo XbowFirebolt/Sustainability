@@ -1,6 +1,6 @@
 {
   "id": "megachasma-pelagios",
-  "lastUpdated": "2026-03-06",
+  "lastUpdated": "2026-03-10",
   "emoji": "🦈",
   "commonName": "Megamouth Shark",
   "scientificName": "Megachasma pelagios",
@@ -29,7 +29,85 @@
     "rare",
     "solitary"
   ],
+  "photos": [
+    "projects/shark-populations/images/megamouth_shark/megamouth_shark.png"
+  ],
   "description": "The megamouth shark is one of the rarest and most mysterious of all shark species, with fewer than 300 recorded observations since it was first discovered in 1976 when one became entangled in a US Navy anchor off Hawaii. It is the third known filter-feeding shark after the whale shark and basking shark, using its enormous mouth to engulf clouds of shrimp, jellyfish, and copepods. Its luminescent tissue inside its mouth may act as a lure to attract prey in dark water.",
   "funFact": "The megamouth shark was entirely unknown to science until 1976 — a reminder that the deep ocean still harbors large, previously unknown animals. Despite being over 5 m long, it eluded discovery for all of recorded human history before that first accidental capture.",
-  "habitat": "Open ocean in tropical to temperate latitudes, performing daily vertical migrations — spending daylight hours at depths of 120–166 m and rising to within 12–25 m of the surface at night to follow migrating layers of planktonic prey. Found across the Pacific, Atlantic, and Indian Oceans."
+  "habitat": "Open ocean in tropical to temperate latitudes, performing daily vertical migrations — spending daylight hours at depths of 120–166 m and rising to within 12–25 m of the surface at night to follow migrating layers of planktonic prey. Found across the Pacific, Atlantic, and Indian Oceans.",
+  "diet": "Almost exclusively small planktonic prey — primarily euphausiids (krill), copepods, and jellyfish — engulfed in vast quantities by ram filter feeding. Its enormous, wide mouth and fine gill rakers strain prey from water as it swims slowly forward. Bioluminescent tissue lining the upper jaw may help lure prey into the open mouth in dimly lit water.",
+  "size": "One of the largest filter-feeding sharks: females reach ~5.5 m (18 ft) and an estimated ~1,215 kg (2,679 lbs); males are smaller at ~4 m (13 ft). Robust and broadly built compared to other lamniform sharks, with a distinctive oversized, flabby head.",
+  "vitalSigns": [
+    { "label": "Estimated Population",   "value": "Unknown — fewer than 300 recorded individuals since 1976",                    "glance": true },
+    { "label": "Lifespan",               "value": "Unknown; likely several decades based on growth rate inference",               "glance": true },
+    { "label": "Max Length",             "value": "~5.5 m (18 ft) females; ~4 m (13 ft) males", "metric": "~5.5 m", "imperial": "~18 ft", "glance": true },
+    { "label": "Max Weight",             "value": "~1,215 kg (2,679 lbs) estimated",             "metric": "~1,215 kg", "imperial": "~2,679 lbs", "glance": true },
+    { "label": "Reproductive Rate",      "value": "Unknown; likely viviparous with small litter sizes; no confirmed nursery areas observed" },
+    { "label": "Age at Maturity",        "value": "Unknown" },
+    { "label": "Top Speed",              "value": "Slow — a passive ram filter feeder with little capacity for sustained pursuit",  "glance": true },
+    { "label": "Ecological Role",        "value": "Mesopelagic filter feeder; links deep plankton layers to larger predators",      "glance": true },
+    { "label": "Diet",                   "value": "Euphausiids (krill), copepods, jellyfish, other small planktonic invertebrates" },
+    { "label": "Population Growth Rate", "value": "Unknown; presumed low due to large body size and likely slow maturation" },
+    { "label": "Key Senses",             "value": "Possible bioluminescent lure in jaw; lateral line; ampullae of Lorenzini for electroreception" }
+  ],
+  "habitatStats": [
+    { "label": "Global Range", "value": "Tropical to temperate latitudes in the Pacific, Atlantic, and Indian Oceans; records from Japan, Hawaii, California, Australia, Philippines, Brazil, South Africa, and Indonesia" },
+    { "label": "Depth Range",  "value": "12–166 m (39–545 ft); migrates vertically daily", "metric": "12–166 m", "imperial": "39–545 ft" }
+  ],
+  "statusHistory": [
+    { "year": 1976, "status": "Not Evaluated" },
+    { "year": 2019, "status": "Least Concern" }
+  ],
+  "populationTrend": [
+    { "year": 1980, "value": 100 },
+    { "year": 1990, "value": 99 },
+    { "year": 2000, "value": 97 },
+    { "year": 2010, "value": 95 },
+    { "year": 2020, "value": 93 }
+  ],
+  "populationTrendMeta": {
+    "confidence": "very low",
+    "note": "No reliable population estimates exist. Fewer than 300 individuals have ever been recorded, making any trend analysis nearly impossible. The values shown are illustrative of presumed slow, uncertain pressure from increasing bycatch and deep-sea fishing activity. The species' rarity and deep-water habits make direct population assessment effectively impossible with current methods."
+  },
+  "preyDeclineRegions": [
+    { "name": "N. Pacific",      "severity": "medium", "note": "Krill and mesopelagic fish stocks under growing pressure from expanding midwater trawl fisheries" },
+    { "name": "W. Pacific",      "severity": "medium", "note": "Dense euphausiid aggregations targeted by commercial krill fisheries in some areas; jellyfish blooms are shifting" },
+    { "name": "Indian Ocean",    "severity": "low",    "note": "Deep planktonic prey stocks relatively intact; limited targeted midwater fishing" },
+    { "name": "Tropical Pacific","severity": "low",    "note": "Core habitat largely unfished at depth; prey availability considered stable" },
+    { "name": "S. Atlantic",     "severity": "low",    "note": "Open ocean deep waters largely undisturbed; prey availability stable" }
+  ],
+  "fishingPressureRegions": [
+    { "name": "N. Pacific",      "severity": "medium", "note": "Occasionally caught as bycatch in deep-set longlines, driftnets, and midwater trawls; Japan accounts for the majority of recorded captures" },
+    { "name": "W. Pacific",      "severity": "medium", "note": "Multiple bycatch records from Taiwan, Philippines, and Indonesia in driftnet and longline fisheries" },
+    { "name": "Indian Ocean",    "severity": "low",    "note": "Rare bycatch incidents reported; limited deep-sea fishing overlap" },
+    { "name": "Tropical Pacific","severity": "low",    "note": "Sporadic incidental captures; most observations are strandings rather than fishing encounters" },
+    { "name": "N. Atlantic",     "severity": "low",    "note": "Very few records; minimal fishing pressure at relevant depths in known range" }
+  ],
+  "healthMetrics": [
+    { "label": "IUCN Status",         "value": "Least Concern (2019)",                                                               "trend": "stable" },
+    { "label": "Population Trend",    "value": "Unknown — presumed stable to slowly declining with increasing bycatch exposure",       "trend": "down"   },
+    { "label": "Habitat Quality",     "value": "Generally intact — open-ocean mesopelagic zone largely undisturbed",                  "trend": "stable" },
+    { "label": "Prey Availability",   "value": "Likely stable; some krill and jellyfish dynamics shifting with climate",              "trend": "stable" },
+    { "label": "Fishing Pressure",    "value": "Low but increasing — incidental bycatch across Pacific and Indian Oceans",            "trend": "down"   },
+    { "label": "Protection Coverage", "value": "Minimal — no targeted protections; benefits from depth and open-ocean distribution",  "trend": "stable",
+      "links": [
+        { "label": "IUCN Red List",              "url": "https://www.iucnredlist.org/species/41880/68616853" },
+        { "label": "Deep Sea Conservation Coalition", "url": "https://www.savethehighseas.org" }
+      ]
+    }
+  ],
+  "threats": [
+    { "name": "Bycatch",              "severity": "medium", "description": "The megamouth shark's vertical migration into shallower surface waters at night brings it into overlap with driftnets, longlines, and pelagic trawls. Japan, Taiwan, and the Philippines record the most captures. As fishing pressure in the Pacific intensifies, encounter rates are expected to rise." },
+    { "name": "Data Deficiency",      "severity": "medium", "description": "With fewer than 300 known individuals on record, almost nothing is known about population size, age structure, or reproductive rates. Decline could go undetected for decades. The Least Concern designation reflects ignorance as much as safety." },
+    { "name": "Climate Change",       "severity": "low",    "description": "Warming seas and ocean deoxygenation may compress the depth range of suitable mesopelagic habitat and shift the distribution of planktonic prey. Changes to diel vertical migration patterns in prey could disrupt the megamouth's feeding strategy." },
+    { "name": "Plastic Pollution",    "severity": "low",    "description": "Filter feeders are particularly vulnerable to ingesting microplastics concentrated in surface waters at night. Though no confirmed cases exist for this species, its feeding mechanism and surface-water presence make plastic ingestion a plausible risk." },
+    { "name": "Driftnet Fisheries",   "severity": "medium", "description": "Large-mesh driftnets — banned on the high seas but still used in some national waters and illegally at sea — pose a direct entanglement risk to a slow, large-bodied shark that surfaces predictably each night." }
+  ],
+  "actionItems": [
+    { "title": "Support High Seas Treaty Ratification", "description": "The UN High Seas Treaty would establish marine protected areas in international waters covering significant portions of the megamouth's open-ocean range. Urge your government to ratify and implement the treaty.", "link": "https://www.savethehighseas.org" },
+    { "title": "Push for Driftnet Bans and Enforcement", "description": "Advocate for stronger enforcement of the UN moratorium on high-seas driftnets and support national bans on driftnet use in exclusive economic zones where megamouth sharks are known to occur.", "link": null },
+    { "title": "Fund Megamouth Research", "description": "Support institutions using satellite tagging, ROV surveys, and environmental DNA (eDNA) sampling to learn basic biology — population size, movement, reproduction — that remains almost entirely unknown for this species.", "link": null },
+    { "title": "Demand Bycatch Reporting", "description": "Urge regional fisheries management organizations (RFMOs) in the Pacific and Indian Oceans to mandate reporting of all elasmobranch bycatch, including megamouth sharks. Without data, meaningful protection is impossible.", "link": null },
+    { "title": "Reduce Plastic Waste", "description": "Filter feeders like the megamouth shark are directly exposed to microplastic pollution during their nightly surface feeding. Reducing single-use plastics and supporting ocean cleanup initiatives directly benefits this and other filter-feeding species.", "link": null }
+  ]
 }

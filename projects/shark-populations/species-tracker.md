@@ -64,7 +64,7 @@ Tracks every species in the wiki: current tier, IUCN status, and what still need
 | Epaulette Shark | *Hemiscyllium ocellatum* | Least Concern | Stub | Phase 3 Batch 3 |
 | Spotted Wobbegong | *Orectolobus maculatus* | Least Concern | Stub | Phase 3 Batch 3 |
 | Goblin Shark | *Mitsukurina owstoni* | Least Concern | Full (partial) | Missing physicalScaleImage |
-| Megamouth Shark | *Megachasma pelagios* | Least Concern | Stub | Phase 3 Batch 3 |
+| Megamouth Shark | *Megachasma pelagios* | Least Concern | Full (partial) | Missing physicalScaleImage |
 | Sand Tiger Shark | *Carcharias taurus* | Vulnerable | Full (partial) | Missing physicalScaleImage |
 | Smalltooth Sand Tiger | *Odontaspis ferox* | Vulnerable | Stub | Phase 3 Batch 3 |
 | Tope Shark | *Galeorhinus galeus* | Critically Endangered | Full (partial) | Missing physicalScaleImage |
