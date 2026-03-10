@@ -1,6 +1,6 @@
 {
   "id": "squatina-squatina",
-  "lastUpdated": "2026-03-05",
+  "lastUpdated": "2026-03-10",
   "emoji": "🦈",
   "commonName": "Angelshark",
   "scientificName": "Squatina squatina",
@@ -31,5 +31,82 @@
   ],
   "description": "Squatina squatina, known as the angelshark, is a species of shark in the family Squatinidae (known generally also as angel sharks), that were once widespread in the coastal waters of the northeastern Atlantic Ocean. Well-adapted for camouflaging itself on the sea floor, the angelshark has a flattened form with enlarged pectoral and pelvic fins, giving it a superficial resemblance to a ray.",
   "funFact": "The Angelshark was once so abundant in the North Sea that it supported commercial fisheries — it has since been virtually wiped out across its entire northern range and now survives mainly around the Canary Islands, making it the first European shark to be classified as Critically Endangered.",
-  "habitat": "The angelshark occurs in the temperate waters of the northeastern Atlantic, from southern Norway and Sweden to the Western Sahara and the Canary Islands, including around Ireland and Britain and in the Mediterranean."
+  "photos": [
+    "projects/shark-populations/images/angelshark/angelshark.png"
+  ],
+  "habitat": "The angelshark occurs in the temperate waters of the northeastern Atlantic, from southern Norway and Sweden to the Western Sahara and the Canary Islands, including around Ireland and Britain and in the Mediterranean.",
+  "diet": "An ambush predator that lies motionless and camouflaged on sandy or muddy seabeds, lunging upward to engulf prey with remarkable speed. Feeds primarily on flatfish (sole, plaice, turbot), skates, crustaceans, cephalopods, and small bony fish that venture near the seafloor.",
+  "size": "Typically 1.5–1.8 m (4.9–5.9 ft); max confirmed ~2.4 m (7.9 ft). Females grow larger than males.",
+  "vitalSigns": [
+    { "label": "Estimated Population",   "value": "Unknown — functionally extinct across most of historic range; viable populations only in Canary Islands and scattered Atlantic-European sites",                   "glance": true },
+    { "label": "Lifespan",               "value": "Up to ~35 years",                                                                                                                                        "glance": true },
+    { "label": "Max Length",             "value": "~2.4 m (7.9 ft)",              "metric": "~2.4 m",   "imperial": "~7.9 ft",   "glance": true },
+    { "label": "Max Weight",             "value": "~80 kg (~176 lbs)",            "metric": "~80 kg",   "imperial": "~176 lbs",  "glance": true },
+    { "label": "Reproductive Rate",      "value": "7–25 pups per litter; ~8–10 month gestation; typically breeds every 2 years" },
+    { "label": "Age at Maturity",        "value": "~8–13 years" },
+    { "label": "Top Speed",              "value": "~10 km/h (~6 mph) cruising; strike lunge occurs in under 0.1 seconds", "metric": "~10 km/h", "imperial": "~6 mph", "glance": true },
+    { "label": "Ecological Role",        "value": "Mesopredator / benthic ambush predator",                                                                                                                 "glance": true },
+    { "label": "Diet",                   "value": "Flatfish, skates, crustaceans, cephalopods, small demersal fish" },
+    { "label": "Population Growth Rate", "value": "Very low — late maturity, small litters, and biennial breeding cycle severely limit recovery potential" },
+    { "label": "Key Adaptations",        "value": "Highly flattened body with cryptic patterning for benthic camouflage; rapid upward strike to capture prey; spiracles on top of head allow breathing while buried in sediment" }
+  ],
+  "habitatStats": [
+    { "label": "Global Range", "value": "Historically NE Atlantic from southern Norway to Western Sahara, including British Isles, Iberian Peninsula, Mediterranean, and Canary Islands; now functionally confined to Canary Islands and scattered coastal sites" },
+    { "label": "Depth Range",  "value": "0–150 m typical (recorded to ~500 m); strongly associated with shallow sandy and muddy coastal habitats, estuaries, and bays", "metric": "0–150 m", "imperial": "0–492 ft" }
+  ],
+  "threats": [
+    { "name": "Bycatch",                "severity": "critical", "description": "The primary ongoing driver of mortality. Caught incidentally in demersal trawls, bottom-set gillnets, and longlines throughout its remaining range. Its benthic lifestyle and shallow coastal habitat overlap heavily with commercial fishing effort. Discard survival is poor due to barotrauma and injury from net handling." },
+    { "name": "Habitat Degradation",   "severity": "high",     "description": "Depends on shallow coastal sandy and muddy habitats that are disproportionately impacted by coastal development, seabed disturbance from trawling, anchor damage, and marine tourism. Loss and degradation of nursery habitat further constrains the already minimal recruitment." },
+    { "name": "Slow Reproductive Rate","severity": "high",     "description": "Late sexual maturity, small litter sizes, and a biennial reproductive cycle mean that even low levels of ongoing mortality can prevent population recovery. Modelling suggests the species may require decades with near-zero fishing mortality to begin rebuilding." },
+    { "name": "Historical Overfishing","severity": "medium",   "description": "Targeted in commercial fisheries across the NE Atlantic and Mediterranean through most of the 20th century for meat and oil. Industrial bottom trawling post-WWII caused rapid range-wide collapse before any management measures were implemented." },
+    { "name": "Climate Change",         "severity": "medium",   "description": "As a cool-temperate specialist largely confined to shallow coastal habitats, the angelshark faces progressive range compression from warming seas and is vulnerable to disruption of prey availability and benthic habitat quality." }
+  ],
+  "actionItems": [
+    { "title": "Support the Angel Shark Project",           "description": "The Angel Shark Project — coordinated by the Zoological Society of London and partners in the Canary Islands — monitors the last stronghold population, conducts tagging research, and engages local fishers. Donations directly fund field surveys and bycatch mitigation trials.", "link": "https://angelsharknetwork.com" },
+    { "title": "Advocate for Bycatch Reduction Measures",  "description": "Push fishing authorities and the EU to mandate bycatch mitigation devices in demersal trawl and gillnet fisheries within known angelshark habitat, including minimum distance from shore restrictions and observer coverage.", "link": null },
+    { "title": "Support Marine Protected Areas",           "description": "The Canary Islands hosts critical angelshark habitat. Advocate for strengthened MPA enforcement there and the designation of new protected zones along the Iberian Atlantic coast and in the western Mediterranean where remnant populations may persist.", "link": null },
+    { "title": "Avoid Purchasing Shark Products",          "description": "Angelshark meat has historically been sold in Mediterranean markets. Support sustainable seafood campaigns and choose certified fisheries products to reduce demand driving incidental shark mortality.", "link": "https://www.seafoodwatch.org" }
+  ],
+  "healthMetrics": [
+    { "label": "IUCN Status",         "value": "Critically Endangered (uplisted from Vulnerable in 2006; reassessed 2019)",           "trend": "down"   },
+    { "label": "Population Trend",    "value": "Declining; functionally extinct across most of historic range in NE Atlantic and Mediterranean", "trend": "down" },
+    { "label": "Habitat Quality",     "value": "Degraded — coastal benthic habitats heavily impacted by trawling and development",     "trend": "down"   },
+    { "label": "Prey Availability",   "value": "Reduced — flatfish and crustacean stocks heavily fished across range",                 "trend": "down"   },
+    { "label": "Fishing Pressure",    "value": "High — bycatch mortality continues in trawl and gillnet fisheries despite protections","trend": "stable" },
+    { "label": "Protection Coverage", "value": "Improving — protected in UK (2008), EU waters, and several Mediterranean states; Canary Islands MPA coverage expanding", "trend": "up",
+      "links": [
+        { "label": "IUCN Red List",            "url": "https://www.iucnredlist.org/species/39332/117498371" },
+        { "label": "Angel Shark Network",      "url": "https://angelsharknetwork.com" },
+        { "label": "Shark Trust",              "url": "https://www.sharktrust.org" }
+      ]
+    }
+  ],
+  "statusHistory": [
+    { "year": 1996, "status": "Vulnerable" },
+    { "year": 2006, "status": "Critically Endangered" }
+  ],
+  "populationTrend": [
+    { "year": 1970, "value": 75000 },
+    { "year": 1980, "value": 48000 },
+    { "year": 1990, "value": 28000 },
+    { "year": 2000, "value": 16000 },
+    { "year": 2010, "value": 9000 },
+    { "year": 2020, "value": 5500 }
+  ],
+  "populationTrendMeta": {
+    "confidence": "modeled",
+    "note": "No reliable global census exists. Figures are rough relative estimates modeled from documented regional collapses: the species is considered functionally extinct in the North Sea and most of the Mediterranean. The Canary Islands represents the last known viable stronghold. IUCN assessments note a suspected decline exceeding 80% over three generations (~75 years)."
+  },
+  "preyDeclineRegions": [
+    { "name": "Mediterranean",   "severity": "high",   "note": "Flatfish, rays, and benthic crustaceans severely depleted by generations of intensive demersal trawling" },
+    { "name": "NE Atlantic",     "severity": "high",   "note": "Sole, plaice, and other demersal prey species under sustained pressure from European fishing fleets" },
+    { "name": "Canary Islands",  "severity": "low",    "note": "Relatively productive reef and sandy shelf habitats; better prey availability supports the main surviving angelshark population" },
+    { "name": "Iberian Atlantic","severity": "medium", "note": "Coastal demersal fish stocks fished but some recovery noted in areas with improved management" }
+  ],
+  "fishingPressureRegions": [
+    { "name": "Mediterranean",   "severity": "critical", "note": "No effective directed prohibition in most member states; pervasive demersal trawling and gillnet effort throughout former range" },
+    { "name": "NE Atlantic",     "severity": "high",     "note": "EU zero-retention rule for angelsharks applies; ongoing bycatch and non-compliance documented; sparse observer coverage" },
+    { "name": "Canary Islands",  "severity": "medium",   "note": "Protected; Angel Shark Project collaborates with local fishers on bycatch mitigation; pressure reduced but not eliminated" },
+    { "name": "UK/Ireland",      "severity": "low",      "note": "Legal protection since 2008 under UK Wildlife and Countryside Act; low encounter frequency given reduced population" }
+  ]
 }
