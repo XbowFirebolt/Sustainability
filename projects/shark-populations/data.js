@@ -9747,7 +9747,7 @@ window.WIKI_DATA = {
     },
     {
       "id": "isistius-brasiliensis",
-      "lastUpdated": "2026-03-06",
+      "lastUpdated": "2026-03-10",
       "emoji": "🦈",
       "commonName": "Cookiecutter Shark",
       "scientificName": "Isistius brasiliensis",
@@ -9761,7 +9761,7 @@ window.WIKI_DATA = {
         "species": "I. brasiliensis"
       },
       "statusLabel": "Least Concern",
-      "lifePercent": 87,
+      "lifePercent": 92,
       "habitatTypes": [
         "ocean",
         "deep-sea"
@@ -9776,9 +9776,234 @@ window.WIKI_DATA = {
         "bioluminescent",
         "solitary"
       ],
+      "photos": [
+        "projects/shark-populations/images/cookiecutter_shark/cookiecutter_shark.png"
+      ],
       "description": "The cookiecutter shark is a small but remarkable parasite-predator, reaching only about 50 cm (20 in), yet capable of gouging perfectly circular plugs of flesh from much larger animals including great white sharks, dolphins, tuna, and even military submarines. It attaches via suctorial lips, then rotates its body to cut out a neat cookie-shaped chunk of flesh. Bioluminescent on its ventral surface, it likely uses light to lure prey from below while a dark collar around its neck may act as a lure mimicking a small fish silhouette.",
       "funFact": "Cookiecutter sharks periodically swallow their own shed lower teeth — rather than losing the entire tooth row at once, they periodically shed all lower teeth as a single unit and consume them to recycle the calcium, a highly unusual behaviour among sharks.",
-      "habitat": "Open tropical and subtropical ocean, conducting dramatic daily vertical migrations — descending to depths of around 3,500 m during daylight and rising to the surface at night to feed. Found worldwide in warm oceanic waters between approximately 20°N and 20°S."
+      "habitat": "Open tropical and subtropical ocean, conducting dramatic daily vertical migrations — descending to depths of around 3,500 m during daylight and rising to the surface at night to feed. Found worldwide in warm oceanic waters between approximately 20°N and 20°S.",
+      "diet": "Parasitic flesh plugs gouged from large marine animals (whales, dolphins, tuna, billfishes, seals, large sharks); also small squid and fish",
+      "size": "Up to ~50 cm (20 in); females slightly larger than males (~42 cm)",
+      "vitalSigns": [
+        {
+          "label": "Estimated Population",
+          "value": "Unknown; considered stable — Least Concern",
+          "glance": true
+        },
+        {
+          "label": "Lifespan",
+          "value": "Unknown; likely several years based on related species",
+          "glance": true
+        },
+        {
+          "label": "Max Length",
+          "value": "~50 cm (20 in)",
+          "metric": "~50 cm",
+          "imperial": "~20 in",
+          "glance": true
+        },
+        {
+          "label": "Max Weight",
+          "value": "~1 kg (~2 lbs)",
+          "metric": "~1 kg",
+          "imperial": "~2 lbs",
+          "glance": true
+        },
+        {
+          "label": "Reproductive Rate",
+          "value": "6–12 pups per litter; ovoviviparous"
+        },
+        {
+          "label": "Age at Maturity",
+          "value": "Unknown"
+        },
+        {
+          "label": "Top Speed",
+          "value": "Unknown; estimated slow — relies on stealth and suction rather than pursuit",
+          "glance": true
+        },
+        {
+          "label": "Ecological Role",
+          "value": "Parasite-predator; mesopredator",
+          "glance": true
+        },
+        {
+          "label": "Diet",
+          "value": "Parasitic flesh plugs from large marine megafauna; small squid and fish opportunistically"
+        },
+        {
+          "label": "Key Senses",
+          "value": "Bioluminescent ventral surface to lure prey; electroreception; dark collar as a lure mimic"
+        }
+      ],
+      "habitatStats": [
+        {
+          "label": "Global Range",
+          "value": "Tropical and subtropical oceanic waters worldwide; roughly 20°N–20°S across all major ocean basins"
+        },
+        {
+          "label": "Depth Range",
+          "value": "Vertical migrator — surface to ~3,500 m; surfaces nocturnally to feed",
+          "metric": "Surface to ~3,500 m",
+          "imperial": "Surface to ~11,480 ft"
+        }
+      ],
+      "statusHistory": [
+        {
+          "year": 2000,
+          "status": "Least Concern"
+        },
+        {
+          "year": 2009,
+          "status": "Least Concern"
+        },
+        {
+          "year": 2019,
+          "status": "Least Concern"
+        }
+      ],
+      "populationTrend": [
+        {
+          "year": 1990,
+          "value": 95000
+        },
+        {
+          "year": 2000,
+          "value": 95000
+        },
+        {
+          "year": 2010,
+          "value": 93000
+        },
+        {
+          "year": 2020,
+          "value": 92000
+        }
+      ],
+      "populationTrendMeta": {
+        "confidence": "estimated",
+        "note": "Absolute numbers are modeled estimates. The cookiecutter shark is poorly monitored due to its oceanic, deep-sea lifestyle. Its Least Concern status reflects no evidence of significant decline; trend is assumed broadly stable based on wide range, lack of targeted fishing, and stable open-ocean habitat."
+      },
+      "preyDeclineRegions": [
+        {
+          "name": "Indo-Pacific",
+          "severity": "medium",
+          "note": "Tuna, billfish, and cetacean populations under pressure from commercial fishing — reducing hosts available for parasitic feeding"
+        },
+        {
+          "name": "N. Atlantic",
+          "severity": "low",
+          "note": "Large pelagic hosts broadly present; some reduction in tuna stocks"
+        },
+        {
+          "name": "S. Atlantic",
+          "severity": "low",
+          "note": "Relatively stable prey populations in tropical pelagic zones"
+        },
+        {
+          "name": "E. Pacific",
+          "severity": "low",
+          "note": "Tuna and dolphin populations support stable feeding opportunities near upwelling zones"
+        }
+      ],
+      "fishingPressureRegions": [
+        {
+          "name": "Indo-Pacific",
+          "severity": "low",
+          "note": "Occasional bycatch in longline and trawl fisheries; not commercially targeted"
+        },
+        {
+          "name": "N. Atlantic",
+          "severity": "low",
+          "note": "Rare bycatch; deep-water range limits exposure to surface gear"
+        },
+        {
+          "name": "E. Pacific",
+          "severity": "low",
+          "note": "Incidental capture in tuna longlines; minor impact on population"
+        }
+      ],
+      "healthMetrics": [
+        {
+          "label": "IUCN Status",
+          "value": "Least Concern — stable across all assessments",
+          "trend": "stable"
+        },
+        {
+          "label": "Population Trend",
+          "value": "Stable — no documented significant decline; poorly monitored",
+          "trend": "stable"
+        },
+        {
+          "label": "Habitat Quality",
+          "value": "Broadly intact — open ocean habitat largely undisturbed; deep-sea pollution is an emerging concern",
+          "trend": "stable"
+        },
+        {
+          "label": "Prey Availability",
+          "value": "Mostly stable — depends on large pelagic megafauna that face some fishing pressure",
+          "trend": "stable"
+        },
+        {
+          "label": "Fishing Pressure",
+          "value": "Low — not commercially targeted; minor bycatch in oceanic longlines",
+          "trend": "stable"
+        },
+        {
+          "label": "Protection Coverage",
+          "value": "Minimal formal protection — Least Concern status reflects current stability, not active management",
+          "trend": "stable",
+          "links": [
+            {
+              "label": "IUCN Red List",
+              "url": "https://www.iucnredlist.org/species/60202/3095...}"
+            },
+            {
+              "label": "FishBase",
+              "url": "https://www.fishbase.se/summary/1245"
+            }
+          ]
+        }
+      ],
+      "threats": [
+        {
+          "name": "Deep-Sea Pollution",
+          "severity": "medium",
+          "description": "Plastic debris and persistent chemical pollutants accumulate in the deep ocean where cookiecutter sharks spend their days. As apex hosts in the water column, they may bioaccumulate toxins from prey."
+        },
+        {
+          "name": "Climate Change",
+          "severity": "medium",
+          "description": "Ocean warming and deoxygenation may compress the oxygen minimum zones cookiecutter sharks migrate through and alter the distribution of the large pelagic animals they depend on as hosts."
+        },
+        {
+          "name": "Bycatch",
+          "severity": "low",
+          "description": "Occasionally captured in oceanic longlines and trawls targeting tuna and other large pelagic fish. Catch rates are low and are not considered a significant population threat at this time."
+        }
+      ],
+      "actionItems": [
+        {
+          "title": "Reduce Single-Use Plastic",
+          "description": "Deep-sea plastic pollution accumulates in the mesopelagic and bathypelagic zones cookiecutter sharks inhabit during the day. Reducing plastic waste at the source helps protect their daytime habitat.",
+          "link": null
+        },
+        {
+          "title": "Support Deep-Sea Research",
+          "description": "The cookiecutter shark is poorly studied due to its extreme depth range. Supporting institutions and funding bodies that study mesopelagic and deep-sea ecology expands our understanding of this species before problems emerge.",
+          "link": null
+        },
+        {
+          "title": "Choose Sustainable Seafood",
+          "description": "Longline tuna and swordfish fisheries are the main source of cookiecutter bycatch. Use tools like the Monterey Bay Aquarium Seafood Watch to select seafood caught with lower-impact methods.",
+          "link": "https://www.seafoodwatch.org"
+        },
+        {
+          "title": "Advocate for High-Seas Protections",
+          "description": "Cookiecutter sharks live almost entirely in international waters with little formal protection. Support ratification and enforcement of the High Seas Treaty (BBNJ Agreement) to extend conservation measures to open-ocean habitats.",
+          "link": null
+        }
+      ]
     },
     {
       "id": "squalus-acanthias",
