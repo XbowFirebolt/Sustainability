@@ -215,6 +215,27 @@
           return;
         }
 
+        // Show skeleton cards while data + wiki.js load
+        (function () {
+          var skeletonCard =
+            '<div class="wiki-skeleton-card">' +
+              '<div class="skel skel-image"></div>' +
+              '<div class="skel-body">' +
+                '<div class="skel skel-line skel-name"></div>' +
+                '<div class="skel skel-line skel-sci"></div>' +
+                '<div class="skel-badges">' +
+                  '<div class="skel skel-badge"></div>' +
+                  '<div class="skel skel-badge"></div>' +
+                '</div>' +
+                '<div class="skel skel-line skel-desc1"></div>' +
+                '<div class="skel skel-line skel-desc2"></div>' +
+              '</div>' +
+            '</div>';
+          var html = "";
+          for (var i = 0; i < 12; i++) html += skeletonCard;
+          document.getElementById("wiki-grid").innerHTML = html;
+        })();
+
         var dataScript = document.createElement("script");
         dataScript.src = "projects/" + projectId + "/data.js";
         dataScript.onerror = function () {

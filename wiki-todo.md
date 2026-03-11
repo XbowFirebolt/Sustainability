@@ -59,7 +59,7 @@ Check off items as they're completed. Add notes inline as needed.
 
 ## Visuals & UI Polish
 
-- [ ] **Loading skeleton screens** — show card-shaped skeleton placeholders while the grid first renders, instead of an empty flash
+- [x] **Loading skeleton screens** — show card-shaped skeleton placeholders while the grid first renders, instead of an empty flash
 - [ ] **Lazy load images** — use IntersectionObserver on card image containers so off-screen photos don't load until scrolled into view (images currently load eagerly on card render)
 - [ ] **Dark mode support** — respect `prefers-color-scheme: dark` with an adjusted palette; add a manual toggle to the header
 - [ ] **Status progression visualization in statusHistory** — in the conservation history timeline, show directional arrows between status changes (↑ improved / ↓ declined) with color-coded severity

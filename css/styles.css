@@ -1381,6 +1381,60 @@ body.no-map {
 .wiki-severity-header--none     .wiki-severity-header-label { color: #6b7280; }
 .wiki-severity-header--none     .wiki-severity-header-rule  { background: rgba(107, 114, 128, 0.35); }
 
+/* Skeleton loading cards */
+@keyframes skeleton-shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.wiki-skeleton-card {
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  pointer-events: none;
+}
+
+.wiki-skeleton-card .skel {
+  background: linear-gradient(90deg, #efefef 25%, #e0e0e0 50%, #efefef 75%);
+  background-size: 800px 100%;
+  animation: skeleton-shimmer 1.4s ease-in-out infinite;
+}
+
+.wiki-skeleton-card .skel-image {
+  height: 180px;
+  flex-shrink: 0;
+}
+
+.wiki-skeleton-card .skel-body {
+  padding: 0.9rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.wiki-skeleton-card .skel-line {
+  height: 0.85rem;
+  border-radius: 4px;
+}
+
+.wiki-skeleton-card .skel-name  { width: 62%; height: 1rem; }
+.wiki-skeleton-card .skel-sci   { width: 45%; height: 0.75rem; }
+.wiki-skeleton-card .skel-badges {
+  display: flex;
+  gap: 0.4rem;
+  margin: 0.1rem 0;
+}
+.wiki-skeleton-card .skel-badge {
+  width: 64px;
+  height: 1.25rem;
+  border-radius: 20px;
+}
+.wiki-skeleton-card .skel-desc1 { width: 90%; }
+.wiki-skeleton-card .skel-desc2 { width: 72%; }
+
 /* Species card */
 .species-card {
   border: 1px solid var(--color-border);
