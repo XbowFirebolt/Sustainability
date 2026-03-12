@@ -341,6 +341,7 @@ function openSpeciesModal(species, cardEl, tabKey = "overview") {
   renderTabCached("tab-panel-overview", `overview:${species.id}`, () => renderOverview(species));
   renderTabCached("tab-panel-vital",    `vital:${species.id}:${unitMode}`, () => renderVitalSigns(species));
   renderTabCached("tab-panel-health",   `health:${species.id}`, () => renderHealthMetrics(species));
+  if (tabKey === "health") animateHealthChart();
   renderTabCached("tab-panel-threats",  `threats:${species.id}:${currentQ}`, () => renderThreats(species.threats, currentQ));
   renderTabCached("tab-panel-actions",  `actions:${species.id}:${currentQ}`, () => renderActionItems(species.actionItems, currentQ));
 
@@ -794,6 +795,7 @@ function activateTab(tabKey) {
 document.querySelectorAll(".species-tab").forEach((btn) => {
   btn.addEventListener("click", () => {
     activateTab(btn.dataset.tab);
+    if (btn.dataset.tab === "health") animateHealthChart();
     if (currentModalSpecies) {
       const url = new URL(window.location);
       if (btn.dataset.tab && btn.dataset.tab !== "overview") {
@@ -1270,6 +1272,20 @@ function renderPopulationChart(container, data, statusHistory) {
   polyline.setAttribute("stroke-linejoin", "round");
   svg.appendChild(polyline);
 
+  // Precompute total polyline length; stored as data attr so animateHealthChart() can read it
+  // from both fresh renders and cache-restored innerHTML.
+  const pts = data.map((d, i) => ({ x: xOf(i), y: yOf(d.value) }));
+  const lineLength = pts.slice(1).reduce((sum, pt, i) => {
+    const dx = pt.x - pts[i].x, dy = pt.y - pts[i].y;
+    return sum + Math.sqrt(dx * dx + dy * dy);
+  }, 0);
+  svg.dataset.chartLineLength = lineLength;
+
+  // Initial invisible state — animation triggered externally by animateHealthChart()
+  polyline.style.strokeDasharray = lineLength;
+  polyline.style.strokeDashoffset = lineLength;
+  area.style.opacity = "0";
+
   // Tooltip (created before the data loop so closures can reference it)
   container.appendChild(svg);
   const tooltip = document.createElement("div");
@@ -1286,6 +1302,7 @@ function renderPopulationChart(container, data, statusHistory) {
   container.appendChild(tooltip);
 
   // Dots, year labels, and interactive hit targets
+  const dots = [];
   data.forEach((d, i) => {
     const cx = xOf(i), cy = yOf(d.value);
 
@@ -1298,7 +1315,9 @@ function renderPopulationChart(container, data, statusHistory) {
     dot.setAttribute("r", "3.5");
     dot.setAttribute("fill", dotColor || "var(--color-primary)");
     dot.setAttribute("class", "chart-dot");
+    dot.style.opacity = "0";
     svg.appendChild(dot);
+    dots.push(dot);
 
     const yearLabel = document.createElementNS(svgNS, "text");
     yearLabel.setAttribute("x", cx);
@@ -1401,6 +1420,44 @@ function renderPopulationChart(container, data, statusHistory) {
       container.appendChild(legend);
     }
   }
+}
+
+// Animates the population trend chart in the health tab.
+// Called whenever the health panel becomes visible (tab click or initial open).
+// Works on both freshly rendered and cache-restored DOMs because the initial
+// invisible state is always stored in inline styles / data attributes.
+function animateHealthChart() {
+  const svg = document.querySelector("#tab-panel-health .health-chart-svg");
+  if (!svg) return;
+  const polyline = svg.querySelector("polyline");
+  const area = svg.querySelector("polygon");
+  const dots = [...svg.querySelectorAll(".chart-dot")];
+  const lineLength = parseFloat(svg.dataset.chartLineLength) || 0;
+
+  // Reset to initial invisible state (handles re-entry and cache restores)
+  polyline.style.transition = "none";
+  polyline.style.strokeDasharray = lineLength;
+  polyline.style.strokeDashoffset = lineLength;
+  area.style.transition = "none";
+  area.style.opacity = "0";
+  dots.forEach((dot) => { dot.style.transition = "none"; dot.style.opacity = "0"; });
+
+  const DRAW_MS = 750;
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    polyline.style.transition = `stroke-dashoffset ${DRAW_MS}ms cubic-bezier(0.4, 0, 0.2, 1)`;
+    polyline.style.strokeDashoffset = "0";
+    area.style.transition = `opacity ${Math.round(DRAW_MS * 0.8)}ms ease-out 80ms`;
+    area.style.opacity = "1";
+    dots.forEach((dot, i) => {
+      const delay = Math.round((i / Math.max(dots.length - 1, 1)) * (DRAW_MS - 80));
+      dot.style.transition = `opacity 0.18s ease ${delay}ms, transform 0.15s ease`;
+      dot.style.opacity = "1";
+    });
+    // Remove inline transition after animation so CSS hover (transform) takes over cleanly
+    setTimeout(() => {
+      dots.forEach((dot) => { dot.style.transition = ""; dot.style.opacity = ""; });
+    }, DRAW_MS + 250);
+  }));
 }
 
 function renderRegionGrid(container, regions) {
