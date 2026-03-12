@@ -19,15 +19,41 @@ function applySilhouetteBg(el) {
   el.style.backgroundPosition = "center";
 }
 
-function applyPhotoBg(el, src) {
+function applyPhotoBg(el, src, lqip) {
   el.style.background = "";
-  el.style.backgroundImage = `url(${src})`;
-  el.style.backgroundSize = "cover";
-  el.style.backgroundPosition = "center";
-  if (SILHOUETTE_FALLBACK) {
+  el.style.backgroundImage = "";
+  el.querySelectorAll(".card-img-lqip, .card-img-full").forEach(n => n.remove());
+
+  // If we have a LQIP, show it blurred while the full image loads.
+  // Both layers are child divs so overflow:hidden on the parent clips the blur cleanly.
+  if (lqip) {
+    const lqipLayer = document.createElement("div");
+    lqipLayer.className = "card-img-lqip";
+    lqipLayer.style.backgroundImage = `url(${lqip})`;
+    el.appendChild(lqipLayer);
+
+    const overlay = document.createElement("div");
+    overlay.className = "card-img-full";
+    overlay.style.backgroundImage = `url(${src})`;
+    el.appendChild(overlay);
+
     const probe = new Image();
-    probe.onerror = () => applySilhouetteBg(el);
+    probe.onload = () => overlay.classList.add("loaded");
+    probe.onerror = () => {
+      lqipLayer.remove();
+      overlay.remove();
+      applySilhouetteBg(el);
+    };
     probe.src = src;
+  } else {
+    el.style.backgroundImage = `url(${src})`;
+    el.style.backgroundSize = "cover";
+    el.style.backgroundPosition = "center";
+    if (SILHOUETTE_FALLBACK) {
+      const probe = new Image();
+      probe.onerror = () => applySilhouetteBg(el);
+      probe.src = src;
+    }
   }
 }
 
@@ -272,7 +298,7 @@ function openSpeciesModal(species, cardEl, tabKey = "overview") {
   const imgArea = document.getElementById("species-modal-image");
   const firstPhoto = species.photos && species.photos[0];
   if (firstPhoto) {
-    applyPhotoBg(imgArea, firstPhoto);
+    applyPhotoBg(imgArea, firstPhoto, species.lqip || null);
     document.getElementById("species-modal-emoji").style.display = "none";
   } else if (SILHOUETTE_FALLBACK) {
     applySilhouetteBg(imgArea);
@@ -1963,6 +1989,7 @@ function createSpeciesCard(species, q, favIds) {
   const cardPhoto = species.photos && species.photos[0];
   if (cardPhoto) {
     imgArea.dataset.lazySrc = cardPhoto;
+    if (species.lqip) imgArea.dataset.lazyLqip = species.lqip;
     if (SILHOUETTE_FALLBACK) {
       applySilhouetteBg(imgArea);
     } else {
@@ -2654,8 +2681,9 @@ function renderWikiGrid(query) {
   window._wikiImageObserver = new IntersectionObserver((entries) => {
     entries.filter(e => e.isIntersecting).forEach(entry => {
       const el = entry.target;
-      applyPhotoBg(el, el.dataset.lazySrc);
+      applyPhotoBg(el, el.dataset.lazySrc, el.dataset.lazyLqip || null);
       delete el.dataset.lazySrc;
+      delete el.dataset.lazyLqip;
       window._wikiImageObserver.unobserve(el);
     });
   }, { rootMargin: "200px" });

@@ -341,7 +341,8 @@ window.WIKI_DATA = {
           "description": "Challenge fear-based media portrayals. Sharing science-based facts about shark behavior helps build public support for conservation.",
           "link": null
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQF/8QAHBAAAgIDAQEAAAAAAAAAAAAAAREAAgMhUTJx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQT/xAAWEQEBAQAAAAAAAAAAAAAAAAABABL/2gAMAwEAAhEDEQA/AMvFkD9AfZVVXYOSldNmwSmSCYZ7KlaPJVWyAWIBY7EnrsbiOoyX/9k="
     },
     {
       "id": "sphyrna-lewini",
@@ -660,7 +661,8 @@ window.WIKI_DATA = {
           "description": "Support organizations and policies that protect mangroves, estuaries, and coastal bays — the nursery areas juvenile hammerheads depend on. Coastal habitat loss is an underappreciated threat to recovery.",
           "link": null
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAQFAf/EABwQAAICAwEBAAAAAAAAAAAAAAECABEDEiFBYf/EABUBAQEAAAAAAAAAAAAAAAAAAAEE/8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAS/9oADAMBAAIRAxEAPwCXiyC+sAfsbUI4O+ZEAFk3fJIm2ZUrR5Jp3VXIVth4aq4RZRY7COowX//Z"
     },
     {
       "id": "rhincodon-typus",
@@ -977,7 +979,8 @@ window.WIKI_DATA = {
           "description": "Donate to or follow the work of groups like the Marine Megafauna Foundation, Shark Research Institute, and Shark Trust that fund tagging, research, and advocacy for whale shark protections globally.",
           "link": "https://www.sharktrust.org"
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAQFAf/EABwQAAICAwEBAAAAAAAAAAAAAAECABEDIVExQf/EABUBAQEAAAAAAAAAAAAAAAAAAAAE/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAESEf/aAAwDAQACEQMRAD8Al48gu7qMh1awzhdekiSrPZtnsr1kUoabIAxANgfewiy7G4RQhH//2Q=="
     },
     {
       "id": "carcharhinus-leucas",
@@ -1285,7 +1288,8 @@ window.WIKI_DATA = {
           "description": "Bull sharks' reputation as uniquely dangerous is largely a function of habitat overlap with humans, not inherent aggression. Sharing science-based information about bull shark ecology builds public support for their conservation.",
           "link": null
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAQFA//EABwQAQACAgMBAAAAAAAAAAAAAAEAAgMREyFBcf/EABUBAQEAAAAAAAAAAAAAAAAAAAIE/8QAGREAAgMBAAAAAAAAAAAAAAAAAAECEkER/9oADAMBAAIRAxEAPwCXiym+0PsZoORTkxhratwNSXCUvr0kSisGbZCtkEdensJhUE7hFYNEf//Z"
     },
     {
       "id": "galeocerdo-cuvier",
@@ -1595,7 +1599,8 @@ window.WIKI_DATA = {
           "description": "Tiger sharks are frequently caught as bycatch in pelagic longlines targeting tuna and billfish. Use the Monterey Bay Aquarium Seafood Watch to choose seafood caught with lower bycatch rates.",
           "link": "https://www.seafoodwatch.org"
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAQFA//EABsQAQADAQADAAAAAAAAAAAAAAEAAhEDITFB/8QAFgEBAQEAAAAAAAAAAAAAAAAABAEC/8QAGBEAAwEBAAAAAAAAAAAAAAAAAAESAhH/2gAMAwEAAhEDEQA/AJXPqD7JvWzdRtQM3WwGSbsNiX0Gsoat0K2QdD7CL1NPMJqiSj//2Q=="
     },
     {
       "id": "carcharhinus-longimanus",
@@ -1904,7 +1909,8 @@ window.WIKI_DATA = {
           "severity": "medium",
           "note": "WCPFC longlines active; observer coverage improving"
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAMFBP/EAB0QAQACAgIDAAAAAAAAAAAAAAEAAhEhA0ESMXH/xAAWAQEBAQAAAAAAAAAAAAAAAAAEAQL/xAAaEQACAgMAAAAAAAAAAAAAAAAAAQISEUFR/9oADAMBAAIRAxEAPwCXx8h7yHW48fNw2rXWdoak2D9Yh5ewijHhotyFbII47IRICbhN2ZKI/9k="
     },
     {
       "id": "glyphis-gangeticus",
@@ -2263,7 +2269,8 @@ window.WIKI_DATA = {
           "severity": "low",
           "note": "Legal protection since 2008 under UK Wildlife and Countryside Act; low encounter frequency given reduced population"
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAQCAwX/xAAdEAACAwACAwAAAAAAAAAAAAABAgADESExEkFh/8QAFQEBAQAAAAAAAAAAAAAAAAAAAgP/xAAZEQEBAQADAAAAAAAAAAAAAAABABIRMUH/2gAMAwEAAhEDEQA/AEk8AFY2KNHR9Rpa1catqkdzIBkgxA7PMqi9NEz6TVoVHwOrD5CU1qGXSN5hFyxyX//Z"
     },
     {
       "id": "squatina-aculeata",
@@ -2938,7 +2945,8 @@ window.WIKI_DATA = {
           "severity": "medium",
           "note": "Some bycatch in toothfish longlines; reduced pressure"
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAQFA//EAB0QAQACAgIDAAAAAAAAAAAAAAEAAgMRIUETIjP/xAAVAQEBAAAAAAAAAAAAAAAAAAABBP/EABcRAAMBAAAAAAAAAAAAAAAAAAABEhH/2gAMAwEAAhEDEQA/AJeGwvN61269mNGNsp5sGtb+nUlQlWsjhDFrlbII67ITGoJzCNBCP//Z"
     },
     {
       "id": "isurus-paucus",
@@ -3242,7 +3250,8 @@ window.WIKI_DATA = {
           "severity": "high",
           "note": "Expanding distant-water fleets with no longfin-specific protections"
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFAQP/xAAdEAACAgMAAwAAAAAAAAAAAAABAgARAyFREjEz/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQT/xAAXEQEAAwAAAAAAAAAAAAAAAAAAARES/9oADAMBAAIRAxEAPwCbiceywXdbjVAj7Y675akizNs9lM2lqDTuFYgMGHRCccahlsi9wjoZf//Z"
     },
     {
       "id": "sphyrna-mokarran",
@@ -3547,7 +3556,8 @@ window.WIKI_DATA = {
           "severity": "high",
           "note": "Pelagic bycatch in open ocean; enforcement near-absent"
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFAQP/xAAcEAACAwEAAwAAAAAAAAAAAAABAgADESESMUH/xAAWAQEBAQAAAAAAAAAAAAAAAAAEAAH/xAAXEQADAQAAAAAAAAAAAAAAAAAAARIR/9oADAMBAAIRAxEAPwCbUwPfNVPrsaVFcduRRmkk8ySNM3TFawkoasZUchWDj4RCca1DLpGwlRkI/9k="
     },
     {
       "id": "sphyrna-zygaena",
@@ -3847,7 +3857,8 @@ window.WIKI_DATA = {
           "severity": "medium",
           "note": "Some bycatch in coastal nets; targeted in some artisanal fisheries"
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAQFAf/EAB4QAAICAgIDAAAAAAAAAAAAAAECAAMSMREhIkFR/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgME/8QAGREBAQEAAwAAAAAAAAAAAAAAAQAREkFR/9oADAMBAAIRAxEAPwCfSyt3mqnXlGxXkOraz7Jy0JHBM3I8bMu692cDybuK1uVDq4+rqEWUcjuEWx4l/9k="
     },
     {
       "id": "cetorhinus-maximus",
@@ -4152,7 +4163,8 @@ window.WIKI_DATA = {
           "severity": "low",
           "note": "Marginal bycatch in toothfish longlines; low intensity"
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMFAQT/xAAdEAACAgIDAQAAAAAAAAAAAAABAgARAyESMVGx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAgT/xAAZEQEBAAMBAAAAAAAAAAAAAAABAAISQRH/2gAMAwEAAhEDEQA/AJmNx2TRjWyKFFk7k65tn2UPr2mDHpdLPxavsIrGoK2Re4RbMdC//9k="
     },
     {
       "id": "ginglymostoma-cirratum",
@@ -4439,7 +4451,8 @@ window.WIKI_DATA = {
           "description": "If you dive or snorkel in nurse shark habitat, observe from a distance and never touch or ride the sharks. Choose dive operators certified by responsible marine tourism programs that enforce no-contact wildlife guidelines.",
           "link": null
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAQBAwX/xAAfEAACAwABBQEAAAAAAAAAAAABAgADETEEEhMhQVH/xAAVAQEBAAAAAAAAAAAAAAAAAAACA//EABkRAQEBAAMAAAAAAAAAAAAAAAEAEgIxQf/aAAwDAQACEQMRAD8ARoFbDuNqoeMaNeOoqCOoT5vuZAk6clUXpohx9Jq5VrsKq6uP1eISqsArphFqOS//2Q=="
     },
     {
       "id": "negaprion-brevirostris",
@@ -4739,7 +4752,8 @@ window.WIKI_DATA = {
           "description": "Lemon sharks are not currently listed under CITES, leaving the international fin trade largely unregulated. Contact your representatives and support conservation organizations pushing for lemon shark inclusion in CITES Appendix II.",
           "link": null
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAQBAwX/xAAdEAACAgIDAQAAAAAAAAAAAAABAgADESEEEjFC/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBP/EABkRAQEBAAMAAAAAAAAAAAAAAAEAEhFBUf/aAAwDAQACEQMRAD8ARoFbgMblrOwe0eHGpasY5VeQdnOphScnHss8vdnA8m7utdhVXWwD6XyEprUMuSM7hG1DBf/Z"
     },
     {
       "id": "prionace-glauca",
@@ -5041,7 +5055,8 @@ window.WIKI_DATA = {
           "description": "Blue sharks are globally distributed but remain under-monitored. Population assessments rely heavily on catch data from fisheries with variable reporting quality. Supporting tagging programs, observer deployments, and population modeling improves the scientific basis for future protections.",
           "link": null
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFAQP/xAAeEAACAQUAAwAAAAAAAAAAAAABAgADERIhMUFRcf/EABUBAQEAAAAAAAAAAAAAAAAAAAAE/8QAFxEBAQEBAAAAAAAAAAAAAAAAABIBEf/aAAwDAQACEQMRAD8AnUiCMs1U83GQhawFWjvznz7Jc25t2UdTThqqVRyFdXHteQnFAGW53CKIx//Z"
     },
     {
       "id": "carcharhinus-melanopterus",
@@ -5335,7 +5350,8 @@ window.WIKI_DATA = {
           "description": "Blacktip reef sharks have been on CITES Appendix II since 2016, requiring that trade be documented as sustainable and legal. Support organizations working to improve compliance and monitoring at source fisheries and export ports across Southeast Asia and the Indian Ocean.",
           "link": "https://cites.org/eng/app/appendices.php"
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFAQP/xAAeEAACAgICAwAAAAAAAAAAAAABAgADESESMSJBUf/EABUBAQEAAAAAAAAAAAAAAAAAAAED/8QAGREBAQEAAwAAAAAAAAAAAAAAAQASEUFR/9oADAMBAAIRAxEAPwCdSVOy6qevKNCsNgC6rfvnqSpudSzy90APJq3COQGVh9XqE51qGXJ3COowX//Z"
     },
     {
       "id": "triaenodon-obesus",
@@ -5610,7 +5626,8 @@ window.WIKI_DATA = {
           "severity": "medium",
           "note": "Fin trade and food fisheries active; enforcement patchy along the broader coastline"
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFAQP/xAAeEAACAgICAwAAAAAAAAAAAAABAgARAyFBUSMxYv/EABYBAQEBAAAAAAAAAAAAAAAAAAQBAv/EABkRAQEBAAMAAAAAAAAAAAAAAAEAEhFBUf/aAAwDAQACEQMRAD8Am4nU7LBeNxmwQPJj39STZ7m2e4h5e4oHk07hHKhgwHI9QnHGAy2Re4TWqYL/2Q=="
     },
     {
       "id": "carcharhinus-amblyrhynchos",
@@ -5908,7 +5925,8 @@ window.WIKI_DATA = {
             }
           ]
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFAQP/xAAeEAEAAgICAwEAAAAAAAAAAAABAAIDIRFhIiMxQf/EABUBAQEAAAAAAAAAAAAAAAAAAAED/8QAGBEAAwEBAAAAAAAAAAAAAAAAAAERElH/2gAMAwEAAhEDEQA/AJuK5tbA9xj8PZj388pOJvMs6QyuDWUK3QtW3dXkhOVATcI1hlH/2Q=="
     },
     {
       "id": "carcharhinus-plumbeus",
@@ -6215,7 +6233,8 @@ window.WIKI_DATA = {
           "severity": "medium",
           "note": "Caught in longlines and gillnets targeting other species; some island nations have shark sanctuaries but enforcement is limited"
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAQFA//EAB8QAAICAgIDAQAAAAAAAAAAAAECABESIQNBEyIxUf/EABYBAQEBAAAAAAAAAAAAAAAAAAQBAv/EABkRAQEBAAMAAAAAAAAAAAAAAAEAERJBUf/aAAwDAQACEQMRAD8An8LBt5qvXsajXjLADNN3vIVI9n9hZr7EOvcUDybdsHK2DXYNiEw4wCtne4TW04l//9k="
     },
     {
       "id": "carcharhinus-obscurus",
@@ -6520,7 +6539,8 @@ window.WIKI_DATA = {
           "severity": "medium",
           "note": "Some managed fisheries; bycatch in longlines and gillnets ongoing"
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFAQP/xAAgEAACAgIABwAAAAAAAAAAAAABAgARAyESEyIxQVFh/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQT/xAAZEQADAAMAAAAAAAAAAAAAAAAAARESQVH/2gAMAwEAAhEDEQA/AJ+Fgdl1XddUa5dgVmxH7xipIszbPuUOvZMkuDORgjlQwavI7QnHGAy2dwjQxP/Z"
     },
     {
       "id": "carcharhinus-falciformis",
@@ -6802,7 +6822,8 @@ window.WIKI_DATA = {
           "severity": "medium",
           "note": "Moderate longline presence; some national protections; lower pressure than open-ocean tropical zones"
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAUBAgME/8QAHhABAAICAgMBAAAAAAAAAAAAAQACAxEhMRIiYXH/xAAWAQEBAQAAAAAAAAAAAAAAAAADAQL/xAAYEQEBAQEBAAAAAAAAAAAAAAABABESUf/aAAwDAQACEQMRAD8AX4rnewfrqb+VthvHp69yLRk7YzrCB5dN7BZDn8YSmMLV28wl2zzf/9k="
     },
     {
       "id": "lamna-nasus",
@@ -7101,7 +7122,8 @@ window.WIKI_DATA = {
           "severity": "low",
           "note": "Less abundant here; low incidental catch in longlines"
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFAQL/xAAdEAACAgIDAQAAAAAAAAAAAAABAgARAyESMUFR/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAT/xAAXEQEBAQEAAAAAAAAAAAAAAAAAEgER/9oADAMBAAIRAxEAPwCbiYHfIA9bjIUswAZKO7LipLubZ+yjqacM5GCOVBDV6ITnCishLCzcIoh//9k="
     },
     {
       "id": "alopias-vulpinus",
@@ -7387,7 +7409,8 @@ window.WIKI_DATA = {
           "severity": "medium",
           "note": "Extensive longline effort for tuna and swordfish; targeted in some local fisheries for fins and meat"
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMFAgT/xAAcEAACAgIDAAAAAAAAAAAAAAAAAQIRAyExQnH/xAAVAQEBAAAAAAAAAAAAAAAAAAABA//EABcRAQEBAQAAAAAAAAAAAAAAAAEAERL/2gAMAwEAAhEDEQA/AJ2PJTtsesl9o1xuROTNWyrrRAumbSm1p+MBUFa2A7HJf//Z"
     },
     {
       "id": "alopias-pelagicus",
@@ -7680,7 +7703,8 @@ window.WIKI_DATA = {
           "severity": "medium",
           "note": "Longlines targeting swordfish and tuna; IATTC manages tuna but has no dedicated pelagic thresher provisions"
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFAQP/xAAcEAEAAwEAAwEAAAAAAAAAAAABAAIRAyEjUUH/xAAVAQEBAAAAAAAAAAAAAAAAAAAABP/EABgRAAMBAQAAAAAAAAAAAAAAAAABEhFB/9oADAMBAAIRAxEAPwCXz65bVjNU6B7KGuZsl6/Zuv2VaSJLo1a5WyCIfpCceYWrqb5hFCD/2Q=="
     },
     {
       "id": "alopias-superciliosus",
@@ -8014,7 +8038,8 @@ window.WIKI_DATA = {
           "severity": "low",
           "note": "Protected in Australian waters; strong MPA network provides meaningful refuge"
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAABAABBf/EACAQAAICAQMFAAAAAAAAAAAAAAECAAMREzFRITNBYoH/xAAXAQADAQAAAAAAAAAAAAAAAAABAgME/8QAGREBAQADAQAAAAAAAAAAAAAAAQACETES/9oADAMBAAIRAxEAPwANJrYZ1Aje2x+xQrrK99DjyDOODNyeZbIXjZzR0l3harCqurjldpQyjI6yjDDyX//Z"
     },
     {
       "id": "eucrossorhinus-dasypogon",
@@ -8380,7 +8405,8 @@ window.WIKI_DATA = {
           "severity": "medium",
           "note": "California population historically collapsed; lower fishing pressure now but no recovery observed"
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAQFA//EAB0QAQACAgIDAAAAAAAAAAAAAAEAAgMRIUEjUZH/xAAWAQEBAQAAAAAAAAAAAAAAAAAEAAH/xAAZEQADAAMAAAAAAAAAAAAAAAAAARIRQVH/2gAMAwEAAhEDEQA/AJuK9XlvWvXMaSiHnx/eJIFht9xLy9hElwavkK2QsIdkJjjC1dpuE2ig/9k="
     },
     {
       "id": "hemiscyllium-ocellatum",
@@ -8738,7 +8764,8 @@ window.WIKI_DATA = {
           "severity": "medium",
           "note": "Protected species but shark nets along KwaZulu-Natal coast continue to catch individuals; monitoring in place"
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAMFBP/EAB4QAAICAgIDAAAAAAAAAAAAAAABAhEDIRJhIjFx/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBP/EABkRAQEBAAMAAAAAAAAAAAAAAAEAEhFBUf/aAAwDAQACEQMRAD8Am48i92k+x3O68o77JybC2XeXuzgeWqc1GTV38AVjSlG2r2AdS5L/2Q=="
     },
     {
       "id": "heterodontus-francisci",
@@ -8997,7 +9024,8 @@ window.WIKI_DATA = {
           "severity": "medium",
           "note": "Artisanal fisheries operate with less regulatory oversight; some incidental capture in bottom-set gear"
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMFAgT/xAAeEAACAgICAwAAAAAAAAAAAAAAAQIRAxIhMWGBkv/EABcBAAMBAAAAAAAAAAAAAAAAAAECAwT/xAAZEQEBAQADAAAAAAAAAAAAAAABABESQVH/2gAMAwEAAhEDEQA/AJ2OS72Sfljtm+pQ+iamzVuuy7r3ZwPLoyS1k1a9MBeOKlG2r5AbYcS//9k="
     },
     {
       "id": "chlamydoselachus-anguineus",
@@ -9291,7 +9319,8 @@ window.WIKI_DATA = {
           "description": "The frilled shark is one of the least-known and most distinctive sharks alive. Sharing accurate, science-based information about deep-sea biodiversity builds public support for protecting habitats we rarely see.",
           "link": null
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMEAQX/xAAcEAADAAIDAQAAAAAAAAAAAAAAARECAwQhUUH/xAAVAQEBAAAAAAAAAAAAAAAAAAABBP/EABkRAQEBAAMAAAAAAAAAAAAAAAEAEhFBUf/aAAwDAQACEQMRAD8A5WG6dwY+TfjIK/Ta/Sl5e6UDypexUBWtLLGtXsB1GC//2Q=="
     },
     {
       "id": "mitsukurina-owstoni",
@@ -9548,7 +9577,8 @@ window.WIKI_DATA = {
           "severity": "low",
           "note": "Very limited documented interaction; some bycatch possible in Patagonian toothfish longline operations on deep seamounts"
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAQFA//EAB4QAQACAwACAwAAAAAAAAAAAAEAAgMRIRNRFDFB/8QAFgEBAQEAAAAAAAAAAAAAAAAABAEC/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEhExUf/aAAwDAQACEQMRAD8AnYr0etyr9dI3Yw+MfkVH95yRhYbfcS89CpRW0NWyBZB2e4THGFq7TfYS2M1R/9k="
     },
     {
       "id": "megachasma-pelagios",
@@ -9842,7 +9872,8 @@ window.WIKI_DATA = {
           "description": "Filter feeders like the megamouth shark are directly exposed to microplastic pollution during their nightly surface feeding. Reducing single-use plastics and supporting ocean cleanup initiatives directly benefits this and other filter-feeding species.",
           "link": null
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAQFA//EABsQAQADAQEBAQAAAAAAAAAAAAEAAhEDMSEi/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQT/xAAYEQEBAQEBAAAAAAAAAAAAAAABABESUf/aAAwDAQACEQMRAD8Am8+h7oMZr+/g7pvp5JesFZQ60wHk10sUu1HchMeYWrqb9hHY5L//2Q=="
     },
     {
       "id": "odontaspis-ferox",
@@ -10153,7 +10184,8 @@ window.WIKI_DATA = {
           "severity": "low",
           "note": "Occasional bycatch; traditional hákarl harvest at small commercial scale; better-regulated fisheries than elsewhere in range"
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMFAQT/xAAdEAEAAgICAwAAAAAAAAAAAAABAAIRIQNREjEz/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgME/8QAGREBAQEAAwAAAAAAAAAAAAAAAQAREkFR/9oADAMBAAIRAxEAPwCdx3r7bYXW4/zon0JLFm5e5d17swHl03uVsgidkIrjC1cu9wi2PAv/2Q=="
     },
     {
       "id": "somniosus-pacificus",
@@ -10479,7 +10511,8 @@ window.WIKI_DATA = {
           "description": "Cookiecutter sharks live almost entirely in international waters with little formal protection. Support ratification and enforcement of the High Seas Treaty (BBNJ Agreement) to extend conservation measures to open-ocean habitats.",
           "link": null
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMEAgX/xAAaEAACAwEBAAAAAAAAAAAAAAAAAQIRIQNC/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQP/xAAZEQEBAQADAAAAAAAAAAAAAAABABESQVH/2gAMAwEAAhEDEQA/AObz6Vo59HWOL1eiFGrdFnXuiB5USkkwFwSa0B2OJf/Z"
     },
     {
       "id": "squalus-acanthias",
@@ -10769,7 +10802,8 @@ window.WIKI_DATA = {
           "severity": "medium",
           "note": "Modest directed fishery and bycatch; Pacific stocks better monitored but still under pressure"
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQF/8QAHhAAAgICAgMAAAAAAAAAAAAAAQIAEQMhMVEzQVL/xAAWAQEBAQAAAAAAAAAAAAAAAAAEAQL/xAAYEQADAQEAAAAAAAAAAAAAAAAAARFREv/aAAwDAQACEQMRAD8AzsTKaY5FW9blJCkefFz9TIs9xZ7iXdCpLCp3CsQGDAexEnXY3EtM8o//2Q=="
     },
     {
       "id": "carcharhinus-perezi",
@@ -11169,7 +11203,8 @@ window.WIKI_DATA = {
           "severity": "medium",
           "note": "Artisanal fishing fleets operate without the same bag-limit protections; some directed and incidental catch"
         }
-      ]
+      ],
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMEAQX/xAAeEAACAgICAwAAAAAAAAAAAAABAgARAyESMTJxkv/EABYBAQEBAAAAAAAAAAAAAAAAAAMBAv/EABgRAAMBAQAAAAAAAAAAAAAAAAABEVES/9oADAMBAAIRAxEAPwCDEynfIKetx9gjzT6nNE2zGd0BJYU5aRyAyn0bhFIoK2RcJqk5R//Z"
     },
     {
       "id": "carcharhinus-albimarginatus",

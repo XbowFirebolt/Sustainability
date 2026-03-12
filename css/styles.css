@@ -1467,6 +1467,29 @@ body.no-map {
   font-size: 4rem;
   position: relative;
   flex-shrink: 0;
+  overflow: hidden;
+}
+
+.card-img-lqip {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px) saturate(1.2);
+  transform: scale(1.05);
+}
+
+.card-img-full {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.card-img-full.loaded {
+  opacity: 1;
 }
 
 .species-card-body {
