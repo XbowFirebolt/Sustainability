@@ -1777,7 +1777,13 @@ function createSpeciesCard(species, q, favIds) {
   imgArea.className = "species-card-image";
   const cardPhoto = species.photos && species.photos[0];
   if (cardPhoto) {
-    applyPhotoBg(imgArea, cardPhoto);
+    imgArea.dataset.lazySrc = cardPhoto;
+    if (SILHOUETTE_FALLBACK) {
+      applySilhouetteBg(imgArea);
+    } else {
+      imgArea.textContent = species.emoji || wikiProjectEmoji;
+      imgArea.style.background = "linear-gradient(135deg, #0a0a0a, var(--color-primary))";
+    }
   } else if (SILHOUETTE_FALLBACK) {
     applySilhouetteBg(imgArea);
   } else {
@@ -2282,7 +2288,11 @@ function renderNextPage() {
     }
     grid.insertBefore(el, sentinel);
   }
-  newCards.forEach((el) => window._wikiLifeObserver && window._wikiLifeObserver.observe(el));
+  newCards.forEach((el) => {
+    if (window._wikiLifeObserver) window._wikiLifeObserver.observe(el);
+    const imgArea = el.querySelector(".species-card-image[data-lazy-src]");
+    if (imgArea && window._wikiImageObserver) window._wikiImageObserver.observe(imgArea);
+  });
   if (_renderOffset >= _renderQueue.length) {
     sentinel.remove();
     if (window._wikiSentinelObserver) window._wikiSentinelObserver.disconnect();
@@ -2452,6 +2462,16 @@ function renderWikiGrid(query) {
       window._wikiLifeObserver.unobserve(entry.target);
     });
   }, { threshold: 0.15 });
+
+  if (window._wikiImageObserver) window._wikiImageObserver.disconnect();
+  window._wikiImageObserver = new IntersectionObserver((entries) => {
+    entries.filter(e => e.isIntersecting).forEach(entry => {
+      const el = entry.target;
+      applyPhotoBg(el, el.dataset.lazySrc);
+      delete el.dataset.lazySrc;
+      window._wikiImageObserver.unobserve(el);
+    });
+  }, { rootMargin: "200px" });
 
   // Build render queue and paginate via sentinel
   if (window._wikiSentinelObserver) window._wikiSentinelObserver.disconnect();
