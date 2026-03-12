@@ -2270,6 +2270,7 @@ function renderNextPage() {
   const sentinel = document.getElementById("wiki-page-sentinel");
   if (!sentinel) return;
   const { q, favIds } = _renderMeta;
+  const fragment = document.createDocumentFragment();
   const newCards = [];
   let cardsRendered = 0;
   while (_renderOffset < _renderQueue.length && cardsRendered < PAGE_SIZE) {
@@ -2286,8 +2287,9 @@ function renderNextPage() {
       cardsRendered++;
       newCards.push(el);
     }
-    grid.insertBefore(el, sentinel);
+    fragment.appendChild(el);
   }
+  grid.insertBefore(fragment, sentinel);
   newCards.forEach((el) => {
     if (window._wikiLifeObserver) window._wikiLifeObserver.observe(el);
     const imgArea = el.querySelector(".species-card-image[data-lazy-src]");
@@ -2489,7 +2491,7 @@ function renderWikiGrid(query) {
   if (activeSentinel) {
     window._wikiSentinelObserver = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) renderNextPage();
-    }, { rootMargin: "300px" });
+    }, { rootMargin: "800px" });
     window._wikiSentinelObserver.observe(activeSentinel);
   }
 
