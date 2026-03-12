@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mockup — Status History Timeline</title>
+  <style>
+    :root {
+      --color-primary: #2d6a2d;
+      --color-bg: #f4f8f4;
+      --color-text: #1a2e1a;
+      --color-text-muted: #5a8a5a;
+      --color-text-dim: #4a6a4a;
+      --color-border: #e8f0e8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #c8d8c8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+      gap: 2rem;
+    }
+
+    h2 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #1a2e1a;
+      opacity: 0.55;
+      align-self: flex-start;
+      max-width: 560px;
+      width: 100%;
+    }
+
+    /* ── Section box (matches wiki.js createSectionBox style) ── */
+    .section-box {
+      width: 100%;
+      max-width: 560px;
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .section-box-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1rem;
+      border-bottom: 1px solid var(--color-border);
+      background: #f9fcf9;
+    }
+    .section-box-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-text-dim);
+    }
+    .section-box-body {
+      padding: 1rem 1.1rem;
+    }
+    .section-label {
+      font-size: 0.67rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    /* ── Timeline ── */
+    .status-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .timeline-entry {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+    }
+
+    /* Left column: connector line + node */
+    .timeline-rail {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 2.5rem;
+      flex-shrink: 0;
+    }
+    .rail-top-line {
+      width: 2px;
+      flex: 0 0 0.65rem;
+      background: #d4e4d4;
+    }
+    .rail-top-line.hidden { background: transparent; }
+    .rail-node {
+      width: 0.8rem;
+      height: 0.8rem;
+      border-radius: 50%;
+      border: 2px solid currentColor;
+      background: white;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+    .rail-bottom-line {
+      width: 2px;
+      flex: 1;
+      min-height: 0.65rem;
+      background: #d4e4d4;
+    }
+    .rail-bottom-line.hidden { background: transparent; }
+
+    /* Transition arrow between entries */
+    .timeline-connector {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      padding: 0 0 0 0;
+    }
+    .connector-rail {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 2.5rem;
+      flex-shrink: 0;
+    }
+    .connector-rail-line {
+      width: 2px;
+      flex: 1;
+      min-height: 0;
+      background: #d4e4d4;
+    }
+    .connector-arrow-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.3rem 0 0.3rem 0;
+      min-height: 2rem;
+    }
+    .connector-arrow-col {
+      width: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .connector-arrow-line-top {
+      width: 2px;
+      height: 0.35rem;
+      background: #d4e4d4;
+    }
+    .connector-arrow-icon {
+      font-size: 0.85rem;
+      line-height: 1;
+      font-weight: 700;
+    }
+    .connector-arrow-line-bot {
+      width: 2px;
+      height: 0.35rem;
+      background: #d4e4d4;
+    }
+    .connector-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      font-style: italic;
+    }
+
+    /* Right: content */
+    .timeline-content {
+      flex: 1;
+      padding: 0.55rem 0 0.55rem 0.65rem;
+    }
+    .timeline-year {
+      font-size: 0.67rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-text-muted);
+      margin-bottom: 0.2rem;
+    }
+    .timeline-status-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.18rem 0.55rem;
+      border-radius: 4px;
+      border: 1px solid currentColor;
+      margin-bottom: 0.2rem;
+    }
+    .timeline-note {
+      font-size: 0.75rem;
+      color: var(--color-text-dim);
+      line-height: 1.45;
+    }
+
+    /* Status colors */
+    .s-cr  { color: #8b1a1a; }
+    .s-en  { color: #a0440a; }
+    .s-vu  { color: #8b6914; }
+    .s-nt  { color: #4a7a30; }
+    .s-lc  { color: #2d6a2d; }
+    .s-dd  { color: #707070; }
+    .s-ne  { color: #505050; }
+
+    .s-cr .timeline-status-badge { background: rgba(139,26,26,0.08); }
+    .s-en .timeline-status-badge { background: rgba(160,68,10,0.08); }
+    .s-vu .timeline-status-badge { background: rgba(139,105,20,0.08); }
+    .s-nt .timeline-status-badge { background: rgba(74,122,48,0.08); }
+    .s-lc .timeline-status-badge { background: rgba(45,106,45,0.08); }
+    .s-dd .timeline-status-badge { background: rgba(112,112,112,0.1); }
+    .s-ne .timeline-status-badge { background: rgba(80,80,80,0.08); }
+
+    /* Arrow direction colors */
+    .arrow-decline  { color: #c0392b; }
+    .arrow-improve  { color: #27ae60; }
+    .arrow-neutral  { color: #888; }
+    .arrow-initial  { color: #aaa; }
+
+    .label-decline  { color: #c0392b; }
+    .label-improve  { color: #27ae60; }
+    .label-neutral  { color: #888; }
+
+    /* ── Separator between examples ── */
+    .example-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #1a2e1a;
+      opacity: 0.45;
+      align-self: flex-start;
+      max-width: 560px;
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Mockup — Conservation History Timeline</h2>
+
+  <!-- ─────────────────────────────────────────────────────── -->
+  <!-- Example A: Oceanic Whitetip — 3 entries, all declining -->
+  <!-- ─────────────────────────────────────────────────────── -->
+  <p class="example-label">Example A — Oceanic Whitetip Shark (declining)</p>
+  <div class="section-box">
+    <div class="section-box-header">
+      <span>📋</span>
+      <span class="section-box-title">Conservation History</span>
+    </div>
+    <div class="section-box-body">
+      <div class="status-timeline">
+
+        <!-- Entry 1: Not Evaluated 1970 (first — no arrow above) -->
+        <div class="timeline-entry">
+          <div class="timeline-rail">
+            <div class="rail-top-line hidden"></div>
+            <div class="rail-node s-ne" style="border-color:#505050;"></div>
+            <div class="rail-bottom-line"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-year">1970</div>
+            <div class="s-ne"><span class="timeline-status-badge">Not Evaluated</span></div>
+            <div class="timeline-note">Species not yet assessed by the IUCN Red List.</div>
+          </div>
+        </div>
+
+        <!-- Connector: NE → VU (decline) -->
+        <div class="connector-arrow-wrap">
+          <div class="connector-arrow-col">
+            <div class="connector-arrow-line-top"></div>
+            <span class="connector-arrow-icon arrow-decline">↓</span>
+            <div class="connector-arrow-line-bot"></div>
+          </div>
+          <span class="connector-label label-decline">Status declined — first assessment</span>
+        </div>
+
+        <!-- Entry 2: Vulnerable 2007 -->
+        <div class="timeline-entry">
+          <div class="timeline-rail">
+            <div class="rail-top-line"></div>
+            <div class="rail-node s-vu" style="border-color:#8b6914;"></div>
+            <div class="rail-bottom-line"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-year">2007</div>
+            <div class="s-vu"><span class="timeline-status-badge">Vulnerable</span></div>
+            <div class="timeline-note">First formal IUCN assessment; dramatic open-ocean decline documented.</div>
+          </div>
+        </div>
+
+        <!-- Connector: VU → CR (decline) -->
+        <div class="connector-arrow-wrap">
+          <div class="connector-arrow-col">
+            <div class="connector-arrow-line-top"></div>
+            <span class="connector-arrow-icon arrow-decline">↓</span>
+            <div class="connector-arrow-line-bot"></div>
+          </div>
+          <span class="connector-label label-decline">Status declined — uplisted two categories</span>
+        </div>
+
+        <!-- Entry 3: Critically Endangered 2019 -->
+        <div class="timeline-entry">
+          <div class="timeline-rail">
+            <div class="rail-top-line"></div>
+            <div class="rail-node s-cr" style="border-color:#8b1a1a;"></div>
+            <div class="rail-bottom-line hidden"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-year">2019 · current</div>
+            <div class="s-cr"><span class="timeline-status-badge">Critically Endangered</span></div>
+            <div class="timeline-note">&gt;98% decline in the Atlantic; pelagic longline bycatch continues unchecked.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ───────────────────────────────────────────────────────── -->
+  <!-- Example B: Mixed — decline then partial recovery attempt -->
+  <!-- ───────────────────────────────────────────────────────── -->
+  <p class="example-label">Example B — Sandbar Shark (mixed trajectory)</p>
+  <div class="section-box">
+    <div class="section-box-header">
+      <span>📋</span>
+      <span class="section-box-title">Conservation History</span>
+    </div>
+    <div class="section-box-body">
+      <div class="status-timeline">
+
+        <!-- Entry 1 -->
+        <div class="timeline-entry">
+          <div class="timeline-rail">
+            <div class="rail-top-line hidden"></div>
+            <div class="rail-node s-ne" style="border-color:#505050;"></div>
+            <div class="rail-bottom-line"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-year">1994</div>
+            <div class="s-ne"><span class="timeline-status-badge">Not Evaluated</span></div>
+            <div class="timeline-note">No formal global assessment at this time.</div>
+          </div>
+        </div>
+
+        <!-- Connector: decline -->
+        <div class="connector-arrow-wrap">
+          <div class="connector-arrow-col">
+            <div class="connector-arrow-line-top"></div>
+            <span class="connector-arrow-icon arrow-decline">↓</span>
+            <div class="connector-arrow-line-bot"></div>
+          </div>
+          <span class="connector-label label-decline">Status declined</span>
+        </div>
+
+        <!-- Entry 2 -->
+        <div class="timeline-entry">
+          <div class="timeline-rail">
+            <div class="rail-top-line"></div>
+            <div class="rail-node s-vu" style="border-color:#8b6914;"></div>
+            <div class="rail-bottom-line"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-year">2005</div>
+            <div class="s-vu"><span class="timeline-status-badge">Vulnerable</span></div>
+            <div class="timeline-note">US Atlantic population estimated down ~60–70% from historical highs.</div>
+          </div>
+        </div>
+
+        <!-- Connector: decline -->
+        <div class="connector-arrow-wrap">
+          <div class="connector-arrow-col">
+            <div class="connector-arrow-line-top"></div>
+            <span class="connector-arrow-icon arrow-decline">↓</span>
+            <div class="connector-arrow-line-bot"></div>
+          </div>
+          <span class="connector-label label-decline">Status declined</span>
+        </div>
+
+        <!-- Entry 3 -->
+        <div class="timeline-entry">
+          <div class="timeline-rail">
+            <div class="rail-top-line"></div>
+            <div class="rail-node s-en" style="border-color:#a0440a;"></div>
+            <div class="rail-bottom-line"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-year">2016</div>
+            <div class="s-en"><span class="timeline-status-badge">Endangered</span></div>
+            <div class="timeline-note">Global reassessment reflects continued declines in the Indo-Pacific.</div>
+          </div>
+        </div>
+
+        <!-- Connector: improved -->
+        <div class="connector-arrow-wrap">
+          <div class="connector-arrow-col">
+            <div class="connector-arrow-line-top"></div>
+            <span class="connector-arrow-icon arrow-improve">↑</span>
+            <div class="connector-arrow-line-bot"></div>
+          </div>
+          <span class="connector-label label-improve">Status improved — US management measures taking effect</span>
+        </div>
+
+        <!-- Entry 4 -->
+        <div class="timeline-entry">
+          <div class="timeline-rail">
+            <div class="rail-top-line"></div>
+            <div class="rail-node s-vu" style="border-color:#8b6914;"></div>
+            <div class="rail-bottom-line hidden"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-year">2023 · current</div>
+            <div class="s-vu"><span class="timeline-status-badge">Vulnerable</span></div>
+            <div class="timeline-note">US Atlantic stock recovering under quota limits; global picture remains mixed.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ─────────────────────────────────────── -->
+  <!-- Example C: Only 2 entries (minimal)    -->
+  <!-- ─────────────────────────────────────── -->
+  <p class="example-label">Example C — Great White Shark (minimal data)</p>
+  <div class="section-box">
+    <div class="section-box-header">
+      <span>📋</span>
+      <span class="section-box-title">Conservation History</span>
+    </div>
+    <div class="section-box-body">
+      <div class="status-timeline">
+
+        <div class="timeline-entry">
+          <div class="timeline-rail">
+            <div class="rail-top-line hidden"></div>
+            <div class="rail-node s-ne" style="border-color:#505050;"></div>
+            <div class="rail-bottom-line"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-year">1970</div>
+            <div class="s-ne"><span class="timeline-status-badge">Not Evaluated</span></div>
+          </div>
+        </div>
+
+        <div class="connector-arrow-wrap">
+          <div class="connector-arrow-col">
+            <div class="connector-arrow-line-top"></div>
+            <span class="connector-arrow-icon arrow-decline">↓</span>
+            <div class="connector-arrow-line-bot"></div>
+          </div>
+          <span class="connector-label label-decline">Status declined — first assessment</span>
+        </div>
+
+        <div class="timeline-entry">
+          <div class="timeline-rail">
+            <div class="rail-top-line"></div>
+            <div class="rail-node s-vu" style="border-color:#8b6914;"></div>
+            <div class="rail-bottom-line hidden"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-year">1996 · current</div>
+            <div class="s-vu"><span class="timeline-status-badge">Vulnerable</span></div>
+            <div class="timeline-note">Estimated ~3,500 adults globally; slow reproduction limits recovery.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

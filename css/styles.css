@@ -2510,6 +2510,119 @@ body.no-map {
   opacity: 0.7;
 }
 
+/* ── Conservation History Timeline ── */
+.status-timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-entry {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  min-height: 2.5rem;
+}
+
+.timeline-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 2rem;
+  flex-shrink: 0;
+}
+
+.timeline-rail-line {
+  width: 2px;
+  flex: 1;
+  background: var(--color-border);
+  min-height: 0.5rem;
+}
+
+.timeline-rail-line--hidden {
+  background: transparent;
+}
+
+.timeline-node {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  background: var(--color-bg);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-content {
+  flex: 1;
+  padding: 0.35rem 0 0.35rem 0.6rem;
+}
+
+.timeline-year {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.2rem;
+}
+
+.timeline-badge {
+  display: inline-block;
+  font-size: 0.69rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid currentColor;
+}
+
+.timeline-connector {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  min-height: 1.75rem;
+}
+
+.timeline-connector-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 2rem;
+  flex-shrink: 0;
+  align-self: stretch;
+}
+
+.timeline-connector-line {
+  width: 2px;
+  flex: 1;
+  background: var(--color-border);
+}
+
+.timeline-connector-icon {
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.timeline-connector-label {
+  font-size: 0.68rem;
+  font-style: italic;
+  padding-left: 0.6rem;
+  line-height: 1.35;
+}
+
+.timeline-connector--decline .timeline-connector-icon,
+.timeline-connector--decline .timeline-connector-label { color: #c0390a; }
+
+.timeline-connector--improve .timeline-connector-icon,
+.timeline-connector--improve .timeline-connector-label { color: #2a7a2a; }
+
+.timeline-connector--neutral .timeline-connector-icon,
+.timeline-connector--neutral .timeline-connector-label { color: var(--color-text-muted); }
+
 /* ── Health Metrics — right column (value + optional links) ── */
 .tab-health-right {
   display: flex;

@@ -1432,6 +1432,127 @@ function renderRegionGrid(container, regions) {
   container.appendChild(grid);
 }
 
+// STATUS_ORDER indices 0–6 are ranked (worse → better); 7–8 are unranked (DD, NE)
+const STATUS_RANK_LIMIT = 7;
+
+function getStatusRank(statusLabel) {
+  const idx = STATUS_ORDER.findIndex((s) => s.label === statusLabel);
+  return idx < STATUS_RANK_LIMIT ? idx : null; // null = unranked
+}
+
+function renderStatusHistory(container, statusHistory) {
+  if (!Array.isArray(statusHistory) || statusHistory.length < 1) return;
+
+  const sorted = [...statusHistory].sort((a, b) => a.year - b.year);
+  const timeline = document.createElement("div");
+  timeline.className = "status-timeline";
+
+  sorted.forEach((entry, i) => {
+    const isLast = i === sorted.length - 1;
+    const statusMeta = STATUS_ORDER.find((s) => s.label === entry.status);
+    const color = statusMeta ? statusMeta.color : "var(--color-text-muted)";
+    const bg    = statusMeta ? statusMeta.bg    : "rgba(0,0,0,0.07)";
+
+    // ── Entry row ──────────────────────────────────────────────
+    const row = document.createElement("div");
+    row.className = "timeline-entry";
+
+    const rail = document.createElement("div");
+    rail.className = "timeline-rail";
+
+    const topLine = document.createElement("div");
+    topLine.className = "timeline-rail-line" + (i === 0 ? " timeline-rail-line--hidden" : "");
+
+    const node = document.createElement("div");
+    node.className = "timeline-node";
+    node.style.color = color;
+
+    const botLine = document.createElement("div");
+    botLine.className = "timeline-rail-line" + (isLast ? " timeline-rail-line--hidden" : "");
+
+    rail.appendChild(topLine);
+    rail.appendChild(node);
+    rail.appendChild(botLine);
+
+    const content = document.createElement("div");
+    content.className = "timeline-content";
+
+    const yearEl = document.createElement("div");
+    yearEl.className = "timeline-year";
+    yearEl.textContent = isLast ? `${entry.year} · current` : String(entry.year);
+
+    const badge = document.createElement("span");
+    badge.className = "timeline-badge";
+    badge.style.color = color;
+    badge.style.background = bg;
+    badge.style.borderColor = color + "55";
+    badge.textContent = entry.status;
+
+    content.appendChild(yearEl);
+    content.appendChild(badge);
+    row.appendChild(rail);
+    row.appendChild(content);
+    timeline.appendChild(row);
+
+    // ── Connector to next entry ─────────────────────────────────
+    if (!isLast) {
+      const next = sorted[i + 1];
+      const currRank = getStatusRank(entry.status);
+      const nextRank = getStatusRank(next.status);
+
+      let direction, arrow, labelText;
+      if (currRank === null || nextRank === null) {
+        direction = "neutral";
+        arrow = "→";
+        labelText = currRank === null ? "First formal assessment" : "Reassessed";
+      } else if (nextRank < currRank) {
+        // lower index = more threatened = declined
+        const steps = currRank - nextRank;
+        direction = "decline";
+        arrow = "↓";
+        labelText = steps === 1 ? "Status declined" : `Status declined — ${steps} categories`;
+      } else if (nextRank > currRank) {
+        const steps = nextRank - currRank;
+        direction = "improve";
+        arrow = "↑";
+        labelText = steps === 1 ? "Status improved" : `Status improved — ${steps} categories`;
+      } else {
+        direction = "neutral";
+        arrow = "→";
+        labelText = "Status unchanged";
+      }
+
+      const connector = document.createElement("div");
+      connector.className = `timeline-connector timeline-connector--${direction}`;
+
+      const connRail = document.createElement("div");
+      connRail.className = "timeline-connector-rail";
+
+      const lineTop = document.createElement("div");
+      lineTop.className = "timeline-connector-line";
+      const icon = document.createElement("div");
+      icon.className = "timeline-connector-icon";
+      icon.textContent = arrow;
+      const lineBot = document.createElement("div");
+      lineBot.className = "timeline-connector-line";
+
+      connRail.appendChild(lineTop);
+      connRail.appendChild(icon);
+      connRail.appendChild(lineBot);
+
+      const label = document.createElement("span");
+      label.className = "timeline-connector-label";
+      label.textContent = labelText;
+
+      connector.appendChild(connRail);
+      connector.appendChild(label);
+      timeline.appendChild(connector);
+    }
+  });
+
+  container.appendChild(timeline);
+}
+
 function renderHealthMetrics(species) {
   const panel = document.getElementById("tab-panel-health");
   panel.innerHTML = "";
@@ -1480,6 +1601,13 @@ function renderHealthMetrics(species) {
     }
 
     panel.appendChild(box);
+  }
+
+  // ── Conservation History Timeline ──────────────────────────────
+  if (Array.isArray(species.statusHistory) && species.statusHistory.length) {
+    const histBox = createSectionBox("📋", "Conservation History");
+    renderStatusHistory(histBox.querySelector(".section-box-body"), species.statusHistory);
+    panel.appendChild(histBox);
   }
 
   // ── Key Indicators list ────────────────────────────────────────
