@@ -64,8 +64,8 @@ Check off items as they're completed. Add notes inline as needed.
 - [ ] **Dark mode support** — respect `prefers-color-scheme: dark` with an adjusted palette; add a manual toggle to the header
 - [x] **Status progression visualization in statusHistory** — in the conservation history timeline, show directional arrows between status changes (↑ improved / ↓ declined) with color-coded severity
 - [x] **Animated population trend chart** — draw the chart line from left to right when the Threats/Health Metrics tab first opens, instead of appearing all at once
-- [ ] **Photo loading blur-up** — load a tiny low-res placeholder first, then swap to full image (LQIP effect) to reduce jarring blank-to-image flash
-- [ ] **Compact list view improvements** — in list view mode, add a small inline ring/bar and diet+habitat badges so it's more information-dense without needing to open the modal
+- [x] **Photo loading blur-up** — load a tiny low-res placeholder first, then swap to full image (LQIP effect) to reduce jarring blank-to-image flash
+- [x] **Compact list view improvements** — in list view mode, add a small inline ring/bar and diet+habitat badges so it's more information-dense without needing to open the modal
 - [ ] **Habitat map in Overview tab** — if `habitatImage` is present, embed it in the Overview tab alongside the description (currently only viewable in gallery)
 
 ---
