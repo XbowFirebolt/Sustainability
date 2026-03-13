@@ -72,7 +72,7 @@ Check off items as they're completed. Add notes inline as needed.
 
 ## Organization & Navigation
 
-- [ ] **Breadcrumb in modal** — show the active filter context users came from (e.g., "Filtered: Critically Endangered › 4 of 12") with prev/next respecting filter scope
+- [x] **Breadcrumb in modal** — show the active filter context users came from (e.g., "Filtered: Critically Endangered › 4 of 12") with prev/next respecting filter scope
 - [ ] **Open Graph / social meta tags** — add dynamic `og:title`, `og:description`, and `og:image` tags (based on `?species=` deep link) for rich previews when sharing links in Slack, Twitter, etc.
 - [ ] **"About this wiki" page or modal** — brief explainer of data sources, tier definitions, lifePercent methodology, and how to contribute/report errors
 - [ ] **Contribution / error-report link** — button or small link in modal footer: "Suggest a correction" that deep-links to a GitHub issue or form

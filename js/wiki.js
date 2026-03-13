@@ -456,15 +456,48 @@ function closeSpeciesModal() {
   }
 }
 
+function toTitleCase(str) {
+  return str.replace(/[-_]/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+function getFilterContextLabel() {
+  const parts = [];
+  const q = wikiSearch.value.trim();
+  if (q) parts.push(`"${q}"`);
+  if (showFavoritesOnly) parts.push("Favorites");
+  if (activeStatusFilters.size === 1) parts.push([...activeStatusFilters][0]);
+  else if (activeStatusFilters.size > 1) parts.push(`${activeStatusFilters.size} Statuses`);
+  if (activeHabitatFilters.size === 1) parts.push(HABITAT_BADGE[[...activeHabitatFilters][0]]?.label ?? toTitleCase([...activeHabitatFilters][0]));
+  else if (activeHabitatFilters.size > 1) parts.push(`${activeHabitatFilters.size} Habitats`);
+  if (activeDietFilters.size === 1) parts.push(DIET_BADGE[[...activeDietFilters][0]]?.label ?? toTitleCase([...activeDietFilters][0]));
+  else if (activeDietFilters.size > 1) parts.push(`${activeDietFilters.size} Diets`);
+  if (activeRegionFilters.size === 1) parts.push(toTitleCase([...activeRegionFilters][0]));
+  else if (activeRegionFilters.size > 1) parts.push(`${activeRegionFilters.size} Regions`);
+  if (activeTagFilters.size === 1) parts.push(toTitleCase([...activeTagFilters][0]));
+  else if (activeTagFilters.size > 1) parts.push(`${activeTagFilters.size} Tags`);
+  if (activePhotoFilters.has("has-photos")) parts.push("With Photos");
+  return parts.length > 0 ? parts.join(" · ") : null;
+}
+
 function updateModalNavState() {
   const prevBtn = document.getElementById("modal-prev");
   const nextBtn = document.getElementById("modal-next");
   const counter = document.getElementById("modal-counter");
+  const filterLabel = document.getElementById("modal-filter-label");
   const total = currentFilteredSorted.length;
   const canNav = total > 1 && currentModalIndex >= 0;
   prevBtn.disabled = !canNav;
   nextBtn.disabled = !canNav;
   counter.textContent = currentModalIndex >= 0 ? `${currentModalIndex + 1} / ${total}` : "";
+  if (filterLabel) {
+    const label = getFilterContextLabel();
+    if (label && currentModalIndex >= 0) {
+      filterLabel.textContent = `Filtered by ${label}`;
+      filterLabel.hidden = false;
+    } else {
+      filterLabel.hidden = true;
+    }
+  }
 }
 
 function navigateModal(dir) {

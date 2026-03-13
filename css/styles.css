@@ -1805,6 +1805,13 @@ body.no-map {
   opacity: 0.65;
 }
 
+.modal-filter-label {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  padding: 0.2rem 1rem 0;
+  letter-spacing: 0.02em;
+}
+
 .modal-nav-counter {
   font-size: 0.72rem;
   color: var(--color-text-dim);
