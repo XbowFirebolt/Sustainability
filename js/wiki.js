@@ -365,6 +365,7 @@ function openSpeciesModal(species, cardEl, tabKey = "overview") {
   activateTab(tabKey);
   const currentQ = wikiSearch.value.trim().toLowerCase();
   renderTabCached("tab-panel-overview", `overview:${species.id}`, () => renderOverview(species));
+  animateOverviewBar();
   renderTabCached("tab-panel-vital",    `vital:${species.id}:${unitMode}`, () => renderVitalSigns(species));
   renderTabCached("tab-panel-health",   `health:${species.id}`, () => renderHealthMetrics(species));
   if (tabKey === "health") animateHealthChart();
@@ -854,6 +855,7 @@ function activateTab(tabKey) {
 document.querySelectorAll(".species-tab").forEach((btn) => {
   btn.addEventListener("click", () => {
     activateTab(btn.dataset.tab);
+    if (btn.dataset.tab === "overview") animateOverviewBar();
     if (btn.dataset.tab === "health") animateHealthChart();
     if (currentModalSpecies) {
       const url = new URL(window.location);
@@ -951,6 +953,7 @@ function renderOverview(species) {
   fill.className = "overview-status-fill";
   fill.style.width = "0%";
   fill.style.background = barColor;
+  fill.dataset.targetPct = species.lifePercent;
 
   const pctHint = document.createElement("div");
   pctHint.className = "overview-status-pct-hint";
@@ -987,19 +990,6 @@ function renderOverview(species) {
   statusBar.appendChild(fillWrap);
   panel.appendChild(statusBar);
 
-  // Animate bar fill and count-up number after modal open settles
-  const _animTarget = species.lifePercent;
-  setTimeout(() => {
-    fill.style.width = _animTarget + "%";
-    const _animStart = performance.now();
-    const _animDuration = 800;
-    (function tick(now) {
-      const progress = Math.min((now - _animStart) / _animDuration, 1);
-      const eased = 1 - Math.pow(1 - progress, 2);
-      pct.textContent = "Population health: " + Math.round(eased * _animTarget) + "%";
-      if (progress < 1) requestAnimationFrame(tick);
-    })(performance.now());
-  }, 280);
 
   // Fun fact
   if (species.funFact) {
@@ -1489,6 +1479,30 @@ function renderPopulationChart(container, data, statusHistory) {
       container.appendChild(legend);
     }
   }
+}
+
+// Animates the population health bar in the overview tab.
+// Called whenever the overview panel becomes visible (initial open or cache restore).
+// Works on both freshly rendered and cache-restored DOMs via dataset.targetPct.
+function animateOverviewBar() {
+  const fill = document.querySelector("#tab-panel-overview .overview-status-fill");
+  if (!fill) return;
+  const target = +(fill.dataset.targetPct ?? 0);
+  const pct = document.querySelector("#tab-panel-overview .overview-status-pct");
+  fill.style.width = "0%";
+  setTimeout(() => {
+    fill.style.width = target + "%";
+    if (pct) {
+      const duration = 800;
+      const start = performance.now();
+      (function tick(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 2);
+        pct.textContent = "Population health: " + Math.round(eased * target) + "%";
+        if (progress < 1) requestAnimationFrame(tick);
+      })(performance.now());
+    }
+  }, 280);
 }
 
 // Animates the population trend chart in the health tab.
