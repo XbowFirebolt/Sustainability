@@ -2418,10 +2418,39 @@ function createListRow(species, q, favIds) {
   return row;
 }
 
+function editDistance(a, b) {
+  const m = a.length, n = b.length;
+  const dp = [];
+  for (let i = 0; i <= m; i++) {
+    dp[i] = [i];
+    for (let j = 1; j <= n; j++) dp[i][j] = i === 0 ? j : 0;
+  }
+  for (let i = 1; i <= m; i++) {
+    for (let j = 1; j <= n; j++) {
+      dp[i][j] = a[i-1] === b[j-1] ? dp[i-1][j-1] : 1 + Math.min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]);
+    }
+  }
+  return dp[m][n];
+}
+
+// Returns true if every token in query fuzzy-matches against text.
+// Short tokens (1-2 chars) require exact inclusion; longer tokens allow 1 edit.
+function fuzzyMatchText(text, query) {
+  const t = text.toLowerCase();
+  if (t.includes(query)) return true;
+  const queryTokens = query.split(/\s+/).filter(Boolean);
+  const textTokens = t.split(/\s+/);
+  return queryTokens.every((qt) => {
+    if (t.includes(qt)) return true;
+    if (qt.length <= 2) return false;
+    return textTokens.some((tt) => editDistance(qt, tt) <= 1);
+  });
+}
+
 function matchesPrimary(s, q) {
   return (
-    s.commonName.toLowerCase().includes(q) ||
-    s.scientificName.toLowerCase().includes(q) ||
+    fuzzyMatchText(s.commonName, q) ||
+    fuzzyMatchText(s.scientificName, q) ||
     s.statusLabel.toLowerCase().includes(q)
   );
 }
@@ -2731,7 +2760,7 @@ function renderAutocomplete(q) {
   }
   const ql = query.toLowerCase();
   const suggestions = WIKI_DATA.items
-    .filter((s) => s.commonName.toLowerCase().includes(ql) || s.scientificName.toLowerCase().includes(ql))
+    .filter((s) => fuzzyMatchText(s.commonName, ql) || fuzzyMatchText(s.scientificName, ql))
     .slice(0, 5);
   if (!suggestions.length) {
     autocompleteList.hidden = true;
@@ -2740,7 +2769,7 @@ function renderAutocomplete(q) {
   }
   autocompleteList.innerHTML = suggestions
     .map((s) => {
-      const sciMatches = s.scientificName.toLowerCase().includes(ql);
+      const sciMatches = fuzzyMatchText(s.scientificName, ql);
       const sciHint = sciMatches
         ? `<span class="search-ac-sci">(${highlightMatchInline(s.scientificName, query)})</span>`
         : "";

@@ -47,7 +47,7 @@ Check off items as they're completed. Add notes inline as needed.
 
 ### Search & Filtering
 
-- [ ] **Fuzzy search / typo tolerance** — search currently requires exact substrings; add simple fuzzy matching (e.g., "wale shark" → Whale Shark)
+- [x] **Fuzzy search / typo tolerance** — search currently requires exact substrings; add simple fuzzy matching (e.g., "wale shark" → Whale Shark)
 - [x] **Scientific name search** — ensure search matches `scientificName` field and shows "(Carcharodon carcharias)" hint in autocomplete suggestions
 
 ### Data Export & Integration
