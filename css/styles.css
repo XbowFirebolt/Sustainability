@@ -2136,6 +2136,13 @@ body.no-map {
   color: #fff;
 }
 
+.overview-geographic-range {
+  margin: 0.6rem 0 0;
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+}
+
 /* ── Threat groups ── */
 .threat-group {
   margin-bottom: 1.1rem;

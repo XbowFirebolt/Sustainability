@@ -1057,22 +1057,32 @@ function renderOverview(species) {
   }
 
   // Habitat Distribution section box
-  if (species.habitatImage) {
+  if (species.habitatImage || species.geographicRangeDescription) {
     const box = createSectionBox("🗺️", "Habitat Distribution");
     const body = box.querySelector(".section-box-body");
 
-    const img = document.createElement("img");
-    img.className = "overview-habitat-img";
-    img.src = species.habitatImage;
-    img.alt = "Habitat distribution map for " + species.commonName;
+    if (species.habitatImage) {
+      const img = document.createElement("img");
+      img.className = "overview-habitat-img";
+      img.src = species.habitatImage;
+      img.alt = "Habitat distribution map for " + species.commonName;
 
-    const mapLink = document.createElement("a");
-    mapLink.className = "overview-map-link";
-    mapLink.href = "index.html";
-    mapLink.textContent = "View on Map \u2192";
+      const mapLink = document.createElement("a");
+      mapLink.className = "overview-map-link";
+      mapLink.href = "index.html";
+      mapLink.textContent = "View on Map \u2192";
 
-    body.appendChild(img);
-    body.appendChild(mapLink);
+      body.appendChild(img);
+      body.appendChild(mapLink);
+    }
+
+    if (species.geographicRangeDescription) {
+      const p = document.createElement("p");
+      p.className = "overview-geographic-range";
+      p.textContent = species.geographicRangeDescription;
+      body.appendChild(p);
+    }
+
     panel.appendChild(box);
   }
 

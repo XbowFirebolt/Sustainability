@@ -21,7 +21,7 @@ Check off items as they're completed. Add notes inline as needed.
 ### Metadata & Tracking
 
 - [ ] **Overhaul species-tracker.md** — currently shows ~56 species, but config.json has ~100; rebuild the table to accurately track all species, tier, and what's missing per species
-- [ ] **Add geographic range description field** — `geographicRangeDescription` string for each species, shown in Overview tab
+- [x] **Add geographic range description field** — `geographicRangeDescription` string for each species, shown in Overview tab
 - [ ] **Add `conservationActions` field** — list international agreements protecting the species (CITES appendix, CMS, etc.) with current status; distinct from actionItems (those are reader-facing CTAs)
 - [ ] **Add more species** — candidates for Phase 4: rays & skates (e.g., Giant Manta Ray, Sawfish species), stingrays, deep-sea sharks; would significantly expand the wiki's scope
 
