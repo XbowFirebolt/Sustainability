@@ -1016,6 +1016,79 @@ body.no-map {
   pointer-events: auto;
 }
 
+.wiki-about-modal {
+  width: min(680px, 90vw);
+}
+
+.wiki-about-body {
+  padding: 1rem 1.1rem 1.25rem;
+}
+
+.wiki-about-body .section-box {
+  margin-bottom: 0.7rem;
+}
+
+.wiki-about-body .section-box:last-child {
+  margin-bottom: 0;
+}
+
+.wiki-about-p {
+  font-size: 0.86rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.wiki-about-tiers {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.wiki-about-tier {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  padding: 0.45rem 0.65rem;
+  border-radius: 6px;
+  border-left: 3px solid transparent;
+}
+
+.wiki-about-tier--full {
+  border-left-color: #2d9a4e;
+  background: rgba(45, 154, 78, 0.06);
+}
+
+.wiki-about-tier--standard {
+  border-left-color: var(--color-primary);
+  background: color-mix(in srgb, var(--color-primary) 6%, transparent);
+}
+
+.wiki-about-tier--stub {
+  border-left-color: var(--color-text-dim);
+  background: color-mix(in srgb, var(--color-text-dim) 8%, transparent);
+}
+
+.wiki-about-tier-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 4rem;
+}
+
+.wiki-about-tier--full .wiki-about-tier-label     { color: #2d9a4e; }
+.wiki-about-tier--standard .wiki-about-tier-label { color: var(--color-primary); }
+.wiki-about-tier--stub .wiki-about-tier-label     { color: var(--color-text-muted); }
+
+.wiki-about-tier-desc {
+  font-size: 0.84rem;
+  color: var(--color-text);
+  line-height: 1.45;
+}
+
 /* Wiki species grid */
 .wiki-grid {
   padding: 1rem;

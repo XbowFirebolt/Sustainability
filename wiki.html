@@ -58,6 +58,7 @@
               <option value="recently-viewed">Recently Viewed</option>
             </select>
           </div>
+          <button id="wiki-about-btn" class="wiki-legend-btn" aria-label="About this wiki" title="About this wiki">&#8505;</button>
           <div class="wiki-legend-hint">
             <button class="wiki-legend-btn" aria-label="Threat severity legend" tabindex="0">?</button>
             <div class="wiki-legend-popup" role="tooltip">
@@ -108,6 +109,61 @@
           <div class="account-field">
             <span class="field-label">Favorite Projects</span>
             <ul id="account-projects"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="wiki-about-modal" class="modal-overlay hidden">
+      <div class="modal wiki-about-modal">
+        <div class="modal-header">
+          <h2>About this wiki</h2>
+          <button id="wiki-about-modal-close" class="close-btn">&times;</button>
+        </div>
+        <div class="modal-body wiki-about-body">
+          <div class="section-box">
+            <div class="section-box-header">
+              <span class="section-box-title">Data sources</span>
+            </div>
+            <div class="section-box-body">
+              <p class="wiki-about-p">Species data is sourced from the <strong>IUCN Red List</strong>, <strong>Wikidata</strong>, and <strong>Wikipedia</strong>, supplemented by peer-reviewed literature. Population trends, threat assessments, and vital statistics reflect the most recent published assessments at time of entry.</p>
+            </div>
+          </div>
+          <div class="section-box">
+            <div class="section-box-header">
+              <span class="section-box-title">Data tiers</span>
+            </div>
+            <div class="section-box-body">
+              <div class="wiki-about-tiers">
+                <div class="wiki-about-tier wiki-about-tier--full">
+                  <span class="wiki-about-tier-label">Full</span>
+                  <span class="wiki-about-tier-desc">Complete profile: all data fields, photos, threats, health metrics, vital signs, and action items.</span>
+                </div>
+                <div class="wiki-about-tier wiki-about-tier--standard">
+                  <span class="wiki-about-tier-label">Standard</span>
+                  <span class="wiki-about-tier-desc">All data fields present, but no photos yet.</span>
+                </div>
+                <div class="wiki-about-tier wiki-about-tier--stub">
+                  <span class="wiki-about-tier-label">Stub</span>
+                  <span class="wiki-about-tier-desc">Basic info only: name, status, description, and habitat. More data to come.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section-box">
+            <div class="section-box-header">
+              <span class="section-box-title">Health score</span>
+            </div>
+            <div class="section-box-body">
+              <p class="wiki-about-p">The health % is a heuristic derived from a species' <strong>IUCN conservation status</strong>, calibrated to reflect population viability: Least Concern ≈ 82%, Near Threatened ≈ 62%, Vulnerable ≈ 45%, Endangered ≈ 27%, Critically Endangered ≈ 10%. Individual scores are fine-tuned using population trend data where available.</p>
+            </div>
+          </div>
+          <div class="section-box">
+            <div class="section-box-header">
+              <span class="section-box-title">Contribute or report errors</span>
+            </div>
+            <div class="section-box-body">
+              <p class="wiki-about-p">Found outdated data, a missing species, or a factual error? Please open an issue on <strong>GitHub</strong> or reach out directly. Contributions to expand stub entries to full profiles are especially welcome.</p>
+            </div>
           </div>
         </div>
       </div>

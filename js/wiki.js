@@ -3065,6 +3065,13 @@ document.getElementById("wiki-surprise-btn").addEventListener("click", () => {
   openSpeciesModal(randomSpecies, null);
 });
 
+// ── About this wiki modal ──────────────────────────────────────
+
+const wikiAboutModal = document.getElementById("wiki-about-modal");
+document.getElementById("wiki-about-btn").addEventListener("click", () => wikiAboutModal.classList.remove("hidden"));
+document.getElementById("wiki-about-modal-close").addEventListener("click", () => wikiAboutModal.classList.add("hidden"));
+wikiAboutModal.addEventListener("click", (e) => { if (e.target === wikiAboutModal) wikiAboutModal.classList.add("hidden"); });
+
 // ── Keyboard shortcut help overlay ────────────────────────────
 
 function openKbHelp()  { kbHelpOverlay.classList.remove("hidden"); }
