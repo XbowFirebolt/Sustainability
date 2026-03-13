@@ -358,7 +358,7 @@ body.no-map {
 .wiki-sticky-toolbar {
   position: sticky;
   top: var(--header-height);
-  z-index: 10;
+  z-index: 25;
   background-color: var(--color-bg);
   transition: background-color 0.5s ease;
 }
