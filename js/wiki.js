@@ -2739,13 +2739,18 @@ function renderAutocomplete(q) {
     return;
   }
   autocompleteList.innerHTML = suggestions
-    .map(
-      (s) =>
+    .map((s) => {
+      const sciMatches = s.scientificName.toLowerCase().includes(ql);
+      const sciHint = sciMatches
+        ? `<span class="search-ac-sci">(${highlightMatchInline(s.scientificName, query)})</span>`
+        : "";
+      return (
         `<li class="search-ac-item" role="option" data-id="${s.id}">` +
         `<span class="search-ac-common">${highlightMatchInline(s.commonName, query)}</span>` +
-        `<span class="search-ac-sci">${highlightMatchInline(s.scientificName, query)}</span>` +
+        sciHint +
         `</li>`
-    )
+      );
+    })
     .join("");
   autocompleteList.querySelectorAll(".search-ac-item").forEach((item) => {
     item.addEventListener("mousedown", (e) => {
