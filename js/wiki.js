@@ -22,6 +22,24 @@ function applySilhouetteBg(el) {
 function applyPhotoBg(el, src, lqip) {
   el.style.background = "";
   el.style.backgroundImage = "";
+
+  // If LQIP layers were eagerly created in createSpeciesCard (data URL, zero network wait),
+  // just wire up the full-res load into the existing overlay layer.
+  const existingLqip = el.querySelector(".card-img-lqip");
+  const existingFull = el.querySelector(".card-img-full");
+  if (existingLqip && existingFull) {
+    existingFull.style.backgroundImage = `url(${src})`;
+    const probe = new Image();
+    probe.onload = () => existingFull.classList.add("loaded");
+    probe.onerror = () => {
+      existingLqip.remove();
+      existingFull.remove();
+      applySilhouetteBg(el);
+    };
+    probe.src = src;
+    return;
+  }
+
   el.querySelectorAll(".card-img-lqip, .card-img-full").forEach(n => n.remove());
 
   // If we have a LQIP, show it blurred while the full image loads.
@@ -1491,17 +1509,15 @@ function animateOverviewBar() {
   const pct = document.querySelector("#tab-panel-overview .overview-status-pct");
   fill.style.width = "0%";
   setTimeout(() => {
-    fill.style.width = target + "%";
-    if (pct) {
-      const duration = 800;
-      const start = performance.now();
-      (function tick(now) {
-        const progress = Math.min((now - start) / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 2);
-        pct.textContent = "Population health: " + Math.round(eased * target) + "%";
-        if (progress < 1) requestAnimationFrame(tick);
-      })(performance.now());
-    }
+    const duration = 800;
+    const start = performance.now();
+    (function tick(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3); // cubic ease-out
+      fill.style.width = (eased * target) + "%";
+      if (pct) pct.textContent = "Population health: " + Math.round(eased * target) + "%";
+      if (progress < 1) requestAnimationFrame(tick);
+    })(performance.now());
   }, 280);
 }
 
@@ -2046,8 +2062,20 @@ function createSpeciesCard(species, q, favIds) {
   const cardPhoto = species.photos && species.photos[0];
   if (cardPhoto) {
     imgArea.dataset.lazySrc = cardPhoto;
-    if (species.lqip) imgArea.dataset.lazyLqip = species.lqip;
-    if (SILHOUETTE_FALLBACK) {
+    if (species.lqip) {
+      // Render LQIP immediately — it's a tiny data URL, no network wait.
+      // Silhouette stays as the bottom layer: visible during the LQIP fade-in
+      // and as a fallback on slow/failed connections.
+      if (SILHOUETTE_FALLBACK) applySilhouetteBg(imgArea);
+      imgArea.dataset.lazyLqip = species.lqip;
+      const lqipLayer = document.createElement("div");
+      lqipLayer.className = "card-img-lqip";
+      lqipLayer.style.backgroundImage = `url(${species.lqip})`;
+      imgArea.appendChild(lqipLayer);
+      const fullLayer = document.createElement("div");
+      fullLayer.className = "card-img-full";
+      imgArea.appendChild(fullLayer);
+    } else if (SILHOUETTE_FALLBACK) {
       applySilhouetteBg(imgArea);
     } else {
       imgArea.textContent = species.emoji || wikiProjectEmoji;
@@ -2726,39 +2754,38 @@ function renderWikiGrid(query) {
       );
     visible.forEach((entry, i) => {
       // Progress ring (grid / masonry cards)
+      // Both strokeDashoffset and text are driven by the same rAF loop with
+      // identical easing so they stay perfectly in sync — no CSS transition involved.
       const ring = entry.target.querySelector(".ring-fill");
       if (ring) setTimeout(() => {
-        ring.style.strokeDashoffset = ring.dataset.targetOffset;
-        const txt = entry.target.querySelector(".ring-pct-txt");
-        if (txt) {
-          const target = +ring.dataset.targetPct;
-          const duration = 650;
-          const start = performance.now();
-          (function tick(now) {
-            const progress = Math.min((now - start) / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 2);
-            txt.textContent = Math.round(eased * target) + "%";
-            if (progress < 1) requestAnimationFrame(tick);
-          })(performance.now());
-        }
-      }, i * 60);
-      // Health bar (list rows)
+        const targetOffset = +ring.dataset.targetOffset;
+        const targetPct    = +ring.dataset.targetPct;
+        const txt          = entry.target.querySelector(".ring-pct-txt");
+        const duration     = 650;
+        const start        = performance.now();
+        (function tick(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased    = 1 - Math.pow(1 - progress, 3); // cubic ease-out
+          ring.style.strokeDashoffset = RING_CIRCUMFERENCE + (targetOffset - RING_CIRCUMFERENCE) * eased;
+          if (txt) txt.textContent = Math.round(eased * targetPct) + "%";
+          if (progress < 1) requestAnimationFrame(tick);
+        })(performance.now());
+      }, 160 + i * 50);
+      // Health bar (list rows) — same approach: one loop drives width + counter.
       const fill = entry.target.querySelector(".list-health-fill");
       if (fill) setTimeout(() => {
-        const target = +fill.dataset.targetPct;
-        fill.style.width = target + "%";
-        const pctEl = entry.target.querySelector(".list-health-pct");
-        if (pctEl) {
-          const duration = 650;
-          const start = performance.now();
-          (function tick(now) {
-            const progress = Math.min((now - start) / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 2);
-            pctEl.textContent = Math.round(eased * target) + "%";
-            if (progress < 1) requestAnimationFrame(tick);
-          })(performance.now());
-        }
-      }, i * 60);
+        const targetPct = +fill.dataset.targetPct;
+        const pctEl     = entry.target.querySelector(".list-health-pct");
+        const duration  = 650;
+        const start     = performance.now();
+        (function tick(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased    = 1 - Math.pow(1 - progress, 3); // cubic ease-out
+          fill.style.width = (eased * targetPct) + "%";
+          if (pctEl) pctEl.textContent = Math.round(eased * targetPct) + "%";
+          if (progress < 1) requestAnimationFrame(tick);
+        })(performance.now());
+      }, 160 + i * 50);
       window._wikiLifeObserver.unobserve(entry.target);
     });
   }, { threshold: 0.15 });
@@ -3320,9 +3347,8 @@ function renderGlanceBar(items) {
   const avg = src.length
     ? Math.round(src.reduce((sum, s) => sum + (s.lifePercent || 0), 0) / src.length)
     : null;
-  const color     = avg !== null ? getLifeBarColor(avg) : "var(--color-text-muted)";
-  const targetW   = avg !== null ? `${avg}%` : "0%";
-  // Build DOM once; update in-place on subsequent calls so CSS transitions fire
+  const color   = avg !== null ? getLifeBarColor(avg) : "var(--color-text-muted)";
+  // Build DOM once; update in-place on subsequent calls
   let barFill = el.querySelector(".wiki-glance-bar-fill");
   const isFirst = !barFill;
 
@@ -3338,7 +3364,7 @@ function renderGlanceBar(items) {
     barWrap.className = "wiki-glance-bar-wrap";
     barFill = document.createElement("div");
     barFill.className = "wiki-glance-bar-fill";
-    barFill.style.width = "0%";       // start collapsed for load animation
+    barFill.style.transform = "scaleX(0)"; // collapsed; CSS transition animates to target
     barFill.style.background = color;
     barWrap.appendChild(barFill);
     el.appendChild(barWrap);
@@ -3354,41 +3380,46 @@ function renderGlanceBar(items) {
     sub.textContent = "avg. health";
     el.appendChild(sub);
 
-    // Kick off the load animation after the first paint
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      barFill.style.width = targetW;
-      if (avg !== null) {
-        const duration = 600;
+    if (avg !== null) {
+      const runAnim = () => {
+        const duration = 550;
         const start = performance.now();
-        (function tick(now) {
+        requestAnimationFrame(function tick(now) {
           const progress = Math.min((now - start) / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 2);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          barFill.style.transform = `scaleX(${(eased * avg) / 100})`;
           pct.textContent = Math.round(eased * avg) + "%";
           if (progress < 1) requestAnimationFrame(tick);
-        })(performance.now());
+        });
+      };
+      if (typeof requestIdleCallback !== "undefined") {
+        requestIdleCallback(runAnim, { timeout: 1000 });
+      } else {
+        setTimeout(runAnim, 200);
       }
-    }));
+    }
     return;
   }
 
-  // Subsequent updates — transition handles bar animation, count text between values
-  barFill.style.width      = targetW;
+  // Subsequent updates (filter/sort changes).
   barFill.style.background = color;
-
   const pctEl = el.querySelector(".wiki-glance-pct");
   pctEl.style.color = color;
 
   if (avg !== null) {
-    const fromVal = parseInt(pctEl.textContent) || 0;
-    const duration = 600;
-    const start = performance.now();
-    (function tick(now) {
+    const fromScale = parseFloat(barFill.style.transform.replace(/[^0-9.]/g, "")) || 0;
+    const fromVal   = parseInt(pctEl.textContent) || 0;
+    const duration  = 400;
+    const start     = performance.now();
+    requestAnimationFrame(function tick(now) {
       const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 2);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      barFill.style.transform = `scaleX(${fromScale + (avg / 100 - fromScale) * eased})`;
       pctEl.textContent = Math.round(fromVal + eased * (avg - fromVal)) + "%";
       if (progress < 1) requestAnimationFrame(tick);
-    })(performance.now());
+    });
   } else {
+    barFill.style.transform = "scaleX(0)";
     pctEl.textContent = "—";
   }
 }
