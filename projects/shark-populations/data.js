@@ -10979,6 +10979,7 @@ window.WIKI_DATA = {
     {
       "id": "triakis-semifasciata",
       "lastUpdated": "2026-03-10",
+      "addedDate": "2026-03-14",
       "emoji": "🦈",
       "commonName": "Leopard Shark",
       "scientificName": "Triakis semifasciata",

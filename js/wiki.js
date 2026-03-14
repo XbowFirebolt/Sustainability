@@ -2108,6 +2108,18 @@ function createSpeciesCard(species, q, favIds) {
     imgArea.appendChild(incompleteIcon);
   }
 
+  // "New" badge — shown for 30 days after addedDate
+  if (species.addedDate) {
+    const added = new Date(species.addedDate + "T00:00:00");
+    const msPerDay = 86400000;
+    if ((Date.now() - added.getTime()) / msPerDay <= 30) {
+      const newBadge = document.createElement("div");
+      newBadge.className = "card-new-badge";
+      newBadge.textContent = "NEW";
+      imgArea.appendChild(newBadge);
+    }
+  }
+
   // Favorite star button (or manage-mode selection indicator)
   const starBtn = document.createElement("button");
   if (manageFavoritesMode) {

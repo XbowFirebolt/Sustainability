@@ -2905,6 +2905,20 @@ body.no-map {
   opacity: 1;
 }
 
+.card-new-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #00b8a2;
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.45rem;
+  border-radius: 3px;
+  pointer-events: none;
+}
+
 .modal-incomplete-badge {
   font-size: 0.68rem;
   font-weight: 600;

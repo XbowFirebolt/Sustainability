@@ -37,13 +37,12 @@ Check off items as they're completed. Add notes inline as needed.
 - [ ] **Related species links in modal** — "You might also like" or "Related species" section at the bottom of the Overview tab, using cross-reference IDs
 - [ ] **Filter by data completeness tier** — add a "Data" filter chip group: Full / Standard / Stub, so users can find species with complete vs. incomplete data
 - [ ] **Tag cloud / bubble visualization** — visual representation of all tags sized by species count; clicking a bubble filters to that tag
-- [ ] **"New additions" indicator** — badge or section marking recently added species (use `lastUpdated` field or a `addedDate` field)
+- [x] **"New additions" indicator** — badge or section marking recently added species (use `lastUpdated` field or a `addedDate` field)
 
 ### User Data & Personalization
 
 - [ ] **Export favorites** — download favorited species data as CSV or JSON
 - [ ] **Per-species user notes** — freeform text field users can attach to any species (stored in localStorage), visible in modal footer
-- [ ] **Watchlist (separate from favorites)** — a second persistent list for species users want to monitor for status changes
 
 ### Search & Filtering
 
@@ -74,7 +73,7 @@ Check off items as they're completed. Add notes inline as needed.
 
 - [x] **Breadcrumb in modal** — show the active filter context users came from (e.g., "Filtered: Critically Endangered › 4 of 12") with prev/next respecting filter scope
 - [ ] **Open Graph / social meta tags** — add dynamic `og:title`, `og:description`, and `og:image` tags (based on `?species=` deep link) for rich previews when sharing links in Slack, Twitter, etc.
-- [ ] **"About this wiki" page or modal** — brief explainer of data sources, tier definitions, lifePercent methodology, and how to contribute/report errors
+- [x] **"About this wiki" page or modal** — brief explainer of data sources, tier definitions, lifePercent methodology, and how to contribute/report errors
 - [ ] **Contribution / error-report link** — button or small link in modal footer: "Suggest a correction" that deep-links to a GitHub issue or form
 
 ---
