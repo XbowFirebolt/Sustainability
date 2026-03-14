@@ -117,6 +117,12 @@ const TAG_BADGE = {
   "keystone":   { icon: "🔑", label: "Keystone",  color: "#7a6010", bg: "rgba(122,96,16,0.12)"  },
 };
 
+const DATA_TIER_BADGE = {
+  "full":     { icon: "📊", label: "Full",     color: "#1a6e3c", bg: "rgba(26,110,60,0.12)"  },
+  "standard": { icon: "📋", label: "Standard", color: "#185aa8", bg: "rgba(24,90,168,0.12)"  },
+  "stub":     { icon: "📄", label: "Stub",     color: "#707070", bg: "rgba(112,112,112,0.12)" },
+};
+
 const STATUS_ORDER = [
   { label: "Extinct",               color: "#888888", bg: "rgba(136,136,136,0.13)" },
   { label: "Extinct in the Wild",   color: "#9c3d9c", bg: "rgba(156,61,156,0.13)"  },
@@ -147,6 +153,13 @@ const COMPLETENESS_FIELDS = ["vitalSigns", "populationTrend", "healthMetrics", "
 
 function isSpeciesIncomplete(species) {
   return COMPLETENESS_FIELDS.some((f) => !species[f] || (Array.isArray(species[f]) && species[f].length === 0));
+}
+
+function getSpeciesTier(species) {
+  const hasAllFields = !isSpeciesIncomplete(species);
+  if (hasAllFields && species.physicalScaleImage) return "full";
+  if (hasAllFields) return "standard";
+  return "stub";
 }
 
 function loadFavorites() {
@@ -1981,6 +1994,7 @@ let activeDietFilters    = new Set();
 let activeRegionFilters  = new Set();
 let activeTagFilters     = new Set();
 let activePhotoFilters   = new Set();
+let activeDataFilters    = new Set();
 let sortMode = "default";
 let wikiViewMode = localStorage.getItem("wiki-view-mode") || "grid";
 let showFavoritesOnly = false;
@@ -2680,6 +2694,10 @@ function renderWikiGrid(query) {
     filtered = filtered.filter((s) => s.photos && s.photos.length > 0);
   }
 
+  if (activeDataFilters.size > 0) {
+    filtered = filtered.filter((s) => activeDataFilters.has(getSpeciesTier(s)));
+  }
+
   if (showFavoritesOnly || manageFavoritesMode) {
     filtered = filtered.filter((s) => favIds.includes(s.id));
   }
@@ -3047,6 +3065,7 @@ function updateClearFiltersVisibility() {
     activeRegionFilters.size > 0 ||
     activeTagFilters.size > 0 ||
     activePhotoFilters.size > 0 ||
+    activeDataFilters.size > 0 ||
     sortMode !== "default" ||
     showFavoritesOnly;
   document.getElementById("wiki-clear-filters").hidden = !hasFilters;
@@ -3080,6 +3099,9 @@ function syncUrlFromState() {
   if (activePhotoFilters.size > 0) url.searchParams.set("photos", [...activePhotoFilters].join(","));
   else url.searchParams.delete("photos");
 
+  if (activeDataFilters.size > 0) url.searchParams.set("data", [...activeDataFilters].join(","));
+  else url.searchParams.delete("data");
+
   if (showFavoritesOnly) url.searchParams.set("fav", "1");
   else url.searchParams.delete("fav");
 
@@ -3095,6 +3117,7 @@ document.getElementById("wiki-clear-filters").addEventListener("click", () => {
   activeRegionFilters.clear();
   activeTagFilters.clear();
   activePhotoFilters.clear();
+  activeDataFilters.clear();
   sortMode = "default";
   showFavoritesOnly = false;
   document.getElementById("wiki-sort").value = "default";
@@ -3236,7 +3259,7 @@ document.addEventListener("keydown", (e) => {
 function updateFilterBtnState() {
   const btn = document.getElementById("wiki-filter-btn");
   if (!btn) return;
-  const count = activeStatusFilters.size + activeHabitatFilters.size + activeDietFilters.size + activeRegionFilters.size + activeTagFilters.size + activePhotoFilters.size;
+  const count = activeStatusFilters.size + activeHabitatFilters.size + activeDietFilters.size + activeRegionFilters.size + activeTagFilters.size + activePhotoFilters.size + activeDataFilters.size;
   btn.classList.toggle("active", count > 0);
   const arrow = filterPanelOpen ? "▴" : "▾";
   btn.textContent = count > 0 ? `Filter (${count}) ${arrow}` : `Filter ${arrow}`;
@@ -3341,6 +3364,13 @@ function renderFilterPanel() {
       makeFilterChip("has-photos", "📷 Has Photos", "#2d5f8a", "rgba(45,95,138,0.12)", activePhotoFilters, photoCount),
     ]);
   }
+
+  // Data completeness group
+  const tierCounts = { full: 0, standard: 0, stub: 0 };
+  WIKI_DATA.items.forEach((s) => { tierCounts[getSpeciesTier(s)]++; });
+  makeGroup("Data", ["full", "standard", "stub"]
+    .filter((k) => tierCounts[k] > 0)
+    .map((k) => makeFilterChip(k, `${DATA_TIER_BADGE[k].icon} ${DATA_TIER_BADGE[k].label}`, DATA_TIER_BADGE[k].color, DATA_TIER_BADGE[k].bg, activeDataFilters, tierCounts[k])));
 }
 
 document.getElementById("wiki-filter-btn").addEventListener("click", () => {
@@ -3466,6 +3496,9 @@ function renderGlanceBar(items) {
 
   const photos = params.get("photos");
   if (photos) photos.split(",").forEach((v) => { if (v.trim()) activePhotoFilters.add(v.trim()); });
+
+  const data = params.get("data");
+  if (data) data.split(",").forEach((v) => { if (v.trim()) activeDataFilters.add(v.trim()); });
 
   if (params.get("fav") === "1") {
     showFavoritesOnly = true;

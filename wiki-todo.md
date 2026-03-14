@@ -35,7 +35,7 @@ Check off items as they're completed. Add notes inline as needed.
 - [ ] **Timeline / status-change view** — a secondary view showing all species IUCN status changes plotted across years; shows which species have declined or recovered
 - [ ] **"Critically Endangered" spotlight section** — pinned section at the very top of the grid (before the main results) highlighting the most at-risk species
 - [ ] **Related species links in modal** — "You might also like" or "Related species" section at the bottom of the Overview tab, using cross-reference IDs
-- [ ] **Filter by data completeness tier** — add a "Data" filter chip group: Full / Standard / Stub, so users can find species with complete vs. incomplete data
+- [x] **Filter by data completeness tier** — add a "Data" filter chip group: Full / Standard / Stub, so users can find species with complete vs. incomplete data
 - [ ] **Tag cloud / bubble visualization** — visual representation of all tags sized by species count; clicking a bubble filters to that tag
 - [x] **"New additions" indicator** — badge or section marking recently added species (use `lastUpdated` field or a `addedDate` field)
 
