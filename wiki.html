@@ -33,6 +33,7 @@
           <div class="wiki-bar-spacer"></div>
           <button id="wiki-favorites-toggle" class="wiki-fav-toggle" aria-pressed="false">&#9734; Favorites</button>
           <button id="wiki-manage-favorites-btn" class="wiki-manage-btn" hidden title="Bulk-remove favorites">&#9733; Manage</button>
+          <button id="wiki-compare-btn" class="wiki-compare-btn" title="Compare species side-by-side">&#8286; Compare</button>
           <button id="wiki-clear-filters" class="wiki-clear-btn" hidden>Clear</button>
           <button id="wiki-filter-btn" class="wiki-filter-btn">Filter ▾</button>
           <button id="wiki-surprise-btn" class="wiki-surprise-btn" title="Open a random species">&#127922; Surprise me</button>
@@ -82,6 +83,12 @@
           <span id="wiki-manage-count" class="wiki-manage-count">None selected</span>
           <button id="wiki-manage-remove-btn" class="wiki-manage-remove-btn" disabled>Remove selected</button>
           <button id="wiki-manage-done-btn" class="wiki-manage-done-btn">Done</button>
+        </div>
+        <div id="wiki-compare-toolbar" class="wiki-compare-toolbar">
+          <span class="wiki-compare-toolbar-label">&#8286; Compare Species</span>
+          <span id="wiki-compare-count" class="wiki-compare-count">Select 2&#8211;3 species</span>
+          <button id="wiki-compare-go-btn" class="wiki-compare-go-btn" disabled>Compare &#8594;</button>
+          <button id="wiki-compare-cancel-btn" class="wiki-compare-cancel-btn">Cancel</button>
         </div>
         <div id="wiki-filter-panel" class="wiki-filter-panel hidden"></div>
       </div>
@@ -210,6 +217,16 @@
           <div class="species-tab-panel"        id="tab-panel-vital"></div>
           <div class="species-tab-panel"        id="tab-panel-actions"></div>
         </div>
+      </div>
+    </div>
+    <!-- Species comparison modal -->
+    <div id="compare-modal" class="compare-modal-overlay hidden" role="dialog" aria-modal="true" aria-label="Species comparison">
+      <div class="compare-panel">
+        <div class="compare-panel-header">
+          <span class="compare-panel-title">Species Comparison</span>
+          <button id="compare-modal-close" class="close-btn" aria-label="Close comparison">&times;</button>
+        </div>
+        <div id="compare-modal-body" class="compare-table-wrap"></div>
       </div>
     </div>
     <!-- Keyboard shortcut help overlay -->

@@ -531,6 +531,31 @@ body.no-map {
   background: rgba(200, 144, 10, 0.1);
 }
 
+/* ── Compare button (status bar) ─────────────────────────────── */
+.wiki-compare-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.18rem 0.55rem;
+  border: 1px solid var(--color-input-border);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+.wiki-compare-btn:hover {
+  border-color: #0e7c8a;
+  color: #0e7c8a;
+}
+.wiki-compare-btn.active {
+  border-color: #0e7c8a;
+  color: #0e7c8a;
+  background: rgba(14, 124, 138, 0.1);
+}
+
 .wiki-manage-toolbar {
   display: flex;
   align-items: center;
@@ -609,6 +634,88 @@ body.no-map {
 
 .wiki-manage-done-btn:hover {
   background: rgba(var(--color-primary-rgb, 24, 90, 168), 0.08);
+}
+
+/* ── Compare toolbar ─────────────────────────────────────────── */
+.wiki-compare-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(14, 124, 138, 0.07);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  flex-wrap: wrap;
+  /* Hidden by default; .visible animates it open */
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0 0.75rem;
+  margin-bottom: 0;
+  pointer-events: none;
+  transition:
+    max-height 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.22s ease,
+    padding 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+    margin-bottom 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.22s ease;
+}
+.wiki-compare-toolbar.visible {
+  max-height: 80px;
+  opacity: 1;
+  padding: 0.45rem 0.75rem;
+  margin-bottom: 0.5rem;
+  border-color: rgba(14, 124, 138, 0.28);
+  pointer-events: auto;
+}
+.wiki-compare-toolbar-label {
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: #0e7c8a;
+  flex: 1;
+  min-width: 120px;
+}
+.wiki-compare-count {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  min-width: 100px;
+  text-align: center;
+}
+.wiki-compare-go-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  white-space: nowrap;
+  border: 1px solid #0e7c8a;
+  background: transparent;
+  color: #0e7c8a;
+  transition: background 0.15s ease;
+}
+.wiki-compare-go-btn:hover:not(:disabled) {
+  background: rgba(14, 124, 138, 0.1);
+}
+.wiki-compare-go-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.wiki-compare-cancel-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  white-space: nowrap;
+  border: 1px solid var(--color-input-border);
+  background: transparent;
+  color: var(--color-text-muted);
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.wiki-compare-cancel-btn:hover {
+  border-color: var(--color-text-muted);
+  color: var(--color-text);
 }
 
 .wiki-clear-btn {
@@ -1003,7 +1110,8 @@ body.wiki-timeline-mode .wiki-sort-group,
 body.wiki-timeline-mode .wiki-legend-hint,
 body.wiki-timeline-mode #wiki-about-btn,
 body.wiki-timeline-mode #wiki-filter-panel,
-body.wiki-timeline-mode #wiki-manage-toolbar { display: none !important; }
+body.wiki-timeline-mode #wiki-manage-toolbar,
+body.wiki-timeline-mode #wiki-compare-toolbar { display: none !important; }
 
 
 
@@ -1810,7 +1918,7 @@ body.wiki-timeline-mode #wiki-manage-toolbar { display: none !important; }
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.15s ease, transform 0.15s ease;
+  transition: background 0.15s ease, transform 0.15s ease, opacity 0.12s ease;
 }
 
 .species-card-star:hover {
@@ -3650,5 +3758,221 @@ body.wiki-timeline-mode #wiki-manage-toolbar { display: none !important; }
   font-size: 0.69rem;
   color: var(--color-text-muted);
   margin-top: 0.05rem;
+}
+
+/* ── Compare mode card styles ────────────────────────────────── */
+.card-compare-check {
+  font-size: 1.1rem;
+  line-height: 1;
+  color: #0e7c8a;
+  background: rgba(255, 255, 255, 0.92);
+  border: 2px solid rgba(14, 124, 138, 0.4);
+}
+.card-compare-check.selected {
+  color: #fff;
+  background: #0e7c8a;
+  border-color: #0e7c8a;
+}
+.species-card.compare-mode {
+  transition: outline 0.15s ease, outline-offset 0.15s ease;
+}
+.species-card.compare-selected {
+  outline: 2px solid #0e7c8a;
+  outline-offset: 2px;
+}
+@keyframes compare-shake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-5px); }
+  60%       { transform: translateX(5px); }
+}
+.species-card.compare-shake {
+  animation: compare-shake 0.35s ease;
+}
+
+/* ── Compare modal ───────────────────────────────────────────── */
+@keyframes compare-overlay-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes compare-panel-slide-in {
+  from { opacity: 0; transform: translateY(18px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);    }
+}
+.compare-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.compare-modal-overlay.hidden {
+  display: none;
+}
+.compare-modal-overlay:not(.hidden) {
+  animation: compare-overlay-fade-in 0.2s ease forwards;
+}
+.compare-modal-overlay:not(.hidden) .compare-panel {
+  animation: compare-panel-slide-in 0.24s cubic-bezier(0.34, 1.3, 0.64, 1) forwards;
+}
+.compare-panel {
+  background: var(--color-surface, #fff);
+  border-radius: 12px;
+  max-width: 960px;
+  width: 100%;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.28);
+}
+.compare-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+.compare-panel-title {
+  font-weight: 700;
+  font-size: 1rem;
+}
+.compare-table-wrap {
+  overflow: auto;
+  flex: 1;
+}
+.compare-row {
+  display: grid;
+  grid-template-columns: 130px repeat(var(--compare-cols, 2), 1fr);
+  border-bottom: 1px solid var(--color-border);
+}
+.compare-row--last {
+  border-bottom: none;
+}
+.compare-row:not(.compare-row--header):hover {
+  background: rgba(0, 0, 0, 0.025);
+}
+.compare-cell {
+  padding: 0.7rem 1rem;
+  font-size: 0.85rem;
+}
+.compare-cell--label {
+  font-weight: 600;
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 0.9rem;
+  position: sticky;
+  left: 0;
+  background: var(--color-surface, #fff);
+  z-index: 1;
+  border-right: 1px solid var(--color-border);
+}
+.compare-cell--header-spacer {
+  align-items: flex-end;
+  padding-bottom: 0.6rem;
+}
+.compare-cell--species-header {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid var(--color-border);
+}
+.compare-cell--species-header:first-of-type {
+  border-left: none;
+}
+.compare-species-img {
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  background: var(--color-surface-alt, #f4f4f4);
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+}
+.compare-species-info {
+  padding: 0.6rem 0.85rem 0.65rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  border-top: 1px solid var(--color-border);
+}
+.compare-species-name {
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 1.25;
+}
+.compare-species-sci {
+  font-style: italic;
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.3rem;
+}
+.compare-view-btn {
+  font-size: 0.72rem;
+  color: var(--color-primary);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-align: left;
+  width: fit-content;
+}
+.compare-view-btn:hover {
+  opacity: 0.7;
+}
+.compare-cell--data {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  border-left: 1px solid var(--color-border);
+}
+.compare-status-badge {
+  display: inline-block;
+  padding: 0.18rem 0.55rem;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  width: fit-content;
+}
+.compare-health-bar-wrap {
+  height: 6px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 160px;
+}
+.compare-health-bar {
+  height: 100%;
+  border-radius: 3px;
+}
+.compare-health-pct {
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+.compare-cell-text {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  line-height: 1.45;
+}
+.compare-threat-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+}
+.compare-threat-name {
+  color: var(--color-text);
 }
 

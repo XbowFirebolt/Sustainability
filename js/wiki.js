@@ -2133,6 +2133,8 @@ let wikiViewMode = localStorage.getItem("wiki-view-mode") || "grid";
 let showFavoritesOnly = false;
 let manageFavoritesMode = false;
 let manageFavoritesSelected = new Set();
+let compareMode = false;
+let compareSelected = new Set();
 let filterPanelOpen = false;
 let timelineMode = false;
 
@@ -2177,8 +2179,9 @@ function createSpeciesCard(species, q, favIds) {
   const isFav = favIds.includes(species.id);
 
   const card = document.createElement("div");
-  card.className = "species-card" + (manageFavoritesMode ? " manage-mode" : "");
+  card.className = "species-card" + (manageFavoritesMode ? " manage-mode" : compareMode ? " compare-mode" : "");
   if (manageFavoritesMode && manageFavoritesSelected.has(species.id)) card.classList.add("manage-selected");
+  if (compareMode && compareSelected.has(species.id)) card.classList.add("compare-selected");
   card.dataset.speciesId = species.id;
   card.tabIndex = 0;
   const tabMatch = q && !matchesPrimary(species, q) ? matchesTabContent(species, q) : null;
@@ -2199,6 +2202,26 @@ function createSpeciesCard(species, q, favIds) {
         starBtn.setAttribute("aria-label", `Deselect ${species.commonName}`);
       }
       updateManageToolbar();
+    } else if (compareMode) {
+      const isSelected = compareSelected.has(species.id);
+      if (isSelected) {
+        compareSelected.delete(species.id);
+        card.classList.remove("compare-selected");
+        starBtn.textContent = "\u2295";
+        starBtn.classList.remove("selected");
+        starBtn.setAttribute("aria-label", `Add ${species.commonName} to comparison`);
+      } else if (compareSelected.size >= 3) {
+        card.classList.add("compare-shake");
+        setTimeout(() => card.classList.remove("compare-shake"), 400);
+        return;
+      } else {
+        compareSelected.add(species.id);
+        card.classList.add("compare-selected");
+        starBtn.textContent = "\u2713";
+        starBtn.classList.add("selected");
+        starBtn.setAttribute("aria-label", `Remove ${species.commonName} from comparison`);
+      }
+      updateCompareToolbar();
     } else {
       openSpeciesModal(species, card, tabMatch || "overview");
     }
@@ -2275,10 +2298,11 @@ function createSpeciesCard(species, q, favIds) {
     starBtn.className = "species-card-star card-manage-check" + (isSelected ? " selected" : "");
     starBtn.textContent = isSelected ? "\u2713" : "\u2610";
     starBtn.setAttribute("aria-label", isSelected ? `Deselect ${species.commonName}` : `Select ${species.commonName}`);
-    starBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      card.click();
-    });
+  } else if (compareMode) {
+    const isSelected = compareSelected.has(species.id);
+    starBtn.className = "species-card-star card-compare-check" + (isSelected ? " selected" : "");
+    starBtn.textContent = isSelected ? "\u2713" : "\u2295";
+    starBtn.setAttribute("aria-label", isSelected ? `Remove ${species.commonName} from comparison` : `Add ${species.commonName} to comparison`);
   } else {
     starBtn.className = "species-card-star" + (isFav ? " favorited" : "");
     starBtn.textContent = isFav ? "★" : "☆";
@@ -2286,19 +2310,21 @@ function createSpeciesCard(species, q, favIds) {
       "aria-label",
       isFav ? `Unfavorite ${species.commonName}` : `Favorite ${species.commonName}`
     );
-    starBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
+  }
+  // Unified click handler — checks mode at runtime so DOM-manipulated cards work correctly
+  starBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (manageFavoritesMode || compareMode) {
+      card.click();
+    } else {
       const ids = loadFavorites();
       const idx = ids.indexOf(species.id);
-      if (idx === -1) {
-        ids.push(species.id);
-      } else {
-        ids.splice(idx, 1);
-      }
+      if (idx === -1) ids.push(species.id);
+      else ids.splice(idx, 1);
       saveFavorites(ids);
       renderWikiGrid(wikiSearch.value);
-    });
-  }
+    }
+  });
   imgArea.appendChild(starBtn);
 
   // Card body
@@ -3190,6 +3216,289 @@ document.getElementById("wiki-manage-remove-btn").addEventListener("click", () =
   exitManageFavoritesMode();
 });
 
+// ── Compare mode ─────────────────────────────────────────────────
+
+function updateCompareToolbar() {
+  const count = compareSelected.size;
+  document.getElementById("wiki-compare-count").textContent =
+    count === 0 ? "Select 2\u20133 species" : count === 1 ? "1 selected" : `${count} selected`;
+  document.getElementById("wiki-compare-go-btn").disabled = count < 2;
+}
+
+function enterCompareMode() {
+  compareMode = true;
+  compareSelected.clear();
+  document.getElementById("wiki-compare-toolbar").classList.add("visible");
+  document.getElementById("wiki-compare-btn").classList.add("active");
+  updateCompareToolbar();
+
+  if (wikiViewMode === "list") {
+    // List rows don't have the card image area; switch to grid so checkboxes appear
+    setViewMode("grid");
+    return;
+  }
+
+  // Transform existing cards in place — no full re-render.
+  // Pattern: disable transitions → swap content (invisible) → single reflow → re-enable → fade in.
+  // This prevents the background-color transition from racing the opacity fade-in.
+  const enterCards = Array.from(document.querySelectorAll(".species-card"));
+  enterCards.forEach((card) => {
+    card.classList.add("compare-mode");
+    const starBtn = card.querySelector(".species-card-star");
+    if (!starBtn) return;
+    const id = card.dataset.speciesId;
+    const sp = WIKI_DATA.items.find((s) => s.id === id);
+    starBtn.style.transition = "none";
+    starBtn.style.opacity = "0";
+    starBtn.className = "species-card-star card-compare-check";
+    starBtn.textContent = "\u2295";
+    starBtn.setAttribute("aria-label", `Add ${sp ? sp.commonName : id} to comparison`);
+  });
+  // Single reflow commits all the above changes before re-enabling transitions
+  void document.getElementById("wiki-grid").offsetHeight;
+  enterCards.forEach((card) => {
+    const starBtn = card.querySelector(".species-card-star");
+    if (starBtn) { starBtn.style.transition = ""; starBtn.style.opacity = ""; }
+  });
+}
+
+function exitCompareMode() {
+  compareMode = false;
+  compareSelected.clear();
+  closeComparePanel();
+  document.getElementById("wiki-compare-toolbar").classList.remove("visible");
+  document.getElementById("wiki-compare-btn").classList.remove("active");
+
+  const favIds = loadFavorites();
+  const exitCards = Array.from(document.querySelectorAll(".species-card"));
+  exitCards.forEach((card) => {
+    card.classList.remove("compare-mode", "compare-selected", "compare-shake");
+    const starBtn = card.querySelector(".species-card-star");
+    if (!starBtn) return;
+    const id = card.dataset.speciesId;
+    const sp = WIKI_DATA.items.find((s) => s.id === id);
+    const isFav = favIds.includes(id);
+    starBtn.style.transition = "none";
+    starBtn.style.opacity = "0";
+    starBtn.className = "species-card-star" + (isFav ? " favorited" : "");
+    starBtn.textContent = isFav ? "\u2605" : "\u2606";
+    starBtn.setAttribute(
+      "aria-label",
+      isFav ? `Unfavorite ${sp ? sp.commonName : id}` : `Favorite ${sp ? sp.commonName : id}`
+    );
+  });
+  void document.getElementById("wiki-grid").offsetHeight;
+  exitCards.forEach((card) => {
+    const starBtn = card.querySelector(".species-card-star");
+    if (starBtn) { starBtn.style.transition = ""; starBtn.style.opacity = ""; }
+  });
+}
+
+function openComparePanel() {
+  renderComparePanel();
+  document.getElementById("compare-modal").classList.remove("hidden");
+}
+
+function closeComparePanel() {
+  document.getElementById("compare-modal").classList.add("hidden");
+}
+
+function renderComparePanel() {
+  const species = [...compareSelected]
+    .map((id) => WIKI_DATA.items.find((s) => s.id === id))
+    .filter(Boolean);
+  const n = species.length;
+
+  const wrap = document.getElementById("compare-modal-body");
+  wrap.innerHTML = "";
+  wrap.style.setProperty("--compare-cols", n);
+
+  function makeRow(labelText, cellFn, extraClass) {
+    const row = document.createElement("div");
+    row.className = "compare-row" + (extraClass ? " " + extraClass : "");
+    const label = document.createElement("div");
+    label.className = "compare-cell compare-cell--label";
+    label.textContent = labelText;
+    row.appendChild(label);
+    species.forEach((sp) => {
+      const cell = document.createElement("div");
+      cell.className = "compare-cell compare-cell--data";
+      cellFn(cell, sp);
+      row.appendChild(cell);
+    });
+    wrap.appendChild(row);
+  }
+
+  // ── Species header row ─────────────────────────────────────────
+  const headerRow = document.createElement("div");
+  headerRow.className = "compare-row compare-row--header";
+  const spacer = document.createElement("div");
+  spacer.className = "compare-cell compare-cell--label compare-cell--header-spacer";
+  headerRow.appendChild(spacer);
+  species.forEach((sp) => {
+    const cell = document.createElement("div");
+    cell.className = "compare-cell compare-cell--species-header";
+
+    const imgEl = document.createElement("div");
+    imgEl.className = "compare-species-img";
+    const photo = sp.photos && sp.photos[0];
+    if (photo) {
+      imgEl.style.backgroundImage = `url(${photo})`;
+      imgEl.style.backgroundSize = "cover";
+      imgEl.style.backgroundPosition = "center";
+    } else if (SILHOUETTE_FALLBACK) {
+      imgEl.style.backgroundImage = `url(${SILHOUETTE_FALLBACK})`;
+      imgEl.style.backgroundSize = "cover";
+      imgEl.style.backgroundPosition = "center";
+    } else {
+      imgEl.textContent = sp.emoji || wikiProjectEmoji;
+      imgEl.style.background = "linear-gradient(135deg, #0a0a0a, var(--color-primary))";
+    }
+
+    const info = document.createElement("div");
+    info.className = "compare-species-info";
+    const nameEl = document.createElement("div");
+    nameEl.className = "compare-species-name";
+    nameEl.textContent = sp.commonName;
+    const sciEl = document.createElement("div");
+    sciEl.className = "compare-species-sci";
+    sciEl.textContent = sp.scientificName;
+    const viewBtn = document.createElement("button");
+    viewBtn.className = "compare-view-btn";
+    viewBtn.textContent = "View details \u2192";
+    viewBtn.addEventListener("click", () => {
+      closeComparePanel();
+      openSpeciesModal(sp, null);
+    });
+    info.appendChild(nameEl);
+    info.appendChild(sciEl);
+    info.appendChild(viewBtn);
+
+    cell.appendChild(imgEl);
+    cell.appendChild(info);
+    headerRow.appendChild(cell);
+  });
+  wrap.appendChild(headerRow);
+
+  // ── IUCN Status ────────────────────────────────────────────────
+  makeRow("IUCN Status", (cell, sp) => {
+    const meta = STATUS_ORDER.find((s) => s.label === sp.statusLabel);
+    if (meta) {
+      const badge = document.createElement("span");
+      badge.className = "compare-status-badge";
+      badge.style.color = meta.color;
+      badge.style.background = meta.bg;
+      badge.textContent = sp.statusLabel;
+      cell.appendChild(badge);
+    } else {
+      cell.textContent = sp.statusLabel || "\u2014";
+    }
+  });
+
+  // ── Health Score ───────────────────────────────────────────────
+  makeRow("Health Score", (cell, sp) => {
+    if (sp.lifePercent == null) { cell.textContent = "\u2014"; return; }
+    const color = getLifeBarColor(sp.lifePercent);
+    const barWrap = document.createElement("div");
+    barWrap.className = "compare-health-bar-wrap";
+    const bar = document.createElement("div");
+    bar.className = "compare-health-bar";
+    bar.style.width = sp.lifePercent + "%";
+    bar.style.background = color;
+    barWrap.appendChild(bar);
+    const pct = document.createElement("span");
+    pct.className = "compare-health-pct";
+    pct.style.color = color;
+    pct.textContent = sp.lifePercent + "%";
+    cell.appendChild(barWrap);
+    cell.appendChild(pct);
+  });
+
+  // ── Diet ───────────────────────────────────────────────────────
+  makeRow("Diet", (cell, sp) => {
+    if (sp.dietType) {
+      const info = DIET_BADGE[sp.dietType];
+      if (info) {
+        const badge = document.createElement("span");
+        badge.className = `card-badge card-badge--diet card-badge--${sp.dietType}`;
+        badge.textContent = `${info.icon} ${info.label}`;
+        cell.appendChild(badge);
+      }
+    }
+    if (sp.diet) {
+      const text = document.createElement("div");
+      text.className = "compare-cell-text";
+      const firstSentence = sp.diet.match(/^[^.!?]+[.!?]/)?.[0] || sp.diet.slice(0, 120);
+      text.textContent = firstSentence;
+      cell.appendChild(text);
+    } else if (!sp.dietType) {
+      cell.textContent = "\u2014";
+    }
+  });
+
+  // ── Size ───────────────────────────────────────────────────────
+  makeRow("Size", (cell, sp) => {
+    if (sp.size) {
+      const firstSentence = sp.size.match(/^[^.!?]+[.!?]/)?.[0] || sp.size.slice(0, 120);
+      cell.textContent = firstSentence;
+    } else {
+      const sizeStat = sp.vitalSigns && sp.vitalSigns.find((v) =>
+        /size|length|weight/i.test(v.label)
+      );
+      cell.textContent = sizeStat ? `${sizeStat.label}: ${sizeStat.value}` : "\u2014";
+    }
+  });
+
+  // ── Habitat ────────────────────────────────────────────────────
+  makeRow("Habitat", (cell, sp) => {
+    if (sp.habitatTypes && sp.habitatTypes.length) {
+      sp.habitatTypes.forEach((type) => {
+        const info = HABITAT_BADGE[type];
+        if (!info) return;
+        const badge = document.createElement("span");
+        badge.className = `card-badge card-badge--habitat card-badge--${type}`;
+        badge.textContent = `${info.icon} ${info.label}`;
+        cell.appendChild(badge);
+      });
+    } else {
+      cell.textContent = "\u2014";
+    }
+  });
+
+  // ── Top Threats ────────────────────────────────────────────────
+  makeRow("Top Threats", (cell, sp) => {
+    if (!sp.threats || sp.threats.length === 0) { cell.textContent = "\u2014"; return; }
+    const top = sp.threats
+      .slice()
+      .sort((a, b) => (SEVERITY_SCORE[b.severity] || 0) - (SEVERITY_SCORE[a.severity] || 0))
+      .slice(0, 3);
+    top.forEach((threat) => {
+      const item = document.createElement("div");
+      item.className = "compare-threat-item";
+      const badge = document.createElement("span");
+      badge.className = `tab-severity-badge tab-severity-badge--${threat.severity}`;
+      badge.textContent = threat.severity.charAt(0).toUpperCase() + threat.severity.slice(1);
+      const name = document.createElement("span");
+      name.className = "compare-threat-name";
+      name.textContent = threat.name;
+      item.appendChild(badge);
+      item.appendChild(name);
+      cell.appendChild(item);
+    });
+  }, "compare-row--last");
+}
+
+document.getElementById("wiki-compare-btn").addEventListener("click", () => {
+  if (compareMode) exitCompareMode();
+  else enterCompareMode();
+});
+document.getElementById("wiki-compare-go-btn").addEventListener("click", openComparePanel);
+document.getElementById("wiki-compare-cancel-btn").addEventListener("click", exitCompareMode);
+document.getElementById("compare-modal-close").addEventListener("click", closeComparePanel);
+document.getElementById("compare-modal").addEventListener("click", (e) => {
+  if (e.target === document.getElementById("compare-modal")) closeComparePanel();
+});
+
 function updateClearFiltersVisibility() {
   const hasFilters =
     wikiSearch.value.trim() !== "" ||
@@ -3334,6 +3643,12 @@ document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") { e.preventDefault(); closeGallery(); return; }
     if (e.key === "ArrowLeft")  { e.preventDefault(); navigateGallery(-1); return; }
     if (e.key === "ArrowRight") { e.preventDefault(); navigateGallery(1);  return; }
+    return;
+  }
+
+  const compareModalOpen = !document.getElementById("compare-modal").classList.contains("hidden");
+  if (compareModalOpen) {
+    if (e.key === "Escape") { e.preventDefault(); closeComparePanel(); }
     return;
   }
 
