@@ -947,6 +947,67 @@ function createSectionBox(icon, title, headerSlot) {
   return box;
 }
 
+function getRelationshipTags(species, rel) {
+  const tags = [];
+
+  // Same taxonomic family
+  if (species.taxonomy?.family && rel.taxonomy?.family === species.taxonomy.family) {
+    tags.push({ icon: "🧬", label: species.taxonomy.family });
+  }
+
+  // Same diet type
+  const dietLabels = {
+    "apex-predator": "Apex predator",
+    "filter-feeder": "Filter feeder",
+    "carnivore":     "Carnivore",
+    "omnivore":      "Omnivore",
+  };
+  if (rel.dietType && rel.dietType === species.dietType && dietLabels[rel.dietType]) {
+    tags.push({ icon: "🍽️", label: dietLabels[rel.dietType] });
+  }
+
+  // Shared geographic region
+  const regionLabels = {
+    "tropical":      "Tropical waters",
+    "temperate":     "Temperate waters",
+    "arctic":        "Arctic waters",
+    "mediterranean": "Mediterranean",
+    "global":        "Global range",
+  };
+  const sharedRegion = (species.geographicRegions || []).find((r) =>
+    (rel.geographicRegions || []).includes(r)
+  );
+  if (sharedRegion && regionLabels[sharedRegion]) {
+    tags.push({ icon: "🌊", label: regionLabels[sharedRegion] });
+  }
+
+  // Shared habitat (only if no region match already)
+  if (!sharedRegion) {
+    const habitatLabels = {
+      "ocean":     "Open ocean",
+      "coastal":   "Coastal",
+      "pelagic":   "Pelagic",
+      "deep-sea":  "Deep sea",
+      "freshwater":"Freshwater",
+    };
+    const sharedHabitat = (species.habitatTypes || []).find((h) =>
+      (rel.habitatTypes || []).includes(h)
+    );
+    if (sharedHabitat && habitatLabels[sharedHabitat]) {
+      tags.push({ icon: "🌊", label: habitatLabels[sharedHabitat] });
+    }
+  }
+
+  // Shared primary threat
+  const speciesThreatNames = (species.threats || []).map((t) => t.name);
+  const sharedThreat = (rel.threats || []).find((t) => speciesThreatNames.includes(t.name));
+  if (sharedThreat) {
+    tags.push({ icon: "⚠️", label: sharedThreat.name });
+  }
+
+  return tags.slice(0, 3);
+}
+
 function renderOverview(species) {
   const panel = document.getElementById("tab-panel-overview");
   panel.innerHTML = "";
@@ -1105,6 +1166,78 @@ function renderOverview(species) {
     }
 
     panel.appendChild(box);
+  }
+
+  // Related Species section
+  if (Array.isArray(species.relatedSpecies) && species.relatedSpecies.length) {
+    const related = species.relatedSpecies
+      .map((id) => WIKI_DATA.items.find((s) => s.id === id))
+      .filter(Boolean)
+      .slice(0, 6);
+
+    if (related.length) {
+      const box = createSectionBox("🔗", "Related Species");
+      const body = box.querySelector(".section-box-body");
+
+      const row = document.createElement("div");
+      row.className = "related-species-row";
+
+      related.forEach((rel) => {
+        const card = document.createElement("button");
+        card.className = "related-species-card";
+        card.type = "button";
+        card.setAttribute("aria-label", `View ${rel.commonName}`);
+        card.addEventListener("click", () => openSpeciesModal(rel, null));
+
+        // Image header
+        const thumb = document.createElement("div");
+        thumb.className = "related-species-thumb";
+        const firstPhoto = rel.photos && rel.photos[0];
+        if (firstPhoto) {
+          thumb.style.backgroundImage = `url("${firstPhoto}")`;
+        } else {
+          thumb.classList.add("related-species-thumb--emoji");
+          thumb.textContent = rel.emoji || "🦈";
+        }
+
+        // Card body
+        const cardBody = document.createElement("div");
+        cardBody.className = "related-species-body";
+
+        const name = document.createElement("div");
+        name.className = "related-species-name";
+        name.textContent = rel.commonName;
+
+        const barColor = getLifeBarColor(rel.lifePercent);
+        const statusBadge = document.createElement("div");
+        statusBadge.className = "related-species-badge";
+        statusBadge.textContent = rel.statusLabel;
+        statusBadge.style.color = barColor;
+        statusBadge.style.borderColor = barColor + "44";
+        statusBadge.style.background = barColor + "11";
+
+        // Relationship tags
+        const relTags = getRelationshipTags(species, rel);
+        const tagsRow = document.createElement("div");
+        tagsRow.className = "related-species-tags";
+        relTags.forEach(({ icon, label }) => {
+          const tag = document.createElement("span");
+          tag.className = "related-species-tag";
+          tag.textContent = icon + "\u00a0" + label;
+          tagsRow.appendChild(tag);
+        });
+
+        cardBody.appendChild(name);
+        cardBody.appendChild(statusBadge);
+        if (relTags.length) cardBody.appendChild(tagsRow);
+        card.appendChild(thumb);
+        card.appendChild(cardBody);
+        row.appendChild(card);
+      });
+
+      body.appendChild(row);
+      panel.appendChild(box);
+    }
   }
 
   renderCredits(panel, species);

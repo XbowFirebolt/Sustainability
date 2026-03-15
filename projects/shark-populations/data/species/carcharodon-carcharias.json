@@ -107,5 +107,6 @@
     { "title": "Choose Sustainable Seafood", "description": "Use guides from the Monterey Bay Aquarium Seafood Watch program. Avoiding unsustainable fisheries reduces bycatch pressure on shark populations.", "link": "https://www.seafoodwatch.org" },
     { "title": "Oppose Shark Finning", "description": "Refuse to purchase or consume shark fin products, and support restaurants and markets that have pledged not to carry them.", "link": null },
     { "title": "Spread Accurate Information", "description": "Challenge fear-based media portrayals. Sharing science-based facts about shark behavior helps build public support for conservation.", "link": null }
-  ]
+  ],
+  "relatedSpecies": ["isurus-oxyrinchus", "galeocerdo-cuvier", "carcharhinus-leucas", "carcharias-taurus"]
 }

@@ -102,5 +102,6 @@
     { "title": "Support Shark Conservation Organizations", "description": "Donate to or follow the work of Shark Trust, Save Our Seas Foundation, and Ocean Conservancy — groups that fund research, advocate against culling programs, and push for stronger international protections.", "link": "https://www.sharktrust.org" },
     { "title": "Protect Sea Turtle Populations", "description": "Tiger sharks regulate sea turtle populations, which in turn protect seagrass meadows critical to coastal ocean health. Supporting sea turtle conservation — nesting beach protections, bycatch reduction — keeps this ecosystem intact.", "link": null },
     { "title": "Choose Sustainable Seafood", "description": "Tiger sharks are frequently caught as bycatch in pelagic longlines targeting tuna and billfish. Use the Monterey Bay Aquarium Seafood Watch to choose seafood caught with lower bycatch rates.", "link": "https://www.seafoodwatch.org" }
-  ]
+  ],
+  "relatedSpecies": ["carcharodon-carcharias", "carcharhinus-leucas", "isurus-oxyrinchus", "carcharhinus-longimanus"]
 }

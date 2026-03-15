@@ -101,5 +101,6 @@
     { "name": "N. Pacific",     "severity": "high",     "note": "California Current and tropical longlines; common bycatch" },
     { "name": "S. Atlantic",    "severity": "high",     "note": "Expanding distant-water fleets; no S. Atlantic protections" },
     { "name": "Southern Ocean", "severity": "medium",   "note": "Some bycatch in toothfish longlines; reduced pressure" }
-  ]
+  ],
+  "relatedSpecies": ["carcharodon-carcharias", "isurus-paucus", "alopias-vulpinus", "lamna-nasus"]
 }

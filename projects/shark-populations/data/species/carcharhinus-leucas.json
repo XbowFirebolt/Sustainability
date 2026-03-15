@@ -102,5 +102,6 @@
     { "title": "Advocate for Clean Water Legislation", "description": "Chemical pollutants and heavy metals accumulate in coastal and riverine systems where bull sharks live and pup. Support clean water policy and corporate accountability for industrial discharge into coastal waterways.", "link": null },
     { "title": "Choose Sustainable Seafood", "description": "Coastal gillnet and longline bycatch is a significant source of bull shark mortality. Use the Monterey Bay Aquarium Seafood Watch guide to avoid seafood caught with methods that incidentally kill bull sharks.", "link": "https://www.seafoodwatch.org" },
     { "title": "Challenge Fear-Based Narratives", "description": "Bull sharks' reputation as uniquely dangerous is largely a function of habitat overlap with humans, not inherent aggression. Sharing science-based information about bull shark ecology builds public support for their conservation.", "link": null }
-  ]
+  ],
+  "relatedSpecies": ["carcharodon-carcharias", "galeocerdo-cuvier", "carcharhinus-longimanus", "carcharhinus-obscurus"]
 }

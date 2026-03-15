@@ -104,5 +104,6 @@
     { "title": "Support Hammerhead Conservation Research", "description": "Donate to organizations like the Shark Trust and Save Our Seas Foundation that fund population research and advocate for stronger protections for this critically endangered species.", "link": "https://www.sharktrust.org" },
     { "title": "Choose Sustainable Seafood", "description": "Bycatch in tuna and swordfish fisheries is the second major driver of decline. Use the Monterey Bay Aquarium Seafood Watch to avoid seafood caught with methods that incidentally kill hammerheads.", "link": "https://www.seafoodwatch.org" },
     { "title": "Protect Coastal Nursery Habitats", "description": "Support organizations and policies that protect mangroves, estuaries, and coastal bays — the nursery areas juvenile hammerheads depend on. Coastal habitat loss is an underappreciated threat to recovery.", "link": null }
-  ]
+  ],
+  "relatedSpecies": ["sphyrna-mokarran", "sphyrna-zygaena", "carcharhinus-falciformis", "carcharhinus-amblyrhynchos"]
 }

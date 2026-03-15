@@ -343,6 +343,12 @@ window.WIKI_DATA = {
           "link": null
         }
       ],
+      "relatedSpecies": [
+        "isurus-oxyrinchus",
+        "galeocerdo-cuvier",
+        "carcharhinus-leucas",
+        "carcharias-taurus"
+      ],
       "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQF/8QAHBAAAgIDAQEAAAAAAAAAAAAAAREAAgMhUTJx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQT/xAAWEQEBAQAAAAAAAAAAAAAAAAABABL/2gAMAwEAAhEDEQA/AMvFkD9AfZVVXYOSldNmwSmSCYZ7KlaPJVWyAWIBY7EnrsbiOoyX/9k="
     },
     {
@@ -663,6 +669,12 @@ window.WIKI_DATA = {
           "description": "Support organizations and policies that protect mangroves, estuaries, and coastal bays — the nursery areas juvenile hammerheads depend on. Coastal habitat loss is an underappreciated threat to recovery.",
           "link": null
         }
+      ],
+      "relatedSpecies": [
+        "sphyrna-mokarran",
+        "sphyrna-zygaena",
+        "carcharhinus-falciformis",
+        "carcharhinus-amblyrhynchos"
       ],
       "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAQFAf/EABwQAAICAwEBAAAAAAAAAAAAAAECABEDEiFBYf/EABUBAQEAAAAAAAAAAAAAAAAAAAEE/8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAS/9oADAMBAAIRAxEAPwCXiyC+sAfsbUI4O+ZEAFk3fJIm2ZUrR5Jp3VXIVth4aq4RZRY7COowX//Z"
     },
@@ -1293,6 +1305,12 @@ window.WIKI_DATA = {
           "link": null
         }
       ],
+      "relatedSpecies": [
+        "carcharodon-carcharias",
+        "galeocerdo-cuvier",
+        "carcharhinus-longimanus",
+        "carcharhinus-obscurus"
+      ],
       "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAQFA//EABwQAQACAgMBAAAAAAAAAAAAAAEAAgMREyFBcf/EABUBAQEAAAAAAAAAAAAAAAAAAAIE/8QAGREAAgMBAAAAAAAAAAAAAAAAAAECEkER/9oADAMBAAIRAxEAPwCXiym+0PsZoORTkxhratwNSXCUvr0kSisGbZCtkEdensJhUE7hFYNEf//Z"
     },
     {
@@ -1604,6 +1622,12 @@ window.WIKI_DATA = {
           "description": "Tiger sharks are frequently caught as bycatch in pelagic longlines targeting tuna and billfish. Use the Monterey Bay Aquarium Seafood Watch to choose seafood caught with lower bycatch rates.",
           "link": "https://www.seafoodwatch.org"
         }
+      ],
+      "relatedSpecies": [
+        "carcharodon-carcharias",
+        "carcharhinus-leucas",
+        "isurus-oxyrinchus",
+        "carcharhinus-longimanus"
       ],
       "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAQFA//EABsQAQADAQADAAAAAAAAAAAAAAEAAhEDITFB/8QAFgEBAQEAAAAAAAAAAAAAAAAABAEC/8QAGBEAAwEBAAAAAAAAAAAAAAAAAAESAhH/2gAMAwEAAhEDEQA/AJXPqD7JvWzdRtQM3WwGSbsNiX0Gsoat0K2QdD7CL1NPMJqiSj//2Q=="
     },
@@ -2952,6 +2976,12 @@ window.WIKI_DATA = {
           "severity": "medium",
           "note": "Some bycatch in toothfish longlines; reduced pressure"
         }
+      ],
+      "relatedSpecies": [
+        "carcharodon-carcharias",
+        "isurus-paucus",
+        "alopias-vulpinus",
+        "lamna-nasus"
       ],
       "lqip": "data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAQFA//EAB0QAQACAgIDAAAAAAAAAAAAAAEAAgMRIUETIjP/xAAVAQEBAAAAAAAAAAAAAAAAAAABBP/EABcRAAMBAAAAAAAAAAAAAAAAAAABEhH/2gAMAwEAAhEDEQA/AJeGwvN61269mNGNsp5sGtb+nUlQlWsjhDFrlbII67ITGoJzCNBCP//Z"
     },
