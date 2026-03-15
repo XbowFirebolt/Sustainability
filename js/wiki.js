@@ -486,6 +486,11 @@ function closeSpeciesModal() {
   } else {
     speciesModal.classList.add("hidden");
   }
+
+  if (returnToCompare) {
+    returnToCompare = false;
+    document.getElementById("compare-modal").classList.remove("hidden");
+  }
 }
 
 function toTitleCase(str) {
@@ -2135,6 +2140,7 @@ let manageFavoritesMode = false;
 let manageFavoritesSelected = new Set();
 let compareMode = false;
 let compareSelected = new Set();
+let returnToCompare = false;
 let filterPanelOpen = false;
 let timelineMode = false;
 
@@ -3154,6 +3160,22 @@ document.getElementById("wiki-favorites-toggle").addEventListener("click", () =>
 
 // ── Manage Favorites mode ───────────────────────────────────────
 
+function syncManageFavoritesUrl() {
+  const url = new URL(window.location);
+  if (manageFavoritesMode) {
+    url.searchParams.set("manageFavs", "1");
+    if (manageFavoritesSelected.size > 0) {
+      url.searchParams.set("manageFavsSelected", [...manageFavoritesSelected].join(","));
+    } else {
+      url.searchParams.delete("manageFavsSelected");
+    }
+  } else {
+    url.searchParams.delete("manageFavs");
+    url.searchParams.delete("manageFavsSelected");
+  }
+  history.replaceState({}, "", url);
+}
+
 function updateManageToolbar() {
   const total = loadFavorites().length;
   const count = manageFavoritesSelected.size;
@@ -3162,11 +3184,12 @@ function updateManageToolbar() {
   document.getElementById("wiki-manage-remove-btn").disabled = count === 0;
   document.getElementById("wiki-manage-select-all").textContent =
     count === total && total > 0 ? "Deselect all" : "Select all";
+  syncManageFavoritesUrl();
 }
 
-function enterManageFavoritesMode() {
+function enterManageFavoritesMode(skipClear = false) {
   manageFavoritesMode = true;
-  manageFavoritesSelected.clear();
+  if (!skipClear) manageFavoritesSelected.clear();
   document.getElementById("wiki-manage-toolbar").classList.remove("hidden");
   updateManageToolbar();
   renderWikiGrid(wikiSearch.value);
@@ -3175,6 +3198,7 @@ function enterManageFavoritesMode() {
 function exitManageFavoritesMode() {
   manageFavoritesMode = false;
   manageFavoritesSelected.clear();
+  syncManageFavoritesUrl();
   document.getElementById("wiki-manage-toolbar").classList.add("hidden");
   updateFavoritesToggleText();
   renderWikiGrid(wikiSearch.value);
@@ -3218,16 +3242,33 @@ document.getElementById("wiki-manage-remove-btn").addEventListener("click", () =
 
 // ── Compare mode ─────────────────────────────────────────────────
 
+function syncCompareUrl() {
+  const url = new URL(window.location);
+  if (compareMode && compareSelected.size > 0) {
+    url.searchParams.set("compare", [...compareSelected].join(","));
+  } else {
+    url.searchParams.delete("compare");
+  }
+  const panelOpen = !document.getElementById("compare-modal").classList.contains("hidden");
+  if (panelOpen && compareSelected.size >= 2) {
+    url.searchParams.set("compareOpen", "1");
+  } else {
+    url.searchParams.delete("compareOpen");
+  }
+  history.replaceState({}, "", url);
+}
+
 function updateCompareToolbar() {
   const count = compareSelected.size;
   document.getElementById("wiki-compare-count").textContent =
     count === 0 ? "Select 2\u20133 species" : count === 1 ? "1 selected" : `${count} selected`;
   document.getElementById("wiki-compare-go-btn").disabled = count < 2;
+  syncCompareUrl();
 }
 
-function enterCompareMode() {
+function enterCompareMode(skipSync = false) {
   compareMode = true;
-  compareSelected.clear();
+  if (!skipSync) compareSelected.clear();
   document.getElementById("wiki-compare-toolbar").classList.add("visible");
   document.getElementById("wiki-compare-btn").classList.add("active");
   updateCompareToolbar();
@@ -3265,6 +3306,7 @@ function enterCompareMode() {
 function exitCompareMode() {
   compareMode = false;
   compareSelected.clear();
+  syncCompareUrl();
   closeComparePanel();
   document.getElementById("wiki-compare-toolbar").classList.remove("visible");
   document.getElementById("wiki-compare-btn").classList.remove("active");
@@ -3297,10 +3339,12 @@ function exitCompareMode() {
 function openComparePanel() {
   renderComparePanel();
   document.getElementById("compare-modal").classList.remove("hidden");
+  syncCompareUrl();
 }
 
 function closeComparePanel() {
   document.getElementById("compare-modal").classList.add("hidden");
+  syncCompareUrl();
 }
 
 function renderComparePanel() {
@@ -3312,6 +3356,17 @@ function renderComparePanel() {
   const wrap = document.getElementById("compare-modal-body");
   wrap.innerHTML = "";
   wrap.style.setProperty("--compare-cols", n);
+
+  const inner = document.createElement("div");
+  inner.className = "compare-table-inner";
+  wrap.appendChild(inner);
+
+  function makeSection(title) {
+    const sec = document.createElement("div");
+    sec.className = "compare-section-header";
+    sec.textContent = title;
+    inner.appendChild(sec);
+  }
 
   function makeRow(labelText, cellFn, extraClass) {
     const row = document.createElement("div");
@@ -3326,7 +3381,7 @@ function renderComparePanel() {
       cellFn(cell, sp);
       row.appendChild(cell);
     });
-    wrap.appendChild(row);
+    inner.appendChild(row);
   }
 
   // ── Species header row ─────────────────────────────────────────
@@ -3367,7 +3422,8 @@ function renderComparePanel() {
     viewBtn.className = "compare-view-btn";
     viewBtn.textContent = "View details \u2192";
     viewBtn.addEventListener("click", () => {
-      closeComparePanel();
+      returnToCompare = true;
+      document.getElementById("compare-modal").classList.add("hidden");
       openSpeciesModal(sp, null);
     });
     info.appendChild(nameEl);
@@ -3378,7 +3434,10 @@ function renderComparePanel() {
     cell.appendChild(info);
     headerRow.appendChild(cell);
   });
-  wrap.appendChild(headerRow);
+  inner.appendChild(headerRow);
+
+  // ── Status & Health ────────────────────────────────────────────
+  makeSection("Status \u0026 Health");
 
   // ── IUCN Status ────────────────────────────────────────────────
   makeRow("IUCN Status", (cell, sp) => {
@@ -3414,6 +3473,62 @@ function renderComparePanel() {
     cell.appendChild(pct);
   });
 
+  // ── Population Trend ───────────────────────────────────────────
+  makeRow("Pop. Trend", (cell, sp) => {
+    const metric = sp.healthMetrics && sp.healthMetrics.find((m) => m.label === "Population Trend");
+    const pts = sp.populationTrend && sp.populationTrend.length >= 2 ? sp.populationTrend : null;
+
+    const TREND_WORD = { down: "Decreasing", up: "Increasing", stable: "Stable" };
+    let dir = metric ? metric.trend : null;
+    if (!dir && pts) {
+      const pct = Math.round((pts[pts.length - 1].value - pts[0].value) / pts[0].value * 100);
+      dir = pct < -5 ? "down" : pct > 5 ? "up" : "stable";
+    }
+    const label = TREND_WORD[dir] || null;
+    if (!label) { cell.textContent = "\u2014"; return; }
+
+    const sym = dir === "down" ? " \u25bc" : dir === "up" ? " \u25b2" : "";
+    const main = document.createElement("span");
+    main.className = `compare-trend-text compare-trend-text--${dir || "unknown"}`;
+    main.textContent = label + sym;
+    cell.appendChild(main);
+
+    if (pts) {
+      const pct = Math.round((pts[pts.length - 1].value - pts[0].value) / pts[0].value * 100);
+      const sub = document.createElement("span");
+      sub.className = "compare-trend-sub";
+      sub.textContent = (pct > 0 ? "+" : "") + pct + "% since " + pts[0].year;
+      cell.appendChild(sub);
+    }
+  });
+
+  // ── Vital Stats ────────────────────────────────────────────────
+  makeSection("Vital Stats");
+
+  // ── Max Length ─────────────────────────────────────────────────
+  makeRow("Max Length", (cell, sp) => {
+    const vs = sp.vitalSigns && sp.vitalSigns.find((v) => /max.*length/i.test(v.label));
+    if (vs) {
+      cell.textContent = vs.metric || vs.value;
+    } else if (sp.size) {
+      // Pull first semicolon-delimited segment or first sentence
+      const seg = sp.size.split(";").pop().trim();
+      const clean = seg.match(/^[^.!?]+[.!?]/)?.[0] || seg.slice(0, 80);
+      cell.textContent = clean;
+    } else {
+      cell.textContent = "\u2014";
+    }
+  });
+
+  // ── Lifespan ───────────────────────────────────────────────────
+  makeRow("Lifespan", (cell, sp) => {
+    const vs = sp.vitalSigns && sp.vitalSigns.find((v) => /lifespan/i.test(v.label));
+    cell.textContent = vs ? vs.value : "\u2014";
+  });
+
+  // ── Ecology ────────────────────────────────────────────────────
+  makeSection("Ecology");
+
   // ── Diet ───────────────────────────────────────────────────────
   makeRow("Diet", (cell, sp) => {
     if (sp.dietType) {
@@ -3428,24 +3543,11 @@ function renderComparePanel() {
     if (sp.diet) {
       const text = document.createElement("div");
       text.className = "compare-cell-text";
-      const firstSentence = sp.diet.match(/^[^.!?]+[.!?]/)?.[0] || sp.diet.slice(0, 120);
-      text.textContent = firstSentence;
+      const raw = sp.diet.match(/^[^.!?]+[.!?]/)?.[0] || sp.diet.slice(0, 90);
+      text.textContent = raw.length > 90 ? raw.slice(0, 87) + "\u2026" : raw;
       cell.appendChild(text);
     } else if (!sp.dietType) {
       cell.textContent = "\u2014";
-    }
-  });
-
-  // ── Size ───────────────────────────────────────────────────────
-  makeRow("Size", (cell, sp) => {
-    if (sp.size) {
-      const firstSentence = sp.size.match(/^[^.!?]+[.!?]/)?.[0] || sp.size.slice(0, 120);
-      cell.textContent = firstSentence;
-    } else {
-      const sizeStat = sp.vitalSigns && sp.vitalSigns.find((v) =>
-        /size|length|weight/i.test(v.label)
-      );
-      cell.textContent = sizeStat ? `${sizeStat.label}: ${sizeStat.value}` : "\u2014";
     }
   });
 
@@ -4210,4 +4312,34 @@ if (initSpeciesId) {
     openSpeciesModal(initSpecies, null, initParams.get("tab") || "overview"); // always fade in on deep link (card not visually established yet)
     suppressHistoryUpdate = false;
   }
+}
+
+// Restore compare state from URL
+const initCompareIds = initParams.get("compare");
+if (initCompareIds) {
+  const ids = initCompareIds.split(",").filter((id) => WIKI_DATA.items.find((s) => s.id === id));
+  if (ids.length >= 1) {
+    ids.forEach((id) => compareSelected.add(id));
+    enterCompareMode(true);
+    // Mark already-selected cards
+    ids.forEach((id) => {
+      const card = document.querySelector(`[data-species-id="${id}"]`);
+      if (card) card.classList.add("compare-selected");
+      const starBtn = card && card.querySelector(".species-card-star");
+      if (starBtn) starBtn.classList.add("selected");
+    });
+    if (initParams.get("compareOpen") === "1" && ids.length >= 2) {
+      openComparePanel();
+    }
+  }
+}
+
+// Restore manage favorites state from URL
+if (initParams.get("manageFavs") === "1") {
+  const selectedParam = initParams.get("manageFavsSelected");
+  if (selectedParam) {
+    const favIds = loadFavorites();
+    selectedParam.split(",").filter((id) => favIds.includes(id)).forEach((id) => manageFavoritesSelected.add(id));
+  }
+  enterManageFavoritesMode(true);
 }

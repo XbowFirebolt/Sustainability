@@ -3820,13 +3820,13 @@ body.wiki-timeline-mode #wiki-compare-toolbar { display: none !important; }
 .compare-panel {
   background: var(--color-surface, #fff);
   border-radius: 12px;
-  max-width: 960px;
+  max-width: 1080px;
   width: 100%;
   max-height: 88vh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.28);
+  box-shadow: inset 0 0 0 1px var(--color-border), 0 8px 40px rgba(0, 0, 0, 0.28);
 }
 .compare-panel-header {
   display: flex;
@@ -3843,10 +3843,26 @@ body.wiki-timeline-mode #wiki-compare-toolbar { display: none !important; }
 .compare-table-wrap {
   overflow: auto;
   flex: 1;
+  padding: 0.65rem 0.9rem 0.9rem;
+}
+.compare-table-inner {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+.compare-section-header {
+  background: var(--color-bg, #f4f8f4);
+  border-bottom: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-border);
+  padding: 0.3rem 1rem;
+  font-size: 0.67rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--color-text-muted);
 }
 .compare-row {
   display: grid;
-  grid-template-columns: 130px repeat(var(--compare-cols, 2), 1fr);
+  grid-template-columns: 148px repeat(var(--compare-cols, 2), 1fr);
   border-bottom: 1px solid var(--color-border);
 }
 .compare-row--last {
@@ -3856,7 +3872,7 @@ body.wiki-timeline-mode #wiki-compare-toolbar { display: none !important; }
   background: rgba(0, 0, 0, 0.025);
 }
 .compare-cell {
-  padding: 0.7rem 1rem;
+  padding: 0.65rem 1rem;
   font-size: 0.85rem;
 }
 .compare-cell--label {
@@ -3869,7 +3885,7 @@ body.wiki-timeline-mode #wiki-compare-toolbar { display: none !important; }
   align-items: flex-start;
   padding-top: 0.9rem;
   position: sticky;
-  left: 0;
+  left: 0.9rem;
   background: var(--color-surface, #fff);
   z-index: 1;
   border-right: 1px solid var(--color-border);
@@ -3877,6 +3893,10 @@ body.wiki-timeline-mode #wiki-compare-toolbar { display: none !important; }
 .compare-cell--header-spacer {
   align-items: flex-end;
   padding-bottom: 0.6rem;
+}
+.compare-row--header {
+  overflow: hidden;
+  border-radius: 7px 7px 0 0;
 }
 .compare-cell--species-header {
   padding: 0;
@@ -3888,18 +3908,18 @@ body.wiki-timeline-mode #wiki-compare-toolbar { display: none !important; }
   border-left: none;
 }
 .compare-species-img {
-  height: 130px;
+  height: 160px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.5rem;
+  font-size: 3rem;
   background: var(--color-surface-alt, #f4f4f4);
   background-size: cover;
   background-position: center;
   flex-shrink: 0;
 }
 .compare-species-info {
-  padding: 0.6rem 0.85rem 0.65rem;
+  padding: 0.6rem 0.9rem 0.65rem;
   display: flex;
   flex-direction: column;
   gap: 0.1rem;
@@ -3919,16 +3939,20 @@ body.wiki-timeline-mode #wiki-compare-toolbar { display: none !important; }
 .compare-view-btn {
   font-size: 0.72rem;
   color: var(--color-primary);
-  background: none;
-  border: none;
-  padding: 0;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--color-primary);
+  padding: 0.22rem 0.6rem;
+  border-radius: 5px;
   cursor: pointer;
-  text-decoration: underline;
-  text-align: left;
+  text-decoration: none;
+  text-align: center;
   width: fit-content;
+  margin-top: 0.2rem;
+  transition: background 0.15s, opacity 0.15s;
 }
 .compare-view-btn:hover {
-  opacity: 0.7;
+  background: rgba(255, 255, 255, 0.12);
+  opacity: 1;
 }
 .compare-cell--data {
   display: flex;
@@ -3951,7 +3975,7 @@ body.wiki-timeline-mode #wiki-compare-toolbar { display: none !important; }
   border-radius: 3px;
   overflow: hidden;
   width: 100%;
-  max-width: 160px;
+  max-width: 220px;
 }
 .compare-health-bar {
   height: 100%;
@@ -3973,6 +3997,24 @@ body.wiki-timeline-mode #wiki-compare-toolbar { display: none !important; }
   font-size: 0.8rem;
 }
 .compare-threat-name {
+  color: var(--color-text);
+}
+.compare-cell--data:nth-child(2) {
+  padding-left: 1.25rem;
+}
+.compare-cell--species-header:nth-child(2) .compare-species-info {
+  padding-left: 1.2rem;
+}
+.compare-trend-text {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+.compare-trend-text--down    { color: #e05a4a; }
+.compare-trend-text--up      { color: #27a85f; }
+.compare-trend-text--stable  { color: var(--color-text); }
+.compare-trend-text--unknown { color: var(--color-text); }
+.compare-trend-sub {
+  font-size: 0.75rem;
   color: var(--color-text);
 }
 
