@@ -353,6 +353,7 @@ body.no-map {
 .discover-page {
   display: block;
   padding: 0 0 2rem;
+  position: relative;
 }
 
 .wiki-sticky-toolbar {
@@ -946,6 +947,202 @@ body.no-map {
   color: var(--color-text-muted);
   white-space: nowrap;
 }
+
+.wiki-glance-chevron {
+  font-size: 0.58rem;
+  color: var(--color-text-muted);
+  margin-left: 0.1rem;
+  display: inline-block;
+  line-height: 1;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.wiki-glance-chevron--open {
+  transform: rotate(180deg);
+}
+
+.wiki-glance {
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 0.15rem 0.35rem;
+  margin: -0.15rem -0.35rem;
+  transition: background 0.15s, transform 0.12s ease;
+  user-select: none;
+}
+.wiki-glance:hover  { background: rgba(var(--color-primary-rgb), 0.06); }
+.wiki-glance:active { transform: scale(0.96); }
+.wiki-glance:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 1px; }
+.wiki-glance--active { background: rgba(var(--color-primary-rgb), 0.09); }
+
+/* ── Timeline view ───────────────────────────────────────────── */
+
+.wiki-timeline {
+  display: none;
+  padding: 0 1rem 3rem;
+}
+
+body.wiki-timeline-mode #wiki-grid    { display: none; }
+body.wiki-timeline-mode .wiki-timeline { display: block; animation: tlFadeIn 0.22s ease; }
+
+body.wiki-timeline-mode .discover-search-wrap,
+body.wiki-timeline-mode .wiki-bar-spacer,
+body.wiki-timeline-mode #wiki-favorites-toggle,
+body.wiki-timeline-mode #wiki-manage-favorites-btn,
+body.wiki-timeline-mode #wiki-clear-filters,
+body.wiki-timeline-mode #wiki-filter-btn,
+body.wiki-timeline-mode #wiki-surprise-btn,
+body.wiki-timeline-mode .wiki-view-toggle,
+body.wiki-timeline-mode .wiki-sort-group,
+body.wiki-timeline-mode .wiki-legend-hint,
+body.wiki-timeline-mode #wiki-about-btn,
+body.wiki-timeline-mode #wiki-filter-panel,
+body.wiki-timeline-mode #wiki-manage-toolbar { display: none !important; }
+
+@keyframes tlFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes tlFadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(8px); }
+}
+
+.wiki-timeline.tl-exiting {
+  display: block !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: 5;
+  animation: tlFadeOut 0.22s ease forwards !important;
+}
+
+#wiki-grid.wiki-grid--entering {
+  animation: tlFadeIn 0.22s ease;
+}
+
+.tl-legend {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  padding: 0.5rem 0 0.75rem;
+  margin-left: 210px;
+}
+
+.tl-body {
+  position: relative;
+  padding-top: 30px; /* space for year labels above first row */
+}
+
+.tl-year-overlay {
+  position: absolute;
+  left: 210px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.tl-year-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-left: 1px solid var(--color-border);
+  transform: translateX(-50%);
+}
+
+.tl-year-label {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  transform: translateX(-50%);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
+.tl-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.66rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.tl-legend-swatch {
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  opacity: 0.75;
+}
+
+.tl-row {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--color-border);
+  cursor: pointer;
+  min-height: 38px;
+  transition: background 0.12s;
+  animation: tlRowIn 0.28s ease both;
+}
+
+.tl-row:hover { background: rgba(var(--color-primary-rgb), 0.04); }
+.tl-row:focus-visible { outline: 2px solid var(--color-primary); outline-offset: -2px; }
+
+@keyframes tlRowIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.tl-row-label {
+  flex: 0 0 210px;
+  min-width: 210px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  padding: 0.35rem 0.75rem 0.35rem 0;
+}
+
+.tl-row-name {
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--color-text);
+}
+
+.tl-row-badge {
+  font-size: 0.58rem;
+  font-weight: 600;
+  padding: 0.08rem 0.28rem;
+  border-radius: 3px;
+  white-space: nowrap;
+  align-self: flex-start;
+  letter-spacing: 0.01em;
+}
+
+.tl-row-bands {
+  flex: 1;
+  position: relative;
+  height: 30px;
+}
+
+.tl-band {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  border-radius: 3px;
+  transition: filter 0.15s;
+}
+
+.tl-row:hover .tl-band { filter: brightness(1.15) saturate(1.1); }
 
 .wiki-threat-legend-label {
   font-size: 0.7rem;

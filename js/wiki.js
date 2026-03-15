@@ -2001,6 +2001,7 @@ let showFavoritesOnly = false;
 let manageFavoritesMode = false;
 let manageFavoritesSelected = new Set();
 let filterPanelOpen = false;
+let timelineMode = false;
 
 const PAGE_SIZE = 24;
 let _renderQueue = [];
@@ -3141,6 +3142,18 @@ document.getElementById("wiki-surprise-btn").addEventListener("click", () => {
   openSpeciesModal(randomSpecies, null);
 });
 
+// ── At-a-glance timeline toggle ────────────────────────────────
+
+document.getElementById("wiki-glance").addEventListener("click", () => {
+  if (timelineMode) exitTimelineMode(); else enterTimelineMode();
+});
+document.getElementById("wiki-glance").addEventListener("keydown", (e) => {
+  if (e.key === "Enter" || e.key === " ") {
+    e.preventDefault();
+    if (timelineMode) exitTimelineMode(); else enterTimelineMode();
+  }
+});
+
 // ── About this wiki modal ──────────────────────────────────────
 
 const wikiAboutModal = document.getElementById("wiki-about-modal");
@@ -3422,6 +3435,17 @@ function renderGlanceBar(items) {
     sub.textContent = "avg. health";
     el.appendChild(sub);
 
+    const chevron = document.createElement("span");
+    chevron.className = "wiki-glance-chevron";
+    chevron.setAttribute("aria-hidden", "true");
+    chevron.textContent = "▾";
+    el.appendChild(chevron);
+
+    el.setAttribute("role", "button");
+    el.setAttribute("tabindex", "0");
+    el.setAttribute("aria-label", "At a glance — click to view status history timeline");
+    el.setAttribute("aria-expanded", "false");
+
     if (avg !== null) {
       const runAnim = () => {
         const duration = 550;
@@ -3464,6 +3488,160 @@ function renderGlanceBar(items) {
     barFill.style.transform = "scaleX(0)";
     pctEl.textContent = "—";
   }
+}
+
+// ── Status history timeline view ───────────────────────────────
+
+function enterTimelineMode() {
+  if (timelineMode) return;
+  timelineMode = true;
+  if (filterPanelOpen) {
+    filterPanelOpen = false;
+    document.getElementById("wiki-filter-panel").classList.add("hidden");
+    updateFilterBtnState();
+  }
+  document.body.classList.add("wiki-timeline-mode");
+  renderTimeline();
+  const chevron = document.querySelector(".wiki-glance-chevron");
+  if (chevron) chevron.classList.add("wiki-glance-chevron--open");
+  document.getElementById("wiki-glance").setAttribute("aria-expanded", "true");
+}
+
+function exitTimelineMode() {
+  if (!timelineMode) return;
+  timelineMode = false;
+  const chevron = document.querySelector(".wiki-glance-chevron");
+  if (chevron) chevron.classList.remove("wiki-glance-chevron--open");
+  document.getElementById("wiki-glance").setAttribute("aria-expanded", "false");
+
+  const timeline = document.getElementById("wiki-timeline");
+  const grid = document.getElementById("wiki-grid");
+
+  // Crossfade: float the exiting timeline on top while the grid fades in beneath it
+  timeline.classList.add("tl-exiting");
+  document.body.classList.remove("wiki-timeline-mode");
+  grid.classList.add("wiki-grid--entering");
+
+  setTimeout(() => {
+    timeline.classList.remove("tl-exiting");
+    grid.classList.remove("wiki-grid--entering");
+  }, 250);
+}
+
+function renderTimeline() {
+  const container = document.getElementById("wiki-timeline");
+  container.innerHTML = "";
+
+  const MIN_YEAR = 1970;
+  const MAX_YEAR = 2025;
+  const TOTAL_YEARS = MAX_YEAR - MIN_YEAR;
+  const TICK_YEARS = [1970, 1980, 1990, 2000, 2010, 2020];
+
+  const species = WIKI_DATA.items
+    .filter((s) => Array.isArray(s.statusHistory) && s.statusHistory.length > 0)
+    .sort((a, b) => {
+      const rA = STATUS_ORDER.findIndex((x) => x.label === a.statusLabel);
+      const rB = STATUS_ORDER.findIndex((x) => x.label === b.statusLabel);
+      return (rA === -1 ? 99 : rA) - (rB === -1 ? 99 : rB);
+    });
+
+  // ── Legend (first) ────────────────────────────────────────────
+  const legend = document.createElement("div");
+  legend.className = "tl-legend";
+  ["Critically Endangered", "Endangered", "Vulnerable", "Near Threatened", "Least Concern", "Not Evaluated"].forEach((lbl) => {
+    const meta = STATUS_ORDER.find((x) => x.label === lbl);
+    if (!meta) return;
+    const item = document.createElement("span");
+    item.className = "tl-legend-item";
+    const swatch = document.createElement("span");
+    swatch.className = "tl-legend-swatch";
+    swatch.style.background = meta.color;
+    item.appendChild(swatch);
+    item.appendChild(document.createTextNode(lbl));
+    legend.appendChild(item);
+  });
+  container.appendChild(legend);
+
+  // ── Body: year overlay + rows ─────────────────────────────────
+  const body = document.createElement("div");
+  body.className = "tl-body";
+
+  // Year overlay — vertical lines + labels, positioned over the tracks area
+  const yearOverlay = document.createElement("div");
+  yearOverlay.className = "tl-year-overlay";
+  TICK_YEARS.forEach((y) => {
+    const line = document.createElement("div");
+    line.className = "tl-year-line";
+    line.style.left = (((y - MIN_YEAR) / TOTAL_YEARS) * 100) + "%";
+    const label = document.createElement("span");
+    label.className = "tl-year-label";
+    label.textContent = y;
+    line.appendChild(label);
+    yearOverlay.appendChild(line);
+  });
+  body.appendChild(yearOverlay);
+
+  // ── Rows ──────────────────────────────────────────────────────
+  species.forEach((s, rowIdx) => {
+    const hist = [...s.statusHistory].sort((a, b) => a.year - b.year);
+
+    const row = document.createElement("div");
+    row.className = "tl-row";
+    row.style.animationDelay = `${rowIdx * 20}ms`;
+    row.setAttribute("role", "button");
+    row.setAttribute("tabindex", "0");
+    row.addEventListener("click", () => openSpeciesModal(s, row));
+    row.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openSpeciesModal(s, row); }
+    });
+
+    // Label column
+    const labelEl = document.createElement("div");
+    labelEl.className = "tl-row-label";
+
+    const nameEl = document.createElement("span");
+    nameEl.className = "tl-row-name";
+    nameEl.textContent = s.commonName;
+    labelEl.appendChild(nameEl);
+
+    const statusMeta = STATUS_ORDER.find((x) => x.label === s.statusLabel);
+    if (statusMeta) {
+      const badge = document.createElement("span");
+      badge.className = "tl-row-badge";
+      badge.style.color = statusMeta.color;
+      badge.style.background = statusMeta.bg;
+      badge.textContent = s.statusLabel;
+      labelEl.appendChild(badge);
+    }
+    row.appendChild(labelEl);
+
+    // Bands
+    const bandsEl = document.createElement("div");
+    bandsEl.className = "tl-row-bands";
+
+    hist.forEach((entry, i) => {
+      const startYear = Math.max(entry.year, MIN_YEAR);
+      const endYear   = i < hist.length - 1 ? hist[i + 1].year : MAX_YEAR;
+      const leftPct   = ((startYear - MIN_YEAR) / TOTAL_YEARS) * 100;
+      const widthPct  = ((endYear   - startYear) / TOTAL_YEARS) * 100;
+      const sMeta     = STATUS_ORDER.find((x) => x.label === entry.status);
+      const color     = sMeta ? sMeta.color : "#888888";
+
+      const band = document.createElement("div");
+      band.className = "tl-band";
+      band.style.left       = leftPct  + "%";
+      band.style.width      = widthPct + "%";
+      band.style.background = color + "55";
+      band.style.borderLeft = `3px solid ${color}`;
+      band.title = `${entry.status} · ${startYear}–${endYear === MAX_YEAR ? "present" : endYear}`;
+      bandsEl.appendChild(band);
+    });
+
+    row.appendChild(bandsEl);
+    body.appendChild(row);
+  });
+
+  container.appendChild(body);
 }
 
 // Restore search/sort/filter state from URL params (supports shareable filtered views)
