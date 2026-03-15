@@ -3500,11 +3500,37 @@ function enterTimelineMode() {
     document.getElementById("wiki-filter-panel").classList.add("hidden");
     updateFilterBtnState();
   }
+
+  // FLIP: snapshot glance position before layout change
+  const statusBar = document.getElementById("wiki-status-bar");
+  const beforeRect = statusBar.getBoundingClientRect();
+
   document.body.classList.add("wiki-timeline-mode");
   renderTimeline();
+
   const chevron = document.querySelector(".wiki-glance-chevron");
   if (chevron) chevron.classList.add("wiki-glance-chevron--open");
   document.getElementById("wiki-glance").setAttribute("aria-expanded", "true");
+
+  // FLIP: animate status bar from old position (play the inverse delta)
+  const afterRect = statusBar.getBoundingClientRect();
+  const dy = beforeRect.top - afterRect.top;
+  if (dy > 0) {
+    statusBar.animate(
+      [{ transform: `translateY(${dy}px)` }, { transform: "translateY(0)" }],
+      { duration: 420, easing: "cubic-bezier(0.4, 0, 0.2, 1)" }
+    );
+  }
+
+  // Timeline content slides down from bar and fades in
+  const timeline = document.getElementById("wiki-timeline");
+  timeline.animate(
+    [
+      { opacity: 0, transform: "translateY(-16px)" },
+      { opacity: 1, transform: "translateY(0)" },
+    ],
+    { duration: 380, delay: 60, easing: "cubic-bezier(0.4, 0, 0.2, 1)", fill: "both" }
+  );
 }
 
 function exitTimelineMode() {
@@ -3514,18 +3540,52 @@ function exitTimelineMode() {
   if (chevron) chevron.classList.remove("wiki-glance-chevron--open");
   document.getElementById("wiki-glance").setAttribute("aria-expanded", "false");
 
+  const statusBar = document.getElementById("wiki-status-bar");
   const timeline = document.getElementById("wiki-timeline");
   const grid = document.getElementById("wiki-grid");
 
-  // Crossfade: float the exiting timeline on top while the grid fades in beneath it
-  timeline.classList.add("tl-exiting");
-  document.body.classList.remove("wiki-timeline-mode");
-  grid.classList.add("wiki-grid--entering");
+  // Keep timeline visible during its exit animation — inline display:block overrides
+  // the CSS display:none that fires when wiki-timeline-mode is removed
+  timeline.style.display = "block";
 
-  setTimeout(() => {
-    timeline.classList.remove("tl-exiting");
-    grid.classList.remove("wiki-grid--entering");
-  }, 250);
+  // Step 1: fade the timeline out first
+  const fadeOut = timeline.animate(
+    [
+      { opacity: 1, transform: "translateY(0)" },
+      { opacity: 0, transform: "translateY(-20px)" },
+    ],
+    { duration: 300, easing: "cubic-bezier(0.4, 0, 1, 1)", fill: "forwards" }
+  );
+
+  fadeOut.onfinish = () => {
+    // Step 2: measure bar position while still in timeline layout
+    const beforeRect = statusBar.getBoundingClientRect();
+
+    // Step 3: add fade-in class BEFORE layout restore so the CSS animation's backwards
+    // fill (opacity:0) is already applied when the grid first becomes display:block
+    grid.classList.add("wiki-grid--fade-in");
+
+    // Force a style recalc so the browser commits the animation's from-state (opacity:0)
+    // before the next step makes the grid visible
+    grid.getBoundingClientRect();
+
+    // Step 4: restore layout (search bar reappears, grid shows, CSS display:none takes timeline)
+    timeline.style.display = "";
+    document.body.classList.remove("wiki-timeline-mode");
+
+    // Step 5: measure bar's new position and FLIP it down
+    const afterRect = statusBar.getBoundingClientRect();
+    const dy = afterRect.top - beforeRect.top;
+    if (dy > 0) {
+      statusBar.animate(
+        [{ transform: `translateY(${-dy}px)` }, { transform: "translateY(0)" }],
+        { duration: 400, easing: "cubic-bezier(0.4, 0, 0.2, 1)" }
+      );
+    }
+
+    // Step 6: remove the fade class once the animation has finished
+    setTimeout(() => grid.classList.remove("wiki-grid--fade-in"), 420);
+  };
 }
 
 function renderTimeline() {

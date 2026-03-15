@@ -981,7 +981,15 @@ body.no-map {
 }
 
 body.wiki-timeline-mode #wiki-grid    { display: none; }
-body.wiki-timeline-mode .wiki-timeline { display: block; animation: tlFadeIn 0.22s ease; }
+body.wiki-timeline-mode .wiki-timeline { display: block; }
+
+#wiki-grid.wiki-grid--fade-in {
+  animation: wikiGridFadeIn 0.4s ease-out both;
+}
+@keyframes wikiGridFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
 
 body.wiki-timeline-mode .discover-search-wrap,
 body.wiki-timeline-mode .wiki-bar-spacer,
@@ -997,30 +1005,7 @@ body.wiki-timeline-mode #wiki-about-btn,
 body.wiki-timeline-mode #wiki-filter-panel,
 body.wiki-timeline-mode #wiki-manage-toolbar { display: none !important; }
 
-@keyframes tlFadeIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
 
-@keyframes tlFadeOut {
-  from { opacity: 1; transform: translateY(0); }
-  to   { opacity: 0; transform: translateY(8px); }
-}
-
-.wiki-timeline.tl-exiting {
-  display: block !important;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  pointer-events: none;
-  z-index: 5;
-  animation: tlFadeOut 0.22s ease forwards !important;
-}
-
-#wiki-grid.wiki-grid--entering {
-  animation: tlFadeIn 0.22s ease;
-}
 
 .tl-legend {
   display: flex;
