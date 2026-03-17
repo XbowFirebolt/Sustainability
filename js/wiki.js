@@ -13,6 +13,7 @@ const wikiProjectEmoji = wikiProject ? wikiProject.emoji : "?";
 const SILHOUETTE_FALLBACK = WIKI_DATA.silhouetteFallback || null;
 
 function applySilhouetteBg(el) {
+  el.querySelectorAll(".card-img-lqip, .card-img-full").forEach(n => n.remove());
   el.style.background = "";
   el.style.backgroundImage = `url(${SILHOUETTE_FALLBACK})`;
   el.style.backgroundSize = "cover";
@@ -335,6 +336,7 @@ function openSpeciesModal(species, cardEl, tabKey = "overview") {
     applySilhouetteBg(imgArea);
     document.getElementById("species-modal-emoji").style.display = "none";
   } else {
+    imgArea.querySelectorAll(".card-img-lqip, .card-img-full").forEach(n => n.remove());
     imgArea.style.backgroundImage = "";
     imgArea.style.background = "linear-gradient(135deg, #0a0a0a, var(--color-primary))";
     document.getElementById("species-modal-emoji").style.display = "";
