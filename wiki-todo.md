@@ -5,47 +5,12 @@ Check off items as they're completed. Add notes inline as needed.
 
 ---
 
-## Content & Data
-
-### Species Data Completion
-
-- [ ] **Promote remaining ~65 stubs to Full tier** — fill `vitalSigns`, `threats`, `actionItems`, `healthMetrics`, `statusHistory`, `populationTrend`, `populationTrendMeta`, `preyDeclineRegions`, `fishingPressureRegions`, `diet`, `size`, `habitatStats` for all stub-tier species
-- [ ] **Add photos for ~65+ species without images** — image dirs exist for ~35 of ~100 species; remaining stubs need `photos` field + PNG in `images/<id>/`
-- [ ] **Add `physicalScaleImage` for all Full-tier species** — Great White is the only species with one; 30+ Full (partial) species still missing this
-- [ ] **Add `habitatImage` for most species** — only a handful have habitat distribution maps; ideally every Full-tier species should have one
-- [ ] **Add geographic range description per species** — a short written summary of range as a data field (e.g., "Found throughout tropical and subtropical Atlantic waters")
-- [ ] **Add "related species" cross-references** — `relatedSpecies` array of IDs per species, rendered as clickable links in the Overview tab
-- [ ] **Add external resource links in Action Items** — each action item can include a `url` pointing to relevant org pages, petitions, or research papers
-- [ ] **Verify and audit stub data accuracy** — funFact, description, lifePercent, and IUCN status for all ~65 stubs should be double-checked against IUCN Red List
-
-### Metadata & Tracking
-
-- [ ] **Overhaul species-tracker.md** — currently shows ~56 species, but config.json has ~100; rebuild the table to accurately track all species, tier, and what's missing per species
-- [x] **Add geographic range description field** — `geographicRangeDescription` string for each species, shown in Overview tab
-- [ ] **Add `conservationActions` field** — list international agreements protecting the species (CITES appendix, CMS, etc.) with current status; distinct from actionItems (those are reader-facing CTAs)
-- [ ] **Add more species** — candidates for Phase 4: rays & skates (e.g., Giant Manta Ray, Sawfish species), stingrays, deep-sea sharks; would significantly expand the wiki's scope
-
----
-
 ## Functionality
-
-### Navigation & Discovery
-
-- [x] **Species comparison view** — select 2–3 species via checkboxes and open a side-by-side stat comparison table (lifePercent, size, diet, status, threats)
-- [x] **Timeline / status-change view** — a secondary view showing all species IUCN status changes plotted across years; shows which species have declined or recovered
-- [x] **Related species links in modal** — "You might also like" or "Related species" section at the bottom of the Overview tab, using cross-reference IDs
-- [x] **Filter by data completeness tier** — add a "Data" filter chip group: Full / Standard / Stub, so users can find species with complete vs. incomplete data
-- [x] **"New additions" indicator** — badge or section marking recently added species (use `lastUpdated` field or a `addedDate` field)
 
 ### User Data & Personalization
 
 - [ ] **Export favorites** — download favorited species data as CSV or JSON
 - [ ] **Per-species user notes** — freeform text field users can attach to any species (stored in localStorage), visible in modal footer
-
-### Search & Filtering
-
-- [x] **Fuzzy search / typo tolerance** — search currently requires exact substrings; add simple fuzzy matching (e.g., "wale shark" → Whale Shark)
-- [x] **Scientific name search** — ensure search matches `scientificName` field and shows "(Carcharodon carcharias)" hint in autocomplete suggestions
 
 ### Data Export & Integration
 
@@ -56,22 +21,13 @@ Check off items as they're completed. Add notes inline as needed.
 
 ## Visuals & UI Polish
 
-- [x] **Loading skeleton screens** — show card-shaped skeleton placeholders while the grid first renders, instead of an empty flash
-- [x] **Lazy load images** — use IntersectionObserver on card image containers so off-screen photos don't load until scrolled into view (images currently load eagerly on card render)
 - [ ] **Dark mode support** — respect `prefers-color-scheme: dark` with an adjusted palette; add a manual toggle to the header
-- [x] **Status progression visualization in statusHistory** — in the conservation history timeline, show directional arrows between status changes (↑ improved / ↓ declined) with color-coded severity
-- [x] **Animated population trend chart** — draw the chart line from left to right when the Threats/Health Metrics tab first opens, instead of appearing all at once
-- [x] **Photo loading blur-up** — load a tiny low-res placeholder first, then swap to full image (LQIP effect) to reduce jarring blank-to-image flash
-- [x] **Compact list view improvements** — in list view mode, add a small inline ring/bar and diet+habitat badges so it's more information-dense without needing to open the modal
-- [x] **Habitat map in Overview tab** — if `habitatImage` is present, embed it in the Overview tab alongside the description (currently only viewable in gallery)
 
 ---
 
 ## Organization & Navigation
 
-- [x] **Breadcrumb in modal** — show the active filter context users came from (e.g., "Filtered: Critically Endangered › 4 of 12") with prev/next respecting filter scope
 - [ ] **Open Graph / social meta tags** — add dynamic `og:title`, `og:description`, and `og:image` tags (based on `?species=` deep link) for rich previews when sharing links in Slack, Twitter, etc.
-- [x] **"About this wiki" page or modal** — brief explainer of data sources, tier definitions, lifePercent methodology, and how to contribute/report errors
 - [ ] **Contribution / error-report link** — button or small link in modal footer: "Suggest a correction" that deep-links to a GitHub issue or form
 
 ---
@@ -81,14 +37,6 @@ Check off items as they're completed. Add notes inline as needed.
 - [ ] **ARIA live region for filter changes** — announce result count to screen readers when filters change (e.g., "Showing 4 results")
 - [ ] **Skip-to-content link** — visually hidden `<a href="#wiki-grid">` at the top for keyboard users
 - [ ] **High contrast mode** — respect `prefers-contrast: more` with stronger borders and higher text contrast
-
----
-
-## Performance
-
-- [x] **Debounce search input** — search re-renders on every keystroke; wrap handler in a ~150ms debounce to reduce unnecessary renders
-- [x] **Cache rendered tab panel HTML** — don't re-build the tab panel DOM on every modal open; cache the result per species ID and reuse it on subsequent opens
-- [x] **Preload next/previous species image on modal open** — when a modal opens, speculatively preload the adjacent species' photo so Prev/Next nav feels instant
 
 ---
 
@@ -106,26 +54,34 @@ Check off items as they're completed. Add notes inline as needed.
 
 - [ ] **Unit tests for core functions** — test `renderWikiGrid`, `openSpeciesModal`, filtering/sorting logic, and `isSpeciesIncomplete` independently
 - [ ] **Offline / PWA support** — add a service worker to cache wiki assets (JS, CSS, images) so the page works offline or on slow connections
-- [ ] **Support multiple wiki datasets per project** — allow a single project page to have sub-categories (e.g., "Sharks" + "Rays" tabs within the same wiki)
-- [ ] **Add a second project's wiki** — implement a second `projects/<id>/data.js` for another sustainability topic to validate the generic wiki architecture beyond sharks
 - [ ] **Config-driven badge and filter definitions** — move `HABITAT_BADGE`, `DIET_BADGE`, `TAG_BADGE`, `STATUS_ORDER` into `config.json` so they don't require editing `wiki.js` for new projects
 
 ---
 
 ## Completed
 
-- [x] Add more shark species beyond the original 5 — now ~100 species across Full, Standard, and Stub tiers
+- [x] **Species comparison view** — select 2–3 species via checkboxes and open a side-by-side stat comparison table (lifePercent, size, diet, status, threats)
+- [x] **Timeline / status-change view** — a secondary view showing all species IUCN status changes plotted across years; shows which species have declined or recovered
+- [x] **Related species links in modal** — "You might also like" or "Related species" section at the bottom of the Overview tab, using cross-reference IDs
+- [x] **Filter by data completeness tier** — add a "Data" filter chip group: Full / Standard / Stub, so users can find species with complete vs. incomplete data
+- [x] **"New additions" indicator** — badge or section marking recently added species (use `lastUpdated` field or a `addedDate` field)
+- [x] **Fuzzy search / typo tolerance** — search currently requires exact substrings; add simple fuzzy matching (e.g., "wale shark" → Whale Shark)
+- [x] **Scientific name search** — ensure search matches `scientificName` field and shows "(Carcharodon carcharias)" hint in autocomplete suggestions
+- [x] **Loading skeleton screens** — show card-shaped skeleton placeholders while the grid first renders, instead of an empty flash
+- [x] **Lazy load images** — use IntersectionObserver on card image containers so off-screen photos don't load until scrolled into view
+- [x] **Status progression visualization in statusHistory** — show directional arrows between status changes (↑ improved / ↓ declined) with color-coded severity
+- [x] **Animated population trend chart** — draw the chart line from left to right when the Threats/Health Metrics tab first opens
+- [x] **Photo loading blur-up** — load a tiny low-res placeholder first, then swap to full image (LQIP effect)
+- [x] **Compact list view improvements** — in list view mode, add a small inline ring/bar and diet+habitat badges so it's more information-dense
+- [x] **Habitat map in Overview tab** — if `habitatImage` is present, embed it in the Overview tab alongside the description
+- [x] **Breadcrumb in modal** — show the active filter context users came from (e.g., "Filtered: Critically Endangered › 4 of 12") with prev/next respecting filter scope
+- [x] **"About this wiki" page or modal** — brief explainer of data sources, tier definitions, lifePercent methodology, and how to contribute/report errors
+- [x] **Debounce search input** — search re-renders on every keystroke; wrap handler in a ~150ms debounce to reduce unnecessary renders
+- [x] **Cache rendered tab panel HTML** — don't re-build the tab panel DOM on every modal open; cache the result per species ID and reuse it on subsequent opens
+- [x] **Preload next/previous species image on modal open** — speculatively preload the adjacent species' photo so Prev/Next nav feels instant
 - [x] **Extract data.js schema documentation** — `data-schema.md` added documenting every field
 - [x] **Data completeness audit script** — `scripts/check-completeness.js` added
-- [x] Add a `tags` array per species (e.g., `["pelagic", "apex predator", "reef"]`) to enable richer tag-based filtering
-- [x] Add real photos for the first ~35 species (image dirs present for ~35 of ~100 species)
-- [x] Add taxonomy info per species (Family, Order, Class) to Vital Signs
-- [x] Add conservation status history per species (e.g., "Was Near Threatened in 2000, now Vulnerable")
-- [x] Add `emoji` field for all species (fallback in hero image area)
-- [x] Add a `lastUpdated` timestamp per species for data freshness tracking
 - [x] **JSDoc type annotations** — `@typedef` comments for the WIKI_DATA schema added
-- [x] Add population trend chart data for the majority of Full-tier species
-- [x] Add prey decline + fishing pressure regional data for Full-tier species
 - [x] **Tab state persistence during nav** — clicking Prev/Next remembers the active tab
 - [x] **"Show Favorites Only" toggle** — quick button to filter grid to starred species only
 - [x] **Clear all filters button** — single click to reset search, status chips, and sort
@@ -170,18 +126,3 @@ Check off items as they're completed. Add notes inline as needed.
 - [x] **More descriptive ARIA labels** — star buttons say "Favorite Great White Shark" etc.
 - [x] **Collapsible filter/sort panel** — all filter dimensions behind a "Filter ▾" toggle
 - [x] **Pagination / infinite scroll** — virtualized grid renders species in pages via IntersectionObserver
-
----
-
-## Notes
-
-- **~100 species** currently in `config.json` (species-tracker.md is outdated and needs an overhaul — it only reflects ~56 species)
-- **~35 species** have photos in `images/<id>/`; the rest display the silhouette fallback
-- **Full (partial)** tier ≈ 31 species (have photos + all data fields, missing `physicalScaleImage`)
-- **Stub tier** ≈ 65+ species (basic fields only; no vitalSigns, threats, etc.)
-- **Only Great White Shark** has both a `physicalScaleImage` and multiple gallery photos
-- The wiki architecture is already generic; a second project just needs a new `data.js` + `config.json`
-- Deep linking (`?species=carcharodon-carcharias`) works with fade-in fallback
-- Metric/imperial unit toggle already implemented in Vital Signs tab header
-- Data sources (`WIKI_DATA.sources`) rendered at the bottom of the Vital Signs tab
-- Modal morph animation only works when the source card is visible in the viewport at open time
