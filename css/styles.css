@@ -4,6 +4,16 @@
   padding: 0;
 }
 
+/* Suppress background/color transitions during initial theme application (prevents FOUC on refresh).
+   Scoped to specific elements so SVG chart animations are never affected. */
+html.theme-init body,
+html.theme-init header,
+html.theme-init .wiki-sort-select,
+html.theme-init .wiki-filter-panel,
+html.theme-init .modal {
+  transition: none !important;
+}
+
 :root {
   --header-height: 3.25rem;
   --color-primary: #2d6a2d;
@@ -51,7 +61,7 @@ header {
   grid-template-columns: 1fr 3fr 1fr;
   align-items: center;
   padding: 0.75rem 1.5rem;
-  background-color: var(--color-primary);
+  background-color: var(--color-primary-bg, var(--color-primary));
   color: var(--color-header-text);
   transition: background-color 0.5s ease;
 }
@@ -127,7 +137,7 @@ header button:hover {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 1.25rem;
-  background-color: var(--color-primary);
+  background-color: var(--color-primary-bg, var(--color-primary));
   color: var(--color-header-text);
 }
 
@@ -4017,4 +4027,117 @@ body.wiki-timeline-mode #wiki-compare-toolbar { display: none !important; }
   font-size: 0.75rem;
   color: var(--color-text);
 }
+
+/* ── Theme toggle button ───────────────────────────────── */
+.theme-toggle-btn {
+  background: var(--color-header-hover-bg);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--color-header-text);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  flex-shrink: 0;
+  transition: background 0.15s ease;
+}
+.theme-toggle-btn:hover {
+  background: var(--color-header-hover-bg);
+  filter: brightness(1.2);
+}
+
+/* ═══════════════════════════════════════════════════════
+   DARK MODE
+═══════════════════════════════════════════════════════ */
+
+/* Fallback palette when no project theme is active */
+[data-theme="dark"] {
+  --color-bg:              #0f1117;
+  --color-surface:         #181b24;
+  --color-text:            #e2e4eb;
+  --color-text-muted:      #7a8099;
+  --color-text-dim:        #6a7089;
+  --color-border:          #252a38;
+  --color-input-border:    #353a4e;
+  --color-primary-bg:      #1a2a42;
+  --color-header-text:     #e2e4eb;
+  --color-header-hover-bg: rgba(255, 255, 255, 0.08);
+}
+
+/* White surfaces → dark surfaces */
+[data-theme="dark"] .modal,
+[data-theme="dark"] .project-card,
+[data-theme="dark"] .species-card,
+[data-theme="dark"] .wiki-skeleton-card,
+[data-theme="dark"] .overview-funfact,
+[data-theme="dark"] .overview-stat-card,
+[data-theme="dark"] .related-species-card,
+[data-theme="dark"] .health-region-card,
+[data-theme="dark"] .tab-threat-card,
+[data-theme="dark"] .tab-action-card,
+[data-theme="dark"] .export-dropdown {
+  background: var(--color-surface);
+}
+
+[data-theme="dark"] .export-dropdown-option {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+[data-theme="dark"] .export-dropdown-option:hover {
+  background: var(--color-border);
+}
+
+/* Keyboard-focused card */
+[data-theme="dark"] .species-card.keyboard-focused .species-card-body { background: var(--color-surface); }
+[data-theme="dark"] .species-card.keyboard-focused .species-card-name { color: var(--color-text); font-weight: 700; }
+[data-theme="dark"] .species-card.keyboard-focused .species-card-sci  { color: var(--color-text-muted); }
+
+/* Star / favorite buttons on cards */
+[data-theme="dark"] .species-card-star,
+[data-theme="dark"] .project-card-star { background: rgba(255, 255, 255, 0.1); }
+[data-theme="dark"] .species-card-star:hover,
+[data-theme="dark"] .project-card-star:hover { background: rgba(255, 255, 255, 0.2); }
+
+/* Incomplete data icon + tooltip */
+[data-theme="dark"] .card-incomplete-icon { background: rgba(0, 0, 0, 0.5); }
+[data-theme="dark"] .card-incomplete-icon::after {
+  background: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* View mode toggle active pip */
+[data-theme="dark"] .wiki-view-btn.active { background: var(--color-surface); }
+
+/* Skeleton shimmer */
+[data-theme="dark"] .wiki-skeleton-card .skel {
+  background: linear-gradient(90deg, #1e2333 25%, #262c3d 50%, #1e2333 75%);
+  background-size: 800px 100%;
+}
+
+/* Threat severity badges */
+[data-theme="dark"] .tab-severity-badge--critical { background: rgba(185, 28,  28,  0.2); color: #f08080; }
+[data-theme="dark"] .tab-severity-badge--high     { background: rgba(180, 83,   9,  0.2); color: #f0a060; }
+[data-theme="dark"] .tab-severity-badge--medium   { background: rgba(161, 98,   7,  0.2); color: #e8c060; }
+[data-theme="dark"] .tab-severity-badge--low      { background: rgba(21,  128,  61, 0.2); color: #6cd890; }
+
+/* Habitat / diet badges */
+[data-theme="dark"] .card-badge--ocean       { background: rgba(65,  130, 230, 0.15); border-color: rgba(65,  130, 230, 0.28); color: #7ab4f0; }
+[data-theme="dark"] .card-badge--coastal     { background: rgba(40,  180, 140, 0.15); border-color: rgba(40,  180, 140, 0.28); color: #50d4aa; }
+[data-theme="dark"] .card-badge--tropical    { background: rgba(40,  180, 100, 0.15); border-color: rgba(40,  180, 100, 0.28); color: #50d490; }
+[data-theme="dark"] .card-badge--pelagic     { background: rgba(90,  110, 230, 0.15); border-color: rgba(90,  110, 230, 0.28); color: #8a9de8; }
+[data-theme="dark"] .card-badge--freshwater  { background: rgba(40,  155, 200, 0.15); border-color: rgba(40,  155, 200, 0.28); color: #60bce0; }
+[data-theme="dark"] .card-badge--reef        { background: rgba(220, 130,  50, 0.15); border-color: rgba(220, 130,  50, 0.28); color: #e0a060; }
+[data-theme="dark"] .card-badge--apex-predator  { background: rgba(160, 80,  200, 0.15); border-color: rgba(160, 80,  200, 0.28); color: #cc88ee; }
+[data-theme="dark"] .card-badge--carnivore   { background: rgba(220,  80,  80, 0.14); border-color: rgba(220,  80,  80, 0.28); color: #e08080; }
+[data-theme="dark"] .card-badge--filter-feeder { background: rgba(65, 130,  230, 0.15); border-color: rgba(65,  130, 230, 0.28); color: #7ab4f0; }
+[data-theme="dark"] .card-badge--omnivore    { background: rgba(180, 140,  60, 0.15); border-color: rgba(180, 140,  60, 0.28); color: #d4b060; }
+
+/* Search highlight */
+[data-theme="dark"] .search-highlight { background: rgba(230, 180, 30, 0.28); }
 

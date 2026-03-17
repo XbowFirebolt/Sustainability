@@ -5,23 +5,9 @@ Check off items as they're completed. Add notes inline as needed.
 
 ---
 
-## Functionality
-
-### User Data & Personalization
-
-- [ ] **Export favorites** — download favorited species data as CSV or JSON
-- [ ] **Per-species user notes** — freeform text field users can attach to any species (stored in localStorage), visible in modal footer
-
-### Data Export & Integration
-
-- [ ] **Bulk data export** — "Download all species data" button that exports the full `WIKI_DATA.items` array as JSON or CSV
-- [ ] **Print / batch export** — option to export all species details (not just one) to PDF; currently only single-species print works
-
----
-
 ## Visuals & UI Polish
 
-- [ ] **Dark mode support** — respect `prefers-color-scheme: dark` with an adjusted palette; add a manual toggle to the header
+- [x] **Dark mode support** — respect `prefers-color-scheme: dark` with an adjusted palette; add a manual toggle to the header
 
 ---
 

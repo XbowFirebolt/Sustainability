@@ -1695,7 +1695,11 @@ function animateHealthChart() {
   dots.forEach((dot) => { dot.style.transition = "none"; dot.style.opacity = "0"; });
 
   const DRAW_MS = 750;
-  requestAnimationFrame(() => requestAnimationFrame(() => {
+  // Force a reflow to commit the invisible state before starting transitions.
+  // A single rAF + getBoundingClientRect() is more reliable than double-rAF,
+  // which some browsers coalesce into the same frame.
+  requestAnimationFrame(() => {
+    svg.getBoundingClientRect(); // force reflow — commits reset state
     polyline.style.transition = `stroke-dashoffset ${DRAW_MS}ms cubic-bezier(0.4, 0, 0.2, 1)`;
     polyline.style.strokeDashoffset = "0";
     area.style.transition = `opacity ${Math.round(DRAW_MS * 0.8)}ms ease-out 80ms`;
@@ -1709,7 +1713,7 @@ function animateHealthChart() {
     setTimeout(() => {
       dots.forEach((dot) => { dot.style.transition = ""; dot.style.opacity = ""; });
     }, DRAW_MS + 250);
-  }));
+  });
 }
 
 function renderRegionGrid(container, regions) {
