@@ -31,7 +31,7 @@ Check off items as they're completed. Add notes inline as needed.
 
 ### Navigation & Discovery
 
-- [ ] **Species comparison view** — select 2–3 species via checkboxes and open a side-by-side stat comparison table (lifePercent, size, diet, status, threats)
+- [x] **Species comparison view** — select 2–3 species via checkboxes and open a side-by-side stat comparison table (lifePercent, size, diet, status, threats)
 - [x] **Timeline / status-change view** — a secondary view showing all species IUCN status changes plotted across years; shows which species have declined or recovered
 - [x] **Related species links in modal** — "You might also like" or "Related species" section at the bottom of the Overview tab, using cross-reference IDs
 - [x] **Filter by data completeness tier** — add a "Data" filter chip group: Full / Standard / Stub, so users can find species with complete vs. incomplete data
