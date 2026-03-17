@@ -4069,6 +4069,24 @@ body.wiki-timeline-mode #wiki-compare-toolbar { display: none !important; }
   --color-header-hover-bg: rgba(255, 255, 255, 0.08);
 }
 
+/* Main-page floating elements: use dark surface instead of vivid primary */
+[data-theme="dark"] .dock,
+[data-theme="dark"] .discover-btn,
+[data-theme="dark"] .wiki-btn,
+[data-theme="dark"] .health-btn {
+  background-color: var(--color-surface);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45), 0 1px 4px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--color-border);
+}
+[data-theme="dark"] .discover-btn:hover,
+[data-theme="dark"] .wiki-btn:hover,
+[data-theme="dark"] .health-btn:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.55);
+}
+[data-theme="dark"] .dock-item {
+  color: var(--color-text);
+}
+
 /* White surfaces → dark surfaces */
 [data-theme="dark"] .modal,
 [data-theme="dark"] .project-card,
