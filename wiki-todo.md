@@ -20,8 +20,8 @@ Check off items as they're completed. Add notes inline as needed.
 
 ## Accessibility
 
-- [ ] **ARIA live region for filter changes** — announce result count to screen readers when filters change (e.g., "Showing 4 results")
-- [ ] **Skip-to-content link** — visually hidden `<a href="#wiki-grid">` at the top for keyboard users
+- [x] **ARIA live region for filter changes** — announce result count to screen readers when filters change (e.g., "Showing 4 results")
+- [x] **Skip-to-content link** — visually hidden `<a href="#wiki-grid">` at the top for keyboard users
 - [ ] **High contrast mode** — respect `prefers-contrast: more` with stronger borders and higher text contrast
 
 ---

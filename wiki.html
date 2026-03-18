@@ -8,6 +8,7 @@
     <script src="js/theme-init.js"></script>
   </head>
   <body class="no-map">
+    <a href="#wiki-grid" class="skip-to-content">Skip to species grid</a>
     <header>
       <section class="header-left">
         <a href="index.html" class="back-btn">← Back</a>
@@ -93,7 +94,8 @@
         </div>
         <div id="wiki-filter-panel" class="wiki-filter-panel hidden"></div>
       </div>
-      <div id="wiki-grid" class="wiki-grid"></div>
+      <div id="wiki-grid" class="wiki-grid" tabindex="-1"></div>
+      <div id="wiki-filter-live" role="status" aria-live="polite" aria-atomic="true" class="sr-only"></div>
       <div id="wiki-timeline" class="wiki-timeline"></div>
     </main>
     <div id="account-modal" class="modal-overlay hidden">

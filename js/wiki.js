@@ -2944,7 +2944,15 @@ function renderWikiGrid(query) {
     }
 
     grid.appendChild(empty);
+    const liveEmpty = document.getElementById("wiki-filter-live");
+    if (liveEmpty) liveEmpty.textContent = "No species match your current filters.";
     return;
+  }
+
+  const liveRegion = document.getElementById("wiki-filter-live");
+  if (liveRegion) {
+    const count = sorted.length;
+    liveRegion.textContent = `Showing ${count} ${count === 1 ? "result" : "results"}`;
   }
 
   // Set up life animation observer (cards are observed as each page is appended)
