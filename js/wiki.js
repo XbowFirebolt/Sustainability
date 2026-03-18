@@ -1695,11 +1695,14 @@ function animateHealthChart() {
   dots.forEach((dot) => { dot.style.transition = "none"; dot.style.opacity = "0"; });
 
   const DRAW_MS = 750;
-  // Force a reflow to commit the invisible state before starting transitions.
-  // A single rAF + getBoundingClientRect() is more reliable than double-rAF,
-  // which some browsers coalesce into the same frame.
+  // Force a reflow BEFORE the rAF to commit the reset state in its own style
+  // recalculation — separate from the animation start. This matters because the
+  // CSS Transitions spec suppresses transitions when display changes from none,
+  // and doing the reflow inside the rAF can put the display change and the
+  // transition setup in the same batch, causing the animation to be skipped on
+  // the first reveal.
+  svg.getBoundingClientRect();
   requestAnimationFrame(() => {
-    svg.getBoundingClientRect(); // force reflow — commits reset state
     polyline.style.transition = `stroke-dashoffset ${DRAW_MS}ms cubic-bezier(0.4, 0, 0.2, 1)`;
     polyline.style.strokeDashoffset = "0";
     area.style.transition = `opacity ${Math.round(DRAW_MS * 0.8)}ms ease-out 80ms`;
